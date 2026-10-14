@@ -29,6 +29,79 @@ For a visual comparison of the optimized patterns and uniform mockups, see
 the generated [optimized pattern grid](output/optimized_final/all_optimized_patterns_grid.png)
 and [optimized uniform contact sheet](output/optimized_mockups/outfit_contact_sheet.png).
 
+## Visual results and validation examples
+
+The repository includes representative images so that a visitor can understand
+the complete workflow without opening every individual output folder.
+
+### 1. Generated camouflage patterns
+
+This grid contains the final optimized pattern for each supported environment.
+Each tile is a 500x500 PNG using the selected industrial color count.
+
+![Optimized camouflage patterns](output/optimized_final/all_optimized_patterns_grid.png)
+
+The underlying files are available in
+[output/optimized_final/](output/optimized_final/), with one
+`optimized_pattern.png` and one `optimizer_report.json` per environment.
+
+### 2. Patterns applied to a complete uniform
+
+These mockups apply the generated patterns to a headless combat uniform with
+shirt, cargo trousers, boots, folds, seams, and lighting preserved. They are
+useful for judging visual scale and distribution, but they are not production
+patterns or a substitute for a physical fabric test.
+
+![Optimized uniform mockups](output/optimized_mockups/outfit_contact_sheet.png)
+
+The individual mockups are stored in
+[output/optimized_mockups/](output/optimized_mockups/).
+
+### 3. Patterns tested on environmental backgrounds
+
+The evaluator composites the uniform over photographs from the selected
+environment and records a visibility proxy. The following examples show the
+kind of scene contact sheets produced during validation:
+
+![Forest validation scenes](output/optimized_validation/forest_contact_sheet.png)
+
+![Desert validation scenes](output/optimized_validation/desert_contact_sheet.png)
+
+The complete set is in [output/optimized_validation/](output/optimized_validation/)
+and the machine-readable and human-readable summaries are in the corresponding
+evaluation output folders. Lower proxy visibility is better within the same
+controlled experiment, but the score is not a validated measure of real-world
+concealment.
+
+### 4. Reproducible validation procedure
+
+The recommended workflow is:
+
+1. Generate or select the environment-specific and Universal patterns.
+2. Run the optimizer on a training subset of backgrounds.
+3. Evaluate the selected patterns on held-out backgrounds that were not used
+   during optimization.
+4. Inspect the contact sheets for obvious artifacts such as oversized shapes,
+   repeated placement, sky/water contamination, or unnatural contrast.
+5. Run the blinded human-recognition test and analyze detection rate and
+   response time.
+
+For a quick local validation run:
+
+```bash
+python evaluate_camo.py \
+  --pattern-root output/optimized_final \
+  --pattern-name optimized_pattern.png \
+  --output output/optimized_validation \
+  --limit 10
+```
+
+The protocol for preparing and analyzing the human test is documented in
+[docs/HUMAN_TEST_PROTOCOL.md](docs/HUMAN_TEST_PROTOCOL.md). This separation
+between visual inspection, held-out image evaluation, and human recognition
+helps avoid treating a single attractive image as proof that a camouflage
+pattern is effective.
+
 ## Project status
 
 The current release is a research prototype. The procedural generator and
