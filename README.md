@@ -78,7 +78,17 @@ Run the default 500x500 generation:
 python camo.py --input photos --output output
 ```
 
-When started without `--mode`, the terminal asks whether to use `standard` or `custom` mode. Choosing `standard` preserves the current generator behavior and defaults. Choosing `custom` asks for pattern density, the maximum Universal color share, the Universal green share, and the dark-color share. All prompts and generated reports are in English.
+When started without `--mode`, the terminal asks whether to use `standard`, `custom`, or `optimized` mode. Choosing `standard` preserves the current generator behavior and defaults. Choosing `custom` asks for pattern density, the maximum Universal color share, the Universal green share, and the dark-color share. Choosing `optimized` applies the best configuration found by the current benchmark: semantic input segmentation, high pattern density, and five colors. Explicit CLI values still take precedence. All prompts and generated reports are in English.
+
+Run the benchmark-selected configuration with:
+
+```bash
+python camo.py --mode optimized --device cpu --save-segmentation-masks
+```
+
+The optimized mode is based on the project's internal diagnostics, not on a
+validated field concealment test. It should be treated as the recommended
+experimental default until printed and real-scene evaluations are available.
 
 The same custom settings can be supplied without interactive prompts:
 
@@ -146,6 +156,28 @@ python benchmark.py --densities standard --colors 5 --candidates 4 --clean
 The benchmark score is an internal diagnostic for color, luminance, texture,
 and shape structure. It is useful for comparing code changes, but it is not a
 measurement of real-world concealment.
+
+## Outfit mockups
+
+Generate simple headless full-uniform visualizations from the exact generated
+patterns. Each mockup contains a combat shirt, cargo trousers, and combat boots.
+The result is a visual comparison aid, not a manufacturing template.
+
+```bash
+python generate_outfit_mockups.py
+```
+
+The default output contains Universal, Desert, Mountain, Snow, and Jungle
+mockups plus a contact sheet under `output/outfit_mockups/`. Other groups can be
+selected explicitly:
+
+```bash
+python generate_outfit_mockups.py --groups universal,forest,taiga,tundra,urban
+```
+
+The folder also contains an AI-generated neutral uniform reference image. The
+actual mockups use the project's PNG patterns procedurally so their colors are
+not altered by image generation.
 
 Each generated group contains:
 

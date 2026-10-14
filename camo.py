@@ -1044,7 +1044,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", default="output", help="Folder for generated results")
     parser.add_argument(
         "--mode",
-        choices=("standard", "custom"),
+        choices=("standard", "custom", "optimized"),
         default=None,
         help="Generation mode; interactive prompt is used when omitted",
     )
@@ -1070,7 +1070,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--segmentation",
         choices=("none", "semantic"),
-        default="none",
+        default=None,
         help="Input mask mode; semantic uses the optional SegFormer model",
     )
     parser.add_argument(
@@ -1128,10 +1128,22 @@ def resolve_generation_settings(args: argparse.Namespace) -> None:
         if sys.stdin.isatty():
             answer = input("Generation mode [standard/custom] (default: standard): ").strip().lower()
             if answer:
-                if answer not in {"standard", "custom"}:
-                    raise ValueError("Generation mode must be 'standard' or 'custom'.")
+                if answer not in {"standard", "custom", "optimized"}:
+                    raise ValueError("Generation mode must be 'standard', 'custom', or 'optimized'.")
                 args.mode = answer
 
+    if args.mode == "optimized":
+        # Benchmark results currently favor neural masks, high density, and
+        # five colors across all available environment groups. Explicit CLI
+        # values still take precedence over these convenience defaults.
+        args.density = args.density or "high"
+        args.segmentation = args.segmentation or "semantic"
+        args.max_color_share = None
+        args.green_share = None
+        args.dark_share = None
+        return
+
+    args.segmentation = args.segmentation or "none"
     if args.mode == "standard":
         args.density = DEFAULT_DENSITY
         args.max_color_share = None
