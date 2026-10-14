@@ -1,0 +1,262 @@
+{
+  "input_images": [
+    "photos/snow/images-3 copy.jpeg [automatic]",
+    "photos/snow/images-3.jpeg [automatic]",
+    "photos/snow/images-4 copy.jpeg [automatic]",
+    "photos/snow/images-4.jpeg [automatic]",
+    "photos/snow/images-5 copy.jpeg [automatic]",
+    "photos/snow/images-5.jpeg [automatic]",
+    "photos/snow/images-6.jpeg [automatic]",
+    "photos/snow/images-7.jpeg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/snow/images-3 copy.jpeg [automatic]": 0.7131304824561403,
+    "photos/snow/images-3.jpeg [automatic]": 0.7629343668619791,
+    "photos/snow/images-4 copy.jpeg [automatic]": 0.542236328125,
+    "photos/snow/images-4.jpeg [automatic]": 0.9998568390052356,
+    "photos/snow/images-5 copy.jpeg [automatic]": 0.43054116681430765,
+    "photos/snow/images-5.jpeg [automatic]": 0.38168402777777777,
+    "photos/snow/images-6.jpeg [automatic]": 0.5149129231770834,
+    "photos/snow/images-7.jpeg [automatic]": 0.677978515625
+  },
+  "mask_sources": {
+    "photos/snow/images-3 copy.jpeg [automatic]": "automatic",
+    "photos/snow/images-3.jpeg [automatic]": "automatic",
+    "photos/snow/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/snow/images-4.jpeg [automatic]": "automatic",
+    "photos/snow/images-5 copy.jpeg [automatic]": "automatic",
+    "photos/snow/images-5.jpeg [automatic]": "automatic",
+    "photos/snow/images-6.jpeg [automatic]": "automatic",
+    "photos/snow/images-7.jpeg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 16,
+  "best_score": 0.014924785122275352,
+  "score_components": {
+    "rgb_error": 0.0022586053237318993,
+    "luminance_error": 0.0439302958548069,
+    "texture_error": 0.024401573464274406,
+    "geometry_penalty": 3.165026457642539e-05,
+    "directional_bias": 0.0003956283072053173,
+    "transition_density": 0.08104609218436873,
+    "fine_edge_density": 0.2360974409448819
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 13,
+      "score": 0.014924785122275352,
+      "score_components": {
+        "rgb_error": 0.0022586053237318993,
+        "luminance_error": 0.0439302958548069,
+        "texture_error": 0.024401573464274406,
+        "geometry_penalty": 3.165026457642539e-05,
+        "directional_bias": 0.0003956283072053173,
+        "transition_density": 0.08104609218436873,
+        "fine_edge_density": 0.2360974409448819
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 3,
+      "score": 0.016610024496912956,
+      "score_components": {
+        "rgb_error": 0.0022264805156737566,
+        "luminance_error": 0.04336104542016983,
+        "texture_error": 0.023472458124160767,
+        "geometry_penalty": 0.0020584056827150786,
+        "directional_bias": 0.02573007103393848,
+        "transition_density": 0.08886773547094189,
+        "fine_edge_density": 0.25498277559055116
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 6,
+      "score": 0.017095865681767464,
+      "score_components": {
+        "rgb_error": 0.0022935273591428995,
+        "luminance_error": 0.04519154876470566,
+        "texture_error": 0.02872701734304428,
+        "geometry_penalty": 0.0009201383755654718,
+        "directional_bias": 0.011501729694568396,
+        "transition_density": 0.06777755511022043,
+        "fine_edge_density": 0.19780388779527558
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 1,
+      "score": 0.0172655638307333,
+      "score_components": {
+        "rgb_error": 0.0022690272890031338,
+        "luminance_error": 0.04440329596400261,
+        "texture_error": 0.026577943935990334,
+        "geometry_penalty": 0.0017597503900155988,
+        "directional_bias": 0.021996879875194986,
+        "transition_density": 0.07707414829659319,
+        "fine_edge_density": 0.2236097440944882
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 15,
+      "score": 0.017542308196425438,
+      "score_components": {
+        "rgb_error": 0.002305996138602495,
+        "luminance_error": 0.045217543840408325,
+        "texture_error": 0.02870689518749714,
+        "geometry_penalty": 0.0013604960141718283,
+        "directional_bias": 0.017006200177147855,
+        "transition_density": 0.06787575150300601,
+        "fine_edge_density": 0.2016486220472441
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 5,
+      "score": 0.017572371289134026,
+      "score_components": {
+        "rgb_error": 0.002292605582624674,
+        "luminance_error": 0.0453205443918705,
+        "texture_error": 0.029011929407715797,
+        "geometry_penalty": 0.0013055079628121182,
+        "directional_bias": 0.01631884953515148,
+        "transition_density": 0.07134869739478958,
+        "fine_edge_density": 0.20930733267716536
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 0,
+      "score": 0.017770987004041672,
+      "score_components": {
+        "rgb_error": 0.002276808489114046,
+        "luminance_error": 0.04477279633283615,
+        "texture_error": 0.027233034372329712,
+        "geometry_penalty": 0.0020375510204081655,
+        "directional_bias": 0.025469387755102067,
+        "transition_density": 0.07364729458917835,
+        "fine_edge_density": 0.21447465551181102
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 14,
+      "score": 0.017839595675468445,
+      "score_components": {
+        "rgb_error": 0.0022637462243437767,
+        "luminance_error": 0.04468054696917534,
+        "texture_error": 0.026773326098918915,
+        "geometry_penalty": 0.0022396267288785237,
+        "directional_bias": 0.027995334110981544,
+        "transition_density": 0.0721563126252505,
+        "fine_edge_density": 0.21761195866141733
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 7,
+      "score": 0.01859915815293789,
+      "score_components": {
+        "rgb_error": 0.0022805272601544857,
+        "luminance_error": 0.04508204385638237,
+        "texture_error": 0.027894824743270874,
+        "geometry_penalty": 0.002649368385114373,
+        "directional_bias": 0.03311710481392966,
+        "transition_density": 0.070436873747495,
+        "fine_edge_density": 0.2102915846456693
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 8,
+      "score": 0.018753772601485252,
+      "score_components": {
+        "rgb_error": 0.002290886826813221,
+        "luminance_error": 0.04533529654145241,
+        "texture_error": 0.031028838828206062,
+        "geometry_penalty": 0.002001054419776228,
+        "directional_bias": 0.025013180247202848,
+        "transition_density": 0.06842084168336673,
+        "fine_edge_density": 0.19964936023622049
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "low",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 38.0,
+    "dark_floor": 82.0,
+    "dark_weight": 0.08,
+    "detail": 0.13,
+    "blur": 0.9,
+    "blob_scale": 1.28,
+    "blob_weight": 0.38,
+    "blob_aspect": 1.1,
+    "palette_family": "snow"
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "snow": 160000
+  },
+  "dark_palette_weight": 0.0,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        225,
+        229,
+        230
+      ],
+      "weight": 0.22667500376701355
+    },
+    {
+      "rgb": [
+        184,
+        188,
+        191
+      ],
+      "weight": 0.20414374768733978
+    },
+    {
+      "rgb": [
+        76,
+        80,
+        81
+      ],
+      "weight": 0.19655625522136688
+    },
+    {
+      "rgb": [
+        140,
+        144,
+        144
+      ],
+      "weight": 0.18883749842643738
+    },
+    {
+      "rgb": [
+        91,
+        94,
+        92
+      ],
+      "weight": 0.1837874948978424
+    }
+  ]
+}

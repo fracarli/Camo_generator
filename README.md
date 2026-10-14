@@ -118,6 +118,35 @@ Increase the search effort while keeping the industrial five-color limit:
 python camo.py --candidates 300 --colors 5
 ```
 
+## Configuration benchmark
+
+Use `benchmark.py` to compare controlled combinations of density, palette size,
+random seed, and optional semantic segmentation. The default benchmark tests
+the three density levels with 3 and 5 colors, using 16 candidates per group.
+It writes a ranked JSON/Markdown report and a Universal contact sheet under
+`output/benchmark/`.
+
+```bash
+python benchmark.py --segmentation none --clean
+```
+
+After installing the optional ML dependencies, compare the automatic mask and
+the neural mask in one run:
+
+```bash
+python benchmark.py --segmentation both --device cpu --clean
+```
+
+For a faster smoke test:
+
+```bash
+python benchmark.py --densities standard --colors 5 --candidates 4 --clean
+```
+
+The benchmark score is an internal diagnostic for color, luminance, texture,
+and shape structure. It is useful for comparing code changes, but it is not a
+measurement of real-world concealment.
+
 Each generated group contains:
 
 - `best_pattern.png`: the selected 500x500 pattern;

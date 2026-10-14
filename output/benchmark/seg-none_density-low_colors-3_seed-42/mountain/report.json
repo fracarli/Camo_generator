@@ -1,0 +1,263 @@
+{
+  "input_images": [
+    "photos/mountain/bellino-paesaggio.jpg [automatic]",
+    "photos/mountain/images-3 copy.jpeg [automatic]",
+    "photos/mountain/images-3.jpeg [automatic]",
+    "photos/mountain/images-4 copy.jpeg [automatic]",
+    "photos/mountain/images-4.jpeg [automatic]",
+    "photos/mountain/images-5 copy 2.jpeg [automatic]",
+    "photos/mountain/images-5 copy.jpeg [automatic]",
+    "photos/mountain/images-5.jpeg [automatic]",
+    "photos/mountain/images-6 copy.jpeg [automatic]",
+    "photos/mountain/images-6.jpeg [automatic]",
+    "photos/mountain/images-7.jpeg [automatic]",
+    "photos/mountain/images-8.jpeg [automatic]",
+    "photos/mountain/mercantour-otnca-1024x683.webp [automatic]",
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/mountain/bellino-paesaggio.jpg [automatic]": 0.511512,
+    "photos/mountain/images-3 copy.jpeg [automatic]": 0.7255149762110726,
+    "photos/mountain/images-3.jpeg [automatic]": 0.6281603043002916,
+    "photos/mountain/images-4 copy.jpeg [automatic]": 0.6526150173611112,
+    "photos/mountain/images-4.jpeg [automatic]": 0.6930745442708334,
+    "photos/mountain/images-5 copy 2.jpeg [automatic]": 0.3584500745156483,
+    "photos/mountain/images-5 copy.jpeg [automatic]": 0.5778203342618384,
+    "photos/mountain/images-5.jpeg [automatic]": 0.9785089590443686,
+    "photos/mountain/images-6 copy.jpeg [automatic]": 0.6224721272786459,
+    "photos/mountain/images-6.jpeg [automatic]": 0.5521444281524927,
+    "photos/mountain/images-7.jpeg [automatic]": 0.6820460983187134,
+    "photos/mountain/images-8.jpeg [automatic]": 0.7025263798701299,
+    "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": 0.8327793768274854,
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343
+  },
+  "mask_sources": {
+    "photos/mountain/bellino-paesaggio.jpg [automatic]": "automatic",
+    "photos/mountain/images-3 copy.jpeg [automatic]": "automatic",
+    "photos/mountain/images-3.jpeg [automatic]": "automatic",
+    "photos/mountain/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/mountain/images-4.jpeg [automatic]": "automatic",
+    "photos/mountain/images-5 copy 2.jpeg [automatic]": "automatic",
+    "photos/mountain/images-5 copy.jpeg [automatic]": "automatic",
+    "photos/mountain/images-5.jpeg [automatic]": "automatic",
+    "photos/mountain/images-6 copy.jpeg [automatic]": "automatic",
+    "photos/mountain/images-6.jpeg [automatic]": "automatic",
+    "photos/mountain/images-7.jpeg [automatic]": "automatic",
+    "photos/mountain/images-8.jpeg [automatic]": "automatic",
+    "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": "automatic",
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 3,
+  "candidates_evaluated": 16,
+  "best_score": 0.020585838705301285,
+  "score_components": {
+    "rgb_error": 0.003257750067859888,
+    "luminance_error": 0.049709759652614594,
+    "texture_error": 0.03934000805020332,
+    "geometry_penalty": 0.0005676042872238688,
+    "directional_bias": 0.00709505359029836,
+    "transition_density": 0.03982565130260521,
+    "fine_edge_density": 0.13235113188976377
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 11,
+      "score": 0.020585838705301285,
+      "score_components": {
+        "rgb_error": 0.003257750067859888,
+        "luminance_error": 0.049709759652614594,
+        "texture_error": 0.03934000805020332,
+        "geometry_penalty": 0.0005676042872238688,
+        "directional_bias": 0.00709505359029836,
+        "transition_density": 0.03982565130260521,
+        "fine_edge_density": 0.13235113188976377
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 0,
+      "score": 0.02089071273803711,
+      "score_components": {
+        "rgb_error": 0.003271625144407153,
+        "luminance_error": 0.04951551556587219,
+        "texture_error": 0.038192618638277054,
+        "geometry_penalty": 0.001175878835298717,
+        "directional_bias": 0.014698485441233962,
+        "transition_density": 0.03585771543086172,
+        "fine_edge_density": 0.13010580708661418
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 4,
+      "score": 0.021319879218935966,
+      "score_components": {
+        "rgb_error": 0.0032890159636735916,
+        "luminance_error": 0.05012626200914383,
+        "texture_error": 0.04114707186818123,
+        "geometry_penalty": 0.0007773472429210162,
+        "directional_bias": 0.009716840536512701,
+        "transition_density": 0.03361723446893787,
+        "fine_edge_density": 0.11734128937007875
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 13,
+      "score": 0.021384453400969505,
+      "score_components": {
+        "rgb_error": 0.003278109710663557,
+        "luminance_error": 0.0497710146009922,
+        "texture_error": 0.03963131085038185,
+        "geometry_penalty": 0.0012751021347603435,
+        "directional_bias": 0.015938776684504292,
+        "transition_density": 0.034827655310621236,
+        "fine_edge_density": 0.1242310531496063
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 2,
+      "score": 0.021544337272644043,
+      "score_components": {
+        "rgb_error": 0.0033191251568496227,
+        "luminance_error": 0.05064675956964493,
+        "texture_error": 0.04346577450633049,
+        "geometry_penalty": 0.00033657333526766173,
+        "directional_bias": 0.004207166690845771,
+        "transition_density": 0.027627254509018036,
+        "fine_edge_density": 0.1015625
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 7,
+      "score": 0.02230728045105934,
+      "score_components": {
+        "rgb_error": 0.0032725781202316284,
+        "luminance_error": 0.0496935099363327,
+        "texture_error": 0.038768161088228226,
+        "geometry_penalty": 0.002421800682670245,
+        "directional_bias": 0.03027250853337806,
+        "transition_density": 0.03581362725450902,
+        "fine_edge_density": 0.1281988188976378
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 15,
+      "score": 0.02246614173054695,
+      "score_components": {
+        "rgb_error": 0.0032824219670146704,
+        "luminance_error": 0.04994501546025276,
+        "texture_error": 0.039991382509469986,
+        "geometry_penalty": 0.0022368949876557377,
+        "directional_bias": 0.02796118734569672,
+        "transition_density": 0.03490380761523046,
+        "fine_edge_density": 0.12472317913385826
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 8,
+      "score": 0.02263648994266987,
+      "score_components": {
+        "rgb_error": 0.0032637815456837416,
+        "luminance_error": 0.04947476089000702,
+        "texture_error": 0.0385885052382946,
+        "geometry_penalty": 0.0028379023278010487,
+        "directional_bias": 0.035473779097513106,
+        "transition_density": 0.0377935871743487,
+        "fine_edge_density": 0.13158218503937008
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 6,
+      "score": 0.02317945845425129,
+      "score_components": {
+        "rgb_error": 0.003285500453785062,
+        "luminance_error": 0.05001150816679001,
+        "texture_error": 0.04062774404883385,
+        "geometry_penalty": 0.0027839789888378197,
+        "directional_bias": 0.034799737360472746,
+        "transition_density": 0.033573146292585176,
+        "fine_edge_density": 0.11946358267716535
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 3,
+      "score": 0.023299457505345345,
+      "score_components": {
+        "rgb_error": 0.003272406291216612,
+        "luminance_error": 0.04968426376581192,
+        "texture_error": 0.039279356598854065,
+        "geometry_penalty": 0.00329304148970925,
+        "directional_bias": 0.04116301862136563,
+        "transition_density": 0.03680561122244489,
+        "fine_edge_density": 0.12853715551181102
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "low",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 60.0,
+    "dark_floor": 68.0,
+    "dark_weight": 0.14,
+    "detail": 0.15,
+    "blur": 0.8,
+    "blob_scale": 1.12,
+    "blob_weight": 0.34,
+    "blob_aspect": 1.05
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "mountain": 278039
+  },
+  "dark_palette_weight": 0.14000000059604645,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        135,
+        132,
+        89
+      ],
+      "weight": 0.6408449411392212
+    },
+    {
+      "rgb": [
+        59,
+        61,
+        53
+      ],
+      "weight": 0.14000000059604645
+    },
+    {
+      "rgb": [
+        174,
+        160,
+        132
+      ],
+      "weight": 0.21915507316589355
+    }
+  ]
+}

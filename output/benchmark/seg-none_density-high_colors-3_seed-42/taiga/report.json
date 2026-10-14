@@ -1,0 +1,227 @@
+{
+  "input_images": [
+    "photos/taiga/images-4 copy.jpeg [automatic]",
+    "photos/taiga/images-6.jpeg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/taiga/images-4 copy.jpeg [automatic]": 0.8991224500868056,
+    "photos/taiga/images-6.jpeg [automatic]": 0.5299072265625
+  },
+  "mask_sources": {
+    "photos/taiga/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/taiga/images-6.jpeg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 3,
+  "candidates_evaluated": 16,
+  "best_score": 0.016316749155521393,
+  "score_components": {
+    "rgb_error": 0.0032919454388320446,
+    "luminance_error": 0.04841987043619156,
+    "texture_error": 0.02449793368577957,
+    "geometry_penalty": 7.569344156167948e-05,
+    "directional_bias": 0.0009461680195209935,
+    "transition_density": 0.08048496993987976,
+    "fine_edge_density": 0.22062623031496062
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 1,
+      "score": 0.016316749155521393,
+      "score_components": {
+        "rgb_error": 0.0032919454388320446,
+        "luminance_error": 0.04841987043619156,
+        "texture_error": 0.02449793368577957,
+        "geometry_penalty": 7.569344156167948e-05,
+        "directional_bias": 0.0009461680195209935,
+        "transition_density": 0.08048496993987976,
+        "fine_edge_density": 0.22062623031496062
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 7,
+      "score": 0.01691516861319542,
+      "score_components": {
+        "rgb_error": 0.0033196485601365566,
+        "luminance_error": 0.048834122717380524,
+        "texture_error": 0.025765446946024895,
+        "geometry_penalty": 0.0002814949085674619,
+        "directional_bias": 0.003518686357093274,
+        "transition_density": 0.07517835671342685,
+        "fine_edge_density": 0.20949187992125984
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 0,
+      "score": 0.016999155282974243,
+      "score_components": {
+        "rgb_error": 0.003322070464491844,
+        "luminance_error": 0.048879873007535934,
+        "texture_error": 0.025795772671699524,
+        "geometry_penalty": 0.00034875849557282216,
+        "directional_bias": 0.004359481194660277,
+        "transition_density": 0.07401002004008017,
+        "fine_edge_density": 0.20527805118110237
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 9,
+      "score": 0.017005423083901405,
+      "score_components": {
+        "rgb_error": 0.0033213049173355103,
+        "luminance_error": 0.04889087378978729,
+        "texture_error": 0.02648048661649227,
+        "geometry_penalty": 0.00018909481600859102,
+        "directional_bias": 0.0023636852001073876,
+        "transition_density": 0.07460921843687375,
+        "fine_edge_density": 0.20137180118110237
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 8,
+      "score": 0.017079206183552742,
+      "score_components": {
+        "rgb_error": 0.003327382728457451,
+        "luminance_error": 0.049136873334646225,
+        "texture_error": 0.02690640278160572,
+        "geometry_penalty": 0.00011334013374135638,
+        "directional_bias": 0.0014167516717669547,
+        "transition_density": 0.0707254509018036,
+        "fine_edge_density": 0.19700418307086615
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 6,
+      "score": 0.017364200204610825,
+      "score_components": {
+        "rgb_error": 0.0033299766946583986,
+        "luminance_error": 0.04889412224292755,
+        "texture_error": 0.02578657865524292,
+        "geometry_penalty": 0.000709490261085787,
+        "directional_bias": 0.008868628263572337,
+        "transition_density": 0.07253507014028057,
+        "fine_edge_density": 0.20417076771653545
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 2,
+      "score": 0.0174262598156929,
+      "score_components": {
+        "rgb_error": 0.0033128983341157436,
+        "luminance_error": 0.048654623329639435,
+        "texture_error": 0.024700382724404335,
+        "geometry_penalty": 0.0010838858460651515,
+        "directional_bias": 0.013548573075814394,
+        "transition_density": 0.07647094188376753,
+        "fine_edge_density": 0.2101685531496063
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 5,
+      "score": 0.017444107681512833,
+      "score_components": {
+        "rgb_error": 0.0033156326971948147,
+        "luminance_error": 0.04879537224769592,
+        "texture_error": 0.02552514337003231,
+        "geometry_penalty": 0.0008770892674799855,
+        "directional_bias": 0.010963615843499818,
+        "transition_density": 0.07457715430861724,
+        "fine_edge_density": 0.20789247047244094
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 12,
+      "score": 0.017444459721446037,
+      "score_components": {
+        "rgb_error": 0.003305539023131132,
+        "luminance_error": 0.04888187348842621,
+        "texture_error": 0.02677260898053646,
+        "geometry_penalty": 0.0005675260733760344,
+        "directional_bias": 0.007094075917200429,
+        "transition_density": 0.07570741482965931,
+        "fine_edge_density": 0.2079847440944882
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 3,
+      "score": 0.01752331107854843,
+      "score_components": {
+        "rgb_error": 0.003328101709485054,
+        "luminance_error": 0.04916462302207947,
+        "texture_error": 0.026581047102808952,
+        "geometry_penalty": 0.0006301747930082754,
+        "directional_bias": 0.007877184912603443,
+        "transition_density": 0.06970741482965931,
+        "fine_edge_density": 0.19740403543307086
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "high",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 60.0,
+    "dark_floor": 60.0,
+    "dark_weight": 0.16,
+    "detail": 0.18,
+    "blur": 0.65,
+    "blob_scale": 0.78,
+    "blob_weight": 0.35,
+    "blob_aspect": 0.75
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "taiga": 40000
+  },
+  "dark_palette_weight": 0.1600000113248825,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        61,
+        59,
+        53
+      ],
+      "weight": 0.1600000113248825
+    },
+    {
+      "rgb": [
+        140,
+        144,
+        100
+      ],
+      "weight": 0.7050706148147583
+    },
+    {
+      "rgb": [
+        175,
+        166,
+        142
+      ],
+      "weight": 0.1349293291568756
+    }
+  ]
+}

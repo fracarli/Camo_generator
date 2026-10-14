@@ -1,0 +1,272 @@
+{
+  "input_images": [
+    "photos/forest/23853_135_PRBEI.jpeg [automatic]",
+    "photos/forest/MG_0652-1024x768.webp [automatic]",
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
+    "photos/forest/images-3 copy 2.jpeg [automatic]",
+    "photos/forest/images-3 copy 3.jpeg [automatic]",
+    "photos/forest/images-3 copy.jpeg [automatic]",
+    "photos/forest/images-3.jpeg [automatic]",
+    "photos/forest/images-4 copy.jpeg [automatic]",
+    "photos/forest/images-4.jpeg [automatic]",
+    "photos/forest/images-5 copy.jpeg [automatic]",
+    "photos/forest/images-5.jpeg [automatic]",
+    "photos/forest/orman-cesitleri.jpg [automatic]",
+    "photos/forest/trekking-2g.jpg.webp [automatic]",
+    "photos/forest/veduta.jpg [automatic]",
+    "photos/forest/vivere-in-campagna.jpg [automatic]",
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/forest/23853_135_PRBEI.jpeg [automatic]": 0.76031494140625,
+    "photos/forest/MG_0652-1024x768.webp [automatic]": 0.6473185221354166,
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
+    "photos/forest/images-3 copy 2.jpeg [automatic]": 0.9430198669433594,
+    "photos/forest/images-3 copy 3.jpeg [automatic]": 0.892185222303207,
+    "photos/forest/images-3 copy.jpeg [automatic]": 0.4512209159747559,
+    "photos/forest/images-3.jpeg [automatic]": 0.8027852376302084,
+    "photos/forest/images-4 copy.jpeg [automatic]": 0.9996083577473959,
+    "photos/forest/images-4.jpeg [automatic]": 0.9998779296875,
+    "photos/forest/images-5 copy.jpeg [automatic]": 0.931793212890625,
+    "photos/forest/images-5.jpeg [automatic]": 0.9999160766601562,
+    "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
+    "photos/forest/trekking-2g.jpg.webp [automatic]": 1.0,
+    "photos/forest/veduta.jpg [automatic]": 0.954928,
+    "photos/forest/vivere-in-campagna.jpg [automatic]": 0.8475934301900585,
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [automatic]": 0.9994558742668622
+  },
+  "mask_sources": {
+    "photos/forest/23853_135_PRBEI.jpeg [automatic]": "automatic",
+    "photos/forest/MG_0652-1024x768.webp [automatic]": "automatic",
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": "automatic",
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": "automatic",
+    "photos/forest/images-3 copy 2.jpeg [automatic]": "automatic",
+    "photos/forest/images-3 copy 3.jpeg [automatic]": "automatic",
+    "photos/forest/images-3 copy.jpeg [automatic]": "automatic",
+    "photos/forest/images-3.jpeg [automatic]": "automatic",
+    "photos/forest/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/forest/images-4.jpeg [automatic]": "automatic",
+    "photos/forest/images-5 copy.jpeg [automatic]": "automatic",
+    "photos/forest/images-5.jpeg [automatic]": "automatic",
+    "photos/forest/orman-cesitleri.jpg [automatic]": "automatic",
+    "photos/forest/trekking-2g.jpg.webp [automatic]": "automatic",
+    "photos/forest/veduta.jpg [automatic]": "automatic",
+    "photos/forest/vivere-in-campagna.jpg [automatic]": "automatic",
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 3,
+  "candidates_evaluated": 16,
+  "best_score": 0.01947985589504242,
+  "score_components": {
+    "rgb_error": 0.0032167977187782526,
+    "luminance_error": 0.0465841069817543,
+    "texture_error": 0.03929049149155617,
+    "geometry_penalty": 5.660055136744324e-05,
+    "directional_bias": 0.0007075068920930405,
+    "transition_density": 0.08214228456913827,
+    "fine_edge_density": 0.2681163877952756
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 12,
+      "score": 0.01947985589504242,
+      "score_components": {
+        "rgb_error": 0.0032167977187782526,
+        "luminance_error": 0.0465841069817543,
+        "texture_error": 0.03929049149155617,
+        "geometry_penalty": 5.660055136744324e-05,
+        "directional_bias": 0.0007075068920930405,
+        "transition_density": 0.08214228456913827,
+        "fine_edge_density": 0.2681163877952756
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 10,
+      "score": 0.019874921068549156,
+      "score_components": {
+        "rgb_error": 0.0032235479447990656,
+        "luminance_error": 0.04666785150766373,
+        "texture_error": 0.04018796607851982,
+        "geometry_penalty": 0.0002178217821782164,
+        "directional_bias": 0.002722772277227705,
+        "transition_density": 0.08096192384769539,
+        "fine_edge_density": 0.2655634842519685
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 15,
+      "score": 0.01988079771399498,
+      "score_components": {
+        "rgb_error": 0.003216282231733203,
+        "luminance_error": 0.04655135050415993,
+        "texture_error": 0.03939767926931381,
+        "geometry_penalty": 0.00043797047609736784,
+        "directional_bias": 0.005474630951217098,
+        "transition_density": 0.08199599198396794,
+        "fine_edge_density": 0.26873154527559057
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 4,
+      "score": 0.019885554909706116,
+      "score_components": {
+        "rgb_error": 0.0032242354936897755,
+        "luminance_error": 0.04664609953761101,
+        "texture_error": 0.040228910744190216,
+        "geometry_penalty": 0.0002222001785537137,
+        "directional_bias": 0.002777502231921421,
+        "transition_density": 0.08080961923847696,
+        "fine_edge_density": 0.2683009350393701
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 13,
+      "score": 0.020256511867046356,
+      "score_components": {
+        "rgb_error": 0.003237329190596938,
+        "luminance_error": 0.047114353626966476,
+        "texture_error": 0.04139934852719307,
+        "geometry_penalty": 0.00022141972217096557,
+        "directional_bias": 0.0027677465271370694,
+        "transition_density": 0.07602605210420842,
+        "fine_edge_density": 0.25470595472440943
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 8,
+      "score": 0.020351029932498932,
+      "score_components": {
+        "rgb_error": 0.0032312667462974787,
+        "luminance_error": 0.04685460403561592,
+        "texture_error": 0.040610674768686295,
+        "geometry_penalty": 0.0005550049554013836,
+        "directional_bias": 0.006937561942517294,
+        "transition_density": 0.07885971943887776,
+        "fine_edge_density": 0.2586429625984252
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 14,
+      "score": 0.02036992646753788,
+      "score_components": {
+        "rgb_error": 0.0032342197373509407,
+        "luminance_error": 0.04693910479545593,
+        "texture_error": 0.04098208621144295,
+        "geometry_penalty": 0.0004680774286671628,
+        "directional_bias": 0.005850967858339535,
+        "transition_density": 0.07774949899799599,
+        "fine_edge_density": 0.2563976377952756
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 1,
+      "score": 0.020468994975090027,
+      "score_components": {
+        "rgb_error": 0.0032369073014706373,
+        "luminance_error": 0.047073353081941605,
+        "texture_error": 0.04142792895436287,
+        "geometry_penalty": 0.0004346342615679405,
+        "directional_bias": 0.005432928269599256,
+        "transition_density": 0.07635470941883768,
+        "fine_edge_density": 0.2574741633858268
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 2,
+      "score": 0.0206465907394886,
+      "score_components": {
+        "rgb_error": 0.003240297781303525,
+        "luminance_error": 0.04716835170984268,
+        "texture_error": 0.04189981147646904,
+        "geometry_penalty": 0.00048018191914117023,
+        "directional_bias": 0.0060022739892646275,
+        "transition_density": 0.07578957915831663,
+        "fine_edge_density": 0.24569389763779528
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 6,
+      "score": 0.021072136238217354,
+      "score_components": {
+        "rgb_error": 0.003257532138377428,
+        "luminance_error": 0.0475476048886776,
+        "texture_error": 0.04376116767525673,
+        "geometry_penalty": 0.000382119881829985,
+        "directional_bias": 0.004776498522874813,
+        "transition_density": 0.07258316633266533,
+        "fine_edge_density": 0.24074187992125984
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 65.0,
+    "dark_floor": 60.0,
+    "dark_weight": 0.18,
+    "detail": 0.18,
+    "blur": 0.6,
+    "blob_scale": 0.72,
+    "blob_weight": 0.34,
+    "blob_aspect": 0.82
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "forest": 340000
+  },
+  "dark_palette_weight": 0.17999999225139618,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        54,
+        57,
+        48
+      ],
+      "weight": 0.17999999225139618
+    },
+    {
+      "rgb": [
+        103,
+        114,
+        61
+      ],
+      "weight": 0.6030677556991577
+    },
+    {
+      "rgb": [
+        178,
+        180,
+        151
+      ],
+      "weight": 0.21693222224712372
+    }
+  ]
+}
