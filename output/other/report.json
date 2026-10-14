@@ -13,66 +13,66 @@
   ],
   "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.024376969784498215,
+  "best_score": 0.017261087894439697,
   "score_components": {
-    "rgb_error": 0.0032211681827902794,
-    "luminance_error": 0.043999433517456055,
-    "texture_error": 0.05522175505757332
+    "rgb_error": 0.0030890232883393764,
+    "luminance_error": 0.037445440888404846,
+    "texture_error": 0.03229214623570442
   },
-  "version": "phase_10_balanced_universal",
+  "version": "phase_14_fosco_tones_adjacent_regions",
   "style_profile": {
-    "max_chroma": 95.0,
+    "max_chroma": 65.0,
     "dark_floor": 68.0,
     "dark_weight": 0.14,
-    "detail": 0.08,
+    "detail": 0.16,
     "blur": 0.7
   },
   "weighting": "pixel_weighted",
   "group_pixel_counts": {
     "other": 40000
   },
-  "dark_palette_weight": 0.14000000059604645,
+  "dark_palette_weight": 0.0,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        142,
-        85,
-        47
-      ],
-      "weight": 0.31981006264686584
-    },
-    {
-      "rgb": [
-        131,
         117,
-        101
+        83,
+        58
       ],
-      "weight": 0.2726176381111145
+      "weight": 0.2868250012397766
     },
     {
       "rgb": [
-        75,
-        66,
-        60
+        140,
+        124,
+        103
       ],
-      "weight": 0.14000000059604645
+      "weight": 0.24449999630451202
+    },
+    {
+      "rgb": [
+        74,
+        71,
+        58
+      ],
+      "weight": 0.22869999706745148
+    },
+    {
+      "rgb": [
+        180,
+        158,
+        127
+      ],
+      "weight": 0.18107500672340393
     },
     {
       "rgb": [
         187,
-        163,
-        135
+        171,
+        146
       ],
-      "weight": 0.2018987536430359
-    },
-    {
-      "rgb": [
-        244,
-        242,
-        241
-      ],
-      "weight": 0.06567353755235672
+      "weight": 0.05889999866485596
     }
   ]
 }

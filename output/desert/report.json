@@ -21,66 +21,66 @@
   ],
   "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.016461875289678574,
+  "best_score": 0.01470077782869339,
   "score_components": {
-    "rgb_error": 0.0030686212703585625,
-    "luminance_error": 0.04759790003299713,
-    "texture_error": 0.021018216386437416
+    "rgb_error": 0.003143268171697855,
+    "luminance_error": 0.042783066630363464,
+    "texture_error": 0.01766146719455719
   },
-  "version": "phase_10_balanced_universal",
+  "version": "phase_14_fosco_tones_adjacent_regions",
   "style_profile": {
-    "max_chroma": 75.0,
+    "max_chroma": 55.0,
     "dark_floor": 75.0,
     "dark_weight": 0.08,
-    "detail": 0.06,
+    "detail": 0.14,
     "blur": 0.9
   },
   "weighting": "pixel_weighted",
   "group_pixel_counts": {
     "desert": 120000
   },
-  "dark_palette_weight": 0.07999999821186066,
+  "dark_palette_weight": 0.0,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        135,
-        101,
-        72
+        121,
+        93,
+        69
       ],
-      "weight": 0.28895872831344604
+      "weight": 0.2686583399772644
     },
     {
       "rgb": [
-        199,
+        182,
+        157,
+        127
+      ],
+      "weight": 0.23220832645893097
+    },
+    {
+      "rgb": [
+        179,
         164,
-        124
+        136
       ],
-      "weight": 0.24975448846817017
+      "weight": 0.19128333032131195
     },
     {
       "rgb": [
-        217,
-        216,
-        205
+        175,
+        150,
+        120
       ],
-      "weight": 0.20573711395263672
+      "weight": 0.16321666538715363
     },
     {
       "rgb": [
-        189,
-        154,
-        114
+        73,
+        71,
+        58
       ],
-      "weight": 0.1755496710538864
-    },
-    {
-      "rgb": [
-        74,
-        67,
-        60
-      ],
-      "weight": 0.07999999821186066
+      "weight": 0.14463333785533905
     }
   ]
 }

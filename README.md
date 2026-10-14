@@ -35,7 +35,9 @@ The `universal` pattern uses all reference images and gives every environment gr
 
 Each environment uses a small style profile: forest patterns preserve more fine detail, desert patterns use lighter and less saturated colors, mountain patterns use a softer neutral palette, and urban patterns use restrained neutral colors. The selected profile is recorded in each group's `report.json`.
 
-The generator deliberately does not copy directional high-frequency texture from source photos. This keeps the output clean and avoids visible lines while preserving multi-scale texture matching for candidate selection.
+The universal palette reserves one matte forest-green color when forest references are available. This keeps green visible in the mixed environment result without allowing bright or saturated colors to dominate. Palette colors are gently anchored to Fosco-style matte military tone families: Olive Drab, NATO Green, Service/Mud Brown, Tropentarn Sand, and NATO Black. These are approximate style references, not exact colorimetric reproductions of a specific product.
+
+The generator deliberately does not copy directional high-frequency texture from source photos. It generates competing smooth fields for each palette color, allowing adjacent regions to share boundaries instead of producing only isolated islands inside one background color.
 
 ## Installation
 
@@ -69,7 +71,7 @@ python camo.py --candidates 300 --colors 5
 
 Each generated group contains:
 
-- `best_pattern.png`: the selected 1000x1000 pattern;
+- `best_pattern.png`: the selected 500x500 pattern;
 - `palette.png`: the colors and their estimated weights;
 - `report.json`: input files, mask coverage, score components, and parameters.
 

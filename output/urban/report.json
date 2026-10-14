@@ -23,18 +23,18 @@
   ],
   "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.021439887583255768,
+  "best_score": 0.014762761071324348,
   "score_components": {
-    "rgb_error": 0.0031089007388800383,
-    "luminance_error": 0.04745066165924072,
-    "texture_error": 0.0409594364464283
+    "rgb_error": 0.00306115485727787,
+    "luminance_error": 0.04369494691491127,
+    "texture_error": 0.017360543832182884
   },
-  "version": "phase_10_balanced_universal",
+  "version": "phase_14_fosco_tones_adjacent_regions",
   "style_profile": {
-    "max_chroma": 70.0,
+    "max_chroma": 50.0,
     "dark_floor": 72.0,
     "dark_weight": 0.1,
-    "detail": 0.09,
+    "detail": 0.16,
     "blur": 0.7
   },
   "weighting": "pixel_weighted",
@@ -46,41 +46,41 @@
   "palette": [
     {
       "rgb": [
-        102,
-        87,
-        78
+        100,
+        83,
+        71
       ],
       "weight": 0.2752322554588318
     },
     {
       "rgb": [
-        150,
-        125,
+        154,
+        130,
         108
       ],
       "weight": 0.2380538284778595
     },
     {
       "rgb": [
-        195,
-        169,
-        151
+        186,
+        162,
+        139
       ],
       "weight": 0.2171538919210434
     },
     {
       "rgb": [
-        66,
-        63,
-        61
+        62,
+        61,
+        58
       ],
       "weight": 0.09999999403953552
     },
     {
       "rgb": [
-        230,
-        220,
-        215
+        183,
+        165,
+        138
       ],
       "weight": 0.1695600003004074
     }

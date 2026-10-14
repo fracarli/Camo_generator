@@ -25,13 +25,27 @@ MIN_COLORS = 2
 MAX_COLORS = 5
 DEFAULT_PATTERN_SIZE = 500
 
+# Approximate matte reference swatches based on Fosco military paint families.
+# They are style anchors, not a colorimetric reproduction of a specific can.
+FOSCO_MATTE_TONES = np.array(
+    [
+        [72.0, 82.0, 53.0],    # Olive Drab / RAL 6014 family
+        [78.0, 96.0, 51.0],    # NATO Green family
+        [94.0, 72.0, 52.0],    # Service / Mud Brown family
+        [164.0, 143.0, 108.0],  # Tropentarn Sand family
+        [52.0, 55.0, 50.0],    # NATO Black family
+    ],
+    dtype=np.float32,
+)
+
 STYLE_PROFILES = {
-    "universal": {"max_chroma": 90.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.08, "blur": 0.7},
-    "forest": {"max_chroma": 85.0, "dark_floor": 60.0, "dark_weight": 0.18, "detail": 0.10, "blur": 0.6},
-    "mountain": {"max_chroma": 80.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.07, "blur": 0.8},
-    "desert": {"max_chroma": 75.0, "dark_floor": 75.0, "dark_weight": 0.08, "detail": 0.06, "blur": 0.9},
-    "urban": {"max_chroma": 70.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.09, "blur": 0.7},
-    "other": {"max_chroma": 95.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.08, "blur": 0.7},
+    # Muted, matte colors inspired by olive, stone, sand, and concrete tones.
+    "universal": {"max_chroma": 70.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.16, "blur": 0.7},
+    "forest": {"max_chroma": 65.0, "dark_floor": 60.0, "dark_weight": 0.18, "detail": 0.18, "blur": 0.6},
+    "mountain": {"max_chroma": 60.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.15, "blur": 0.8},
+    "desert": {"max_chroma": 55.0, "dark_floor": 75.0, "dark_weight": 0.08, "detail": 0.14, "blur": 0.9},
+    "urban": {"max_chroma": 50.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.16, "blur": 0.7},
+    "other": {"max_chroma": 65.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.16, "blur": 0.7},
 }
 
 
@@ -222,6 +236,21 @@ def naturalize_palette(
     return np.clip(adjusted, 0, 255)
 
 
+def apply_fosco_tones(palette: np.ndarray, strength: float = 0.28) -> np.ndarray:
+    """Gently pull generated colors toward matte Fosco-style tone families."""
+    adjusted = palette.astype(np.float32).copy()
+    distances = ((adjusted[:, None, :] - FOSCO_MATTE_TONES[None, :, :]) ** 2).sum(axis=2)
+    nearest = FOSCO_MATTE_TONES[distances.argmin(axis=1)]
+    adjusted = (1.0 - strength) * adjusted + strength * nearest
+    # Fosco camouflage paints are matte field colors; suppress near-white
+    # source artifacts from sky and concrete instead of carrying them into the
+    # printable palette.
+    luminance = 0.2126 * adjusted[:, 0] + 0.7152 * adjusted[:, 1] + 0.0722 * adjusted[:, 2]
+    too_light = luminance > 185.0
+    adjusted[too_light] = 0.40 * adjusted[too_light] + 0.60 * FOSCO_MATTE_TONES[3]
+    return np.clip(adjusted, 0, 255)
+
+
 def rebalance_dark_weights(
     palette: np.ndarray,
     weights: np.ndarray,
@@ -245,6 +274,59 @@ def rebalance_dark_weights(
     return adjusted / adjusted.sum()
 
 
+def forest_green_reference(images: list[ImageStats]) -> np.ndarray | None:
+    """Find a muted green reference color from forest images."""
+    forest_pixels = [image.pixels for image in images if image.group == "forest"]
+    if not forest_pixels:
+        return None
+    pixels = np.concatenate(forest_pixels, axis=0)
+    luminance = 0.2126 * pixels[:, 0] + 0.7152 * pixels[:, 1] + 0.0722 * pixels[:, 2]
+    green_score = pixels[:, 1] - (pixels[:, 0] + pixels[:, 2]) / 2
+    candidates = pixels[(green_score > np.percentile(green_score, 70)) & (luminance > 35)]
+    if len(candidates) == 0:
+        return pixels[np.argmax(green_score)]
+    reference = np.median(candidates, axis=0)
+    # Keep the green matte and natural, while preventing it from collapsing into
+    # a brown gray when the forest photographs are dominated by dry vegetation.
+    matte_olive = np.array([76.0, 96.0, 44.0], dtype=np.float32)
+    return 0.60 * reference + 0.40 * matte_olive
+
+
+def build_palette(
+    images: list[ImageStats],
+    colors: int,
+    seed: int,
+    profile: dict[str, float],
+    reserve_forest_green: bool = False,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Build a matte palette, optionally reserving a forest-green slot."""
+    all_pixels = (
+        balanced_group_pixels(images, seed)
+        if reserve_forest_green
+        else np.concatenate([image.pixels for image in images], axis=0)
+    )
+    green = forest_green_reference(images) if reserve_forest_green and colors >= 3 else None
+    base_colors = colors - 1 if green is not None else colors
+    palette, weights = kmeans_palette(all_pixels, base_colors, seed)
+    palette = naturalize_palette(
+        palette,
+        max_chroma=profile["max_chroma"],
+        dark_floor=profile["dark_floor"],
+    )
+    palette = apply_fosco_tones(palette)
+    if green is not None:
+        green_palette = naturalize_palette(
+            green[None, :],
+            max_chroma=min(profile["max_chroma"], 65.0),
+            dark_floor=profile["dark_floor"],
+        )
+        green_palette = apply_fosco_tones(green_palette, strength=0.22)
+        palette = np.vstack([green_palette, palette])
+        weights = np.concatenate(([0.28], weights * 0.72))
+    weights = rebalance_dark_weights(palette, weights, profile["dark_weight"])
+    return palette, weights
+
+
 def make_pattern(
     palette: np.ndarray,
     weights: np.ndarray,
@@ -253,35 +335,30 @@ def make_pattern(
     detail_weight: float = 0.08,
     blur_radius: float = 0.7,
 ) -> np.ndarray:
-    """Generate irregular shapes at four spatial scales.
+    """Generate adjacent, irregular color regions at four spatial scales.
 
-    The previous version added pixel-level noise, which produced a grainy image.
-    This version adds controlled fine structure without returning to pixel-level
-    noise. A tiny blur gives the boundaries a less artificial edge.
+    Each palette color gets a competing smooth noise field. Choosing the winning
+    field creates shared boundaries between colors instead of making every color
+    appear as an isolated island inside one dominant background.
     """
     rng = np.random.default_rng(seed)
-    fields = []
-    # More control cells create a denser pattern while keeping shapes readable.
-    for cells in (6, 12, 24, 48):
-        small = rng.random((cells, cells)).astype(np.float32)
-        field = np.asarray(
-            Image.fromarray((small * 255).astype(np.uint8), mode="L")
-            .resize((size, size), Image.Resampling.BICUBIC),
-            dtype=np.float32,
-        ) / 255
-        fields.append(field)
-    scale_weights = np.array([0.50, 0.27, 0.15, detail_weight], dtype=np.float32)
+    scale_weights = np.array([0.22, 0.30, 0.30, detail_weight], dtype=np.float32)
     scale_weights /= scale_weights.sum()
-    field = sum(weight * field for weight, field in zip(scale_weights, fields))
-    low_frequency_jitter = rng.random((12, 12)).astype(np.float32)
-    low_frequency_jitter = np.asarray(
-        Image.fromarray((low_frequency_jitter * 255).astype(np.uint8), mode="L")
-        .resize((size, size), Image.Resampling.BICUBIC),
-        dtype=np.float32,
-    ) / 255
-    field = np.clip(0.95 * field + 0.05 * low_frequency_jitter, 0, 0.999999)
-    thresholds = np.cumsum(weights)
-    labels = np.searchsorted(thresholds, field)
+    scores = np.empty((len(palette), size, size), dtype=np.float32)
+    for color_index in range(len(palette)):
+        field = np.zeros((size, size), dtype=np.float32)
+        for cells, weight in zip((8, 16, 32, 64), scale_weights):
+            small = rng.random((cells, cells)).astype(np.float32)
+            smooth = np.asarray(
+                Image.fromarray((small * 255).astype(np.uint8), mode="L")
+                .resize((size, size), Image.Resampling.BICUBIC),
+                dtype=np.float32,
+            ) / 255
+            field += weight * smooth
+        # A mild prior follows the measured palette proportions without making
+        # the most common color an all-purpose background.
+        scores[color_index] = field + 0.20 * np.log(max(float(weights[color_index]), 1e-6))
+    labels = scores.argmax(axis=0)
     pattern = np.clip(palette[labels], 0, 255).astype(np.uint8)
     softened = Image.fromarray(pattern, mode="RGB").filter(
         ImageFilter.GaussianBlur(radius=blur_radius)
@@ -390,18 +467,13 @@ def run_group(
     output_dir.mkdir(parents=True, exist_ok=True)
     profile = STYLE_PROFILES.get(output_dir.name, STYLE_PROFILES["other"])
     balanced = output_dir.name == "universal"
-    all_pixels = (
-        balanced_group_pixels(images, args.seed)
-        if balanced
-        else np.concatenate([image.pixels for image in images], axis=0)
+    palette, weights = build_palette(
+        images,
+        args.colors,
+        args.seed,
+        profile,
+        reserve_forest_green=balanced,
     )
-    palette, weights = kmeans_palette(all_pixels, args.colors, args.seed)
-    palette = naturalize_palette(
-        palette,
-        max_chroma=profile["max_chroma"],
-        dark_floor=profile["dark_floor"],
-    )
-    weights = rebalance_dark_weights(palette, weights, profile["dark_weight"])
     target_rgb, target_luminance, target_texture = (
         balanced_group_target(images) if balanced else mean_target(images)
     )
@@ -433,7 +505,7 @@ def run_group(
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
-        "version": "phase_10_balanced_universal",
+        "version": "phase_14_fosco_tones_adjacent_regions",
         "style_profile": profile,
         "weighting": "equal_environment_groups" if balanced else "pixel_weighted",
         "group_pixel_counts": {
