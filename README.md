@@ -27,6 +27,11 @@ photos/
 ├── snow/
 └── other/
 
+evaluation/
+├── backgrounds/              # balanced online/local photos grouped by environment
+├── sources.json               # download and license metadata for starter images
+└── SOURCES.md
+
 output/
 ├── universal/
 ├── forest/
@@ -43,6 +48,7 @@ output/
 ├── validation_report.json
 ├── validation_report.md
 ├── summary_grid.json
+├── evaluation/                # background composites, metrics, and human-test scenes
 └── segmentation_masks/       # created only when semantic segmentation is used
 ```
 
@@ -181,6 +187,70 @@ python generate_outfit_mockups.py --groups universal,forest,taiga,tundra,urban
 The folder also contains the AI-generated neutral uniform reference image used
 for the garment mask and shading. The actual mockups use the project's PNG
 patterns procedurally so their colors are not altered by image generation.
+
+## Scene evaluation and human recognition tests
+
+The project can place the realistic uniform mockup over environmental
+photographs and estimate local figure/background contrast. This creates a
+repeatable way to compare patterns on the same scenes before moving to a
+larger neural model or a physical test. The evaluation is deliberately kept
+separate from pattern generation.
+
+Download a balanced starter corpus and record its source metadata:
+
+```bash
+python download_evaluation_backgrounds.py
+```
+
+The downloader targets ten photographs per environment: forest, desert,
+mountain, urban, jungle, snow, taiga, and tundra. It searches Wikimedia
+Commons, filters obvious artwork terms, downloads resized files, and records
+the source page, author, and license. You can add your own JPG, JPEG, PNG, or
+WEBP images to the corresponding folders. For a serious study, local
+photographs from the intended operating area are more valuable than generic
+online images.
+
+The downloaded corpus can also be used as a balanced reference set for a new
+generation run, without mixing it into the existing `photos/` collection:
+
+```bash
+python camo.py --input evaluation/backgrounds --output output/online_corpus --mode optimized
+```
+
+This is still statistical reference extraction, not neural-network training.
+For a fair evaluation, reserve some images as a held-out test set instead of
+using every image both to generate and to score the pattern.
+
+Run the evaluator with Universal plus every available environment-specific
+pattern. For each background environment it compares the matching specific
+pattern against Universal on the same scenes:
+
+```bash
+python evaluate_camo.py --limit 10 --sizes 0.70,0.85
+```
+
+To control the two selections independently:
+
+```bash
+python evaluate_camo.py \
+  --patterns universal,forest,desert,mountain,urban,jungle,snow \
+  --background-groups forest,desert,mountain,urban,jungle,snow \
+  --limit 10
+```
+
+The evaluator writes labeled diagnostic scenes, contact sheets, an
+`evaluation_report.json`, and an `evaluation_report.md` under
+`output/evaluation/`. The report includes a `pairwise_comparison` section that
+marks the lower-scoring choice for each environment. Lower `visibility_score`
+means lower local contrast in the current proxy metric. The anonymous images in `output/evaluation/human_test/`
+are intended for a blinded recognition test at several exposure times, for
+example 100 ms, 250 ms, and 500 ms. Record whether the observer detected a
+person and the response time; do not use the JSON mapping during the test.
+
+This is not a validated measure of real-world concealment. It does not model
+movement, depth, shadows, lighting changes, material reflectance, or a trained
+observer. It is a controlled comparison tool that helps decide which patterns
+deserve more demanding tests.
 
 Each generated group contains:
 
