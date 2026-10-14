@@ -18,33 +18,27 @@ DEFAULT_GROUPS = ("universal", "desert", "mountain", "snow", "jungle")
 CANVAS_SIZE = (600, 900)
 
 
-def clothing_masks(size: tuple[int, int]) -> tuple[Image.Image, Image.Image, Image.Image]:
-    shirt = Image.new("L", size, 0)
-    trousers = Image.new("L", size, 0)
-    boots = Image.new("L", size, 0)
-    shirt_draw = ImageDraw.Draw(shirt)
-    trouser_draw = ImageDraw.Draw(trousers)
-    boot_draw = ImageDraw.Draw(boots)
+def broad_uniform_region(size: tuple[int, int]) -> Image.Image:
+    """Limit background removal to the expected uniform area."""
+    mask = Image.new("L", size, 0)
+    draw = ImageDraw.Draw(mask)
+    draw.polygon([(210, 55), (390, 55), (500, 190), (445, 470), (425, 780),
+                  (485, 870), (120, 870), (175, 780), (155, 470), (100, 190)], fill=255)
+    return mask
 
-    # Proportional headless combat shirt: a short neck, broad shoulders,
-    # tapered sleeves, and a separate torso rather than one trapezoid.
-    shirt_draw.polygon([(214, 166), (386, 166), (445, 220), (418, 470), (182, 470), (155, 220)], fill=255)
-    shirt_draw.polygon([(214, 176), (158, 204), (88, 400), (122, 432), (205, 310)], fill=255)
-    shirt_draw.polygon([(386, 176), (442, 204), (512, 400), (478, 432), (395, 310)], fill=255)
-    # A short upright collar is more natural than a circular mannequin neck.
-    shirt_draw.polygon([(273, 128), (327, 128), (335, 180), (265, 180)], fill=255)
 
-    # Cargo trousers with a natural hip width and separated, tapered legs.
-    trouser_draw.polygon([(182, 440), (418, 440), (430, 545), (380, 595), (220, 595), (170, 545)], fill=255)
-    trouser_draw.polygon([(188, 535), (292, 535), (280, 785), (178, 785)], fill=255)
-    trouser_draw.polygon([(308, 535), (412, 535), (422, 785), (320, 785)], fill=255)
-    trouser_draw.polygon([(170, 566), (246, 566), (246, 695), (176, 695)], fill=255)
-    trouser_draw.polygon([(354, 566), (430, 566), (424, 695), (354, 695)], fill=255)
-
-    # Separate boots with a visible ankle and broad sole.
-    boot_draw.polygon([(178, 755), (280, 755), (288, 826), (314, 860), (300, 884), (126, 884), (118, 858)], fill=255)
-    boot_draw.polygon([(320, 755), (422, 755), (482, 858), (474, 884), (300, 884), (286, 860)], fill=255)
-    return shirt, trousers, boots
+def template_garment_mask(template: Image.Image) -> Image.Image:
+    """Extract the gray uniform from the generated neutral studio background."""
+    image = np.asarray(template.convert("RGB"), dtype=np.float32)
+    background = image[2, 2]
+    difference = np.abs(image - background[None, None, :]).mean(axis=2)
+    broad = np.asarray(broad_uniform_region(template.size), dtype=np.uint8) > 0
+    # The uniform is darker and more textured than the flat gray background.
+    mask = broad & (difference > 5.0)
+    mask_image = Image.fromarray((mask * 255).astype(np.uint8), mode="L")
+    # Close small holes caused by bright fabric highlights while keeping the
+    # separate arm, leg, and boot contours from the reference photograph.
+    return mask_image.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.MinFilter(7))
 
 
 def texture_for(pattern_path: Path, size: tuple[int, int]) -> Image.Image:
@@ -55,44 +49,26 @@ def texture_for(pattern_path: Path, size: tuple[int, int]) -> Image.Image:
     return ImageOps.fit(pattern, size, Image.Resampling.LANCZOS, centering=(0.5, 0.52))
 
 
-def render_outfit(pattern_path: Path, group: str, destination: Path) -> None:
+def render_outfit(pattern_path: Path, template_path: Path, group: str, destination: Path) -> None:
     size = CANVAS_SIZE
-    canvas = Image.new("RGB", size, "#ecebe5")
-    shirt_mask, trouser_mask, boot_mask = clothing_masks(size)
+    with Image.open(template_path) as source:
+        canvas = ImageOps.fit(source.convert("RGB"), size, Image.Resampling.LANCZOS)
+    garment_mask = template_garment_mask(canvas)
     texture = texture_for(pattern_path, size)
-
-    # A restrained shadow gives the flat mockup enough separation from the page.
-    all_mask = Image.fromarray(np.maximum.reduce([
-        np.asarray(shirt_mask), np.asarray(trouser_mask), np.asarray(boot_mask)
-    ]).astype(np.uint8), mode="L")
-    shadow = all_mask.filter(ImageFilter.GaussianBlur(14))
-    shadow_layer = Image.new("RGB", size, "#9c9b95")
-    canvas.paste(shadow_layer, (0, 12), shadow.point(lambda value: int(value * 0.22)))
 
     # Add restrained volume shading while preserving the exact source palette.
     yy, xx = np.mgrid[0:size[1], 0:size[0]]
-    light = 0.86 + 0.14 * (1.0 - np.abs(xx - size[0] / 2) / (size[0] / 2))
+    template_gray = np.asarray(canvas.convert("L"), dtype=np.float32)
+    fabric_gray = np.clip((template_gray - 55.0) / 150.0, 0.0, 1.0)
+    light = 0.72 + 0.38 * fabric_gray
+    light *= 0.92 + 0.08 * (1.0 - np.abs(xx - size[0] / 2) / (size[0] / 2))
     shaded_array = np.clip(np.asarray(texture, dtype=np.float32) * light[..., None], 0, 255).astype(np.uint8)
     shaded_texture = Image.fromarray(shaded_array, mode="RGB")
-    canvas.paste(shaded_texture, (0, 0), shirt_mask)
-    canvas.paste(shaded_texture, (0, 0), trouser_mask)
-    canvas.paste(shaded_texture, (0, 0), boot_mask)
-
+    canvas.paste(shaded_texture, (0, 0), garment_mask)
     draw = ImageDraw.Draw(canvas)
-    outline = "#252821"
-    seam = "#55574d"
-    draw.line([(214, 166), (386, 166), (445, 220), (418, 470), (182, 470), (155, 220), (214, 166)], fill=outline, width=4, joint="curve")
-    draw.line([(182, 440), (418, 440), (430, 545), (380, 595), (220, 595), (170, 545), (182, 440)], fill=outline, width=4, joint="curve")
-    draw.line([(188, 535), (292, 535), (280, 785)], fill=seam, width=3)
-    draw.line([(308, 535), (412, 535), (422, 785)], fill=seam, width=3)
-    draw.line([(170, 566), (246, 566), (246, 695), (176, 695)], fill=seam, width=3)
-    draw.line([(354, 566), (430, 566), (424, 695), (354, 695)], fill=seam, width=3)
-    draw.line([(300, 184), (300, 440)], fill=seam, width=3)
-    draw.line([(157, 205), (122, 432)], fill=seam, width=3)
-    draw.line([(443, 205), (478, 432)], fill=seam, width=3)
-    draw.line([(273, 128), (265, 180), (300, 198), (335, 180), (327, 128)], fill=seam, width=3, joint="curve")
-    draw.text((18, 18), f"{group.title()} outfit mockup", fill="#20231e")
-    draw.text((18, 52), "Headless visual comparison — not a manufacturing template", fill="#55574d")
+    draw.rectangle((14, 14, 270, 57), fill=(236, 235, 229))
+    draw.text((22, 20), f"{group.title()} outfit mockup", fill="#20231e")
+    draw.text((22, 39), "Headless product visualization", fill="#55574d")
     destination.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(destination)
 
@@ -114,12 +90,20 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--input", default="output")
     parser.add_argument("--output", default="output/outfit_mockups")
     parser.add_argument("--groups", default=",".join(DEFAULT_GROUPS))
+    parser.add_argument(
+        "--template",
+        default="output/outfit_mockups/outfit_template_reference.png",
+        help="Realistic neutral uniform reference used for shape and shading",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     output_dir = Path(args.output)
+    template_path = Path(args.template)
+    if not template_path.exists():
+        raise SystemExit(f"Template image not found: {template_path}")
     rendered: list[tuple[str, Path]] = []
     for group in dict.fromkeys(item.strip().lower() for item in args.groups.split(",") if item.strip()):
         pattern_path = Path(args.input) / group / "best_pattern.png"
@@ -127,7 +111,7 @@ def main() -> None:
             print(f"Skipping {group}: {pattern_path} not found")
             continue
         destination = output_dir / f"{group}_outfit.png"
-        render_outfit(pattern_path, group, destination)
+        render_outfit(pattern_path, template_path, group, destination)
         rendered.append((group, destination))
     if not rendered:
         raise SystemExit("No generated pattern images were found.")

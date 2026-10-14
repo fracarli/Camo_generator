@@ -159,9 +159,12 @@ measurement of real-world concealment.
 
 ## Outfit mockups
 
-Generate simple headless full-uniform visualizations from the exact generated
-patterns. Each mockup contains a combat shirt, cargo trousers, and combat boots.
-The result is a visual comparison aid, not a manufacturing template.
+Generate realistic headless full-uniform visualizations from the exact generated
+patterns. Each mockup uses a neutral product-photography reference with a
+combat shirt, cargo trousers, and combat boots. The pattern is composited over
+the extracted garment surface while preserving folds, seams, pockets, and
+volume shading. The result is a visual comparison aid, not a manufacturing
+template.
 
 ```bash
 python generate_outfit_mockups.py
@@ -175,9 +178,9 @@ selected explicitly:
 python generate_outfit_mockups.py --groups universal,forest,taiga,tundra,urban
 ```
 
-The folder also contains an AI-generated neutral uniform reference image. The
-actual mockups use the project's PNG patterns procedurally so their colors are
-not altered by image generation.
+The folder also contains the AI-generated neutral uniform reference image used
+for the garment mask and shading. The actual mockups use the project's PNG
+patterns procedurally so their colors are not altered by image generation.
 
 Each generated group contains:
 
