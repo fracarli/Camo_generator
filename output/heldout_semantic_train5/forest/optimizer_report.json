@@ -1,0 +1,132 @@
+{
+  "group": "forest",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg"
+  ],
+  "candidate_count": 12,
+  "beam_size": 4,
+  "best_candidate": "candidate_010",
+  "optimized_score": 0.045300485314219256,
+  "baseline_score": 0.06710436215158552,
+  "improvement": 0.021803876837366266,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.837011775563779,
+    "blob_weight": 0.37872262670003926,
+    "blob_aspect": 0.732279699407369,
+    "detail_weight": 0.19874223476980407,
+    "blur_radius": 0.6776329388388264,
+    "seed": 53,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        85,
+        111,
+        52
+      ],
+      "weight": 0.5447567105293274
+    },
+    {
+      "rgb": [
+        56,
+        59,
+        55
+      ],
+      "weight": 0.09242721647024155
+    },
+    {
+      "rgb": [
+        56,
+        55,
+        55
+      ],
+      "weight": 0.08757279068231583
+    },
+    {
+      "rgb": [
+        142,
+        155,
+        99
+      ],
+      "weight": 0.19301658868789673
+    },
+    {
+      "rgb": [
+        181,
+        175,
+        131
+      ],
+      "weight": 0.08222677558660507
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.025666505377739665,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_003",
+        "candidate_006",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.051744639920070765,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_003",
+        "candidate_006",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.042497502056842974,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_003",
+        "candidate_006",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.05237507701895083,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_003",
+        "candidate_006",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.045300485314219256,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_003",
+        "candidate_006",
+        "current_best"
+      ]
+    }
+  ]
+}

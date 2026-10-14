@@ -1,0 +1,137 @@
+{
+  "group": "desert",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+    "evaluation/backgrounds/desert/02_A_Desert_Landscape_53437341027_.jpg",
+    "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+    "evaluation/backgrounds/desert/03_Atacama_Desert_Landscape_-_panoramio.jpg"
+  ],
+  "candidate_count": 12,
+  "beam_size": 4,
+  "best_candidate": "candidate_005",
+  "optimized_score": 0.17850590971298516,
+  "baseline_score": 0.20973468322306874,
+  "improvement": 0.031228773510083574,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 1.4219402546843403,
+    "blob_weight": 0.41576597868205717,
+    "blob_aspect": 1.0649191694902163,
+    "detail_weight": 0.16833557027586904,
+    "blur_radius": 1.0992118691778012,
+    "seed": 48,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        116,
+        83,
+        67
+      ],
+      "weight": 0.3511381447315216
+    },
+    {
+      "rgb": [
+        167,
+        142,
+        112
+      ],
+      "weight": 0.2105642557144165
+    },
+    {
+      "rgb": [
+        175,
+        160,
+        121
+      ],
+      "weight": 0.08829405158758163
+    },
+    {
+      "rgb": [
+        70,
+        75,
+        52
+      ],
+      "weight": 0.183867409825325
+    },
+    {
+      "rgb": [
+        179,
+        160,
+        124
+      ],
+      "weight": 0.16613614559173584
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_005",
+      "best_running_score": 0.2229548222385347,
+      "active_candidates": [
+        "candidate_005",
+        "candidate_000",
+        "candidate_006",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_005",
+      "best_running_score": 0.20239758039824662,
+      "active_candidates": [
+        "candidate_005",
+        "candidate_000",
+        "candidate_006",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/02_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_005",
+      "best_running_score": 0.18044344078128535,
+      "active_candidates": [
+        "candidate_005",
+        "candidate_000",
+        "candidate_006",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_005",
+      "best_running_score": 0.1807938373531215,
+      "active_candidates": [
+        "candidate_005",
+        "candidate_000",
+        "candidate_006",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/03_Atacama_Desert_Landscape_-_panoramio.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_005",
+      "best_running_score": 0.17850590971298516,
+      "active_candidates": [
+        "candidate_005",
+        "candidate_000",
+        "candidate_006",
+        "candidate_002",
+        "current_best"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "group": "forest",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg"
+  ],
+  "candidate_count": 12,
+  "beam_size": 4,
+  "best_candidate": "candidate_003",
+  "optimized_score": 0.03680160763091408,
+  "baseline_score": 0.06710436215158552,
+  "improvement": 0.030302754520671445,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 0.5957797279122793,
+    "blob_weight": 0.45886609368639025,
+    "blob_aspect": 0.7746098508916228,
+    "detail_weight": 0.20274541263017323,
+    "blur_radius": 0.5511018488743311,
+    "seed": 46,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        72,
+        85,
+        42
+      ],
+      "weight": 0.29682573676109314
+    },
+    {
+      "rgb": [
+        89,
+        102,
+        57
+      ],
+      "weight": 0.4322141706943512
+    },
+    {
+      "rgb": [
+        56,
+        59,
+        53
+      ],
+      "weight": 0.18000000715255737
+    },
+    {
+      "rgb": [
+        167,
+        165,
+        109
+      ],
+      "weight": 0.047379978001117706
+    },
+    {
+      "rgb": [
+        167,
+        159,
+        131
+      ],
+      "weight": 0.04358014464378357
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.005864745247527026,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_006",
+        "candidate_010",
+        "candidate_008",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.030880486265232317,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_010",
+        "candidate_006",
+        "candidate_008",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.02417874516201361,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_010",
+        "candidate_006",
+        "candidate_008",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.043006737669202266,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_006",
+        "candidate_010",
+        "candidate_008",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.03680160763091408,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_006",
+        "candidate_010",
+        "candidate_008",
+        "current_best"
+      ]
+    }
+  ]
+}

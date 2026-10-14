@@ -1,0 +1,132 @@
+{
+  "group": "jungle",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+    "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+    "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg",
+    "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg"
+  ],
+  "candidate_count": 12,
+  "beam_size": 4,
+  "best_candidate": "candidate_010",
+  "optimized_score": 0.05208433239546138,
+  "baseline_score": 0.06636367712984793,
+  "improvement": 0.014279344734386551,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.6465289527466288,
+    "blob_weight": 0.39738729043017906,
+    "blob_aspect": 0.655955521152566,
+    "detail_weight": 0.1762139009859934,
+    "blur_radius": 0.6419663340144192,
+    "seed": 53,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        52,
+        58,
+        51
+      ],
+      "weight": 0.048919837921857834
+    },
+    {
+      "rgb": [
+        54,
+        57,
+        53
+      ],
+      "weight": 0.11108016222715378
+    },
+    {
+      "rgb": [
+        86,
+        97,
+        56
+      ],
+      "weight": 0.6235578060150146
+    },
+    {
+      "rgb": [
+        138,
+        156,
+        102
+      ],
+      "weight": 0.16026319563388824
+    },
+    {
+      "rgb": [
+        171,
+        160,
+        122
+      ],
+      "weight": 0.05617902800440788
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.041107610159087926,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_006",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.054809838690562176,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_006",
+        "current_best",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.06181820965527246,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_006",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.0504719827149529,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_006",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.05208433239546138,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_006",
+        "candidate_003",
+        "current_best"
+      ]
+    }
+  ]
+}

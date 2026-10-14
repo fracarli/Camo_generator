@@ -1,0 +1,85 @@
+{
+  "group": "tundra",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+    "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+    "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+    "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg",
+    "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg"
+  ],
+  "candidate_count": 12,
+  "beam_size": 4,
+  "best_candidate": "current_best",
+  "optimized_score": 0.04771178072376642,
+  "baseline_score": 0.04771178072376642,
+  "improvement": 0.0,
+  "best_configuration": {
+    "source": "current_best"
+  },
+  "best_palette": null,
+  "history": [
+    {
+      "background": "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_005",
+      "best_running_score": 0.031109985554940066,
+      "active_candidates": [
+        "candidate_005",
+        "candidate_001",
+        "candidate_004",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_004",
+      "best_running_score": 0.027822695759823546,
+      "active_candidates": [
+        "candidate_004",
+        "candidate_001",
+        "candidate_005",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_004",
+      "best_running_score": 0.04299637351262694,
+      "active_candidates": [
+        "candidate_004",
+        "candidate_002",
+        "current_best",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "current_best",
+      "best_running_score": 0.041822618236619744,
+      "active_candidates": [
+        "current_best",
+        "candidate_002",
+        "candidate_004",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "current_best",
+      "best_running_score": 0.04771178072376642,
+      "active_candidates": [
+        "current_best",
+        "candidate_002",
+        "candidate_004",
+        "candidate_001"
+      ]
+    }
+  ]
+}

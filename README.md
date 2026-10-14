@@ -317,6 +317,37 @@ median score for each environment and the percentage change relative to the
 baseline. A lower score is better only within this project's diagnostic; the
 result must still be checked on held-out scenes and with the human test.
 
+### Current benchmark snapshot
+
+The current controlled benchmark shows that semantic masks improve the
+internal score for Universal, jungle, mountain, taiga, tundra, and urban:
+
+| Environment | Change with semantic masks |
+|---|---:|
+| Universal | +7.38% |
+| Tundra | +6.53% |
+| Taiga | +6.11% |
+| Urban | +5.97% |
+| Mountain | +1.80% |
+| Jungle | +1.44% |
+| Forest | -1.69% |
+| Desert | -0.70% |
+| Snow | -2.69% |
+
+Positive values indicate a lower diagnostic score with semantic masks. This is
+an encouraging signal for the mixed Universal pattern, but it is not yet proof
+of better concealment. The full result is stored in
+`output/benchmark/segmentation_comparison.md` and should be regenerated after
+changing the input photographs or model settings.
+
+The first held-out comparison is available in
+[output/heldout_comparison.md](output/heldout_comparison.md). It optimizes on
+five backgrounds and evaluates on five reserved backgrounds. In this split,
+the semantic masks improved the matching environment-specific patterns by a
+small amount, while Universal remained slightly better with the baseline. This
+means SegFormer is promising but should not yet be forced globally for every
+environment.
+
 The benchmark score is an internal diagnostic for color, luminance, texture,
 and shape structure. It is useful for comparing code changes, but it is not a
 measurement of real-world concealment.

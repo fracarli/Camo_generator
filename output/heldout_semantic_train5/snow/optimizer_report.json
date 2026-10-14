@@ -1,0 +1,135 @@
+{
+  "group": "snow",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+    "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+    "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+    "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+    "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg"
+  ],
+  "candidate_count": 12,
+  "beam_size": 4,
+  "best_candidate": "candidate_008",
+  "optimized_score": 0.09064019855577499,
+  "baseline_score": 0.10654713006922975,
+  "improvement": 0.015906931513454764,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 1.4249216447109643,
+    "blob_weight": 0.36574617926646,
+    "blob_aspect": 0.9391138028316981,
+    "detail_weight": 0.13837444319393302,
+    "blur_radius": 0.7977353202844618,
+    "seed": 51,
+    "palette_jitter": 5.2,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        184,
+        182,
+        189
+      ],
+      "weight": 0.12176629900932312
+    },
+    {
+      "rgb": [
+        140,
+        143,
+        142
+      ],
+      "weight": 0.3186335861682892
+    },
+    {
+      "rgb": [
+        88,
+        90,
+        86
+      ],
+      "weight": 0.1590053290128708
+    },
+    {
+      "rgb": [
+        88,
+        96,
+        92
+      ],
+      "weight": 0.1840326488018036
+    },
+    {
+      "rgb": [
+        219,
+        231,
+        229
+      ],
+      "weight": 0.2165621519088745
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+      "background_group": "snow",
+      "best_after_background": "candidate_005",
+      "best_running_score": 0.04523633439093828,
+      "active_candidates": [
+        "candidate_005",
+        "candidate_008",
+        "candidate_009",
+        "candidate_007",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_005",
+      "best_running_score": 0.031061978149227794,
+      "active_candidates": [
+        "candidate_005",
+        "candidate_008",
+        "candidate_009",
+        "candidate_007",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_008",
+      "best_running_score": 0.09113104792777449,
+      "active_candidates": [
+        "candidate_008",
+        "candidate_005",
+        "candidate_009",
+        "candidate_007",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_008",
+      "best_running_score": 0.0917825658863876,
+      "active_candidates": [
+        "candidate_008",
+        "candidate_009",
+        "candidate_007",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_008",
+      "best_running_score": 0.09064019855577499,
+      "active_candidates": [
+        "candidate_008",
+        "candidate_009",
+        "candidate_007",
+        "current_best"
+      ]
+    }
+  ]
+}
