@@ -1,0 +1,450 @@
+{
+  "input_images": [
+    "photos/mountain/bellino-paesaggio.jpg [semantic]",
+    "photos/mountain/images-3 copy.jpeg [semantic]",
+    "photos/mountain/images-3.jpeg [semantic]",
+    "photos/mountain/images-4 copy.jpeg [semantic]",
+    "photos/mountain/images-4.jpeg [semantic]",
+    "photos/mountain/images-5 copy 2.jpeg [semantic]",
+    "photos/mountain/images-5 copy.jpeg [semantic]",
+    "photos/mountain/images-5.jpeg [semantic]",
+    "photos/mountain/images-6 copy.jpeg [semantic]",
+    "photos/mountain/images-6.jpeg [semantic]",
+    "photos/mountain/images-7.jpeg [semantic]",
+    "photos/mountain/images-8.jpeg [semantic]",
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]",
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": 0.467616,
+    "photos/mountain/images-3 copy.jpeg [semantic]": 0.5752257244809689,
+    "photos/mountain/images-3.jpeg [semantic]": 0.6099899781341108,
+    "photos/mountain/images-4 copy.jpeg [semantic]": 0.6328803168402778,
+    "photos/mountain/images-4.jpeg [semantic]": 0.5941501193576388,
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": 0.3584500745156483,
+    "photos/mountain/images-5 copy.jpeg [semantic]": 0.5743928447075209,
+    "photos/mountain/images-5.jpeg [semantic]": 0.9318939313139932,
+    "photos/mountain/images-6 copy.jpeg [semantic]": 0.6147104899088541,
+    "photos/mountain/images-6.jpeg [semantic]": 0.5521444281524927,
+    "photos/mountain/images-7.jpeg [semantic]": 0.6319101790935673,
+    "photos/mountain/images-8.jpeg [semantic]": 0.6487621753246753,
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": 0.8168174342105263,
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": 0.9415461753731343
+  },
+  "mask_sources": {
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": "semantic",
+    "photos/mountain/images-3 copy.jpeg [semantic]": "semantic",
+    "photos/mountain/images-3.jpeg [semantic]": "semantic",
+    "photos/mountain/images-4 copy.jpeg [semantic]": "semantic",
+    "photos/mountain/images-4.jpeg [semantic]": "semantic",
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": "semantic",
+    "photos/mountain/images-5 copy.jpeg [semantic]": "semantic",
+    "photos/mountain/images-5.jpeg [semantic]": "semantic",
+    "photos/mountain/images-6 copy.jpeg [semantic]": "semantic",
+    "photos/mountain/images-6.jpeg [semantic]": "semantic",
+    "photos/mountain/images-7.jpeg [semantic]": "semantic",
+    "photos/mountain/images-8.jpeg [semantic]": "semantic",
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": "semantic",
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": "semantic"
+  },
+  "semantic_labels": {
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": [
+      "fence",
+      "mountain",
+      "person",
+      "railing",
+      "rock",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-3 copy.jpeg [semantic]": [
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-3.jpeg [semantic]": [
+      "dirt track",
+      "earth",
+      "fence",
+      "field",
+      "flag",
+      "grass",
+      "hill",
+      "mountain",
+      "path",
+      "pole",
+      "road",
+      "signboard",
+      "sky"
+    ],
+    "photos/mountain/images-4 copy.jpeg [semantic]": [
+      "mountain",
+      "plant",
+      "river",
+      "rock",
+      "sky",
+      "tree",
+      "water",
+      "waterfall"
+    ],
+    "photos/mountain/images-4.jpeg [semantic]": [
+      "mountain",
+      "person",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": [
+      "building",
+      "earth",
+      "field",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-5 copy.jpeg [semantic]": [
+      "grass",
+      "mountain",
+      "path",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-5.jpeg [semantic]": [
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-6 copy.jpeg [semantic]": [
+      "building",
+      "earth",
+      "floor",
+      "house",
+      "mountain",
+      "path",
+      "plant",
+      "rock",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-6.jpeg [semantic]": [
+      "grass",
+      "tree"
+    ],
+    "photos/mountain/images-7.jpeg [semantic]": [
+      "building",
+      "field",
+      "grass",
+      "house",
+      "mountain",
+      "plant",
+      "sky",
+      "tree",
+      "wall",
+      "water"
+    ],
+    "photos/mountain/images-8.jpeg [semantic]": [
+      "field",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": [
+      "animal",
+      "grass",
+      "mountain",
+      "path",
+      "person",
+      "rock",
+      "tree"
+    ],
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": [
+      "field",
+      "grass",
+      "hill",
+      "mountain",
+      "tree"
+    ]
+  },
+  "semantic_excluded_labels": {
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/mountain/images-3 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-4 copy.jpeg [semantic]": [
+      "river",
+      "sky",
+      "water"
+    ],
+    "photos/mountain/images-4.jpeg [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-5 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-5.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-6 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-7.jpeg [semantic]": [
+      "sky",
+      "water"
+    ],
+    "photos/mountain/images-8.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": [
+      "animal",
+      "person"
+    ]
+  },
+  "semantic_excluded_fraction": {
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": 0.52014,
+    "photos/mountain/images-3 copy.jpeg [semantic]": 0.342222642733564,
+    "photos/mountain/images-3.jpeg [semantic]": 0.3552238975947522,
+    "photos/mountain/images-4 copy.jpeg [semantic]": 0.14156087239583334,
+    "photos/mountain/images-4.jpeg [semantic]": 0.2799750434027778,
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": 0.41635370094386487,
+    "photos/mountain/images-5 copy.jpeg [semantic]": 0.32597057799442897,
+    "photos/mountain/images-5.jpeg [semantic]": 0.05948698805460751,
+    "photos/mountain/images-6 copy.jpeg [semantic]": 0.3281809488932292,
+    "photos/mountain/images-7.jpeg [semantic]": 0.07146610014619884,
+    "photos/mountain/images-8.jpeg [semantic]": 0.2681716720779221,
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": 0.017909356725146198
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 16,
+  "best_score": 0.016491880640387535,
+  "score_components": {
+    "rgb_error": 0.002916615456342697,
+    "luminance_error": 0.04297221451997757,
+    "texture_error": 0.02678793855011463,
+    "geometry_penalty": 0.000869468452093918,
+    "directional_bias": 0.010868355651173976,
+    "transition_density": 0.05402605210420842,
+    "fine_edge_density": 0.18716166338582677
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 13,
+      "score": 0.016491880640387535,
+      "score_components": {
+        "rgb_error": 0.002916615456342697,
+        "luminance_error": 0.04297221451997757,
+        "texture_error": 0.02678793855011463,
+        "geometry_penalty": 0.000869468452093918,
+        "directional_bias": 0.010868355651173976,
+        "transition_density": 0.05402605210420842,
+        "fine_edge_density": 0.18716166338582677
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 10,
+      "score": 0.01708778738975525,
+      "score_components": {
+        "rgb_error": 0.0029199905693531036,
+        "luminance_error": 0.04299296438694,
+        "texture_error": 0.026771383360028267,
+        "geometry_penalty": 0.0014639272384679466,
+        "directional_bias": 0.018299090480849333,
+        "transition_density": 0.05530460921843687,
+        "fine_edge_density": 0.19242125984251968
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 3,
+      "score": 0.01732652820646763,
+      "score_components": {
+        "rgb_error": 0.002924584085121751,
+        "luminance_error": 0.04310646653175354,
+        "texture_error": 0.028066597878932953,
+        "geometry_penalty": 0.0013690885476354167,
+        "directional_bias": 0.01711360684544271,
+        "transition_density": 0.05246092184368738,
+        "fine_edge_density": 0.1836552657480315
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 4,
+      "score": 0.017343414947390556,
+      "score_components": {
+        "rgb_error": 0.0029314435087144375,
+        "luminance_error": 0.04357371851801872,
+        "texture_error": 0.029050879180431366,
+        "geometry_penalty": 0.00106221294363257,
+        "directional_bias": 0.013277661795407123,
+        "transition_density": 0.04799599198396794,
+        "fine_edge_density": 0.17024483267716536
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 0,
+      "score": 0.017735304310917854,
+      "score_components": {
+        "rgb_error": 0.0029189905617386103,
+        "luminance_error": 0.04318071901798248,
+        "texture_error": 0.028166284784674644,
+        "geometry_penalty": 0.0017433713953938473,
+        "directional_bias": 0.02179214244242309,
+        "transition_density": 0.051773547094188375,
+        "fine_edge_density": 0.18067175196850394
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 9,
+      "score": 0.017869655042886734,
+      "score_components": {
+        "rgb_error": 0.002902256092056632,
+        "luminance_error": 0.04259621724486351,
+        "texture_error": 0.02506626397371292,
+        "geometry_penalty": 0.0027353054168267376,
+        "directional_bias": 0.03419131771033422,
+        "transition_density": 0.057380761523046095,
+        "fine_edge_density": 0.20214074803149606
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 11,
+      "score": 0.018241291865706444,
+      "score_components": {
+        "rgb_error": 0.0029215840622782707,
+        "luminance_error": 0.04312571883201599,
+        "texture_error": 0.026946285739541054,
+        "geometry_penalty": 0.0025507599710487233,
+        "directional_bias": 0.03188449963810904,
+        "transition_density": 0.05260721442885771,
+        "fine_edge_density": 0.18393208661417323
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 15,
+      "score": 0.01825062930583954,
+      "score_components": {
+        "rgb_error": 0.0029190685600042343,
+        "luminance_error": 0.04289072006940842,
+        "texture_error": 0.02624007873237133,
+        "geometry_penalty": 0.0027731461167178582,
+        "directional_bias": 0.03466432645897323,
+        "transition_density": 0.054805611222444886,
+        "fine_edge_density": 0.191283218503937
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 7,
+      "score": 0.018273375928401947,
+      "score_components": {
+        "rgb_error": 0.0029117250815033913,
+        "luminance_error": 0.04304846376180649,
+        "texture_error": 0.02752181701362133,
+        "geometry_penalty": 0.0024635525141326986,
+        "directional_bias": 0.030794406426658733,
+        "transition_density": 0.05388376753507014,
+        "fine_edge_density": 0.18399360236220472
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 12,
+      "score": 0.01862289570271969,
+      "score_components": {
+        "rgb_error": 0.0029272872488945723,
+        "luminance_error": 0.04322821646928787,
+        "texture_error": 0.027487657964229584,
+        "geometry_penalty": 0.0027811337360483276,
+        "directional_bias": 0.03476417170060409,
+        "transition_density": 0.05009418837675351,
+        "fine_edge_density": 0.17854945866141733
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "semantic",
+  "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "generation_mode": "standard",
+  "density": "low",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 60.0,
+    "dark_floor": 68.0,
+    "dark_weight": 0.14,
+    "detail": 0.15,
+    "blur": 0.8,
+    "blob_scale": 1.12,
+    "blob_weight": 0.34,
+    "blob_aspect": 1.05
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "mountain": 278039
+  },
+  "dark_palette_weight": 0.14000000059604645,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        80,
+        89,
+        51
+      ],
+      "weight": 0.32011666893959045
+    },
+    {
+      "rgb": [
+        136,
+        133,
+        86
+      ],
+      "weight": 0.30121999979019165
+    },
+    {
+      "rgb": [
+        54,
+        57,
+        50
+      ],
+      "weight": 0.14000000059604645
+    },
+    {
+      "rgb": [
+        161,
+        157,
+        125
+      ],
+      "weight": 0.17152482271194458
+    },
+    {
+      "rgb": [
+        177,
+        162,
+        135
+      ],
+      "weight": 0.06713851541280746
+    }
+  ]
+}

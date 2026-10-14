@@ -259,6 +259,18 @@ The default model is `nvidia/segformer-b0-finetuned-ade-512-512`. Its weights ar
 
 The ML environment includes both `torch` and `torchvision`; they must be installed as a compatible pair because Transformers uses `torchvision` for the SegFormer image processor. A Hugging Face token is optional for this public model; the unauthenticated warning only indicates lower download limits.
 
+Check the optional environment before starting a semantic run:
+
+```bash
+python scripts/check_ml_environment.py
+```
+
+If the check fails, repair the environment with a longer download timeout:
+
+```bash
+python -m pip install --timeout 600 --retries 10 -r requirements-ml.txt
+```
+
 The neural stage improves input selection; it does not generate the camouflage pattern itself and it is not a guarantee of real-world concealment. Validate the masks visually before relying on them for new image types.
 
 Increase the search effort while keeping the industrial five-color limit:
@@ -291,6 +303,19 @@ For a faster smoke test:
 ```bash
 python benchmark.py --densities standard --colors 5 --candidates 4 --clean
 ```
+
+To directly measure whether semantic segmentation improves the generator,
+run the same controlled configurations with and without the neural masks:
+
+```bash
+python benchmark.py --segmentation both --device cpu --clean
+python scripts/summarize_segmentation_benchmark.py
+```
+
+This produces `output/benchmark/segmentation_comparison.md`, showing the
+median score for each environment and the percentage change relative to the
+baseline. A lower score is better only within this project's diagnostic; the
+result must still be checked on held-out scenes and with the human test.
 
 The benchmark score is an internal diagnostic for color, luminance, texture,
 and shape structure. It is useful for comparing code changes, but it is not a
@@ -544,6 +569,20 @@ python camo.py --summary-groups universal,desert,mountain,snow,jungle
 The selected groups are recorded in `summary_grid.json`.
 
 The output root also contains `validation_report.json` and `validation_report.md`. These measure the rendered PNGs after blur, including actual palette coverage, maximum color share, color entropy, mean luminance, edge density, horizontal/vertical edge balance, directional bias, transition density, fine-edge density, and the candidate score. They are intended to guide later improvements and are not a measure of real-world concealment.
+
+## GitHub discoverability
+
+The repository is intended to be understandable from its landing page. The
+recommended GitHub repository description is:
+
+> Explainable camouflage pattern generation from landscape images, with procedural optimization, semantic segmentation, environmental validation, and human recognition testing.
+
+Useful repository topics are `python`, `machine-learning`,
+`computer-vision`, `image-processing`, `camouflage`,
+`procedural-generation`, and `semantic-segmentation`. Add them in the
+repository's GitHub **About** settings so the project can be found through
+topic searches. The [LICENSE](LICENSE), [README](README.md), automated tests,
+and visual results make the project easier to evaluate from a fresh clone.
 
 ## Masks
 

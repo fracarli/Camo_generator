@@ -1,0 +1,255 @@
+{
+  "input_images": [
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
+    "photos/desert/images-3 copy 2.jpeg [automatic]",
+    "photos/desert/images-3.jpeg [automatic]",
+    "photos/desert/images-4 copy.jpeg [automatic]",
+    "photos/desert/images-5 copy.jpeg [automatic]",
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
+    "photos/desert/images-3 copy 2.jpeg [automatic]": 1.0,
+    "photos/desert/images-3.jpeg [automatic]": 0.5244072808159722,
+    "photos/desert/images-4 copy.jpeg [automatic]": 0.6323644301470588,
+    "photos/desert/images-5 copy.jpeg [automatic]": 0.8179813508064516,
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334
+  },
+  "mask_sources": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": "automatic",
+    "photos/desert/images-3 copy 2.jpeg [automatic]": "automatic",
+    "photos/desert/images-3.jpeg [automatic]": "automatic",
+    "photos/desert/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/desert/images-5 copy.jpeg [automatic]": "automatic",
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 16,
+  "best_score": 0.013287830166518688,
+  "score_components": {
+    "rgb_error": 0.0031398748978972435,
+    "luminance_error": 0.04122781381011009,
+    "texture_error": 0.016708260402083397,
+    "geometry_penalty": 0.0002869033235525384,
+    "directional_bias": 0.0035862915444067303,
+    "transition_density": 0.10449498997995993,
+    "fine_edge_density": 0.28232652559055116
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 0,
+      "score": 0.013287830166518688,
+      "score_components": {
+        "rgb_error": 0.0031398748978972435,
+        "luminance_error": 0.04122781381011009,
+        "texture_error": 0.016708260402083397,
+        "geometry_penalty": 0.0002869033235525384,
+        "directional_bias": 0.0035862915444067303,
+        "transition_density": 0.10449498997995993,
+        "fine_edge_density": 0.28232652559055116
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 4,
+      "score": 0.013587892055511475,
+      "score_components": {
+        "rgb_error": 0.0031523278448730707,
+        "luminance_error": 0.0408000648021698,
+        "texture_error": 0.0169691052287817,
+        "geometry_penalty": 0.000595131093304777,
+        "directional_bias": 0.007439138666309713,
+        "transition_density": 0.10479158316633266,
+        "fine_edge_density": 0.2842642716535433
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 10,
+      "score": 0.013774613849818707,
+      "score_components": {
+        "rgb_error": 0.003147624898701906,
+        "luminance_error": 0.040802061557769775,
+        "texture_error": 0.017794035375118256,
+        "geometry_penalty": 0.0005858616051412365,
+        "directional_bias": 0.0073232700642654565,
+        "transition_density": 0.10727054108216433,
+        "fine_edge_density": 0.2873093011811024
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 1,
+      "score": 0.013869685120880604,
+      "score_components": {
+        "rgb_error": 0.0031269844621419907,
+        "luminance_error": 0.04035981371998787,
+        "texture_error": 0.01912044547498226,
+        "geometry_penalty": 0.00045251898711871685,
+        "directional_bias": 0.005656487338983961,
+        "transition_density": 0.11372545090180361,
+        "fine_edge_density": 0.3014886811023622
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 5,
+      "score": 0.013992083258926868,
+      "score_components": {
+        "rgb_error": 0.00311781233176589,
+        "luminance_error": 0.04053706303238869,
+        "texture_error": 0.019005723297595978,
+        "geometry_penalty": 0.0005751319191132233,
+        "directional_bias": 0.007189148988915291,
+        "transition_density": 0.11317434869739479,
+        "fine_edge_density": 0.30305733267716534
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 8,
+      "score": 0.014089545235037804,
+      "score_components": {
+        "rgb_error": 0.0031404844485223293,
+        "luminance_error": 0.04128381237387657,
+        "texture_error": 0.0176551416516304,
+        "geometry_penalty": 0.0008509834300073644,
+        "directional_bias": 0.010637292875092054,
+        "transition_density": 0.10606613226452906,
+        "fine_edge_density": 0.2859251968503937
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 15,
+      "score": 0.014164308086037636,
+      "score_components": {
+        "rgb_error": 0.003145781112834811,
+        "luminance_error": 0.04094531387090683,
+        "texture_error": 0.017046453431248665,
+        "geometry_penalty": 0.0011301115241635692,
+        "directional_bias": 0.014126394052044614,
+        "transition_density": 0.10512024048096193,
+        "fine_edge_density": 0.2830954724409449
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 11,
+      "score": 0.014166396111249924,
+      "score_components": {
+        "rgb_error": 0.003133828053250909,
+        "luminance_error": 0.0403495617210865,
+        "texture_error": 0.018375223502516747,
+        "geometry_penalty": 0.0009265071977486715,
+        "directional_bias": 0.011581339971858394,
+        "transition_density": 0.11109018036072144,
+        "fine_edge_density": 0.2985359251968504
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 9,
+      "score": 0.014232899993658066,
+      "score_components": {
+        "rgb_error": 0.0031251097097992897,
+        "luminance_error": 0.039909813553094864,
+        "texture_error": 0.01899203099310398,
+        "geometry_penalty": 0.0009284901531728657,
+        "directional_bias": 0.01160612691466082,
+        "transition_density": 0.11447895791583165,
+        "fine_edge_density": 0.3062253937007874
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 6,
+      "score": 0.014407109469175339,
+      "score_components": {
+        "rgb_error": 0.0031425468623638153,
+        "luminance_error": 0.04084181785583496,
+        "texture_error": 0.016815906390547752,
+        "geometry_penalty": 0.0014484911550468294,
+        "directional_bias": 0.018106139438085367,
+        "transition_density": 0.10592184368737476,
+        "fine_edge_density": 0.28632504921259844
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "high",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 55.0,
+    "dark_floor": 75.0,
+    "dark_weight": 0.08,
+    "detail": 0.14,
+    "blur": 0.9,
+    "blob_scale": 1.45,
+    "blob_weight": 0.32,
+    "blob_aspect": 1.22
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "desert": 120000
+  },
+  "dark_palette_weight": 0.0,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        121,
+        93,
+        69
+      ],
+      "weight": 0.2686583399772644
+    },
+    {
+      "rgb": [
+        182,
+        157,
+        127
+      ],
+      "weight": 0.23220832645893097
+    },
+    {
+      "rgb": [
+        179,
+        164,
+        136
+      ],
+      "weight": 0.19128333032131195
+    },
+    {
+      "rgb": [
+        175,
+        150,
+        120
+      ],
+      "weight": 0.16321666538715363
+    },
+    {
+      "rgb": [
+        73,
+        71,
+        58
+      ],
+      "weight": 0.14463333785533905
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "input_images": [
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]",
+    "photos/desert/images-3 copy 2.jpeg [semantic]",
+    "photos/desert/images-3.jpeg [semantic]",
+    "photos/desert/images-4 copy.jpeg [semantic]",
+    "photos/desert/images-5 copy.jpeg [semantic]",
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": 0.7374074835526315,
+    "photos/desert/images-3 copy 2.jpeg [semantic]": 0.7280668652088773,
+    "photos/desert/images-3.jpeg [semantic]": 0.5134345160590278,
+    "photos/desert/images-4 copy.jpeg [semantic]": 0.5703814338235295,
+    "photos/desert/images-5 copy.jpeg [semantic]": 0.6712678702346041,
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": 0.4775797526041667
+  },
+  "mask_sources": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": "semantic",
+    "photos/desert/images-3 copy 2.jpeg [semantic]": "semantic",
+    "photos/desert/images-3.jpeg [semantic]": "semantic",
+    "photos/desert/images-4 copy.jpeg [semantic]": "semantic",
+    "photos/desert/images-5 copy.jpeg [semantic]": "semantic",
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": "semantic"
+  },
+  "semantic_labels": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": [
+      "fence",
+      "field",
+      "grass",
+      "hill",
+      "mountain",
+      "pole",
+      "sky",
+      "tree"
+    ],
+    "photos/desert/images-3 copy 2.jpeg [semantic]": [
+      "mountain",
+      "sand",
+      "sky"
+    ],
+    "photos/desert/images-3.jpeg [semantic]": [
+      "earth",
+      "mountain",
+      "person",
+      "sand",
+      "sky"
+    ],
+    "photos/desert/images-4 copy.jpeg [semantic]": [
+      "earth",
+      "hill",
+      "mountain",
+      "person",
+      "rock",
+      "sand",
+      "sky"
+    ],
+    "photos/desert/images-5 copy.jpeg [semantic]": [
+      "sand",
+      "sky"
+    ],
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": [
+      "dirt track",
+      "earth",
+      "sand",
+      "sky",
+      "tree"
+    ]
+  },
+  "semantic_excluded_labels": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": [
+      "sky"
+    ],
+    "photos/desert/images-3 copy 2.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/desert/images-3.jpeg [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/desert/images-4 copy.jpeg [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/desert/images-5 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": [
+      "sky"
+    ]
+  },
+  "semantic_excluded_fraction": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": 0.2287497715643275,
+    "photos/desert/images-3 copy 2.jpeg [semantic]": 0.2719331347911227,
+    "photos/desert/images-3.jpeg [semantic]": 0.4857245551215278,
+    "photos/desert/images-4 copy.jpeg [semantic]": 0.4296185661764706,
+    "photos/desert/images-5 copy.jpeg [semantic]": 0.3287321297653959,
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": 0.5095774332682291
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 16,
+  "best_score": 0.015808306634426117,
+  "score_components": {
+    "rgb_error": 0.003178282640874386,
+    "luminance_error": 0.04296162724494934,
+    "texture_error": 0.017402103170752525,
+    "geometry_penalty": 0.0023095675976220007,
+    "directional_bias": 0.028869594970275008,
+    "transition_density": 0.04685571142284569,
+    "fine_edge_density": 0.1557271161417323
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 0,
+      "score": 0.015808306634426117,
+      "score_components": {
+        "rgb_error": 0.003178282640874386,
+        "luminance_error": 0.04296162724494934,
+        "texture_error": 0.017402103170752525,
+        "geometry_penalty": 0.0023095675976220007,
+        "directional_bias": 0.028869594970275008,
+        "transition_density": 0.04685571142284569,
+        "fine_edge_density": 0.1557271161417323
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 1,
+      "score": 0.016067804768681526,
+      "score_components": {
+        "rgb_error": 0.0031387200579047203,
+        "luminance_error": 0.04164212569594383,
+        "texture_error": 0.01709899492561817,
+        "geometry_penalty": 0.002899102529235789,
+        "directional_bias": 0.036238781615447364,
+        "transition_density": 0.05894989979959919,
+        "fine_edge_density": 0.19528174212598426
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 3,
+      "score": 0.016115764155983925,
+      "score_components": {
+        "rgb_error": 0.003157688770443201,
+        "luminance_error": 0.04215562343597412,
+        "texture_error": 0.016664449125528336,
+        "geometry_penalty": 0.0029494393074955766,
+        "directional_bias": 0.03686799134369471,
+        "transition_density": 0.05093186372745491,
+        "fine_edge_density": 0.1741203248031496
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 2,
+      "score": 0.01635618507862091,
+      "score_components": {
+        "rgb_error": 0.0031715952791273594,
+        "luminance_error": 0.042724624276161194,
+        "texture_error": 0.017445674166083336,
+        "geometry_penalty": 0.0028929937877977575,
+        "directional_bias": 0.03616242234747197,
+        "transition_density": 0.04871142284569138,
+        "fine_edge_density": 0.16230930118110237
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 9,
+      "score": 0.016412319615483284,
+      "score_components": {
+        "rgb_error": 0.0031785639002919197,
+        "luminance_error": 0.042924873530864716,
+        "texture_error": 0.01730298437178135,
+        "geometry_penalty": 0.0029438437391001077,
+        "directional_bias": 0.036798046738751346,
+        "transition_density": 0.04596392785571142,
+        "fine_edge_density": 0.15385088582677164
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 8,
+      "score": 0.016443880274891853,
+      "score_components": {
+        "rgb_error": 0.003160423133522272,
+        "luminance_error": 0.042378123849630356,
+        "texture_error": 0.017656944692134857,
+        "geometry_penalty": 0.0029979401045793054,
+        "directional_bias": 0.037474251307241316,
+        "transition_density": 0.05058917835671342,
+        "fine_edge_density": 0.1701525590551181
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 5,
+      "score": 0.017191873863339424,
+      "score_components": {
+        "rgb_error": 0.0031776889227330685,
+        "luminance_error": 0.042821623384952545,
+        "texture_error": 0.016980595886707306,
+        "geometry_penalty": 0.003819794746912511,
+        "directional_bias": 0.04774743433640639,
+        "transition_density": 0.04608416833667335,
+        "fine_edge_density": 0.1579724409448819
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 12,
+      "score": 0.01754220388829708,
+      "score_components": {
+        "rgb_error": 0.003172392025589943,
+        "luminance_error": 0.04277762398123741,
+        "texture_error": 0.016868775710463524,
+        "geometry_penalty": 0.004207528699830918,
+        "directional_bias": 0.05259410874788648,
+        "transition_density": 0.04503807615230461,
+        "fine_edge_density": 0.15597317913385828
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 11,
+      "score": 0.01766563579440117,
+      "score_components": {
+        "rgb_error": 0.0031495168805122375,
+        "luminance_error": 0.04191937297582626,
+        "texture_error": 0.017534011974930763,
+        "geometry_penalty": 0.004337227386162247,
+        "directional_bias": 0.05421534232702809,
+        "transition_density": 0.055408817635270544,
+        "fine_edge_density": 0.18267101377952755
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 7,
+      "score": 0.0184035561978817,
+      "score_components": {
+        "rgb_error": 0.003169170580804348,
+        "luminance_error": 0.042491622269153595,
+        "texture_error": 0.01724330335855484,
+        "geometry_penalty": 0.005032084290580684,
+        "directional_bias": 0.06290105363225855,
+        "transition_density": 0.05059318637274549,
+        "fine_edge_density": 0.16898375984251968
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "semantic",
+  "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "generation_mode": "standard",
+  "density": "low",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 55.0,
+    "dark_floor": 75.0,
+    "dark_weight": 0.08,
+    "detail": 0.14,
+    "blur": 0.9,
+    "blob_scale": 1.45,
+    "blob_weight": 0.32,
+    "blob_aspect": 1.22
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "desert": 120000
+  },
+  "dark_palette_weight": 0.0,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        117,
+        89,
+        65
+      ],
+      "weight": 0.28277501463890076
+    },
+    {
+      "rgb": [
+        167,
+        141,
+        111
+      ],
+      "weight": 0.2306833267211914
+    },
+    {
+      "rgb": [
+        190,
+        166,
+        134
+      ],
+      "weight": 0.19793333113193512
+    },
+    {
+      "rgb": [
+        73,
+        71,
+        58
+      ],
+      "weight": 0.15178333222866058
+    },
+    {
+      "rgb": [
+        183,
+        166,
+        136
+      ],
+      "weight": 0.13682499527931213
+    }
+  ]
+}

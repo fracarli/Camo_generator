@@ -1,0 +1,1069 @@
+{
+  "input_images": [
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]",
+    "photos/desert/images-3 copy 2.jpeg [semantic]",
+    "photos/desert/images-3.jpeg [semantic]",
+    "photos/desert/images-4 copy.jpeg [semantic]",
+    "photos/desert/images-5 copy.jpeg [semantic]",
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]",
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]",
+    "photos/forest/MG_0652-1024x768.webp [semantic]",
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]",
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]",
+    "photos/forest/images-3 copy 2.jpeg [semantic]",
+    "photos/forest/images-3 copy 3.jpeg [semantic]",
+    "photos/forest/images-3 copy.jpeg [semantic]",
+    "photos/forest/images-3.jpeg [semantic]",
+    "photos/forest/images-4 copy.jpeg [semantic]",
+    "photos/forest/images-4.jpeg [semantic]",
+    "photos/forest/images-5 copy.jpeg [semantic]",
+    "photos/forest/images-5.jpeg [semantic]",
+    "photos/forest/orman-cesitleri.jpg [semantic]",
+    "photos/forest/trekking-2g.jpg.webp [semantic]",
+    "photos/forest/veduta.jpg [semantic]",
+    "photos/forest/vivere-in-campagna.jpg [semantic]",
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]",
+    "photos/jungle/Amazon-plants.jpg [semantic]",
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]",
+    "photos/jungle/DSC_1137.jpg [semantic]",
+    "photos/jungle/images-3 copy.jpeg [semantic]",
+    "photos/jungle/images-3.jpeg [semantic]",
+    "photos/jungle/images-4 copy.jpeg [semantic]",
+    "photos/jungle/images-4.jpeg [semantic]",
+    "photos/jungle/images-5 copy.jpeg [semantic]",
+    "photos/jungle/images-5.jpeg [semantic]",
+    "photos/jungle/images-6.jpeg [semantic]",
+    "photos/jungle/p0ml01qd.jpg [semantic]",
+    "photos/jungle/p0ml02xf.jpg [semantic]",
+    "photos/mountain/bellino-paesaggio.jpg [semantic]",
+    "photos/mountain/images-3 copy.jpeg [semantic]",
+    "photos/mountain/images-3.jpeg [semantic]",
+    "photos/mountain/images-4 copy.jpeg [semantic]",
+    "photos/mountain/images-4.jpeg [semantic]",
+    "photos/mountain/images-5 copy 2.jpeg [semantic]",
+    "photos/mountain/images-5 copy.jpeg [semantic]",
+    "photos/mountain/images-5.jpeg [semantic]",
+    "photos/mountain/images-6 copy.jpeg [semantic]",
+    "photos/mountain/images-6.jpeg [semantic]",
+    "photos/mountain/images-7.jpeg [semantic]",
+    "photos/mountain/images-8.jpeg [semantic]",
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]",
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]",
+    "photos/taiga/images-4 copy.jpeg [semantic]",
+    "photos/taiga/images-6.jpeg [semantic]",
+    "photos/tundra/images-3.jpeg [semantic]",
+    "photos/tundra/images-4.jpeg [semantic]",
+    "photos/tundra/images-5.jpeg [semantic]",
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]",
+    "photos/urban/images-3.jpeg [semantic]",
+    "photos/urban/images-4.jpeg [semantic]",
+    "photos/urban/images-5.jpeg [semantic]",
+    "photos/urban/images-6.jpeg [semantic]",
+    "photos/urban/images-7.jpeg [semantic]",
+    "photos/urban/images-8.jpeg [semantic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": 0.7374074835526315,
+    "photos/desert/images-3 copy 2.jpeg [semantic]": 0.7280668652088773,
+    "photos/desert/images-3.jpeg [semantic]": 0.5134345160590278,
+    "photos/desert/images-4 copy.jpeg [semantic]": 0.5703814338235295,
+    "photos/desert/images-5 copy.jpeg [semantic]": 0.6712678702346041,
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": 0.4775797526041667,
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": 0.7587178548177084,
+    "photos/forest/MG_0652-1024x768.webp [semantic]": 0.6360677083333334,
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": 0.9927602639296188,
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": 0.9973044199486302,
+    "photos/forest/images-3 copy 2.jpeg [semantic]": 0.9424629211425781,
+    "photos/forest/images-3 copy 3.jpeg [semantic]": 0.8121014030612245,
+    "photos/forest/images-3 copy.jpeg [semantic]": 0.4403104965241806,
+    "photos/forest/images-3.jpeg [semantic]": 0.7152760823567709,
+    "photos/forest/images-4 copy.jpeg [semantic]": 0.9979909261067709,
+    "photos/forest/images-4.jpeg [semantic]": 0.99981689453125,
+    "photos/forest/images-5 copy.jpeg [semantic]": 0.8241933186848959,
+    "photos/forest/images-5.jpeg [semantic]": 0.9999160766601562,
+    "photos/forest/orman-cesitleri.jpg [semantic]": 0.9966023763020834,
+    "photos/forest/trekking-2g.jpg.webp [semantic]": 0.6193033854166666,
+    "photos/forest/veduta.jpg [semantic]": 0.93566,
+    "photos/forest/vivere-in-campagna.jpg [semantic]": 0.7411424067982456,
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": 0.9994558742668622,
+    "photos/jungle/Amazon-plants.jpg [semantic]": 0.8967584978070176,
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": 0.997260551948052,
+    "photos/jungle/DSC_1137.jpg [semantic]": 0.9882180606617647,
+    "photos/jungle/images-3 copy.jpeg [semantic]": 0.9790467379385965,
+    "photos/jungle/images-3.jpeg [semantic]": 0.9951114766081871,
+    "photos/jungle/images-4 copy.jpeg [semantic]": 0.9989204950142451,
+    "photos/jungle/images-4.jpeg [semantic]": 0.9980697855571847,
+    "photos/jungle/images-5 copy.jpeg [semantic]": 0.9808856451023392,
+    "photos/jungle/images-5.jpeg [semantic]": 0.9948586856617647,
+    "photos/jungle/images-6.jpeg [semantic]": 0.997897518382353,
+    "photos/jungle/p0ml01qd.jpg [semantic]": 0.9453841387856258,
+    "photos/jungle/p0ml02xf.jpg [semantic]": 0.9990473977695167,
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": 0.467616,
+    "photos/mountain/images-3 copy.jpeg [semantic]": 0.5752257244809689,
+    "photos/mountain/images-3.jpeg [semantic]": 0.6099899781341108,
+    "photos/mountain/images-4 copy.jpeg [semantic]": 0.6328803168402778,
+    "photos/mountain/images-4.jpeg [semantic]": 0.5941501193576388,
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": 0.3584500745156483,
+    "photos/mountain/images-5 copy.jpeg [semantic]": 0.5743928447075209,
+    "photos/mountain/images-5.jpeg [semantic]": 0.9318939313139932,
+    "photos/mountain/images-6 copy.jpeg [semantic]": 0.6147104899088541,
+    "photos/mountain/images-6.jpeg [semantic]": 0.5521444281524927,
+    "photos/mountain/images-7.jpeg [semantic]": 0.6319101790935673,
+    "photos/mountain/images-8.jpeg [semantic]": 0.6487621753246753,
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": 0.8168174342105263,
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": 0.9415461753731343,
+    "photos/taiga/images-4 copy.jpeg [semantic]": 0.8135036892361112,
+    "photos/taiga/images-6.jpeg [semantic]": 0.460693359375,
+    "photos/tundra/images-3.jpeg [semantic]": 0.6047130766369048,
+    "photos/tundra/images-4.jpeg [semantic]": 0.8867298473011364,
+    "photos/tundra/images-5.jpeg [semantic]": 0.4703251008064516,
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": 0.6998760516826923,
+    "photos/urban/images-3.jpeg [semantic]": 0.637360245601173,
+    "photos/urban/images-4.jpeg [semantic]": 0.7102457682291666,
+    "photos/urban/images-5.jpeg [semantic]": 0.41339803479381443,
+    "photos/urban/images-6.jpeg [semantic]": 0.4722610428885631,
+    "photos/urban/images-7.jpeg [semantic]": 0.6115061442057291,
+    "photos/urban/images-8.jpeg [semantic]": 0.9510801174496645
+  },
+  "mask_sources": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": "semantic",
+    "photos/desert/images-3 copy 2.jpeg [semantic]": "semantic",
+    "photos/desert/images-3.jpeg [semantic]": "semantic",
+    "photos/desert/images-4 copy.jpeg [semantic]": "semantic",
+    "photos/desert/images-5 copy.jpeg [semantic]": "semantic",
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": "semantic",
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": "semantic",
+    "photos/forest/MG_0652-1024x768.webp [semantic]": "semantic",
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": "semantic",
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": "semantic",
+    "photos/forest/images-3 copy 2.jpeg [semantic]": "semantic",
+    "photos/forest/images-3 copy 3.jpeg [semantic]": "semantic",
+    "photos/forest/images-3 copy.jpeg [semantic]": "semantic",
+    "photos/forest/images-3.jpeg [semantic]": "semantic",
+    "photos/forest/images-4 copy.jpeg [semantic]": "semantic",
+    "photos/forest/images-4.jpeg [semantic]": "semantic",
+    "photos/forest/images-5 copy.jpeg [semantic]": "semantic",
+    "photos/forest/images-5.jpeg [semantic]": "semantic",
+    "photos/forest/orman-cesitleri.jpg [semantic]": "semantic",
+    "photos/forest/trekking-2g.jpg.webp [semantic]": "semantic",
+    "photos/forest/veduta.jpg [semantic]": "semantic",
+    "photos/forest/vivere-in-campagna.jpg [semantic]": "semantic",
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": "semantic",
+    "photos/jungle/Amazon-plants.jpg [semantic]": "semantic",
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": "semantic",
+    "photos/jungle/DSC_1137.jpg [semantic]": "semantic",
+    "photos/jungle/images-3 copy.jpeg [semantic]": "semantic",
+    "photos/jungle/images-3.jpeg [semantic]": "semantic",
+    "photos/jungle/images-4 copy.jpeg [semantic]": "semantic",
+    "photos/jungle/images-4.jpeg [semantic]": "semantic",
+    "photos/jungle/images-5 copy.jpeg [semantic]": "semantic",
+    "photos/jungle/images-5.jpeg [semantic]": "semantic",
+    "photos/jungle/images-6.jpeg [semantic]": "semantic",
+    "photos/jungle/p0ml01qd.jpg [semantic]": "semantic",
+    "photos/jungle/p0ml02xf.jpg [semantic]": "semantic",
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": "semantic",
+    "photos/mountain/images-3 copy.jpeg [semantic]": "semantic",
+    "photos/mountain/images-3.jpeg [semantic]": "semantic",
+    "photos/mountain/images-4 copy.jpeg [semantic]": "semantic",
+    "photos/mountain/images-4.jpeg [semantic]": "semantic",
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": "semantic",
+    "photos/mountain/images-5 copy.jpeg [semantic]": "semantic",
+    "photos/mountain/images-5.jpeg [semantic]": "semantic",
+    "photos/mountain/images-6 copy.jpeg [semantic]": "semantic",
+    "photos/mountain/images-6.jpeg [semantic]": "semantic",
+    "photos/mountain/images-7.jpeg [semantic]": "semantic",
+    "photos/mountain/images-8.jpeg [semantic]": "semantic",
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": "semantic",
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": "semantic",
+    "photos/taiga/images-4 copy.jpeg [semantic]": "semantic",
+    "photos/taiga/images-6.jpeg [semantic]": "semantic",
+    "photos/tundra/images-3.jpeg [semantic]": "semantic",
+    "photos/tundra/images-4.jpeg [semantic]": "semantic",
+    "photos/tundra/images-5.jpeg [semantic]": "semantic",
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": "semantic",
+    "photos/urban/images-3.jpeg [semantic]": "semantic",
+    "photos/urban/images-4.jpeg [semantic]": "semantic",
+    "photos/urban/images-5.jpeg [semantic]": "semantic",
+    "photos/urban/images-6.jpeg [semantic]": "semantic",
+    "photos/urban/images-7.jpeg [semantic]": "semantic",
+    "photos/urban/images-8.jpeg [semantic]": "semantic"
+  },
+  "semantic_labels": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": [
+      "fence",
+      "field",
+      "grass",
+      "hill",
+      "mountain",
+      "pole",
+      "sky",
+      "tree"
+    ],
+    "photos/desert/images-3 copy 2.jpeg [semantic]": [
+      "mountain",
+      "sand",
+      "sky"
+    ],
+    "photos/desert/images-3.jpeg [semantic]": [
+      "earth",
+      "mountain",
+      "person",
+      "sand",
+      "sky"
+    ],
+    "photos/desert/images-4 copy.jpeg [semantic]": [
+      "earth",
+      "hill",
+      "mountain",
+      "person",
+      "rock",
+      "sand",
+      "sky"
+    ],
+    "photos/desert/images-5 copy.jpeg [semantic]": [
+      "sand",
+      "sky"
+    ],
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": [
+      "dirt track",
+      "earth",
+      "sand",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": [
+      "grass",
+      "mountain",
+      "rock",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/MG_0652-1024x768.webp [semantic]": [
+      "earth",
+      "field",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": [
+      "earth",
+      "grass",
+      "tree"
+    ],
+    "photos/forest/images-3 copy 2.jpeg [semantic]": [
+      "earth",
+      "hill",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-3 copy 3.jpeg [semantic]": [
+      "building",
+      "grass",
+      "mountain",
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-3 copy.jpeg [semantic]": [
+      "mountain",
+      "sky"
+    ],
+    "photos/forest/images-3.jpeg [semantic]": [
+      "earth",
+      "grass",
+      "hill",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-4 copy.jpeg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-4.jpeg [semantic]": [
+      "earth",
+      "rock",
+      "tree",
+      "water"
+    ],
+    "photos/forest/images-5 copy.jpeg [semantic]": [
+      "building",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-5.jpeg [semantic]": [
+      "dirt track",
+      "earth",
+      "tree"
+    ],
+    "photos/forest/orman-cesitleri.jpg [semantic]": [
+      "earth",
+      "grass",
+      "tree"
+    ],
+    "photos/forest/trekking-2g.jpg.webp [semantic]": [
+      "mountain",
+      "person",
+      "sky"
+    ],
+    "photos/forest/veduta.jpg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/vivere-in-campagna.jpg [semantic]": [
+      "building",
+      "field",
+      "grass",
+      "house",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": [
+      "tree"
+    ],
+    "photos/jungle/Amazon-plants.jpg [semantic]": [
+      "earth",
+      "plant",
+      "rock",
+      "sky",
+      "tree",
+      "water"
+    ],
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": [
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/DSC_1137.jpg [semantic]": [
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/images-3 copy.jpeg [semantic]": [
+      "palm",
+      "plant",
+      "sky",
+      "tree",
+      "wall"
+    ],
+    "photos/jungle/images-3.jpeg [semantic]": [
+      "dirt track",
+      "earth",
+      "palm",
+      "path",
+      "plant",
+      "sand",
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/images-4 copy.jpeg [semantic]": [
+      "palm",
+      "plant",
+      "tree",
+      "wall"
+    ],
+    "photos/jungle/images-4.jpeg [semantic]": [
+      "earth",
+      "fence",
+      "plant",
+      "pole",
+      "tree"
+    ],
+    "photos/jungle/images-5 copy.jpeg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/images-5.jpeg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/images-6.jpeg [semantic]": [
+      "earth",
+      "plant",
+      "tree"
+    ],
+    "photos/jungle/p0ml01qd.jpg [semantic]": [
+      "palm",
+      "person",
+      "plant",
+      "rock",
+      "sky",
+      "tree",
+      "wall",
+      "water"
+    ],
+    "photos/jungle/p0ml02xf.jpg [semantic]": [
+      "mountain",
+      "tree"
+    ],
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": [
+      "fence",
+      "mountain",
+      "person",
+      "railing",
+      "rock",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-3 copy.jpeg [semantic]": [
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-3.jpeg [semantic]": [
+      "dirt track",
+      "earth",
+      "fence",
+      "field",
+      "flag",
+      "grass",
+      "hill",
+      "mountain",
+      "path",
+      "pole",
+      "road",
+      "signboard",
+      "sky"
+    ],
+    "photos/mountain/images-4 copy.jpeg [semantic]": [
+      "mountain",
+      "plant",
+      "river",
+      "rock",
+      "sky",
+      "tree",
+      "water",
+      "waterfall"
+    ],
+    "photos/mountain/images-4.jpeg [semantic]": [
+      "mountain",
+      "person",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": [
+      "building",
+      "earth",
+      "field",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-5 copy.jpeg [semantic]": [
+      "grass",
+      "mountain",
+      "path",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-5.jpeg [semantic]": [
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-6 copy.jpeg [semantic]": [
+      "building",
+      "earth",
+      "floor",
+      "house",
+      "mountain",
+      "path",
+      "plant",
+      "rock",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/images-6.jpeg [semantic]": [
+      "grass",
+      "tree"
+    ],
+    "photos/mountain/images-7.jpeg [semantic]": [
+      "building",
+      "field",
+      "grass",
+      "house",
+      "mountain",
+      "plant",
+      "sky",
+      "tree",
+      "wall",
+      "water"
+    ],
+    "photos/mountain/images-8.jpeg [semantic]": [
+      "field",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": [
+      "animal",
+      "grass",
+      "mountain",
+      "path",
+      "person",
+      "rock",
+      "tree"
+    ],
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": [
+      "field",
+      "grass",
+      "hill",
+      "mountain",
+      "tree"
+    ],
+    "photos/taiga/images-4 copy.jpeg [semantic]": [
+      "earth",
+      "field",
+      "grass",
+      "mountain",
+      "plant",
+      "river",
+      "sky",
+      "tree",
+      "water"
+    ],
+    "photos/taiga/images-6.jpeg [semantic]": [
+      "dirt track",
+      "earth",
+      "field",
+      "sky",
+      "tree"
+    ],
+    "photos/tundra/images-3.jpeg [semantic]": [
+      "earth",
+      "land",
+      "sea",
+      "sky",
+      "water"
+    ],
+    "photos/tundra/images-4.jpeg [semantic]": [
+      "field",
+      "mountain",
+      "path",
+      "sky"
+    ],
+    "photos/tundra/images-5.jpeg [semantic]": [
+      "earth",
+      "field",
+      "hill",
+      "land",
+      "mountain",
+      "river",
+      "sky",
+      "tree"
+    ],
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": [
+      "building",
+      "earth",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/urban/images-3.jpeg [semantic]": [
+      "building",
+      "land",
+      "mountain",
+      "road",
+      "sky",
+      "tree"
+    ],
+    "photos/urban/images-4.jpeg [semantic]": [
+      "building",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/urban/images-5.jpeg [semantic]": [
+      "bridge",
+      "building",
+      "bus",
+      "river",
+      "road",
+      "sky",
+      "skyscraper",
+      "tree"
+    ],
+    "photos/urban/images-6.jpeg [semantic]": [
+      "building",
+      "mountain",
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "photos/urban/images-7.jpeg [semantic]": [
+      "bridge",
+      "building",
+      "earth",
+      "fence",
+      "grandstand",
+      "hill",
+      "mountain",
+      "road",
+      "sea",
+      "sidewalk",
+      "signboard",
+      "sky",
+      "tree",
+      "wall"
+    ],
+    "photos/urban/images-8.jpeg [semantic]": [
+      "box",
+      "building",
+      "mountain",
+      "sky"
+    ]
+  },
+  "semantic_excluded_labels": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": [
+      "sky"
+    ],
+    "photos/desert/images-3 copy 2.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/desert/images-3.jpeg [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/desert/images-4 copy.jpeg [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/desert/images-5 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/MG_0652-1024x768.webp [semantic]": [
+      "sky"
+    ],
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-3 copy 2.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-3 copy 3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-3 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-4 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-4.jpeg [semantic]": [
+      "water"
+    ],
+    "photos/forest/images-5 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/trekking-2g.jpg.webp [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/forest/veduta.jpg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/vivere-in-campagna.jpg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/Amazon-plants.jpg [semantic]": [
+      "sky",
+      "water"
+    ],
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/DSC_1137.jpg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/images-3 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/images-3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/images-5 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/images-5.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/p0ml01qd.jpg [semantic]": [
+      "person",
+      "sky",
+      "water"
+    ],
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/mountain/images-3 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-4 copy.jpeg [semantic]": [
+      "river",
+      "sky",
+      "water"
+    ],
+    "photos/mountain/images-4.jpeg [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-5 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-5.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-6 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/images-7.jpeg [semantic]": [
+      "sky",
+      "water"
+    ],
+    "photos/mountain/images-8.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": [
+      "animal",
+      "person"
+    ],
+    "photos/taiga/images-4 copy.jpeg [semantic]": [
+      "river",
+      "sky",
+      "water"
+    ],
+    "photos/taiga/images-6.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/tundra/images-3.jpeg [semantic]": [
+      "sea",
+      "sky",
+      "water"
+    ],
+    "photos/tundra/images-4.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/tundra/images-5.jpeg [semantic]": [
+      "river",
+      "sky"
+    ],
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/urban/images-3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/urban/images-4.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/urban/images-5.jpeg [semantic]": [
+      "bus",
+      "river",
+      "sky"
+    ],
+    "photos/urban/images-6.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/urban/images-7.jpeg [semantic]": [
+      "sea",
+      "sky"
+    ],
+    "photos/urban/images-8.jpeg [semantic]": [
+      "sky"
+    ]
+  },
+  "semantic_excluded_fraction": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": 0.2287497715643275,
+    "photos/desert/images-3 copy 2.jpeg [semantic]": 0.2719331347911227,
+    "photos/desert/images-3.jpeg [semantic]": 0.4857245551215278,
+    "photos/desert/images-4 copy.jpeg [semantic]": 0.4296185661764706,
+    "photos/desert/images-5 copy.jpeg [semantic]": 0.3287321297653959,
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": 0.5095774332682291,
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": 0.20688374837239584,
+    "photos/forest/MG_0652-1024x768.webp [semantic]": 0.322784423828125,
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": 0.002548799486803519,
+    "photos/forest/images-3 copy 2.jpeg [semantic]": 0.049896240234375,
+    "photos/forest/images-3 copy 3.jpeg [semantic]": 0.08627915451895043,
+    "photos/forest/images-3 copy.jpeg [semantic]": 0.20133727709963015,
+    "photos/forest/images-3.jpeg [semantic]": 0.24283854166666666,
+    "photos/forest/images-4 copy.jpeg [semantic]": 0.001617431640625,
+    "photos/forest/images-4.jpeg [semantic]": 6.103515625e-05,
+    "photos/forest/images-5 copy.jpeg [semantic]": 0.15362040201822916,
+    "photos/forest/trekking-2g.jpg.webp [semantic]": 0.3806966145833333,
+    "photos/forest/veduta.jpg [semantic]": 0.042408,
+    "photos/forest/vivere-in-campagna.jpg [semantic]": 0.206648620248538,
+    "photos/jungle/Amazon-plants.jpg [semantic]": 0.08141447368421052,
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": 0.000578327922077922,
+    "photos/jungle/DSC_1137.jpg [semantic]": 0.009955193014705882,
+    "photos/jungle/images-3 copy.jpeg [semantic]": 0.009103161549707603,
+    "photos/jungle/images-3.jpeg [semantic]": 0.004328855994152047,
+    "photos/jungle/images-5 copy.jpeg [semantic]": 0.019114354897660817,
+    "photos/jungle/images-5.jpeg [semantic]": 0.0017003676470588236,
+    "photos/jungle/p0ml01qd.jpg [semantic]": 0.05432930607187113,
+    "photos/mountain/bellino-paesaggio.jpg [semantic]": 0.52014,
+    "photos/mountain/images-3 copy.jpeg [semantic]": 0.342222642733564,
+    "photos/mountain/images-3.jpeg [semantic]": 0.3552238975947522,
+    "photos/mountain/images-4 copy.jpeg [semantic]": 0.14156087239583334,
+    "photos/mountain/images-4.jpeg [semantic]": 0.2799750434027778,
+    "photos/mountain/images-5 copy 2.jpeg [semantic]": 0.41635370094386487,
+    "photos/mountain/images-5 copy.jpeg [semantic]": 0.32597057799442897,
+    "photos/mountain/images-5.jpeg [semantic]": 0.05948698805460751,
+    "photos/mountain/images-6 copy.jpeg [semantic]": 0.3281809488932292,
+    "photos/mountain/images-7.jpeg [semantic]": 0.07146610014619884,
+    "photos/mountain/images-8.jpeg [semantic]": 0.2681716720779221,
+    "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": 0.017909356725146198,
+    "photos/taiga/images-4 copy.jpeg [semantic]": 0.1610785590277778,
+    "photos/taiga/images-6.jpeg [semantic]": 0.5239206949869791,
+    "photos/tundra/images-3.jpeg [semantic]": 0.21951148623511904,
+    "photos/tundra/images-4.jpeg [semantic]": 0.11123934659090909,
+    "photos/tundra/images-5.jpeg [semantic]": 0.30728212060117305,
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": 0.12819886818910256,
+    "photos/urban/images-3.jpeg [semantic]": 0.1654600439882698,
+    "photos/urban/images-4.jpeg [semantic]": 0.2840847439236111,
+    "photos/urban/images-5.jpeg [semantic]": 0.29441178049828176,
+    "photos/urban/images-6.jpeg [semantic]": 0.46646467192082114,
+    "photos/urban/images-7.jpeg [semantic]": 0.3103383382161458,
+    "photos/urban/images-8.jpeg [semantic]": 0.04705196098993288
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 3,
+  "candidates_evaluated": 16,
+  "best_score": 0.016656920313835144,
+  "score_components": {
+    "rgb_error": 0.0033877110108733177,
+    "luminance_error": 0.046937245875597,
+    "texture_error": 0.02703024446964264,
+    "geometry_penalty": 2.7101105601914708e-05,
+    "directional_bias": 0.00033876382002393386,
+    "transition_density": 0.06507214428857716,
+    "fine_edge_density": 0.2098609744094488
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 13,
+      "score": 0.016656920313835144,
+      "score_components": {
+        "rgb_error": 0.0033877110108733177,
+        "luminance_error": 0.046937245875597,
+        "texture_error": 0.02703024446964264,
+        "geometry_penalty": 2.7101105601914708e-05,
+        "directional_bias": 0.00033876382002393386,
+        "transition_density": 0.06507214428857716,
+        "fine_edge_density": 0.2098609744094488
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 8,
+      "score": 0.017021503299474716,
+      "score_components": {
+        "rgb_error": 0.003381586167961359,
+        "luminance_error": 0.04639200121164322,
+        "texture_error": 0.023831211030483246,
+        "geometry_penalty": 0.0012606608302739345,
+        "directional_bias": 0.01575826037842418,
+        "transition_density": 0.0709619238476954,
+        "fine_edge_density": 0.22831569881889763
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 4,
+      "score": 0.017027780413627625,
+      "score_components": {
+        "rgb_error": 0.003387945704162121,
+        "luminance_error": 0.04695999622344971,
+        "texture_error": 0.02751505933701992,
+        "geometry_penalty": 0.0002773942127711791,
+        "directional_bias": 0.0034674276596397386,
+        "transition_density": 0.06530861723446894,
+        "fine_edge_density": 0.20816929133858267
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 1,
+      "score": 0.017169294878840446,
+      "score_components": {
+        "rgb_error": 0.0033915392123162746,
+        "luminance_error": 0.047217998653650284,
+        "texture_error": 0.027772599831223488,
+        "geometry_penalty": 0.00030886043369152523,
+        "directional_bias": 0.0038607554211440654,
+        "transition_density": 0.06228857715430862,
+        "fine_edge_density": 0.20035679133858267
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 12,
+      "score": 0.017456423491239548,
+      "score_components": {
+        "rgb_error": 0.003399914363399148,
+        "luminance_error": 0.04722850024700165,
+        "texture_error": 0.027302928268909454,
+        "geometry_penalty": 0.0007026348808030153,
+        "directional_bias": 0.008782936010037691,
+        "transition_density": 0.06229058116232465,
+        "fine_edge_density": 0.1982652559055118
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 7,
+      "score": 0.01771601103246212,
+      "score_components": {
+        "rgb_error": 0.00340638286434114,
+        "luminance_error": 0.04756999760866165,
+        "texture_error": 0.02927364967763424,
+        "geometry_penalty": 0.00042454302660330885,
+        "directional_bias": 0.005306787832541361,
+        "transition_density": 0.05777755511022044,
+        "fine_edge_density": 0.1873154527559055
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 14,
+      "score": 0.01781008392572403,
+      "score_components": {
+        "rgb_error": 0.0033974924590438604,
+        "luminance_error": 0.04739949852228165,
+        "texture_error": 0.02937299758195877,
+        "geometry_penalty": 0.0005299071331092078,
+        "directional_bias": 0.006623839163865097,
+        "transition_density": 0.0602064128256513,
+        "fine_edge_density": 0.19214443897637795
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 5,
+      "score": 0.017959289252758026,
+      "score_components": {
+        "rgb_error": 0.003385914023965597,
+        "luminance_error": 0.04703199863433838,
+        "texture_error": 0.027531316503882408,
+        "geometry_penalty": 0.001193055163103206,
+        "directional_bias": 0.014913189538790074,
+        "transition_density": 0.06382965931863727,
+        "fine_edge_density": 0.2024790846456693
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 2,
+      "score": 0.018019387498497963,
+      "score_components": {
+        "rgb_error": 0.003388023469597101,
+        "luminance_error": 0.04698474705219269,
+        "texture_error": 0.027340909466147423,
+        "geometry_penalty": 0.0013063035307166152,
+        "directional_bias": 0.01632879413395769,
+        "transition_density": 0.06504609218436874,
+        "fine_edge_density": 0.2079847440944882
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 3,
+      "score": 0.01835406944155693,
+      "score_components": {
+        "rgb_error": 0.0034020235762000084,
+        "luminance_error": 0.047472745180130005,
+        "texture_error": 0.02899388037621975,
+        "geometry_penalty": 0.0011494330226454452,
+        "directional_bias": 0.014367912783068065,
+        "transition_density": 0.059557114228456914,
+        "fine_edge_density": 0.19094488188976377
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "semantic",
+  "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 70.0,
+    "dark_floor": 72.0,
+    "dark_weight": 0.1,
+    "detail": 0.16,
+    "blur": 0.7,
+    "blob_scale": 1.0,
+    "blob_weight": 0.36,
+    "blob_aspect": 1.0
+  },
+  "weighting": "equal_environment_groups",
+  "group_pixel_counts": {
+    "desert": 120000,
+    "forest": 340000,
+    "jungle": 240000,
+    "mountain": 278039,
+    "taiga": 40000,
+    "tundra": 60000,
+    "urban": 140000
+  },
+  "dark_palette_weight": 0.0,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        88,
+        107,
+        47
+      ],
+      "weight": 0.3333333432674408
+    },
+    {
+      "rgb": [
+        76,
+        74,
+        46
+      ],
+      "weight": 0.3333333432674408
+    },
+    {
+      "rgb": [
+        170,
+        153,
+        115
+      ],
+      "weight": 0.3333333432674408
+    }
+  ]
+}
