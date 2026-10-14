@@ -1,6 +1,25 @@
 {
   "configurations": [
     {
+      "configuration": "seg-semantic_density-high_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 5,
+      "seed": 42,
+      "group": "snow",
+      "score": 0.011665678583085537,
+      "score_components": {
+        "rgb_error": 0.00217525870539248,
+        "luminance_error": 0.038082219660282135,
+        "texture_error": 0.01526343822479248,
+        "geometry_penalty": 6.002419342490424e-05,
+        "directional_bias": 0.000750302417811303,
+        "transition_density": 0.130875751503006,
+        "fine_edge_density": 0.3452878937007874
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-5_seed-42/snow/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-high_colors-5_seed-42",
       "segmentation": "none",
       "density": "high",
@@ -20,6 +39,63 @@
       "output_path": "output/benchmark/seg-none_density-high_colors-5_seed-42/snow/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-high_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 5,
+      "seed": 42,
+      "group": "tundra",
+      "score": 0.012237750925123692,
+      "score_components": {
+        "rgb_error": 0.002989528700709343,
+        "luminance_error": 0.03318812698125839,
+        "texture_error": 0.019346443936228752,
+        "geometry_penalty": 0.00012597676560596494,
+        "directional_bias": 0.0015747095700745619,
+        "transition_density": 0.06744889779559118,
+        "fine_edge_density": 0.2044783464566929
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-5_seed-42/tundra/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-high_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 5,
+      "seed": 42,
+      "group": "desert",
+      "score": 0.012452458031475544,
+      "score_components": {
+        "rgb_error": 0.0030194753780961037,
+        "luminance_error": 0.03679012507200241,
+        "texture_error": 0.017807768657803535,
+        "geometry_penalty": 4.663363450889217e-05,
+        "directional_bias": 0.0005829204313611521,
+        "transition_density": 0.09626052104208417,
+        "fine_edge_density": 0.28189591535433073
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-5_seed-42/desert/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-high_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 5,
+      "seed": 42,
+      "group": "mountain",
+      "score": 0.0125419981777668,
+      "score_components": {
+        "rgb_error": 0.002763554686680436,
+        "luminance_error": 0.03791646659374237,
+        "texture_error": 0.016135765239596367,
+        "geometry_penalty": 0.00046267258583472846,
+        "directional_bias": 0.005783407322934106,
+        "transition_density": 0.09840881763527054,
+        "fine_edge_density": 0.28838582677165353
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-5_seed-42/mountain/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-high_colors-5_seed-42",
       "segmentation": "none",
       "density": "high",
@@ -37,6 +113,25 @@
         "fine_edge_density": 0.3080708661417323
       },
       "output_path": "output/benchmark/seg-none_density-high_colors-5_seed-42/mountain/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-standard_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 5,
+      "seed": 42,
+      "group": "desert",
+      "score": 0.012797853909432888,
+      "score_components": {
+        "rgb_error": 0.0030924701131880283,
+        "luminance_error": 0.039871376007795334,
+        "texture_error": 0.016038084402680397,
+        "geometry_penalty": 0.00022563055682397914,
+        "directional_bias": 0.0028203819602997393,
+        "transition_density": 0.07460721442885772,
+        "fine_edge_density": 0.2346825787401575
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-5_seed-42/desert/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-high_colors-3_seed-42",
@@ -96,6 +191,44 @@
       "output_path": "output/benchmark/seg-none_density-high_colors-5_seed-42/tundra/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-high_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 5,
+      "seed": 42,
+      "group": "taiga",
+      "score": 0.013315261341631413,
+      "score_components": {
+        "rgb_error": 0.002648976631462574,
+        "luminance_error": 0.03607974946498871,
+        "texture_error": 0.022533779963850975,
+        "geometry_penalty": 8.830996798763648e-05,
+        "directional_bias": 0.001103874599845456,
+        "transition_density": 0.10892585170340682,
+        "fine_edge_density": 0.3047490157480315
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-5_seed-42/taiga/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-high_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 5,
+      "seed": 42,
+      "group": "universal",
+      "score": 0.013488122262060642,
+      "score_components": {
+        "rgb_error": 0.0030286740511655807,
+        "luminance_error": 0.03979184105992317,
+        "texture_error": 0.019590528681874275,
+        "geometry_penalty": 0.0001095261228635782,
+        "directional_bias": 0.0013690765357947275,
+        "transition_density": 0.09075350701402807,
+        "fine_edge_density": 0.26393331692913385
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-5_seed-42/universal/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-standard_colors-5_seed-42",
       "segmentation": "none",
       "density": "standard",
@@ -134,6 +267,44 @@
       "output_path": "output/benchmark/seg-none_density-high_colors-5_seed-42/taiga/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-high_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 5,
+      "seed": 42,
+      "group": "urban",
+      "score": 0.01373275276273489,
+      "score_components": {
+        "rgb_error": 0.002524652751162648,
+        "luminance_error": 0.03849048167467117,
+        "texture_error": 0.014830457977950573,
+        "geometry_penalty": 0.0019828295399413596,
+        "directional_bias": 0.024785369249266994,
+        "transition_density": 0.09500400801603207,
+        "fine_edge_density": 0.281126968503937
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-5_seed-42/urban/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-high_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 3,
+      "seed": 42,
+      "group": "desert",
+      "score": 0.014008237980306149,
+      "score_components": {
+        "rgb_error": 0.0030764713883399963,
+        "luminance_error": 0.045462772250175476,
+        "texture_error": 0.016626892611384392,
+        "geometry_penalty": 0.0002962491764545495,
+        "directional_bias": 0.0037031147056818684,
+        "transition_density": 0.08821042084168337,
+        "fine_edge_density": 0.2398806594488189
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-3_seed-42/desert/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-standard_colors-5_seed-42",
       "segmentation": "none",
       "density": "standard",
@@ -153,6 +324,25 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-5_seed-42/snow/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-standard_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 5,
+      "seed": 42,
+      "group": "taiga",
+      "score": 0.014193647541105747,
+      "score_components": {
+        "rgb_error": 0.002740476280450821,
+        "luminance_error": 0.03774750232696533,
+        "texture_error": 0.02414943277835846,
+        "geometry_penalty": 0.00023299578815305484,
+        "directional_bias": 0.0029124473519131855,
+        "transition_density": 0.08945090180360721,
+        "fine_edge_density": 0.27731299212598426
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-5_seed-42/taiga/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-high_colors-5_seed-42",
       "segmentation": "none",
       "density": "high",
@@ -170,6 +360,82 @@
         "fine_edge_density": 0.29875123031496065
       },
       "output_path": "output/benchmark/seg-none_density-high_colors-5_seed-42/urban/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-standard_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 5,
+      "seed": 42,
+      "group": "snow",
+      "score": 0.014297310262918472,
+      "score_components": {
+        "rgb_error": 0.002307118149474263,
+        "luminance_error": 0.042279623448848724,
+        "texture_error": 0.021882200613617897,
+        "geometry_penalty": 0.0002816901408450741,
+        "directional_bias": 0.0035211267605634263,
+        "transition_density": 0.091062124248497,
+        "fine_edge_density": 0.26264148622047245
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-5_seed-42/snow/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-high_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 3,
+      "seed": 42,
+      "group": "snow",
+      "score": 0.014310590922832489,
+      "score_components": {
+        "rgb_error": 0.0026874346658587456,
+        "luminance_error": 0.04467060789465904,
+        "texture_error": 0.01973549835383892,
+        "geometry_penalty": 0.00018964441671865336,
+        "directional_bias": 0.002370555208983167,
+        "transition_density": 0.11243486973947896,
+        "fine_edge_density": 0.2906003937007874
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-3_seed-42/snow/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-standard_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 5,
+      "seed": 42,
+      "group": "tundra",
+      "score": 0.014368523843586445,
+      "score_components": {
+        "rgb_error": 0.0030615520663559437,
+        "luminance_error": 0.03557537496089935,
+        "texture_error": 0.024235248565673828,
+        "geometry_penalty": 0.0006177201936919237,
+        "directional_bias": 0.007721502421149046,
+        "transition_density": 0.04593787575150301,
+        "fine_edge_density": 0.1505597933070866
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-5_seed-42/tundra/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-standard_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 5,
+      "seed": 42,
+      "group": "mountain",
+      "score": 0.014567410573363304,
+      "score_components": {
+        "rgb_error": 0.0028547716792672873,
+        "luminance_error": 0.04100246727466583,
+        "texture_error": 0.021103622391819954,
+        "geometry_penalty": 0.0006947107251607082,
+        "directional_bias": 0.008683884064508852,
+        "transition_density": 0.07107815631262526,
+        "fine_edge_density": 0.23234498031496062
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-5_seed-42/mountain/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-standard_colors-5_seed-42",
@@ -210,6 +476,25 @@
       "output_path": "output/benchmark/seg-none_density-high_colors-3_seed-42/snow/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-high_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 3,
+      "seed": 42,
+      "group": "urban",
+      "score": 0.014757713302969933,
+      "score_components": {
+        "rgb_error": 0.0030910903587937355,
+        "luminance_error": 0.04279807209968567,
+        "texture_error": 0.017885630950331688,
+        "geometry_penalty": 0.0012159638685021895,
+        "directional_bias": 0.015199548356277369,
+        "transition_density": 0.09229258517034068,
+        "fine_edge_density": 0.2822650098425197
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-3_seed-42/urban/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-standard_colors-5_seed-42",
       "segmentation": "none",
       "density": "standard",
@@ -229,23 +514,23 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-5_seed-42/mountain/best_pattern.png"
     },
     {
-      "configuration": "seg-none_density-low_colors-5_seed-42",
-      "segmentation": "none",
-      "density": "low",
+      "configuration": "seg-semantic_density-high_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
       "colors": 5,
       "seed": 42,
-      "group": "snow",
-      "score": 0.014924785122275352,
+      "group": "forest",
+      "score": 0.014945531263947487,
       "score_components": {
-        "rgb_error": 0.0022586053237318993,
-        "luminance_error": 0.0439302958548069,
-        "texture_error": 0.024401573464274406,
-        "geometry_penalty": 3.165026457642539e-05,
-        "directional_bias": 0.0003956283072053173,
-        "transition_density": 0.08104609218436873,
-        "fine_edge_density": 0.2360974409448819
+        "rgb_error": 0.003081768285483122,
+        "luminance_error": 0.038982875645160675,
+        "texture_error": 0.026589035987854004,
+        "geometry_penalty": 6.3605645000997425e-06,
+        "directional_bias": 7.950705625124678e-05,
+        "transition_density": 0.10082164328657314,
+        "fine_edge_density": 0.3188976377952756
       },
-      "output_path": "output/benchmark/seg-none_density-low_colors-5_seed-42/snow/best_pattern.png"
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-5_seed-42/forest/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-high_colors-5_seed-42",
@@ -286,6 +571,44 @@
       "output_path": "output/benchmark/seg-none_density-high_colors-5_seed-42/universal/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-high_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 3,
+      "seed": 42,
+      "group": "taiga",
+      "score": 0.015208174474537373,
+      "score_components": {
+        "rgb_error": 0.002961843740195036,
+        "luminance_error": 0.04347974807024002,
+        "texture_error": 0.02440257929265499,
+        "geometry_penalty": 4.4277719697432404e-05,
+        "directional_bias": 0.000553471496217905,
+        "transition_density": 0.09776152304609217,
+        "fine_edge_density": 0.289431594488189
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-3_seed-42/taiga/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-high_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 3,
+      "seed": 42,
+      "group": "tundra",
+      "score": 0.015272497199475765,
+      "score_components": {
+        "rgb_error": 0.003386551747098565,
+        "luminance_error": 0.042904000729322433,
+        "texture_error": 0.022120701149106026,
+        "geometry_penalty": 0.0005475330926594461,
+        "directional_bias": 0.006844163658243076,
+        "transition_density": 0.05329058116232465,
+        "fine_edge_density": 0.16101747047244094
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-3_seed-42/tundra/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-standard_colors-3_seed-42",
       "segmentation": "none",
       "density": "standard",
@@ -305,42 +628,61 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-3_seed-42/desert/best_pattern.png"
     },
     {
-      "configuration": "seg-none_density-low_colors-5_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 5,
-      "seed": 42,
-      "group": "taiga",
-      "score": 0.015461738221347332,
-      "score_components": {
-        "rgb_error": 0.0028456796426326036,
-        "luminance_error": 0.04146343842148781,
-        "texture_error": 0.027281105518341064,
-        "geometry_penalty": 2.8014474144976485e-05,
-        "directional_bias": 0.00035018092681220604,
-        "transition_density": 0.06867334669338677,
-        "fine_edge_density": 0.23185285433070865
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-5_seed-42/taiga/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-5_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 5,
+      "configuration": "seg-semantic_density-standard_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 3,
       "seed": 42,
       "group": "desert",
-      "score": 0.015625230967998505,
+      "score": 0.015536656603217125,
       "score_components": {
-        "rgb_error": 0.0032403254881501198,
-        "luminance_error": 0.04670831561088562,
-        "texture_error": 0.018470479175448418,
-        "geometry_penalty": 0.001164657014961486,
-        "directional_bias": 0.014558212687018575,
-        "transition_density": 0.049693386773547094,
-        "fine_edge_density": 0.15597317913385828
+        "rgb_error": 0.003146713599562645,
+        "luminance_error": 0.04809676855802536,
+        "texture_error": 0.01739407889544964,
+        "geometry_penalty": 0.0011313020904495127,
+        "directional_bias": 0.014141276130618908,
+        "transition_density": 0.05866933867735471,
+        "fine_edge_density": 0.17190575787401574
       },
-      "output_path": "output/benchmark/seg-none_density-low_colors-5_seed-42/desert/best_pattern.png"
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-3_seed-42/desert/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-high_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 3,
+      "seed": 42,
+      "group": "universal",
+      "score": 0.015552433207631111,
+      "score_components": {
+        "rgb_error": 0.0033583673648536205,
+        "luminance_error": 0.04526899755001068,
+        "texture_error": 0.02128247357904911,
+        "geometry_penalty": 0.0006170361952658442,
+        "directional_bias": 0.007712952440823053,
+        "transition_density": 0.08288376753507015,
+        "fine_edge_density": 0.2411109744094488
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-3_seed-42/universal/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-standard_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 5,
+      "seed": 42,
+      "group": "universal",
+      "score": 0.01570603810250759,
+      "score_components": {
+        "rgb_error": 0.0031337260734289885,
+        "luminance_error": 0.042192839086055756,
+        "texture_error": 0.025339512154459953,
+        "geometry_penalty": 0.0004629814408301721,
+        "directional_bias": 0.005787268010377151,
+        "transition_density": 0.06025250501002004,
+        "fine_edge_density": 0.19783464566929135
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-5_seed-42/universal/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-standard_colors-5_seed-42",
@@ -381,6 +723,25 @@
       "output_path": "output/benchmark/seg-none_density-high_colors-3_seed-42/urban/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-standard_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 3,
+      "seed": 42,
+      "group": "taiga",
+      "score": 0.016003567725419998,
+      "score_components": {
+        "rgb_error": 0.0030331092420965433,
+        "luminance_error": 0.04544074833393097,
+        "texture_error": 0.02588101290166378,
+        "geometry_penalty": 9.623505925110529e-05,
+        "directional_bias": 0.0012029382406388161,
+        "transition_density": 0.07829859719438878,
+        "fine_edge_density": 0.2510457677165354
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-3_seed-42/taiga/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-high_colors-3_seed-42",
       "segmentation": "none",
       "density": "high",
@@ -400,6 +761,25 @@
       "output_path": "output/benchmark/seg-none_density-high_colors-3_seed-42/universal/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-high_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 3,
+      "seed": 42,
+      "group": "mountain",
+      "score": 0.016312923282384872,
+      "score_components": {
+        "rgb_error": 0.0031871492974460125,
+        "luminance_error": 0.046934474259614944,
+        "texture_error": 0.02543412148952484,
+        "geometry_penalty": 0.00016695284638753346,
+        "directional_bias": 0.0020869105798441683,
+        "transition_density": 0.07586172344689379,
+        "fine_edge_density": 0.21505905511811024
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-3_seed-42/mountain/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-high_colors-3_seed-42",
       "segmentation": "none",
       "density": "high",
@@ -417,6 +797,25 @@
         "fine_edge_density": 0.22062623031496062
       },
       "output_path": "output/benchmark/seg-none_density-high_colors-3_seed-42/taiga/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-high_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 5,
+      "seed": 42,
+      "group": "jungle",
+      "score": 0.01637452468276024,
+      "score_components": {
+        "rgb_error": 0.0031549374107271433,
+        "luminance_error": 0.039532482624053955,
+        "texture_error": 0.03019724227488041,
+        "geometry_penalty": 0.0004338700740467081,
+        "directional_bias": 0.005423375925583851,
+        "transition_density": 0.11935270541082164,
+        "fine_edge_density": 0.3536540354330709
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-5_seed-42/jungle/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-high_colors-3_seed-42",
@@ -457,23 +856,23 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-5_seed-42/forest/best_pattern.png"
     },
     {
-      "configuration": "seg-none_density-low_colors-3_seed-42",
-      "segmentation": "none",
-      "density": "low",
+      "configuration": "seg-semantic_density-standard_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
       "colors": 3,
       "seed": 42,
-      "group": "desert",
-      "score": 0.0164837334305048,
+      "group": "snow",
+      "score": 0.016475431621074677,
       "score_components": {
-        "rgb_error": 0.003239959478378296,
-        "luminance_error": 0.04736325144767761,
-        "texture_error": 0.01966361701488495,
-        "geometry_penalty": 0.0016191003241362992,
-        "directional_bias": 0.02023875405170374,
-        "transition_density": 0.05069739478957916,
-        "fine_edge_density": 0.15532726377952755
+        "rgb_error": 0.0027679414488375187,
+        "luminance_error": 0.04748436063528061,
+        "texture_error": 0.025943338871002197,
+        "geometry_penalty": 0.0003178760102948472,
+        "directional_bias": 0.00397345012868559,
+        "transition_density": 0.08876553106212426,
+        "fine_edge_density": 0.24264886811023623
       },
-      "output_path": "output/benchmark/seg-none_density-low_colors-3_seed-42/desert/best_pattern.png"
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-3_seed-42/snow/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-high_colors-3_seed-42",
@@ -495,6 +894,44 @@
       "output_path": "output/benchmark/seg-none_density-high_colors-3_seed-42/mountain/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-standard_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 3,
+      "seed": 42,
+      "group": "universal",
+      "score": 0.016656920313835144,
+      "score_components": {
+        "rgb_error": 0.0033877110108733177,
+        "luminance_error": 0.046937245875597,
+        "texture_error": 0.02703024446964264,
+        "geometry_penalty": 2.7101105601914708e-05,
+        "directional_bias": 0.00033876382002393386,
+        "transition_density": 0.06507214428857716,
+        "fine_edge_density": 0.2098609744094488
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-3_seed-42/universal/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-standard_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 5,
+      "seed": 42,
+      "group": "forest",
+      "score": 0.0166898425668478,
+      "score_components": {
+        "rgb_error": 0.0031586431432515383,
+        "luminance_error": 0.04085537791252136,
+        "texture_error": 0.03174249455332756,
+        "geometry_penalty": 0.0001383535922521998,
+        "directional_bias": 0.0017294199031524975,
+        "transition_density": 0.08111422845691382,
+        "fine_edge_density": 0.28770915354330706
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-5_seed-42/forest/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-high_colors-5_seed-42",
       "segmentation": "none",
       "density": "high",
@@ -512,44 +949,6 @@
         "fine_edge_density": 0.32910925196850394
       },
       "output_path": "output/benchmark/seg-none_density-high_colors-5_seed-42/jungle/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-5_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 5,
-      "seed": 42,
-      "group": "mountain",
-      "score": 0.016774481162428856,
-      "score_components": {
-        "rgb_error": 0.0029623035807162523,
-        "luminance_error": 0.04313521087169647,
-        "texture_error": 0.02807527780532837,
-        "geometry_penalty": 0.0007909251743157471,
-        "directional_bias": 0.009886564678946838,
-        "transition_density": 0.05776953907815631,
-        "fine_edge_density": 0.19848056102362205
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-5_seed-42/mountain/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-5_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 5,
-      "seed": 42,
-      "group": "tundra",
-      "score": 0.01682424172759056,
-      "score_components": {
-        "rgb_error": 0.003251645714044571,
-        "luminance_error": 0.039296913892030716,
-        "texture_error": 0.031140947714447975,
-        "geometry_penalty": 0.0006511476477291197,
-        "directional_bias": 0.008139345596613997,
-        "transition_density": 0.04924248496993988,
-        "fine_edge_density": 0.1554810531496063
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-5_seed-42/tundra/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-standard_colors-5_seed-42",
@@ -590,6 +989,63 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-3_seed-42/snow/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-standard_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 3,
+      "seed": 42,
+      "group": "tundra",
+      "score": 0.0173737034201622,
+      "score_components": {
+        "rgb_error": 0.0034504346549510956,
+        "luminance_error": 0.044897500425577164,
+        "texture_error": 0.03115473873913288,
+        "geometry_penalty": 8.979736515625612e-05,
+        "directional_bias": 0.0011224670644532015,
+        "transition_density": 0.03392184368737475,
+        "fine_edge_density": 0.11408095472440945
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-3_seed-42/tundra/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-standard_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 3,
+      "seed": 42,
+      "group": "mountain",
+      "score": 0.017413778230547905,
+      "score_components": {
+        "rgb_error": 0.0032392428256571293,
+        "luminance_error": 0.04828222095966339,
+        "texture_error": 0.028806248679757118,
+        "geometry_penalty": 0.00018985760679490586,
+        "directional_bias": 0.0023732200849363233,
+        "transition_density": 0.06417635270541083,
+        "fine_edge_density": 0.1939591535433071
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-3_seed-42/mountain/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-standard_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 3,
+      "seed": 42,
+      "group": "urban",
+      "score": 0.01750383898615837,
+      "score_components": {
+        "rgb_error": 0.003228764282539487,
+        "luminance_error": 0.04592606797814369,
+        "texture_error": 0.025283969938755035,
+        "geometry_penalty": 0.0015546102763411603,
+        "directional_bias": 0.019432628454264505,
+        "transition_density": 0.06548496993987976,
+        "fine_edge_density": 0.2220103346456693
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-3_seed-42/urban/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-standard_colors-3_seed-42",
       "segmentation": "none",
       "density": "standard",
@@ -626,6 +1082,25 @@
         "fine_edge_density": 0.2122908464566929
       },
       "output_path": "output/benchmark/seg-none_density-standard_colors-3_seed-42/universal/best_pattern.png"
+    },
+    {
+      "configuration": "seg-semantic_density-standard_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
+      "colors": 5,
+      "seed": 42,
+      "group": "urban",
+      "score": 0.017825137823820114,
+      "score_components": {
+        "rgb_error": 0.0026313248090445995,
+        "luminance_error": 0.04101473093032837,
+        "texture_error": 0.020796755328774452,
+        "geometry_penalty": 0.00413560291803748,
+        "directional_bias": 0.0516950364754685,
+        "transition_density": 0.07005010020040081,
+        "fine_edge_density": 0.2296998031496063
+      },
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-5_seed-42/urban/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-standard_colors-3_seed-42",
@@ -685,23 +1160,23 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-3_seed-42/mountain/best_pattern.png"
     },
     {
-      "configuration": "seg-none_density-low_colors-5_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 5,
+      "configuration": "seg-semantic_density-high_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 3,
       "seed": 42,
-      "group": "universal",
-      "score": 0.018202586099505424,
+      "group": "forest",
+      "score": 0.018250824883580208,
       "score_components": {
-        "rgb_error": 0.0032203393056988716,
-        "luminance_error": 0.04484692960977554,
-        "texture_error": 0.03308651223778725,
-        "geometry_penalty": 0.0005792064871126582,
-        "directional_bias": 0.007240081088908228,
-        "transition_density": 0.05535871743486974,
-        "fine_edge_density": 0.1827632874015748
+        "rgb_error": 0.0031122593209147453,
+        "luminance_error": 0.0458097904920578,
+        "texture_error": 0.03357397019863129,
+        "geometry_penalty": 0.00039117929050815173,
+        "directional_bias": 0.004889741131351897,
+        "transition_density": 0.08360721442885771,
+        "fine_edge_density": 0.269408218503937
       },
-      "output_path": "output/benchmark/seg-none_density-low_colors-5_seed-42/universal/best_pattern.png"
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-3_seed-42/forest/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-standard_colors-5_seed-42",
@@ -723,80 +1198,23 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-5_seed-42/urban/best_pattern.png"
     },
     {
-      "configuration": "seg-none_density-low_colors-3_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 3,
-      "seed": 42,
-      "group": "snow",
-      "score": 0.018326692283153534,
-      "score_components": {
-        "rgb_error": 0.00279068062081933,
-        "luminance_error": 0.04956923797726631,
-        "texture_error": 0.02938651479780674,
-        "geometry_penalty": 0.0009561261469658387,
-        "directional_bias": 0.011951576837072982,
-        "transition_density": 0.07796993987975952,
-        "fine_edge_density": 0.22139517716535434
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-3_seed-42/snow/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-3_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 3,
-      "seed": 42,
-      "group": "urban",
-      "score": 0.018414337188005447,
-      "score_components": {
-        "rgb_error": 0.00332449097186327,
-        "luminance_error": 0.04793132096529007,
-        "texture_error": 0.031099339947104454,
-        "geometry_penalty": 0.0006606131553136899,
-        "directional_bias": 0.008257664441421123,
-        "transition_density": 0.06334068136272544,
-        "fine_edge_density": 0.199095718503937
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-3_seed-42/urban/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-3_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 3,
-      "seed": 42,
-      "group": "universal",
-      "score": 0.01843799650669098,
-      "score_components": {
-        "rgb_error": 0.0034302566200494766,
-        "luminance_error": 0.04778684303164482,
-        "texture_error": 0.03372689336538315,
-        "geometry_penalty": 2.6780931976429652e-05,
-        "directional_bias": 0.00033476164970537066,
-        "transition_density": 0.059863727454909824,
-        "fine_edge_density": 0.18854576771653545
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-3_seed-42/universal/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-5_seed-42",
-      "segmentation": "none",
-      "density": "low",
+      "configuration": "seg-semantic_density-standard_colors-5_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
       "colors": 5,
       "seed": 42,
-      "group": "forest",
-      "score": 0.01861266978085041,
+      "group": "jungle",
+      "score": 0.01861526630818844,
       "score_components": {
-        "rgb_error": 0.002923569642007351,
-        "luminance_error": 0.043567270040512085,
-        "texture_error": 0.03871782869100571,
-        "geometry_penalty": 1.64972750036752e-05,
-        "directional_bias": 0.00020621593754593996,
-        "transition_density": 0.06802605210420842,
-        "fine_edge_density": 0.23566683070866143
+        "rgb_error": 0.0032225768081843853,
+        "luminance_error": 0.041567232459783554,
+        "texture_error": 0.03767053037881851,
+        "geometry_penalty": 0.00048094849075179427,
+        "directional_bias": 0.006011856134397428,
+        "transition_density": 0.09566933867735472,
+        "fine_edge_density": 0.307978592519685
       },
-      "output_path": "output/benchmark/seg-none_density-low_colors-5_seed-42/forest/best_pattern.png"
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-5_seed-42/jungle/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-standard_colors-5_seed-42",
@@ -837,6 +1255,25 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-3_seed-42/urban/best_pattern.png"
     },
     {
+      "configuration": "seg-semantic_density-high_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "high",
+      "colors": 3,
+      "seed": 42,
+      "group": "jungle",
+      "score": 0.019296104088425636,
+      "score_components": {
+        "rgb_error": 0.0033109206706285477,
+        "luminance_error": 0.045672062784433365,
+        "texture_error": 0.03908154368400574,
+        "geometry_penalty": 4.010025062656334e-05,
+        "directional_bias": 0.0005012531328320417,
+        "transition_density": 0.10394789579158317,
+        "fine_edge_density": 0.2998892716535433
+      },
+      "output_path": "output/benchmark/seg-semantic_density-high_colors-3_seed-42/jungle/best_pattern.png"
+    },
+    {
       "configuration": "seg-none_density-high_colors-3_seed-42",
       "segmentation": "none",
       "density": "high",
@@ -854,44 +1291,6 @@
         "fine_edge_density": 0.3023806594488189
       },
       "output_path": "output/benchmark/seg-none_density-high_colors-3_seed-42/jungle/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-3_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 3,
-      "seed": 42,
-      "group": "tundra",
-      "score": 0.01942579634487629,
-      "score_components": {
-        "rgb_error": 0.0033481561113148928,
-        "luminance_error": 0.049074918031692505,
-        "texture_error": 0.035940684378147125,
-        "geometry_penalty": 0.0002924672674715173,
-        "directional_bias": 0.0036558408433939663,
-        "transition_density": 0.04714228456913827,
-        "fine_edge_density": 0.1534202755905512
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-3_seed-42/tundra/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-3_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 3,
-      "seed": 42,
-      "group": "taiga",
-      "score": 0.01945372298359871,
-      "score_components": {
-        "rgb_error": 0.0034272423945367336,
-        "luminance_error": 0.05110837519168854,
-        "texture_error": 0.0354832299053669,
-        "geometry_penalty": 2.4618631028262762e-05,
-        "directional_bias": 0.0003077328878532845,
-        "transition_density": 0.045585170340681366,
-        "fine_edge_density": 0.14674581692913385
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-3_seed-42/taiga/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-standard_colors-3_seed-42",
@@ -913,61 +1312,23 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-3_seed-42/forest/best_pattern.png"
     },
     {
-      "configuration": "seg-none_density-low_colors-5_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 5,
-      "seed": 42,
-      "group": "urban",
-      "score": 0.019830727949738503,
-      "score_components": {
-        "rgb_error": 0.0030873804353177547,
-        "luminance_error": 0.046703629195690155,
-        "texture_error": 0.030779698863625526,
-        "geometry_penalty": 0.0024932566377433353,
-        "directional_bias": 0.03116570797179169,
-        "transition_density": 0.06166533066132265,
-        "fine_edge_density": 0.20687746062992127
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-5_seed-42/urban/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-3_seed-42",
-      "segmentation": "none",
-      "density": "low",
+      "configuration": "seg-semantic_density-standard_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
       "colors": 3,
       "seed": 42,
-      "group": "mountain",
-      "score": 0.020585838705301285,
+      "group": "forest",
+      "score": 0.02023046836256981,
       "score_components": {
-        "rgb_error": 0.003257750067859888,
-        "luminance_error": 0.049709759652614594,
-        "texture_error": 0.03934000805020332,
-        "geometry_penalty": 0.0005676042872238688,
-        "directional_bias": 0.00709505359029836,
-        "transition_density": 0.03982565130260521,
-        "fine_edge_density": 0.13235113188976377
+        "rgb_error": 0.003192763077095151,
+        "luminance_error": 0.04737129807472229,
+        "texture_error": 0.039068225771188736,
+        "geometry_penalty": 0.0007308796658835822,
+        "directional_bias": 0.009135995823544778,
+        "transition_density": 0.06909619238476955,
+        "fine_edge_density": 0.24344857283464566
       },
-      "output_path": "output/benchmark/seg-none_density-low_colors-3_seed-42/mountain/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-5_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 5,
-      "seed": 42,
-      "group": "jungle",
-      "score": 0.021206140518188477,
-      "score_components": {
-        "rgb_error": 0.0033460522536188364,
-        "luminance_error": 0.042994458228349686,
-        "texture_error": 0.047303151339292526,
-        "geometry_penalty": 0.000441355234859582,
-        "directional_bias": 0.005516940435744775,
-        "transition_density": 0.0642945891783567,
-        "fine_edge_density": 0.2270853838582677
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-5_seed-42/jungle/best_pattern.png"
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-3_seed-42/forest/best_pattern.png"
     },
     {
       "configuration": "seg-none_density-standard_colors-3_seed-42",
@@ -989,42 +1350,23 @@
       "output_path": "output/benchmark/seg-none_density-standard_colors-3_seed-42/jungle/best_pattern.png"
     },
     {
-      "configuration": "seg-none_density-low_colors-3_seed-42",
-      "segmentation": "none",
-      "density": "low",
-      "colors": 3,
-      "seed": 42,
-      "group": "forest",
-      "score": 0.0218870397657156,
-      "score_components": {
-        "rgb_error": 0.003308854065835476,
-        "luminance_error": 0.04881110042333603,
-        "texture_error": 0.04754571616649628,
-        "geometry_penalty": 3.564207135268716e-05,
-        "directional_bias": 0.00044552589190858947,
-        "transition_density": 0.0584749498997996,
-        "fine_edge_density": 0.2046013779527559
-      },
-      "output_path": "output/benchmark/seg-none_density-low_colors-3_seed-42/forest/best_pattern.png"
-    },
-    {
-      "configuration": "seg-none_density-low_colors-3_seed-42",
-      "segmentation": "none",
-      "density": "low",
+      "configuration": "seg-semantic_density-standard_colors-3_seed-42",
+      "segmentation": "semantic",
+      "density": "standard",
       "colors": 3,
       "seed": 42,
       "group": "jungle",
-      "score": 0.02332453429698944,
+      "score": 0.02124769054353237,
       "score_components": {
-        "rgb_error": 0.003410613164305687,
-        "luminance_error": 0.04832549765706062,
-        "texture_error": 0.053384095430374146,
-        "geometry_penalty": 0.00010845484905598142,
-        "directional_bias": 0.0013556856131997678,
-        "transition_density": 0.06060721442885772,
-        "fine_edge_density": 0.21216781496062992
+        "rgb_error": 0.00335110817104578,
+        "luminance_error": 0.047536611557006836,
+        "texture_error": 0.0451161153614521,
+        "geometry_penalty": 0.0001876774910482745,
+        "directional_bias": 0.002345968638103431,
+        "transition_density": 0.08115230460921843,
+        "fine_edge_density": 0.25975024606299213
       },
-      "output_path": "output/benchmark/seg-none_density-low_colors-3_seed-42/jungle/best_pattern.png"
+      "output_path": "output/benchmark/seg-semantic_density-standard_colors-3_seed-42/jungle/best_pattern.png"
     }
   ]
 }

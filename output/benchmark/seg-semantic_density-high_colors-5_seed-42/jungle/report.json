@@ -1,0 +1,387 @@
+{
+  "input_images": [
+    "photos/jungle/Amazon-plants.jpg [semantic]",
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]",
+    "photos/jungle/DSC_1137.jpg [semantic]",
+    "photos/jungle/images-3 copy.jpeg [semantic]",
+    "photos/jungle/images-3.jpeg [semantic]",
+    "photos/jungle/images-4 copy.jpeg [semantic]",
+    "photos/jungle/images-4.jpeg [semantic]",
+    "photos/jungle/images-5 copy.jpeg [semantic]",
+    "photos/jungle/images-5.jpeg [semantic]",
+    "photos/jungle/images-6.jpeg [semantic]",
+    "photos/jungle/p0ml01qd.jpg [semantic]",
+    "photos/jungle/p0ml02xf.jpg [semantic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/jungle/Amazon-plants.jpg [semantic]": 0.8967584978070176,
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": 0.997260551948052,
+    "photos/jungle/DSC_1137.jpg [semantic]": 0.9882180606617647,
+    "photos/jungle/images-3 copy.jpeg [semantic]": 0.9790467379385965,
+    "photos/jungle/images-3.jpeg [semantic]": 0.9951114766081871,
+    "photos/jungle/images-4 copy.jpeg [semantic]": 0.9989204950142451,
+    "photos/jungle/images-4.jpeg [semantic]": 0.9980697855571847,
+    "photos/jungle/images-5 copy.jpeg [semantic]": 0.9808856451023392,
+    "photos/jungle/images-5.jpeg [semantic]": 0.9948586856617647,
+    "photos/jungle/images-6.jpeg [semantic]": 0.997897518382353,
+    "photos/jungle/p0ml01qd.jpg [semantic]": 0.9453841387856258,
+    "photos/jungle/p0ml02xf.jpg [semantic]": 0.9990473977695167
+  },
+  "mask_sources": {
+    "photos/jungle/Amazon-plants.jpg [semantic]": "semantic",
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": "semantic",
+    "photos/jungle/DSC_1137.jpg [semantic]": "semantic",
+    "photos/jungle/images-3 copy.jpeg [semantic]": "semantic",
+    "photos/jungle/images-3.jpeg [semantic]": "semantic",
+    "photos/jungle/images-4 copy.jpeg [semantic]": "semantic",
+    "photos/jungle/images-4.jpeg [semantic]": "semantic",
+    "photos/jungle/images-5 copy.jpeg [semantic]": "semantic",
+    "photos/jungle/images-5.jpeg [semantic]": "semantic",
+    "photos/jungle/images-6.jpeg [semantic]": "semantic",
+    "photos/jungle/p0ml01qd.jpg [semantic]": "semantic",
+    "photos/jungle/p0ml02xf.jpg [semantic]": "semantic"
+  },
+  "semantic_labels": {
+    "photos/jungle/Amazon-plants.jpg [semantic]": [
+      "earth",
+      "plant",
+      "rock",
+      "sky",
+      "tree",
+      "water"
+    ],
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": [
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/DSC_1137.jpg [semantic]": [
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/images-3 copy.jpeg [semantic]": [
+      "palm",
+      "plant",
+      "sky",
+      "tree",
+      "wall"
+    ],
+    "photos/jungle/images-3.jpeg [semantic]": [
+      "dirt track",
+      "earth",
+      "palm",
+      "path",
+      "plant",
+      "sand",
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/images-4 copy.jpeg [semantic]": [
+      "palm",
+      "plant",
+      "tree",
+      "wall"
+    ],
+    "photos/jungle/images-4.jpeg [semantic]": [
+      "earth",
+      "fence",
+      "plant",
+      "pole",
+      "tree"
+    ],
+    "photos/jungle/images-5 copy.jpeg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/images-5.jpeg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/jungle/images-6.jpeg [semantic]": [
+      "earth",
+      "plant",
+      "tree"
+    ],
+    "photos/jungle/p0ml01qd.jpg [semantic]": [
+      "palm",
+      "person",
+      "plant",
+      "rock",
+      "sky",
+      "tree",
+      "wall",
+      "water"
+    ],
+    "photos/jungle/p0ml02xf.jpg [semantic]": [
+      "mountain",
+      "tree"
+    ]
+  },
+  "semantic_excluded_labels": {
+    "photos/jungle/Amazon-plants.jpg [semantic]": [
+      "sky",
+      "water"
+    ],
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/DSC_1137.jpg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/images-3 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/images-3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/images-5 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/images-5.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/jungle/p0ml01qd.jpg [semantic]": [
+      "person",
+      "sky",
+      "water"
+    ]
+  },
+  "semantic_excluded_fraction": {
+    "photos/jungle/Amazon-plants.jpg [semantic]": 0.08141447368421052,
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": 0.000578327922077922,
+    "photos/jungle/DSC_1137.jpg [semantic]": 0.009955193014705882,
+    "photos/jungle/images-3 copy.jpeg [semantic]": 0.009103161549707603,
+    "photos/jungle/images-3.jpeg [semantic]": 0.004328855994152047,
+    "photos/jungle/images-5 copy.jpeg [semantic]": 0.019114354897660817,
+    "photos/jungle/images-5.jpeg [semantic]": 0.0017003676470588236,
+    "photos/jungle/p0ml01qd.jpg [semantic]": 0.05432930607187113
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 16,
+  "best_score": 0.01637452468276024,
+  "score_components": {
+    "rgb_error": 0.0031549374107271433,
+    "luminance_error": 0.039532482624053955,
+    "texture_error": 0.03019724227488041,
+    "geometry_penalty": 0.0004338700740467081,
+    "directional_bias": 0.005423375925583851,
+    "transition_density": 0.11935270541082164,
+    "fine_edge_density": 0.3536540354330709
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 4,
+      "score": 0.01637452468276024,
+      "score_components": {
+        "rgb_error": 0.0031549374107271433,
+        "luminance_error": 0.039532482624053955,
+        "texture_error": 0.03019724227488041,
+        "geometry_penalty": 0.0004338700740467081,
+        "directional_bias": 0.005423375925583851,
+        "transition_density": 0.11935270541082164,
+        "fine_edge_density": 0.3536540354330709
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 10,
+      "score": 0.01697614975273609,
+      "score_components": {
+        "rgb_error": 0.003183087334036827,
+        "luminance_error": 0.04027948155999184,
+        "texture_error": 0.03366973623633385,
+        "geometry_penalty": 5.356205779635863e-05,
+        "directional_bias": 0.0006695257224544829,
+        "transition_density": 0.11074749498997996,
+        "fine_edge_density": 0.3269254429133858
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 9,
+      "score": 0.016982709988951683,
+      "score_components": {
+        "rgb_error": 0.0031801871955394745,
+        "luminance_error": 0.04001998156309128,
+        "texture_error": 0.03367779403924942,
+        "geometry_penalty": 0.00010634857902489954,
+        "directional_bias": 0.0013293572378112442,
+        "transition_density": 0.11155511022044087,
+        "fine_edge_density": 0.32904773622047245
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 7,
+      "score": 0.017000149935483932,
+      "score_components": {
+        "rgb_error": 0.003167469520121813,
+        "luminance_error": 0.03967123478651047,
+        "texture_error": 0.03202010691165924,
+        "geometry_penalty": 0.0005907683793646124,
+        "directional_bias": 0.007384604742057655,
+        "transition_density": 0.11587775551102206,
+        "fine_edge_density": 0.34082800196850394
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 14,
+      "score": 0.017027705907821655,
+      "score_components": {
+        "rgb_error": 0.003175196470692754,
+        "luminance_error": 0.040323980152606964,
+        "texture_error": 0.03357480838894844,
+        "geometry_penalty": 0.00012383675402014363,
+        "directional_bias": 0.0015479594252517954,
+        "transition_density": 0.11004208416833666,
+        "fine_edge_density": 0.32920152559055116
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 2,
+      "score": 0.01727675460278988,
+      "score_components": {
+        "rgb_error": 0.0031757124233990908,
+        "luminance_error": 0.0404919795691967,
+        "texture_error": 0.034114737063646317,
+        "geometry_penalty": 0.00021280581469409327,
+        "directional_bias": 0.002660072683676166,
+        "transition_density": 0.10697795591182364,
+        "fine_edge_density": 0.31757504921259844
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 3,
+      "score": 0.01737254671752453,
+      "score_components": {
+        "rgb_error": 0.0031649842858314514,
+        "luminance_error": 0.03980322927236557,
+        "texture_error": 0.03165031969547272,
+        "geometry_penalty": 0.0010293963803745163,
+        "directional_bias": 0.012867454754681453,
+        "transition_density": 0.11493787575150301,
+        "fine_edge_density": 0.3434731791338583
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 0,
+      "score": 0.01745041273534298,
+      "score_components": {
+        "rgb_error": 0.0031687654554843903,
+        "luminance_error": 0.039989981800317764,
+        "texture_error": 0.03327805548906326,
+        "geometry_penalty": 0.0006811008172527347,
+        "directional_bias": 0.008513760215659184,
+        "transition_density": 0.11745691382765532,
+        "fine_edge_density": 0.34052042322834647
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 12,
+      "score": 0.01747354306280613,
+      "score_components": {
+        "rgb_error": 0.003179071703925729,
+        "luminance_error": 0.04029247909784317,
+        "texture_error": 0.033676497638225555,
+        "geometry_penalty": 0.0005490012428177751,
+        "directional_bias": 0.006862515535222189,
+        "transition_density": 0.11126052104208417,
+        "fine_edge_density": 0.3262795275590551
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 6,
+      "score": 0.01751719042658806,
+      "score_components": {
+        "rgb_error": 0.0031669624149799347,
+        "luminance_error": 0.04007573053240776,
+        "texture_error": 0.03334162384271622,
+        "geometry_penalty": 0.0007180865358774482,
+        "directional_bias": 0.008976081698468101,
+        "transition_density": 0.11185370741482967,
+        "fine_edge_density": 0.3301857775590551
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "semantic",
+  "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "generation_mode": "standard",
+  "density": "high",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 62.0,
+    "dark_floor": 58.0,
+    "dark_weight": 0.16,
+    "detail": 0.19,
+    "blur": 0.65,
+    "blob_scale": 0.6,
+    "blob_weight": 0.38,
+    "blob_aspect": 0.78
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "jungle": 240000
+  },
+  "dark_palette_weight": 0.1600000113248825,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        45,
+        49,
+        43
+      ],
+      "weight": 0.08024460822343826
+    },
+    {
+      "rgb": [
+        53,
+        58,
+        47
+      ],
+      "weight": 0.07975540310144424
+    },
+    {
+      "rgb": [
+        81,
+        100,
+        51
+      ],
+      "weight": 0.4383402466773987
+    },
+    {
+      "rgb": [
+        138,
+        147,
+        92
+      ],
+      "weight": 0.28299129009246826
+    },
+    {
+      "rgb": [
+        182,
+        186,
+        142
+      ],
+      "weight": 0.11866843700408936
+    }
+  ]
+}

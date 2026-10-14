@@ -1,0 +1,336 @@
+{
+  "input_images": [
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]",
+    "photos/urban/images-3.jpeg [semantic]",
+    "photos/urban/images-4.jpeg [semantic]",
+    "photos/urban/images-5.jpeg [semantic]",
+    "photos/urban/images-6.jpeg [semantic]",
+    "photos/urban/images-7.jpeg [semantic]",
+    "photos/urban/images-8.jpeg [semantic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": 0.6998760516826923,
+    "photos/urban/images-3.jpeg [semantic]": 0.637360245601173,
+    "photos/urban/images-4.jpeg [semantic]": 0.7102457682291666,
+    "photos/urban/images-5.jpeg [semantic]": 0.41339803479381443,
+    "photos/urban/images-6.jpeg [semantic]": 0.4722610428885631,
+    "photos/urban/images-7.jpeg [semantic]": 0.6115061442057291,
+    "photos/urban/images-8.jpeg [semantic]": 0.9510801174496645
+  },
+  "mask_sources": {
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": "semantic",
+    "photos/urban/images-3.jpeg [semantic]": "semantic",
+    "photos/urban/images-4.jpeg [semantic]": "semantic",
+    "photos/urban/images-5.jpeg [semantic]": "semantic",
+    "photos/urban/images-6.jpeg [semantic]": "semantic",
+    "photos/urban/images-7.jpeg [semantic]": "semantic",
+    "photos/urban/images-8.jpeg [semantic]": "semantic"
+  },
+  "semantic_labels": {
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": [
+      "building",
+      "earth",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/urban/images-3.jpeg [semantic]": [
+      "building",
+      "land",
+      "mountain",
+      "road",
+      "sky",
+      "tree"
+    ],
+    "photos/urban/images-4.jpeg [semantic]": [
+      "building",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/urban/images-5.jpeg [semantic]": [
+      "bridge",
+      "building",
+      "bus",
+      "river",
+      "road",
+      "sky",
+      "skyscraper",
+      "tree"
+    ],
+    "photos/urban/images-6.jpeg [semantic]": [
+      "building",
+      "mountain",
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "photos/urban/images-7.jpeg [semantic]": [
+      "bridge",
+      "building",
+      "earth",
+      "fence",
+      "grandstand",
+      "hill",
+      "mountain",
+      "road",
+      "sea",
+      "sidewalk",
+      "signboard",
+      "sky",
+      "tree",
+      "wall"
+    ],
+    "photos/urban/images-8.jpeg [semantic]": [
+      "box",
+      "building",
+      "mountain",
+      "sky"
+    ]
+  },
+  "semantic_excluded_labels": {
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/urban/images-3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/urban/images-4.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/urban/images-5.jpeg [semantic]": [
+      "bus",
+      "river",
+      "sky"
+    ],
+    "photos/urban/images-6.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/urban/images-7.jpeg [semantic]": [
+      "sea",
+      "sky"
+    ],
+    "photos/urban/images-8.jpeg [semantic]": [
+      "sky"
+    ]
+  },
+  "semantic_excluded_fraction": {
+    "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": 0.12819886818910256,
+    "photos/urban/images-3.jpeg [semantic]": 0.1654600439882698,
+    "photos/urban/images-4.jpeg [semantic]": 0.2840847439236111,
+    "photos/urban/images-5.jpeg [semantic]": 0.29441178049828176,
+    "photos/urban/images-6.jpeg [semantic]": 0.46646467192082114,
+    "photos/urban/images-7.jpeg [semantic]": 0.3103383382161458,
+    "photos/urban/images-8.jpeg [semantic]": 0.04705196098993288
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 3,
+  "candidates_evaluated": 16,
+  "best_score": 0.014757713302969933,
+  "score_components": {
+    "rgb_error": 0.0030910903587937355,
+    "luminance_error": 0.04279807209968567,
+    "texture_error": 0.017885630950331688,
+    "geometry_penalty": 0.0012159638685021895,
+    "directional_bias": 0.015199548356277369,
+    "transition_density": 0.09229258517034068,
+    "fine_edge_density": 0.2822650098425197
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 7,
+      "score": 0.014757713302969933,
+      "score_components": {
+        "rgb_error": 0.0030910903587937355,
+        "luminance_error": 0.04279807209968567,
+        "texture_error": 0.017885630950331688,
+        "geometry_penalty": 0.0012159638685021895,
+        "directional_bias": 0.015199548356277369,
+        "transition_density": 0.09229258517034068,
+        "fine_edge_density": 0.2822650098425197
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 8,
+      "score": 0.015496631152927876,
+      "score_components": {
+        "rgb_error": 0.0031569497659802437,
+        "luminance_error": 0.04438932240009308,
+        "texture_error": 0.020747149363160133,
+        "geometry_penalty": 0.0009487617638807458,
+        "directional_bias": 0.011859522048509322,
+        "transition_density": 0.0785751503006012,
+        "fine_edge_density": 0.24480191929133857
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 14,
+      "score": 0.01623363234102726,
+      "score_components": {
+        "rgb_error": 0.003108574543148279,
+        "luminance_error": 0.04307357221841812,
+        "texture_error": 0.01851331628859043,
+        "geometry_penalty": 0.0024829056034099974,
+        "directional_bias": 0.03103632004262497,
+        "transition_density": 0.09026853707414831,
+        "fine_edge_density": 0.27537524606299213
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 0,
+      "score": 0.016558650881052017,
+      "score_components": {
+        "rgb_error": 0.0031540144700556993,
+        "luminance_error": 0.044261571019887924,
+        "texture_error": 0.020771795883774757,
+        "geometry_penalty": 0.002029330162504952,
+        "directional_bias": 0.0253666270313119,
+        "transition_density": 0.08089779559118238,
+        "fine_edge_density": 0.24732406496062992
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 5,
+      "score": 0.016616879031062126,
+      "score_components": {
+        "rgb_error": 0.0030850903131067753,
+        "luminance_error": 0.04252106696367264,
+        "texture_error": 0.017903296276926994,
+        "geometry_penalty": 0.003123750184183385,
+        "directional_bias": 0.03904687730229231,
+        "transition_density": 0.09520440881763527,
+        "fine_edge_density": 0.29447588582677164
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 9,
+      "score": 0.0167013518512249,
+      "score_components": {
+        "rgb_error": 0.0031096837483346462,
+        "luminance_error": 0.04293231666088104,
+        "texture_error": 0.018383413553237915,
+        "geometry_penalty": 0.003006673691605198,
+        "directional_bias": 0.03758342114506497,
+        "transition_density": 0.09128657314629259,
+        "fine_edge_density": 0.2819574311023622
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 10,
+      "score": 0.01674577221274376,
+      "score_components": {
+        "rgb_error": 0.003131826873868704,
+        "luminance_error": 0.04384457319974899,
+        "texture_error": 0.019155709072947502,
+        "geometry_penalty": 0.0026904651897964676,
+        "directional_bias": 0.033630814872455846,
+        "transition_density": 0.08241082164328657,
+        "fine_edge_density": 0.2553211122047244
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 12,
+      "score": 0.016784915700554848,
+      "score_components": {
+        "rgb_error": 0.0031297020614147186,
+        "luminance_error": 0.04378806799650192,
+        "texture_error": 0.019169887527823448,
+        "geometry_penalty": 0.002737438210874888,
+        "directional_bias": 0.0342179776359361,
+        "transition_density": 0.08351503006012023,
+        "fine_edge_density": 0.25559793307086615
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 11,
+      "score": 0.016858674585819244,
+      "score_components": {
+        "rgb_error": 0.003131264355033636,
+        "luminance_error": 0.04374682158231735,
+        "texture_error": 0.019950253888964653,
+        "geometry_penalty": 0.002630553751971061,
+        "directional_bias": 0.03288192189963826,
+        "transition_density": 0.08642084168336672,
+        "fine_edge_density": 0.2592888779527559
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 2,
+      "score": 0.016895504668354988,
+      "score_components": {
+        "rgb_error": 0.003135092556476593,
+        "luminance_error": 0.04389281943440437,
+        "texture_error": 0.019159438088536263,
+        "geometry_penalty": 0.0028289855072463756,
+        "directional_bias": 0.03536231884057969,
+        "transition_density": 0.08296593186372746,
+        "fine_edge_density": 0.26104207677165353
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "semantic",
+  "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "generation_mode": "standard",
+  "density": "high",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 50.0,
+    "dark_floor": 72.0,
+    "dark_weight": 0.1,
+    "detail": 0.16,
+    "blur": 0.7,
+    "blob_scale": 0.88,
+    "blob_weight": 0.36,
+    "blob_aspect": 1.3
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "urban": 140000
+  },
+  "dark_palette_weight": 0.0,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        141,
+        119,
+        99
+      ],
+      "weight": 0.40586429834365845
+    },
+    {
+      "rgb": [
+        70,
+        71,
+        61
+      ],
+      "weight": 0.31893572211265564
+    },
+    {
+      "rgb": [
+        190,
+        166,
+        142
+      ],
+      "weight": 0.2752000093460083
+    }
+  ]
+}

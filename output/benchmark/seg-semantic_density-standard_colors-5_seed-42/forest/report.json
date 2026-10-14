@@ -1,0 +1,443 @@
+{
+  "input_images": [
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]",
+    "photos/forest/MG_0652-1024x768.webp [semantic]",
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]",
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]",
+    "photos/forest/images-3 copy 2.jpeg [semantic]",
+    "photos/forest/images-3 copy 3.jpeg [semantic]",
+    "photos/forest/images-3 copy.jpeg [semantic]",
+    "photos/forest/images-3.jpeg [semantic]",
+    "photos/forest/images-4 copy.jpeg [semantic]",
+    "photos/forest/images-4.jpeg [semantic]",
+    "photos/forest/images-5 copy.jpeg [semantic]",
+    "photos/forest/images-5.jpeg [semantic]",
+    "photos/forest/orman-cesitleri.jpg [semantic]",
+    "photos/forest/trekking-2g.jpg.webp [semantic]",
+    "photos/forest/veduta.jpg [semantic]",
+    "photos/forest/vivere-in-campagna.jpg [semantic]",
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": 0.7587178548177084,
+    "photos/forest/MG_0652-1024x768.webp [semantic]": 0.6360677083333334,
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": 0.9927602639296188,
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": 0.9973044199486302,
+    "photos/forest/images-3 copy 2.jpeg [semantic]": 0.9424629211425781,
+    "photos/forest/images-3 copy 3.jpeg [semantic]": 0.8121014030612245,
+    "photos/forest/images-3 copy.jpeg [semantic]": 0.4403104965241806,
+    "photos/forest/images-3.jpeg [semantic]": 0.7152760823567709,
+    "photos/forest/images-4 copy.jpeg [semantic]": 0.9979909261067709,
+    "photos/forest/images-4.jpeg [semantic]": 0.99981689453125,
+    "photos/forest/images-5 copy.jpeg [semantic]": 0.8241933186848959,
+    "photos/forest/images-5.jpeg [semantic]": 0.9999160766601562,
+    "photos/forest/orman-cesitleri.jpg [semantic]": 0.9966023763020834,
+    "photos/forest/trekking-2g.jpg.webp [semantic]": 0.6193033854166666,
+    "photos/forest/veduta.jpg [semantic]": 0.93566,
+    "photos/forest/vivere-in-campagna.jpg [semantic]": 0.7411424067982456,
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": 0.9994558742668622
+  },
+  "mask_sources": {
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": "semantic",
+    "photos/forest/MG_0652-1024x768.webp [semantic]": "semantic",
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": "semantic",
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": "semantic",
+    "photos/forest/images-3 copy 2.jpeg [semantic]": "semantic",
+    "photos/forest/images-3 copy 3.jpeg [semantic]": "semantic",
+    "photos/forest/images-3 copy.jpeg [semantic]": "semantic",
+    "photos/forest/images-3.jpeg [semantic]": "semantic",
+    "photos/forest/images-4 copy.jpeg [semantic]": "semantic",
+    "photos/forest/images-4.jpeg [semantic]": "semantic",
+    "photos/forest/images-5 copy.jpeg [semantic]": "semantic",
+    "photos/forest/images-5.jpeg [semantic]": "semantic",
+    "photos/forest/orman-cesitleri.jpg [semantic]": "semantic",
+    "photos/forest/trekking-2g.jpg.webp [semantic]": "semantic",
+    "photos/forest/veduta.jpg [semantic]": "semantic",
+    "photos/forest/vivere-in-campagna.jpg [semantic]": "semantic",
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": "semantic"
+  },
+  "semantic_labels": {
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": [
+      "grass",
+      "mountain",
+      "rock",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/MG_0652-1024x768.webp [semantic]": [
+      "earth",
+      "field",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": [
+      "earth",
+      "grass",
+      "tree"
+    ],
+    "photos/forest/images-3 copy 2.jpeg [semantic]": [
+      "earth",
+      "hill",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-3 copy 3.jpeg [semantic]": [
+      "building",
+      "grass",
+      "mountain",
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-3 copy.jpeg [semantic]": [
+      "mountain",
+      "sky"
+    ],
+    "photos/forest/images-3.jpeg [semantic]": [
+      "earth",
+      "grass",
+      "hill",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-4 copy.jpeg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-4.jpeg [semantic]": [
+      "earth",
+      "rock",
+      "tree",
+      "water"
+    ],
+    "photos/forest/images-5 copy.jpeg [semantic]": [
+      "building",
+      "mountain",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/images-5.jpeg [semantic]": [
+      "dirt track",
+      "earth",
+      "tree"
+    ],
+    "photos/forest/orman-cesitleri.jpg [semantic]": [
+      "earth",
+      "grass",
+      "tree"
+    ],
+    "photos/forest/trekking-2g.jpg.webp [semantic]": [
+      "mountain",
+      "person",
+      "sky"
+    ],
+    "photos/forest/veduta.jpg [semantic]": [
+      "earth",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/vivere-in-campagna.jpg [semantic]": [
+      "building",
+      "field",
+      "grass",
+      "house",
+      "sky",
+      "tree"
+    ],
+    "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": [
+      "tree"
+    ]
+  },
+  "semantic_excluded_labels": {
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/MG_0652-1024x768.webp [semantic]": [
+      "sky"
+    ],
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-3 copy 2.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-3 copy 3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-3 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-3.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-4 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/images-4.jpeg [semantic]": [
+      "water"
+    ],
+    "photos/forest/images-5 copy.jpeg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/trekking-2g.jpg.webp [semantic]": [
+      "person",
+      "sky"
+    ],
+    "photos/forest/veduta.jpg [semantic]": [
+      "sky"
+    ],
+    "photos/forest/vivere-in-campagna.jpg [semantic]": [
+      "sky"
+    ]
+  },
+  "semantic_excluded_fraction": {
+    "photos/forest/23853_135_PRBEI.jpeg [semantic]": 0.20688374837239584,
+    "photos/forest/MG_0652-1024x768.webp [semantic]": 0.322784423828125,
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": 0.002548799486803519,
+    "photos/forest/images-3 copy 2.jpeg [semantic]": 0.049896240234375,
+    "photos/forest/images-3 copy 3.jpeg [semantic]": 0.08627915451895043,
+    "photos/forest/images-3 copy.jpeg [semantic]": 0.20133727709963015,
+    "photos/forest/images-3.jpeg [semantic]": 0.24283854166666666,
+    "photos/forest/images-4 copy.jpeg [semantic]": 0.001617431640625,
+    "photos/forest/images-4.jpeg [semantic]": 6.103515625e-05,
+    "photos/forest/images-5 copy.jpeg [semantic]": 0.15362040201822916,
+    "photos/forest/trekking-2g.jpg.webp [semantic]": 0.3806966145833333,
+    "photos/forest/veduta.jpg [semantic]": 0.042408,
+    "photos/forest/vivere-in-campagna.jpg [semantic]": 0.206648620248538
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 16,
+  "best_score": 0.0166898425668478,
+  "score_components": {
+    "rgb_error": 0.0031586431432515383,
+    "luminance_error": 0.04085537791252136,
+    "texture_error": 0.03174249455332756,
+    "geometry_penalty": 0.0001383535922521998,
+    "directional_bias": 0.0017294199031524975,
+    "transition_density": 0.08111422845691382,
+    "fine_edge_density": 0.28770915354330706
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 1,
+      "score": 0.0166898425668478,
+      "score_components": {
+        "rgb_error": 0.0031586431432515383,
+        "luminance_error": 0.04085537791252136,
+        "texture_error": 0.03174249455332756,
+        "geometry_penalty": 0.0001383535922521998,
+        "directional_bias": 0.0017294199031524975,
+        "transition_density": 0.08111422845691382,
+        "fine_edge_density": 0.28770915354330706
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 12,
+      "score": 0.016783857718110085,
+      "score_components": {
+        "rgb_error": 0.00316569022834301,
+        "luminance_error": 0.041063375771045685,
+        "texture_error": 0.03195978328585625,
+        "geometry_penalty": 0.00013925679255278976,
+        "directional_bias": 0.001740709906909872,
+        "transition_density": 0.079436873747495,
+        "fine_edge_density": 0.2794352854330709
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 15,
+      "score": 0.016965433955192566,
+      "score_components": {
+        "rgb_error": 0.0031588308047503233,
+        "luminance_error": 0.04074712470173836,
+        "texture_error": 0.032461654394865036,
+        "geometry_penalty": 0.0002607395789938012,
+        "directional_bias": 0.003259244737422515,
+        "transition_density": 0.08177755511022045,
+        "fine_edge_density": 0.2876783956692913
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 14,
+      "score": 0.017028355970978737,
+      "score_components": {
+        "rgb_error": 0.0031610028818249702,
+        "luminance_error": 0.04082562401890755,
+        "texture_error": 0.03201651573181152,
+        "geometry_penalty": 0.0004152791380999051,
+        "directional_bias": 0.005190989226248814,
+        "transition_density": 0.08184368737474951,
+        "fine_edge_density": 0.28820127952755903
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 5,
+      "score": 0.017107103019952774,
+      "score_components": {
+        "rgb_error": 0.0031385025940835476,
+        "luminance_error": 0.04042837768793106,
+        "texture_error": 0.030675813555717468,
+        "geometry_penalty": 0.0008985474093560563,
+        "directional_bias": 0.011231842616950703,
+        "transition_density": 0.08760521042084168,
+        "fine_edge_density": 0.300904281496063
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 11,
+      "score": 0.017301026731729507,
+      "score_components": {
+        "rgb_error": 0.0031695649959146976,
+        "luminance_error": 0.041321128606796265,
+        "texture_error": 0.034170813858509064,
+        "geometry_penalty": 7.744433688286275e-05,
+        "directional_bias": 0.0009680542110357844,
+        "transition_density": 0.07866533066132264,
+        "fine_edge_density": 0.2734375
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 3,
+      "score": 0.01740128919482231,
+      "score_components": {
+        "rgb_error": 0.003142627887427807,
+        "luminance_error": 0.0403478741645813,
+        "texture_error": 0.03080100566148758,
+        "geometry_penalty": 0.0011751162683611943,
+        "directional_bias": 0.014688953354514927,
+        "transition_density": 0.08704208416833667,
+        "fine_edge_density": 0.3005044291338583
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 2,
+      "score": 0.017505310475826263,
+      "score_components": {
+        "rgb_error": 0.0031508933752775192,
+        "luminance_error": 0.040644124150276184,
+        "texture_error": 0.03198903799057007,
+        "geometry_penalty": 0.0009365537302400992,
+        "directional_bias": 0.01170692162800124,
+        "transition_density": 0.0840501002004008,
+        "fine_edge_density": 0.29179995078740156
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 6,
+      "score": 0.017537182196974754,
+      "score_components": {
+        "rgb_error": 0.0031770651694387197,
+        "luminance_error": 0.041419126093387604,
+        "texture_error": 0.03424888104200363,
+        "geometry_penalty": 0.00027347594136840946,
+        "directional_bias": 0.0034184492671051185,
+        "transition_density": 0.07738276553106213,
+        "fine_edge_density": 0.273314468503937
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 0,
+      "score": 0.01770778000354767,
+      "score_components": {
+        "rgb_error": 0.0031547995749861,
+        "luminance_error": 0.04075912758708,
+        "texture_error": 0.032325129956007004,
+        "geometry_penalty": 0.0010357048144844362,
+        "directional_bias": 0.012946310181055453,
+        "transition_density": 0.08312424849699399,
+        "fine_edge_density": 0.2941683070866142
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "semantic",
+  "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 65.0,
+    "dark_floor": 60.0,
+    "dark_weight": 0.18,
+    "detail": 0.18,
+    "blur": 0.6,
+    "blob_scale": 0.72,
+    "blob_weight": 0.34,
+    "blob_aspect": 0.82
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "forest": 340000
+  },
+  "dark_palette_weight": 0.18000000715255737,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        93,
+        105,
+        55
+      ],
+      "weight": 0.43716078996658325
+    },
+    {
+      "rgb": [
+        58,
+        61,
+        51
+      ],
+      "weight": 0.09858738631010056
+    },
+    {
+      "rgb": [
+        50,
+        52,
+        46
+      ],
+      "weight": 0.08141262084245682
+    },
+    {
+      "rgb": [
+        149,
+        148,
+        92
+      ],
+      "weight": 0.25843364000320435
+    },
+    {
+      "rgb": [
+        188,
+        183,
+        137
+      ],
+      "weight": 0.12440554797649384
+    }
+  ]
+}
