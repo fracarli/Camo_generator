@@ -1,0 +1,148 @@
+{
+  "input_images": [
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]",
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
+    "photos/forest/orman-cesitleri.jpg [automatic]",
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]",
+    "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
+    "photos/other/Salento_ulivo_secolare.jpg [automatic]",
+    "photos/other/images-3 copy 2.jpeg [automatic]",
+    "photos/other/images-3 copy.jpeg [automatic]",
+    "photos/other/images-3.jpeg [automatic]",
+    "photos/other/images-4 copy.jpeg [automatic]",
+    "photos/other/images-4.jpeg [automatic]",
+    "photos/other/images-5 copy.jpeg [automatic]",
+    "photos/other/images-5.jpeg [automatic]",
+    "photos/other/images-6.jpeg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334,
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
+    "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343,
+    "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
+    "photos/other/Salento_ulivo_secolare.jpg [automatic]": 0.9866434733072916,
+    "photos/other/images-3 copy 2.jpeg [automatic]": 1.0,
+    "photos/other/images-3 copy.jpeg [automatic]": 0.9430198669433594,
+    "photos/other/images-3.jpeg [automatic]": 0.5244072808159722,
+    "photos/other/images-4 copy.jpeg [automatic]": 0.6323644301470588,
+    "photos/other/images-4.jpeg [automatic]": 0.9979303533380682,
+    "photos/other/images-5 copy.jpeg [automatic]": 0.8179813508064516,
+    "photos/other/images-5.jpeg [automatic]": 0.9785089590443686,
+    "photos/other/images-6.jpeg [automatic]": 0.5521444281524927
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 12,
+  "candidates_evaluated": 64,
+  "best_score": 0.016552409157156944,
+  "score_components": {
+    "rgb_error": 0.002909924602136016,
+    "luminance_error": 0.03777778893709183,
+    "texture_error": 0.029585570096969604
+  },
+  "version": "phase_4_grouped_masked_hybrid",
+  "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        60,
+        57,
+        31
+      ],
+      "weight": 0.12320666760206223
+    },
+    {
+      "rgb": [
+        96,
+        87,
+        65
+      ],
+      "weight": 0.12007666379213333
+    },
+    {
+      "rgb": [
+        42,
+        44,
+        38
+      ],
+      "weight": 0.1127733364701271
+    },
+    {
+      "rgb": [
+        129,
+        116,
+        95
+      ],
+      "weight": 0.09789666533470154
+    },
+    {
+      "rgb": [
+        214,
+        172,
+        119
+      ],
+      "weight": 0.09641999751329422
+    },
+    {
+      "rgb": [
+        180,
+        144,
+        101
+      ],
+      "weight": 0.0935533344745636
+    },
+    {
+      "rgb": [
+        229,
+        226,
+        214
+      ],
+      "weight": 0.08768666535615921
+    },
+    {
+      "rgb": [
+        115,
+        74,
+        28
+      ],
+      "weight": 0.08258000016212463
+    },
+    {
+      "rgb": [
+        180,
+        180,
+        167
+      ],
+      "weight": 0.05398000031709671
+    },
+    {
+      "rgb": [
+        153,
+        102,
+        58
+      ],
+      "weight": 0.052949998527765274
+    },
+    {
+      "rgb": [
+        61,
+        112,
+        17
+      ],
+      "weight": 0.04064333438873291
+    },
+    {
+      "rgb": [
+        132,
+        147,
+        52
+      ],
+      "weight": 0.038233332335948944
+    }
+  ]
+}

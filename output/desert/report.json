@@ -1,0 +1,120 @@
+{
+  "input_images": [
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 12,
+  "candidates_evaluated": 64,
+  "best_score": 0.011609913781285286,
+  "score_components": {
+    "rgb_error": 0.0019095235038548708,
+    "luminance_error": 0.03222612664103508,
+    "texture_error": 0.016457799822092056
+  },
+  "version": "phase_4_grouped_masked_hybrid",
+  "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        187,
+        147,
+        108
+      ],
+      "weight": 0.15164999663829803
+    },
+    {
+      "rgb": [
+        176,
+        136,
+        100
+      ],
+      "weight": 0.14225000143051147
+    },
+    {
+      "rgb": [
+        198,
+        158,
+        116
+      ],
+      "weight": 0.10585000365972519
+    },
+    {
+      "rgb": [
+        89,
+        72,
+        54
+      ],
+      "weight": 0.08694999665021896
+    },
+    {
+      "rgb": [
+        171,
+        190,
+        197
+      ],
+      "weight": 0.08070000261068344
+    },
+    {
+      "rgb": [
+        66,
+        51,
+        38
+      ],
+      "weight": 0.07964999973773956
+    },
+    {
+      "rgb": [
+        162,
+        125,
+        91
+      ],
+      "weight": 0.07895000278949738
+    },
+    {
+      "rgb": [
+        109,
+        91,
+        71
+      ],
+      "weight": 0.07840000092983246
+    },
+    {
+      "rgb": [
+        48,
+        43,
+        41
+      ],
+      "weight": 0.05934999883174896
+    },
+    {
+      "rgb": [
+        139,
+        109,
+        78
+      ],
+      "weight": 0.049150001257658005
+    },
+    {
+      "rgb": [
+        117,
+        114,
+        110
+      ],
+      "weight": 0.04794999957084656
+    },
+    {
+      "rgb": [
+        143,
+        149,
+        149
+      ],
+      "weight": 0.03914999961853027
+    }
+  ]
+}

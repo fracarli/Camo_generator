@@ -1,0 +1,120 @@
+{
+  "input_images": [
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 12,
+  "candidates_evaluated": 64,
+  "best_score": 0.019550548866391182,
+  "score_components": {
+    "rgb_error": 0.0022814844269305468,
+    "luminance_error": 0.03583099693059921,
+    "texture_error": 0.044518131762742996
+  },
+  "version": "phase_4_grouped_masked_hybrid",
+  "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        65,
+        66,
+        41
+      ],
+      "weight": 0.15365000069141388
+    },
+    {
+      "rgb": [
+        88,
+        92,
+        41
+      ],
+      "weight": 0.11819999665021896
+    },
+    {
+      "rgb": [
+        116,
+        118,
+        57
+      ],
+      "weight": 0.11060000211000443
+    },
+    {
+      "rgb": [
+        49,
+        47,
+        41
+      ],
+      "weight": 0.10029999911785126
+    },
+    {
+      "rgb": [
+        100,
+        88,
+        71
+      ],
+      "weight": 0.08344999700784683
+    },
+    {
+      "rgb": [
+        93,
+        51,
+        23
+      ],
+      "weight": 0.08115000277757645
+    },
+    {
+      "rgb": [
+        126,
+        82,
+        38
+      ],
+      "weight": 0.0763000026345253
+    },
+    {
+      "rgb": [
+        151,
+        107,
+        56
+      ],
+      "weight": 0.07270000129938126
+    },
+    {
+      "rgb": [
+        154,
+        128,
+        104
+      ],
+      "weight": 0.07249999791383743
+    },
+    {
+      "rgb": [
+        151,
+        144,
+        61
+      ],
+      "weight": 0.06769999861717224
+    },
+    {
+      "rgb": [
+        181,
+        165,
+        86
+      ],
+      "weight": 0.042249999940395355
+    },
+    {
+      "rgb": [
+        210,
+        189,
+        161
+      ],
+      "weight": 0.021199999377131462
+    }
+  ]
+}
