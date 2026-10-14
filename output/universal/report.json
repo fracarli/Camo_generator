@@ -75,25 +75,66 @@
     "photos/urban/images-7.jpeg [automatic]": 0.644561767578125,
     "photos/urban/images-8.jpeg [automatic]": 0.9981320784395973
   },
+  "mask_sources": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": "automatic",
+    "photos/desert/images-3 copy 2.jpeg [automatic]": "automatic",
+    "photos/desert/images-3.jpeg [automatic]": "automatic",
+    "photos/desert/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/desert/images-5 copy.jpeg [automatic]": "automatic",
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": "automatic",
+    "photos/forest/23853_135_PRBEI.jpeg [automatic]": "automatic",
+    "photos/forest/MG_0652-1024x768.webp [automatic]": "automatic",
+    "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": "automatic",
+    "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": "automatic",
+    "photos/forest/images-3 copy.jpeg [automatic]": "automatic",
+    "photos/forest/images-3.jpeg [automatic]": "automatic",
+    "photos/forest/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/forest/images-4.jpeg [automatic]": "automatic",
+    "photos/forest/images-5 copy.jpeg [automatic]": "automatic",
+    "photos/forest/images-5.jpeg [automatic]": "automatic",
+    "photos/forest/orman-cesitleri.jpg [automatic]": "automatic",
+    "photos/forest/trekking-2g.jpg.webp [automatic]": "automatic",
+    "photos/forest/veduta.jpg [automatic]": "automatic",
+    "photos/mountain/bellino-paesaggio.jpg [automatic]": "automatic",
+    "photos/mountain/images-3.jpeg [automatic]": "automatic",
+    "photos/mountain/images-4.jpeg [automatic]": "automatic",
+    "photos/mountain/images-5 copy.jpeg [automatic]": "automatic",
+    "photos/mountain/images-5.jpeg [automatic]": "automatic",
+    "photos/mountain/images-6.jpeg [automatic]": "automatic",
+    "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": "automatic",
+    "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": "automatic",
+    "photos/other/images-3 copy.jpeg [automatic]": "automatic",
+    "photos/other/images-4.jpeg [automatic]": "automatic",
+    "photos/urban/IMG_9282-1-862x525.jpeg [automatic]": "automatic",
+    "photos/urban/images-3.jpeg [automatic]": "automatic",
+    "photos/urban/images-4.jpeg [automatic]": "automatic",
+    "photos/urban/images-5.jpeg [automatic]": "automatic",
+    "photos/urban/images-6.jpeg [automatic]": "automatic",
+    "photos/urban/images-7.jpeg [automatic]": "automatic",
+    "photos/urban/images-8.jpeg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
   "size": [
     500,
     500
   ],
-  "palette_colors": 3,
+  "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.015188334509730339,
+  "best_score": 0.015377530828118324,
   "score_components": {
-    "rgb_error": 0.0031325542367994785,
-    "luminance_error": 0.04176954925060272,
-    "texture_error": 0.02044607512652874
+    "rgb_error": 0.003061875933781266,
+    "luminance_error": 0.03982526808977127,
+    "texture_error": 0.02291378378868103
   },
-  "version": "phase_16_standard_custom_validation",
-  "generation_mode": "custom",
-  "density": "high",
+  "version": "phase_17_optional_semantic_segmentation",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
   "custom_settings": {
-    "max_color_share": 0.2,
-    "green_share": 0.2,
-    "dark_share": 0.2
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
   },
   "style_profile": {
     "max_chroma": 70.0,
@@ -110,7 +151,7 @@
     "other": 40000,
     "urban": 140000
   },
-  "dark_palette_weight": 0.0,
+  "dark_palette_weight": 0.10000000894069672,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
@@ -119,23 +160,39 @@
         106,
         45
       ],
-      "weight": 0.3333333432674408
+      "weight": 0.22499999403953552
     },
     {
       "rgb": [
-        94,
-        79,
-        52
+        112,
+        92,
+        62
       ],
-      "weight": 0.3333333730697632
+      "weight": 0.22499999403953552
     },
     {
       "rgb": [
-        187,
-        168,
-        137
+        177,
+        152,
+        112
       ],
-      "weight": 0.3333333730697632
+      "weight": 0.22499999403953552
+    },
+    {
+      "rgb": [
+        67,
+        69,
+        56
+      ],
+      "weight": 0.10000000894069672
+    },
+    {
+      "rgb": [
+        180,
+        164,
+        136
+      ],
+      "weight": 0.22499999403953552
     }
   ]
 }

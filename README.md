@@ -32,7 +32,8 @@ output/
 ├── all_patterns_grid.png
 ├── report.json
 ├── validation_report.json
-└── validation_report.md
+├── validation_report.md
+└── segmentation_masks/       # created only when semantic segmentation is used
 ```
 
 The `universal` pattern uses all reference images and gives every environment group equal weight, regardless of how many pixels or photographs it contains. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs.
@@ -51,6 +52,12 @@ The generator deliberately does not copy directional high-frequency texture from
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+```
+
+The neural input stage is optional. Install its dependencies only when needed:
+
+```bash
+python -m pip install -r requirements-ml.txt
 ```
 
 ## Usage
@@ -78,6 +85,20 @@ You can also select the number directly from the command line:
 ```bash
 python camo.py --colors 3
 ```
+
+## Optional neural input segmentation
+
+The generator can use a pretrained SegFormer semantic segmentation model before computing image statistics. It predicts a class for each pixel and removes likely sky, water, people, vehicles, and animals from the reference evidence. Manual masks still have priority, and the existing color-based filter remains as a safety fallback.
+
+Run it explicitly with:
+
+```bash
+python camo.py --mode standard --segmentation semantic --save-segmentation-masks
+```
+
+The default model is `nvidia/segformer-b0-finetuned-ade-512-512`. Its weights are downloaded and cached on the first run. On Apple Silicon, `--device auto` uses MPS when available; use `--device cpu` for a compatibility fallback. Neural masks are saved under `output/segmentation_masks/` when `--save-segmentation-masks` is provided, and each group report records the mask source and labels detected in the input images.
+
+The neural stage improves input selection; it does not generate the camouflage pattern itself and it is not a guarantee of real-world concealment. Validate the masks visually before relying on them for new image types.
 
 Increase the search effort while keeping the industrial five-color limit:
 

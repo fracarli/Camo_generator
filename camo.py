@@ -1,9 +1,9 @@
 """Build and optimize camouflage-like patterns from reference photographs.
 
-This is an explainable baseline. It does not train a neural network; it uses
-image statistics to generate and rank procedural patterns. Sky and water are
-excluded from the reference statistics. Optional manual masks are supported
-alongside a conservative automatic mask.
+This is an explainable baseline. It uses image statistics to generate and rank
+procedural patterns, with an optional pretrained semantic segmentation model
+to improve the input masks. Sky and water are excluded from the reference
+statistics. Optional manual masks are supported and take priority.
 """
 
 from __future__ import annotations
@@ -25,6 +25,7 @@ MIN_COLORS = 2
 MAX_COLORS = 5
 DEFAULT_PATTERN_SIZE = 500
 DEFAULT_DENSITY = "standard"
+DEFAULT_SEGMENTATION_MODEL = "nvidia/segformer-b0-finetuned-ade-512-512"
 DENSITY_SCALES = {
     "low": (5, 10, 20, 40),
     "standard": (8, 16, 32, 64),
@@ -43,6 +44,30 @@ FOSCO_MATTE_TONES = np.array(
     ],
     dtype=np.float32,
 )
+
+# ADE20K classes that should not influence the camouflage palette. The model
+# still predicts all classes; these are only the classes treated as invalid
+# reference pixels for the current baseline.
+SEMANTIC_EXCLUDE_LABELS = {
+    "sky",
+    "water",
+    "sea",
+    "river",
+    "lake",
+    "swimming pool",
+    "person",
+    "car",
+    "truck",
+    "bus",
+    "boat",
+    "airplane",
+    "bicycle",
+    "motorbike",
+    "animal",
+    "bird",
+    "dog",
+    "cat",
+}
 
 STYLE_PROFILES = {
     # Muted, matte colors inspired by olive, stone, sand, and concrete tones.
@@ -64,6 +89,69 @@ class ImageStats:
     luminance_histogram: np.ndarray
     texture_signature: np.ndarray
     valid_fraction: float
+    mask_source: str
+    semantic_labels: list[str]
+
+
+class SemanticSegmenter:
+    """Optional SegFormer inference wrapper for semantic input masks."""
+
+    def __init__(self, model_name: str, device_name: str = "auto") -> None:
+        try:
+            import torch
+            from transformers import AutoImageProcessor, AutoModelForSemanticSegmentation
+        except ImportError as error:
+            raise RuntimeError(
+                "Semantic segmentation requires optional dependencies. "
+                "Install them with: pip install -r requirements-ml.txt"
+            ) from error
+
+        self.torch = torch
+        self.processor = AutoImageProcessor.from_pretrained(model_name)
+        self.model = AutoModelForSemanticSegmentation.from_pretrained(model_name)
+        if device_name == "auto":
+            if torch.backends.mps.is_available():
+                device_name = "mps"
+            elif torch.cuda.is_available():
+                device_name = "cuda"
+            else:
+                device_name = "cpu"
+        if device_name not in {"cpu", "mps", "cuda"}:
+            raise ValueError("Device must be auto, cpu, mps, or cuda.")
+        if device_name == "cuda" and not torch.cuda.is_available():
+            raise RuntimeError("CUDA was requested but is not available.")
+        if device_name == "mps" and not torch.backends.mps.is_available():
+            raise RuntimeError("MPS was requested but is not available.")
+        self.device = torch.device(device_name)
+        self.model.to(self.device)
+        self.model.eval()
+        self.id_to_label = {
+            int(index): str(label).lower()
+            for index, label in self.model.config.id2label.items()
+        }
+
+    def predict(self, image: np.ndarray) -> tuple[np.ndarray, list[str]]:
+        """Return a valid-pixel mask and labels present in the image."""
+        pil_image = Image.fromarray(image, mode="RGB")
+        inputs = self.processor(images=pil_image, return_tensors="pt")
+        inputs = {key: value.to(self.device) for key, value in inputs.items()}
+        with self.torch.no_grad():
+            logits = self.model(**inputs).logits
+        logits = self.torch.nn.functional.interpolate(
+            logits,
+            size=image.shape[:2],
+            mode="bilinear",
+            align_corners=False,
+        )
+        class_map = logits.argmax(dim=1)[0].detach().cpu().numpy()
+        labels = sorted({self.id_to_label.get(int(index), str(index)) for index in np.unique(class_map)})
+        excluded_ids = {
+            index
+            for index, label in self.id_to_label.items()
+            if label in SEMANTIC_EXCLUDE_LABELS
+        }
+        valid = ~np.isin(class_map, list(excluded_ids))
+        return valid, labels
 
 
 def automatic_valid_mask(image: np.ndarray) -> np.ndarray:
@@ -95,6 +183,9 @@ def load_images(
     sample_size: int = 20_000,
     use_auto_mask: bool = True,
     paths: list[Path] | None = None,
+    segmenter: SemanticSegmenter | None = None,
+    save_segmentation_masks: bool = False,
+    segmentation_mask_dir: Path | None = None,
 ) -> list[ImageStats]:
     if paths is None:
         paths = sorted(
@@ -118,12 +209,29 @@ def load_images(
                         mask_source.convert("L").resize(image.size, Image.Resampling.NEAREST)
                     ) > 127
                 mask_source_name = "manual"
+                semantic_labels: list[str] = []
+            elif segmenter is not None:
+                semantic_mask, semantic_labels = segmenter.predict(image_array)
+                color_mask = automatic_valid_mask(image_array) if use_auto_mask else np.ones(
+                    image_array.shape[:2], dtype=bool
+                )
+                mask = semantic_mask & color_mask
+                if mask.mean() < 0.35:
+                    mask = semantic_mask
+                mask_source_name = "semantic"
+                if save_segmentation_masks and segmentation_mask_dir is not None:
+                    relative_path = path.relative_to(input_dir).with_suffix(".png")
+                    destination = segmentation_mask_dir / relative_path
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    Image.fromarray((mask * 255).astype(np.uint8), mode="L").save(destination)
             elif use_auto_mask:
                 mask = automatic_valid_mask(image_array)
                 mask_source_name = "automatic"
+                semantic_labels = []
             else:
                 mask = np.ones(image_array.shape[:2], dtype=bool)
                 mask_source_name = "none"
+                semantic_labels = []
             if not mask.any():
                 mask = np.ones(image_array.shape[:2], dtype=bool)
                 mask_source_name = "fallback_all"
@@ -145,6 +253,8 @@ def load_images(
                 luminance_histogram=luminance_histogram(pixels),
                 texture_signature=texture_signature(texture_image),
                 valid_fraction=float(mask.mean()),
+                mask_source=mask_source_name,
+                semantic_labels=semantic_labels,
             )
         )
     return images
@@ -590,12 +700,20 @@ def run_group(
         "valid_pixel_fraction": {
             image.path: image.valid_fraction for image in images
         },
+        "mask_sources": {
+            image.path: image.mask_source for image in images
+        },
+        "semantic_labels": {
+            image.path: image.semantic_labels for image in images if image.semantic_labels
+        },
         "size": [args.size, args.size],
         "palette_colors": int(len(palette)),
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
-        "version": "phase_16_standard_custom_validation",
+        "version": "phase_17_optional_semantic_segmentation",
+        "segmentation": args.segmentation,
+        "segmentation_model": args.segmentation_model if args.segmentation == "semantic" else None,
         "generation_mode": args.mode,
         "density": args.density,
         "custom_settings": {
@@ -735,6 +853,12 @@ def run(args: argparse.Namespace) -> dict:
     if not paths:
         raise ValueError(f"No images found in {input_dir}")
 
+    segmenter = None
+    if args.segmentation == "semantic":
+        print(f"Loading semantic segmentation model: {args.segmentation_model}")
+        segmenter = SemanticSegmenter(args.segmentation_model, args.device)
+    segmentation_mask_dir = output_dir / "segmentation_masks"
+
     grouped_paths: dict[str, list[Path]] = {"universal": paths}
     for path in paths:
         group = classify_group(path, input_dir)
@@ -746,6 +870,9 @@ def run(args: argparse.Namespace) -> dict:
             input_dir,
             use_auto_mask=not args.no_auto_mask,
             paths=group_paths,
+            segmenter=segmenter,
+            save_segmentation_masks=args.save_segmentation_masks,
+            segmentation_mask_dir=segmentation_mask_dir,
         )
         reports[group] = run_group(images, output_dir / group, args)
     save_summary_grid(output_dir, args.size)
@@ -778,6 +905,28 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--candidates", type=int, default=64, help="Patterns to generate and compare")
     parser.add_argument("--seed", type=int, default=42, help="Seed for reproducible results")
+    parser.add_argument(
+        "--segmentation",
+        choices=("none", "semantic"),
+        default="none",
+        help="Input mask mode; semantic uses the optional SegFormer model",
+    )
+    parser.add_argument(
+        "--segmentation-model",
+        default=DEFAULT_SEGMENTATION_MODEL,
+        help="Hugging Face semantic segmentation model identifier",
+    )
+    parser.add_argument(
+        "--device",
+        choices=("auto", "cpu", "mps", "cuda"),
+        default="auto",
+        help="Inference device for semantic segmentation",
+    )
+    parser.add_argument(
+        "--save-segmentation-masks",
+        action="store_true",
+        help="Save the neural-network masks under output/segmentation_masks",
+    )
     parser.add_argument(
         "--density",
         choices=tuple(DENSITY_SCALES),

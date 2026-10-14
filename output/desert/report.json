@@ -15,25 +15,36 @@
     "photos/desert/images-5 copy.jpeg [automatic]": 0.8179813508064516,
     "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334
   },
+  "mask_sources": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": "automatic",
+    "photos/desert/images-3 copy 2.jpeg [automatic]": "automatic",
+    "photos/desert/images-3.jpeg [automatic]": "automatic",
+    "photos/desert/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/desert/images-5 copy.jpeg [automatic]": "automatic",
+    "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
   "size": [
     500,
     500
   ],
-  "palette_colors": 3,
+  "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.015081520192325115,
+  "best_score": 0.01469203270971775,
   "score_components": {
-    "rgb_error": 0.003089605364948511,
-    "luminance_error": 0.040787000209093094,
-    "texture_error": 0.020899347960948944
+    "rgb_error": 0.003161937464028597,
+    "luminance_error": 0.04191431403160095,
+    "texture_error": 0.01828041672706604
   },
-  "version": "phase_16_standard_custom_validation",
-  "generation_mode": "custom",
-  "density": "high",
+  "version": "phase_17_optional_semantic_segmentation",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
   "custom_settings": {
-    "max_color_share": 0.2,
-    "green_share": 0.2,
-    "dark_share": 0.2
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
   },
   "style_profile": {
     "max_chroma": 55.0,
@@ -51,27 +62,43 @@
   "palette": [
     {
       "rgb": [
-        174,
-        150,
-        119
+        121,
+        93,
+        69
       ],
-      "weight": 0.4420583248138428
+      "weight": 0.2686583399772644
     },
     {
       "rgb": [
-        101,
-        75,
-        53
+        182,
+        157,
+        127
       ],
-      "weight": 0.3477250039577484
+      "weight": 0.23220832645893097
     },
     {
       "rgb": [
         179,
-        163,
-        134
+        164,
+        136
       ],
-      "weight": 0.2102166712284088
+      "weight": 0.19128333032131195
+    },
+    {
+      "rgb": [
+        175,
+        150,
+        120
+      ],
+      "weight": 0.16321666538715363
+    },
+    {
+      "rgb": [
+        73,
+        71,
+        58
+      ],
+      "weight": 0.14463333785533905
     }
   ]
 }
