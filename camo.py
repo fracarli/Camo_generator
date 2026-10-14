@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -19,12 +20,17 @@ from PIL import Image, ImageDraw, ImageFilter
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
 DARK_LUMINANCE_THRESHOLD = 70.0
+DEFAULT_COLORS = 5
+MIN_COLORS = 2
+MAX_COLORS = 5
+DEFAULT_PATTERN_SIZE = 500
 
 STYLE_PROFILES = {
     "universal": {"max_chroma": 90.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.08, "blur": 0.7},
     "forest": {"max_chroma": 85.0, "dark_floor": 60.0, "dark_weight": 0.18, "detail": 0.10, "blur": 0.6},
     "mountain": {"max_chroma": 80.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.07, "blur": 0.8},
     "desert": {"max_chroma": 75.0, "dark_floor": 75.0, "dark_weight": 0.08, "detail": 0.06, "blur": 0.9},
+    "urban": {"max_chroma": 70.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.09, "blur": 0.7},
     "other": {"max_chroma": 95.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.08, "blur": 0.7},
 }
 
@@ -253,7 +259,8 @@ def make_pattern(
     """
     rng = np.random.default_rng(seed)
     fields = []
-    for cells in (4, 9, 18, 36):
+    # More control cells create a denser pattern while keeping shapes readable.
+    for cells in (6, 12, 24, 48):
         small = rng.random((cells, cells)).astype(np.float32)
         field = np.asarray(
             Image.fromarray((small * 255).astype(np.uint8), mode="L")
@@ -331,6 +338,8 @@ def classify_group(path: Path, input_dir: Path) -> str:
         return "desert"
     if any(token in name for token in ("mountain", "montagna", "tundra", "alaska")):
         return "mountain"
+    if any(token in name for token in ("urban", "urbano", "city", "street", "road", "building", "concrete", "asphalt")):
+        return "urban"
     if any(token in name for token in ("forest", "foresta", "orman", "bosco", "castagno")):
         return "forest"
     return "other"
@@ -380,7 +389,7 @@ def run_group(
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
-        "version": "phase_6_grouped_clean_patterns",
+        "version": "phase_9_grouped_clean_dense_patterns",
         "style_profile": profile,
         "dark_palette_weight": float(
             weights[
@@ -400,6 +409,7 @@ def run_group(
 def run(args: argparse.Namespace) -> dict:
     input_dir = Path(args.input)
     output_dir = Path(args.output)
+    args.colors = resolve_color_count(args.colors)
     output_dir.mkdir(parents=True, exist_ok=True)
     paths = sorted(
         path for path in input_dir.rglob("*")
@@ -430,8 +440,18 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default="photos", help="Folder containing reference images")
     parser.add_argument("--output", default="output", help="Folder for generated results")
-    parser.add_argument("--size", type=int, default=500, help="Final pattern width and height")
-    parser.add_argument("--colors", type=int, default=12, help="Number of palette colors")
+    parser.add_argument(
+        "--size",
+        type=int,
+        default=DEFAULT_PATTERN_SIZE,
+        help="Final pattern width and height (default: 500)",
+    )
+    parser.add_argument(
+        "--colors",
+        type=int,
+        default=None,
+        help="Number of palette colors (2-5; default: 5)",
+    )
     parser.add_argument("--candidates", type=int, default=64, help="Patterns to generate and compare")
     parser.add_argument("--seed", type=int, default=42, help="Seed for reproducible results")
     parser.add_argument(
@@ -440,6 +460,27 @@ def parse_args() -> argparse.Namespace:
         help="Do not automatically exclude sky and water; use all image areas",
     )
     return parser.parse_args()
+
+
+def resolve_color_count(requested: int | None) -> int:
+    """Resolve the palette size from the CLI or an optional terminal prompt."""
+    if requested is None:
+        requested = DEFAULT_COLORS
+        if sys.stdin.isatty():
+            try:
+                answer = input(f"Number of colors [{DEFAULT_COLORS}]: ").strip()
+            except EOFError:
+                answer = ""
+            if answer:
+                try:
+                    requested = int(answer)
+                except ValueError as error:
+                    raise ValueError("Number of colors must be an integer from 2 to 5.") from error
+    if not MIN_COLORS <= requested <= MAX_COLORS:
+        raise ValueError(
+            f"Number of colors must be between {MIN_COLORS} and {MAX_COLORS}."
+        )
+    return requested
 
 
 if __name__ == "__main__":

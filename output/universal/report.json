@@ -7,12 +7,17 @@
     "photos/desert/images-5 copy.jpeg [automatic]",
     "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]",
     "photos/forest/23853_135_PRBEI.jpeg [automatic]",
+    "photos/forest/MG_0652-1024x768.webp [automatic]",
     "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
     "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
+    "photos/forest/images-3 copy.jpeg [automatic]",
     "photos/forest/images-3.jpeg [automatic]",
+    "photos/forest/images-4 copy.jpeg [automatic]",
     "photos/forest/images-4.jpeg [automatic]",
+    "photos/forest/images-5 copy.jpeg [automatic]",
     "photos/forest/images-5.jpeg [automatic]",
     "photos/forest/orman-cesitleri.jpg [automatic]",
+    "photos/forest/trekking-2g.jpg.webp [automatic]",
     "photos/forest/veduta.jpg [automatic]",
     "photos/mountain/bellino-paesaggio.jpg [automatic]",
     "photos/mountain/images-3.jpeg [automatic]",
@@ -33,12 +38,17 @@
     "photos/desert/images-5 copy.jpeg [automatic]": 0.8179813508064516,
     "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334,
     "photos/forest/23853_135_PRBEI.jpeg [automatic]": 0.76031494140625,
+    "photos/forest/MG_0652-1024x768.webp [automatic]": 0.6473185221354166,
     "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
     "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
+    "photos/forest/images-3 copy.jpeg [automatic]": 0.4512209159747559,
     "photos/forest/images-3.jpeg [automatic]": 0.8027852376302084,
+    "photos/forest/images-4 copy.jpeg [automatic]": 0.9996083577473959,
     "photos/forest/images-4.jpeg [automatic]": 0.9998779296875,
+    "photos/forest/images-5 copy.jpeg [automatic]": 0.931793212890625,
     "photos/forest/images-5.jpeg [automatic]": 0.9999160766601562,
     "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
+    "photos/forest/trekking-2g.jpg.webp [automatic]": 1.0,
     "photos/forest/veduta.jpg [automatic]": 0.954928,
     "photos/mountain/bellino-paesaggio.jpg [automatic]": 0.511512,
     "photos/mountain/images-3.jpeg [automatic]": 0.6281603043002916,
@@ -55,15 +65,15 @@
     500,
     500
   ],
-  "palette_colors": 12,
+  "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.01605234295129776,
+  "best_score": 0.020252011716365814,
   "score_components": {
-    "rgb_error": 0.0028055659495294094,
-    "luminance_error": 0.038332730531692505,
-    "texture_error": 0.027370937168598175
+    "rgb_error": 0.0031971093267202377,
+    "luminance_error": 0.04652056470513344,
+    "texture_error": 0.03675795719027519
   },
-  "version": "phase_6_grouped_clean_patterns",
+  "version": "phase_9_grouped_clean_dense_patterns",
   "style_profile": {
     "max_chroma": 90.0,
     "dark_floor": 72.0,
@@ -71,104 +81,48 @@
     "detail": 0.08,
     "blur": 0.7
   },
-  "dark_palette_weight": 0.10000000894069672,
+  "dark_palette_weight": 0.10000000149011612,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        86,
-        86,
-        51
+        90,
+        85,
+        46
       ],
-      "weight": 0.16781538724899292
-    },
-    {
-      "rgb": [
-        69,
-        69,
-        57
-      ],
-      "weight": 0.041096802800893784
-    },
-    {
-      "rgb": [
-        114,
-        106,
-        82
-      ],
-      "weight": 0.1498461365699768
-    },
-    {
-      "rgb": [
-        155,
-        139,
-        107
-      ],
-      "weight": 0.13520441949367523
+      "weight": 0.33299562335014343
     },
     {
       "rgb": [
         60,
-        62,
+        61,
         54
       ],
-      "weight": 0.03543482720851898
+      "weight": 0.10000000149011612
     },
     {
       "rgb": [
-        226,
-        227,
-        221
+        129,
+        125,
+        85
       ],
-      "weight": 0.09589298814535141
+      "weight": 0.266261488199234
     },
     {
       "rgb": [
-        213,
-        177,
-        123
+        196,
+        169,
+        106
       ],
-      "weight": 0.0937475636601448
+      "weight": 0.18196426331996918
     },
     {
       "rgb": [
-        53,
-        54,
-        49
+        209,
+        215,
+        210
       ],
-      "weight": 0.023468373343348503
-    },
-    {
-      "rgb": [
-        133,
-        86,
-        43
-      ],
-      "weight": 0.0782199278473854
-    },
-    {
-      "rgb": [
-        121,
-        145,
-        55
-      ],
-      "weight": 0.06849347054958344
-    },
-    {
-      "rgb": [
-        181,
-        182,
-        172
-      ],
-      "weight": 0.05622132122516632
-    },
-    {
-      "rgb": [
-        183,
-        150,
-        93
-      ],
-      "weight": 0.0545588843524456
+      "weight": 0.11877861618995667
     }
   ]
 }

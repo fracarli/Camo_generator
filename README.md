@@ -19,6 +19,7 @@ photos/
 ├── forest/
 ├── mountain/
 ├── desert/
+├── urban/
 └── other/
 
 output/
@@ -26,12 +27,13 @@ output/
 ├── forest/
 ├── mountain/
 ├── desert/
+├── urban/
 └── other/
 ```
 
-The `universal` pattern uses all reference images. Environment-specific patterns use only images in the corresponding group.
+The `universal` pattern uses all reference images. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs.
 
-Each environment uses a small style profile: forest patterns preserve more fine detail, desert patterns use lighter and less saturated colors, and mountain patterns use a softer neutral palette. The selected profile is recorded in each group's `report.json`.
+Each environment uses a small style profile: forest patterns preserve more fine detail, desert patterns use lighter and less saturated colors, mountain patterns use a softer neutral palette, and urban patterns use restrained neutral colors. The selected profile is recorded in each group's `report.json`.
 
 The generator deliberately does not copy directional high-frequency texture from source photos. This keeps the output clean and avoids visible lines while preserving multi-scale texture matching for candidate selection.
 
@@ -51,15 +53,23 @@ Run the default 500x500 generation:
 python camo.py --input photos --output output
 ```
 
-Increase the search size or palette size:
+The default palette contains 5 colors, which is suitable for a first industrial-style test. When running interactively, the program asks for the number of colors; pressing Enter keeps 5. The supported range is 2 to 5 colors. The default pattern now uses denser shape scales, so more distinct spots remain visible in the 500x500 output.
+
+You can also select the number directly from the command line:
 
 ```bash
-python camo.py --candidates 300 --colors 16
+python camo.py --colors 3
+```
+
+Increase the search effort while keeping the industrial five-color limit:
+
+```bash
+python camo.py --candidates 300 --colors 5
 ```
 
 Each generated group contains:
 
-- `best_pattern.png`: the selected 500x500 pattern;
+- `best_pattern.png`: the selected 1000x1000 pattern;
 - `palette.png`: the colors and their estimated weights;
 - `report.json`: input files, mask coverage, score components, and parameters.
 

@@ -11,15 +11,15 @@
     500,
     500
   ],
-  "palette_colors": 12,
+  "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.017878418788313866,
+  "best_score": 0.024376969784498215,
   "score_components": {
-    "rgb_error": 0.0027741447556763887,
-    "luminance_error": 0.030421873554587364,
-    "texture_error": 0.04107305780053139
+    "rgb_error": 0.0032211681827902794,
+    "luminance_error": 0.043999433517456055,
+    "texture_error": 0.05522175505757332
   },
-  "version": "phase_6_grouped_clean_patterns",
+  "version": "phase_9_grouped_clean_dense_patterns",
   "style_profile": {
     "max_chroma": 95.0,
     "dark_floor": 68.0,
@@ -27,104 +27,48 @@
     "detail": 0.08,
     "blur": 0.7
   },
-  "dark_palette_weight": 0.12697499990463257,
+  "dark_palette_weight": 0.14000000059604645,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        114,
-        102,
-        89
+        142,
+        85,
+        47
       ],
-      "weight": 0.11509999632835388
+      "weight": 0.31981006264686584
     },
     {
       "rgb": [
-        137,
-        129,
-        115
+        131,
+        117,
+        101
       ],
-      "weight": 0.11315000057220459
+      "weight": 0.2726176381111145
     },
     {
       "rgb": [
-        136,
-        87,
-        41
+        75,
+        66,
+        60
       ],
-      "weight": 0.10847499966621399
+      "weight": 0.14000000059604645
     },
     {
       "rgb": [
-        89,
-        74,
-        64
-      ],
-      "weight": 0.10840000212192535
-    },
-    {
-      "rgb": [
-        159,
-        106,
-        64
-      ],
-      "weight": 0.09327500313520432
-    },
-    {
-      "rgb": [
-        137,
-        72,
-        42
-      ],
-      "weight": 0.07909999787807465
-    },
-    {
-      "rgb": [
-        84,
-        64,
-        50
-      ],
-      "weight": 0.07684999704360962
-    },
-    {
-      "rgb": [
+        187,
         163,
-        159,
-        148
+        135
       ],
-      "weight": 0.0716250017285347
+      "weight": 0.2018987536430359
     },
     {
       "rgb": [
-        185,
-        144,
-        103
-      ],
-      "weight": 0.0681999996304512
-    },
-    {
-      "rgb": [
-        213,
-        182,
-        144
-      ],
-      "weight": 0.058775000274181366
-    },
-    {
-      "rgb": [
-        245,
         244,
-        243
+        242,
+        241
       ],
-      "weight": 0.05692499876022339
-    },
-    {
-      "rgb": [
-        64,
-        59,
-        55
-      ],
-      "weight": 0.05012499913573265
+      "weight": 0.06567353755235672
     }
   ]
 }
