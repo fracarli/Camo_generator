@@ -31,7 +31,7 @@ output/
 └── other/
 ```
 
-The `universal` pattern uses all reference images. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs.
+The `universal` pattern uses all reference images and gives every environment group equal weight, regardless of how many pixels or photographs it contains. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs.
 
 Each environment uses a small style profile: forest patterns preserve more fine detail, desert patterns use lighter and less saturated colors, mountain patterns use a softer neutral palette, and urban patterns use restrained neutral colors. The selected profile is recorded in each group's `report.json`.
 

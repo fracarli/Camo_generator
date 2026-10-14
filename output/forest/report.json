@@ -41,13 +41,17 @@
     "luminance_error": 0.04865071922540665,
     "texture_error": 0.048080120235681534
   },
-  "version": "phase_9_grouped_clean_dense_patterns",
+  "version": "phase_10_balanced_universal",
   "style_profile": {
     "max_chroma": 85.0,
     "dark_floor": 60.0,
     "dark_weight": 0.18,
     "detail": 0.1,
     "blur": 0.6
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "forest": 260000
   },
   "dark_palette_weight": 0.18000000715255737,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",

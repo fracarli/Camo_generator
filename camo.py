@@ -38,6 +38,7 @@ STYLE_PROFILES = {
 @dataclass
 class ImageStats:
     path: str
+    group: str
     pixels: np.ndarray
     rgb_histogram: np.ndarray
     luminance_histogram: np.ndarray
@@ -118,6 +119,7 @@ def load_images(
         images.append(
             ImageStats(
                 path=f"{path} [{mask_source_name}]",
+                group=path.parent.name if path.parent != input_dir else "other",
                 pixels=pixels,
                 rgb_histogram=rgb_histogram(pixels),
                 luminance_histogram=luminance_histogram(pixels),
@@ -294,6 +296,41 @@ def mean_target(images: list[ImageStats]) -> tuple[np.ndarray, np.ndarray, np.nd
     return rgb, luminance, texture
 
 
+def balanced_group_pixels(images: list[ImageStats], seed: int, per_group: int = 20_000) -> np.ndarray:
+    """Sample the same number of valid pixels from each environment group."""
+    rng = np.random.default_rng(seed)
+    grouped: dict[str, list[np.ndarray]] = {}
+    for image in images:
+        grouped.setdefault(image.group, []).append(image.pixels)
+    samples = []
+    for group in sorted(grouped):
+        pixels = np.concatenate(grouped[group], axis=0)
+        count = min(per_group, len(pixels))
+        indices = rng.choice(len(pixels), count, replace=False)
+        samples.append(pixels[indices])
+    return np.concatenate(samples, axis=0)
+
+
+def balanced_group_target(images: list[ImageStats]) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Average image statistics with equal weight for every environment."""
+    grouped: dict[str, list[ImageStats]] = {}
+    for image in images:
+        grouped.setdefault(image.group, []).append(image)
+    rgb = np.mean(
+        [np.mean([image.rgb_histogram for image in group], axis=0) for group in grouped.values()],
+        axis=0,
+    )
+    luminance = np.mean(
+        [np.mean([image.luminance_histogram for image in group], axis=0) for group in grouped.values()],
+        axis=0,
+    )
+    texture = np.mean(
+        [np.mean([image.texture_signature for image in group], axis=0) for group in grouped.values()],
+        axis=0,
+    )
+    return rgb, luminance, texture
+
+
 def score_pattern(
     pattern: np.ndarray,
     target_rgb: np.ndarray,
@@ -352,7 +389,12 @@ def run_group(
 ) -> dict:
     output_dir.mkdir(parents=True, exist_ok=True)
     profile = STYLE_PROFILES.get(output_dir.name, STYLE_PROFILES["other"])
-    all_pixels = np.concatenate([image.pixels for image in images], axis=0)
+    balanced = output_dir.name == "universal"
+    all_pixels = (
+        balanced_group_pixels(images, args.seed)
+        if balanced
+        else np.concatenate([image.pixels for image in images], axis=0)
+    )
     palette, weights = kmeans_palette(all_pixels, args.colors, args.seed)
     palette = naturalize_palette(
         palette,
@@ -360,7 +402,9 @@ def run_group(
         dark_floor=profile["dark_floor"],
     )
     weights = rebalance_dark_weights(palette, weights, profile["dark_weight"])
-    target_rgb, target_luminance, target_texture = mean_target(images)
+    target_rgb, target_luminance, target_texture = (
+        balanced_group_target(images) if balanced else mean_target(images)
+    )
 
     candidates: list[tuple[float, int, np.ndarray, dict[str, float]]] = []
     for index in range(args.candidates):
@@ -389,8 +433,13 @@ def run_group(
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
-        "version": "phase_9_grouped_clean_dense_patterns",
+        "version": "phase_10_balanced_universal",
         "style_profile": profile,
+        "weighting": "equal_environment_groups" if balanced else "pixel_weighted",
+        "group_pixel_counts": {
+            group: int(sum(len(image.pixels) for image in images if image.group == group))
+            for group in sorted({image.group for image in images})
+        },
         "dark_palette_weight": float(
             weights[
                 (0.2126 * palette[:, 0] + 0.7152 * palette[:, 1] + 0.0722 * palette[:, 2]) < DARK_LUMINANCE_THRESHOLD

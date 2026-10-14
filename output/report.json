@@ -29,7 +29,14 @@
       "photos/mountain/mercantour-otnca-1024x683.webp [automatic]",
       "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]",
       "photos/other/images-3 copy.jpeg [automatic]",
-      "photos/other/images-4.jpeg [automatic]"
+      "photos/other/images-4.jpeg [automatic]",
+      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]",
+      "photos/urban/images-3.jpeg [automatic]",
+      "photos/urban/images-4.jpeg [automatic]",
+      "photos/urban/images-5.jpeg [automatic]",
+      "photos/urban/images-6.jpeg [automatic]",
+      "photos/urban/images-7.jpeg [automatic]",
+      "photos/urban/images-8.jpeg [automatic]"
     ],
     "valid_pixel_fraction": {
       "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
@@ -60,7 +67,14 @@
       "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": 0.8327793768274854,
       "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343,
       "photos/other/images-3 copy.jpeg [automatic]": 0.9430198669433594,
-      "photos/other/images-4.jpeg [automatic]": 0.9979303533380682
+      "photos/other/images-4.jpeg [automatic]": 0.9979303533380682,
+      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]": 0.6998760516826923,
+      "photos/urban/images-3.jpeg [automatic]": 0.6374747983870968,
+      "photos/urban/images-4.jpeg [automatic]": 0.9320746527777778,
+      "photos/urban/images-5.jpeg [automatic]": 0.6985005906357389,
+      "photos/urban/images-6.jpeg [automatic]": 0.6178862719941349,
+      "photos/urban/images-7.jpeg [automatic]": 0.644561767578125,
+      "photos/urban/images-8.jpeg [automatic]": 0.9981320784395973
     },
     "size": [
       500,
@@ -68,13 +82,13 @@
     ],
     "palette_colors": 5,
     "candidates_evaluated": 64,
-    "best_score": 0.020252011716365814,
+    "best_score": 0.019902914762496948,
     "score_components": {
-      "rgb_error": 0.0031971093267202377,
-      "luminance_error": 0.04652056470513344,
-      "texture_error": 0.03675795719027519
+      "rgb_error": 0.003294039750471711,
+      "luminance_error": 0.048027586191892624,
+      "texture_error": 0.033942703157663345
     },
-    "version": "phase_9_grouped_clean_dense_patterns",
+    "version": "phase_10_balanced_universal",
     "style_profile": {
       "max_chroma": 90.0,
       "dark_floor": 72.0,
@@ -82,48 +96,56 @@
       "detail": 0.08,
       "blur": 0.7
     },
-    "dark_palette_weight": 0.10000000149011612,
+    "weighting": "equal_environment_groups",
+    "group_pixel_counts": {
+      "desert": 120000,
+      "forest": 260000,
+      "mountain": 160000,
+      "other": 40000,
+      "urban": 140000
+    },
+    "dark_palette_weight": 0.09999999403953552,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          90,
-          85,
-          46
+          108,
+          103,
+          84
         ],
-        "weight": 0.33299562335014343
+        "weight": 0.2997661828994751
       },
       {
         "rgb": [
-          60,
-          61,
-          54
+          65,
+          65,
+          57
         ],
-        "weight": 0.10000000149011612
+        "weight": 0.09999999403953552
       },
       {
         "rgb": [
-          129,
-          125,
-          85
+          186,
+          159,
+          117
         ],
-        "weight": 0.266261488199234
+        "weight": 0.2772221565246582
       },
       {
         "rgb": [
-          196,
-          169,
-          106
+          137,
+          98,
+          47
         ],
-        "weight": 0.18196426331996918
+        "weight": 0.17389552295207977
       },
       {
         "rgb": [
-          209,
-          215,
+          220,
+          217,
           210
         ],
-        "weight": 0.11877861618995667
+        "weight": 0.1491161584854126
       }
     ]
   },
@@ -156,13 +178,17 @@
       "luminance_error": 0.04759790003299713,
       "texture_error": 0.021018216386437416
     },
-    "version": "phase_9_grouped_clean_dense_patterns",
+    "version": "phase_10_balanced_universal",
     "style_profile": {
       "max_chroma": 75.0,
       "dark_floor": 75.0,
       "dark_weight": 0.08,
       "detail": 0.06,
       "blur": 0.9
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "desert": 120000
     },
     "dark_palette_weight": 0.07999999821186066,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
@@ -252,13 +278,17 @@
       "luminance_error": 0.04865071922540665,
       "texture_error": 0.048080120235681534
     },
-    "version": "phase_9_grouped_clean_dense_patterns",
+    "version": "phase_10_balanced_universal",
     "style_profile": {
       "max_chroma": 85.0,
       "dark_floor": 60.0,
       "dark_weight": 0.18,
       "detail": 0.1,
       "blur": 0.6
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "forest": 260000
     },
     "dark_palette_weight": 0.18000000715255737,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
@@ -338,13 +368,17 @@
       "luminance_error": 0.04671207442879677,
       "texture_error": 0.03916773200035095
     },
-    "version": "phase_9_grouped_clean_dense_patterns",
+    "version": "phase_10_balanced_universal",
     "style_profile": {
       "max_chroma": 80.0,
       "dark_floor": 68.0,
       "dark_weight": 0.14,
       "detail": 0.07,
       "blur": 0.8
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "mountain": 160000
     },
     "dark_palette_weight": 0.14000000059604645,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
@@ -412,13 +446,17 @@
       "luminance_error": 0.043999433517456055,
       "texture_error": 0.05522175505757332
     },
-    "version": "phase_9_grouped_clean_dense_patterns",
+    "version": "phase_10_balanced_universal",
     "style_profile": {
       "max_chroma": 95.0,
       "dark_floor": 68.0,
       "dark_weight": 0.14,
       "detail": 0.08,
       "blur": 0.7
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "other": 40000
     },
     "dark_palette_weight": 0.14000000059604645,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
@@ -462,6 +500,94 @@
           241
         ],
         "weight": 0.06567353755235672
+      }
+    ]
+  },
+  "urban": {
+    "input_images": [
+      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]",
+      "photos/urban/images-3.jpeg [automatic]",
+      "photos/urban/images-4.jpeg [automatic]",
+      "photos/urban/images-5.jpeg [automatic]",
+      "photos/urban/images-6.jpeg [automatic]",
+      "photos/urban/images-7.jpeg [automatic]",
+      "photos/urban/images-8.jpeg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]": 0.6998760516826923,
+      "photos/urban/images-3.jpeg [automatic]": 0.6374747983870968,
+      "photos/urban/images-4.jpeg [automatic]": 0.9320746527777778,
+      "photos/urban/images-5.jpeg [automatic]": 0.6985005906357389,
+      "photos/urban/images-6.jpeg [automatic]": 0.6178862719941349,
+      "photos/urban/images-7.jpeg [automatic]": 0.644561767578125,
+      "photos/urban/images-8.jpeg [automatic]": 0.9981320784395973
+    },
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 64,
+    "best_score": 0.021439887583255768,
+    "score_components": {
+      "rgb_error": 0.0031089007388800383,
+      "luminance_error": 0.04745066165924072,
+      "texture_error": 0.0409594364464283
+    },
+    "version": "phase_10_balanced_universal",
+    "style_profile": {
+      "max_chroma": 70.0,
+      "dark_floor": 72.0,
+      "dark_weight": 0.1,
+      "detail": 0.09,
+      "blur": 0.7
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "urban": 140000
+    },
+    "dark_palette_weight": 0.09999999403953552,
+    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          102,
+          87,
+          78
+        ],
+        "weight": 0.2752322554588318
+      },
+      {
+        "rgb": [
+          150,
+          125,
+          108
+        ],
+        "weight": 0.2380538284778595
+      },
+      {
+        "rgb": [
+          195,
+          169,
+          151
+        ],
+        "weight": 0.2171538919210434
+      },
+      {
+        "rgb": [
+          66,
+          63,
+          61
+        ],
+        "weight": 0.09999999403953552
+      },
+      {
+        "rgb": [
+          230,
+          220,
+          215
+        ],
+        "weight": 0.1695600003004074
       }
     ]
   }
