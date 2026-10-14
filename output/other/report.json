@@ -13,13 +13,13 @@
   ],
   "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.017261087894439697,
+  "best_score": 0.017083432525396347,
   "score_components": {
-    "rgb_error": 0.0030890232883393764,
-    "luminance_error": 0.037445440888404846,
-    "texture_error": 0.03229214623570442
+    "rgb_error": 0.0029751406982541084,
+    "luminance_error": 0.034485749900341034,
+    "texture_error": 0.03419982269406319
   },
-  "version": "phase_14_fosco_tones_adjacent_regions",
+  "version": "phase_15_balanced_universal_coverage",
   "style_profile": {
     "max_chroma": 65.0,
     "dark_floor": 68.0,

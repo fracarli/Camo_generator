@@ -81,13 +81,13 @@
   ],
   "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.018876083195209503,
+  "best_score": 0.015377530828118324,
   "score_components": {
-    "rgb_error": 0.003263763850554824,
-    "luminance_error": 0.044435083866119385,
-    "texture_error": 0.03277598321437836
+    "rgb_error": 0.003061875933781266,
+    "luminance_error": 0.03982526808977127,
+    "texture_error": 0.02291378378868103
   },
-  "version": "phase_14_fosco_tones_adjacent_regions",
+  "version": "phase_15_balanced_universal_coverage",
   "style_profile": {
     "max_chroma": 70.0,
     "dark_floor": 72.0,
@@ -103,7 +103,7 @@
     "other": 40000,
     "urban": 140000
   },
-  "dark_palette_weight": 0.09999999788403514,
+  "dark_palette_weight": 0.10000000894069672,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
@@ -112,7 +112,7 @@
         106,
         45
       ],
-      "weight": 0.30671381592405467
+      "weight": 0.22499999403953552
     },
     {
       "rgb": [
@@ -120,7 +120,7 @@
         92,
         62
       ],
-      "weight": 0.292896803974765
+      "weight": 0.22499999403953552
     },
     {
       "rgb": [
@@ -128,7 +128,7 @@
         152,
         112
       ],
-      "weight": 0.19820636129738453
+      "weight": 0.22499999403953552
     },
     {
       "rgb": [
@@ -136,7 +136,7 @@
         69,
         56
       ],
-      "weight": 0.09999999788403514
+      "weight": 0.10000000894069672
     },
     {
       "rgb": [
@@ -144,7 +144,7 @@
         164,
         136
       ],
-      "weight": 0.10218302091976066
+      "weight": 0.22499999403953552
     }
   ]
 }

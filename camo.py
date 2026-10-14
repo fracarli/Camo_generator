@@ -327,6 +327,27 @@ def build_palette(
     return palette, weights
 
 
+def balance_universal_palette_weights(
+    palette: np.ndarray,
+    weights: np.ndarray,
+) -> np.ndarray:
+    """Flatten Universal weights while keeping the dark-color limit intact."""
+    luminance = (
+        0.2126 * palette[:, 0]
+        + 0.7152 * palette[:, 1]
+        + 0.0722 * palette[:, 2]
+    )
+    dark = luminance < DARK_LUMINANCE_THRESHOLD
+    adjusted = weights.astype(np.float32).copy()
+    if dark.any() and (~dark).any():
+        dark_total = min(float(adjusted[dark].sum()), 0.10)
+        adjusted[dark] = dark_total * adjusted[dark] / max(float(adjusted[dark].sum()), 1e-8)
+        adjusted[~dark] = (1.0 - dark_total) / int((~dark).sum())
+    else:
+        adjusted.fill(1.0 / len(adjusted))
+    return adjusted / adjusted.sum()
+
+
 def make_pattern(
     palette: np.ndarray,
     weights: np.ndarray,
@@ -355,10 +376,21 @@ def make_pattern(
                 dtype=np.float32,
             ) / 255
             field += weight * smooth
-        # A mild prior follows the measured palette proportions without making
-        # the most common color an all-purpose background.
-        scores[color_index] = field + 0.20 * np.log(max(float(weights[color_index]), 1e-6))
-    labels = scores.argmax(axis=0)
+        scores[color_index] = field
+
+    # Calibrate the categorical fields so the realized image area follows the
+    # requested palette weights instead of letting one random field dominate.
+    target = weights / max(float(weights.sum()), 1e-8)
+    bias = 0.20 * np.log(np.maximum(target, 1e-6))
+    for _ in range(24):
+        labels = (scores + bias[:, None, None]).argmax(axis=0)
+        realized = np.bincount(labels.ravel(), minlength=len(palette)).astype(np.float32)
+        realized /= max(float(realized.sum()), 1.0)
+        bias += 0.10 * (
+            np.log(np.maximum(target, 1e-6)) - np.log(np.maximum(realized, 1e-6))
+        )
+        bias -= bias.mean()
+    labels = (scores + bias[:, None, None]).argmax(axis=0)
     pattern = np.clip(palette[labels], 0, 255).astype(np.uint8)
     softened = Image.fromarray(pattern, mode="RGB").filter(
         ImageFilter.GaussianBlur(radius=blur_radius)
@@ -474,6 +506,8 @@ def run_group(
         profile,
         reserve_forest_green=balanced,
     )
+    if balanced:
+        weights = balance_universal_palette_weights(palette, weights)
     target_rgb, target_luminance, target_texture = (
         balanced_group_target(images) if balanced else mean_target(images)
     )
@@ -505,7 +539,7 @@ def run_group(
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
-        "version": "phase_14_fosco_tones_adjacent_regions",
+        "version": "phase_15_balanced_universal_coverage",
         "style_profile": profile,
         "weighting": "equal_environment_groups" if balanced else "pixel_weighted",
         "group_pixel_counts": {
@@ -525,6 +559,39 @@ def run_group(
     }
     (output_dir / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     return report
+
+
+def save_summary_grid(output_dir: Path, size: int) -> Path:
+    """Save all generated pattern types in one labeled 3x2 overview image."""
+    layout = [
+        ("urban", "Urban"),
+        ("desert", "Desert"),
+        ("forest", "Forest"),
+        ("mountain", "Mountain"),
+        ("other", "Other"),
+        ("universal", "Universal"),
+    ]
+    columns, rows = 3, 2
+    label_height = 34
+    canvas = Image.new("RGB", (columns * size, rows * (size + label_height)), "#f1f1ed")
+    draw = ImageDraw.Draw(canvas)
+    for index, (group, label) in enumerate(layout):
+        row, column = divmod(index, columns)
+        left = column * size
+        top = row * (size + label_height)
+        image_path = output_dir / group / "best_pattern.png"
+        if image_path.exists():
+            with Image.open(image_path) as source:
+                tile = source.convert("RGB").resize((size, size), Image.Resampling.LANCZOS)
+            canvas.paste(tile, (left, top + label_height))
+        else:
+            draw.rectangle((left, top + label_height, left + size, top + label_height + size), fill="#c8c8c2")
+            draw.text((left + 10, top + label_height + 10), "Not available", fill="#333333")
+        draw.rectangle((left, top, left + size, top + label_height), fill="#30352d")
+        draw.text((left + 12, top + 9), label, fill="white")
+    destination = output_dir / "all_patterns_grid.png"
+    canvas.save(destination)
+    return destination
 
 
 def run(args: argparse.Namespace) -> dict:
@@ -553,6 +620,7 @@ def run(args: argparse.Namespace) -> dict:
             paths=group_paths,
         )
         reports[group] = run_group(images, output_dir / group, args)
+    save_summary_grid(output_dir, args.size)
     (output_dir / "report.json").write_text(json.dumps(reports, indent=2), encoding="utf-8")
     return reports
 
