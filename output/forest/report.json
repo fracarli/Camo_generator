@@ -4,6 +4,7 @@
     "photos/forest/MG_0652-1024x768.webp [automatic]",
     "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
     "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
+    "photos/forest/images-3 copy 2.jpeg [automatic]",
     "photos/forest/images-3 copy.jpeg [automatic]",
     "photos/forest/images-3.jpeg [automatic]",
     "photos/forest/images-4 copy.jpeg [automatic]",
@@ -19,6 +20,7 @@
     "photos/forest/MG_0652-1024x768.webp [automatic]": 0.6473185221354166,
     "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
     "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
+    "photos/forest/images-3 copy 2.jpeg [automatic]": 0.9430198669433594,
     "photos/forest/images-3 copy.jpeg [automatic]": 0.4512209159747559,
     "photos/forest/images-3.jpeg [automatic]": 0.8027852376302084,
     "photos/forest/images-4 copy.jpeg [automatic]": 0.9996083577473959,
@@ -34,6 +36,7 @@
     "photos/forest/MG_0652-1024x768.webp [automatic]": "automatic",
     "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": "automatic",
     "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": "automatic",
+    "photos/forest/images-3 copy 2.jpeg [automatic]": "automatic",
     "photos/forest/images-3 copy.jpeg [automatic]": "automatic",
     "photos/forest/images-3.jpeg [automatic]": "automatic",
     "photos/forest/images-4 copy.jpeg [automatic]": "automatic",
@@ -51,13 +54,13 @@
   ],
   "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.017020512372255325,
+  "best_score": 0.0164425540715456,
   "score_components": {
-    "rgb_error": 0.0029568905010819435,
-    "luminance_error": 0.04104015976190567,
-    "texture_error": 0.028744764626026154
+    "rgb_error": 0.002888905815780163,
+    "luminance_error": 0.040877025574445724,
+    "texture_error": 0.026712996885180473
   },
-  "version": "phase_17_optional_semantic_segmentation",
+  "version": "phase_18_snow_excluded_universal",
   "segmentation": "none",
   "segmentation_model": null,
   "generation_mode": "standard",
@@ -76,50 +79,50 @@
   },
   "weighting": "pixel_weighted",
   "group_pixel_counts": {
-    "forest": 260000
+    "forest": 280000
   },
-  "dark_palette_weight": 0.18000000715255737,
+  "dark_palette_weight": 0.18000002205371857,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        59,
-        61,
-        50
+        86,
+        94,
+        48
       ],
-      "weight": 0.09709015488624573
+      "weight": 0.4211244285106659
     },
     {
       "rgb": [
-        99,
-        108,
-        61
-      ],
-      "weight": 0.45403215289115906
-    },
-    {
-      "rgb": [
-        50,
         52,
-        46
+        54,
+        47
       ],
-      "weight": 0.08290985971689224
+      "weight": 0.18000002205371857
     },
     {
       "rgb": [
-        161,
-        162,
-        105
+        133,
+        134,
+        118
       ],
-      "weight": 0.20295852422714233
+      "weight": 0.17845110595226288
     },
     {
       "rgb": [
-        166,
-        178,
-        173
+        157,
+        156,
+        100
       ],
-      "weight": 0.16300933063030243
+      "weight": 0.11574789136648178
+    },
+    {
+      "rgb": [
+        173,
+        160,
+        130
+      ],
+      "weight": 0.10467661917209625
     }
   ]
 }

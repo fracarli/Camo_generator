@@ -1,0 +1,102 @@
+{
+  "input_images": [
+    "photos/snow/images-3.jpeg [automatic]",
+    "photos/snow/images-4.jpeg [automatic]",
+    "photos/snow/images-5.jpeg [automatic]",
+    "photos/snow/images-6.jpeg [automatic]",
+    "photos/snow/images-7.jpeg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/snow/images-3.jpeg [automatic]": 0.7629343668619791,
+    "photos/snow/images-4.jpeg [automatic]": 0.9998568390052356,
+    "photos/snow/images-5.jpeg [automatic]": 0.38168402777777777,
+    "photos/snow/images-6.jpeg [automatic]": 0.5149129231770834,
+    "photos/snow/images-7.jpeg [automatic]": 0.677978515625
+  },
+  "mask_sources": {
+    "photos/snow/images-3.jpeg [automatic]": "automatic",
+    "photos/snow/images-4.jpeg [automatic]": "automatic",
+    "photos/snow/images-5.jpeg [automatic]": "automatic",
+    "photos/snow/images-6.jpeg [automatic]": "automatic",
+    "photos/snow/images-7.jpeg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 64,
+  "best_score": 0.013032173737883568,
+  "score_components": {
+    "rgb_error": 0.001966922078281641,
+    "luminance_error": 0.037657249718904495,
+    "texture_error": 0.017675666138529778
+  },
+  "version": "phase_18_snow_excluded_universal",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 38.0,
+    "dark_floor": 82.0,
+    "dark_weight": 0.08,
+    "detail": 0.13,
+    "blur": 0.9,
+    "palette_family": "snow"
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "snow": 100000
+  },
+  "dark_palette_weight": 0.0,
+  "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        224,
+        228,
+        228
+      ],
+      "weight": 0.30160000920295715
+    },
+    {
+      "rgb": [
+        181,
+        184,
+        184
+      ],
+      "weight": 0.2148900032043457
+    },
+    {
+      "rgb": [
+        136,
+        139,
+        137
+      ],
+      "weight": 0.19717000424861908
+    },
+    {
+      "rgb": [
+        88,
+        91,
+        88
+      ],
+      "weight": 0.15674999356269836
+    },
+    {
+      "rgb": [
+        75,
+        80,
+        80
+      ],
+      "weight": 0.1295900046825409
+    }
+  ]
+}

@@ -45,6 +45,17 @@ FOSCO_MATTE_TONES = np.array(
     dtype=np.float32,
 )
 
+SNOW_MATTE_TONES = np.array(
+    [
+        [218.0, 224.0, 225.0],  # clean snow
+        [180.0, 188.0, 190.0],  # cold light gray
+        [136.0, 148.0, 152.0],  # blue-gray shadow
+        [88.0, 98.0, 102.0],    # dark rock / tree shadow
+        [202.0, 208.0, 210.0],  # overcast snow
+    ],
+    dtype=np.float32,
+)
+
 # ADE20K classes that should not influence the camouflage palette. The model
 # still predicts all classes; these are only the classes treated as invalid
 # reference pixels for the current baseline.
@@ -77,6 +88,7 @@ STYLE_PROFILES = {
     "desert": {"max_chroma": 55.0, "dark_floor": 75.0, "dark_weight": 0.08, "detail": 0.14, "blur": 0.9},
     "urban": {"max_chroma": 50.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.16, "blur": 0.7},
     "other": {"max_chroma": 65.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.16, "blur": 0.7},
+    "snow": {"max_chroma": 38.0, "dark_floor": 82.0, "dark_weight": 0.08, "detail": 0.13, "blur": 0.9, "palette_family": "snow"},
 }
 
 
@@ -367,6 +379,15 @@ def apply_fosco_tones(palette: np.ndarray, strength: float = 0.28) -> np.ndarray
     return np.clip(adjusted, 0, 255)
 
 
+def apply_snow_tones(palette: np.ndarray, strength: float = 0.45) -> np.ndarray:
+    """Pull a snow palette toward cold, low-saturation white and gray tones."""
+    adjusted = palette.astype(np.float32).copy()
+    distances = ((adjusted[:, None, :] - SNOW_MATTE_TONES[None, :, :]) ** 2).sum(axis=2)
+    nearest = SNOW_MATTE_TONES[distances.argmin(axis=1)]
+    adjusted = (1.0 - strength) * adjusted + strength * nearest
+    return np.clip(adjusted, 0, 255)
+
+
 def rebalance_dark_weights(
     palette: np.ndarray,
     weights: np.ndarray,
@@ -429,7 +450,10 @@ def build_palette(
         max_chroma=profile["max_chroma"],
         dark_floor=profile["dark_floor"],
     )
-    palette = apply_fosco_tones(palette)
+    if profile.get("palette_family") == "snow":
+        palette = apply_snow_tones(palette)
+    else:
+        palette = apply_fosco_tones(palette)
     if green is not None:
         green_palette = naturalize_palette(
             green[None, :],
@@ -641,6 +665,8 @@ def classify_group(path: Path, input_dir: Path) -> str:
         return "mountain"
     if any(token in name for token in ("urban", "urbano", "city", "street", "road", "building", "concrete", "asphalt")):
         return "urban"
+    if any(token in name for token in ("snow", "neve", "snowy", "winter", "inverno", "glacier", "ghiaccio", "alpine")):
+        return "snow"
     if any(token in name for token in ("forest", "foresta", "orman", "bosco", "castagno")):
         return "forest"
     return "other"
@@ -711,7 +737,7 @@ def run_group(
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
-        "version": "phase_17_optional_semantic_segmentation",
+        "version": "phase_18_snow_excluded_universal",
         "segmentation": args.segmentation,
         "segmentation_model": args.segmentation_model if args.segmentation == "semantic" else None,
         "generation_mode": args.mode,
@@ -743,16 +769,19 @@ def run_group(
 
 
 def save_summary_grid(output_dir: Path, size: int) -> Path:
-    """Save all generated pattern types in one labeled 3x2 overview image."""
+    """Save all generated pattern types in one labeled 3x3 overview image."""
     layout = [
         ("urban", "Urban"),
         ("desert", "Desert"),
         ("forest", "Forest"),
         ("mountain", "Mountain"),
+        ("snow", "Snow"),
         ("other", "Other"),
         ("universal", "Universal"),
+        (None, ""),
+        (None, ""),
     ]
-    columns, rows = 3, 2
+    columns, rows = 3, 3
     label_height = 34
     canvas = Image.new("RGB", (columns * size, rows * (size + label_height)), "#f1f1ed")
     draw = ImageDraw.Draw(canvas)
@@ -760,6 +789,8 @@ def save_summary_grid(output_dir: Path, size: int) -> Path:
         row, column = divmod(index, columns)
         left = column * size
         top = row * (size + label_height)
+        if group is None:
+            continue
         image_path = output_dir / group / "best_pattern.png"
         if image_path.exists():
             with Image.open(image_path) as source:
@@ -859,9 +890,13 @@ def run(args: argparse.Namespace) -> dict:
         segmenter = SemanticSegmenter(args.segmentation_model, args.device)
     segmentation_mask_dir = output_dir / "segmentation_masks"
 
-    grouped_paths: dict[str, list[Path]] = {"universal": paths}
+    classified_paths = {path: classify_group(path, input_dir) for path in paths}
+    universal_paths = [path for path in paths if classified_paths[path] != "snow"]
+    grouped_paths: dict[str, list[Path]] = {}
+    if universal_paths:
+        grouped_paths["universal"] = universal_paths
     for path in paths:
-        group = classify_group(path, input_dir)
+        group = classified_paths[path]
         grouped_paths.setdefault(group, []).append(path)
 
     reports = {}

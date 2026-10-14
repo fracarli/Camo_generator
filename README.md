@@ -20,6 +20,7 @@ photos/
 ├── mountain/
 ├── desert/
 ├── urban/
+├── snow/
 └── other/
 
 output/
@@ -28,6 +29,7 @@ output/
 ├── mountain/
 ├── desert/
 ├── urban/
+├── snow/
 ├── other/
 ├── all_patterns_grid.png
 ├── report.json
@@ -36,9 +38,9 @@ output/
 └── segmentation_masks/       # created only when semantic segmentation is used
 ```
 
-The `universal` pattern uses all reference images and gives every environment group equal weight, regardless of how many pixels or photographs it contains. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs.
+The `universal` pattern uses all non-snow reference images and gives every non-snow environment group equal weight, regardless of how many pixels or photographs it contains. Snow references are deliberately excluded from Universal because their very bright palette would make the mixed pattern less useful for the other environments. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs; snow images contribute only to `snow`.
 
-Each environment uses a small style profile: forest patterns preserve more fine detail, desert patterns use lighter and less saturated colors, mountain patterns use a softer neutral palette, and urban patterns use restrained neutral colors. The selected profile is recorded in each group's `report.json`.
+Each environment uses a small style profile: forest patterns preserve more fine detail, desert patterns use lighter and less saturated colors, mountain patterns use a softer neutral palette, urban patterns use restrained neutral colors, and snow patterns use cold white, gray, and blue-gray tones. The selected profile is recorded in each group's `report.json`.
 
 The universal palette reserves one matte forest-green color when forest references are available. This keeps green visible in the mixed environment result without allowing bright or saturated colors to dominate. Palette colors are gently anchored to Fosco-style matte military tone families: Olive Drab, NATO Green, Service/Mud Brown, Tropentarn Sand, and NATO Black. These are approximate style references, not exact colorimetric reproductions of a specific product.
 
@@ -112,7 +114,7 @@ Each generated group contains:
 - `palette.png`: the colors and their estimated weights;
 - `report.json`: input files, mask coverage, score components, and parameters.
 
-The output root also contains `all_patterns_grid.png`, a labeled 3x2 overview of Urban, Desert, Forest, Mountain, Other, and Universal patterns. The grid is regenerated automatically after every run.
+The output root also contains `all_patterns_grid.png`, a labeled 3x3 overview of Urban, Desert, Forest, Mountain, Snow, Other, and Universal patterns. The grid is regenerated automatically after every run.
 
 The output root also contains `validation_report.json` and `validation_report.md`. These measure the rendered PNGs after blur, including actual palette coverage, maximum color share, color entropy, mean luminance, edge density, and the existing candidate score. They are intended to guide later improvements and are not a measure of real-world concealment.
 

@@ -36,7 +36,7 @@
     "luminance_error": 0.04191431403160095,
     "texture_error": 0.01828041672706604
   },
-  "version": "phase_17_optional_semantic_segmentation",
+  "version": "phase_18_snow_excluded_universal",
   "segmentation": "none",
   "segmentation_model": null,
   "generation_mode": "standard",

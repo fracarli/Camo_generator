@@ -1,15 +1,24 @@
 {
   "input_images": [
-    "photos/other/images-3 copy.jpeg [automatic]",
-    "photos/other/images-4.jpeg [automatic]"
+    "photos/other/images-3.jpeg [automatic]",
+    "photos/other/images-4 copy.jpeg [automatic]",
+    "photos/other/images-4.jpeg [automatic]",
+    "photos/other/images-5.jpeg [automatic]",
+    "photos/other/images-6.jpeg [automatic]"
   ],
   "valid_pixel_fraction": {
-    "photos/other/images-3 copy.jpeg [automatic]": 0.9430198669433594,
-    "photos/other/images-4.jpeg [automatic]": 0.9979303533380682
+    "photos/other/images-3.jpeg [automatic]": 0.7720133463541666,
+    "photos/other/images-4 copy.jpeg [automatic]": 0.8991224500868056,
+    "photos/other/images-4.jpeg [automatic]": 0.9979303533380682,
+    "photos/other/images-5.jpeg [automatic]": 0.48908311950146627,
+    "photos/other/images-6.jpeg [automatic]": 0.5299072265625
   },
   "mask_sources": {
-    "photos/other/images-3 copy.jpeg [automatic]": "automatic",
-    "photos/other/images-4.jpeg [automatic]": "automatic"
+    "photos/other/images-3.jpeg [automatic]": "automatic",
+    "photos/other/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/other/images-4.jpeg [automatic]": "automatic",
+    "photos/other/images-5.jpeg [automatic]": "automatic",
+    "photos/other/images-6.jpeg [automatic]": "automatic"
   },
   "semantic_labels": {},
   "size": [
@@ -18,13 +27,13 @@
   ],
   "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.017083432525396347,
+  "best_score": 0.015035586431622505,
   "score_components": {
-    "rgb_error": 0.0029751406982541084,
-    "luminance_error": 0.034485749900341034,
-    "texture_error": 0.03419982269406319
+    "rgb_error": 0.002988804830238223,
+    "luminance_error": 0.038581252098083496,
+    "texture_error": 0.022701973095536232
   },
-  "version": "phase_17_optional_semantic_segmentation",
+  "version": "phase_18_snow_excluded_universal",
   "segmentation": "none",
   "segmentation_model": null,
   "generation_mode": "standard",
@@ -43,50 +52,50 @@
   },
   "weighting": "pixel_weighted",
   "group_pixel_counts": {
-    "other": 40000
+    "other": 100000
   },
-  "dark_palette_weight": 0.0,
+  "dark_palette_weight": 0.14000000059604645,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        117,
-        83,
+        100,
+        79,
         58
       ],
-      "weight": 0.2868250012397766
+      "weight": 0.3128969669342041
     },
     {
       "rgb": [
-        140,
-        124,
-        103
+        120,
+        86,
+        61
       ],
-      "weight": 0.24449999630451202
+      "weight": 0.22012804448604584
     },
     {
       "rgb": [
-        74,
-        71,
-        58
+        156,
+        149,
+        108
       ],
-      "weight": 0.22869999706745148
+      "weight": 0.21651989221572876
     },
     {
       "rgb": [
-        180,
-        158,
-        127
+        60,
+        58,
+        53
       ],
-      "weight": 0.18107500672340393
+      "weight": 0.14000000059604645
     },
     {
       "rgb": [
-        187,
+        183,
         171,
-        146
+        147
       ],
-      "weight": 0.05889999866485596
+      "weight": 0.11045508086681366
     }
   ]
 }
