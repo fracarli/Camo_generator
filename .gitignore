@@ -3,3 +3,9 @@ __pycache__/
 *.py[cod]
 .venv/
 .pytest_cache/
+
+# User-provided reference photos may contain material that cannot be
+# redistributed. Keep them local unless provenance is explicitly documented.
+photos/*
+!photos/README.md
+!photos/SOURCES.md

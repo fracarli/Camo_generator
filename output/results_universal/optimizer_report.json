@@ -1,0 +1,1428 @@
+{
+  "group": "universal",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/forest/01_-Man_in_a_Forest_Landscape-_MET_DT223780.jpg",
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+    "evaluation/backgrounds/forest/04_Checkerboard_forest_in_Idaho.jpg",
+    "evaluation/backgrounds/forest/05_Checkerboard_forest_in_Idaho.jpg",
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+    "evaluation/backgrounds/forest/06_Forest_landscape_Koster_Koster_Everhardus.jpg",
+    "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+    "evaluation/backgrounds/desert/02_A_Desert_Landscape_53437341027_.jpg",
+    "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+    "evaluation/backgrounds/desert/03_Atacama_Desert_Landscape_-_panoramio.jpg",
+    "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+    "evaluation/backgrounds/desert/04_Backcountry_Desert_Landscape_54268531959_.jpg",
+    "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+    "evaluation/backgrounds/desert/05_Caravan_in_the_desert.jpg",
+    "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg",
+    "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+    "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+    "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg",
+    "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg",
+    "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg",
+    "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg",
+    "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg",
+    "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg",
+    "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg",
+    "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg",
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+    "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+    "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+    "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+    "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+    "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
+    "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+    "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
+    "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+    "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg",
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+    "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+    "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg",
+    "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg",
+    "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg",
+    "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg",
+    "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+    "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+    "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+    "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+    "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg",
+    "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
+    "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg",
+    "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg",
+    "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg",
+    "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg",
+    "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+    "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+    "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+    "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+    "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+    "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
+    "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg",
+    "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg",
+    "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg",
+    "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg",
+    "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+    "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+    "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+    "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg",
+    "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+    "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+    "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg",
+    "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg",
+    "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg",
+    "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg"
+  ],
+  "candidate_count": 24,
+  "beam_size": 8,
+  "best_candidate": "candidate_001",
+  "optimized_score": 0.09420162291590031,
+  "baseline_score": 0.10691779176465388,
+  "improvement": 0.012716168848753567,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 0.7885102650590462,
+    "blob_weight": 0.3240336818028146,
+    "blob_aspect": 1.0173880218973137,
+    "detail_weight": 0.1691039902923245,
+    "blur_radius": 0.66657958819045,
+    "seed": 44,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        87,
+        107,
+        44
+      ],
+      "weight": 0.20000000298023224
+    },
+    {
+      "rgb": [
+        114,
+        81,
+        61
+      ],
+      "weight": 0.20000000298023224
+    },
+    {
+      "rgb": [
+        71,
+        71,
+        60
+      ],
+      "weight": 0.20000000298023224
+    },
+    {
+      "rgb": [
+        159,
+        150,
+        106
+      ],
+      "weight": 0.20000000298023224
+    },
+    {
+      "rgb": [
+        179,
+        164,
+        133
+      ],
+      "weight": 0.20000000298023224
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/forest/01_-Man_in_a_Forest_Landscape-_MET_DT223780.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_013",
+      "best_running_score": 0.039318682509474456,
+      "active_candidates": [
+        "candidate_013",
+        "candidate_001",
+        "candidate_018",
+        "candidate_022",
+        "candidate_016",
+        "candidate_000",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.05786824745309786,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_000",
+        "candidate_015",
+        "candidate_003",
+        "candidate_018",
+        "candidate_022",
+        "candidate_013",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.0507554776016453,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.054064972060587024,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_015",
+        "candidate_001",
+        "candidate_000",
+        "current_best",
+        "candidate_018",
+        "candidate_022",
+        "candidate_013"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+      "background_group": "forest",
+      "best_after_background": "current_best",
+      "best_running_score": 0.05132118339955923,
+      "active_candidates": [
+        "current_best",
+        "candidate_003",
+        "candidate_015",
+        "candidate_000",
+        "candidate_001",
+        "candidate_018",
+        "candidate_022",
+        "candidate_013"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/04_Checkerboard_forest_in_Idaho.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.06389303343554881,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_015",
+        "candidate_001",
+        "candidate_000",
+        "candidate_018",
+        "current_best",
+        "candidate_022",
+        "candidate_013"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/05_Checkerboard_forest_in_Idaho.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.06585156475944781,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_000",
+        "candidate_003",
+        "candidate_015",
+        "candidate_018",
+        "candidate_013",
+        "candidate_022",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.06873739887560078,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_015",
+        "candidate_001",
+        "candidate_000",
+        "current_best",
+        "candidate_018",
+        "candidate_022",
+        "candidate_013"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+      "background_group": "forest",
+      "best_after_background": "current_best",
+      "best_running_score": 0.0682660391325448,
+      "active_candidates": [
+        "current_best",
+        "candidate_003",
+        "candidate_015",
+        "candidate_000",
+        "candidate_001",
+        "candidate_018",
+        "candidate_022",
+        "candidate_013"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/forest/06_Forest_landscape_Koster_Koster_Everhardus.jpg",
+      "background_group": "forest",
+      "best_after_background": "current_best",
+      "best_running_score": 0.06542274849874957,
+      "active_candidates": [
+        "current_best",
+        "candidate_003",
+        "candidate_015",
+        "candidate_000",
+        "candidate_001",
+        "candidate_022",
+        "candidate_018",
+        "candidate_013"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.0645260122639725,
+      "active_candidates": [
+        "current_best",
+        "candidate_003",
+        "candidate_015",
+        "candidate_000",
+        "candidate_001",
+        "candidate_018",
+        "candidate_022",
+        "candidate_013"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.06413993801810042,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_015",
+        "candidate_000",
+        "candidate_001",
+        "current_best",
+        "candidate_018",
+        "candidate_022",
+        "candidate_013"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/02_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.06249078395150998,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_000",
+        "candidate_015",
+        "candidate_003",
+        "candidate_018",
+        "candidate_022",
+        "candidate_013",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.06496312646446054,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_000",
+        "candidate_015",
+        "candidate_018",
+        "candidate_003",
+        "candidate_022",
+        "candidate_013",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/03_Atacama_Desert_Landscape_-_panoramio.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.06658132616043683,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_000",
+        "candidate_018",
+        "candidate_015",
+        "candidate_003",
+        "candidate_013",
+        "candidate_022",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.07692344481839654,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_000",
+        "candidate_013",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/04_Backcountry_Desert_Landscape_54268531959_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08703341458664962,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08740680135283077,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/05_Caravan_in_the_desert.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08814461192019063,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_022",
+        "candidate_000",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08503482497589174,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09192469551594729,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_022",
+        "candidate_000",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09103605197161331,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_022",
+        "candidate_000",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08904608977787258,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08751411099766149,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.0901266567163475,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08943311637413688,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08939955448441415,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08903103883380936,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08864172890768933,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.08737952238463549,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.0914390486174119,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09207925593846654,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09548049547725952,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09602310655627128,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09522012546035384,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09331940999812914,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09309324506345082,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09472833533724331,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09366085176716298,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09224323985247339,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09193763920048231,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09340132973344399,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09399339515888178,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09598868448328672,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09557224520708892,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09610806706725035,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09602133101862104,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_000",
+        "candidate_013",
+        "candidate_015",
+        "candidate_022",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09523943090577708,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09506630490609218,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_000",
+        "candidate_013",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09422070513147993,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.0946854175853136,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09665753590475107,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09625394441350268,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09680423355183075,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09924408504337574,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.1004827456825329,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10078386613311109,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10278196676999869,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.1022718778923895,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10129594574837937,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10092274536699598,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10003730156759633,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.1027033931767922,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10438776853625596,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10359633430337382,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10302598739544092,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10220127315955758,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10135295423953239,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10085034630045665,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_013",
+        "candidate_018",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10131920074844726,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.10055601309294884,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09992046668897829,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09912721215809739,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09790638060127535,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09691017566485727,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09637297511818646,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09545902760488718,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09473222999894203,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09499437465127109,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.09420162291590031,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_018",
+        "candidate_013",
+        "candidate_000",
+        "candidate_022",
+        "candidate_015",
+        "candidate_003",
+        "current_best"
+      ]
+    }
+  ]
+}

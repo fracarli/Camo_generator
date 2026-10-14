@@ -1,0 +1,189 @@
+{
+  "group": "desert",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+    "evaluation/backgrounds/desert/02_A_Desert_Landscape_53437341027_.jpg",
+    "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+    "evaluation/backgrounds/desert/03_Atacama_Desert_Landscape_-_panoramio.jpg",
+    "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+    "evaluation/backgrounds/desert/04_Backcountry_Desert_Landscape_54268531959_.jpg",
+    "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+    "evaluation/backgrounds/desert/05_Caravan_in_the_desert.jpg",
+    "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg"
+  ],
+  "candidate_count": 24,
+  "beam_size": 8,
+  "best_candidate": "current_best",
+  "optimized_score": 0.09405627158354038,
+  "baseline_score": 0.09405627158354038,
+  "improvement": 0.0,
+  "best_configuration": {
+    "source": "current_best"
+  },
+  "best_palette": null,
+  "history": [
+    {
+      "background": "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.022034403216093776,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_017",
+        "candidate_001",
+        "candidate_007",
+        "candidate_002",
+        "candidate_016",
+        "candidate_014",
+        "candidate_005",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.05077808895148336,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_014",
+        "candidate_016",
+        "current_best",
+        "candidate_005",
+        "candidate_007",
+        "candidate_002",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/02_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_014",
+      "best_running_score": 0.040168752893805504,
+      "active_candidates": [
+        "candidate_014",
+        "current_best",
+        "candidate_016",
+        "candidate_005",
+        "candidate_002",
+        "candidate_007",
+        "candidate_009",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.04317947636591271,
+      "active_candidates": [
+        "current_best",
+        "candidate_014",
+        "candidate_016",
+        "candidate_005",
+        "candidate_002",
+        "candidate_007",
+        "candidate_009",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/03_Atacama_Desert_Landscape_-_panoramio.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.0489020680077374,
+      "active_candidates": [
+        "current_best",
+        "candidate_014",
+        "candidate_016",
+        "candidate_005",
+        "candidate_002",
+        "candidate_007",
+        "candidate_009",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.07700684568844736,
+      "active_candidates": [
+        "current_best",
+        "candidate_014",
+        "candidate_016",
+        "candidate_005",
+        "candidate_002",
+        "candidate_007",
+        "candidate_009",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/04_Backcountry_Desert_Landscape_54268531959_.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.09864066227871393,
+      "active_candidates": [
+        "current_best",
+        "candidate_014",
+        "candidate_016",
+        "candidate_005",
+        "candidate_002",
+        "candidate_007",
+        "candidate_009",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.09748350398149341,
+      "active_candidates": [
+        "current_best",
+        "candidate_014",
+        "candidate_016",
+        "candidate_005",
+        "candidate_002",
+        "candidate_007",
+        "candidate_009",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/05_Caravan_in_the_desert.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.09610405671798314,
+      "active_candidates": [
+        "current_best",
+        "candidate_014",
+        "candidate_016",
+        "candidate_005",
+        "candidate_002",
+        "candidate_007",
+        "candidate_009",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.09405627158354038,
+      "active_candidates": [
+        "current_best",
+        "candidate_014",
+        "candidate_016",
+        "candidate_005",
+        "candidate_002",
+        "candidate_007",
+        "candidate_009",
+        "candidate_001"
+      ]
+    }
+  ]
+}

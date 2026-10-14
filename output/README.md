@@ -5,6 +5,10 @@ candidate searches and large per-scene image dumps are intentionally omitted.
 
 ## Start here
 
+- `RESULTS_INDEX.md` and the `results_<environment>/` folders: curated, clearly named public-facing results.
+- `results_reference_comparison/`: Universal versus synthetic MultiCam-style, MTP-style, and Vegetata-style controls.
+- `results_validation/`: held-out and semantic-versus-baseline reports.
+- `results_uniforms/`: optimized uniform mockups.
 - `all_patterns_grid.png`: standard patterns generated from the source photos.
 - `optimized_final/all_optimized_patterns_grid.png`: final optimized patterns for all environments.
 - `outfit_mockups/outfit_contact_sheet.png`: standard uniform mockups.
@@ -29,3 +33,7 @@ candidate searches and large per-scene image dumps are intentionally omitted.
 
 The visibility scores are internal comparison metrics, not evidence of real-world
 concealment performance.
+
+The original folders are retained as experiment history and for compatibility
+with existing commands. The `results_*` folders are the recommended starting
+point for a reader who only wants the important outputs.

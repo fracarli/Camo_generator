@@ -29,6 +29,13 @@ For a visual comparison of the optimized patterns and uniform mockups, see
 the generated [optimized pattern grid](output/optimized_final/all_optimized_patterns_grid.png)
 and [optimized uniform contact sheet](output/optimized_mockups/outfit_contact_sheet.png).
 
+For the clearest public-facing view, start with the curated folders named
+`output/results_<environment>/`, the
+[curated optimized grid](output/results_grid/all_optimized_patterns_grid.png),
+and the [curated results index](output/RESULTS_INDEX.md). Older folders remain
+available because they document intermediate experiments, but they are not the
+primary results.
+
 ## Visual results and validation examples
 
 The repository includes representative images so that a visitor can understand
@@ -102,6 +109,23 @@ between visual inspection, held-out image evaluation, and human recognition
 helps avoid treating a single attractive image as proof that a camouflage
 pattern is effective.
 
+### 5. Comparison with external-style controls
+
+The project Universal pattern is also compared with three clearly labelled
+procedural controls: `MultiCam-style`, `MTP-style`, and `Vegetata-style`.
+These are not official reproductions and no commercial or military pattern
+artwork is included. They use fixed approximate matte palettes and the same
+renderer so that the comparison is reproducible.
+
+![Universal and reference controls](output/reference_comparison/reference_controls_grid.png)
+
+The current comparison report is available at
+[reference_comparison.md](output/reference_comparison/reference_comparison.md).
+In the current proxy evaluation, Universal performs better on several open or
+mixed environments, but it performs worse in dense forest and taiga against
+some controls. The percentages are relative changes in the internal visibility
+proxy, not a guarantee of practical concealment.
+
 ## Project status
 
 The current release is a research prototype. The procedural generator and
@@ -110,6 +134,17 @@ pretrained neural model used to improve input masks. The project does not yet
 train a custom neural network or claim operational concealment performance.
 The planned neural work is documented in
 [docs/NEURAL_ROADMAP.md](docs/NEURAL_ROADMAP.md).
+
+## Data and licensing status
+
+The MIT [LICENSE](LICENSE) applies to the project code; it does not grant
+rights to photographs found online or to user-provided images. Evaluation
+backgrounds have source metadata in [evaluation/SOURCES.md](evaluation/SOURCES.md),
+but the audit still identifies files requiring verification. User photos are
+local inputs and must be documented in [photos/SOURCES.md](photos/SOURCES.md)
+before publication. See [docs/DATA_AND_LICENSES.md](docs/DATA_AND_LICENSES.md)
+for the policy and run `python scripts/audit_image_licenses.py` before pushing
+new image data.
 
 The program:
 

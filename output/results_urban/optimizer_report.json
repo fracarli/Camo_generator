@@ -1,0 +1,246 @@
+{
+  "group": "urban",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+    "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+    "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+    "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+    "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+    "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
+    "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+    "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
+    "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+    "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg"
+  ],
+  "candidate_count": 24,
+  "beam_size": 8,
+  "best_candidate": "candidate_014",
+  "optimized_score": 0.0923645421685069,
+  "baseline_score": 0.09877001052955166,
+  "improvement": 0.006405468361044761,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 0.9519079852178421,
+    "blob_weight": 0.37343809576311093,
+    "blob_aspect": 1.0770555690154804,
+    "detail_weight": 0.12702635490913497,
+    "blur_radius": 0.6999927083369052,
+    "seed": 57,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        95,
+        80,
+        71
+      ],
+      "weight": 0.25869399309158325
+    },
+    {
+      "rgb": [
+        154,
+        133,
+        110
+      ],
+      "weight": 0.18215340375900269
+    },
+    {
+      "rgb": [
+        183,
+        158,
+        131
+      ],
+      "weight": 0.2809189260005951
+    },
+    {
+      "rgb": [
+        68,
+        72,
+        62
+      ],
+      "weight": 0.039310600608587265
+    },
+    {
+      "rgb": [
+        170,
+        151,
+        128
+      ],
+      "weight": 0.2389230728149414
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_022",
+      "best_running_score": 0.13147351092193274,
+      "active_candidates": [
+        "candidate_022",
+        "candidate_009",
+        "candidate_010",
+        "candidate_007",
+        "candidate_008",
+        "candidate_018",
+        "candidate_021",
+        "candidate_014",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_022",
+      "best_running_score": 0.08081424140546005,
+      "active_candidates": [
+        "candidate_022",
+        "candidate_009",
+        "candidate_010",
+        "candidate_007",
+        "candidate_008",
+        "candidate_018",
+        "candidate_021",
+        "candidate_014",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_022",
+      "best_running_score": 0.09557505731742517,
+      "active_candidates": [
+        "candidate_022",
+        "candidate_009",
+        "candidate_010",
+        "candidate_007",
+        "candidate_008",
+        "candidate_018",
+        "candidate_021",
+        "candidate_014",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_022",
+      "best_running_score": 0.12020695221581262,
+      "active_candidates": [
+        "candidate_022",
+        "candidate_009",
+        "candidate_010",
+        "candidate_007",
+        "candidate_008",
+        "candidate_018",
+        "candidate_021",
+        "candidate_014",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_022",
+      "best_running_score": 0.10632465177099219,
+      "active_candidates": [
+        "candidate_022",
+        "candidate_009",
+        "candidate_010",
+        "candidate_008",
+        "candidate_018",
+        "candidate_007",
+        "candidate_021",
+        "candidate_014",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.09926823303879549,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_018",
+        "candidate_010",
+        "candidate_008",
+        "candidate_021",
+        "candidate_014",
+        "candidate_007",
+        "candidate_022",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_014",
+      "best_running_score": 0.0996081351963637,
+      "active_candidates": [
+        "candidate_014",
+        "candidate_021",
+        "candidate_018",
+        "candidate_008",
+        "candidate_009",
+        "candidate_010",
+        "candidate_007",
+        "candidate_022",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.10053742818708997,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_018",
+        "candidate_021",
+        "candidate_014",
+        "candidate_010",
+        "candidate_008",
+        "candidate_007",
+        "candidate_022",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_014",
+      "best_running_score": 0.09887381881934644,
+      "active_candidates": [
+        "candidate_014",
+        "candidate_021",
+        "candidate_018",
+        "candidate_008",
+        "candidate_009",
+        "candidate_007",
+        "candidate_010",
+        "candidate_022",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_014",
+      "best_running_score": 0.0923645421685069,
+      "active_candidates": [
+        "candidate_014",
+        "candidate_021",
+        "candidate_018",
+        "candidate_008",
+        "candidate_007",
+        "candidate_009",
+        "candidate_010",
+        "current_best"
+      ]
+    }
+  ]
+}
