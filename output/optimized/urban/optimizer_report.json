@@ -1,0 +1,49 @@
+{
+  "group": "urban",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+    "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg"
+  ],
+  "candidate_count": 8,
+  "beam_size": 3,
+  "best_candidate": "candidate_003",
+  "optimized_score": 0.11287573026493192,
+  "baseline_score": 0.15821259792428463,
+  "improvement": 0.045336867659352714,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.8747163989626218,
+    "blob_weight": 0.3064984716757269,
+    "blob_aspect": 1.0565227342262913,
+    "detail_weight": 0.15545189651846733,
+    "blur_radius": 0.5530000849495342,
+    "seed": 46
+  },
+  "history": [
+    {
+      "background": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.17191168195568024,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_000",
+        "candidate_004",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.11287573026493192,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_000",
+        "candidate_004",
+        "current_best"
+      ]
+    }
+  ]
+}

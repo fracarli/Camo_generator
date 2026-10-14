@@ -221,6 +221,35 @@ This is still statistical reference extraction, not neural-network training.
 For a fair evaluation, reserve some images as a held-out test set instead of
 using every image both to generate and to score the pattern.
 
+## Iterative pattern optimization
+
+`optimize_patterns.py` performs the next optimization step. It starts from
+the current `best_pattern.png`, generates alternative spatial configurations,
+tests them against the background photographs one by one, and keeps a small
+beam of the best candidates. It saves the result separately under
+`output/optimized/`, so the original patterns are not overwritten.
+
+Run a first multi-environment optimization with:
+
+```bash
+python optimize_patterns.py \
+  --groups universal,forest,taiga,tundra,urban,desert,mountain,snow,jungle \
+  --background-limit 10 \
+  --candidates 24 \
+  --beam-size 8
+```
+
+Each optimized group contains `optimized_pattern.png` and
+`optimizer_report.json`. The report includes the baseline score, optimized
+score, improvement, selected configuration, and the running winner after each
+background. The current optimizer changes spatial pattern parameters such as
+density, blob scale, aspect, detail, blur, and random seed; palette learning
+and neural pattern generation remain future steps.
+
+The score is still an internal visibility proxy. Use a held-out set and the
+anonymous human-test scenes before treating an optimization result as a real
+camouflage improvement.
+
 Run the evaluator with Universal plus every available environment-specific
 pattern. For each background environment it compares the matching specific
 pattern against Universal on the same scenes:

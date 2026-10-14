@@ -1,0 +1,523 @@
+{
+  "generated_on": "2026-10-14",
+  "metric_note": "Lower visibility_score is better in this internal proxy; this is not field evidence.",
+  "reports": {
+    "universal": {
+      "group": "universal",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/forest/01_-Man_in_a_Forest_Landscape-_MET_DT223780.jpg",
+        "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+        "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+        "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+        "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+        "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+        "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+        "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+        "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+        "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+        "evaluation/backgrounds/taiga/archangelsk_taiga_public_domain.jpg",
+        "evaluation/backgrounds/tundra/forest_tundra_public_domain.jpeg"
+      ],
+      "candidate_count": 8,
+      "beam_size": 3,
+      "best_candidate": "candidate_000",
+      "optimized_score": 0.09302195556811059,
+      "baseline_score": 0.11400488770408024,
+      "improvement": 0.020982932135969648,
+      "best_configuration": {
+        "density": "standard",
+        "blob_scale": 0.6668955128188689,
+        "blob_weight": 0.42815030080126276,
+        "blob_aspect": 0.8694341981873391,
+        "detail_weight": 0.16052515070069823,
+        "blur_radius": 0.6548317505913092,
+        "seed": 43
+      },
+      "history": [
+        {
+          "background": "evaluation/backgrounds/forest/01_-Man_in_a_Forest_Landscape-_MET_DT223780.jpg",
+          "background_group": "forest",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.01863983105868101,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_000",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+          "background_group": "forest",
+          "best_after_background": "candidate_002",
+          "best_running_score": 0.0582421614206396,
+          "active_candidates": [
+            "candidate_002",
+            "candidate_000",
+            "candidate_001",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_002",
+          "best_running_score": 0.05120465524960308,
+          "active_candidates": [
+            "candidate_002",
+            "candidate_000",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_002",
+          "best_running_score": 0.043344977818196635,
+          "active_candidates": [
+            "candidate_002",
+            "candidate_000",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_000",
+          "best_running_score": 0.0771649415115826,
+          "active_candidates": [
+            "candidate_000",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_002",
+          "best_running_score": 0.0748750926713304,
+          "active_candidates": [
+            "candidate_002",
+            "candidate_000",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_000",
+          "best_running_score": 0.10334697917070505,
+          "active_candidates": [
+            "candidate_000",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_000",
+          "best_running_score": 0.10094740249187453,
+          "active_candidates": [
+            "candidate_000",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_000",
+          "best_running_score": 0.09941887997297777,
+          "active_candidates": [
+            "candidate_000",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_000",
+          "best_running_score": 0.09444276068359614,
+          "active_candidates": [
+            "candidate_000",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/taiga/archangelsk_taiga_public_domain.jpg",
+          "background_group": "taiga",
+          "best_after_background": "candidate_000",
+          "best_running_score": 0.09289333853150973,
+          "active_candidates": [
+            "candidate_000",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/tundra/forest_tundra_public_domain.jpeg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_000",
+          "best_running_score": 0.09302195556811059,
+          "active_candidates": [
+            "candidate_000",
+            "candidate_002",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "forest": {
+      "group": "forest",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/forest/01_-Man_in_a_Forest_Landscape-_MET_DT223780.jpg",
+        "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg"
+      ],
+      "candidate_count": 8,
+      "beam_size": 3,
+      "best_candidate": "current_best",
+      "optimized_score": 0.06090220602324052,
+      "baseline_score": 0.06090220602324052,
+      "improvement": 0.0,
+      "best_configuration": {
+        "source": "current_best"
+      },
+      "history": [
+        {
+          "background": "evaluation/backgrounds/forest/01_-Man_in_a_Forest_Landscape-_MET_DT223780.jpg",
+          "background_group": "forest",
+          "best_after_background": "current_best",
+          "best_running_score": 0.0760845771869981,
+          "active_candidates": [
+            "current_best",
+            "candidate_002",
+            "candidate_003"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+          "background_group": "forest",
+          "best_after_background": "current_best",
+          "best_running_score": 0.06090220602324052,
+          "active_candidates": [
+            "current_best",
+            "candidate_003",
+            "candidate_002"
+          ]
+        }
+      ]
+    },
+    "desert": {
+      "group": "desert",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+        "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg"
+      ],
+      "candidate_count": 8,
+      "beam_size": 3,
+      "best_candidate": "candidate_001",
+      "optimized_score": 0.0530896317679435,
+      "baseline_score": 0.05338349817320705,
+      "improvement": 0.0002938664052635487,
+      "best_configuration": {
+        "density": "standard",
+        "blob_scale": 1.529463573328344,
+        "blob_weight": 0.39965977079791537,
+        "blob_aspect": 0.9851700979808969,
+        "detail_weight": 0.16803445453972615,
+        "blur_radius": 0.8617300728186745,
+        "seed": 44
+      },
+      "history": [
+        {
+          "background": "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.032745216600596906,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_006",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.0530896317679435,
+          "active_candidates": [
+            "candidate_001",
+            "current_best",
+            "candidate_002"
+          ]
+        }
+      ]
+    },
+    "mountain": {
+      "group": "mountain",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+        "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg"
+      ],
+      "candidate_count": 8,
+      "beam_size": 3,
+      "best_candidate": "candidate_001",
+      "optimized_score": 0.12789418986649254,
+      "baseline_score": 0.17890676922397689,
+      "improvement": 0.05101257935748435,
+      "best_configuration": {
+        "density": "standard",
+        "blob_scale": 1.0007752275045485,
+        "blob_weight": 0.42709448023760466,
+        "blob_aspect": 0.9747602650747257,
+        "detail_weight": 0.1366073309336948,
+        "blur_radius": 0.9473697419573475,
+        "seed": 44
+      },
+      "history": [
+        {
+          "background": "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.20516008804552258,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "candidate_003",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.12789418986649254,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "candidate_003",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "urban": {
+      "group": "urban",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+        "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg"
+      ],
+      "candidate_count": 8,
+      "beam_size": 3,
+      "best_candidate": "candidate_003",
+      "optimized_score": 0.11287573026493192,
+      "baseline_score": 0.15821259792428463,
+      "improvement": 0.045336867659352714,
+      "best_configuration": {
+        "density": "high",
+        "blob_scale": 0.8747163989626218,
+        "blob_weight": 0.3064984716757269,
+        "blob_aspect": 1.0565227342262913,
+        "detail_weight": 0.15545189651846733,
+        "blur_radius": 0.5530000849495342,
+        "seed": 46
+      },
+      "history": [
+        {
+          "background": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.17191168195568024,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_000",
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.11287573026493192,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_000",
+            "candidate_004",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "jungle": {
+      "group": "jungle",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+        "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg"
+      ],
+      "candidate_count": 8,
+      "beam_size": 3,
+      "best_candidate": "current_best",
+      "optimized_score": 0.03164176054124255,
+      "baseline_score": 0.03164176054124255,
+      "improvement": 0.0,
+      "best_configuration": {
+        "source": "current_best"
+      },
+      "history": [
+        {
+          "background": "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+          "background_group": "jungle",
+          "best_after_background": "current_best",
+          "best_running_score": 0.027150601270841436,
+          "active_candidates": [
+            "current_best",
+            "candidate_003",
+            "candidate_005"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+          "background_group": "jungle",
+          "best_after_background": "current_best",
+          "best_running_score": 0.03164176054124255,
+          "active_candidates": [
+            "current_best",
+            "candidate_003",
+            "candidate_005"
+          ]
+        }
+      ]
+    },
+    "snow": {
+      "group": "snow",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+        "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg"
+      ],
+      "candidate_count": 8,
+      "beam_size": 3,
+      "best_candidate": "candidate_001",
+      "optimized_score": 0.01419749254710041,
+      "baseline_score": 0.08416946191573516,
+      "improvement": 0.06997196936863474,
+      "best_configuration": {
+        "density": "standard",
+        "blob_scale": 1.712327290514111,
+        "blob_weight": 0.41079930773765294,
+        "blob_aspect": 1.1040101689555104,
+        "detail_weight": 0.150946293656951,
+        "blur_radius": 0.8841100925494642,
+        "seed": 44
+      },
+      "history": [
+        {
+          "background": "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+          "background_group": "snow",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.008215078094508499,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_000",
+            "candidate_005",
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+          "background_group": "snow",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.01419749254710041,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_000",
+            "candidate_005",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "taiga": {
+      "group": "taiga",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/taiga/archangelsk_taiga_public_domain.jpg"
+      ],
+      "candidate_count": 8,
+      "beam_size": 3,
+      "best_candidate": "candidate_002",
+      "optimized_score": 0.10405858936719596,
+      "baseline_score": 0.10605629279743879,
+      "improvement": 0.001997703430242831,
+      "best_configuration": {
+        "density": "high",
+        "blob_scale": 0.6779048519258855,
+        "blob_weight": 0.32376623683205097,
+        "blob_aspect": 0.7167929261234947,
+        "detail_weight": 0.1591789048492488,
+        "blur_radius": 0.6423344324936319,
+        "seed": 45
+      },
+      "history": [
+        {
+          "background": "evaluation/backgrounds/taiga/archangelsk_taiga_public_domain.jpg",
+          "background_group": "taiga",
+          "best_after_background": "candidate_002",
+          "best_running_score": 0.10405858936719596,
+          "active_candidates": [
+            "candidate_002",
+            "current_best",
+            "candidate_001"
+          ]
+        }
+      ]
+    },
+    "tundra": {
+      "group": "tundra",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/tundra/forest_tundra_public_domain.jpeg"
+      ],
+      "candidate_count": 8,
+      "beam_size": 3,
+      "best_candidate": "candidate_003",
+      "optimized_score": 0.11857914992142468,
+      "baseline_score": 0.15862552374601363,
+      "improvement": 0.04004637382458895,
+      "best_configuration": {
+        "density": "standard",
+        "blob_scale": 1.3288061933682291,
+        "blob_weight": 0.4121706517021345,
+        "blob_aspect": 0.9446842203910307,
+        "detail_weight": 0.16474994928561656,
+        "blur_radius": 0.8912807652833958,
+        "seed": 46
+      },
+      "history": [
+        {
+          "background": "evaluation/backgrounds/tundra/forest_tundra_public_domain.jpeg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.11857914992142468,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_000",
+            "candidate_005",
+            "current_best"
+          ]
+        }
+      ]
+    }
+  }
+}

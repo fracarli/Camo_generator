@@ -1,0 +1,35 @@
+{
+  "group": "taiga",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/taiga/archangelsk_taiga_public_domain.jpg"
+  ],
+  "candidate_count": 8,
+  "beam_size": 3,
+  "best_candidate": "candidate_002",
+  "optimized_score": 0.10405858936719596,
+  "baseline_score": 0.10605629279743879,
+  "improvement": 0.001997703430242831,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.6779048519258855,
+    "blob_weight": 0.32376623683205097,
+    "blob_aspect": 0.7167929261234947,
+    "detail_weight": 0.1591789048492488,
+    "blur_radius": 0.6423344324936319,
+    "seed": 45
+  },
+  "history": [
+    {
+      "background": "evaluation/backgrounds/taiga/archangelsk_taiga_public_domain.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.10405858936719596,
+      "active_candidates": [
+        "candidate_002",
+        "current_best",
+        "candidate_001"
+      ]
+    }
+  ]
+}

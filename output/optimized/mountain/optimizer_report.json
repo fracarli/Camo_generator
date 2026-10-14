@@ -1,0 +1,49 @@
+{
+  "group": "mountain",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+    "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg"
+  ],
+  "candidate_count": 8,
+  "beam_size": 3,
+  "best_candidate": "candidate_001",
+  "optimized_score": 0.12789418986649254,
+  "baseline_score": 0.17890676922397689,
+  "improvement": 0.05101257935748435,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 1.0007752275045485,
+    "blob_weight": 0.42709448023760466,
+    "blob_aspect": 0.9747602650747257,
+    "detail_weight": 0.1366073309336948,
+    "blur_radius": 0.9473697419573475,
+    "seed": 44
+  },
+  "history": [
+    {
+      "background": "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.20516008804552258,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_002",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.12789418986649254,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_002",
+        "candidate_003",
+        "current_best"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "group": "desert",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg"
+  ],
+  "candidate_count": 8,
+  "beam_size": 3,
+  "best_candidate": "candidate_001",
+  "optimized_score": 0.0530896317679435,
+  "baseline_score": 0.05338349817320705,
+  "improvement": 0.0002938664052635487,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 1.529463573328344,
+    "blob_weight": 0.39965977079791537,
+    "blob_aspect": 0.9851700979808969,
+    "detail_weight": 0.16803445453972615,
+    "blur_radius": 0.8617300728186745,
+    "seed": 44
+  },
+  "history": [
+    {
+      "background": "evaluation/backgrounds/desert/01_20200807_202406_Panoramic_photo_of_a_Utah_desert_landscape_near_sunset_2020-08-0.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.032745216600596906,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_006",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.0530896317679435,
+      "active_candidates": [
+        "candidate_001",
+        "current_best",
+        "candidate_002"
+      ]
+    }
+  ]
+}

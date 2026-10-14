@@ -1,0 +1,41 @@
+{
+  "group": "jungle",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+    "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg"
+  ],
+  "candidate_count": 8,
+  "beam_size": 3,
+  "best_candidate": "current_best",
+  "optimized_score": 0.03164176054124255,
+  "baseline_score": 0.03164176054124255,
+  "improvement": 0.0,
+  "best_configuration": {
+    "source": "current_best"
+  },
+  "history": [
+    {
+      "background": "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+      "background_group": "jungle",
+      "best_after_background": "current_best",
+      "best_running_score": 0.027150601270841436,
+      "active_candidates": [
+        "current_best",
+        "candidate_003",
+        "candidate_005"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+      "background_group": "jungle",
+      "best_after_background": "current_best",
+      "best_running_score": 0.03164176054124255,
+      "active_candidates": [
+        "current_best",
+        "candidate_003",
+        "candidate_005"
+      ]
+    }
+  ]
+}
