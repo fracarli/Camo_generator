@@ -62,157 +62,157 @@
     500,
     500
   ],
-  "palette_colors": 4,
+  "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.015132609754800797,
+  "best_score": 0.014368523843586445,
   "score_components": {
-    "rgb_error": 0.0030828253366053104,
-    "luminance_error": 0.03892891854047775,
-    "texture_error": 0.02694130502641201,
-    "geometry_penalty": 0.00011807894637247994,
-    "directional_bias": 0.0014759868296559992,
-    "transition_density": 0.05295190380761523,
-    "fine_edge_density": 0.17578125
+    "rgb_error": 0.0030615520663559437,
+    "luminance_error": 0.03557537496089935,
+    "texture_error": 0.024235248565673828,
+    "geometry_penalty": 0.0006177201936919237,
+    "directional_bias": 0.007721502421149046,
+    "transition_density": 0.04593787575150301,
+    "fine_edge_density": 0.1505597933070866
   },
   "top_candidates": [
     {
       "rank": 1,
-      "seed_offset": 6,
-      "score": 0.015132609754800797,
+      "seed_offset": 12,
+      "score": 0.014368523843586445,
       "score_components": {
-        "rgb_error": 0.0030828253366053104,
-        "luminance_error": 0.03892891854047775,
-        "texture_error": 0.02694130502641201,
-        "geometry_penalty": 0.00011807894637247994,
-        "directional_bias": 0.0014759868296559992,
-        "transition_density": 0.05295190380761523,
-        "fine_edge_density": 0.17578125
+        "rgb_error": 0.0030615520663559437,
+        "luminance_error": 0.03557537496089935,
+        "texture_error": 0.024235248565673828,
+        "geometry_penalty": 0.0006177201936919237,
+        "directional_bias": 0.007721502421149046,
+        "transition_density": 0.04593787575150301,
+        "fine_edge_density": 0.1505597933070866
       }
     },
     {
       "rank": 2,
-      "seed_offset": 24,
-      "score": 0.015150808729231358,
+      "seed_offset": 48,
+      "score": 0.014506065286695957,
       "score_components": {
-        "rgb_error": 0.0030861457344144583,
-        "luminance_error": 0.03902667015790939,
-        "texture_error": 0.026931151747703552,
-        "geometry_penalty": 0.00011945928953159513,
-        "directional_bias": 0.0014932411191449391,
-        "transition_density": 0.05099799599198397,
-        "fine_edge_density": 0.17036786417322836
+        "rgb_error": 0.003060489660128951,
+        "luminance_error": 0.03591587394475937,
+        "texture_error": 0.027039943262934685,
+        "geometry_penalty": 2.137703749888782e-05,
+        "directional_bias": 0.00026721296873609776,
+        "transition_density": 0.044997995991983966,
+        "fine_edge_density": 0.14899114173228348
       }
     },
     {
       "rank": 3,
       "seed_offset": 31,
-      "score": 0.015168724581599236,
+      "score": 0.014733878895640373,
       "score_components": {
-        "rgb_error": 0.003107145894318819,
-        "luminance_error": 0.03829241916537285,
-        "texture_error": 0.026014311239123344,
-        "geometry_penalty": 0.0004790804228125872,
-        "directional_bias": 0.0059885052851573395,
-        "transition_density": 0.04986172344689378,
-        "fine_edge_density": 0.1677842027559055
+        "rgb_error": 0.003088677302002907,
+        "luminance_error": 0.03595462441444397,
+        "texture_error": 0.02540053240954876,
+        "geometry_penalty": 0.0006215806169831304,
+        "directional_bias": 0.00776975771228913,
+        "transition_density": 0.04358917835671343,
+        "fine_edge_density": 0.14247047244094488
       }
     },
     {
       "rank": 4,
-      "seed_offset": 54,
-      "score": 0.01523186732083559,
+      "seed_offset": 8,
+      "score": 0.01507259439677,
       "score_components": {
-        "rgb_error": 0.003084880067035556,
-        "luminance_error": 0.03861317038536072,
-        "texture_error": 0.02610672079026699,
-        "geometry_penalty": 0.0004734441554525243,
-        "directional_bias": 0.005918051943156553,
-        "transition_density": 0.05316432865731463,
-        "fine_edge_density": 0.17971825787401574
+        "rgb_error": 0.0030741612426936626,
+        "luminance_error": 0.03589712455868721,
+        "texture_error": 0.0259949192404747,
+        "geometry_penalty": 0.0008352503981596159,
+        "directional_bias": 0.010440629976995198,
+        "transition_density": 0.04529859719438878,
+        "fine_edge_density": 0.14659202755905512
       }
     },
     {
       "rank": 5,
-      "seed_offset": 33,
-      "score": 0.01534272637218237,
+      "seed_offset": 15,
+      "score": 0.015265746973454952,
       "score_components": {
-        "rgb_error": 0.003099926747381687,
-        "luminance_error": 0.038961417973041534,
-        "texture_error": 0.027428751811385155,
-        "geometry_penalty": 0.0001968058104572614,
-        "directional_bias": 0.0024600726307157676,
-        "transition_density": 0.05132064128256513,
-        "fine_edge_density": 0.16821481299212598
+        "rgb_error": 0.00303903641179204,
+        "luminance_error": 0.03555162623524666,
+        "texture_error": 0.02512594871222973,
+        "geometry_penalty": 0.0013167082294264338,
+        "directional_bias": 0.01645885286783042,
+        "transition_density": 0.05223446893787575,
+        "fine_edge_density": 0.16864542322834647
       }
     },
     {
       "rank": 6,
-      "seed_offset": 16,
-      "score": 0.015392315573990345,
+      "seed_offset": 28,
+      "score": 0.015421845018863678,
       "score_components": {
-        "rgb_error": 0.0030927080661058426,
-        "luminance_error": 0.0389794185757637,
-        "texture_error": 0.026355884969234467,
-        "geometry_penalty": 0.000504254648597543,
-        "directional_bias": 0.006303183107469287,
-        "transition_density": 0.05086973947895791,
-        "fine_edge_density": 0.1727054625984252
+        "rgb_error": 0.0030623488128185272,
+        "luminance_error": 0.035855624824762344,
+        "texture_error": 0.026239871978759766,
+        "geometry_penalty": 0.0011390872270240935,
+        "directional_bias": 0.014238590337801168,
+        "transition_density": 0.047993987975951904,
+        "fine_edge_density": 0.15160556102362205
       }
     },
     {
       "rank": 7,
-      "seed_offset": 48,
-      "score": 0.015406625345349312,
+      "seed_offset": 14,
+      "score": 0.015793142840266228,
       "score_components": {
-        "rgb_error": 0.003099926980212331,
-        "luminance_error": 0.03933391720056534,
-        "texture_error": 0.02698783576488495,
-        "geometry_penalty": 0.00029947591714499586,
-        "directional_bias": 0.0037434489643124484,
-        "transition_density": 0.04818036072144288,
-        "fine_edge_density": 0.16729207677165353
+        "rgb_error": 0.003084880067035556,
+        "luminance_error": 0.03670612722635269,
+        "texture_error": 0.029315704479813576,
+        "geometry_penalty": 0.0006078316773816487,
+        "directional_bias": 0.007597895967270609,
+        "transition_density": 0.041146292585170344,
+        "fine_edge_density": 0.1326279527559055
       }
     },
     {
       "rank": 8,
-      "seed_offset": 14,
-      "score": 0.015508071519434452,
+      "seed_offset": 47,
+      "score": 0.015858503058552742,
       "score_components": {
-        "rgb_error": 0.0031067864038050175,
-        "luminance_error": 0.03905016556382179,
-        "texture_error": 0.028498679399490356,
-        "geometry_penalty": 8.596604341285677e-05,
-        "directional_bias": 0.0010745755426607097,
-        "transition_density": 0.04662324649298597,
-        "fine_edge_density": 0.1536970964566929
+        "rgb_error": 0.0030603958293795586,
+        "luminance_error": 0.03561487793922424,
+        "texture_error": 0.024875635281205177,
+        "geometry_penalty": 0.0019474740424046777,
+        "directional_bias": 0.02434342553005847,
+        "transition_density": 0.045935871743486976,
+        "fine_edge_density": 0.14800688976377951
       }
     },
     {
       "rank": 9,
-      "seed_offset": 8,
-      "score": 0.015560898929834366,
+      "seed_offset": 39,
+      "score": 0.015902431681752205,
       "score_components": {
-        "rgb_error": 0.003079348709434271,
-        "luminance_error": 0.03783866763114929,
-        "texture_error": 0.024297289550304413,
-        "geometry_penalty": 0.001378914105142204,
-        "directional_bias": 0.017236426314277548,
-        "transition_density": 0.05580761523046092,
-        "fine_edge_density": 0.18543922244094488
+        "rgb_error": 0.003046348923817277,
+        "luminance_error": 0.03568987548351288,
+        "texture_error": 0.02575468085706234,
+        "geometry_penalty": 0.0017739559695847773,
+        "directional_bias": 0.022174449619809716,
+        "transition_density": 0.05033867735470942,
+        "fine_edge_density": 0.1641240157480315
       }
     },
     {
       "rank": 10,
-      "seed_offset": 47,
-      "score": 0.015578214079141617,
+      "seed_offset": 43,
+      "score": 0.015906475484371185,
       "score_components": {
-        "rgb_error": 0.003094833344221115,
-        "luminance_error": 0.03897741809487343,
-        "texture_error": 0.026127630844712257,
-        "geometry_penalty": 0.0007442302363326904,
-        "directional_bias": 0.00930287795415863,
-        "transition_density": 0.05062324649298597,
-        "fine_edge_density": 0.17215182086614172
+        "rgb_error": 0.0030656615272164345,
+        "luminance_error": 0.03584487363696098,
+        "texture_error": 0.025679200887680054,
+        "geometry_penalty": 0.001758558558558558,
+        "directional_bias": 0.021981981981981976,
+        "transition_density": 0.04448897795591182,
+        "fine_edge_density": 0.1500984251968504
       }
     }
   ],
@@ -231,7 +231,10 @@
     "dark_floor": 78.0,
     "dark_weight": 0.1,
     "detail": 0.14,
-    "blur": 0.85
+    "blur": 0.85,
+    "blob_scale": 1.2,
+    "blob_weight": 0.35,
+    "blob_aspect": 1.15
   },
   "weighting": "pixel_weighted",
   "group_pixel_counts": {
@@ -242,35 +245,43 @@
   "palette": [
     {
       "rgb": [
-        106,
-        75,
-        55
-      ],
-      "weight": 0.40845000743865967
-    },
-    {
-      "rgb": [
-        148,
-        120,
-        93
-      ],
-      "weight": 0.27810001373291016
-    },
-    {
-      "rgb": [
-        74,
+        104,
         72,
-        60
+        53
       ],
-      "weight": 0.21105000376701355
+      "weight": 0.3306666612625122
     },
     {
       "rgb": [
-        182,
-        156,
-        131
+        116,
+        87,
+        65
       ],
-      "weight": 0.10239999741315842
+      "weight": 0.28493332862854004
+    },
+    {
+      "rgb": [
+        160,
+        132,
+        105
+      ],
+      "weight": 0.18463332951068878
+    },
+    {
+      "rgb": [
+        72,
+        70,
+        59
+      ],
+      "weight": 0.1513500064611435
+    },
+    {
+      "rgb": [
+        190,
+        171,
+        151
+      ],
+      "weight": 0.04841666668653488
     }
   ]
 }

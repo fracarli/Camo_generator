@@ -84,16 +84,16 @@ SEMANTIC_EXCLUDE_LABELS = {
 
 STYLE_PROFILES = {
     # Muted, matte colors inspired by olive, stone, sand, and concrete tones.
-    "universal": {"max_chroma": 70.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.16, "blur": 0.7},
-    "forest": {"max_chroma": 65.0, "dark_floor": 60.0, "dark_weight": 0.18, "detail": 0.18, "blur": 0.6},
-    "mountain": {"max_chroma": 60.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.15, "blur": 0.8},
-    "taiga": {"max_chroma": 60.0, "dark_floor": 60.0, "dark_weight": 0.16, "detail": 0.18, "blur": 0.65},
-    "tundra": {"max_chroma": 55.0, "dark_floor": 78.0, "dark_weight": 0.10, "detail": 0.14, "blur": 0.85},
-    "jungle": {"max_chroma": 62.0, "dark_floor": 58.0, "dark_weight": 0.16, "detail": 0.19, "blur": 0.65},
-    "desert": {"max_chroma": 55.0, "dark_floor": 75.0, "dark_weight": 0.08, "detail": 0.14, "blur": 0.9},
-    "urban": {"max_chroma": 50.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.16, "blur": 0.7},
-    "other": {"max_chroma": 65.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.16, "blur": 0.7},
-    "snow": {"max_chroma": 38.0, "dark_floor": 82.0, "dark_weight": 0.08, "detail": 0.13, "blur": 0.9, "palette_family": "snow"},
+    "universal": {"max_chroma": 70.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.16, "blur": 0.7, "blob_scale": 1.0, "blob_weight": 0.36, "blob_aspect": 1.0},
+    "forest": {"max_chroma": 65.0, "dark_floor": 60.0, "dark_weight": 0.18, "detail": 0.18, "blur": 0.6, "blob_scale": 0.72, "blob_weight": 0.34, "blob_aspect": 0.82},
+    "mountain": {"max_chroma": 60.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.15, "blur": 0.8, "blob_scale": 1.12, "blob_weight": 0.34, "blob_aspect": 1.05},
+    "taiga": {"max_chroma": 60.0, "dark_floor": 60.0, "dark_weight": 0.16, "detail": 0.18, "blur": 0.65, "blob_scale": 0.78, "blob_weight": 0.35, "blob_aspect": 0.75},
+    "tundra": {"max_chroma": 55.0, "dark_floor": 78.0, "dark_weight": 0.10, "detail": 0.14, "blur": 0.85, "blob_scale": 1.20, "blob_weight": 0.35, "blob_aspect": 1.15},
+    "jungle": {"max_chroma": 62.0, "dark_floor": 58.0, "dark_weight": 0.16, "detail": 0.19, "blur": 0.65, "blob_scale": 0.60, "blob_weight": 0.38, "blob_aspect": 0.78},
+    "desert": {"max_chroma": 55.0, "dark_floor": 75.0, "dark_weight": 0.08, "detail": 0.14, "blur": 0.9, "blob_scale": 1.45, "blob_weight": 0.32, "blob_aspect": 1.22},
+    "urban": {"max_chroma": 50.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.16, "blur": 0.7, "blob_scale": 0.88, "blob_weight": 0.36, "blob_aspect": 1.30},
+    "other": {"max_chroma": 65.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.16, "blur": 0.7, "blob_scale": 1.0, "blob_weight": 0.36, "blob_aspect": 1.0},
+    "snow": {"max_chroma": 38.0, "dark_floor": 82.0, "dark_weight": 0.08, "detail": 0.13, "blur": 0.9, "blob_scale": 1.28, "blob_weight": 0.38, "blob_aspect": 1.10, "palette_family": "snow"},
 }
 
 
@@ -554,6 +554,9 @@ def make_pattern(
     detail_weight: float = 0.08,
     blur_radius: float = 0.7,
     density: str = DEFAULT_DENSITY,
+    blob_scale: float = 1.0,
+    blob_weight: float = 0.36,
+    blob_aspect: float = 1.0,
 ) -> np.ndarray:
     """Generate adjacent, irregular color regions at several spatial scales.
 
@@ -566,7 +569,7 @@ def make_pattern(
     rng = np.random.default_rng(seed)
     scales = DENSITY_SCALES[density]
     scale_weights = np.array([0.16, 0.23, 0.25, detail_weight], dtype=np.float32)
-    blob_weight = 0.36
+    blob_weight = float(np.clip(blob_weight, 0.15, 0.50))
     scale_weights /= scale_weights.sum()
     scale_weights *= 1.0 - blob_weight
     scores = np.empty((len(palette), size, size), dtype=np.float32)
@@ -585,12 +588,13 @@ def make_pattern(
         # neighboring colors touch and merge instead of creating isolated islands.
         blob_layer = Image.new("L", (size, size), 0)
         blob_draw = ImageDraw.Draw(blob_layer)
-        count = DENSITY_BLOBS[density]
+        count = max(8, int(round(DENSITY_BLOBS[density] / max(blob_scale, 0.35))))
         for _ in range(count):
             center_x = int(rng.integers(-size // 8, size + size // 8))
             center_y = int(rng.integers(-size // 8, size + size // 8))
-            radius_x = int(rng.integers(max(5, size // 45), max(8, size // 10)))
-            radius_y = int(rng.integers(max(5, size // 55), max(8, size // 8)))
+            radius_x = int(rng.integers(max(5, int(size / 45 * blob_scale)), max(8, int(size / 10 * blob_scale))))
+            radius_y = int(rng.integers(max(5, int(size / 55 * blob_scale)), max(8, int(size / 8 * blob_scale))))
+            radius_y = max(4, int(radius_y * blob_aspect))
             value = int(rng.integers(150, 256))
             blob_draw.ellipse(
                 (center_x - radius_x, center_y - radius_y,
@@ -808,6 +812,9 @@ def run_group(
             detail_weight=profile["detail"],
             blur_radius=profile["blur"],
             density=args.density,
+            blob_scale=profile.get("blob_scale", 1.0),
+            blob_weight=profile.get("blob_weight", 0.36),
+            blob_aspect=profile.get("blob_aspect", 1.0),
         )
         score, components = score_pattern(pattern, target_rgb, target_luminance, target_texture)
         candidates.append((score, index, pattern, components))
