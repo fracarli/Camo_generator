@@ -2,14 +2,14 @@
 
 This report measures the generated images after rendering. It is a diagnostic tool, not a measure of real-world concealment.
 
-| Group | Maximum color share | Normalized color entropy | Mean luminance | Edge density |
-|---|---:|---:|---:|---:|
-| universal | 25.3% | 0.97 | 120.0 | 10.7% |
-| desert | 28.9% | 0.98 | 130.1 | 9.6% |
-| forest | 42.9% | 0.90 | 105.1 | 9.8% |
-| jungle | 42.9% | 0.85 | 113.0 | 12.5% |
-| mountain | 31.7% | 0.92 | 111.1 | 10.9% |
-| snow | 21.9% | 1.00 | 149.7 | 14.5% |
-| taiga | 28.7% | 0.94 | 104.5 | 10.8% |
-| tundra | 31.5% | 0.96 | 103.1 | 9.2% |
-| urban | 28.4% | 0.96 | 125.7 | 11.9% |
+| Group | Maximum color share | Normalized color entropy | Mean luminance | Edge density | Directional bias | Transition density |
+|---|---:|---:|---:|---:|---:|---:|
+| universal | 32.0% | 0.94 | 115.8 | 7.2% | 0.00 | 7.2% |
+| desert | 32.4% | 0.96 | 129.8 | 6.5% | 0.00 | 6.4% |
+| forest | 41.5% | 0.93 | 105.3 | 7.4% | 0.00 | 7.4% |
+| jungle | 45.2% | 0.90 | 92.5 | 6.8% | 0.01 | 6.8% |
+| mountain | 42.6% | 0.90 | 115.0 | 6.7% | 0.00 | 6.7% |
+| snow | 27.6% | 1.00 | 144.4 | 9.7% | 0.00 | 9.6% |
+| taiga | 35.7% | 0.97 | 104.4 | 7.3% | 0.00 | 7.3% |
+| tundra | 41.6% | 0.91 | 98.7 | 5.3% | 0.00 | 5.3% |
+| urban | 37.8% | 0.92 | 120.7 | 7.3% | 0.00 | 7.3% |

@@ -7,6 +7,7 @@ The program:
 - extracts a representative color palette;
 - excludes likely sky and water pixels;
 - analyzes luminance and texture at three scales;
+- measures directional bias, transitions, and fine-edge density to reject weak shapes;
 - generates several procedural patterns;
 - ranks candidates and saves the best pattern for each environment.
 
@@ -53,7 +54,7 @@ The universal palette reserves one matte forest-green color when forest referenc
 
 Universal output also balances the effective pixel coverage of the palette. After generating the competing regions, the script calibrates their area so that one color cannot become an oversized background by chance.
 
-The generator deliberately does not copy directional high-frequency texture from source photos. It generates competing smooth fields for each palette color, allowing adjacent regions to share boundaries instead of producing only isolated islands inside one background color.
+The generator deliberately does not copy directional high-frequency texture from source photos. It combines competing smooth fields with blurred organic blob fields at several scales: large regions break the silhouette, medium regions create transitions, and small regions add controlled detail. Adjacent regions can share boundaries and merge instead of producing only isolated islands inside one background color. The candidate score also applies a small penalty to strongly directional or excessively fragmented structures, which helps reject stripe-like results.
 
 ## Installation
 
@@ -121,7 +122,7 @@ Each generated group contains:
 
 - `best_pattern.png`: the selected 500x500 pattern;
 - `palette.png`: the colors and their estimated weights;
-- `report.json`: input files, mask coverage, score components, and parameters.
+- `report.json`: input files, mask coverage, semantic exclusions, score components, the ten best candidate summaries, and parameters.
 
 The output root also contains `all_patterns_grid.png`, a configurable overview of selected pattern groups. When no selection is provided, the default grid contains Universal, Desert, Mountain, Snow, and Jungle. The grid is regenerated automatically after every run.
 
@@ -139,7 +140,7 @@ python camo.py --summary-groups universal,desert,mountain,snow,jungle
 
 The selected groups are recorded in `summary_grid.json`.
 
-The output root also contains `validation_report.json` and `validation_report.md`. These measure the rendered PNGs after blur, including actual palette coverage, maximum color share, color entropy, mean luminance, edge density, and the existing candidate score. They are intended to guide later improvements and are not a measure of real-world concealment.
+The output root also contains `validation_report.json` and `validation_report.md`. These measure the rendered PNGs after blur, including actual palette coverage, maximum color share, color entropy, mean luminance, edge density, horizontal/vertical edge balance, directional bias, transition density, fine-edge density, and the candidate score. They are intended to guide later improvements and are not a measure of real-world concealment.
 
 ## Masks
 

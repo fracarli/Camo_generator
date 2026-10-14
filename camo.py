@@ -32,6 +32,7 @@ DENSITY_SCALES = {
     "standard": (8, 16, 32, 64),
     "high": (12, 24, 48, 96),
 }
+DENSITY_BLOBS = {"low": 18, "standard": 34, "high": 58}
 
 # Approximate matte reference swatches based on Fosco military paint families.
 # They are style anchors, not a colorimetric reproduction of a specific can.
@@ -107,6 +108,8 @@ class ImageStats:
     valid_fraction: float
     mask_source: str
     semantic_labels: list[str]
+    semantic_excluded_fraction: float
+    semantic_excluded_labels: list[str]
 
 
 class SemanticSegmenter:
@@ -146,8 +149,8 @@ class SemanticSegmenter:
             for index, label in self.model.config.id2label.items()
         }
 
-    def predict(self, image: np.ndarray) -> tuple[np.ndarray, list[str]]:
-        """Return a valid-pixel mask and labels present in the image."""
+    def predict(self, image: np.ndarray) -> tuple[np.ndarray, list[str], float, list[str]]:
+        """Return a valid mask, labels present, and excluded-label diagnostics."""
         pil_image = Image.fromarray(image, mode="RGB")
         inputs = self.processor(images=pil_image, return_tensors="pt")
         inputs = {key: value.to(self.device) for key, value in inputs.items()}
@@ -167,7 +170,12 @@ class SemanticSegmenter:
             if label in SEMANTIC_EXCLUDE_LABELS
         }
         valid = ~np.isin(class_map, list(excluded_ids))
-        return valid, labels
+        excluded_labels = sorted(
+            self.id_to_label[index]
+            for index in excluded_ids
+            if np.any(class_map == index)
+        )
+        return valid, labels, float((~valid).mean()), excluded_labels
 
 
 def automatic_valid_mask(image: np.ndarray) -> np.ndarray:
@@ -219,6 +227,8 @@ def load_images(
             image.thumbnail((512, 512), Image.Resampling.LANCZOS)
             image_array = np.asarray(image, dtype=np.uint8)
             mask_path = path.with_name(f"{path.stem}_mask.png")
+            semantic_excluded_fraction = 0.0
+            semantic_excluded_labels: list[str] = []
             if mask_path.exists():
                 with Image.open(mask_path) as mask_source:
                     mask = np.asarray(
@@ -227,7 +237,12 @@ def load_images(
                 mask_source_name = "manual"
                 semantic_labels: list[str] = []
             elif segmenter is not None:
-                semantic_mask, semantic_labels = segmenter.predict(image_array)
+                (
+                    semantic_mask,
+                    semantic_labels,
+                    semantic_excluded_fraction,
+                    semantic_excluded_labels,
+                ) = segmenter.predict(image_array)
                 color_mask = automatic_valid_mask(image_array) if use_auto_mask else np.ones(
                     image_array.shape[:2], dtype=bool
                 )
@@ -271,6 +286,8 @@ def load_images(
                 valid_fraction=float(mask.mean()),
                 mask_source=mask_source_name,
                 semantic_labels=semantic_labels,
+                semantic_excluded_fraction=semantic_excluded_fraction,
+                semantic_excluded_labels=semantic_excluded_labels,
             )
         )
     return images
@@ -538,16 +555,20 @@ def make_pattern(
     blur_radius: float = 0.7,
     density: str = DEFAULT_DENSITY,
 ) -> np.ndarray:
-    """Generate adjacent, irregular color regions at four spatial scales.
+    """Generate adjacent, irregular color regions at several spatial scales.
 
     Each palette color gets a competing smooth noise field. Choosing the winning
     field creates shared boundaries between colors instead of making every color
-    appear as an isolated island inside one dominant background.
+    appear as an isolated island inside one dominant background. Organic blob
+    fields are mixed into the smooth fields so the output contains connected,
+    irregular regions rather than grid-like bands.
     """
     rng = np.random.default_rng(seed)
     scales = DENSITY_SCALES[density]
-    scale_weights = np.array([0.22, 0.30, 0.30, detail_weight], dtype=np.float32)
+    scale_weights = np.array([0.16, 0.23, 0.25, detail_weight], dtype=np.float32)
+    blob_weight = 0.36
     scale_weights /= scale_weights.sum()
+    scale_weights *= 1.0 - blob_weight
     scores = np.empty((len(palette), size, size), dtype=np.float32)
     for color_index in range(len(palette)):
         field = np.zeros((size, size), dtype=np.float32)
@@ -559,6 +580,26 @@ def make_pattern(
                 dtype=np.float32,
             ) / 255
             field += weight * smooth
+        # Sparse blurred ellipses provide organic, non-directional structures.
+        # Their overlap is intentional: the final competing-field decision makes
+        # neighboring colors touch and merge instead of creating isolated islands.
+        blob_layer = Image.new("L", (size, size), 0)
+        blob_draw = ImageDraw.Draw(blob_layer)
+        count = DENSITY_BLOBS[density]
+        for _ in range(count):
+            center_x = int(rng.integers(-size // 8, size + size // 8))
+            center_y = int(rng.integers(-size // 8, size + size // 8))
+            radius_x = int(rng.integers(max(5, size // 45), max(8, size // 10)))
+            radius_y = int(rng.integers(max(5, size // 55), max(8, size // 8)))
+            value = int(rng.integers(150, 256))
+            blob_draw.ellipse(
+                (center_x - radius_x, center_y - radius_y,
+                 center_x + radius_x, center_y + radius_y),
+                fill=value,
+            )
+        blob_layer = blob_layer.filter(ImageFilter.GaussianBlur(radius=max(2.0, size / 90)))
+        blobs = np.asarray(blob_layer, dtype=np.float32) / 255.0
+        field += blob_weight * blobs
         scores[color_index] = field
 
     # Calibrate the categorical fields so the realized image area follows the
@@ -636,12 +677,56 @@ def score_pattern(
     rgb_error = np.abs(candidate_rgb - target_rgb).mean()
     luminance_error = np.abs(candidate_luminance - target_luminance).mean()
     texture_error = np.abs(candidate_texture - target_texture).mean()
+    geometry = pattern_geometry_metrics(pattern)
+    # Penalize directional artifacts and excessive microscopic fragmentation.
+    # The terms are deliberately small: matching the reference palette remains
+    # more important than imposing one universal shape style.
+    geometry_penalty = (
+        0.08 * geometry["directional_bias"]
+        + 0.05 * max(0.0, geometry["fine_edge_density"] - 0.38)
+    )
     # Lower is better. Texture prevents selecting a color-correct but noisy image.
-    score = 0.55 * rgb_error + 0.20 * luminance_error + 0.25 * texture_error
+    score = 0.50 * rgb_error + 0.18 * luminance_error + 0.24 * texture_error + geometry_penalty
     return float(score), {
         "rgb_error": float(rgb_error),
         "luminance_error": float(luminance_error),
         "texture_error": float(texture_error),
+        "geometry_penalty": float(geometry_penalty),
+        "directional_bias": float(geometry["directional_bias"]),
+        "transition_density": float(geometry["transition_density"]),
+        "fine_edge_density": float(geometry["fine_edge_density"]),
+    }
+
+
+def pattern_geometry_metrics(pattern: np.ndarray) -> dict[str, float]:
+    """Measure shape structure without requiring a computer-vision dependency."""
+    gray = (
+        0.2126 * pattern[..., 0]
+        + 0.7152 * pattern[..., 1]
+        + 0.0722 * pattern[..., 2]
+    ).astype(np.float32)
+    horizontal = np.abs(gray[:, 1:] - gray[:, :-1]) > 10.0
+    vertical = np.abs(gray[1:, :] - gray[:-1, :]) > 10.0
+    horizontal_density = float(horizontal.mean())
+    vertical_density = float(vertical.mean())
+    total = horizontal_density + vertical_density
+    directional_bias = abs(horizontal_density - vertical_density) / max(total, 1e-8)
+    # Fine edges are measured after downsampling, which avoids treating single
+    # pixel antialiasing noise as useful camouflage detail.
+    small = np.asarray(
+        Image.fromarray(gray.astype(np.uint8), mode="L").resize((128, 128), Image.Resampling.BILINEAR),
+        dtype=np.float32,
+    )
+    fine_edges = np.concatenate(
+        (np.abs(small[:, 1:] - small[:, :-1]).ravel(),
+         np.abs(small[1:, :] - small[:-1, :]).ravel())
+    )
+    return {
+        "horizontal_edge_density": horizontal_density,
+        "vertical_edge_density": vertical_density,
+        "directional_bias": directional_bias,
+        "transition_density": total / 2.0,
+        "fine_edge_density": float(np.mean(fine_edges > 10.0)),
     }
 
 
@@ -728,6 +813,15 @@ def run_group(
         candidates.append((score, index, pattern, components))
     candidates.sort(key=lambda item: item[0])
     best_score, _, best_pattern, best_components = candidates[0]
+    candidate_summary = [
+        {
+            "rank": rank,
+            "seed_offset": int(index),
+            "score": float(score),
+            "score_components": components,
+        }
+        for rank, (score, index, _, components) in enumerate(candidates[:10], start=1)
+    ]
 
     Image.fromarray(best_pattern, mode="RGB").save(output_dir / "best_pattern.png")
     save_palette(palette, weights, output_dir / "palette.png")
@@ -742,11 +836,20 @@ def run_group(
         "semantic_labels": {
             image.path: image.semantic_labels for image in images if image.semantic_labels
         },
+        "semantic_excluded_labels": {
+            image.path: image.semantic_excluded_labels
+            for image in images if image.semantic_excluded_labels
+        },
+        "semantic_excluded_fraction": {
+            image.path: image.semantic_excluded_fraction
+            for image in images if image.semantic_excluded_fraction > 0
+        },
         "size": [args.size, args.size],
         "palette_colors": int(len(palette)),
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
+        "top_candidates": candidate_summary,
         "version": "phase_20_jungle_selectable_summary",
         "segmentation": args.segmentation,
         "segmentation_model": args.segmentation_model if args.segmentation == "semantic" else None,
@@ -768,7 +871,7 @@ def run_group(
                 (0.2126 * palette[:, 0] + 0.7152 * palette[:, 1] + 0.0722 * palette[:, 2]) < DARK_LUMINANCE_THRESHOLD
             ].sum()
         ),
-        "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+        "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
         "palette": [
             {"rgb": [int(value) for value in color], "weight": float(weight)}
             for color, weight in zip(palette, weights)
@@ -810,7 +913,7 @@ def save_summary_grid(output_dir: Path, size: int, groups: list[str]) -> Path:
 def write_validation_report(output_dir: Path, reports: dict[str, dict]) -> None:
     """Measure the generated PNGs and save machine-readable and human-readable reports."""
     validation: dict[str, object] = {
-        "description": "Post-generation measurements of color coverage, luminance, and edge density.",
+        "description": "Post-generation measurements of color coverage, luminance, texture, and shape structure.",
         "groups": {},
     }
     markdown_rows = []
@@ -836,6 +939,7 @@ def write_validation_report(output_dir: Path, reports: dict[str, dict]) -> None:
         edge_density = float(np.mean(np.concatenate((horizontal.ravel(), vertical.ravel())) > 10.0))
         entropy = float(-np.sum(shares[shares > 0] * np.log2(shares[shares > 0])))
         normalized_entropy = entropy / max(np.log2(len(shares)), 1.0)
+        geometry = pattern_geometry_metrics(pattern.astype(np.uint8))
         metrics = {
             "image_size": [int(pattern.shape[1]), int(pattern.shape[0])],
             "palette_rgb": [[int(value) for value in color] for color in palette],
@@ -846,6 +950,11 @@ def write_validation_report(output_dir: Path, reports: dict[str, dict]) -> None:
             "mean_rgb": [float(value) for value in pixels.mean(axis=0)],
             "mean_luminance": float(gray.mean()),
             "edge_density": edge_density,
+            "horizontal_edge_density": geometry["horizontal_edge_density"],
+            "vertical_edge_density": geometry["vertical_edge_density"],
+            "directional_bias": geometry["directional_bias"],
+            "transition_density": geometry["transition_density"],
+            "fine_edge_density": geometry["fine_edge_density"],
             "best_score": report["best_score"],
             "score_components": report["score_components"],
         }
@@ -853,7 +962,8 @@ def write_validation_report(output_dir: Path, reports: dict[str, dict]) -> None:
         markdown_rows.append(
             f"| {group} | {metrics['maximum_actual_color_share']:.1%} | "
             f"{metrics['normalized_color_entropy']:.2f} | {metrics['mean_luminance']:.1f} | "
-            f"{metrics['edge_density']:.1%} |"
+            f"{metrics['edge_density']:.1%} | {metrics['directional_bias']:.2f} | "
+            f"{metrics['transition_density']:.1%} |"
         )
 
     (output_dir / "validation_report.json").write_text(
@@ -863,8 +973,8 @@ def write_validation_report(output_dir: Path, reports: dict[str, dict]) -> None:
         "# Validation Report\n\n"
         "This report measures the generated images after rendering. It is a diagnostic tool, "
         "not a measure of real-world concealment.\n\n"
-        "| Group | Maximum color share | Normalized color entropy | Mean luminance | Edge density |\n"
-        "|---|---:|---:|---:|---:|\n"
+        "| Group | Maximum color share | Normalized color entropy | Mean luminance | Edge density | Directional bias | Transition density |\n"
+        "|---|---:|---:|---:|---:|---:|---:|\n"
         + "\n".join(markdown_rows)
         + "\n"
     )

@@ -1,168 +1,1017 @@
 {
   "universal": {
     "input_images": [
-      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
-      "photos/desert/images-3 copy 2.jpeg [automatic]",
-      "photos/desert/images-3.jpeg [automatic]",
-      "photos/desert/images-4 copy.jpeg [automatic]",
-      "photos/desert/images-5 copy.jpeg [automatic]",
-      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]",
-      "photos/forest/23853_135_PRBEI.jpeg [automatic]",
-      "photos/forest/MG_0652-1024x768.webp [automatic]",
-      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
-      "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
-      "photos/forest/images-3 copy 2.jpeg [automatic]",
-      "photos/forest/images-3 copy.jpeg [automatic]",
-      "photos/forest/images-3.jpeg [automatic]",
-      "photos/forest/images-4 copy.jpeg [automatic]",
-      "photos/forest/images-4.jpeg [automatic]",
-      "photos/forest/images-5 copy.jpeg [automatic]",
-      "photos/forest/images-5.jpeg [automatic]",
-      "photos/forest/orman-cesitleri.jpg [automatic]",
-      "photos/forest/trekking-2g.jpg.webp [automatic]",
-      "photos/forest/veduta.jpg [automatic]",
-      "photos/jungle/Amazon-plants.jpg [automatic]",
-      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]",
-      "photos/jungle/images-3.jpeg [automatic]",
-      "photos/jungle/images-4.jpeg [automatic]",
-      "photos/jungle/images-5.jpeg [automatic]",
-      "photos/jungle/p0ml01qd.jpg [automatic]",
-      "photos/jungle/p0ml02xf.jpg [automatic]",
-      "photos/mountain/bellino-paesaggio.jpg [automatic]",
-      "photos/mountain/images-3.jpeg [automatic]",
-      "photos/mountain/images-4.jpeg [automatic]",
-      "photos/mountain/images-5 copy.jpeg [automatic]",
-      "photos/mountain/images-5.jpeg [automatic]",
-      "photos/mountain/images-6.jpeg [automatic]",
-      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]",
-      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]",
-      "photos/taiga/images-4 copy.jpeg [automatic]",
-      "photos/taiga/images-6.jpeg [automatic]",
-      "photos/tundra/images-3.jpeg [automatic]",
-      "photos/tundra/images-4.jpeg [automatic]",
-      "photos/tundra/images-5.jpeg [automatic]",
-      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]",
-      "photos/urban/images-3.jpeg [automatic]",
-      "photos/urban/images-4.jpeg [automatic]",
-      "photos/urban/images-5.jpeg [automatic]",
-      "photos/urban/images-6.jpeg [automatic]",
-      "photos/urban/images-7.jpeg [automatic]",
-      "photos/urban/images-8.jpeg [automatic]"
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]",
+      "photos/desert/images-3 copy 2.jpeg [semantic]",
+      "photos/desert/images-3.jpeg [semantic]",
+      "photos/desert/images-4 copy.jpeg [semantic]",
+      "photos/desert/images-5 copy.jpeg [semantic]",
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]",
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]",
+      "photos/forest/MG_0652-1024x768.webp [semantic]",
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]",
+      "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]",
+      "photos/forest/images-3 copy 2.jpeg [semantic]",
+      "photos/forest/images-3 copy 3.jpeg [semantic]",
+      "photos/forest/images-3 copy.jpeg [semantic]",
+      "photos/forest/images-3.jpeg [semantic]",
+      "photos/forest/images-4 copy.jpeg [semantic]",
+      "photos/forest/images-4.jpeg [semantic]",
+      "photos/forest/images-5 copy.jpeg [semantic]",
+      "photos/forest/images-5.jpeg [semantic]",
+      "photos/forest/orman-cesitleri.jpg [semantic]",
+      "photos/forest/trekking-2g.jpg.webp [semantic]",
+      "photos/forest/veduta.jpg [semantic]",
+      "photos/forest/vivere-in-campagna.jpg [semantic]",
+      "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]",
+      "photos/jungle/Amazon-plants.jpg [semantic]",
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]",
+      "photos/jungle/DSC_1137.jpg [semantic]",
+      "photos/jungle/images-3 copy.jpeg [semantic]",
+      "photos/jungle/images-3.jpeg [semantic]",
+      "photos/jungle/images-4 copy.jpeg [semantic]",
+      "photos/jungle/images-4.jpeg [semantic]",
+      "photos/jungle/images-5 copy.jpeg [semantic]",
+      "photos/jungle/images-5.jpeg [semantic]",
+      "photos/jungle/images-6.jpeg [semantic]",
+      "photos/jungle/p0ml01qd.jpg [semantic]",
+      "photos/jungle/p0ml02xf.jpg [semantic]",
+      "photos/mountain/bellino-paesaggio.jpg [semantic]",
+      "photos/mountain/images-3 copy.jpeg [semantic]",
+      "photos/mountain/images-3.jpeg [semantic]",
+      "photos/mountain/images-4 copy.jpeg [semantic]",
+      "photos/mountain/images-4.jpeg [semantic]",
+      "photos/mountain/images-5 copy 2.jpeg [semantic]",
+      "photos/mountain/images-5 copy.jpeg [semantic]",
+      "photos/mountain/images-5.jpeg [semantic]",
+      "photos/mountain/images-6 copy.jpeg [semantic]",
+      "photos/mountain/images-6.jpeg [semantic]",
+      "photos/mountain/images-7.jpeg [semantic]",
+      "photos/mountain/images-8.jpeg [semantic]",
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]",
+      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]",
+      "photos/taiga/images-4 copy.jpeg [semantic]",
+      "photos/taiga/images-6.jpeg [semantic]",
+      "photos/tundra/images-3.jpeg [semantic]",
+      "photos/tundra/images-4.jpeg [semantic]",
+      "photos/tundra/images-5.jpeg [semantic]",
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]",
+      "photos/urban/images-3.jpeg [semantic]",
+      "photos/urban/images-4.jpeg [semantic]",
+      "photos/urban/images-5.jpeg [semantic]",
+      "photos/urban/images-6.jpeg [semantic]",
+      "photos/urban/images-7.jpeg [semantic]",
+      "photos/urban/images-8.jpeg [semantic]"
     ],
     "valid_pixel_fraction": {
-      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
-      "photos/desert/images-3 copy 2.jpeg [automatic]": 1.0,
-      "photos/desert/images-3.jpeg [automatic]": 0.5244072808159722,
-      "photos/desert/images-4 copy.jpeg [automatic]": 0.6323644301470588,
-      "photos/desert/images-5 copy.jpeg [automatic]": 0.8179813508064516,
-      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334,
-      "photos/forest/23853_135_PRBEI.jpeg [automatic]": 0.76031494140625,
-      "photos/forest/MG_0652-1024x768.webp [automatic]": 0.6473185221354166,
-      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
-      "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
-      "photos/forest/images-3 copy 2.jpeg [automatic]": 0.9430198669433594,
-      "photos/forest/images-3 copy.jpeg [automatic]": 0.4512209159747559,
-      "photos/forest/images-3.jpeg [automatic]": 0.8027852376302084,
-      "photos/forest/images-4 copy.jpeg [automatic]": 0.9996083577473959,
-      "photos/forest/images-4.jpeg [automatic]": 0.9998779296875,
-      "photos/forest/images-5 copy.jpeg [automatic]": 0.931793212890625,
-      "photos/forest/images-5.jpeg [automatic]": 0.9999160766601562,
-      "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
-      "photos/forest/trekking-2g.jpg.webp [automatic]": 1.0,
-      "photos/forest/veduta.jpg [automatic]": 0.954928,
-      "photos/jungle/Amazon-plants.jpg [automatic]": 0.9618226882309941,
-      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": 0.9978388798701299,
-      "photos/jungle/images-3.jpeg [automatic]": 0.9994403326023392,
-      "photos/jungle/images-4.jpeg [automatic]": 0.9980697855571847,
-      "photos/jungle/images-5.jpeg [automatic]": 0.9965590533088236,
-      "photos/jungle/p0ml01qd.jpg [automatic]": 0.9982574349442379,
-      "photos/jungle/p0ml02xf.jpg [automatic]": 0.9990473977695167,
-      "photos/mountain/bellino-paesaggio.jpg [automatic]": 0.511512,
-      "photos/mountain/images-3.jpeg [automatic]": 0.6281603043002916,
-      "photos/mountain/images-4.jpeg [automatic]": 0.6930745442708334,
-      "photos/mountain/images-5 copy.jpeg [automatic]": 0.5778203342618384,
-      "photos/mountain/images-5.jpeg [automatic]": 0.9785089590443686,
-      "photos/mountain/images-6.jpeg [automatic]": 0.5521444281524927,
-      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": 0.8327793768274854,
-      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343,
-      "photos/taiga/images-4 copy.jpeg [automatic]": 0.8991224500868056,
-      "photos/taiga/images-6.jpeg [automatic]": 0.5299072265625,
-      "photos/tundra/images-3.jpeg [automatic]": 0.7720133463541666,
-      "photos/tundra/images-4.jpeg [automatic]": 0.9979303533380682,
-      "photos/tundra/images-5.jpeg [automatic]": 0.48908311950146627,
-      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]": 0.6998760516826923,
-      "photos/urban/images-3.jpeg [automatic]": 0.6374747983870968,
-      "photos/urban/images-4.jpeg [automatic]": 0.9320746527777778,
-      "photos/urban/images-5.jpeg [automatic]": 0.6985005906357389,
-      "photos/urban/images-6.jpeg [automatic]": 0.6178862719941349,
-      "photos/urban/images-7.jpeg [automatic]": 0.644561767578125,
-      "photos/urban/images-8.jpeg [automatic]": 0.9981320784395973
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": 0.7374074835526315,
+      "photos/desert/images-3 copy 2.jpeg [semantic]": 0.7280668652088773,
+      "photos/desert/images-3.jpeg [semantic]": 0.5134345160590278,
+      "photos/desert/images-4 copy.jpeg [semantic]": 0.5703814338235295,
+      "photos/desert/images-5 copy.jpeg [semantic]": 0.6712678702346041,
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": 0.4775797526041667,
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": 0.7587178548177084,
+      "photos/forest/MG_0652-1024x768.webp [semantic]": 0.6360677083333334,
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": 0.9927602639296188,
+      "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": 0.9973044199486302,
+      "photos/forest/images-3 copy 2.jpeg [semantic]": 0.9424629211425781,
+      "photos/forest/images-3 copy 3.jpeg [semantic]": 0.8121014030612245,
+      "photos/forest/images-3 copy.jpeg [semantic]": 0.4403104965241806,
+      "photos/forest/images-3.jpeg [semantic]": 0.7152760823567709,
+      "photos/forest/images-4 copy.jpeg [semantic]": 0.9979909261067709,
+      "photos/forest/images-4.jpeg [semantic]": 0.99981689453125,
+      "photos/forest/images-5 copy.jpeg [semantic]": 0.8241933186848959,
+      "photos/forest/images-5.jpeg [semantic]": 0.9999160766601562,
+      "photos/forest/orman-cesitleri.jpg [semantic]": 0.9966023763020834,
+      "photos/forest/trekking-2g.jpg.webp [semantic]": 0.6193033854166666,
+      "photos/forest/veduta.jpg [semantic]": 0.93566,
+      "photos/forest/vivere-in-campagna.jpg [semantic]": 0.7411424067982456,
+      "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": 0.9994558742668622,
+      "photos/jungle/Amazon-plants.jpg [semantic]": 0.8967584978070176,
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": 0.997260551948052,
+      "photos/jungle/DSC_1137.jpg [semantic]": 0.9882180606617647,
+      "photos/jungle/images-3 copy.jpeg [semantic]": 0.9790467379385965,
+      "photos/jungle/images-3.jpeg [semantic]": 0.9951114766081871,
+      "photos/jungle/images-4 copy.jpeg [semantic]": 0.9989204950142451,
+      "photos/jungle/images-4.jpeg [semantic]": 0.9980697855571847,
+      "photos/jungle/images-5 copy.jpeg [semantic]": 0.9808856451023392,
+      "photos/jungle/images-5.jpeg [semantic]": 0.9948586856617647,
+      "photos/jungle/images-6.jpeg [semantic]": 0.997897518382353,
+      "photos/jungle/p0ml01qd.jpg [semantic]": 0.9453841387856258,
+      "photos/jungle/p0ml02xf.jpg [semantic]": 0.9990473977695167,
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": 0.467616,
+      "photos/mountain/images-3 copy.jpeg [semantic]": 0.5752257244809689,
+      "photos/mountain/images-3.jpeg [semantic]": 0.6099899781341108,
+      "photos/mountain/images-4 copy.jpeg [semantic]": 0.6328803168402778,
+      "photos/mountain/images-4.jpeg [semantic]": 0.5941501193576388,
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": 0.3584500745156483,
+      "photos/mountain/images-5 copy.jpeg [semantic]": 0.5743928447075209,
+      "photos/mountain/images-5.jpeg [semantic]": 0.9318939313139932,
+      "photos/mountain/images-6 copy.jpeg [semantic]": 0.6147104899088541,
+      "photos/mountain/images-6.jpeg [semantic]": 0.5521444281524927,
+      "photos/mountain/images-7.jpeg [semantic]": 0.6319101790935673,
+      "photos/mountain/images-8.jpeg [semantic]": 0.6487621753246753,
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": 0.8168174342105263,
+      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": 0.9415461753731343,
+      "photos/taiga/images-4 copy.jpeg [semantic]": 0.8135036892361112,
+      "photos/taiga/images-6.jpeg [semantic]": 0.460693359375,
+      "photos/tundra/images-3.jpeg [semantic]": 0.6047130766369048,
+      "photos/tundra/images-4.jpeg [semantic]": 0.8867298473011364,
+      "photos/tundra/images-5.jpeg [semantic]": 0.4703251008064516,
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": 0.6998760516826923,
+      "photos/urban/images-3.jpeg [semantic]": 0.637360245601173,
+      "photos/urban/images-4.jpeg [semantic]": 0.7102457682291666,
+      "photos/urban/images-5.jpeg [semantic]": 0.41339803479381443,
+      "photos/urban/images-6.jpeg [semantic]": 0.4722610428885631,
+      "photos/urban/images-7.jpeg [semantic]": 0.6115061442057291,
+      "photos/urban/images-8.jpeg [semantic]": 0.9510801174496645
     },
     "mask_sources": {
-      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": "automatic",
-      "photos/desert/images-3 copy 2.jpeg [automatic]": "automatic",
-      "photos/desert/images-3.jpeg [automatic]": "automatic",
-      "photos/desert/images-4 copy.jpeg [automatic]": "automatic",
-      "photos/desert/images-5 copy.jpeg [automatic]": "automatic",
-      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": "automatic",
-      "photos/forest/23853_135_PRBEI.jpeg [automatic]": "automatic",
-      "photos/forest/MG_0652-1024x768.webp [automatic]": "automatic",
-      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": "automatic",
-      "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": "automatic",
-      "photos/forest/images-3 copy 2.jpeg [automatic]": "automatic",
-      "photos/forest/images-3 copy.jpeg [automatic]": "automatic",
-      "photos/forest/images-3.jpeg [automatic]": "automatic",
-      "photos/forest/images-4 copy.jpeg [automatic]": "automatic",
-      "photos/forest/images-4.jpeg [automatic]": "automatic",
-      "photos/forest/images-5 copy.jpeg [automatic]": "automatic",
-      "photos/forest/images-5.jpeg [automatic]": "automatic",
-      "photos/forest/orman-cesitleri.jpg [automatic]": "automatic",
-      "photos/forest/trekking-2g.jpg.webp [automatic]": "automatic",
-      "photos/forest/veduta.jpg [automatic]": "automatic",
-      "photos/jungle/Amazon-plants.jpg [automatic]": "automatic",
-      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": "automatic",
-      "photos/jungle/images-3.jpeg [automatic]": "automatic",
-      "photos/jungle/images-4.jpeg [automatic]": "automatic",
-      "photos/jungle/images-5.jpeg [automatic]": "automatic",
-      "photos/jungle/p0ml01qd.jpg [automatic]": "automatic",
-      "photos/jungle/p0ml02xf.jpg [automatic]": "automatic",
-      "photos/mountain/bellino-paesaggio.jpg [automatic]": "automatic",
-      "photos/mountain/images-3.jpeg [automatic]": "automatic",
-      "photos/mountain/images-4.jpeg [automatic]": "automatic",
-      "photos/mountain/images-5 copy.jpeg [automatic]": "automatic",
-      "photos/mountain/images-5.jpeg [automatic]": "automatic",
-      "photos/mountain/images-6.jpeg [automatic]": "automatic",
-      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": "automatic",
-      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": "automatic",
-      "photos/taiga/images-4 copy.jpeg [automatic]": "automatic",
-      "photos/taiga/images-6.jpeg [automatic]": "automatic",
-      "photos/tundra/images-3.jpeg [automatic]": "automatic",
-      "photos/tundra/images-4.jpeg [automatic]": "automatic",
-      "photos/tundra/images-5.jpeg [automatic]": "automatic",
-      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]": "automatic",
-      "photos/urban/images-3.jpeg [automatic]": "automatic",
-      "photos/urban/images-4.jpeg [automatic]": "automatic",
-      "photos/urban/images-5.jpeg [automatic]": "automatic",
-      "photos/urban/images-6.jpeg [automatic]": "automatic",
-      "photos/urban/images-7.jpeg [automatic]": "automatic",
-      "photos/urban/images-8.jpeg [automatic]": "automatic"
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": "semantic",
+      "photos/desert/images-3 copy 2.jpeg [semantic]": "semantic",
+      "photos/desert/images-3.jpeg [semantic]": "semantic",
+      "photos/desert/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/desert/images-5 copy.jpeg [semantic]": "semantic",
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": "semantic",
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": "semantic",
+      "photos/forest/MG_0652-1024x768.webp [semantic]": "semantic",
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": "semantic",
+      "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": "semantic",
+      "photos/forest/images-3 copy 2.jpeg [semantic]": "semantic",
+      "photos/forest/images-3 copy 3.jpeg [semantic]": "semantic",
+      "photos/forest/images-3 copy.jpeg [semantic]": "semantic",
+      "photos/forest/images-3.jpeg [semantic]": "semantic",
+      "photos/forest/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/forest/images-4.jpeg [semantic]": "semantic",
+      "photos/forest/images-5 copy.jpeg [semantic]": "semantic",
+      "photos/forest/images-5.jpeg [semantic]": "semantic",
+      "photos/forest/orman-cesitleri.jpg [semantic]": "semantic",
+      "photos/forest/trekking-2g.jpg.webp [semantic]": "semantic",
+      "photos/forest/veduta.jpg [semantic]": "semantic",
+      "photos/forest/vivere-in-campagna.jpg [semantic]": "semantic",
+      "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": "semantic",
+      "photos/jungle/Amazon-plants.jpg [semantic]": "semantic",
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": "semantic",
+      "photos/jungle/DSC_1137.jpg [semantic]": "semantic",
+      "photos/jungle/images-3 copy.jpeg [semantic]": "semantic",
+      "photos/jungle/images-3.jpeg [semantic]": "semantic",
+      "photos/jungle/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/jungle/images-4.jpeg [semantic]": "semantic",
+      "photos/jungle/images-5 copy.jpeg [semantic]": "semantic",
+      "photos/jungle/images-5.jpeg [semantic]": "semantic",
+      "photos/jungle/images-6.jpeg [semantic]": "semantic",
+      "photos/jungle/p0ml01qd.jpg [semantic]": "semantic",
+      "photos/jungle/p0ml02xf.jpg [semantic]": "semantic",
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": "semantic",
+      "photos/mountain/images-3 copy.jpeg [semantic]": "semantic",
+      "photos/mountain/images-3.jpeg [semantic]": "semantic",
+      "photos/mountain/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/mountain/images-4.jpeg [semantic]": "semantic",
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": "semantic",
+      "photos/mountain/images-5 copy.jpeg [semantic]": "semantic",
+      "photos/mountain/images-5.jpeg [semantic]": "semantic",
+      "photos/mountain/images-6 copy.jpeg [semantic]": "semantic",
+      "photos/mountain/images-6.jpeg [semantic]": "semantic",
+      "photos/mountain/images-7.jpeg [semantic]": "semantic",
+      "photos/mountain/images-8.jpeg [semantic]": "semantic",
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": "semantic",
+      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": "semantic",
+      "photos/taiga/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/taiga/images-6.jpeg [semantic]": "semantic",
+      "photos/tundra/images-3.jpeg [semantic]": "semantic",
+      "photos/tundra/images-4.jpeg [semantic]": "semantic",
+      "photos/tundra/images-5.jpeg [semantic]": "semantic",
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": "semantic",
+      "photos/urban/images-3.jpeg [semantic]": "semantic",
+      "photos/urban/images-4.jpeg [semantic]": "semantic",
+      "photos/urban/images-5.jpeg [semantic]": "semantic",
+      "photos/urban/images-6.jpeg [semantic]": "semantic",
+      "photos/urban/images-7.jpeg [semantic]": "semantic",
+      "photos/urban/images-8.jpeg [semantic]": "semantic"
     },
-    "semantic_labels": {},
+    "semantic_labels": {
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": [
+        "fence",
+        "field",
+        "grass",
+        "hill",
+        "mountain",
+        "pole",
+        "sky",
+        "tree"
+      ],
+      "photos/desert/images-3 copy 2.jpeg [semantic]": [
+        "mountain",
+        "sand",
+        "sky"
+      ],
+      "photos/desert/images-3.jpeg [semantic]": [
+        "earth",
+        "mountain",
+        "person",
+        "sand",
+        "sky"
+      ],
+      "photos/desert/images-4 copy.jpeg [semantic]": [
+        "earth",
+        "hill",
+        "mountain",
+        "person",
+        "rock",
+        "sand",
+        "sky"
+      ],
+      "photos/desert/images-5 copy.jpeg [semantic]": [
+        "sand",
+        "sky"
+      ],
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": [
+        "dirt track",
+        "earth",
+        "sand",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": [
+        "grass",
+        "mountain",
+        "rock",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/MG_0652-1024x768.webp [semantic]": [
+        "earth",
+        "field",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": [
+        "earth",
+        "grass",
+        "tree"
+      ],
+      "photos/forest/images-3 copy 2.jpeg [semantic]": [
+        "earth",
+        "hill",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-3 copy 3.jpeg [semantic]": [
+        "building",
+        "grass",
+        "mountain",
+        "plant",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-3 copy.jpeg [semantic]": [
+        "mountain",
+        "sky"
+      ],
+      "photos/forest/images-3.jpeg [semantic]": [
+        "earth",
+        "grass",
+        "hill",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-4 copy.jpeg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-4.jpeg [semantic]": [
+        "earth",
+        "rock",
+        "tree",
+        "water"
+      ],
+      "photos/forest/images-5 copy.jpeg [semantic]": [
+        "building",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-5.jpeg [semantic]": [
+        "dirt track",
+        "earth",
+        "tree"
+      ],
+      "photos/forest/orman-cesitleri.jpg [semantic]": [
+        "earth",
+        "grass",
+        "tree"
+      ],
+      "photos/forest/trekking-2g.jpg.webp [semantic]": [
+        "mountain",
+        "person",
+        "sky"
+      ],
+      "photos/forest/veduta.jpg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/vivere-in-campagna.jpg [semantic]": [
+        "building",
+        "field",
+        "grass",
+        "house",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": [
+        "tree"
+      ],
+      "photos/jungle/Amazon-plants.jpg [semantic]": [
+        "earth",
+        "plant",
+        "rock",
+        "sky",
+        "tree",
+        "water"
+      ],
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": [
+        "plant",
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/DSC_1137.jpg [semantic]": [
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/images-3 copy.jpeg [semantic]": [
+        "palm",
+        "plant",
+        "sky",
+        "tree",
+        "wall"
+      ],
+      "photos/jungle/images-3.jpeg [semantic]": [
+        "dirt track",
+        "earth",
+        "palm",
+        "path",
+        "plant",
+        "sand",
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/images-4 copy.jpeg [semantic]": [
+        "palm",
+        "plant",
+        "tree",
+        "wall"
+      ],
+      "photos/jungle/images-4.jpeg [semantic]": [
+        "earth",
+        "fence",
+        "plant",
+        "pole",
+        "tree"
+      ],
+      "photos/jungle/images-5 copy.jpeg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/images-5.jpeg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/images-6.jpeg [semantic]": [
+        "earth",
+        "plant",
+        "tree"
+      ],
+      "photos/jungle/p0ml01qd.jpg [semantic]": [
+        "palm",
+        "person",
+        "plant",
+        "rock",
+        "sky",
+        "tree",
+        "wall",
+        "water"
+      ],
+      "photos/jungle/p0ml02xf.jpg [semantic]": [
+        "mountain",
+        "tree"
+      ],
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": [
+        "fence",
+        "mountain",
+        "person",
+        "railing",
+        "rock",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-3 copy.jpeg [semantic]": [
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-3.jpeg [semantic]": [
+        "dirt track",
+        "earth",
+        "fence",
+        "field",
+        "flag",
+        "grass",
+        "hill",
+        "mountain",
+        "path",
+        "pole",
+        "road",
+        "signboard",
+        "sky"
+      ],
+      "photos/mountain/images-4 copy.jpeg [semantic]": [
+        "mountain",
+        "plant",
+        "river",
+        "rock",
+        "sky",
+        "tree",
+        "water",
+        "waterfall"
+      ],
+      "photos/mountain/images-4.jpeg [semantic]": [
+        "mountain",
+        "person",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": [
+        "building",
+        "earth",
+        "field",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-5 copy.jpeg [semantic]": [
+        "grass",
+        "mountain",
+        "path",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-5.jpeg [semantic]": [
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-6 copy.jpeg [semantic]": [
+        "building",
+        "earth",
+        "floor",
+        "house",
+        "mountain",
+        "path",
+        "plant",
+        "rock",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-6.jpeg [semantic]": [
+        "grass",
+        "tree"
+      ],
+      "photos/mountain/images-7.jpeg [semantic]": [
+        "building",
+        "field",
+        "grass",
+        "house",
+        "mountain",
+        "plant",
+        "sky",
+        "tree",
+        "wall",
+        "water"
+      ],
+      "photos/mountain/images-8.jpeg [semantic]": [
+        "field",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": [
+        "animal",
+        "grass",
+        "mountain",
+        "path",
+        "person",
+        "rock",
+        "tree"
+      ],
+      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": [
+        "field",
+        "grass",
+        "hill",
+        "mountain",
+        "tree"
+      ],
+      "photos/taiga/images-4 copy.jpeg [semantic]": [
+        "earth",
+        "field",
+        "grass",
+        "mountain",
+        "plant",
+        "river",
+        "sky",
+        "tree",
+        "water"
+      ],
+      "photos/taiga/images-6.jpeg [semantic]": [
+        "dirt track",
+        "earth",
+        "field",
+        "sky",
+        "tree"
+      ],
+      "photos/tundra/images-3.jpeg [semantic]": [
+        "earth",
+        "land",
+        "sea",
+        "sky",
+        "water"
+      ],
+      "photos/tundra/images-4.jpeg [semantic]": [
+        "field",
+        "mountain",
+        "path",
+        "sky"
+      ],
+      "photos/tundra/images-5.jpeg [semantic]": [
+        "earth",
+        "field",
+        "hill",
+        "land",
+        "mountain",
+        "river",
+        "sky",
+        "tree"
+      ],
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": [
+        "building",
+        "earth",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/urban/images-3.jpeg [semantic]": [
+        "building",
+        "land",
+        "mountain",
+        "road",
+        "sky",
+        "tree"
+      ],
+      "photos/urban/images-4.jpeg [semantic]": [
+        "building",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/urban/images-5.jpeg [semantic]": [
+        "bridge",
+        "building",
+        "bus",
+        "river",
+        "road",
+        "sky",
+        "skyscraper",
+        "tree"
+      ],
+      "photos/urban/images-6.jpeg [semantic]": [
+        "building",
+        "mountain",
+        "plant",
+        "sky",
+        "tree"
+      ],
+      "photos/urban/images-7.jpeg [semantic]": [
+        "bridge",
+        "building",
+        "earth",
+        "fence",
+        "grandstand",
+        "hill",
+        "mountain",
+        "road",
+        "sea",
+        "sidewalk",
+        "signboard",
+        "sky",
+        "tree",
+        "wall"
+      ],
+      "photos/urban/images-8.jpeg [semantic]": [
+        "box",
+        "building",
+        "mountain",
+        "sky"
+      ]
+    },
+    "semantic_excluded_labels": {
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": [
+        "sky"
+      ],
+      "photos/desert/images-3 copy 2.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/desert/images-3.jpeg [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/desert/images-4 copy.jpeg [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/desert/images-5 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/MG_0652-1024x768.webp [semantic]": [
+        "sky"
+      ],
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-3 copy 2.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-3 copy 3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-3 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-4 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-4.jpeg [semantic]": [
+        "water"
+      ],
+      "photos/forest/images-5 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/trekking-2g.jpg.webp [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/forest/veduta.jpg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/vivere-in-campagna.jpg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/Amazon-plants.jpg [semantic]": [
+        "sky",
+        "water"
+      ],
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/DSC_1137.jpg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/images-3 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/images-3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/images-5 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/images-5.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/p0ml01qd.jpg [semantic]": [
+        "person",
+        "sky",
+        "water"
+      ],
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/mountain/images-3 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-4 copy.jpeg [semantic]": [
+        "river",
+        "sky",
+        "water"
+      ],
+      "photos/mountain/images-4.jpeg [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-5 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-5.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-6 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-7.jpeg [semantic]": [
+        "sky",
+        "water"
+      ],
+      "photos/mountain/images-8.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": [
+        "animal",
+        "person"
+      ],
+      "photos/taiga/images-4 copy.jpeg [semantic]": [
+        "river",
+        "sky",
+        "water"
+      ],
+      "photos/taiga/images-6.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/tundra/images-3.jpeg [semantic]": [
+        "sea",
+        "sky",
+        "water"
+      ],
+      "photos/tundra/images-4.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/tundra/images-5.jpeg [semantic]": [
+        "river",
+        "sky"
+      ],
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/urban/images-3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/urban/images-4.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/urban/images-5.jpeg [semantic]": [
+        "bus",
+        "river",
+        "sky"
+      ],
+      "photos/urban/images-6.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/urban/images-7.jpeg [semantic]": [
+        "sea",
+        "sky"
+      ],
+      "photos/urban/images-8.jpeg [semantic]": [
+        "sky"
+      ]
+    },
+    "semantic_excluded_fraction": {
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": 0.2287497715643275,
+      "photos/desert/images-3 copy 2.jpeg [semantic]": 0.2719331347911227,
+      "photos/desert/images-3.jpeg [semantic]": 0.4857245551215278,
+      "photos/desert/images-4 copy.jpeg [semantic]": 0.4296185661764706,
+      "photos/desert/images-5 copy.jpeg [semantic]": 0.3287321297653959,
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": 0.5095774332682291,
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": 0.20688374837239584,
+      "photos/forest/MG_0652-1024x768.webp [semantic]": 0.322784423828125,
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": 0.002548799486803519,
+      "photos/forest/images-3 copy 2.jpeg [semantic]": 0.049896240234375,
+      "photos/forest/images-3 copy 3.jpeg [semantic]": 0.08627915451895043,
+      "photos/forest/images-3 copy.jpeg [semantic]": 0.20133727709963015,
+      "photos/forest/images-3.jpeg [semantic]": 0.24283854166666666,
+      "photos/forest/images-4 copy.jpeg [semantic]": 0.001617431640625,
+      "photos/forest/images-4.jpeg [semantic]": 6.103515625e-05,
+      "photos/forest/images-5 copy.jpeg [semantic]": 0.15362040201822916,
+      "photos/forest/trekking-2g.jpg.webp [semantic]": 0.3806966145833333,
+      "photos/forest/veduta.jpg [semantic]": 0.042408,
+      "photos/forest/vivere-in-campagna.jpg [semantic]": 0.206648620248538,
+      "photos/jungle/Amazon-plants.jpg [semantic]": 0.08141447368421052,
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": 0.000578327922077922,
+      "photos/jungle/DSC_1137.jpg [semantic]": 0.009955193014705882,
+      "photos/jungle/images-3 copy.jpeg [semantic]": 0.009103161549707603,
+      "photos/jungle/images-3.jpeg [semantic]": 0.004328855994152047,
+      "photos/jungle/images-5 copy.jpeg [semantic]": 0.019114354897660817,
+      "photos/jungle/images-5.jpeg [semantic]": 0.0017003676470588236,
+      "photos/jungle/p0ml01qd.jpg [semantic]": 0.05432930607187113,
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": 0.52014,
+      "photos/mountain/images-3 copy.jpeg [semantic]": 0.342222642733564,
+      "photos/mountain/images-3.jpeg [semantic]": 0.3552238975947522,
+      "photos/mountain/images-4 copy.jpeg [semantic]": 0.14156087239583334,
+      "photos/mountain/images-4.jpeg [semantic]": 0.2799750434027778,
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": 0.41635370094386487,
+      "photos/mountain/images-5 copy.jpeg [semantic]": 0.32597057799442897,
+      "photos/mountain/images-5.jpeg [semantic]": 0.05948698805460751,
+      "photos/mountain/images-6 copy.jpeg [semantic]": 0.3281809488932292,
+      "photos/mountain/images-7.jpeg [semantic]": 0.07146610014619884,
+      "photos/mountain/images-8.jpeg [semantic]": 0.2681716720779221,
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": 0.017909356725146198,
+      "photos/taiga/images-4 copy.jpeg [semantic]": 0.1610785590277778,
+      "photos/taiga/images-6.jpeg [semantic]": 0.5239206949869791,
+      "photos/tundra/images-3.jpeg [semantic]": 0.21951148623511904,
+      "photos/tundra/images-4.jpeg [semantic]": 0.11123934659090909,
+      "photos/tundra/images-5.jpeg [semantic]": 0.30728212060117305,
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": 0.12819886818910256,
+      "photos/urban/images-3.jpeg [semantic]": 0.1654600439882698,
+      "photos/urban/images-4.jpeg [semantic]": 0.2840847439236111,
+      "photos/urban/images-5.jpeg [semantic]": 0.29441178049828176,
+      "photos/urban/images-6.jpeg [semantic]": 0.46646467192082114,
+      "photos/urban/images-7.jpeg [semantic]": 0.3103383382161458,
+      "photos/urban/images-8.jpeg [semantic]": 0.04705196098993288
+    },
     "size": [
       500,
       500
     ],
-    "palette_colors": 5,
+    "palette_colors": 4,
     "candidates_evaluated": 64,
-    "best_score": 0.015184015035629272,
+    "best_score": 0.017488570883870125,
     "score_components": {
-      "rgb_error": 0.003046001773327589,
-      "luminance_error": 0.04026210680603981,
-      "texture_error": 0.021825166419148445
+      "rgb_error": 0.003208733629435301,
+      "luminance_error": 0.046684566885232925,
+      "texture_error": 0.02952270768582821,
+      "geometry_penalty": 0.00039553358146769555,
+      "directional_bias": 0.004944169768346194,
+      "transition_density": 0.07214829659318636,
+      "fine_edge_density": 0.21994955708661418
     },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 37,
+        "score": 0.017488570883870125,
+        "score_components": {
+          "rgb_error": 0.003208733629435301,
+          "luminance_error": 0.046684566885232925,
+          "texture_error": 0.02952270768582821,
+          "geometry_penalty": 0.00039553358146769555,
+          "directional_bias": 0.004944169768346194,
+          "transition_density": 0.07214829659318636,
+          "fine_edge_density": 0.21994955708661418
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 21,
+        "score": 0.017575550824403763,
+        "score_components": {
+          "rgb_error": 0.003206389956176281,
+          "luminance_error": 0.047050319612026215,
+          "texture_error": 0.030960505828261375,
+          "geometry_penalty": 7.277578992054879e-05,
+          "directional_bias": 0.0009096973740068599,
+          "transition_density": 0.06608817635270542,
+          "fine_edge_density": 0.2038324311023622
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 42,
+        "score": 0.01833161525428295,
+        "score_components": {
+          "rgb_error": 0.003194749355316162,
+          "luminance_error": 0.04690306633710861,
+          "texture_error": 0.03100726567208767,
+          "geometry_penalty": 0.0008499462814850169,
+          "directional_bias": 0.01062432851856271,
+          "transition_density": 0.0671503006012024,
+          "fine_edge_density": 0.2075541338582677
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 33,
+        "score": 0.018393317237496376,
+        "score_components": {
+          "rgb_error": 0.0032001868821680546,
+          "luminance_error": 0.047406502068042755,
+          "texture_error": 0.032983385026454926,
+          "geometry_penalty": 0.00034404118068678054,
+          "directional_bias": 0.004300514758584757,
+          "transition_density": 0.061511022044088176,
+          "fine_edge_density": 0.19266732283464566
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 54,
+        "score": 0.01844722405076027,
+        "score_components": {
+          "rgb_error": 0.003214014694094658,
+          "luminance_error": 0.04767550528049469,
+          "texture_error": 0.033421147614717484,
+          "geometry_penalty": 0.0002375507696508406,
+          "directional_bias": 0.0029693846206355072,
+          "transition_density": 0.05871543086172344,
+          "fine_edge_density": 0.18500861220472442
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 60,
+        "score": 0.018599187955260277,
+        "score_components": {
+          "rgb_error": 0.0032100770622491837,
+          "luminance_error": 0.04726475104689598,
+          "texture_error": 0.03143233060836792,
+          "geometry_penalty": 0.0009427352060640765,
+          "directional_bias": 0.011784190075800956,
+          "transition_density": 0.06292184368737475,
+          "fine_edge_density": 0.19900344488188976
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 6,
+        "score": 0.0187136959284544,
+        "score_components": {
+          "rgb_error": 0.0032113119959831238,
+          "luminance_error": 0.04724031686782837,
+          "texture_error": 0.03252360224723816,
+          "geometry_penalty": 0.0007991176933984573,
+          "directional_bias": 0.009988971167480716,
+          "transition_density": 0.06359719438877756,
+          "fine_edge_density": 0.19835752952755906
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 51,
+        "score": 0.018954629078507423,
+        "score_components": {
+          "rgb_error": 0.003203093074262142,
+          "luminance_error": 0.04700874909758568,
+          "texture_error": 0.031191861256957054,
+          "geometry_penalty": 0.001405460977896046,
+          "directional_bias": 0.017568262223700573,
+          "transition_density": 0.06627454909819638,
+          "fine_edge_density": 0.2054933562992126
+        }
+      },
+      {
+        "rank": 9,
+        "seed_offset": 58,
+        "score": 0.019219934940338135,
+        "score_components": {
+          "rgb_error": 0.0032035773620009422,
+          "luminance_error": 0.04780074954032898,
+          "texture_error": 0.0345991849899292,
+          "geometry_penalty": 0.0007102057669809345,
+          "directional_bias": 0.00887757208726168,
+          "transition_density": 0.05824048096192384,
+          "fine_edge_density": 0.18165600393700787
+        }
+      },
+      {
+        "rank": 10,
+        "seed_offset": 16,
+        "score": 0.019389212131500244,
+        "score_components": {
+          "rgb_error": 0.0032041240483522415,
+          "luminance_error": 0.04683806374669075,
+          "texture_error": 0.03009556047618389,
+          "geometry_penalty": 0.002133363952119874,
+          "directional_bias": 0.026667049401498423,
+          "transition_density": 0.06981362725450901,
+          "fine_edge_density": 0.21339812992125984
+        }
+      }
+    ],
     "version": "phase_20_jungle_selectable_summary",
-    "segmentation": "none",
-    "segmentation_model": null,
+    "segmentation": "semantic",
+    "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
     "generation_mode": "standard",
     "density": "standard",
     "custom_settings": {
@@ -180,99 +1029,310 @@
     "weighting": "equal_environment_groups",
     "group_pixel_counts": {
       "desert": 120000,
-      "forest": 280000,
-      "jungle": 140000,
-      "mountain": 160000,
+      "forest": 340000,
+      "jungle": 240000,
+      "mountain": 278039,
       "taiga": 40000,
       "tundra": 60000,
       "urban": 140000
     },
     "dark_palette_weight": 0.09999999403953552,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
           88,
-          105,
-          44
+          107,
+          47
         ],
-        "weight": 0.22499999403953552
+        "weight": 0.30000001192092896
       },
       {
         "rgb": [
-          106,
-          89,
-          59
+          114,
+          97,
+          64
         ],
-        "weight": 0.22499999403953552
+        "weight": 0.30000001192092896
       },
       {
         "rgb": [
-          59,
           61,
-          54
+          62,
+          55
         ],
         "weight": 0.09999999403953552
       },
       {
         "rgb": [
-          170,
-          152,
-          109
+          185,
+          168,
+          130
         ],
-        "weight": 0.22499999403953552
-      },
-      {
-        "rgb": [
-          180,
-          165,
-          138
-        ],
-        "weight": 0.22499999403953552
+        "weight": 0.30000001192092896
       }
     ]
   },
   "desert": {
     "input_images": [
-      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
-      "photos/desert/images-3 copy 2.jpeg [automatic]",
-      "photos/desert/images-3.jpeg [automatic]",
-      "photos/desert/images-4 copy.jpeg [automatic]",
-      "photos/desert/images-5 copy.jpeg [automatic]",
-      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]"
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]",
+      "photos/desert/images-3 copy 2.jpeg [semantic]",
+      "photos/desert/images-3.jpeg [semantic]",
+      "photos/desert/images-4 copy.jpeg [semantic]",
+      "photos/desert/images-5 copy.jpeg [semantic]",
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]"
     ],
     "valid_pixel_fraction": {
-      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
-      "photos/desert/images-3 copy 2.jpeg [automatic]": 1.0,
-      "photos/desert/images-3.jpeg [automatic]": 0.5244072808159722,
-      "photos/desert/images-4 copy.jpeg [automatic]": 0.6323644301470588,
-      "photos/desert/images-5 copy.jpeg [automatic]": 0.8179813508064516,
-      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": 0.7374074835526315,
+      "photos/desert/images-3 copy 2.jpeg [semantic]": 0.7280668652088773,
+      "photos/desert/images-3.jpeg [semantic]": 0.5134345160590278,
+      "photos/desert/images-4 copy.jpeg [semantic]": 0.5703814338235295,
+      "photos/desert/images-5 copy.jpeg [semantic]": 0.6712678702346041,
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": 0.4775797526041667
     },
     "mask_sources": {
-      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": "automatic",
-      "photos/desert/images-3 copy 2.jpeg [automatic]": "automatic",
-      "photos/desert/images-3.jpeg [automatic]": "automatic",
-      "photos/desert/images-4 copy.jpeg [automatic]": "automatic",
-      "photos/desert/images-5 copy.jpeg [automatic]": "automatic",
-      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": "automatic"
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": "semantic",
+      "photos/desert/images-3 copy 2.jpeg [semantic]": "semantic",
+      "photos/desert/images-3.jpeg [semantic]": "semantic",
+      "photos/desert/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/desert/images-5 copy.jpeg [semantic]": "semantic",
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": "semantic"
     },
-    "semantic_labels": {},
+    "semantic_labels": {
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": [
+        "fence",
+        "field",
+        "grass",
+        "hill",
+        "mountain",
+        "pole",
+        "sky",
+        "tree"
+      ],
+      "photos/desert/images-3 copy 2.jpeg [semantic]": [
+        "mountain",
+        "sand",
+        "sky"
+      ],
+      "photos/desert/images-3.jpeg [semantic]": [
+        "earth",
+        "mountain",
+        "person",
+        "sand",
+        "sky"
+      ],
+      "photos/desert/images-4 copy.jpeg [semantic]": [
+        "earth",
+        "hill",
+        "mountain",
+        "person",
+        "rock",
+        "sand",
+        "sky"
+      ],
+      "photos/desert/images-5 copy.jpeg [semantic]": [
+        "sand",
+        "sky"
+      ],
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": [
+        "dirt track",
+        "earth",
+        "sand",
+        "sky",
+        "tree"
+      ]
+    },
+    "semantic_excluded_labels": {
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": [
+        "sky"
+      ],
+      "photos/desert/images-3 copy 2.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/desert/images-3.jpeg [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/desert/images-4 copy.jpeg [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/desert/images-5 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": [
+        "sky"
+      ]
+    },
+    "semantic_excluded_fraction": {
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [semantic]": 0.2287497715643275,
+      "photos/desert/images-3 copy 2.jpeg [semantic]": 0.2719331347911227,
+      "photos/desert/images-3.jpeg [semantic]": 0.4857245551215278,
+      "photos/desert/images-4 copy.jpeg [semantic]": 0.4296185661764706,
+      "photos/desert/images-5 copy.jpeg [semantic]": 0.3287321297653959,
+      "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [semantic]": 0.5095774332682291
+    },
     "size": [
       500,
       500
     ],
-    "palette_colors": 5,
+    "palette_colors": 4,
     "candidates_evaluated": 64,
-    "best_score": 0.01469203270971775,
+    "best_score": 0.013786204159259796,
     "score_components": {
-      "rgb_error": 0.003161937464028597,
-      "luminance_error": 0.04191431403160095,
-      "texture_error": 0.01828041672706604
+      "rgb_error": 0.0030859517864882946,
+      "luminance_error": 0.04636383429169655,
+      "texture_error": 0.015990950167179108,
+      "geometry_penalty": 5.991013479780667e-05,
+      "directional_bias": 0.0007488766849725834,
+      "transition_density": 0.06422444889779559,
+      "fine_edge_density": 0.21032234251968504
     },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 29,
+        "score": 0.013786204159259796,
+        "score_components": {
+          "rgb_error": 0.0030859517864882946,
+          "luminance_error": 0.04636383429169655,
+          "texture_error": 0.015990950167179108,
+          "geometry_penalty": 5.991013479780667e-05,
+          "directional_bias": 0.0007488766849725834,
+          "transition_density": 0.06422444889779559,
+          "fine_edge_density": 0.21032234251968504
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 23,
+        "score": 0.013820607215166092,
+        "score_components": {
+          "rgb_error": 0.0030834360513836145,
+          "luminance_error": 0.04606308415532112,
+          "texture_error": 0.01622936874628067,
+          "geometry_penalty": 9.248554913294477e-05,
+          "directional_bias": 0.0011560693641618097,
+          "transition_density": 0.06587174348697394,
+          "fine_edge_density": 0.21816560039370078
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 37,
+        "score": 0.013856573961675167,
+        "score_components": {
+          "rgb_error": 0.0031017642468214035,
+          "luminance_error": 0.04727233201265335,
+          "texture_error": 0.015543471090495586,
+          "geometry_penalty": 6.6238873939142e-05,
+          "directional_bias": 0.0008279859242392749,
+          "transition_density": 0.05808817635270541,
+          "fine_edge_density": 0.19085260826771652
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 18,
+        "score": 0.013888418674468994,
+        "score_components": {
+          "rgb_error": 0.003076498629525304,
+          "luminance_error": 0.04597708210349083,
+          "texture_error": 0.01642114482820034,
+          "geometry_penalty": 0.00013322036869321276,
+          "directional_bias": 0.0016652546086651594,
+          "transition_density": 0.06859519038076153,
+          "fine_edge_density": 0.22311761811023623
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 33,
+        "score": 0.013911072164773941,
+        "score_components": {
+          "rgb_error": 0.003087983001023531,
+          "luminance_error": 0.04698682948946953,
+          "texture_error": 0.016095025464892387,
+          "geometry_penalty": 4.664420834413324e-05,
+          "directional_bias": 0.0005830526043016655,
+          "transition_density": 0.06186773547094188,
+          "fine_edge_density": 0.20149483267716536
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 8,
+        "score": 0.013997949659824371,
+        "score_components": {
+          "rgb_error": 0.003072404768317938,
+          "luminance_error": 0.0452960841357708,
+          "texture_error": 0.01656000129878521,
+          "geometry_penalty": 0.0003340526301039666,
+          "directional_bias": 0.0041756578762995825,
+          "transition_density": 0.07150901803607215,
+          "fine_edge_density": 0.23849655511811024
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 24,
+        "score": 0.014055530540645123,
+        "score_components": {
+          "rgb_error": 0.0030964361503720284,
+          "luminance_error": 0.0468178316950798,
+          "texture_error": 0.01588219404220581,
+          "geometry_penalty": 0.00026837612515362007,
+          "directional_bias": 0.003354701564420251,
+          "transition_density": 0.06033466933867736,
+          "fine_edge_density": 0.20201771653543307
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 58,
+        "score": 0.014070766046643257,
+        "score_components": {
+          "rgb_error": 0.0030904673039913177,
+          "luminance_error": 0.04680808633565903,
+          "texture_error": 0.016507357358932495,
+          "geometry_penalty": 0.00013831081513734924,
+          "directional_bias": 0.0017288851892168656,
+          "transition_density": 0.0625931863727455,
+          "fine_edge_density": 0.2067236712598425
+        }
+      },
+      {
+        "rank": 9,
+        "seed_offset": 62,
+        "score": 0.014188198372721672,
+        "score_components": {
+          "rgb_error": 0.0031092173885554075,
+          "luminance_error": 0.04735858365893364,
+          "texture_error": 0.016154693439602852,
+          "geometry_penalty": 0.00023191809474881948,
+          "directional_bias": 0.0028989761843602434,
+          "transition_density": 0.05461122244488978,
+          "fine_edge_density": 0.1846702755905512
+        }
+      },
+      {
+        "rank": 10,
+        "seed_offset": 14,
+        "score": 0.014230594970285892,
+        "score_components": {
+          "rgb_error": 0.0030964361503720284,
+          "luminance_error": 0.04701358452439308,
+          "texture_error": 0.01622658781707287,
+          "geometry_penalty": 0.00032555036691127407,
+          "directional_bias": 0.004069379586390926,
+          "transition_density": 0.060080160320641285,
+          "fine_edge_density": 0.19706569881889763
+        }
+      }
+    ],
     "version": "phase_20_jungle_selectable_summary",
-    "segmentation": "none",
-    "segmentation_model": null,
+    "segmentation": "semantic",
+    "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
     "generation_mode": "standard",
     "density": "standard",
     "custom_settings": {
@@ -292,115 +1352,419 @@
       "desert": 120000
     },
     "dark_palette_weight": 0.0,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
     "palette": [
-      {
-        "rgb": [
-          121,
-          93,
-          69
-        ],
-        "weight": 0.2686583399772644
-      },
       {
         "rgb": [
           182,
           157,
           127
         ],
-        "weight": 0.23220832645893097
+        "weight": 0.3223583400249481
       },
       {
         "rgb": [
-          179,
-          164,
-          136
+          147,
+          120,
+          92
         ],
-        "weight": 0.19128333032131195
+        "weight": 0.2991749942302704
       },
       {
         "rgb": [
-          175,
-          150,
-          120
-        ],
-        "weight": 0.16321666538715363
-      },
-      {
-        "rgb": [
+          77,
           73,
-          71,
-          58
+          60
         ],
-        "weight": 0.14463333785533905
+        "weight": 0.233924999833107
+      },
+      {
+        "rgb": [
+          183,
+          165,
+          135
+        ],
+        "weight": 0.1445416659116745
       }
     ]
   },
   "forest": {
     "input_images": [
-      "photos/forest/23853_135_PRBEI.jpeg [automatic]",
-      "photos/forest/MG_0652-1024x768.webp [automatic]",
-      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
-      "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
-      "photos/forest/images-3 copy 2.jpeg [automatic]",
-      "photos/forest/images-3 copy.jpeg [automatic]",
-      "photos/forest/images-3.jpeg [automatic]",
-      "photos/forest/images-4 copy.jpeg [automatic]",
-      "photos/forest/images-4.jpeg [automatic]",
-      "photos/forest/images-5 copy.jpeg [automatic]",
-      "photos/forest/images-5.jpeg [automatic]",
-      "photos/forest/orman-cesitleri.jpg [automatic]",
-      "photos/forest/trekking-2g.jpg.webp [automatic]",
-      "photos/forest/veduta.jpg [automatic]"
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]",
+      "photos/forest/MG_0652-1024x768.webp [semantic]",
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]",
+      "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]",
+      "photos/forest/images-3 copy 2.jpeg [semantic]",
+      "photos/forest/images-3 copy 3.jpeg [semantic]",
+      "photos/forest/images-3 copy.jpeg [semantic]",
+      "photos/forest/images-3.jpeg [semantic]",
+      "photos/forest/images-4 copy.jpeg [semantic]",
+      "photos/forest/images-4.jpeg [semantic]",
+      "photos/forest/images-5 copy.jpeg [semantic]",
+      "photos/forest/images-5.jpeg [semantic]",
+      "photos/forest/orman-cesitleri.jpg [semantic]",
+      "photos/forest/trekking-2g.jpg.webp [semantic]",
+      "photos/forest/veduta.jpg [semantic]",
+      "photos/forest/vivere-in-campagna.jpg [semantic]",
+      "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]"
     ],
     "valid_pixel_fraction": {
-      "photos/forest/23853_135_PRBEI.jpeg [automatic]": 0.76031494140625,
-      "photos/forest/MG_0652-1024x768.webp [automatic]": 0.6473185221354166,
-      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
-      "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
-      "photos/forest/images-3 copy 2.jpeg [automatic]": 0.9430198669433594,
-      "photos/forest/images-3 copy.jpeg [automatic]": 0.4512209159747559,
-      "photos/forest/images-3.jpeg [automatic]": 0.8027852376302084,
-      "photos/forest/images-4 copy.jpeg [automatic]": 0.9996083577473959,
-      "photos/forest/images-4.jpeg [automatic]": 0.9998779296875,
-      "photos/forest/images-5 copy.jpeg [automatic]": 0.931793212890625,
-      "photos/forest/images-5.jpeg [automatic]": 0.9999160766601562,
-      "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
-      "photos/forest/trekking-2g.jpg.webp [automatic]": 1.0,
-      "photos/forest/veduta.jpg [automatic]": 0.954928
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": 0.7587178548177084,
+      "photos/forest/MG_0652-1024x768.webp [semantic]": 0.6360677083333334,
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": 0.9927602639296188,
+      "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": 0.9973044199486302,
+      "photos/forest/images-3 copy 2.jpeg [semantic]": 0.9424629211425781,
+      "photos/forest/images-3 copy 3.jpeg [semantic]": 0.8121014030612245,
+      "photos/forest/images-3 copy.jpeg [semantic]": 0.4403104965241806,
+      "photos/forest/images-3.jpeg [semantic]": 0.7152760823567709,
+      "photos/forest/images-4 copy.jpeg [semantic]": 0.9979909261067709,
+      "photos/forest/images-4.jpeg [semantic]": 0.99981689453125,
+      "photos/forest/images-5 copy.jpeg [semantic]": 0.8241933186848959,
+      "photos/forest/images-5.jpeg [semantic]": 0.9999160766601562,
+      "photos/forest/orman-cesitleri.jpg [semantic]": 0.9966023763020834,
+      "photos/forest/trekking-2g.jpg.webp [semantic]": 0.6193033854166666,
+      "photos/forest/veduta.jpg [semantic]": 0.93566,
+      "photos/forest/vivere-in-campagna.jpg [semantic]": 0.7411424067982456,
+      "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": 0.9994558742668622
     },
     "mask_sources": {
-      "photos/forest/23853_135_PRBEI.jpeg [automatic]": "automatic",
-      "photos/forest/MG_0652-1024x768.webp [automatic]": "automatic",
-      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": "automatic",
-      "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": "automatic",
-      "photos/forest/images-3 copy 2.jpeg [automatic]": "automatic",
-      "photos/forest/images-3 copy.jpeg [automatic]": "automatic",
-      "photos/forest/images-3.jpeg [automatic]": "automatic",
-      "photos/forest/images-4 copy.jpeg [automatic]": "automatic",
-      "photos/forest/images-4.jpeg [automatic]": "automatic",
-      "photos/forest/images-5 copy.jpeg [automatic]": "automatic",
-      "photos/forest/images-5.jpeg [automatic]": "automatic",
-      "photos/forest/orman-cesitleri.jpg [automatic]": "automatic",
-      "photos/forest/trekking-2g.jpg.webp [automatic]": "automatic",
-      "photos/forest/veduta.jpg [automatic]": "automatic"
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": "semantic",
+      "photos/forest/MG_0652-1024x768.webp [semantic]": "semantic",
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": "semantic",
+      "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": "semantic",
+      "photos/forest/images-3 copy 2.jpeg [semantic]": "semantic",
+      "photos/forest/images-3 copy 3.jpeg [semantic]": "semantic",
+      "photos/forest/images-3 copy.jpeg [semantic]": "semantic",
+      "photos/forest/images-3.jpeg [semantic]": "semantic",
+      "photos/forest/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/forest/images-4.jpeg [semantic]": "semantic",
+      "photos/forest/images-5 copy.jpeg [semantic]": "semantic",
+      "photos/forest/images-5.jpeg [semantic]": "semantic",
+      "photos/forest/orman-cesitleri.jpg [semantic]": "semantic",
+      "photos/forest/trekking-2g.jpg.webp [semantic]": "semantic",
+      "photos/forest/veduta.jpg [semantic]": "semantic",
+      "photos/forest/vivere-in-campagna.jpg [semantic]": "semantic",
+      "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": "semantic"
     },
-    "semantic_labels": {},
+    "semantic_labels": {
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": [
+        "grass",
+        "mountain",
+        "rock",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/MG_0652-1024x768.webp [semantic]": [
+        "earth",
+        "field",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/foresta-di-sherwood-3.jpg.webp [semantic]": [
+        "earth",
+        "grass",
+        "tree"
+      ],
+      "photos/forest/images-3 copy 2.jpeg [semantic]": [
+        "earth",
+        "hill",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-3 copy 3.jpeg [semantic]": [
+        "building",
+        "grass",
+        "mountain",
+        "plant",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-3 copy.jpeg [semantic]": [
+        "mountain",
+        "sky"
+      ],
+      "photos/forest/images-3.jpeg [semantic]": [
+        "earth",
+        "grass",
+        "hill",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-4 copy.jpeg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-4.jpeg [semantic]": [
+        "earth",
+        "rock",
+        "tree",
+        "water"
+      ],
+      "photos/forest/images-5 copy.jpeg [semantic]": [
+        "building",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/images-5.jpeg [semantic]": [
+        "dirt track",
+        "earth",
+        "tree"
+      ],
+      "photos/forest/orman-cesitleri.jpg [semantic]": [
+        "earth",
+        "grass",
+        "tree"
+      ],
+      "photos/forest/trekking-2g.jpg.webp [semantic]": [
+        "mountain",
+        "person",
+        "sky"
+      ],
+      "photos/forest/veduta.jpg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/vivere-in-campagna.jpg [semantic]": [
+        "building",
+        "field",
+        "grass",
+        "house",
+        "sky",
+        "tree"
+      ],
+      "photos/forest/\u1796\u17d2\u179a\u17c3\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6.jpg [semantic]": [
+        "tree"
+      ]
+    },
+    "semantic_excluded_labels": {
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/MG_0652-1024x768.webp [semantic]": [
+        "sky"
+      ],
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-3 copy 2.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-3 copy 3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-3 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-4 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/images-4.jpeg [semantic]": [
+        "water"
+      ],
+      "photos/forest/images-5 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/trekking-2g.jpg.webp [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/forest/veduta.jpg [semantic]": [
+        "sky"
+      ],
+      "photos/forest/vivere-in-campagna.jpg [semantic]": [
+        "sky"
+      ]
+    },
+    "semantic_excluded_fraction": {
+      "photos/forest/23853_135_PRBEI.jpeg [semantic]": 0.20688374837239584,
+      "photos/forest/MG_0652-1024x768.webp [semantic]": 0.322784423828125,
+      "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [semantic]": 0.002548799486803519,
+      "photos/forest/images-3 copy 2.jpeg [semantic]": 0.049896240234375,
+      "photos/forest/images-3 copy 3.jpeg [semantic]": 0.08627915451895043,
+      "photos/forest/images-3 copy.jpeg [semantic]": 0.20133727709963015,
+      "photos/forest/images-3.jpeg [semantic]": 0.24283854166666666,
+      "photos/forest/images-4 copy.jpeg [semantic]": 0.001617431640625,
+      "photos/forest/images-4.jpeg [semantic]": 6.103515625e-05,
+      "photos/forest/images-5 copy.jpeg [semantic]": 0.15362040201822916,
+      "photos/forest/trekking-2g.jpg.webp [semantic]": 0.3806966145833333,
+      "photos/forest/veduta.jpg [semantic]": 0.042408,
+      "photos/forest/vivere-in-campagna.jpg [semantic]": 0.206648620248538
+    },
     "size": [
       500,
       500
     ],
-    "palette_colors": 5,
+    "palette_colors": 4,
     "candidates_evaluated": 64,
-    "best_score": 0.0164425540715456,
+    "best_score": 0.018246708437800407,
     "score_components": {
-      "rgb_error": 0.002888905815780163,
-      "luminance_error": 0.040877025574445724,
-      "texture_error": 0.026712996885180473
+      "rgb_error": 0.0030360822565853596,
+      "luminance_error": 0.04462737590074539,
+      "texture_error": 0.03488783910870552,
+      "geometry_penalty": 0.0003226592317895168,
+      "directional_bias": 0.00403324039736896,
+      "transition_density": 0.07403406813627254,
+      "fine_edge_density": 0.25664370078740156
     },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 8,
+        "score": 0.018246708437800407,
+        "score_components": {
+          "rgb_error": 0.0030360822565853596,
+          "luminance_error": 0.04462737590074539,
+          "texture_error": 0.03488783910870552,
+          "geometry_penalty": 0.0003226592317895168,
+          "directional_bias": 0.00403324039736896,
+          "transition_density": 0.07403406813627254,
+          "fine_edge_density": 0.25664370078740156
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 51,
+        "score": 0.018692094832658768,
+        "score_components": {
+          "rgb_error": 0.003051097970455885,
+          "luminance_error": 0.045073628425598145,
+          "texture_error": 0.037103090435266495,
+          "geometry_penalty": 0.00014855020711327004,
+          "directional_bias": 0.0018568775889158753,
+          "transition_density": 0.07015030060120239,
+          "fine_edge_density": 0.24375615157480315
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 53,
+        "score": 0.01887788623571396,
+        "score_components": {
+          "rgb_error": 0.0030443165451288223,
+          "luminance_error": 0.0451238751411438,
+          "texture_error": 0.038079652935266495,
+          "geometry_penalty": 9.431314208724498e-05,
+          "directional_bias": 0.0011789142760905622,
+          "transition_density": 0.07139478957915832,
+          "fine_edge_density": 0.2415415846456693
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 29,
+        "score": 0.018928872421383858,
+        "score_components": {
+          "rgb_error": 0.0030515664257109165,
+          "luminance_error": 0.045192375779151917,
+          "texture_error": 0.03764954209327698,
+          "geometry_penalty": 0.00023257139599840125,
+          "directional_bias": 0.0029071424499800156,
+          "transition_density": 0.070312625250501,
+          "fine_edge_density": 0.2365588090551181
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 10,
+        "score": 0.01923862099647522,
+        "score_components": {
+          "rgb_error": 0.003049848135560751,
+          "luminance_error": 0.04527687653899193,
+          "texture_error": 0.03872872516512871,
+          "geometry_penalty": 0.0002689665253617882,
+          "directional_bias": 0.0033620815670223525,
+          "transition_density": 0.06854709418837675,
+          "fine_edge_density": 0.23705093503937008
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 16,
+        "score": 0.019327541813254356,
+        "score_components": {
+          "rgb_error": 0.0030627227388322353,
+          "luminance_error": 0.04548587650060654,
+          "texture_error": 0.03919016942381859,
+          "geometry_penalty": 0.0002030816459058927,
+          "directional_bias": 0.002538520573823659,
+          "transition_density": 0.06789178356713427,
+          "fine_edge_density": 0.23452878937007873
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 44,
+        "score": 0.019337603822350502,
+        "score_components": {
+          "rgb_error": 0.0030546914786100388,
+          "luminance_error": 0.04515887424349785,
+          "texture_error": 0.037264641374349594,
+          "geometry_penalty": 0.0007381452931558058,
+          "directional_bias": 0.009226816164447572,
+          "transition_density": 0.06863326653306615,
+          "fine_edge_density": 0.2406496062992126
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 0,
+        "score": 0.019371842965483665,
+        "score_components": {
+          "rgb_error": 0.003062176052480936,
+          "luminance_error": 0.04546937718987465,
+          "texture_error": 0.039574384689331055,
+          "geometry_penalty": 0.00015841584158415918,
+          "directional_bias": 0.0019801980198019898,
+          "transition_density": 0.06780561122244488,
+          "fine_edge_density": 0.23056102362204725
+        }
+      },
+      {
+        "rank": 9,
+        "seed_offset": 40,
+        "score": 0.0193977952003479,
+        "score_components": {
+          "rgb_error": 0.003063363488763571,
+          "luminance_error": 0.04545687511563301,
+          "texture_error": 0.03890380263328552,
+          "geometry_penalty": 0.0003469625818801812,
+          "directional_bias": 0.004337032273502265,
+          "transition_density": 0.067,
+          "fine_edge_density": 0.22640871062992127
+        }
+      },
+      {
+        "rank": 10,
+        "seed_offset": 35,
+        "score": 0.01944420114159584,
+        "score_components": {
+          "rgb_error": 0.0030650198459625244,
+          "luminance_error": 0.045618124306201935,
+          "texture_error": 0.040071550756692886,
+          "geometry_penalty": 8.325711942981084e-05,
+          "directional_bias": 0.0010407139928726354,
+          "transition_density": 0.06354509018036072,
+          "fine_edge_density": 0.21896530511811024
+        }
+      }
+    ],
     "version": "phase_20_jungle_selectable_summary",
-    "segmentation": "none",
-    "segmentation_model": null,
+    "segmentation": "semantic",
+    "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
     "generation_mode": "standard",
     "density": "standard",
     "custom_settings": {
@@ -417,18 +1781,18 @@
     },
     "weighting": "pixel_weighted",
     "group_pixel_counts": {
-      "forest": 280000
+      "forest": 340000
     },
-    "dark_palette_weight": 0.18000002205371857,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "dark_palette_weight": 0.17999999225139618,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          86,
-          94,
+          82,
+          92,
           48
         ],
-        "weight": 0.4211244285106659
+        "weight": 0.4097612500190735
       },
       {
         "rgb": [
@@ -436,78 +1800,347 @@
           54,
           47
         ],
-        "weight": 0.18000002205371857
+        "weight": 0.17999999225139618
       },
       {
         "rgb": [
-          133,
-          134,
-          118
+          138,
+          138,
+          84
         ],
-        "weight": 0.17845110595226288
+        "weight": 0.2849476933479309
       },
       {
         "rgb": [
-          157,
-          156,
-          100
+          183,
+          178,
+          129
         ],
-        "weight": 0.11574789136648178
-      },
-      {
-        "rgb": [
-          173,
-          160,
-          130
-        ],
-        "weight": 0.10467661917209625
+        "weight": 0.12529103457927704
       }
     ]
   },
   "jungle": {
     "input_images": [
-      "photos/jungle/Amazon-plants.jpg [automatic]",
-      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]",
-      "photos/jungle/images-3.jpeg [automatic]",
-      "photos/jungle/images-4.jpeg [automatic]",
-      "photos/jungle/images-5.jpeg [automatic]",
-      "photos/jungle/p0ml01qd.jpg [automatic]",
-      "photos/jungle/p0ml02xf.jpg [automatic]"
+      "photos/jungle/Amazon-plants.jpg [semantic]",
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]",
+      "photos/jungle/DSC_1137.jpg [semantic]",
+      "photos/jungle/images-3 copy.jpeg [semantic]",
+      "photos/jungle/images-3.jpeg [semantic]",
+      "photos/jungle/images-4 copy.jpeg [semantic]",
+      "photos/jungle/images-4.jpeg [semantic]",
+      "photos/jungle/images-5 copy.jpeg [semantic]",
+      "photos/jungle/images-5.jpeg [semantic]",
+      "photos/jungle/images-6.jpeg [semantic]",
+      "photos/jungle/p0ml01qd.jpg [semantic]",
+      "photos/jungle/p0ml02xf.jpg [semantic]"
     ],
     "valid_pixel_fraction": {
-      "photos/jungle/Amazon-plants.jpg [automatic]": 0.9618226882309941,
-      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": 0.9978388798701299,
-      "photos/jungle/images-3.jpeg [automatic]": 0.9994403326023392,
-      "photos/jungle/images-4.jpeg [automatic]": 0.9980697855571847,
-      "photos/jungle/images-5.jpeg [automatic]": 0.9965590533088236,
-      "photos/jungle/p0ml01qd.jpg [automatic]": 0.9982574349442379,
-      "photos/jungle/p0ml02xf.jpg [automatic]": 0.9990473977695167
+      "photos/jungle/Amazon-plants.jpg [semantic]": 0.8967584978070176,
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": 0.997260551948052,
+      "photos/jungle/DSC_1137.jpg [semantic]": 0.9882180606617647,
+      "photos/jungle/images-3 copy.jpeg [semantic]": 0.9790467379385965,
+      "photos/jungle/images-3.jpeg [semantic]": 0.9951114766081871,
+      "photos/jungle/images-4 copy.jpeg [semantic]": 0.9989204950142451,
+      "photos/jungle/images-4.jpeg [semantic]": 0.9980697855571847,
+      "photos/jungle/images-5 copy.jpeg [semantic]": 0.9808856451023392,
+      "photos/jungle/images-5.jpeg [semantic]": 0.9948586856617647,
+      "photos/jungle/images-6.jpeg [semantic]": 0.997897518382353,
+      "photos/jungle/p0ml01qd.jpg [semantic]": 0.9453841387856258,
+      "photos/jungle/p0ml02xf.jpg [semantic]": 0.9990473977695167
     },
     "mask_sources": {
-      "photos/jungle/Amazon-plants.jpg [automatic]": "automatic",
-      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": "automatic",
-      "photos/jungle/images-3.jpeg [automatic]": "automatic",
-      "photos/jungle/images-4.jpeg [automatic]": "automatic",
-      "photos/jungle/images-5.jpeg [automatic]": "automatic",
-      "photos/jungle/p0ml01qd.jpg [automatic]": "automatic",
-      "photos/jungle/p0ml02xf.jpg [automatic]": "automatic"
+      "photos/jungle/Amazon-plants.jpg [semantic]": "semantic",
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": "semantic",
+      "photos/jungle/DSC_1137.jpg [semantic]": "semantic",
+      "photos/jungle/images-3 copy.jpeg [semantic]": "semantic",
+      "photos/jungle/images-3.jpeg [semantic]": "semantic",
+      "photos/jungle/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/jungle/images-4.jpeg [semantic]": "semantic",
+      "photos/jungle/images-5 copy.jpeg [semantic]": "semantic",
+      "photos/jungle/images-5.jpeg [semantic]": "semantic",
+      "photos/jungle/images-6.jpeg [semantic]": "semantic",
+      "photos/jungle/p0ml01qd.jpg [semantic]": "semantic",
+      "photos/jungle/p0ml02xf.jpg [semantic]": "semantic"
     },
-    "semantic_labels": {},
+    "semantic_labels": {
+      "photos/jungle/Amazon-plants.jpg [semantic]": [
+        "earth",
+        "plant",
+        "rock",
+        "sky",
+        "tree",
+        "water"
+      ],
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": [
+        "plant",
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/DSC_1137.jpg [semantic]": [
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/images-3 copy.jpeg [semantic]": [
+        "palm",
+        "plant",
+        "sky",
+        "tree",
+        "wall"
+      ],
+      "photos/jungle/images-3.jpeg [semantic]": [
+        "dirt track",
+        "earth",
+        "palm",
+        "path",
+        "plant",
+        "sand",
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/images-4 copy.jpeg [semantic]": [
+        "palm",
+        "plant",
+        "tree",
+        "wall"
+      ],
+      "photos/jungle/images-4.jpeg [semantic]": [
+        "earth",
+        "fence",
+        "plant",
+        "pole",
+        "tree"
+      ],
+      "photos/jungle/images-5 copy.jpeg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/images-5.jpeg [semantic]": [
+        "earth",
+        "sky",
+        "tree"
+      ],
+      "photos/jungle/images-6.jpeg [semantic]": [
+        "earth",
+        "plant",
+        "tree"
+      ],
+      "photos/jungle/p0ml01qd.jpg [semantic]": [
+        "palm",
+        "person",
+        "plant",
+        "rock",
+        "sky",
+        "tree",
+        "wall",
+        "water"
+      ],
+      "photos/jungle/p0ml02xf.jpg [semantic]": [
+        "mountain",
+        "tree"
+      ]
+    },
+    "semantic_excluded_labels": {
+      "photos/jungle/Amazon-plants.jpg [semantic]": [
+        "sky",
+        "water"
+      ],
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/DSC_1137.jpg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/images-3 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/images-3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/images-5 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/images-5.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/jungle/p0ml01qd.jpg [semantic]": [
+        "person",
+        "sky",
+        "water"
+      ]
+    },
+    "semantic_excluded_fraction": {
+      "photos/jungle/Amazon-plants.jpg [semantic]": 0.08141447368421052,
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [semantic]": 0.000578327922077922,
+      "photos/jungle/DSC_1137.jpg [semantic]": 0.009955193014705882,
+      "photos/jungle/images-3 copy.jpeg [semantic]": 0.009103161549707603,
+      "photos/jungle/images-3.jpeg [semantic]": 0.004328855994152047,
+      "photos/jungle/images-5 copy.jpeg [semantic]": 0.019114354897660817,
+      "photos/jungle/images-5.jpeg [semantic]": 0.0017003676470588236,
+      "photos/jungle/p0ml01qd.jpg [semantic]": 0.05432930607187113
+    },
     "size": [
       500,
       500
     ],
-    "palette_colors": 5,
+    "palette_colors": 4,
     "candidates_evaluated": 64,
-    "best_score": 0.018091650679707527,
+    "best_score": 0.022893831133842468,
     "score_components": {
-      "rgb_error": 0.0031175243202596903,
-      "luminance_error": 0.039556823670864105,
-      "texture_error": 0.03386259078979492
+      "rgb_error": 0.003110548947006464,
+      "luminance_error": 0.04583810269832611,
+      "texture_error": 0.049695421010255814,
+      "geometry_penalty": 0.0011607964155366307,
+      "directional_bias": 0.014509955194207882,
+      "transition_density": 0.0675370741482966,
+      "fine_edge_density": 0.21524360236220472
     },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 37,
+        "score": 0.022893831133842468,
+        "score_components": {
+          "rgb_error": 0.003110548947006464,
+          "luminance_error": 0.04583810269832611,
+          "texture_error": 0.049695421010255814,
+          "geometry_penalty": 0.0011607964155366307,
+          "directional_bias": 0.014509955194207882,
+          "transition_density": 0.0675370741482966,
+          "fine_edge_density": 0.21524360236220472
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 18,
+        "score": 0.023162804543972015,
+        "score_components": {
+          "rgb_error": 0.003083674004301429,
+          "luminance_error": 0.04504460096359253,
+          "texture_error": 0.04471249505877495,
+          "geometry_penalty": 0.002781940441882802,
+          "directional_bias": 0.034774255523535025,
+          "transition_density": 0.07301603206412827,
+          "fine_edge_density": 0.23640501968503938
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 6,
+        "score": 0.02366529405117035,
+        "score_components": {
+          "rgb_error": 0.0031293302308768034,
+          "luminance_error": 0.04607860743999481,
+          "texture_error": 0.05069423094391823,
+          "geometry_penalty": 0.001639866159893446,
+          "directional_bias": 0.020498326998668073,
+          "transition_density": 0.061689378757515026,
+          "fine_edge_density": 0.2060777559055118
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 33,
+        "score": 0.023713478818535805,
+        "score_components": {
+          "rgb_error": 0.0031215958297252655,
+          "luminance_error": 0.045866601169109344,
+          "texture_error": 0.04849734902381897,
+          "geometry_penalty": 0.0022573304726610723,
+          "directional_bias": 0.028216630908263405,
+          "transition_density": 0.06164729458917835,
+          "fine_edge_density": 0.21056840551181102
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 31,
+        "score": 0.0237454604357481,
+        "score_components": {
+          "rgb_error": 0.00313095492310822,
+          "luminance_error": 0.04573885351419449,
+          "texture_error": 0.048946648836135864,
+          "geometry_penalty": 0.0021997929606625247,
+          "directional_bias": 0.02749741200828156,
+          "transition_density": 0.06194789579158316,
+          "fine_edge_density": 0.2092150590551181
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 5,
+        "score": 0.023766551166772842,
+        "score_components": {
+          "rgb_error": 0.0031321740243583918,
+          "luminance_error": 0.045870352536439896,
+          "texture_error": 0.05028626322746277,
+          "geometry_penalty": 0.0018750983168161095,
+          "directional_bias": 0.02343872896020137,
+          "transition_density": 0.06369739478957916,
+          "fine_edge_density": 0.20675442913385828
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 14,
+        "score": 0.023918872699141502,
+        "score_components": {
+          "rgb_error": 0.0031120646744966507,
+          "luminance_error": 0.04561435431241989,
+          "texture_error": 0.04778854548931122,
+          "geometry_penalty": 0.0026830047330061828,
+          "directional_bias": 0.033537559162577286,
+          "transition_density": 0.06901603206412826,
+          "fine_edge_density": 0.22108759842519685
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 24,
+        "score": 0.023927325382828712,
+        "score_components": {
+          "rgb_error": 0.0030998142901808023,
+          "luminance_error": 0.04529285430908203,
+          "texture_error": 0.046652909368276596,
+          "geometry_penalty": 0.003028007409660201,
+          "directional_bias": 0.03785009262075251,
+          "transition_density": 0.07248296593186374,
+          "fine_edge_density": 0.2301611712598425
+        }
+      },
+      {
+        "rank": 9,
+        "seed_offset": 53,
+        "score": 0.0239508468657732,
+        "score_components": {
+          "rgb_error": 0.0030963614117354155,
+          "luminance_error": 0.04515710473060608,
+          "texture_error": 0.04508718475699425,
+          "geometry_penalty": 0.0034534635679802405,
+          "directional_bias": 0.04316829459975301,
+          "transition_density": 0.07139879759519038,
+          "fine_edge_density": 0.23391363188976377
+        }
+      },
+      {
+        "rank": 10,
+        "seed_offset": 49,
+        "score": 0.023954417556524277,
+        "score_components": {
+          "rgb_error": 0.0031229553278535604,
+          "luminance_error": 0.045728106051683426,
+          "texture_error": 0.04860570654273033,
+          "geometry_penalty": 0.0024965111790730137,
+          "directional_bias": 0.031206389738412672,
+          "transition_density": 0.06749298597194389,
+          "fine_edge_density": 0.21481299212598426
+        }
+      }
+    ],
     "version": "phase_20_jungle_selectable_summary",
-    "segmentation": "none",
-    "segmentation_model": null,
+    "segmentation": "semantic",
+    "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
     "generation_mode": "standard",
     "density": "standard",
     "custom_settings": {
@@ -524,100 +2157,429 @@
     },
     "weighting": "pixel_weighted",
     "group_pixel_counts": {
-      "jungle": 140000
+      "jungle": 240000
     },
     "dark_palette_weight": 0.1599999964237213,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          53,
-          58,
-          47
+          46,
+          51,
+          44
         ],
-        "weight": 0.08359029144048691
+        "weight": 0.1599999964237213
       },
       {
         "rgb": [
-          45,
-          48,
-          43
+          63,
+          80,
+          41
         ],
-        "weight": 0.076409712433815
+        "weight": 0.44820308685302734
       },
       {
         "rgb": [
-          82,
           102,
-          52
+          122,
+          66
         ],
-        "weight": 0.42104101181030273
+        "weight": 0.2781517505645752
       },
       {
         "rgb": [
-          142,
-          148,
-          94
+          175,
+          180,
+          132
         ],
-        "weight": 0.2898983955383301
-      },
-      {
-        "rgb": [
-          186,
-          187,
-          142
-        ],
-        "weight": 0.12906059622764587
+        "weight": 0.11364518105983734
       }
     ]
   },
   "mountain": {
     "input_images": [
-      "photos/mountain/bellino-paesaggio.jpg [automatic]",
-      "photos/mountain/images-3.jpeg [automatic]",
-      "photos/mountain/images-4.jpeg [automatic]",
-      "photos/mountain/images-5 copy.jpeg [automatic]",
-      "photos/mountain/images-5.jpeg [automatic]",
-      "photos/mountain/images-6.jpeg [automatic]",
-      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]",
-      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]"
+      "photos/mountain/bellino-paesaggio.jpg [semantic]",
+      "photos/mountain/images-3 copy.jpeg [semantic]",
+      "photos/mountain/images-3.jpeg [semantic]",
+      "photos/mountain/images-4 copy.jpeg [semantic]",
+      "photos/mountain/images-4.jpeg [semantic]",
+      "photos/mountain/images-5 copy 2.jpeg [semantic]",
+      "photos/mountain/images-5 copy.jpeg [semantic]",
+      "photos/mountain/images-5.jpeg [semantic]",
+      "photos/mountain/images-6 copy.jpeg [semantic]",
+      "photos/mountain/images-6.jpeg [semantic]",
+      "photos/mountain/images-7.jpeg [semantic]",
+      "photos/mountain/images-8.jpeg [semantic]",
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]",
+      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]"
     ],
     "valid_pixel_fraction": {
-      "photos/mountain/bellino-paesaggio.jpg [automatic]": 0.511512,
-      "photos/mountain/images-3.jpeg [automatic]": 0.6281603043002916,
-      "photos/mountain/images-4.jpeg [automatic]": 0.6930745442708334,
-      "photos/mountain/images-5 copy.jpeg [automatic]": 0.5778203342618384,
-      "photos/mountain/images-5.jpeg [automatic]": 0.9785089590443686,
-      "photos/mountain/images-6.jpeg [automatic]": 0.5521444281524927,
-      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": 0.8327793768274854,
-      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": 0.467616,
+      "photos/mountain/images-3 copy.jpeg [semantic]": 0.5752257244809689,
+      "photos/mountain/images-3.jpeg [semantic]": 0.6099899781341108,
+      "photos/mountain/images-4 copy.jpeg [semantic]": 0.6328803168402778,
+      "photos/mountain/images-4.jpeg [semantic]": 0.5941501193576388,
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": 0.3584500745156483,
+      "photos/mountain/images-5 copy.jpeg [semantic]": 0.5743928447075209,
+      "photos/mountain/images-5.jpeg [semantic]": 0.9318939313139932,
+      "photos/mountain/images-6 copy.jpeg [semantic]": 0.6147104899088541,
+      "photos/mountain/images-6.jpeg [semantic]": 0.5521444281524927,
+      "photos/mountain/images-7.jpeg [semantic]": 0.6319101790935673,
+      "photos/mountain/images-8.jpeg [semantic]": 0.6487621753246753,
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": 0.8168174342105263,
+      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": 0.9415461753731343
     },
     "mask_sources": {
-      "photos/mountain/bellino-paesaggio.jpg [automatic]": "automatic",
-      "photos/mountain/images-3.jpeg [automatic]": "automatic",
-      "photos/mountain/images-4.jpeg [automatic]": "automatic",
-      "photos/mountain/images-5 copy.jpeg [automatic]": "automatic",
-      "photos/mountain/images-5.jpeg [automatic]": "automatic",
-      "photos/mountain/images-6.jpeg [automatic]": "automatic",
-      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": "automatic",
-      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": "automatic"
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": "semantic",
+      "photos/mountain/images-3 copy.jpeg [semantic]": "semantic",
+      "photos/mountain/images-3.jpeg [semantic]": "semantic",
+      "photos/mountain/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/mountain/images-4.jpeg [semantic]": "semantic",
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": "semantic",
+      "photos/mountain/images-5 copy.jpeg [semantic]": "semantic",
+      "photos/mountain/images-5.jpeg [semantic]": "semantic",
+      "photos/mountain/images-6 copy.jpeg [semantic]": "semantic",
+      "photos/mountain/images-6.jpeg [semantic]": "semantic",
+      "photos/mountain/images-7.jpeg [semantic]": "semantic",
+      "photos/mountain/images-8.jpeg [semantic]": "semantic",
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": "semantic",
+      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": "semantic"
     },
-    "semantic_labels": {},
+    "semantic_labels": {
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": [
+        "fence",
+        "mountain",
+        "person",
+        "railing",
+        "rock",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-3 copy.jpeg [semantic]": [
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-3.jpeg [semantic]": [
+        "dirt track",
+        "earth",
+        "fence",
+        "field",
+        "flag",
+        "grass",
+        "hill",
+        "mountain",
+        "path",
+        "pole",
+        "road",
+        "signboard",
+        "sky"
+      ],
+      "photos/mountain/images-4 copy.jpeg [semantic]": [
+        "mountain",
+        "plant",
+        "river",
+        "rock",
+        "sky",
+        "tree",
+        "water",
+        "waterfall"
+      ],
+      "photos/mountain/images-4.jpeg [semantic]": [
+        "mountain",
+        "person",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": [
+        "building",
+        "earth",
+        "field",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-5 copy.jpeg [semantic]": [
+        "grass",
+        "mountain",
+        "path",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-5.jpeg [semantic]": [
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-6 copy.jpeg [semantic]": [
+        "building",
+        "earth",
+        "floor",
+        "house",
+        "mountain",
+        "path",
+        "plant",
+        "rock",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/images-6.jpeg [semantic]": [
+        "grass",
+        "tree"
+      ],
+      "photos/mountain/images-7.jpeg [semantic]": [
+        "building",
+        "field",
+        "grass",
+        "house",
+        "mountain",
+        "plant",
+        "sky",
+        "tree",
+        "wall",
+        "water"
+      ],
+      "photos/mountain/images-8.jpeg [semantic]": [
+        "field",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": [
+        "animal",
+        "grass",
+        "mountain",
+        "path",
+        "person",
+        "rock",
+        "tree"
+      ],
+      "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [semantic]": [
+        "field",
+        "grass",
+        "hill",
+        "mountain",
+        "tree"
+      ]
+    },
+    "semantic_excluded_labels": {
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/mountain/images-3 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-4 copy.jpeg [semantic]": [
+        "river",
+        "sky",
+        "water"
+      ],
+      "photos/mountain/images-4.jpeg [semantic]": [
+        "person",
+        "sky"
+      ],
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-5 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-5.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-6 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/images-7.jpeg [semantic]": [
+        "sky",
+        "water"
+      ],
+      "photos/mountain/images-8.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": [
+        "animal",
+        "person"
+      ]
+    },
+    "semantic_excluded_fraction": {
+      "photos/mountain/bellino-paesaggio.jpg [semantic]": 0.52014,
+      "photos/mountain/images-3 copy.jpeg [semantic]": 0.342222642733564,
+      "photos/mountain/images-3.jpeg [semantic]": 0.3552238975947522,
+      "photos/mountain/images-4 copy.jpeg [semantic]": 0.14156087239583334,
+      "photos/mountain/images-4.jpeg [semantic]": 0.2799750434027778,
+      "photos/mountain/images-5 copy 2.jpeg [semantic]": 0.41635370094386487,
+      "photos/mountain/images-5 copy.jpeg [semantic]": 0.32597057799442897,
+      "photos/mountain/images-5.jpeg [semantic]": 0.05948698805460751,
+      "photos/mountain/images-6 copy.jpeg [semantic]": 0.3281809488932292,
+      "photos/mountain/images-7.jpeg [semantic]": 0.07146610014619884,
+      "photos/mountain/images-8.jpeg [semantic]": 0.2681716720779221,
+      "photos/mountain/mercantour-otnca-1024x683.webp [semantic]": 0.017909356725146198
+    },
     "size": [
       500,
       500
     ],
-    "palette_colors": 5,
+    "palette_colors": 4,
     "candidates_evaluated": 64,
-    "best_score": 0.014076534658670425,
+    "best_score": 0.015210120007395744,
     "score_components": {
-      "rgb_error": 0.0027946222107857466,
-      "luminance_error": 0.03768642246723175,
-      "texture_error": 0.020008830353617668
+      "rgb_error": 0.003071629675105214,
+      "luminance_error": 0.04459032043814659,
+      "texture_error": 0.023028641939163208,
+      "geometry_penalty": 0.0001211725223486072,
+      "directional_bias": 0.00151465652935759,
+      "transition_density": 0.06747695390781563,
+      "fine_edge_density": 0.23351377952755906
     },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 5,
+        "score": 0.015210120007395744,
+        "score_components": {
+          "rgb_error": 0.003071629675105214,
+          "luminance_error": 0.04459032043814659,
+          "texture_error": 0.023028641939163208,
+          "geometry_penalty": 0.0001211725223486072,
+          "directional_bias": 0.00151465652935759,
+          "transition_density": 0.06747695390781563,
+          "fine_edge_density": 0.23351377952755906
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 2,
+        "score": 0.01574823074042797,
+        "score_components": {
+          "rgb_error": 0.003083817195147276,
+          "luminance_error": 0.04475032165646553,
+          "texture_error": 0.023558974266052246,
+          "geometry_penalty": 0.0004971094691934362,
+          "directional_bias": 0.006213868364917952,
+          "transition_density": 0.06482364729458917,
+          "fine_edge_density": 0.22370201771653545
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 14,
+        "score": 0.015872903168201447,
+        "score_components": {
+          "rgb_error": 0.003090004902333021,
+          "luminance_error": 0.04482482373714447,
+          "texture_error": 0.024179881438612938,
+          "geometry_penalty": 0.0004562599957753711,
+          "directional_bias": 0.005703249947192139,
+          "transition_density": 0.06641082164328657,
+          "fine_edge_density": 0.2270853838582677
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 6,
+        "score": 0.01641826704144478,
+        "score_components": {
+          "rgb_error": 0.00311650475487113,
+          "luminance_error": 0.045071326196193695,
+          "texture_error": 0.025532780215144157,
+          "geometry_penalty": 0.0006193078324225854,
+          "directional_bias": 0.007741347905282318,
+          "transition_density": 0.06161122244488978,
+          "fine_edge_density": 0.20835383858267717
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 54,
+        "score": 0.01661198027431965,
+        "score_components": {
+          "rgb_error": 0.0030583483166992664,
+          "luminance_error": 0.04423332214355469,
+          "texture_error": 0.02211138606071472,
+          "geometry_penalty": 0.001814074518887077,
+          "directional_bias": 0.02267593148608846,
+          "transition_density": 0.07008216432865733,
+          "fine_edge_density": 0.23726624015748032
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 31,
+        "score": 0.016814108937978745,
+        "score_components": {
+          "rgb_error": 0.0030759423971176147,
+          "luminance_error": 0.04478907585144043,
+          "texture_error": 0.02343597076833248,
+          "geometry_penalty": 0.0015894707012185506,
+          "directional_bias": 0.01986838376523188,
+          "transition_density": 0.06364529058116232,
+          "fine_edge_density": 0.22542445866141733
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 33,
+        "score": 0.01690032333135605,
+        "score_components": {
+          "rgb_error": 0.003109942190349102,
+          "luminance_error": 0.04521632194519043,
+          "texture_error": 0.02564217895269394,
+          "geometry_penalty": 0.0010522905462320967,
+          "directional_bias": 0.013153631827901208,
+          "transition_density": 0.06185571142284569,
+          "fine_edge_density": 0.21152189960629922
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 3,
+        "score": 0.017009584233164787,
+        "score_components": {
+          "rgb_error": 0.0031042234040796757,
+          "luminance_error": 0.0450630709528923,
+          "texture_error": 0.024982010945677757,
+          "geometry_penalty": 0.001350438892640104,
+          "directional_bias": 0.0168804861580013,
+          "transition_density": 0.062326653306613224,
+          "fine_edge_density": 0.21576648622047245
+        }
+      },
+      {
+        "rank": 9,
+        "seed_offset": 37,
+        "score": 0.017048707231879234,
+        "score_components": {
+          "rgb_error": 0.0030736764892935753,
+          "luminance_error": 0.04424481838941574,
+          "texture_error": 0.023000629618763924,
+          "geometry_penalty": 0.0020276497695852535,
+          "directional_bias": 0.02534562211981567,
+          "transition_density": 0.07305811623246494,
+          "fine_edge_density": 0.23917322834645668
+        }
+      },
+      {
+        "rank": 10,
+        "seed_offset": 55,
+        "score": 0.017069624736905098,
+        "score_components": {
+          "rgb_error": 0.0030960985459387302,
+          "luminance_error": 0.04503532126545906,
+          "texture_error": 0.02376103587448597,
+          "geometry_penalty": 0.0017125698233831632,
+          "directional_bias": 0.02140712279228954,
+          "transition_density": 0.062066132264529054,
+          "fine_edge_density": 0.2195804625984252
+        }
+      }
+    ],
     "version": "phase_20_jungle_selectable_summary",
-    "segmentation": "none",
-    "segmentation_model": null,
+    "segmentation": "semantic",
+    "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
     "generation_mode": "standard",
     "density": "standard",
     "custom_settings": {
@@ -634,100 +2596,332 @@
     },
     "weighting": "pixel_weighted",
     "group_pixel_counts": {
-      "mountain": 160000
+      "mountain": 278039
     },
-    "dark_palette_weight": 0.14000000059604645,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "dark_palette_weight": 0.14000001549720764,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          77,
-          82,
+          89,
+          99,
+          57
+        ],
+        "weight": 0.41950953006744385
+      },
+      {
+        "rgb": [
+          56,
+          58,
           51
         ],
-        "weight": 0.3044567406177521
+        "weight": 0.14000001549720764
       },
       {
         "rgb": [
-          134,
-          131,
-          83
+          149,
+          145,
+          103
         ],
-        "weight": 0.29524141550064087
+        "weight": 0.3182108998298645
       },
       {
         "rgb": [
-          55,
-          57,
-          51
+          186,
+          182,
+          162
         ],
-        "weight": 0.14000000059604645
-      },
-      {
-        "rgb": [
-          165,
-          156,
-          120
-        ],
-        "weight": 0.1655559539794922
-      },
-      {
-        "rgb": [
-          180,
-          165,
-          140
-        ],
-        "weight": 0.09474587440490723
+        "weight": 0.12227960675954819
       }
     ]
   },
   "snow": {
     "input_images": [
-      "photos/snow/images-3 copy.jpeg [automatic]",
-      "photos/snow/images-3.jpeg [automatic]",
-      "photos/snow/images-4 copy.jpeg [automatic]",
-      "photos/snow/images-4.jpeg [automatic]",
-      "photos/snow/images-5 copy.jpeg [automatic]",
-      "photos/snow/images-5.jpeg [automatic]",
-      "photos/snow/images-6.jpeg [automatic]",
-      "photos/snow/images-7.jpeg [automatic]"
+      "photos/snow/images-3 copy.jpeg [semantic]",
+      "photos/snow/images-3.jpeg [semantic]",
+      "photos/snow/images-4 copy.jpeg [semantic]",
+      "photos/snow/images-4.jpeg [semantic]",
+      "photos/snow/images-5 copy.jpeg [semantic]",
+      "photos/snow/images-5.jpeg [semantic]",
+      "photos/snow/images-6.jpeg [semantic]",
+      "photos/snow/images-7.jpeg [semantic]"
     ],
     "valid_pixel_fraction": {
-      "photos/snow/images-3 copy.jpeg [automatic]": 0.7131304824561403,
-      "photos/snow/images-3.jpeg [automatic]": 0.7629343668619791,
-      "photos/snow/images-4 copy.jpeg [automatic]": 0.542236328125,
-      "photos/snow/images-4.jpeg [automatic]": 0.9998568390052356,
-      "photos/snow/images-5 copy.jpeg [automatic]": 0.43054116681430765,
-      "photos/snow/images-5.jpeg [automatic]": 0.38168402777777777,
-      "photos/snow/images-6.jpeg [automatic]": 0.5149129231770834,
-      "photos/snow/images-7.jpeg [automatic]": 0.677978515625
+      "photos/snow/images-3 copy.jpeg [semantic]": 0.6712182474415205,
+      "photos/snow/images-3.jpeg [semantic]": 0.7485555013020834,
+      "photos/snow/images-4 copy.jpeg [semantic]": 0.5379791259765625,
+      "photos/snow/images-4.jpeg [semantic]": 0.8528560618455497,
+      "photos/snow/images-5 copy.jpeg [semantic]": 0.4286493601389327,
+      "photos/snow/images-5.jpeg [semantic]": 0.5843229166666667,
+      "photos/snow/images-6.jpeg [semantic]": 0.410186767578125,
+      "photos/snow/images-7.jpeg [semantic]": 0.63134765625
     },
     "mask_sources": {
-      "photos/snow/images-3 copy.jpeg [automatic]": "automatic",
-      "photos/snow/images-3.jpeg [automatic]": "automatic",
-      "photos/snow/images-4 copy.jpeg [automatic]": "automatic",
-      "photos/snow/images-4.jpeg [automatic]": "automatic",
-      "photos/snow/images-5 copy.jpeg [automatic]": "automatic",
-      "photos/snow/images-5.jpeg [automatic]": "automatic",
-      "photos/snow/images-6.jpeg [automatic]": "automatic",
-      "photos/snow/images-7.jpeg [automatic]": "automatic"
+      "photos/snow/images-3 copy.jpeg [semantic]": "semantic",
+      "photos/snow/images-3.jpeg [semantic]": "semantic",
+      "photos/snow/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/snow/images-4.jpeg [semantic]": "semantic",
+      "photos/snow/images-5 copy.jpeg [semantic]": "semantic",
+      "photos/snow/images-5.jpeg [semantic]": "semantic",
+      "photos/snow/images-6.jpeg [semantic]": "semantic",
+      "photos/snow/images-7.jpeg [semantic]": "semantic"
     },
-    "semantic_labels": {},
+    "semantic_labels": {
+      "photos/snow/images-3 copy.jpeg [semantic]": [
+        "building",
+        "earth",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/snow/images-3.jpeg [semantic]": [
+        "earth",
+        "path",
+        "river",
+        "road",
+        "rock",
+        "sky",
+        "tree",
+        "water"
+      ],
+      "photos/snow/images-4 copy.jpeg [semantic]": [
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/snow/images-4.jpeg [semantic]": [
+        "earth",
+        "house",
+        "mountain",
+        "sky",
+        "tree",
+        "water"
+      ],
+      "photos/snow/images-5 copy.jpeg [semantic]": [
+        "earth",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/snow/images-5.jpeg [semantic]": [
+        "earth",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/snow/images-6.jpeg [semantic]": [
+        "mountain",
+        "sand",
+        "sky"
+      ],
+      "photos/snow/images-7.jpeg [semantic]": [
+        "earth",
+        "mountain",
+        "rock",
+        "sky",
+        "tree"
+      ]
+    },
+    "semantic_excluded_labels": {
+      "photos/snow/images-3 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/snow/images-3.jpeg [semantic]": [
+        "river",
+        "sky",
+        "water"
+      ],
+      "photos/snow/images-4 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/snow/images-4.jpeg [semantic]": [
+        "sky",
+        "water"
+      ],
+      "photos/snow/images-5 copy.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/snow/images-5.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/snow/images-6.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/snow/images-7.jpeg [semantic]": [
+        "sky"
+      ]
+    },
+    "semantic_excluded_fraction": {
+      "photos/snow/images-3 copy.jpeg [semantic]": 0.08269942434210527,
+      "photos/snow/images-3.jpeg [semantic]": 0.145294189453125,
+      "photos/snow/images-4 copy.jpeg [semantic]": 0.2855885823567708,
+      "photos/snow/images-4.jpeg [semantic]": 0.14700077715968587,
+      "photos/snow/images-5 copy.jpeg [semantic]": 0.17624331236330695,
+      "photos/snow/images-5.jpeg [semantic]": 0.4156770833333333,
+      "photos/snow/images-6.jpeg [semantic]": 0.4724884033203125,
+      "photos/snow/images-7.jpeg [semantic]": 0.18068313598632812
+    },
     "size": [
       500,
       500
     ],
-    "palette_colors": 5,
+    "palette_colors": 4,
     "candidates_evaluated": 64,
-    "best_score": 0.01280934363603592,
+    "best_score": 0.014555330388247967,
     "score_components": {
-      "rgb_error": 0.002012824174016714,
-      "luminance_error": 0.0373712033033371,
-      "texture_error": 0.016912201419472694
+      "rgb_error": 0.002743092831224203,
+      "luminance_error": 0.04388296604156494,
+      "texture_error": 0.021338941529393196,
+      "geometry_penalty": 0.00016350364963503995,
+      "directional_bias": 0.0020437956204379993,
+      "transition_density": 0.09609218436873748,
+      "fine_edge_density": 0.27097687007874016
     },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 37,
+        "score": 0.014555330388247967,
+        "score_components": {
+          "rgb_error": 0.002743092831224203,
+          "luminance_error": 0.04388296604156494,
+          "texture_error": 0.021338941529393196,
+          "geometry_penalty": 0.00016350364963503995,
+          "directional_bias": 0.0020437956204379993,
+          "transition_density": 0.09609218436873748,
+          "fine_edge_density": 0.27097687007874016
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 6,
+        "score": 0.01499668788164854,
+        "score_components": {
+          "rgb_error": 0.0027714679017663,
+          "luminance_error": 0.04473646730184555,
+          "texture_error": 0.023094648495316505,
+          "geometry_penalty": 1.5673639985198002e-05,
+          "directional_bias": 0.000195920499814975,
+          "transition_density": 0.09205811623246493,
+          "fine_edge_density": 0.2601808562992126
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 8,
+        "score": 0.015312309376895428,
+        "score_components": {
+          "rgb_error": 0.0027503895107656717,
+          "luminance_error": 0.04391922056674957,
+          "texture_error": 0.021886751055717468,
+          "geometry_penalty": 0.0007788340396289048,
+          "directional_bias": 0.00973542549536131,
+          "transition_density": 0.10498196392785572,
+          "fine_edge_density": 0.2983513779527559
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 54,
+        "score": 0.015563936904072762,
+        "score_components": {
+          "rgb_error": 0.002778139431029558,
+          "luminance_error": 0.04487096890807152,
+          "texture_error": 0.02297034114599228,
+          "geometry_penalty": 0.0005852118833841602,
+          "directional_bias": 0.007315148542302002,
+          "transition_density": 0.09396593186372745,
+          "fine_edge_density": 0.26725516732283466
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 58,
+        "score": 0.01570996455848217,
+        "score_components": {
+          "rgb_error": 0.0028014364652335644,
+          "luminance_error": 0.045593466609716415,
+          "texture_error": 0.024173006415367126,
+          "geometry_penalty": 0.00030090001343303474,
+          "directional_bias": 0.003761250167912934,
+          "transition_density": 0.08951102204408817,
+          "fine_edge_density": 0.25369094488188976
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 19,
+        "score": 0.016014786437153816,
+        "score_components": {
+          "rgb_error": 0.0027710769791156054,
+          "luminance_error": 0.044573716819286346,
+          "texture_error": 0.022867998108267784,
+          "geometry_penalty": 0.001117659179888729,
+          "directional_bias": 0.013970739748609112,
+          "transition_density": 0.09725450901803606,
+          "fine_edge_density": 0.2772822342519685
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 33,
+        "score": 0.016171306371688843,
+        "score_components": {
+          "rgb_error": 0.002786420751363039,
+          "luminance_error": 0.045101966708898544,
+          "texture_error": 0.023405015468597412,
+          "geometry_penalty": 0.0010425374969264844,
+          "directional_bias": 0.013031718711581056,
+          "transition_density": 0.08965330661322646,
+          "fine_edge_density": 0.25322957677165353
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 5,
+        "score": 0.016173601150512695,
+        "score_components": {
+          "rgb_error": 0.0027947956696152687,
+          "luminance_error": 0.04523796960711479,
+          "texture_error": 0.023073039948940277,
+          "geometry_penalty": 0.0010958402052409796,
+          "directional_bias": 0.013698002565512245,
+          "transition_density": 0.08748697394789579,
+          "fine_edge_density": 0.250615157480315
+        }
+      },
+      {
+        "rank": 9,
+        "seed_offset": 18,
+        "score": 0.016242502257227898,
+        "score_components": {
+          "rgb_error": 0.002757952082902193,
+          "luminance_error": 0.0442047193646431,
+          "texture_error": 0.021707622334361076,
+          "geometry_penalty": 0.0016968476180884288,
+          "directional_bias": 0.02121059522610536,
+          "transition_density": 0.09948897795591183,
+          "fine_edge_density": 0.2806656003937008
+        }
+      },
+      {
+        "rank": 10,
+        "seed_offset": 51,
+        "score": 0.0162693802267313,
+        "score_components": {
+          "rgb_error": 0.0027544433251023293,
+          "luminance_error": 0.044016219675540924,
+          "texture_error": 0.02167429029941559,
+          "geometry_penalty": 0.0017674098373934336,
+          "directional_bias": 0.02209262296741792,
+          "transition_density": 0.09896392785571143,
+          "fine_edge_density": 0.2814345472440945
+        }
+      }
+    ],
     "version": "phase_20_jungle_selectable_summary",
-    "segmentation": "none",
-    "segmentation_model": null,
+    "segmentation": "semantic",
+    "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
     "generation_mode": "standard",
     "density": "standard",
     "custom_settings": {
@@ -748,79 +2942,250 @@
       "snow": 160000
     },
     "dark_palette_weight": 0.0,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
+          172,
+          176,
+          177
+        ],
+        "weight": 0.25471875071525574
+      },
+      {
+        "rgb": [
+          98,
+          102,
+          104
+        ],
+        "weight": 0.2539750039577484
+      },
+      {
+        "rgb": [
+          77,
+          81,
+          82
+        ],
+        "weight": 0.2508625090122223
+      },
+      {
+        "rgb": [
+          221,
           225,
-          229,
-          230
+          226
         ],
-        "weight": 0.22667500376701355
-      },
-      {
-        "rgb": [
-          184,
-          188,
-          191
-        ],
-        "weight": 0.20414374768733978
-      },
-      {
-        "rgb": [
-          76,
-          80,
-          81
-        ],
-        "weight": 0.19655625522136688
-      },
-      {
-        "rgb": [
-          140,
-          144,
-          144
-        ],
-        "weight": 0.18883749842643738
-      },
-      {
-        "rgb": [
-          91,
-          94,
-          92
-        ],
-        "weight": 0.1837874948978424
+        "weight": 0.24044375121593475
       }
     ]
   },
   "taiga": {
     "input_images": [
-      "photos/taiga/images-4 copy.jpeg [automatic]",
-      "photos/taiga/images-6.jpeg [automatic]"
+      "photos/taiga/images-4 copy.jpeg [semantic]",
+      "photos/taiga/images-6.jpeg [semantic]"
     ],
     "valid_pixel_fraction": {
-      "photos/taiga/images-4 copy.jpeg [automatic]": 0.8991224500868056,
-      "photos/taiga/images-6.jpeg [automatic]": 0.5299072265625
+      "photos/taiga/images-4 copy.jpeg [semantic]": 0.8135036892361112,
+      "photos/taiga/images-6.jpeg [semantic]": 0.460693359375
     },
     "mask_sources": {
-      "photos/taiga/images-4 copy.jpeg [automatic]": "automatic",
-      "photos/taiga/images-6.jpeg [automatic]": "automatic"
+      "photos/taiga/images-4 copy.jpeg [semantic]": "semantic",
+      "photos/taiga/images-6.jpeg [semantic]": "semantic"
     },
-    "semantic_labels": {},
+    "semantic_labels": {
+      "photos/taiga/images-4 copy.jpeg [semantic]": [
+        "earth",
+        "field",
+        "grass",
+        "mountain",
+        "plant",
+        "river",
+        "sky",
+        "tree",
+        "water"
+      ],
+      "photos/taiga/images-6.jpeg [semantic]": [
+        "dirt track",
+        "earth",
+        "field",
+        "sky",
+        "tree"
+      ]
+    },
+    "semantic_excluded_labels": {
+      "photos/taiga/images-4 copy.jpeg [semantic]": [
+        "river",
+        "sky",
+        "water"
+      ],
+      "photos/taiga/images-6.jpeg [semantic]": [
+        "sky"
+      ]
+    },
+    "semantic_excluded_fraction": {
+      "photos/taiga/images-4 copy.jpeg [semantic]": 0.1610785590277778,
+      "photos/taiga/images-6.jpeg [semantic]": 0.5239206949869791
+    },
     "size": [
       500,
       500
     ],
-    "palette_colors": 5,
+    "palette_colors": 4,
     "candidates_evaluated": 64,
-    "best_score": 0.01533501222729683,
+    "best_score": 0.01517786830663681,
     "score_components": {
-      "rgb_error": 0.0027993982657790184,
-      "luminance_error": 0.037960685789585114,
-      "texture_error": 0.02481282316148281
+      "rgb_error": 0.002783171832561493,
+      "luminance_error": 0.04343625158071518,
+      "texture_error": 0.024552851915359497,
+      "geometry_penalty": 7.507175977037297e-05,
+      "directional_bias": 0.0009383969971296621,
+      "transition_density": 0.07260921843687375,
+      "fine_edge_density": 0.24215674212598426
     },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 54,
+        "score": 0.01517786830663681,
+        "score_components": {
+          "rgb_error": 0.002783171832561493,
+          "luminance_error": 0.04343625158071518,
+          "texture_error": 0.024552851915359497,
+          "geometry_penalty": 7.507175977037297e-05,
+          "directional_bias": 0.0009383969971296621,
+          "transition_density": 0.07260921843687375,
+          "fine_edge_density": 0.24215674212598426
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 37,
+        "score": 0.015331579372286797,
+        "score_components": {
+          "rgb_error": 0.002819078043103218,
+          "luminance_error": 0.043756499886512756,
+          "texture_error": 0.024139603599905968,
+          "geometry_penalty": 0.000252365930599367,
+          "directional_bias": 0.003154574132492087,
+          "transition_density": 0.06797394789579159,
+          "fine_edge_density": 0.22619340551181102
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 6,
+        "score": 0.015415114350616932,
+        "score_components": {
+          "rgb_error": 0.0028038437012583017,
+          "luminance_error": 0.04367949813604355,
+          "texture_error": 0.024788951501250267,
+          "geometry_penalty": 0.00020153440971029768,
+          "directional_bias": 0.002519180121378721,
+          "transition_density": 0.07000400801603207,
+          "fine_edge_density": 0.2324680118110236
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 5,
+        "score": 0.015438275411725044,
+        "score_components": {
+          "rgb_error": 0.0028190468437969685,
+          "luminance_error": 0.04391400143504143,
+          "texture_error": 0.024875834584236145,
+          "geometry_penalty": 0.00015403128760529516,
+          "directional_bias": 0.0019253910950661896,
+          "transition_density": 0.06661322645290582,
+          "fine_edge_density": 0.2221333661417323
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 18,
+        "score": 0.015691161155700684,
+        "score_components": {
+          "rgb_error": 0.002782722469419241,
+          "luminance_error": 0.043233998119831085,
+          "texture_error": 0.024829233065247536,
+          "geometry_penalty": 0.0005586651740497841,
+          "directional_bias": 0.006983314675622301,
+          "transition_density": 0.07518637274549098,
+          "fine_edge_density": 0.24815452755905512
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 55,
+        "score": 0.015752756968140602,
+        "score_components": {
+          "rgb_error": 0.0028083748184144497,
+          "luminance_error": 0.043910250067710876,
+          "texture_error": 0.02540748007595539,
+          "geometry_penalty": 0.00034692949203941816,
+          "directional_bias": 0.004336618650492727,
+          "transition_density": 0.06608216432865732,
+          "fine_edge_density": 0.22533218503937008
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 8,
+        "score": 0.01578422077000141,
+        "score_components": {
+          "rgb_error": 0.0027423943392932415,
+          "luminance_error": 0.04271924868226051,
+          "texture_error": 0.02517841011285782,
+          "geometry_penalty": 0.0006807412736609661,
+          "directional_bias": 0.008509265920762076,
+          "transition_density": 0.08077955911823648,
+          "fine_edge_density": 0.26817790354330706
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 14,
+        "score": 0.015975991263985634,
+        "score_components": {
+          "rgb_error": 0.0028193281032145023,
+          "luminance_error": 0.043905749917030334,
+          "texture_error": 0.025213947519659996,
+          "geometry_penalty": 0.0006119446896145945,
+          "directional_bias": 0.007649308620182431,
+          "transition_density": 0.06811623246492986,
+          "fine_edge_density": 0.22926919291338582
+        }
+      },
+      {
+        "rank": 9,
+        "seed_offset": 12,
+        "score": 0.016071990132331848,
+        "score_components": {
+          "rgb_error": 0.002809531055390835,
+          "luminance_error": 0.043991249054670334,
+          "texture_error": 0.025177372619509697,
+          "geometry_penalty": 0.0007062285434036267,
+          "directional_bias": 0.008827856792545333,
+          "transition_density": 0.06537875751503006,
+          "fine_edge_density": 0.22161048228346455
+        }
+      },
+      {
+        "rank": 10,
+        "seed_offset": 40,
+        "score": 0.016137823462486267,
+        "score_components": {
+          "rgb_error": 0.0027959062717854977,
+          "luminance_error": 0.043726999312639236,
+          "texture_error": 0.025043338537216187,
+          "geometry_penalty": 0.000858609426038264,
+          "directional_bias": 0.0107326178254783,
+          "transition_density": 0.06871342685370742,
+          "fine_edge_density": 0.23280634842519685
+        }
+      }
+    ],
     "version": "phase_20_jungle_selectable_summary",
-    "segmentation": "none",
-    "segmentation_model": null,
+    "segmentation": "semantic",
+    "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
     "generation_mode": "standard",
     "density": "standard",
     "custom_settings": {
@@ -839,83 +3204,264 @@
     "group_pixel_counts": {
       "taiga": 40000
     },
-    "dark_palette_weight": 0.15752500295639038,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "dark_palette_weight": 0.1599999964237213,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          88,
-          73,
-          52
+          91,
+          75,
+          54
         ],
-        "weight": 0.2819249927997589
+        "weight": 0.3491976857185364
       },
       {
         "rgb": [
-          104,
-          111,
-          71
+          131,
+          128,
+          89
         ],
-        "weight": 0.2583000063896179
+        "weight": 0.2692621350288391
       },
       {
         "rgb": [
-          150,
-          160,
-          111
+          154,
+          165,
+          115
         ],
-        "weight": 0.2249249964952469
+        "weight": 0.2215401828289032
       },
       {
         "rgb": [
-          52,
+          53,
           53,
           48
         ],
-        "weight": 0.15752500295639038
-      },
-      {
-        "rgb": [
-          176,
-          167,
-          143
-        ],
-        "weight": 0.0773250013589859
+        "weight": 0.1599999964237213
       }
     ]
   },
   "tundra": {
     "input_images": [
-      "photos/tundra/images-3.jpeg [automatic]",
-      "photos/tundra/images-4.jpeg [automatic]",
-      "photos/tundra/images-5.jpeg [automatic]"
+      "photos/tundra/images-3.jpeg [semantic]",
+      "photos/tundra/images-4.jpeg [semantic]",
+      "photos/tundra/images-5.jpeg [semantic]"
     ],
     "valid_pixel_fraction": {
-      "photos/tundra/images-3.jpeg [automatic]": 0.7720133463541666,
-      "photos/tundra/images-4.jpeg [automatic]": 0.9979303533380682,
-      "photos/tundra/images-5.jpeg [automatic]": 0.48908311950146627
+      "photos/tundra/images-3.jpeg [semantic]": 0.6047130766369048,
+      "photos/tundra/images-4.jpeg [semantic]": 0.8867298473011364,
+      "photos/tundra/images-5.jpeg [semantic]": 0.4703251008064516
     },
     "mask_sources": {
-      "photos/tundra/images-3.jpeg [automatic]": "automatic",
-      "photos/tundra/images-4.jpeg [automatic]": "automatic",
-      "photos/tundra/images-5.jpeg [automatic]": "automatic"
+      "photos/tundra/images-3.jpeg [semantic]": "semantic",
+      "photos/tundra/images-4.jpeg [semantic]": "semantic",
+      "photos/tundra/images-5.jpeg [semantic]": "semantic"
     },
-    "semantic_labels": {},
+    "semantic_labels": {
+      "photos/tundra/images-3.jpeg [semantic]": [
+        "earth",
+        "land",
+        "sea",
+        "sky",
+        "water"
+      ],
+      "photos/tundra/images-4.jpeg [semantic]": [
+        "field",
+        "mountain",
+        "path",
+        "sky"
+      ],
+      "photos/tundra/images-5.jpeg [semantic]": [
+        "earth",
+        "field",
+        "hill",
+        "land",
+        "mountain",
+        "river",
+        "sky",
+        "tree"
+      ]
+    },
+    "semantic_excluded_labels": {
+      "photos/tundra/images-3.jpeg [semantic]": [
+        "sea",
+        "sky",
+        "water"
+      ],
+      "photos/tundra/images-4.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/tundra/images-5.jpeg [semantic]": [
+        "river",
+        "sky"
+      ]
+    },
+    "semantic_excluded_fraction": {
+      "photos/tundra/images-3.jpeg [semantic]": 0.21951148623511904,
+      "photos/tundra/images-4.jpeg [semantic]": 0.11123934659090909,
+      "photos/tundra/images-5.jpeg [semantic]": 0.30728212060117305
+    },
     "size": [
       500,
       500
     ],
-    "palette_colors": 5,
+    "palette_colors": 4,
     "candidates_evaluated": 64,
-    "best_score": 0.01412217691540718,
+    "best_score": 0.015132609754800797,
     "score_components": {
-      "rgb_error": 0.0030735363252460957,
-      "luminance_error": 0.03500066697597504,
-      "texture_error": 0.021726390346884727
+      "rgb_error": 0.0030828253366053104,
+      "luminance_error": 0.03892891854047775,
+      "texture_error": 0.02694130502641201,
+      "geometry_penalty": 0.00011807894637247994,
+      "directional_bias": 0.0014759868296559992,
+      "transition_density": 0.05295190380761523,
+      "fine_edge_density": 0.17578125
     },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 6,
+        "score": 0.015132609754800797,
+        "score_components": {
+          "rgb_error": 0.0030828253366053104,
+          "luminance_error": 0.03892891854047775,
+          "texture_error": 0.02694130502641201,
+          "geometry_penalty": 0.00011807894637247994,
+          "directional_bias": 0.0014759868296559992,
+          "transition_density": 0.05295190380761523,
+          "fine_edge_density": 0.17578125
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 24,
+        "score": 0.015150808729231358,
+        "score_components": {
+          "rgb_error": 0.0030861457344144583,
+          "luminance_error": 0.03902667015790939,
+          "texture_error": 0.026931151747703552,
+          "geometry_penalty": 0.00011945928953159513,
+          "directional_bias": 0.0014932411191449391,
+          "transition_density": 0.05099799599198397,
+          "fine_edge_density": 0.17036786417322836
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 31,
+        "score": 0.015168724581599236,
+        "score_components": {
+          "rgb_error": 0.003107145894318819,
+          "luminance_error": 0.03829241916537285,
+          "texture_error": 0.026014311239123344,
+          "geometry_penalty": 0.0004790804228125872,
+          "directional_bias": 0.0059885052851573395,
+          "transition_density": 0.04986172344689378,
+          "fine_edge_density": 0.1677842027559055
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 54,
+        "score": 0.01523186732083559,
+        "score_components": {
+          "rgb_error": 0.003084880067035556,
+          "luminance_error": 0.03861317038536072,
+          "texture_error": 0.02610672079026699,
+          "geometry_penalty": 0.0004734441554525243,
+          "directional_bias": 0.005918051943156553,
+          "transition_density": 0.05316432865731463,
+          "fine_edge_density": 0.17971825787401574
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 33,
+        "score": 0.01534272637218237,
+        "score_components": {
+          "rgb_error": 0.003099926747381687,
+          "luminance_error": 0.038961417973041534,
+          "texture_error": 0.027428751811385155,
+          "geometry_penalty": 0.0001968058104572614,
+          "directional_bias": 0.0024600726307157676,
+          "transition_density": 0.05132064128256513,
+          "fine_edge_density": 0.16821481299212598
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 16,
+        "score": 0.015392315573990345,
+        "score_components": {
+          "rgb_error": 0.0030927080661058426,
+          "luminance_error": 0.0389794185757637,
+          "texture_error": 0.026355884969234467,
+          "geometry_penalty": 0.000504254648597543,
+          "directional_bias": 0.006303183107469287,
+          "transition_density": 0.05086973947895791,
+          "fine_edge_density": 0.1727054625984252
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 48,
+        "score": 0.015406625345349312,
+        "score_components": {
+          "rgb_error": 0.003099926980212331,
+          "luminance_error": 0.03933391720056534,
+          "texture_error": 0.02698783576488495,
+          "geometry_penalty": 0.00029947591714499586,
+          "directional_bias": 0.0037434489643124484,
+          "transition_density": 0.04818036072144288,
+          "fine_edge_density": 0.16729207677165353
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 14,
+        "score": 0.015508071519434452,
+        "score_components": {
+          "rgb_error": 0.0031067864038050175,
+          "luminance_error": 0.03905016556382179,
+          "texture_error": 0.028498679399490356,
+          "geometry_penalty": 8.596604341285677e-05,
+          "directional_bias": 0.0010745755426607097,
+          "transition_density": 0.04662324649298597,
+          "fine_edge_density": 0.1536970964566929
+        }
+      },
+      {
+        "rank": 9,
+        "seed_offset": 8,
+        "score": 0.015560898929834366,
+        "score_components": {
+          "rgb_error": 0.003079348709434271,
+          "luminance_error": 0.03783866763114929,
+          "texture_error": 0.024297289550304413,
+          "geometry_penalty": 0.001378914105142204,
+          "directional_bias": 0.017236426314277548,
+          "transition_density": 0.05580761523046092,
+          "fine_edge_density": 0.18543922244094488
+        }
+      },
+      {
+        "rank": 10,
+        "seed_offset": 47,
+        "score": 0.015578214079141617,
+        "score_components": {
+          "rgb_error": 0.003094833344221115,
+          "luminance_error": 0.03897741809487343,
+          "texture_error": 0.026127630844712257,
+          "geometry_penalty": 0.0007442302363326904,
+          "directional_bias": 0.00930287795415863,
+          "transition_density": 0.05062324649298597,
+          "fine_edge_density": 0.17215182086614172
+        }
+      }
+    ],
     "version": "phase_20_jungle_selectable_summary",
-    "segmentation": "none",
-    "segmentation_model": null,
+    "segmentation": "semantic",
+    "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
     "generation_mode": "standard",
     "density": "standard",
     "custom_settings": {
@@ -935,94 +3481,328 @@
       "tundra": 60000
     },
     "dark_palette_weight": 0.0,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
     "palette": [
-      {
-        "rgb": [
-          114,
-          85,
-          63
-        ],
-        "weight": 0.29216668009757996
-      },
       {
         "rgb": [
           106,
           75,
-          57
+          55
         ],
-        "weight": 0.2558000087738037
+        "weight": 0.40845000743865967
+      },
+      {
+        "rgb": [
+          148,
+          120,
+          93
+        ],
+        "weight": 0.27810001373291016
       },
       {
         "rgb": [
           74,
-          71,
-          59
+          72,
+          60
         ],
-        "weight": 0.1675499975681305
+        "weight": 0.21105000376701355
       },
       {
         "rgb": [
-          167,
-          139,
-          112
+          182,
+          156,
+          131
         ],
-        "weight": 0.15833333134651184
-      },
-      {
-        "rgb": [
-          186,
-          172,
-          148
-        ],
-        "weight": 0.1261499971151352
+        "weight": 0.10239999741315842
       }
     ]
   },
   "urban": {
     "input_images": [
-      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]",
-      "photos/urban/images-3.jpeg [automatic]",
-      "photos/urban/images-4.jpeg [automatic]",
-      "photos/urban/images-5.jpeg [automatic]",
-      "photos/urban/images-6.jpeg [automatic]",
-      "photos/urban/images-7.jpeg [automatic]",
-      "photos/urban/images-8.jpeg [automatic]"
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]",
+      "photos/urban/images-3.jpeg [semantic]",
+      "photos/urban/images-4.jpeg [semantic]",
+      "photos/urban/images-5.jpeg [semantic]",
+      "photos/urban/images-6.jpeg [semantic]",
+      "photos/urban/images-7.jpeg [semantic]",
+      "photos/urban/images-8.jpeg [semantic]"
     ],
     "valid_pixel_fraction": {
-      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]": 0.6998760516826923,
-      "photos/urban/images-3.jpeg [automatic]": 0.6374747983870968,
-      "photos/urban/images-4.jpeg [automatic]": 0.9320746527777778,
-      "photos/urban/images-5.jpeg [automatic]": 0.6985005906357389,
-      "photos/urban/images-6.jpeg [automatic]": 0.6178862719941349,
-      "photos/urban/images-7.jpeg [automatic]": 0.644561767578125,
-      "photos/urban/images-8.jpeg [automatic]": 0.9981320784395973
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": 0.6998760516826923,
+      "photos/urban/images-3.jpeg [semantic]": 0.637360245601173,
+      "photos/urban/images-4.jpeg [semantic]": 0.7102457682291666,
+      "photos/urban/images-5.jpeg [semantic]": 0.41339803479381443,
+      "photos/urban/images-6.jpeg [semantic]": 0.4722610428885631,
+      "photos/urban/images-7.jpeg [semantic]": 0.6115061442057291,
+      "photos/urban/images-8.jpeg [semantic]": 0.9510801174496645
     },
     "mask_sources": {
-      "photos/urban/IMG_9282-1-862x525.jpeg [automatic]": "automatic",
-      "photos/urban/images-3.jpeg [automatic]": "automatic",
-      "photos/urban/images-4.jpeg [automatic]": "automatic",
-      "photos/urban/images-5.jpeg [automatic]": "automatic",
-      "photos/urban/images-6.jpeg [automatic]": "automatic",
-      "photos/urban/images-7.jpeg [automatic]": "automatic",
-      "photos/urban/images-8.jpeg [automatic]": "automatic"
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": "semantic",
+      "photos/urban/images-3.jpeg [semantic]": "semantic",
+      "photos/urban/images-4.jpeg [semantic]": "semantic",
+      "photos/urban/images-5.jpeg [semantic]": "semantic",
+      "photos/urban/images-6.jpeg [semantic]": "semantic",
+      "photos/urban/images-7.jpeg [semantic]": "semantic",
+      "photos/urban/images-8.jpeg [semantic]": "semantic"
     },
-    "semantic_labels": {},
+    "semantic_labels": {
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": [
+        "building",
+        "earth",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/urban/images-3.jpeg [semantic]": [
+        "building",
+        "land",
+        "mountain",
+        "road",
+        "sky",
+        "tree"
+      ],
+      "photos/urban/images-4.jpeg [semantic]": [
+        "building",
+        "mountain",
+        "sky",
+        "tree"
+      ],
+      "photos/urban/images-5.jpeg [semantic]": [
+        "bridge",
+        "building",
+        "bus",
+        "river",
+        "road",
+        "sky",
+        "skyscraper",
+        "tree"
+      ],
+      "photos/urban/images-6.jpeg [semantic]": [
+        "building",
+        "mountain",
+        "plant",
+        "sky",
+        "tree"
+      ],
+      "photos/urban/images-7.jpeg [semantic]": [
+        "bridge",
+        "building",
+        "earth",
+        "fence",
+        "grandstand",
+        "hill",
+        "mountain",
+        "road",
+        "sea",
+        "sidewalk",
+        "signboard",
+        "sky",
+        "tree",
+        "wall"
+      ],
+      "photos/urban/images-8.jpeg [semantic]": [
+        "box",
+        "building",
+        "mountain",
+        "sky"
+      ]
+    },
+    "semantic_excluded_labels": {
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/urban/images-3.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/urban/images-4.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/urban/images-5.jpeg [semantic]": [
+        "bus",
+        "river",
+        "sky"
+      ],
+      "photos/urban/images-6.jpeg [semantic]": [
+        "sky"
+      ],
+      "photos/urban/images-7.jpeg [semantic]": [
+        "sea",
+        "sky"
+      ],
+      "photos/urban/images-8.jpeg [semantic]": [
+        "sky"
+      ]
+    },
+    "semantic_excluded_fraction": {
+      "photos/urban/IMG_9282-1-862x525.jpeg [semantic]": 0.12819886818910256,
+      "photos/urban/images-3.jpeg [semantic]": 0.1654600439882698,
+      "photos/urban/images-4.jpeg [semantic]": 0.2840847439236111,
+      "photos/urban/images-5.jpeg [semantic]": 0.29441178049828176,
+      "photos/urban/images-6.jpeg [semantic]": 0.46646467192082114,
+      "photos/urban/images-7.jpeg [semantic]": 0.3103383382161458,
+      "photos/urban/images-8.jpeg [semantic]": 0.04705196098993288
+    },
     "size": [
       500,
       500
     ],
-    "palette_colors": 5,
+    "palette_colors": 4,
     "candidates_evaluated": 64,
-    "best_score": 0.01401849277317524,
+    "best_score": 0.015011963434517384,
     "score_components": {
-      "rgb_error": 0.002830530982464552,
-      "luminance_error": 0.041773878037929535,
-      "texture_error": 0.016427701339125633
+      "rgb_error": 0.00289342412725091,
+      "luminance_error": 0.04348289221525192,
+      "texture_error": 0.02283334545791149,
+      "geometry_penalty": 0.0002583280434962596,
+      "directional_bias": 0.0032291005437032447,
+      "transition_density": 0.07261122244488978,
+      "fine_edge_density": 0.2359128937007874
     },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 54,
+        "score": 0.015011963434517384,
+        "score_components": {
+          "rgb_error": 0.00289342412725091,
+          "luminance_error": 0.04348289221525192,
+          "texture_error": 0.02283334545791149,
+          "geometry_penalty": 0.0002583280434962596,
+          "directional_bias": 0.0032291005437032447,
+          "transition_density": 0.07261122244488978,
+          "fine_edge_density": 0.2359128937007874
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 37,
+        "score": 0.015022304840385914,
+        "score_components": {
+          "rgb_error": 0.0028814710676670074,
+          "luminance_error": 0.04291539639234543,
+          "texture_error": 0.021903306245803833,
+          "geometry_penalty": 0.0006000049834300942,
+          "directional_bias": 0.007500062292876177,
+          "transition_density": 0.08042685370741484,
+          "fine_edge_density": 0.2507689468503937
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 33,
+        "score": 0.015191708691418171,
+        "score_components": {
+          "rgb_error": 0.0029012206941843033,
+          "luminance_error": 0.04388689249753952,
+          "texture_error": 0.02419932372868061,
+          "geometry_penalty": 3.362003754237715e-05,
+          "directional_bias": 0.0004202504692797144,
+          "transition_density": 0.07152905811623246,
+          "fine_edge_density": 0.2286847933070866
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 16,
+        "score": 0.015519900247454643,
+        "score_components": {
+          "rgb_error": 0.0028846426866948605,
+          "luminance_error": 0.04290114343166351,
+          "texture_error": 0.021565482020378113,
+          "geometry_penalty": 0.001179658190912882,
+          "directional_bias": 0.014745727386411023,
+          "transition_density": 0.07692184368737476,
+          "fine_edge_density": 0.2514763779527559
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 2,
+        "score": 0.01605510339140892,
+        "score_components": {
+          "rgb_error": 0.00292165856808424,
+          "luminance_error": 0.044169142842292786,
+          "texture_error": 0.025430500507354736,
+          "geometry_penalty": 0.000540508783267726,
+          "directional_bias": 0.006756359790846575,
+          "transition_density": 0.06822044088176353,
+          "fine_edge_density": 0.22161048228346455
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 41,
+        "score": 0.016181644052267075,
+        "score_components": {
+          "rgb_error": 0.0029124710708856583,
+          "luminance_error": 0.044220391660928726,
+          "texture_error": 0.02568010240793228,
+          "geometry_penalty": 0.0006025143386825812,
+          "directional_bias": 0.007531429233532264,
+          "transition_density": 0.06918236472945892,
+          "fine_edge_density": 0.22102608267716536
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 50,
+        "score": 0.01638987474143505,
+        "score_components": {
+          "rgb_error": 0.002912158379331231,
+          "luminance_error": 0.04373214393854141,
+          "texture_error": 0.023352468386292458,
+          "geometry_penalty": 0.001457416807670619,
+          "directional_bias": 0.018217710095882737,
+          "transition_density": 0.07106212424849699,
+          "fine_edge_density": 0.2328371062992126
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 5,
+        "score": 0.016475902870297432,
+        "score_components": {
+          "rgb_error": 0.0029089865274727345,
+          "luminance_error": 0.043592143803834915,
+          "texture_error": 0.023936020210385323,
+          "geometry_penalty": 0.0014301776478524877,
+          "directional_bias": 0.017877220598156097,
+          "transition_density": 0.07129458917835671,
+          "fine_edge_density": 0.2287463090551181
+        }
+      },
+      {
+        "rank": 9,
+        "seed_offset": 47,
+        "score": 0.016488797962665558,
+        "score_components": {
+          "rgb_error": 0.0029058149084448814,
+          "luminance_error": 0.04362564533948898,
+          "texture_error": 0.023143865168094635,
+          "geometry_penalty": 0.0016287478444679307,
+          "directional_bias": 0.020359348055849134,
+          "transition_density": 0.07205210420841683,
+          "fine_edge_density": 0.23640501968503938
+        }
+      },
+      {
+        "rank": 10,
+        "seed_offset": 51,
+        "score": 0.01653885468840599,
+        "score_components": {
+          "rgb_error": 0.002871143165975809,
+          "luminance_error": 0.04277864098548889,
+          "texture_error": 0.021176539361476898,
+          "geometry_penalty": 0.0023207600030563094,
+          "directional_bias": 0.029009500038203868,
+          "transition_density": 0.07868336673346693,
+          "fine_edge_density": 0.254275344488189
+        }
+      }
+    ],
     "version": "phase_20_jungle_selectable_summary",
-    "segmentation": "none",
-    "segmentation_model": null,
+    "segmentation": "semantic",
+    "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
     "generation_mode": "standard",
     "density": "standard",
     "custom_settings": {
@@ -1042,31 +3822,23 @@
       "urban": 140000
     },
     "dark_palette_weight": 0.09999999403953552,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          100,
-          83,
-          71
+          103,
+          85,
+          72
         ],
-        "weight": 0.2752322554588318
+        "weight": 0.3736725151538849
       },
       {
         "rgb": [
-          154,
-          130,
-          108
-        ],
-        "weight": 0.2380538284778595
-      },
-      {
-        "rgb": [
-          186,
           162,
-          139
+          137,
+          113
         ],
-        "weight": 0.2171538919210434
+        "weight": 0.3237858712673187
       },
       {
         "rgb": [
@@ -1078,11 +3850,11 @@
       },
       {
         "rgb": [
-          183,
-          165,
-          138
+          198,
+          176,
+          153
         ],
-        "weight": 0.1695600003004074
+        "weight": 0.20254163444042206
       }
     ]
   }
