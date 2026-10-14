@@ -109,23 +109,6 @@ between visual inspection, held-out image evaluation, and human recognition
 helps avoid treating a single attractive image as proof that a camouflage
 pattern is effective.
 
-### 5. Comparison with external-style controls
-
-The project Universal pattern is also compared with three clearly labelled
-procedural controls: `MultiCam-style`, `MTP-style`, and `Vegetata-style`.
-These are not official reproductions and no commercial or military pattern
-artwork is included. They use fixed approximate matte palettes and the same
-renderer so that the comparison is reproducible.
-
-![Universal and reference controls](output/reference_comparison/reference_controls_grid.png)
-
-The current comparison report is available at
-[reference_comparison.md](output/reference_comparison/reference_comparison.md).
-In the current proxy evaluation, Universal performs better on several open or
-mixed environments, but it performs worse in dense forest and taiga against
-some controls. The percentages are relative changes in the internal visibility
-proxy, not a guarantee of practical concealment.
-
 ## Project status
 
 The current release is a research prototype. The procedural generator and

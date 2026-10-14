@@ -27,16 +27,12 @@ def main() -> None:
     copy_if_exists(ROOT / "optimized_final" / "all_optimized_patterns_grid.png", ROOT / "results_grid" / "all_optimized_patterns_grid.png")
     for source in (ROOT / "optimized_mockups").glob("*.png"):
         copy_if_exists(source, ROOT / "results_uniforms" / source.name)
-    for source in (ROOT / "reference_comparison").glob("*.md"):
-        copy_if_exists(source, ROOT / "results_reference_comparison" / source.name)
-    for source in (ROOT / "reference_comparison").glob("*.png"):
-        copy_if_exists(source, ROOT / "results_reference_comparison" / source.name)
     copy_if_exists(ROOT / "heldout_comparison.md", ROOT / "results_validation" / "heldout_comparison.md")
     copy_if_exists(ROOT / "benchmark" / "segmentation_comparison.md", ROOT / "results_validation" / "segmentation_comparison.md")
     (ROOT / "RESULTS_INDEX.md").write_text(
         "# Curated results\n\n"
         "Start with `results_grid/`, the environment folders named `results_<environment>/`, "
-        "`results_uniforms/`, `results_reference_comparison/`, and `results_validation/`. "
+        "`results_uniforms/`, and `results_validation/`. "
         "Older experiment folders remain in `output/` for reproducibility and are not the primary presentation.\n",
         encoding="utf-8",
     )

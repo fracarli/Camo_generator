@@ -6,7 +6,6 @@ candidate searches and large per-scene image dumps are intentionally omitted.
 ## Start here
 
 - `RESULTS_INDEX.md` and the `results_<environment>/` folders: curated, clearly named public-facing results.
-- `results_reference_comparison/`: Universal versus synthetic MultiCam-style, MTP-style, and Vegetata-style controls.
 - `results_validation/`: held-out and semantic-versus-baseline reports.
 - `results_uniforms/`: optimized uniform mockups.
 - `all_patterns_grid.png`: standard patterns generated from the source photos.
