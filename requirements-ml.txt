@@ -1,4 +1,5 @@
 # Optional neural input-quality stage.
 # The model weights are downloaded the first time --segmentation semantic is used.
 torch>=2.2
+torchvision>=0.17
 transformers>=4.45

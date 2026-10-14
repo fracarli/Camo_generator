@@ -1,21 +1,30 @@
 {
   "input_images": [
+    "photos/snow/images-3 copy.jpeg [automatic]",
     "photos/snow/images-3.jpeg [automatic]",
+    "photos/snow/images-4 copy.jpeg [automatic]",
     "photos/snow/images-4.jpeg [automatic]",
+    "photos/snow/images-5 copy.jpeg [automatic]",
     "photos/snow/images-5.jpeg [automatic]",
     "photos/snow/images-6.jpeg [automatic]",
     "photos/snow/images-7.jpeg [automatic]"
   ],
   "valid_pixel_fraction": {
+    "photos/snow/images-3 copy.jpeg [automatic]": 0.7131304824561403,
     "photos/snow/images-3.jpeg [automatic]": 0.7629343668619791,
+    "photos/snow/images-4 copy.jpeg [automatic]": 0.542236328125,
     "photos/snow/images-4.jpeg [automatic]": 0.9998568390052356,
+    "photos/snow/images-5 copy.jpeg [automatic]": 0.43054116681430765,
     "photos/snow/images-5.jpeg [automatic]": 0.38168402777777777,
     "photos/snow/images-6.jpeg [automatic]": 0.5149129231770834,
     "photos/snow/images-7.jpeg [automatic]": 0.677978515625
   },
   "mask_sources": {
+    "photos/snow/images-3 copy.jpeg [automatic]": "automatic",
     "photos/snow/images-3.jpeg [automatic]": "automatic",
+    "photos/snow/images-4 copy.jpeg [automatic]": "automatic",
     "photos/snow/images-4.jpeg [automatic]": "automatic",
+    "photos/snow/images-5 copy.jpeg [automatic]": "automatic",
     "photos/snow/images-5.jpeg [automatic]": "automatic",
     "photos/snow/images-6.jpeg [automatic]": "automatic",
     "photos/snow/images-7.jpeg [automatic]": "automatic"
@@ -27,13 +36,13 @@
   ],
   "palette_colors": 5,
   "candidates_evaluated": 64,
-  "best_score": 0.013032173737883568,
+  "best_score": 0.01280934363603592,
   "score_components": {
-    "rgb_error": 0.001966922078281641,
-    "luminance_error": 0.037657249718904495,
-    "texture_error": 0.017675666138529778
+    "rgb_error": 0.002012824174016714,
+    "luminance_error": 0.0373712033033371,
+    "texture_error": 0.016912201419472694
   },
-  "version": "phase_18_snow_excluded_universal",
+  "version": "phase_20_jungle_selectable_summary",
   "segmentation": "none",
   "segmentation_model": null,
   "generation_mode": "standard",
@@ -53,50 +62,50 @@
   },
   "weighting": "pixel_weighted",
   "group_pixel_counts": {
-    "snow": 100000
+    "snow": 160000
   },
   "dark_palette_weight": 0.0,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        224,
-        228,
-        228
+        225,
+        229,
+        230
       ],
-      "weight": 0.30160000920295715
+      "weight": 0.22667500376701355
     },
     {
       "rgb": [
-        181,
         184,
-        184
+        188,
+        191
       ],
-      "weight": 0.2148900032043457
+      "weight": 0.20414374768733978
     },
     {
       "rgb": [
-        136,
-        139,
-        137
-      ],
-      "weight": 0.19717000424861908
-    },
-    {
-      "rgb": [
-        88,
-        91,
-        88
-      ],
-      "weight": 0.15674999356269836
-    },
-    {
-      "rgb": [
-        75,
+        76,
         80,
-        80
+        81
       ],
-      "weight": 0.1295900046825409
+      "weight": 0.19655625522136688
+    },
+    {
+      "rgb": [
+        140,
+        144,
+        144
+      ],
+      "weight": 0.18883749842643738
+    },
+    {
+      "rgb": [
+        91,
+        94,
+        92
+      ],
+      "weight": 0.1837874948978424
     }
   ]
 }

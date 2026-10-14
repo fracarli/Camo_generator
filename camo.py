@@ -26,6 +26,7 @@ MAX_COLORS = 5
 DEFAULT_PATTERN_SIZE = 500
 DEFAULT_DENSITY = "standard"
 DEFAULT_SEGMENTATION_MODEL = "nvidia/segformer-b0-finetuned-ade-512-512"
+DEFAULT_SUMMARY_GROUPS = ("universal", "desert", "mountain", "snow", "jungle")
 DENSITY_SCALES = {
     "low": (5, 10, 20, 40),
     "standard": (8, 16, 32, 64),
@@ -85,6 +86,9 @@ STYLE_PROFILES = {
     "universal": {"max_chroma": 70.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.16, "blur": 0.7},
     "forest": {"max_chroma": 65.0, "dark_floor": 60.0, "dark_weight": 0.18, "detail": 0.18, "blur": 0.6},
     "mountain": {"max_chroma": 60.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.15, "blur": 0.8},
+    "taiga": {"max_chroma": 60.0, "dark_floor": 60.0, "dark_weight": 0.16, "detail": 0.18, "blur": 0.65},
+    "tundra": {"max_chroma": 55.0, "dark_floor": 78.0, "dark_weight": 0.10, "detail": 0.14, "blur": 0.85},
+    "jungle": {"max_chroma": 62.0, "dark_floor": 58.0, "dark_weight": 0.16, "detail": 0.19, "blur": 0.65},
     "desert": {"max_chroma": 55.0, "dark_floor": 75.0, "dark_weight": 0.08, "detail": 0.14, "blur": 0.9},
     "urban": {"max_chroma": 50.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.16, "blur": 0.7},
     "other": {"max_chroma": 65.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.16, "blur": 0.7},
@@ -661,12 +665,18 @@ def classify_group(path: Path, input_dir: Path) -> str:
     name = path.stem.lower()
     if any(token in name for token in ("desert", "deserto", "sahara", "marocco", "tamerice")):
         return "desert"
-    if any(token in name for token in ("mountain", "montagna", "tundra", "alaska")):
+    if any(token in name for token in ("mountain", "montagna")):
         return "mountain"
     if any(token in name for token in ("urban", "urbano", "city", "street", "road", "building", "concrete", "asphalt")):
         return "urban"
     if any(token in name for token in ("snow", "neve", "snowy", "winter", "inverno", "glacier", "ghiaccio", "alpine")):
         return "snow"
+    if any(token in name for token in ("tundra", "arctic", "artico", "permafrost")):
+        return "tundra"
+    if any(token in name for token in ("taiga", "boreal", "boreale", "conifer", "conifera")):
+        return "taiga"
+    if any(token in name for token in ("jungle", "selva", "rainforest", "tropical", "tropics", "amazon", "monsoon")):
+        return "jungle"
     if any(token in name for token in ("forest", "foresta", "orman", "bosco", "castagno")):
         return "forest"
     return "other"
@@ -737,7 +747,7 @@ def run_group(
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
-        "version": "phase_18_snow_excluded_universal",
+        "version": "phase_20_jungle_selectable_summary",
         "segmentation": args.segmentation,
         "segmentation_model": args.segmentation_model if args.segmentation == "semantic" else None,
         "generation_mode": args.mode,
@@ -768,20 +778,11 @@ def run_group(
     return report
 
 
-def save_summary_grid(output_dir: Path, size: int) -> Path:
-    """Save all generated pattern types in one labeled 3x3 overview image."""
-    layout = [
-        ("urban", "Urban"),
-        ("desert", "Desert"),
-        ("forest", "Forest"),
-        ("mountain", "Mountain"),
-        ("snow", "Snow"),
-        ("other", "Other"),
-        ("universal", "Universal"),
-        (None, ""),
-        (None, ""),
-    ]
-    columns, rows = 3, 3
+def save_summary_grid(output_dir: Path, size: int, groups: list[str]) -> Path:
+    """Save the selected pattern types in one labeled overview image."""
+    layout = [(group, group.title()) for group in groups]
+    columns = min(3, max(1, len(layout)))
+    rows = int(np.ceil(len(layout) / columns))
     label_height = 34
     canvas = Image.new("RGB", (columns * size, rows * (size + label_height)), "#f1f1ed")
     draw = ImageDraw.Draw(canvas)
@@ -874,6 +875,7 @@ def run(args: argparse.Namespace) -> dict:
     input_dir = Path(args.input)
     output_dir = Path(args.output)
     resolve_generation_settings(args)
+    args.summary_groups = resolve_summary_groups(args.summary_groups)
     args.colors = resolve_color_count(args.colors)
     output_dir.mkdir(parents=True, exist_ok=True)
     paths = sorted(
@@ -910,7 +912,10 @@ def run(args: argparse.Namespace) -> dict:
             segmentation_mask_dir=segmentation_mask_dir,
         )
         reports[group] = run_group(images, output_dir / group, args)
-    save_summary_grid(output_dir, args.size)
+    save_summary_grid(output_dir, args.size, args.summary_groups)
+    (output_dir / "summary_grid.json").write_text(
+        json.dumps({"groups": args.summary_groups}, indent=2), encoding="utf-8"
+    )
     write_validation_report(output_dir, reports)
     (output_dir / "report.json").write_text(json.dumps(reports, indent=2), encoding="utf-8")
     return reports
@@ -925,6 +930,11 @@ def parse_args() -> argparse.Namespace:
         choices=("standard", "custom"),
         default=None,
         help="Generation mode; interactive prompt is used when omitted",
+    )
+    parser.add_argument(
+        "--summary-groups",
+        default=None,
+        help="Comma-separated groups for all_patterns_grid.png; interactive prompt is used when omitted",
     )
     parser.add_argument(
         "--size",
@@ -1061,6 +1071,32 @@ def resolve_generation_settings(args: argparse.Namespace) -> None:
         0.00,
         0.20,
     )
+
+
+def resolve_summary_groups(requested: str | None) -> list[str]:
+    """Resolve and validate the groups included in the summary grid."""
+    value = requested
+    if value is None:
+        value = ",".join(DEFAULT_SUMMARY_GROUPS)
+        if sys.stdin.isatty():
+            answer = input(
+                "Summary groups, comma-separated "
+                "[universal,desert,mountain,snow,jungle]: "
+            ).strip()
+            if answer:
+                value = answer
+    groups = [item.strip().lower() for item in value.split(",") if item.strip()]
+    known_groups = set(STYLE_PROFILES)
+    invalid = sorted(set(groups) - known_groups)
+    if invalid:
+        available = ", ".join(sorted(known_groups))
+        raise ValueError(
+            f"Unknown summary group(s): {', '.join(invalid)}. Available: {available}."
+        )
+    groups = list(dict.fromkeys(groups))
+    if not groups:
+        raise ValueError("At least one summary group must be selected.")
+    return groups
 
 
 def resolve_color_count(requested: int | None) -> int:

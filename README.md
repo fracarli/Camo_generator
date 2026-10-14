@@ -18,6 +18,9 @@ This is an experimental image-statistics tool, not a guarantee of real-world con
 photos/
 ├── forest/
 ├── mountain/
+├── taiga/
+├── tundra/
+├── jungle/
 ├── desert/
 ├── urban/
 ├── snow/
@@ -27,6 +30,9 @@ output/
 ├── universal/
 ├── forest/
 ├── mountain/
+├── taiga/
+├── tundra/
+├── jungle/
 ├── desert/
 ├── urban/
 ├── snow/
@@ -35,12 +41,13 @@ output/
 ├── report.json
 ├── validation_report.json
 ├── validation_report.md
+├── summary_grid.json
 └── segmentation_masks/       # created only when semantic segmentation is used
 ```
 
-The `universal` pattern uses all non-snow reference images and gives every non-snow environment group equal weight, regardless of how many pixels or photographs it contains. Snow references are deliberately excluded from Universal because their very bright palette would make the mixed pattern less useful for the other environments. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs; snow images contribute only to `snow`.
+The `universal` pattern uses all non-snow reference images and gives every non-snow environment group equal weight, regardless of how many pixels or photographs it contains. Snow references are deliberately excluded from Universal because their very bright palette would make the mixed pattern less useful for the other environments. Taiga, tundra, and jungle references are included because they represent useful non-snow environments. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs; snow images contribute only to `snow`.
 
-Each environment uses a small style profile: forest patterns preserve more fine detail, desert patterns use lighter and less saturated colors, mountain patterns use a softer neutral palette, urban patterns use restrained neutral colors, and snow patterns use cold white, gray, and blue-gray tones. The selected profile is recorded in each group's `report.json`.
+Each environment uses a small style profile: forest, taiga, and jungle patterns preserve more fine detail, tundra patterns use a colder low-saturation earth palette, desert patterns use lighter and less saturated colors, mountain patterns use a softer neutral palette, urban patterns use restrained neutral colors, and snow patterns use cold white, gray, and blue-gray tones. The selected profile is recorded in each group's `report.json`.
 
 The universal palette reserves one matte forest-green color when forest references are available. This keeps green visible in the mixed environment result without allowing bright or saturated colors to dominate. Palette colors are gently anchored to Fosco-style matte military tone families: Olive Drab, NATO Green, Service/Mud Brown, Tropentarn Sand, and NATO Black. These are approximate style references, not exact colorimetric reproductions of a specific product.
 
@@ -59,7 +66,7 @@ python -m pip install -r requirements.txt
 The neural input stage is optional. Install its dependencies only when needed:
 
 ```bash
-python -m pip install -r requirements-ml.txt
+python -m pip install --timeout 600 --retries 10 -r requirements-ml.txt
 ```
 
 ## Usage
@@ -100,6 +107,8 @@ python camo.py --mode standard --segmentation semantic --save-segmentation-masks
 
 The default model is `nvidia/segformer-b0-finetuned-ade-512-512`. Its weights are downloaded and cached on the first run. On Apple Silicon, `--device auto` uses MPS when available; use `--device cpu` for a compatibility fallback. Neural masks are saved under `output/segmentation_masks/` when `--save-segmentation-masks` is provided, and each group report records the mask source and labels detected in the input images.
 
+The ML environment includes both `torch` and `torchvision`; they must be installed as a compatible pair because Transformers uses `torchvision` for the SegFormer image processor. A Hugging Face token is optional for this public model; the unauthenticated warning only indicates lower download limits.
+
 The neural stage improves input selection; it does not generate the camouflage pattern itself and it is not a guarantee of real-world concealment. Validate the masks visually before relying on them for new image types.
 
 Increase the search effort while keeping the industrial five-color limit:
@@ -114,7 +123,21 @@ Each generated group contains:
 - `palette.png`: the colors and their estimated weights;
 - `report.json`: input files, mask coverage, score components, and parameters.
 
-The output root also contains `all_patterns_grid.png`, a labeled 3x3 overview of Urban, Desert, Forest, Mountain, Snow, Other, and Universal patterns. The grid is regenerated automatically after every run.
+The output root also contains `all_patterns_grid.png`, a configurable overview of selected pattern groups. When no selection is provided, the default grid contains Universal, Desert, Mountain, Snow, and Jungle. The grid is regenerated automatically after every run.
+
+To choose the groups in the summary image interactively, press Enter to accept the default or enter a comma-separated list such as:
+
+```text
+universal,forest,taiga,tundra,jungle
+```
+
+The same selection can be provided directly:
+
+```bash
+python camo.py --summary-groups universal,desert,mountain,snow,jungle
+```
+
+The selected groups are recorded in `summary_grid.json`.
 
 The output root also contains `validation_report.json` and `validation_report.md`. These measure the rendered PNGs after blur, including actual palette coverage, maximum color share, color entropy, mean luminance, edge density, and the existing candidate score. They are intended to guide later improvements and are not a measure of real-world concealment.
 

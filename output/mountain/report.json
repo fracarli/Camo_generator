@@ -42,7 +42,7 @@
     "luminance_error": 0.03768642246723175,
     "texture_error": 0.020008830353617668
   },
-  "version": "phase_18_snow_excluded_universal",
+  "version": "phase_20_jungle_selectable_summary",
   "segmentation": "none",
   "segmentation_model": null,
   "generation_mode": "standard",

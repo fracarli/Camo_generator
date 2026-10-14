@@ -21,6 +21,13 @@
       "photos/forest/orman-cesitleri.jpg [automatic]",
       "photos/forest/trekking-2g.jpg.webp [automatic]",
       "photos/forest/veduta.jpg [automatic]",
+      "photos/jungle/Amazon-plants.jpg [automatic]",
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]",
+      "photos/jungle/images-3.jpeg [automatic]",
+      "photos/jungle/images-4.jpeg [automatic]",
+      "photos/jungle/images-5.jpeg [automatic]",
+      "photos/jungle/p0ml01qd.jpg [automatic]",
+      "photos/jungle/p0ml02xf.jpg [automatic]",
       "photos/mountain/bellino-paesaggio.jpg [automatic]",
       "photos/mountain/images-3.jpeg [automatic]",
       "photos/mountain/images-4.jpeg [automatic]",
@@ -29,11 +36,11 @@
       "photos/mountain/images-6.jpeg [automatic]",
       "photos/mountain/mercantour-otnca-1024x683.webp [automatic]",
       "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]",
-      "photos/other/images-3.jpeg [automatic]",
-      "photos/other/images-4 copy.jpeg [automatic]",
-      "photos/other/images-4.jpeg [automatic]",
-      "photos/other/images-5.jpeg [automatic]",
-      "photos/other/images-6.jpeg [automatic]",
+      "photos/taiga/images-4 copy.jpeg [automatic]",
+      "photos/taiga/images-6.jpeg [automatic]",
+      "photos/tundra/images-3.jpeg [automatic]",
+      "photos/tundra/images-4.jpeg [automatic]",
+      "photos/tundra/images-5.jpeg [automatic]",
       "photos/urban/IMG_9282-1-862x525.jpeg [automatic]",
       "photos/urban/images-3.jpeg [automatic]",
       "photos/urban/images-4.jpeg [automatic]",
@@ -63,6 +70,13 @@
       "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
       "photos/forest/trekking-2g.jpg.webp [automatic]": 1.0,
       "photos/forest/veduta.jpg [automatic]": 0.954928,
+      "photos/jungle/Amazon-plants.jpg [automatic]": 0.9618226882309941,
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": 0.9978388798701299,
+      "photos/jungle/images-3.jpeg [automatic]": 0.9994403326023392,
+      "photos/jungle/images-4.jpeg [automatic]": 0.9980697855571847,
+      "photos/jungle/images-5.jpeg [automatic]": 0.9965590533088236,
+      "photos/jungle/p0ml01qd.jpg [automatic]": 0.9982574349442379,
+      "photos/jungle/p0ml02xf.jpg [automatic]": 0.9990473977695167,
       "photos/mountain/bellino-paesaggio.jpg [automatic]": 0.511512,
       "photos/mountain/images-3.jpeg [automatic]": 0.6281603043002916,
       "photos/mountain/images-4.jpeg [automatic]": 0.6930745442708334,
@@ -71,11 +85,11 @@
       "photos/mountain/images-6.jpeg [automatic]": 0.5521444281524927,
       "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": 0.8327793768274854,
       "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343,
-      "photos/other/images-3.jpeg [automatic]": 0.7720133463541666,
-      "photos/other/images-4 copy.jpeg [automatic]": 0.8991224500868056,
-      "photos/other/images-4.jpeg [automatic]": 0.9979303533380682,
-      "photos/other/images-5.jpeg [automatic]": 0.48908311950146627,
-      "photos/other/images-6.jpeg [automatic]": 0.5299072265625,
+      "photos/taiga/images-4 copy.jpeg [automatic]": 0.8991224500868056,
+      "photos/taiga/images-6.jpeg [automatic]": 0.5299072265625,
+      "photos/tundra/images-3.jpeg [automatic]": 0.7720133463541666,
+      "photos/tundra/images-4.jpeg [automatic]": 0.9979303533380682,
+      "photos/tundra/images-5.jpeg [automatic]": 0.48908311950146627,
       "photos/urban/IMG_9282-1-862x525.jpeg [automatic]": 0.6998760516826923,
       "photos/urban/images-3.jpeg [automatic]": 0.6374747983870968,
       "photos/urban/images-4.jpeg [automatic]": 0.9320746527777778,
@@ -105,6 +119,13 @@
       "photos/forest/orman-cesitleri.jpg [automatic]": "automatic",
       "photos/forest/trekking-2g.jpg.webp [automatic]": "automatic",
       "photos/forest/veduta.jpg [automatic]": "automatic",
+      "photos/jungle/Amazon-plants.jpg [automatic]": "automatic",
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": "automatic",
+      "photos/jungle/images-3.jpeg [automatic]": "automatic",
+      "photos/jungle/images-4.jpeg [automatic]": "automatic",
+      "photos/jungle/images-5.jpeg [automatic]": "automatic",
+      "photos/jungle/p0ml01qd.jpg [automatic]": "automatic",
+      "photos/jungle/p0ml02xf.jpg [automatic]": "automatic",
       "photos/mountain/bellino-paesaggio.jpg [automatic]": "automatic",
       "photos/mountain/images-3.jpeg [automatic]": "automatic",
       "photos/mountain/images-4.jpeg [automatic]": "automatic",
@@ -113,11 +134,11 @@
       "photos/mountain/images-6.jpeg [automatic]": "automatic",
       "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": "automatic",
       "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": "automatic",
-      "photos/other/images-3.jpeg [automatic]": "automatic",
-      "photos/other/images-4 copy.jpeg [automatic]": "automatic",
-      "photos/other/images-4.jpeg [automatic]": "automatic",
-      "photos/other/images-5.jpeg [automatic]": "automatic",
-      "photos/other/images-6.jpeg [automatic]": "automatic",
+      "photos/taiga/images-4 copy.jpeg [automatic]": "automatic",
+      "photos/taiga/images-6.jpeg [automatic]": "automatic",
+      "photos/tundra/images-3.jpeg [automatic]": "automatic",
+      "photos/tundra/images-4.jpeg [automatic]": "automatic",
+      "photos/tundra/images-5.jpeg [automatic]": "automatic",
       "photos/urban/IMG_9282-1-862x525.jpeg [automatic]": "automatic",
       "photos/urban/images-3.jpeg [automatic]": "automatic",
       "photos/urban/images-4.jpeg [automatic]": "automatic",
@@ -133,13 +154,13 @@
     ],
     "palette_colors": 5,
     "candidates_evaluated": 64,
-    "best_score": 0.015101296827197075,
+    "best_score": 0.015184015035629272,
     "score_components": {
-      "rgb_error": 0.0030712848529219627,
-      "luminance_error": 0.04095202684402466,
-      "texture_error": 0.0208867397159338
+      "rgb_error": 0.003046001773327589,
+      "luminance_error": 0.04026210680603981,
+      "texture_error": 0.021825166419148445
     },
-    "version": "phase_18_snow_excluded_universal",
+    "version": "phase_20_jungle_selectable_summary",
     "segmentation": "none",
     "segmentation_model": null,
     "generation_mode": "standard",
@@ -160,8 +181,10 @@
     "group_pixel_counts": {
       "desert": 120000,
       "forest": 280000,
+      "jungle": 140000,
       "mountain": 160000,
-      "other": 100000,
+      "taiga": 40000,
+      "tundra": 60000,
       "urban": 140000
     },
     "dark_palette_weight": 0.09999999403953552,
@@ -177,25 +200,25 @@
       },
       {
         "rgb": [
-          111,
-          93,
-          64
+          106,
+          89,
+          59
         ],
         "weight": 0.22499999403953552
       },
       {
         "rgb": [
-          67,
-          69,
-          56
+          59,
+          61,
+          54
         ],
         "weight": 0.09999999403953552
       },
       {
         "rgb": [
-          178,
-          154,
-          112
+          170,
+          152,
+          109
         ],
         "weight": 0.22499999403953552
       },
@@ -247,7 +270,7 @@
       "luminance_error": 0.04191431403160095,
       "texture_error": 0.01828041672706604
     },
-    "version": "phase_18_snow_excluded_universal",
+    "version": "phase_20_jungle_selectable_summary",
     "segmentation": "none",
     "segmentation_model": null,
     "generation_mode": "standard",
@@ -375,7 +398,7 @@
       "luminance_error": 0.040877025574445724,
       "texture_error": 0.026712996885180473
     },
-    "version": "phase_18_snow_excluded_universal",
+    "version": "phase_20_jungle_selectable_summary",
     "segmentation": "none",
     "segmentation_model": null,
     "generation_mode": "standard",
@@ -441,6 +464,113 @@
       }
     ]
   },
+  "jungle": {
+    "input_images": [
+      "photos/jungle/Amazon-plants.jpg [automatic]",
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]",
+      "photos/jungle/images-3.jpeg [automatic]",
+      "photos/jungle/images-4.jpeg [automatic]",
+      "photos/jungle/images-5.jpeg [automatic]",
+      "photos/jungle/p0ml01qd.jpg [automatic]",
+      "photos/jungle/p0ml02xf.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "photos/jungle/Amazon-plants.jpg [automatic]": 0.9618226882309941,
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": 0.9978388798701299,
+      "photos/jungle/images-3.jpeg [automatic]": 0.9994403326023392,
+      "photos/jungle/images-4.jpeg [automatic]": 0.9980697855571847,
+      "photos/jungle/images-5.jpeg [automatic]": 0.9965590533088236,
+      "photos/jungle/p0ml01qd.jpg [automatic]": 0.9982574349442379,
+      "photos/jungle/p0ml02xf.jpg [automatic]": 0.9990473977695167
+    },
+    "mask_sources": {
+      "photos/jungle/Amazon-plants.jpg [automatic]": "automatic",
+      "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": "automatic",
+      "photos/jungle/images-3.jpeg [automatic]": "automatic",
+      "photos/jungle/images-4.jpeg [automatic]": "automatic",
+      "photos/jungle/images-5.jpeg [automatic]": "automatic",
+      "photos/jungle/p0ml01qd.jpg [automatic]": "automatic",
+      "photos/jungle/p0ml02xf.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 64,
+    "best_score": 0.018091650679707527,
+    "score_components": {
+      "rgb_error": 0.0031175243202596903,
+      "luminance_error": 0.039556823670864105,
+      "texture_error": 0.03386259078979492
+    },
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 62.0,
+      "dark_floor": 58.0,
+      "dark_weight": 0.16,
+      "detail": 0.19,
+      "blur": 0.65
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "jungle": 140000
+    },
+    "dark_palette_weight": 0.1599999964237213,
+    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          53,
+          58,
+          47
+        ],
+        "weight": 0.08359029144048691
+      },
+      {
+        "rgb": [
+          45,
+          48,
+          43
+        ],
+        "weight": 0.076409712433815
+      },
+      {
+        "rgb": [
+          82,
+          102,
+          52
+        ],
+        "weight": 0.42104101181030273
+      },
+      {
+        "rgb": [
+          142,
+          148,
+          94
+        ],
+        "weight": 0.2898983955383301
+      },
+      {
+        "rgb": [
+          186,
+          187,
+          142
+        ],
+        "weight": 0.12906059622764587
+      }
+    ]
+  },
   "mountain": {
     "input_images": [
       "photos/mountain/bellino-paesaggio.jpg [automatic]",
@@ -485,7 +615,7 @@
       "luminance_error": 0.03768642246723175,
       "texture_error": 0.020008830353617668
     },
-    "version": "phase_18_snow_excluded_universal",
+    "version": "phase_20_jungle_selectable_summary",
     "segmentation": "none",
     "segmentation_model": null,
     "generation_mode": "standard",
@@ -551,125 +681,33 @@
       }
     ]
   },
-  "other": {
-    "input_images": [
-      "photos/other/images-3.jpeg [automatic]",
-      "photos/other/images-4 copy.jpeg [automatic]",
-      "photos/other/images-4.jpeg [automatic]",
-      "photos/other/images-5.jpeg [automatic]",
-      "photos/other/images-6.jpeg [automatic]"
-    ],
-    "valid_pixel_fraction": {
-      "photos/other/images-3.jpeg [automatic]": 0.7720133463541666,
-      "photos/other/images-4 copy.jpeg [automatic]": 0.8991224500868056,
-      "photos/other/images-4.jpeg [automatic]": 0.9979303533380682,
-      "photos/other/images-5.jpeg [automatic]": 0.48908311950146627,
-      "photos/other/images-6.jpeg [automatic]": 0.5299072265625
-    },
-    "mask_sources": {
-      "photos/other/images-3.jpeg [automatic]": "automatic",
-      "photos/other/images-4 copy.jpeg [automatic]": "automatic",
-      "photos/other/images-4.jpeg [automatic]": "automatic",
-      "photos/other/images-5.jpeg [automatic]": "automatic",
-      "photos/other/images-6.jpeg [automatic]": "automatic"
-    },
-    "semantic_labels": {},
-    "size": [
-      500,
-      500
-    ],
-    "palette_colors": 5,
-    "candidates_evaluated": 64,
-    "best_score": 0.015035586431622505,
-    "score_components": {
-      "rgb_error": 0.002988804830238223,
-      "luminance_error": 0.038581252098083496,
-      "texture_error": 0.022701973095536232
-    },
-    "version": "phase_18_snow_excluded_universal",
-    "segmentation": "none",
-    "segmentation_model": null,
-    "generation_mode": "standard",
-    "density": "standard",
-    "custom_settings": {
-      "max_color_share": null,
-      "green_share": null,
-      "dark_share": null
-    },
-    "style_profile": {
-      "max_chroma": 65.0,
-      "dark_floor": 68.0,
-      "dark_weight": 0.14,
-      "detail": 0.16,
-      "blur": 0.7
-    },
-    "weighting": "pixel_weighted",
-    "group_pixel_counts": {
-      "other": 100000
-    },
-    "dark_palette_weight": 0.14000000059604645,
-    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
-    "palette": [
-      {
-        "rgb": [
-          100,
-          79,
-          58
-        ],
-        "weight": 0.3128969669342041
-      },
-      {
-        "rgb": [
-          120,
-          86,
-          61
-        ],
-        "weight": 0.22012804448604584
-      },
-      {
-        "rgb": [
-          156,
-          149,
-          108
-        ],
-        "weight": 0.21651989221572876
-      },
-      {
-        "rgb": [
-          60,
-          58,
-          53
-        ],
-        "weight": 0.14000000059604645
-      },
-      {
-        "rgb": [
-          183,
-          171,
-          147
-        ],
-        "weight": 0.11045508086681366
-      }
-    ]
-  },
   "snow": {
     "input_images": [
+      "photos/snow/images-3 copy.jpeg [automatic]",
       "photos/snow/images-3.jpeg [automatic]",
+      "photos/snow/images-4 copy.jpeg [automatic]",
       "photos/snow/images-4.jpeg [automatic]",
+      "photos/snow/images-5 copy.jpeg [automatic]",
       "photos/snow/images-5.jpeg [automatic]",
       "photos/snow/images-6.jpeg [automatic]",
       "photos/snow/images-7.jpeg [automatic]"
     ],
     "valid_pixel_fraction": {
+      "photos/snow/images-3 copy.jpeg [automatic]": 0.7131304824561403,
       "photos/snow/images-3.jpeg [automatic]": 0.7629343668619791,
+      "photos/snow/images-4 copy.jpeg [automatic]": 0.542236328125,
       "photos/snow/images-4.jpeg [automatic]": 0.9998568390052356,
+      "photos/snow/images-5 copy.jpeg [automatic]": 0.43054116681430765,
       "photos/snow/images-5.jpeg [automatic]": 0.38168402777777777,
       "photos/snow/images-6.jpeg [automatic]": 0.5149129231770834,
       "photos/snow/images-7.jpeg [automatic]": 0.677978515625
     },
     "mask_sources": {
+      "photos/snow/images-3 copy.jpeg [automatic]": "automatic",
       "photos/snow/images-3.jpeg [automatic]": "automatic",
+      "photos/snow/images-4 copy.jpeg [automatic]": "automatic",
       "photos/snow/images-4.jpeg [automatic]": "automatic",
+      "photos/snow/images-5 copy.jpeg [automatic]": "automatic",
       "photos/snow/images-5.jpeg [automatic]": "automatic",
       "photos/snow/images-6.jpeg [automatic]": "automatic",
       "photos/snow/images-7.jpeg [automatic]": "automatic"
@@ -681,13 +719,13 @@
     ],
     "palette_colors": 5,
     "candidates_evaluated": 64,
-    "best_score": 0.013032173737883568,
+    "best_score": 0.01280934363603592,
     "score_components": {
-      "rgb_error": 0.001966922078281641,
-      "luminance_error": 0.037657249718904495,
-      "texture_error": 0.017675666138529778
+      "rgb_error": 0.002012824174016714,
+      "luminance_error": 0.0373712033033371,
+      "texture_error": 0.016912201419472694
     },
-    "version": "phase_18_snow_excluded_universal",
+    "version": "phase_20_jungle_selectable_summary",
     "segmentation": "none",
     "segmentation_model": null,
     "generation_mode": "standard",
@@ -707,50 +745,237 @@
     },
     "weighting": "pixel_weighted",
     "group_pixel_counts": {
-      "snow": 100000
+      "snow": 160000
     },
     "dark_palette_weight": 0.0,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          224,
-          228,
-          228
+          225,
+          229,
+          230
         ],
-        "weight": 0.30160000920295715
+        "weight": 0.22667500376701355
       },
       {
         "rgb": [
-          181,
           184,
-          184
+          188,
+          191
         ],
-        "weight": 0.2148900032043457
+        "weight": 0.20414374768733978
       },
       {
         "rgb": [
-          136,
-          139,
-          137
+          76,
+          80,
+          81
         ],
-        "weight": 0.19717000424861908
+        "weight": 0.19655625522136688
       },
+      {
+        "rgb": [
+          140,
+          144,
+          144
+        ],
+        "weight": 0.18883749842643738
+      },
+      {
+        "rgb": [
+          91,
+          94,
+          92
+        ],
+        "weight": 0.1837874948978424
+      }
+    ]
+  },
+  "taiga": {
+    "input_images": [
+      "photos/taiga/images-4 copy.jpeg [automatic]",
+      "photos/taiga/images-6.jpeg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "photos/taiga/images-4 copy.jpeg [automatic]": 0.8991224500868056,
+      "photos/taiga/images-6.jpeg [automatic]": 0.5299072265625
+    },
+    "mask_sources": {
+      "photos/taiga/images-4 copy.jpeg [automatic]": "automatic",
+      "photos/taiga/images-6.jpeg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 64,
+    "best_score": 0.01533501222729683,
+    "score_components": {
+      "rgb_error": 0.0027993982657790184,
+      "luminance_error": 0.037960685789585114,
+      "texture_error": 0.02481282316148281
+    },
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 60.0,
+      "dark_floor": 60.0,
+      "dark_weight": 0.16,
+      "detail": 0.18,
+      "blur": 0.65
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "taiga": 40000
+    },
+    "dark_palette_weight": 0.15752500295639038,
+    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "palette": [
       {
         "rgb": [
           88,
-          91,
-          88
+          73,
+          52
         ],
-        "weight": 0.15674999356269836
+        "weight": 0.2819249927997589
       },
       {
         "rgb": [
-          75,
-          80,
-          80
+          104,
+          111,
+          71
         ],
-        "weight": 0.1295900046825409
+        "weight": 0.2583000063896179
+      },
+      {
+        "rgb": [
+          150,
+          160,
+          111
+        ],
+        "weight": 0.2249249964952469
+      },
+      {
+        "rgb": [
+          52,
+          53,
+          48
+        ],
+        "weight": 0.15752500295639038
+      },
+      {
+        "rgb": [
+          176,
+          167,
+          143
+        ],
+        "weight": 0.0773250013589859
+      }
+    ]
+  },
+  "tundra": {
+    "input_images": [
+      "photos/tundra/images-3.jpeg [automatic]",
+      "photos/tundra/images-4.jpeg [automatic]",
+      "photos/tundra/images-5.jpeg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "photos/tundra/images-3.jpeg [automatic]": 0.7720133463541666,
+      "photos/tundra/images-4.jpeg [automatic]": 0.9979303533380682,
+      "photos/tundra/images-5.jpeg [automatic]": 0.48908311950146627
+    },
+    "mask_sources": {
+      "photos/tundra/images-3.jpeg [automatic]": "automatic",
+      "photos/tundra/images-4.jpeg [automatic]": "automatic",
+      "photos/tundra/images-5.jpeg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 64,
+    "best_score": 0.01412217691540718,
+    "score_components": {
+      "rgb_error": 0.0030735363252460957,
+      "luminance_error": 0.03500066697597504,
+      "texture_error": 0.021726390346884727
+    },
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 55.0,
+      "dark_floor": 78.0,
+      "dark_weight": 0.1,
+      "detail": 0.14,
+      "blur": 0.85
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "tundra": 60000
+    },
+    "dark_palette_weight": 0.0,
+    "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          114,
+          85,
+          63
+        ],
+        "weight": 0.29216668009757996
+      },
+      {
+        "rgb": [
+          106,
+          75,
+          57
+        ],
+        "weight": 0.2558000087738037
+      },
+      {
+        "rgb": [
+          74,
+          71,
+          59
+        ],
+        "weight": 0.1675499975681305
+      },
+      {
+        "rgb": [
+          167,
+          139,
+          112
+        ],
+        "weight": 0.15833333134651184
+      },
+      {
+        "rgb": [
+          186,
+          172,
+          148
+        ],
+        "weight": 0.1261499971151352
       }
     ]
   },
@@ -795,7 +1020,7 @@
       "luminance_error": 0.041773878037929535,
       "texture_error": 0.016427701339125633
     },
-    "version": "phase_18_snow_excluded_universal",
+    "version": "phase_20_jungle_selectable_summary",
     "segmentation": "none",
     "segmentation_model": null,
     "generation_mode": "standard",
