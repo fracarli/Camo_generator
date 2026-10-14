@@ -91,6 +91,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", default="output/outfit_mockups")
     parser.add_argument("--groups", default=",".join(DEFAULT_GROUPS))
     parser.add_argument(
+        "--pattern-name",
+        default="best_pattern.png",
+        help="Pattern filename expected inside each group directory.",
+    )
+    parser.add_argument(
         "--template",
         default="output/outfit_mockups/outfit_template_reference.png",
         help="Realistic neutral uniform reference used for shape and shading",
@@ -106,7 +111,7 @@ def main() -> None:
         raise SystemExit(f"Template image not found: {template_path}")
     rendered: list[tuple[str, Path]] = []
     for group in dict.fromkeys(item.strip().lower() for item in args.groups.split(",") if item.strip()):
-        pattern_path = Path(args.input) / group / "best_pattern.png"
+        pattern_path = Path(args.input) / group / args.pattern_name
         if not pattern_path.exists():
             print(f"Skipping {group}: {pattern_path} not found")
             continue

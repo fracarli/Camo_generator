@@ -1,7 +1,7 @@
 # Evaluation background sources
 
-This starter corpus contains searched and resized Wikimedia Commons images per environment.
-Review each source page and license before redistribution.
+This starter corpus contains up to ten searched and resized Wikimedia Commons images per environment.
+The downloader excludes obvious artwork terms, but source pages and licenses should still be reviewed before redistribution.
 
 - `forest/01_-Man_in_a_Forest_Landscape-_MET_DT223780.jpg`: [-Man in a Forest Landscape- MET DT223780.jpg](https://commons.wikimedia.org/wiki/File:-Man_in_a_Forest_Landscape-_MET_DT223780.jpg) — cc0
 - `forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg`: [Beech Forest (AU), Great Otway National Park, Beauchamp Falls -- 2019 -- 1271.jpg](https://commons.wikimedia.org/wiki/File:Beech_Forest_(AU),_Great_Otway_National_Park,_Beauchamp_Falls_--_2019_--_1271.jpg) — cc by-sa 4.0
@@ -55,3 +55,35 @@ Review each source page and license before redistribution.
 - `jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg`: [Eden Project - Rainforest Biome - geograph.org.uk - 7031527.jpg](https://commons.wikimedia.org/wiki/File:Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg) — cc by-sa 2.0
 - `jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg`: [Guzmania conifera, tropical rainforest plant 2025-07-30.jpg](https://commons.wikimedia.org/wiki/File:Guzmania_conifera,_tropical_rainforest_plant_2025-07-30.jpg) — cc by 4.0
 - `jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg`: [Indoor tropical rainforest at Burgers' Zoo (a).jpg](https://commons.wikimedia.org/wiki/File:Indoor_tropical_rainforest_at_Burgers%27_Zoo_(a).jpg) — cc by-sa 4.0
+- `forest/07_Forest_landscape_after_wildfire.jpg`: [Forest landscape after wildfire.jpg](https://commons.wikimedia.org/wiki/File:Forest_landscape_after_wildfire.jpg) — cc by 4.0
+- `forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg`: [Forest landscape near Lloret de Mar 2012.jpg](https://commons.wikimedia.org/wiki/File:Forest_landscape_near_Lloret_de_Mar_2012.jpg) — cc by-sa 4.0
+- `forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg`: [Forest landscape with mountain in Lloret de Mar 2012.jpg](https://commons.wikimedia.org/wiki/File:Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg) — cc by-sa 4.0
+- `forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg`: [Forest of Dean landscape - geograph.org.uk - 743958.jpg](https://commons.wikimedia.org/wiki/File:Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg) — cc by-sa 2.0
+- `desert/06_Desert_Landscape_24340754893_.jpg`: [Desert Landscape (24340754893).jpg](https://commons.wikimedia.org/wiki/File:Desert_Landscape_(24340754893).jpg) — public domain
+- `desert/07_Desert_Landscape_24849617332_.jpg`: [Desert Landscape (24849617332).jpg](https://commons.wikimedia.org/wiki/File:Desert_Landscape_(24849617332).jpg) — public domain
+- `desert/08_Desert_Landscape_53611048151_.jpg`: [Desert Landscape (53611048151).jpg](https://commons.wikimedia.org/wiki/File:Desert_Landscape_(53611048151).jpg) — public domain
+- `desert/09_Desert_Landscape_54595335232_.jpg`: [Desert Landscape (54595335232).jpg](https://commons.wikimedia.org/wiki/File:Desert_Landscape_(54595335232).jpg) — public domain
+- `desert/10_Desert_Landscape_54596765115_.jpg`: [Desert Landscape (54596765115).jpg](https://commons.wikimedia.org/wiki/File:Desert_Landscape_(54596765115).jpg) — public domain
+- `snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg`: [Bare tree in snowy landscape - geograph.org.uk - 1659913.jpg](https://commons.wikimedia.org/wiki/File:Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg) — cc by-sa 2.0
+- `snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg`: [Iceland's Mid-Atlantic Ridge during snow.jpg](https://commons.wikimedia.org/wiki/File:Iceland%27s_Mid-Atlantic_Ridge_during_snow.jpg) — cc by-sa 4.0
+- `snow/10_Landscape_snowy_hills_Heraklion.jpg`: [Landscape snowy hills Heraklion.jpg](https://commons.wikimedia.org/wiki/File:Landscape_snowy_hills_Heraklion.jpg) — cc0
+- `taiga/01_AIVC_Boreal_Forest_53451028802_.jpg`: [AIVC Boreal Forest (53451028802).jpg](https://commons.wikimedia.org/wiki/File:AIVC_Boreal_Forest_(53451028802).jpg) — public domain
+- `taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg`: [A panoramic example of the boreal forest ecosystem. (8586cf4b-db41-4540-ac12-c9dc5adbb71b).JPG](https://commons.wikimedia.org/wiki/File:A_panoramic_example_of_the_boreal_forest_ecosystem._(8586cf4b-db41-4540-ac12-c9dc5adbb71b).JPG) — public domain
+- `taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg`: [Aurora over the boreal forest (57be20e1-a3cf-453e-9632-2d38df39b643).jpg](https://commons.wikimedia.org/wiki/File:Aurora_over_the_boreal_forest_(57be20e1-a3cf-453e-9632-2d38df39b643).jpg) — public domain
+- `taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg`: [Autumn colours in the Boreal Forest near Marathon .jpg](https://commons.wikimedia.org/wiki/File:Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg) — cc by-sa 3.0
+- `taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg`: [Baileys Harbor Boreal Forest and Wetlands.jpg](https://commons.wikimedia.org/wiki/File:Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg) — cc by-sa 2.0
+- `taiga/06_Boreal-forest-with-river-arctic-Norway.jpg`: [Boreal-forest-with-river-arctic-Norway.JPG](https://commons.wikimedia.org/wiki/File:Boreal-forest-with-river-arctic-Norway.JPG) — cc by-sa 3.0
+- `taiga/07_Boreal_Forest.jpg`: [Boreal Forest.jpg](https://commons.wikimedia.org/wiki/File:Boreal_Forest.jpg) — cc by-sa 4.0
+- `taiga/08_Boreal_Forest_Flora_53451032212_.jpg`: [Boreal Forest Flora (53451032212).jpg](https://commons.wikimedia.org/wiki/File:Boreal_Forest_Flora_(53451032212).jpg) — public domain
+- `taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg`: [Boreal Forest Horse Ride (4127273666).jpg](https://commons.wikimedia.org/wiki/File:Boreal_Forest_Horse_Ride_(4127273666).jpg) — cc by-sa 2.0
+- `taiga/10_Boreal_Forest_Ring.jpg`: [Boreal Forest Ring.jpg](https://commons.wikimedia.org/wiki/File:Boreal_Forest_Ring.jpg) — cc by-sa 4.0
+- `tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg`: [ATV Tracks on the Tundra (c4c30fb2-1dd8-b71c-077b-04f1ed994671).jpg](https://commons.wikimedia.org/wiki/File:ATV_Tracks_on_the_Tundra_(c4c30fb2-1dd8-b71c-077b-04f1ed994671).jpg) — public domain
+- `tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg`: [A rainbow arcing over high alpine tundra in Denali (cfe02062-d4da-48f5-87d2-ead7de059518).jpg](https://commons.wikimedia.org/wiki/File:A_rainbow_arcing_over_high_alpine_tundra_in_Denali_(cfe02062-d4da-48f5-87d2-ead7de059518).jpg) — public domain
+- `tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg`: [Alaska -tundra landscape-11Aug2008.jpg](https://commons.wikimedia.org/wiki/File:Alaska_-tundra_landscape-11Aug2008.jpg) — cc by 2.0
+- `tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg`: [Arctic tundra in autumn colors near lake Lovozero in Murmansk Oblast, Russia.jpg](https://commons.wikimedia.org/wiki/File:Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast,_Russia.jpg) — cc by 4.0
+- `tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg`: [Autumn tundra mosaic Kola Peninsula Murmansk Russia.jpg](https://commons.wikimedia.org/wiki/File:Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg) — cc by 4.0
+- `tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg`: [Boggy tundra in fall colors near Lovozero lake Murmansk Russia.jpg](https://commons.wikimedia.org/wiki/File:Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg) — cc by 4.0
+- `tundra/07_Bolshezemelskaja_tundra_1.jpg`: [Bolshezemelskaja tundra 1.JPG](https://commons.wikimedia.org/wiki/File:Bolshezemelskaja_tundra_1.JPG) — cc by-sa 3.0
+- `tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg`: [Crooked Creek landscape, Ivvavik National Park, YT.jpg](https://commons.wikimedia.org/wiki/File:Crooked_Creek_landscape,_Ivvavik_National_Park,_YT.jpg) — cc by-sa 2.0
+- `tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg`: [Firth River landscape at Sluice Rapids, Ivvavik National Park, YT.jpg](https://commons.wikimedia.org/wiki/File:Firth_River_landscape_at_Sluice_Rapids,_Ivvavik_National_Park,_YT.jpg) — cc by-sa 3.0
+- `tundra/10_Independence_Pass_alpine_tundra_2.jpg`: [Independence Pass alpine tundra 2.jpg](https://commons.wikimedia.org/wiki/File:Independence_Pass_alpine_tundra_2.jpg) — cc by 2.0

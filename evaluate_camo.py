@@ -115,11 +115,12 @@ def save_contact_sheet(paths: list[tuple[str, Path]], destination: Path, tile_si
     sheet.save(destination)
 
 
-def discover_backgrounds(root: Path, groups: list[str], limit: int) -> dict[str, list[Path]]:
+def discover_backgrounds(root: Path, groups: list[str], limit: int, start: int = 0) -> dict[str, list[Path]]:
     result: dict[str, list[Path]] = {}
     for group in groups:
         candidates = sorted(path for path in (root / group).glob("*") if path.suffix.lower() in IMAGE_EXTENSIONS)
-        result[group] = candidates[:limit] if limit > 0 else candidates
+        selected = candidates[start:]
+        result[group] = selected[:limit] if limit > 0 else selected
     return result
 
 
@@ -168,12 +169,23 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--backgrounds", default="evaluation/backgrounds")
     parser.add_argument("--pattern-root", default="output", help="Directory containing one folder per pattern group")
+    parser.add_argument(
+        "--pattern-name",
+        default="best_pattern.png",
+        help="Pattern filename expected inside each group directory.",
+    )
     parser.add_argument("--template", default="output/outfit_mockups/outfit_template_reference.png")
     parser.add_argument("--output", default="output/evaluation")
     parser.add_argument("--patterns", default=",".join(DEFAULT_PATTERN_GROUPS), help="Pattern groups to compare")
     parser.add_argument("--background-groups", default=",".join(DEFAULT_BACKGROUND_GROUPS), help="Background environments to test")
     parser.add_argument("--groups", help="Backward-compatible alias that sets both pattern and background groups")
     parser.add_argument("--limit", type=int, default=10, help="Maximum background images per environment; 0 means all")
+    parser.add_argument(
+        "--background-start",
+        type=int,
+        default=0,
+        help="Number of sorted background images to skip in every environment.",
+    )
     parser.add_argument("--sizes", default="0.70,0.85", help="Uniform height as a fraction of background height")
     parser.add_argument("--seed", type=int, default=42)
     return parser.parse_args()
@@ -189,8 +201,8 @@ def main() -> None:
     output_root = Path(args.output)
     scene_root = output_root / "scenes"
     human_root = output_root / "human_test"
-    background_map = discover_backgrounds(background_root, background_groups, args.limit)
-    pattern_paths = {group: Path(args.pattern_root) / group / "best_pattern.png" for group in patterns}
+    background_map = discover_backgrounds(background_root, background_groups, args.limit, args.background_start)
+    pattern_paths = {group: Path(args.pattern_root) / group / args.pattern_name for group in patterns}
     missing = [str(path) for path in pattern_paths.values() if not path.exists()]
     if missing:
         raise SystemExit("Missing generated patterns: " + ", ".join(missing))

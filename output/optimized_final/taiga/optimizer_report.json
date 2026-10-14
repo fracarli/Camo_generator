@@ -1,0 +1,237 @@
+{
+  "group": "taiga",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+    "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+    "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+    "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+    "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+    "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
+    "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg",
+    "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg",
+    "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg",
+    "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg"
+  ],
+  "candidate_count": 24,
+  "beam_size": 8,
+  "best_candidate": "candidate_018",
+  "optimized_score": 0.10037327037600334,
+  "baseline_score": 0.10897488506452646,
+  "improvement": 0.008601614688523121,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.9338461973385805,
+    "blob_weight": 0.4235793385000197,
+    "blob_aspect": 0.7708714347433274,
+    "detail_weight": 0.20824096058179023,
+    "blur_radius": 0.590299900107173,
+    "seed": 61,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        95,
+        80,
+        61
+      ],
+      "weight": 0.19903628528118134
+    },
+    {
+      "rgb": [
+        87,
+        104,
+        52
+      ],
+      "weight": 0.12919041514396667
+    },
+    {
+      "rgb": [
+        153,
+        149,
+        112
+      ],
+      "weight": 0.4806041419506073
+    },
+    {
+      "rgb": [
+        53,
+        52,
+        52
+      ],
+      "weight": 0.1599999964237213
+    },
+    {
+      "rgb": [
+        173,
+        163,
+        132
+      ],
+      "weight": 0.031169163063168526
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_022",
+      "best_running_score": 0.061995576860499564,
+      "active_candidates": [
+        "candidate_022",
+        "candidate_018",
+        "candidate_009",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_022",
+      "best_running_score": 0.07227717713831225,
+      "active_candidates": [
+        "candidate_022",
+        "candidate_018",
+        "candidate_009",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.12618904694293934,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_009",
+        "candidate_022",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.1446440177853219,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_022",
+        "candidate_009",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.12786252145529942,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_018",
+        "candidate_022",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.11653085571112266,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_009",
+        "candidate_022",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.10390433425359982,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_018",
+        "candidate_022",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.09634167258845991,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_009",
+        "candidate_022",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.09624059447798775,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_009",
+        "candidate_022",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.10037327037600334,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_009",
+        "candidate_022",
+        "candidate_010",
+        "current_best",
+        "candidate_014",
+        "candidate_015",
+        "candidate_001"
+      ]
+    }
+  ]
+}

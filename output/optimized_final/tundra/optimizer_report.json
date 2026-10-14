@@ -1,0 +1,238 @@
+{
+  "group": "tundra",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+    "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+    "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+    "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg",
+    "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+    "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+    "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg",
+    "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg",
+    "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg",
+    "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg"
+  ],
+  "candidate_count": 24,
+  "beam_size": 8,
+  "best_candidate": "candidate_001",
+  "optimized_score": 0.054503814280033105,
+  "baseline_score": 0.06876943588547875,
+  "improvement": 0.014265621605445644,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 1.1322188223878007,
+    "blob_weight": 0.29483867774288697,
+    "blob_aspect": 1.1810195406414523,
+    "detail_weight": 0.1085853466057965,
+    "blur_radius": 0.808541293399997,
+    "seed": 44,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        109,
+        85,
+        57
+      ],
+      "weight": 0.3290270268917084
+    },
+    {
+      "rgb": [
+        111,
+        71,
+        60
+      ],
+      "weight": 0.1653013527393341
+    },
+    {
+      "rgb": [
+        77,
+        76,
+        64
+      ],
+      "weight": 0.14744344353675842
+    },
+    {
+      "rgb": [
+        157,
+        141,
+        107
+      ],
+      "weight": 0.21380120515823364
+    },
+    {
+      "rgb": [
+        183,
+        169,
+        139
+      ],
+      "weight": 0.14442695677280426
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_005",
+      "best_running_score": 0.02373026635614224,
+      "active_candidates": [
+        "candidate_005",
+        "candidate_022",
+        "candidate_001",
+        "candidate_011",
+        "candidate_013",
+        "candidate_004",
+        "candidate_002",
+        "candidate_017",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_013",
+      "best_running_score": 0.026292892174387815,
+      "active_candidates": [
+        "candidate_013",
+        "candidate_002",
+        "candidate_004",
+        "candidate_022",
+        "current_best",
+        "candidate_011",
+        "candidate_001",
+        "candidate_005"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_004",
+      "best_running_score": 0.0390611415496096,
+      "active_candidates": [
+        "candidate_004",
+        "candidate_001",
+        "candidate_022",
+        "candidate_013",
+        "candidate_011",
+        "candidate_005",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.03359159810352139,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_022",
+        "candidate_004",
+        "candidate_005",
+        "candidate_013",
+        "candidate_011",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.03196686392650008,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_022",
+        "candidate_005",
+        "candidate_004",
+        "candidate_011",
+        "candidate_013",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.04062525865932306,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_005",
+        "candidate_022",
+        "candidate_004",
+        "candidate_011",
+        "candidate_013",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.04123007816462112,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_005",
+        "candidate_022",
+        "candidate_004",
+        "candidate_011",
+        "candidate_013",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.040861440594017036,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_005",
+        "candidate_022",
+        "candidate_004",
+        "candidate_011",
+        "candidate_013",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.05337942939950153,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_005",
+        "candidate_022",
+        "candidate_004",
+        "candidate_011",
+        "candidate_013",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.054503814280033105,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_005",
+        "candidate_022",
+        "candidate_004",
+        "candidate_011",
+        "candidate_013",
+        "candidate_002",
+        "current_best"
+      ]
+    }
+  ]
+}

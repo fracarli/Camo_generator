@@ -1,0 +1,237 @@
+{
+  "group": "jungle",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+    "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+    "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg",
+    "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg",
+    "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg",
+    "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg"
+  ],
+  "candidate_count": 24,
+  "beam_size": 8,
+  "best_candidate": "candidate_016",
+  "optimized_score": 0.06266005690064048,
+  "baseline_score": 0.06854791850026232,
+  "improvement": 0.0058878615996218325,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.659520704379723,
+    "blob_weight": 0.39940653470746734,
+    "blob_aspect": 0.700134752834492,
+    "detail_weight": 0.17435578869909604,
+    "blur_radius": 0.5888631476426945,
+    "seed": 59,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        53,
+        58,
+        54
+      ],
+      "weight": 0.13303928077220917
+    },
+    {
+      "rgb": [
+        54,
+        61,
+        54
+      ],
+      "weight": 0.026960724964737892
+    },
+    {
+      "rgb": [
+        77,
+        96,
+        55
+      ],
+      "weight": 0.49596312642097473
+    },
+    {
+      "rgb": [
+        133,
+        155,
+        105
+      ],
+      "weight": 0.2528068423271179
+    },
+    {
+      "rgb": [
+        166,
+        161,
+        116
+      ],
+      "weight": 0.0912301167845726
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.01391981216147542,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_016",
+        "candidate_006",
+        "candidate_018",
+        "candidate_003",
+        "candidate_014",
+        "candidate_013",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.02296082738903351,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_018",
+        "candidate_010",
+        "candidate_006",
+        "candidate_003",
+        "current_best",
+        "candidate_014",
+        "candidate_013"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.03600209495440746,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_010",
+        "candidate_006",
+        "candidate_018",
+        "candidate_003",
+        "current_best",
+        "candidate_013",
+        "candidate_014"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.04856427535560215,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_016",
+        "candidate_006",
+        "candidate_018",
+        "candidate_003",
+        "current_best",
+        "candidate_013",
+        "candidate_014"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.04528843515145127,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_010",
+        "candidate_006",
+        "candidate_018",
+        "candidate_003",
+        "current_best",
+        "candidate_013",
+        "candidate_014"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.04289054399851011,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_010",
+        "candidate_006",
+        "candidate_018",
+        "candidate_003",
+        "current_best",
+        "candidate_013",
+        "candidate_014"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.03996941987840858,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_016",
+        "candidate_006",
+        "candidate_018",
+        "candidate_003",
+        "current_best",
+        "candidate_013",
+        "candidate_014"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.05259122700772423,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_010",
+        "candidate_006",
+        "candidate_018",
+        "candidate_003",
+        "current_best",
+        "candidate_013",
+        "candidate_014"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_010",
+      "best_running_score": 0.053391980075199776,
+      "active_candidates": [
+        "candidate_010",
+        "candidate_016",
+        "candidate_006",
+        "candidate_018",
+        "candidate_003",
+        "current_best",
+        "candidate_013",
+        "candidate_014"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.06266005690064048,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_010",
+        "candidate_006",
+        "candidate_018",
+        "candidate_003",
+        "current_best",
+        "candidate_013",
+        "candidate_014"
+      ]
+    }
+  ]
+}

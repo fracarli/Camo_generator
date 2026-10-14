@@ -30,6 +30,8 @@ class Candidate:
     candidate_id: str
     pattern: np.ndarray
     config: dict[str, float | str | int]
+    palette: np.ndarray | None = None
+    weights: np.ndarray | None = None
     cumulative_score: float = 0.0
     scores_seen: int = 0
 
@@ -101,6 +103,36 @@ def make_candidates(
 
     for index in range(args.candidates - len(candidates)):
         density = rng.choice(densities)
+        candidate_seed = int(args.seed + index + 1)
+        palette_rng = np.random.default_rng(candidate_seed + 10_000)
+        jitter_limit = args.palette_jitter * (0.65 if profile.get("palette_family") == "snow" else 1.0)
+        candidate_palette = np.clip(
+            palette + palette_rng.normal(0.0, jitter_limit, palette.shape),
+            20.0,
+            235.0,
+        ).astype(np.float32)
+        candidate_palette = camo.naturalize_palette(
+            candidate_palette,
+            max_chroma=profile["max_chroma"],
+            dark_floor=profile["dark_floor"],
+        )
+        if profile.get("palette_family") == "snow":
+            candidate_palette = camo.apply_snow_tones(candidate_palette, strength=0.30)
+        else:
+            candidate_palette = camo.apply_fosco_tones(candidate_palette, strength=0.30)
+        candidate_weights = palette_rng.dirichlet(
+            np.maximum(weights, 0.03) * max(2.0, args.weight_concentration)
+        ).astype(np.float32)
+        candidate_weights = camo.rebalance_dark_weights(
+            candidate_palette,
+            candidate_weights,
+            profile["dark_weight"],
+        )
+        if group == "universal":
+            candidate_weights = camo.balance_universal_palette_weights(
+                candidate_palette,
+                candidate_weights,
+            )
         config = {
             "density": density,
             "blob_scale": float(profile.get("blob_scale", 1.0) * rng.uniform(0.65, 1.35)),
@@ -108,11 +140,13 @@ def make_candidates(
             "blob_aspect": float(profile.get("blob_aspect", 1.0) * rng.uniform(0.80, 1.20)),
             "detail_weight": float(profile["detail"] * rng.uniform(0.75, 1.25)),
             "blur_radius": float(profile["blur"] * rng.uniform(0.75, 1.25)),
-            "seed": int(args.seed + index + 1),
+            "seed": candidate_seed,
+            "palette_jitter": float(jitter_limit),
+            "weight_concentration": float(args.weight_concentration),
         }
         pattern = camo.make_pattern(
-            palette,
-            weights,
+            candidate_palette,
+            candidate_weights,
             args.size,
             int(config["seed"]),
             detail_weight=float(config["detail_weight"]),
@@ -122,7 +156,13 @@ def make_candidates(
             blob_weight=float(config["blob_weight"]),
             blob_aspect=float(config["blob_aspect"]),
         )
-        candidates.append(Candidate(f"candidate_{index:03d}", pattern, config))
+        candidates.append(Candidate(
+            f"candidate_{index:03d}",
+            pattern,
+            config,
+            palette=candidate_palette,
+            weights=candidate_weights,
+        ))
     return candidates
 
 
@@ -205,6 +245,10 @@ def optimize_group(group: str, images: list[camo.ImageStats], background_root: P
             - best.mean_score
         ),
         "best_configuration": best.config,
+        "best_palette": [
+            {"rgb": [int(value) for value in color], "weight": float(weight)}
+            for color, weight in zip(best.palette, best.weights)
+        ] if best.palette is not None and best.weights is not None else None,
         "history": history,
     }
     (group_output / "optimizer_report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
@@ -226,6 +270,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--colors", type=int, default=5)
     parser.add_argument("--size", type=int, default=500)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--palette-jitter", type=float, default=8.0, help="Standard deviation for candidate RGB palette changes before matte constraints")
+    parser.add_argument("--weight-concentration", type=float, default=35.0, help="Higher values keep candidate color shares closer to the reference")
     parser.add_argument("--segmentation", choices=("none", "semantic"), default="none")
     parser.add_argument("--segmentation-model", default=camo.DEFAULT_SEGMENTATION_MODEL)
     parser.add_argument("--device", default="auto")

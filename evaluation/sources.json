@@ -518,5 +518,325 @@
     "author": "  erikvanb \n ",
     "downloaded_on": "2026-10-14",
     "thumbnail_width": 900
+  },
+  {
+    "group": "forest",
+    "file": "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg",
+    "source_filename": "Forest landscape after wildfire.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Forest_landscape_after_wildfire.jpg",
+    "license": "cc by 4.0",
+    "author": " thyrome ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "forest",
+    "file": "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg",
+    "source_filename": "Forest landscape near Lloret de Mar 2012.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Forest_landscape_near_Lloret_de_Mar_2012.jpg",
+    "license": "cc by-sa 4.0",
+    "author": " jopkeb ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "forest",
+    "file": "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg",
+    "source_filename": "Forest landscape with mountain in Lloret de Mar 2012.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg",
+    "license": "cc by-sa 4.0",
+    "author": " jopkeb ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "forest",
+    "file": "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg",
+    "source_filename": "Forest of Dean landscape - geograph.org.uk - 743958.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg",
+    "license": "cc by-sa 2.0",
+    "author": " graham horn ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "desert",
+    "file": "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg",
+    "source_filename": "Desert Landscape (24340754893).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Desert_Landscape_(24340754893).jpg",
+    "license": "public domain",
+    "author": " san bernardino nat'l forest ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "desert",
+    "file": "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg",
+    "source_filename": "Desert Landscape (24849617332).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Desert_Landscape_(24849617332).jpg",
+    "license": "public domain",
+    "author": " san bernardino nat'l forest ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "desert",
+    "file": "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg",
+    "source_filename": "Desert Landscape (53611048151).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Desert_Landscape_(53611048151).jpg",
+    "license": "public domain",
+    "author": " joshua tree national park ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "desert",
+    "file": "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg",
+    "source_filename": "Desert Landscape (54595335232).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Desert_Landscape_(54595335232).jpg",
+    "license": "public domain",
+    "author": " joshua tree national park ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "desert",
+    "file": "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg",
+    "source_filename": "Desert Landscape (54596765115).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Desert_Landscape_(54596765115).jpg",
+    "license": "public domain",
+    "author": " joshua tree national park ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "snow",
+    "file": "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg",
+    "source_filename": "Bare tree in snowy landscape - geograph.org.uk - 1659913.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg",
+    "license": "cc by-sa 2.0",
+    "author": " john firth ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "snow",
+    "file": "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg",
+    "source_filename": "Iceland's Mid-Atlantic Ridge during snow.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Iceland%27s_Mid-Atlantic_Ridge_during_snow.jpg",
+    "license": "cc by-sa 4.0",
+    "author": " \n  \n \n       \n \n \n this work taken by  bar harel . if you want to reuse it outside wikimedia foundation projects, please credit me as photographer: place the notice \u00ab \u00a9  bar harel, cc by-sa 4.0, wikimedia commons  \u00bb either below the photo, or the way it is visible after clicking on the photo.\n \n \n \n    ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "snow",
+    "file": "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg",
+    "source_filename": "Landscape snowy hills Heraklion.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Landscape_snowy_hills_Heraklion.jpg",
+    "license": "cc0",
+    "author": " jebulon ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+    "source_filename": "AIVC Boreal Forest (53451028802).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:AIVC_Boreal_Forest_(53451028802).jpg",
+    "license": "public domain",
+    "author": " blm alaska ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+    "source_filename": "A panoramic example of the boreal forest ecosystem. (8586cf4b-db41-4540-ac12-c9dc5adbb71b).JPG",
+    "source_page": "https://commons.wikimedia.org/wiki/File:A_panoramic_example_of_the_boreal_forest_ecosystem._(8586cf4b-db41-4540-ac12-c9dc5adbb71b).JPG",
+    "license": "public domain",
+    "author": "nps photo",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+    "source_filename": "Aurora over the boreal forest (57be20e1-a3cf-453e-9632-2d38df39b643).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Aurora_over_the_boreal_forest_(57be20e1-a3cf-453e-9632-2d38df39b643).jpg",
+    "license": "public domain",
+    "author": "nps photo / tim rains",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+    "source_filename": "Autumn colours in the Boreal Forest near Marathon .jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+    "license": "cc by-sa 3.0",
+    "author": " roger sylvia ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+    "source_filename": "Baileys Harbor Boreal Forest and Wetlands.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+    "license": "cc by-sa 2.0",
+    "author": " joshua mayer  from madison, wi, usa",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
+    "source_filename": "Boreal-forest-with-river-arctic-Norway.JPG",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Boreal-forest-with-river-arctic-Norway.JPG",
+    "license": "cc by-sa 3.0",
+    "author": " orcaborealis ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg",
+    "source_filename": "Boreal Forest.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Boreal_Forest.jpg",
+    "license": "cc by-sa 4.0",
+    "author": " thetruenorthstrongandfree1 ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg",
+    "source_filename": "Boreal Forest Flora (53451032212).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Boreal_Forest_Flora_(53451032212).jpg",
+    "license": "public domain",
+    "author": " blm alaska ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg",
+    "source_filename": "Boreal Forest Horse Ride (4127273666).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Boreal_Forest_Horse_Ride_(4127273666).jpg",
+    "license": "cc by-sa 2.0",
+    "author": " peretz partensky  from san francisco, usa",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "taiga",
+    "file": "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg",
+    "source_filename": "Boreal Forest Ring.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Boreal_Forest_Ring.jpg",
+    "license": "cc by-sa 4.0",
+    "author": "ray murphy",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+    "source_filename": "ATV Tracks on the Tundra (c4c30fb2-1dd8-b71c-077b-04f1ed994671).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:ATV_Tracks_on_the_Tundra_(c4c30fb2-1dd8-b71c-077b-04f1ed994671).jpg",
+    "license": "public domain",
+    "author": "nps photo",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+    "source_filename": "A rainbow arcing over high alpine tundra in Denali (cfe02062-d4da-48f5-87d2-ead7de059518).jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:A_rainbow_arcing_over_high_alpine_tundra_in_Denali_(cfe02062-d4da-48f5-87d2-ead7de059518).jpg",
+    "license": "public domain",
+    "author": "jacob w. frank",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+    "source_filename": "Alaska -tundra landscape-11Aug2008.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Alaska_-tundra_landscape-11Aug2008.jpg",
+    "license": "cc by 2.0",
+    "author": " andrea pokrzywinski ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg",
+    "source_filename": "Arctic tundra in autumn colors near lake Lovozero in Murmansk Oblast, Russia.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast,_Russia.jpg",
+    "license": "cc by 4.0",
+    "author": " artem abdukakharov ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+    "source_filename": "Autumn tundra mosaic Kola Peninsula Murmansk Russia.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+    "license": "cc by 4.0",
+    "author": " artem abdukakharov ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+    "source_filename": "Boggy tundra in fall colors near Lovozero lake Murmansk Russia.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+    "license": "cc by 4.0",
+    "author": " artem abdukakharov ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg",
+    "source_filename": "Bolshezemelskaja tundra 1.JPG",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Bolshezemelskaja_tundra_1.JPG",
+    "license": "cc by-sa 3.0",
+    "author": " apl ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg",
+    "source_filename": "Crooked Creek landscape, Ivvavik National Park, YT.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Crooked_Creek_landscape,_Ivvavik_National_Park,_YT.jpg",
+    "license": "cc by-sa 2.0",
+    "author": " daniel case ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg",
+    "source_filename": "Firth River landscape at Sluice Rapids, Ivvavik National Park, YT.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Firth_River_landscape_at_Sluice_Rapids,_Ivvavik_National_Park,_YT.jpg",
+    "license": "cc by-sa 3.0",
+    "author": " daniel case ",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
+  },
+  {
+    "group": "tundra",
+    "file": "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg",
+    "source_filename": "Independence Pass alpine tundra 2.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Independence_Pass_alpine_tundra_2.jpg",
+    "license": "cc by 2.0",
+    "author": " theboyfromfindlay . color-corrected by  daniel case  prior to upload",
+    "downloaded_on": "2026-10-14",
+    "thumbnail_width": 1280
   }
 ]

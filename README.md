@@ -184,6 +184,31 @@ selected explicitly:
 python generate_outfit_mockups.py --groups universal,forest,taiga,tundra,urban
 ```
 
+To visualize patterns produced by the optimizer, point the script at its
+output directory and select the optimized filename:
+
+```bash
+python generate_outfit_mockups.py \
+  --input output/optimized_final \
+  --pattern-name optimized_pattern.png \
+  --output output/optimized_mockups \
+  --groups universal,forest,taiga,tundra,urban,desert,mountain,snow,jungle
+```
+
+The equivalent overview grid is created with:
+
+```bash
+python make_pattern_grid.py \
+  --input output/optimized_final \
+  --pattern-name optimized_pattern.png \
+  --output output/optimized_final/all_optimized_patterns_grid.png \
+  --groups universal,forest,taiga,tundra,urban,desert,mountain,snow,jungle
+```
+
+This makes it explicit that the optimized mockups and grid use
+`optimized_pattern.png`; the original `output/all_patterns_grid.png` continues
+to represent the standard `best_pattern.png` outputs.
+
 The folder also contains the AI-generated neutral uniform reference image used
 for the garment mask and shading. The actual mockups use the project's PNG
 patterns procedurally so their colors are not altered by image generation.
@@ -227,7 +252,8 @@ using every image both to generate and to score the pattern.
 the current `best_pattern.png`, generates alternative spatial configurations,
 tests them against the background photographs one by one, and keeps a small
 beam of the best candidates. It saves the result separately under
-`output/optimized/`, so the original patterns are not overwritten.
+`output/optimized_final/`, so the original patterns are not overwritten. A full
+run can use this separate destination for the final optimized results.
 
 Run a first multi-environment optimization with:
 
@@ -236,19 +262,46 @@ python optimize_patterns.py \
   --groups universal,forest,taiga,tundra,urban,desert,mountain,snow,jungle \
   --background-limit 10 \
   --candidates 24 \
-  --beam-size 8
+  --beam-size 8 \
+  --output output/optimized_final
 ```
 
 Each optimized group contains `optimized_pattern.png` and
 `optimizer_report.json`. The report includes the baseline score, optimized
 score, improvement, selected configuration, and the running winner after each
 background. The current optimizer changes spatial pattern parameters such as
-density, blob scale, aspect, detail, blur, and random seed; palette learning
-and neural pattern generation remain future steps.
+density, blob scale, aspect, detail, blur, and random seed, and it also tests
+small constrained variations of palette colors and color shares. Palette
+changes remain inside each environment's matte profile; neural pattern
+generation remains a future step.
 
 The score is still an internal visibility proxy. Use a held-out set and the
 anonymous human-test scenes before treating an optimization result as a real
 camouflage improvement.
+
+The optimized patterns can be evaluated directly by selecting their pattern
+root and filename:
+
+```bash
+python evaluate_camo.py \
+  --pattern-root output/optimized_final \
+  --pattern-name optimized_pattern.png \
+  --output output/optimized_evaluation \
+  --limit 10
+```
+
+For a simple validation slice, skip the first five sorted backgrounds and use
+the remaining five. This is only a proxy split when the optimizer was run on
+all ten images; for a strict held-out experiment, run the optimizer only on the
+first five and evaluate on the last five:
+
+```bash
+python evaluate_camo.py \
+  --pattern-root output/optimized_final \
+  --pattern-name optimized_pattern.png \
+  --background-start 5 --limit 5 \
+  --output output/optimized_validation
+```
 
 Run the evaluator with Universal plus every available environment-specific
 pattern. For each background environment it compares the matching specific
