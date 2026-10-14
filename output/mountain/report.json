@@ -1,8 +1,22 @@
 {
   "input_images": [
+    "photos/mountain/bellino-paesaggio.jpg [automatic]",
+    "photos/mountain/images-3.jpeg [automatic]",
+    "photos/mountain/images-4.jpeg [automatic]",
+    "photos/mountain/images-5 copy.jpeg [automatic]",
+    "photos/mountain/images-5.jpeg [automatic]",
+    "photos/mountain/images-6.jpeg [automatic]",
+    "photos/mountain/mercantour-otnca-1024x683.webp [automatic]",
     "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]"
   ],
   "valid_pixel_fraction": {
+    "photos/mountain/bellino-paesaggio.jpg [automatic]": 0.511512,
+    "photos/mountain/images-3.jpeg [automatic]": 0.6281603043002916,
+    "photos/mountain/images-4.jpeg [automatic]": 0.6930745442708334,
+    "photos/mountain/images-5 copy.jpeg [automatic]": 0.5778203342618384,
+    "photos/mountain/images-5.jpeg [automatic]": 0.9785089590443686,
+    "photos/mountain/images-6.jpeg [automatic]": 0.5521444281524927,
+    "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": 0.8327793768274854,
     "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343
   },
   "size": [
@@ -11,110 +25,118 @@
   ],
   "palette_colors": 12,
   "candidates_evaluated": 64,
-  "best_score": 0.019550548866391182,
+  "best_score": 0.01564648374915123,
   "score_components": {
-    "rgb_error": 0.0022814844269305468,
-    "luminance_error": 0.03583099693059921,
-    "texture_error": 0.044518131762742996
+    "rgb_error": 0.002633866388350725,
+    "luminance_error": 0.037915922701358795,
+    "texture_error": 0.02645868994295597
   },
-  "version": "phase_4_grouped_masked_hybrid",
+  "version": "phase_6_grouped_clean_patterns",
+  "style_profile": {
+    "max_chroma": 80.0,
+    "dark_floor": 68.0,
+    "dark_weight": 0.14,
+    "detail": 0.07,
+    "blur": 0.8
+  },
+  "dark_palette_weight": 0.14000000059604645,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        65,
-        66,
-        41
-      ],
-      "weight": 0.15365000069141388
-    },
-    {
-      "rgb": [
-        88,
-        92,
-        41
-      ],
-      "weight": 0.11819999665021896
-    },
-    {
-      "rgb": [
-        116,
-        118,
+        67,
+        67,
         57
       ],
-      "weight": 0.11060000211000443
+      "weight": 0.06049405410885811
     },
     {
       "rgb": [
-        49,
-        47,
-        41
+        81,
+        87,
+        66
       ],
-      "weight": 0.10029999911785126
+      "weight": 0.1363285779953003
     },
     {
       "rgb": [
-        100,
-        88,
-        71
+        58,
+        60,
+        52
       ],
-      "weight": 0.08344999700784683
+      "weight": 0.04698767140507698
     },
     {
       "rgb": [
-        93,
-        51,
-        23
+        108,
+        112,
+        94
       ],
-      "weight": 0.08115000277757645
+      "weight": 0.1157904639840126
     },
     {
       "rgb": [
         126,
-        82,
-        38
+        139,
+        59
       ],
-      "weight": 0.0763000026345253
+      "weight": 0.1127668172121048
     },
     {
       "rgb": [
-        151,
-        107,
-        56
+        164,
+        155,
+        89
       ],
-      "weight": 0.07270000129938126
+      "weight": 0.10297021269798279
     },
     {
       "rgb": [
-        154,
-        128,
-        104
+        224,
+        227,
+        230
       ],
-      "weight": 0.07249999791383743
+      "weight": 0.08861546218395233
     },
     {
       "rgb": [
-        151,
-        144,
-        61
+        138,
+        140,
+        129
       ],
-      "weight": 0.06769999861717224
+      "weight": 0.08188784867525101
     },
     {
       "rgb": [
-        181,
-        165,
-        86
+        51,
+        52,
+        48
       ],
-      "weight": 0.042249999940395355
+      "weight": 0.03251827880740166
     },
     {
       "rgb": [
-        210,
-        189,
-        161
+        187,
+        183,
+        156
       ],
-      "weight": 0.021199999377131462
+      "weight": 0.07984689623117447
+    },
+    {
+      "rgb": [
+        119,
+        100,
+        52
+      ],
+      "weight": 0.07412464171648026
+    },
+    {
+      "rgb": [
+        85,
+        103,
+        30
+      ],
+      "weight": 0.06766916811466217
     }
   ]
 }

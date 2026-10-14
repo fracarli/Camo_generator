@@ -31,6 +31,10 @@ output/
 
 The `universal` pattern uses all reference images. Environment-specific patterns use only images in the corresponding group.
 
+Each environment uses a small style profile: forest patterns preserve more fine detail, desert patterns use lighter and less saturated colors, and mountain patterns use a softer neutral palette. The selected profile is recorded in each group's `report.json`.
+
+The generator deliberately does not copy directional high-frequency texture from source photos. This keeps the output clean and avoids visible lines while preserving multi-scale texture matching for candidate selection.
+
 ## Installation
 
 ```bash

@@ -1,37 +1,55 @@
 {
   "input_images": [
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
+    "photos/desert/images-3 copy 2.jpeg [automatic]",
+    "photos/desert/images-3.jpeg [automatic]",
+    "photos/desert/images-4 copy.jpeg [automatic]",
+    "photos/desert/images-5 copy.jpeg [automatic]",
     "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]",
+    "photos/forest/23853_135_PRBEI.jpeg [automatic]",
     "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
     "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
+    "photos/forest/images-3.jpeg [automatic]",
+    "photos/forest/images-4.jpeg [automatic]",
+    "photos/forest/images-5.jpeg [automatic]",
     "photos/forest/orman-cesitleri.jpg [automatic]",
+    "photos/forest/veduta.jpg [automatic]",
+    "photos/mountain/bellino-paesaggio.jpg [automatic]",
+    "photos/mountain/images-3.jpeg [automatic]",
+    "photos/mountain/images-4.jpeg [automatic]",
+    "photos/mountain/images-5 copy.jpeg [automatic]",
+    "photos/mountain/images-5.jpeg [automatic]",
+    "photos/mountain/images-6.jpeg [automatic]",
+    "photos/mountain/mercantour-otnca-1024x683.webp [automatic]",
     "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]",
-    "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
-    "photos/other/Salento_ulivo_secolare.jpg [automatic]",
-    "photos/other/images-3 copy 2.jpeg [automatic]",
     "photos/other/images-3 copy.jpeg [automatic]",
-    "photos/other/images-3.jpeg [automatic]",
-    "photos/other/images-4 copy.jpeg [automatic]",
-    "photos/other/images-4.jpeg [automatic]",
-    "photos/other/images-5 copy.jpeg [automatic]",
-    "photos/other/images-5.jpeg [automatic]",
-    "photos/other/images-6.jpeg [automatic]"
+    "photos/other/images-4.jpeg [automatic]"
   ],
   "valid_pixel_fraction": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
+    "photos/desert/images-3 copy 2.jpeg [automatic]": 1.0,
+    "photos/desert/images-3.jpeg [automatic]": 0.5244072808159722,
+    "photos/desert/images-4 copy.jpeg [automatic]": 0.6323644301470588,
+    "photos/desert/images-5 copy.jpeg [automatic]": 0.8179813508064516,
     "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334,
+    "photos/forest/23853_135_PRBEI.jpeg [automatic]": 0.76031494140625,
     "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
     "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
+    "photos/forest/images-3.jpeg [automatic]": 0.8027852376302084,
+    "photos/forest/images-4.jpeg [automatic]": 0.9998779296875,
+    "photos/forest/images-5.jpeg [automatic]": 0.9999160766601562,
     "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
+    "photos/forest/veduta.jpg [automatic]": 0.954928,
+    "photos/mountain/bellino-paesaggio.jpg [automatic]": 0.511512,
+    "photos/mountain/images-3.jpeg [automatic]": 0.6281603043002916,
+    "photos/mountain/images-4.jpeg [automatic]": 0.6930745442708334,
+    "photos/mountain/images-5 copy.jpeg [automatic]": 0.5778203342618384,
+    "photos/mountain/images-5.jpeg [automatic]": 0.9785089590443686,
+    "photos/mountain/images-6.jpeg [automatic]": 0.5521444281524927,
+    "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": 0.8327793768274854,
     "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343,
-    "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
-    "photos/other/Salento_ulivo_secolare.jpg [automatic]": 0.9866434733072916,
-    "photos/other/images-3 copy 2.jpeg [automatic]": 1.0,
     "photos/other/images-3 copy.jpeg [automatic]": 0.9430198669433594,
-    "photos/other/images-3.jpeg [automatic]": 0.5244072808159722,
-    "photos/other/images-4 copy.jpeg [automatic]": 0.6323644301470588,
-    "photos/other/images-4.jpeg [automatic]": 0.9979303533380682,
-    "photos/other/images-5 copy.jpeg [automatic]": 0.8179813508064516,
-    "photos/other/images-5.jpeg [automatic]": 0.9785089590443686,
-    "photos/other/images-6.jpeg [automatic]": 0.5521444281524927
+    "photos/other/images-4.jpeg [automatic]": 0.9979303533380682
   },
   "size": [
     500,
@@ -39,110 +57,118 @@
   ],
   "palette_colors": 12,
   "candidates_evaluated": 64,
-  "best_score": 0.016552409157156944,
+  "best_score": 0.01605234295129776,
   "score_components": {
-    "rgb_error": 0.002909924602136016,
-    "luminance_error": 0.03777778893709183,
-    "texture_error": 0.029585570096969604
+    "rgb_error": 0.0028055659495294094,
+    "luminance_error": 0.038332730531692505,
+    "texture_error": 0.027370937168598175
   },
-  "version": "phase_4_grouped_masked_hybrid",
+  "version": "phase_6_grouped_clean_patterns",
+  "style_profile": {
+    "max_chroma": 90.0,
+    "dark_floor": 72.0,
+    "dark_weight": 0.1,
+    "detail": 0.08,
+    "blur": 0.7
+  },
+  "dark_palette_weight": 0.10000000894069672,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
+        86,
+        86,
+        51
+      ],
+      "weight": 0.16781538724899292
+    },
+    {
+      "rgb": [
+        69,
+        69,
+        57
+      ],
+      "weight": 0.041096802800893784
+    },
+    {
+      "rgb": [
+        114,
+        106,
+        82
+      ],
+      "weight": 0.1498461365699768
+    },
+    {
+      "rgb": [
+        155,
+        139,
+        107
+      ],
+      "weight": 0.13520441949367523
+    },
+    {
+      "rgb": [
         60,
-        57,
-        31
+        62,
+        54
       ],
-      "weight": 0.12320666760206223
+      "weight": 0.03543482720851898
     },
     {
       "rgb": [
-        96,
-        87,
-        65
-      ],
-      "weight": 0.12007666379213333
-    },
-    {
-      "rgb": [
-        42,
-        44,
-        38
-      ],
-      "weight": 0.1127733364701271
-    },
-    {
-      "rgb": [
-        129,
-        116,
-        95
-      ],
-      "weight": 0.09789666533470154
-    },
-    {
-      "rgb": [
-        214,
-        172,
-        119
-      ],
-      "weight": 0.09641999751329422
-    },
-    {
-      "rgb": [
-        180,
-        144,
-        101
-      ],
-      "weight": 0.0935533344745636
-    },
-    {
-      "rgb": [
-        229,
         226,
-        214
+        227,
+        221
       ],
-      "weight": 0.08768666535615921
+      "weight": 0.09589298814535141
     },
     {
       "rgb": [
-        115,
-        74,
-        28
+        213,
+        177,
+        123
       ],
-      "weight": 0.08258000016212463
+      "weight": 0.0937475636601448
     },
     {
       "rgb": [
-        180,
-        180,
-        167
+        53,
+        54,
+        49
       ],
-      "weight": 0.05398000031709671
+      "weight": 0.023468373343348503
     },
     {
       "rgb": [
-        153,
-        102,
-        58
+        133,
+        86,
+        43
       ],
-      "weight": 0.052949998527765274
+      "weight": 0.0782199278473854
     },
     {
       "rgb": [
-        61,
-        112,
-        17
+        121,
+        145,
+        55
       ],
-      "weight": 0.04064333438873291
+      "weight": 0.06849347054958344
     },
     {
       "rgb": [
-        132,
-        147,
-        52
+        181,
+        182,
+        172
       ],
-      "weight": 0.038233332335948944
+      "weight": 0.05622132122516632
+    },
+    {
+      "rgb": [
+        183,
+        150,
+        93
+      ],
+      "weight": 0.0545588843524456
     }
   ]
 }

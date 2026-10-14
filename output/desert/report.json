@@ -1,8 +1,18 @@
 {
   "input_images": [
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
+    "photos/desert/images-3 copy 2.jpeg [automatic]",
+    "photos/desert/images-3.jpeg [automatic]",
+    "photos/desert/images-4 copy.jpeg [automatic]",
+    "photos/desert/images-5 copy.jpeg [automatic]",
     "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]"
   ],
   "valid_pixel_fraction": {
+    "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
+    "photos/desert/images-3 copy 2.jpeg [automatic]": 1.0,
+    "photos/desert/images-3.jpeg [automatic]": 0.5244072808159722,
+    "photos/desert/images-4 copy.jpeg [automatic]": 0.6323644301470588,
+    "photos/desert/images-5 copy.jpeg [automatic]": 0.8179813508064516,
     "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334
   },
   "size": [
@@ -11,110 +21,118 @@
   ],
   "palette_colors": 12,
   "candidates_evaluated": 64,
-  "best_score": 0.011609913781285286,
+  "best_score": 0.013320080935955048,
   "score_components": {
-    "rgb_error": 0.0019095235038548708,
-    "luminance_error": 0.03222612664103508,
-    "texture_error": 0.016457799822092056
+    "rgb_error": 0.0026051755994558334,
+    "luminance_error": 0.03534650057554245,
+    "texture_error": 0.019271735101938248
   },
-  "version": "phase_4_grouped_masked_hybrid",
+  "version": "phase_6_grouped_clean_patterns",
+  "style_profile": {
+    "max_chroma": 75.0,
+    "dark_floor": 75.0,
+    "dark_weight": 0.08,
+    "detail": 0.06,
+    "blur": 0.9
+  },
+  "dark_palette_weight": 0.044483333826065063,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        187,
-        147,
-        108
+        117,
+        83,
+        57
       ],
-      "weight": 0.15164999663829803
+      "weight": 0.1391666680574417
     },
     {
       "rgb": [
-        176,
-        136,
+        200,
+        166,
+        125
+      ],
+      "weight": 0.1155666634440422
+    },
+    {
+      "rgb": [
+        140,
+        108,
+        79
+      ],
+      "weight": 0.10783333331346512
+    },
+    {
+      "rgb": [
+        229,
+        228,
+        218
+      ],
+      "weight": 0.10289166867733002
+    },
+    {
+      "rgb": [
+        169,
+        134,
         100
       ],
-      "weight": 0.14225000143051147
+      "weight": 0.09544166922569275
     },
     {
       "rgb": [
-        198,
+        193,
         158,
-        116
+        118
       ],
-      "weight": 0.10585000365972519
+      "weight": 0.0935249999165535
     },
     {
       "rgb": [
-        89,
-        72,
-        54
+        78,
+        69,
+        62
       ],
-      "weight": 0.08694999665021896
+      "weight": 0.07430833578109741
+    },
+    {
+      "rgb": [
+        219,
+        185,
+        144
+      ],
+      "weight": 0.07169999927282333
     },
     {
       "rgb": [
         171,
+        132,
+        96
+      ],
+      "weight": 0.060633331537246704
+    },
+    {
+      "rgb": [
+        178,
         190,
-        197
+        196
       ],
-      "weight": 0.08070000261068344
+      "weight": 0.050591666251420975
     },
     {
       "rgb": [
-        66,
-        51,
-        38
+        62,
+        58,
+        55
       ],
-      "weight": 0.07964999973773956
+      "weight": 0.044483333826065063
     },
     {
       "rgb": [
-        162,
-        125,
-        91
+        224,
+        209,
+        182
       ],
-      "weight": 0.07895000278949738
-    },
-    {
-      "rgb": [
-        109,
-        91,
-        71
-      ],
-      "weight": 0.07840000092983246
-    },
-    {
-      "rgb": [
-        48,
-        43,
-        41
-      ],
-      "weight": 0.05934999883174896
-    },
-    {
-      "rgb": [
-        139,
-        109,
-        78
-      ],
-      "weight": 0.049150001257658005
-    },
-    {
-      "rgb": [
-        117,
-        114,
-        110
-      ],
-      "weight": 0.04794999957084656
-    },
-    {
-      "rgb": [
-        143,
-        149,
-        149
-      ],
-      "weight": 0.03914999961853027
+      "weight": 0.04385833442211151
     }
   ]
 }

@@ -1,38 +1,56 @@
 {
   "universal": {
     "input_images": [
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
+      "photos/desert/images-3 copy 2.jpeg [automatic]",
+      "photos/desert/images-3.jpeg [automatic]",
+      "photos/desert/images-4 copy.jpeg [automatic]",
+      "photos/desert/images-5 copy.jpeg [automatic]",
       "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]",
+      "photos/forest/23853_135_PRBEI.jpeg [automatic]",
       "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
       "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
+      "photos/forest/images-3.jpeg [automatic]",
+      "photos/forest/images-4.jpeg [automatic]",
+      "photos/forest/images-5.jpeg [automatic]",
       "photos/forest/orman-cesitleri.jpg [automatic]",
+      "photos/forest/veduta.jpg [automatic]",
+      "photos/mountain/bellino-paesaggio.jpg [automatic]",
+      "photos/mountain/images-3.jpeg [automatic]",
+      "photos/mountain/images-4.jpeg [automatic]",
+      "photos/mountain/images-5 copy.jpeg [automatic]",
+      "photos/mountain/images-5.jpeg [automatic]",
+      "photos/mountain/images-6.jpeg [automatic]",
+      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]",
       "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]",
-      "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
-      "photos/other/Salento_ulivo_secolare.jpg [automatic]",
-      "photos/other/images-3 copy 2.jpeg [automatic]",
       "photos/other/images-3 copy.jpeg [automatic]",
-      "photos/other/images-3.jpeg [automatic]",
-      "photos/other/images-4 copy.jpeg [automatic]",
-      "photos/other/images-4.jpeg [automatic]",
-      "photos/other/images-5 copy.jpeg [automatic]",
-      "photos/other/images-5.jpeg [automatic]",
-      "photos/other/images-6.jpeg [automatic]"
+      "photos/other/images-4.jpeg [automatic]"
     ],
     "valid_pixel_fraction": {
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
+      "photos/desert/images-3 copy 2.jpeg [automatic]": 1.0,
+      "photos/desert/images-3.jpeg [automatic]": 0.5244072808159722,
+      "photos/desert/images-4 copy.jpeg [automatic]": 0.6323644301470588,
+      "photos/desert/images-5 copy.jpeg [automatic]": 0.8179813508064516,
       "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334,
+      "photos/forest/23853_135_PRBEI.jpeg [automatic]": 0.76031494140625,
       "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
       "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
+      "photos/forest/images-3.jpeg [automatic]": 0.8027852376302084,
+      "photos/forest/images-4.jpeg [automatic]": 0.9998779296875,
+      "photos/forest/images-5.jpeg [automatic]": 0.9999160766601562,
       "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
+      "photos/forest/veduta.jpg [automatic]": 0.954928,
+      "photos/mountain/bellino-paesaggio.jpg [automatic]": 0.511512,
+      "photos/mountain/images-3.jpeg [automatic]": 0.6281603043002916,
+      "photos/mountain/images-4.jpeg [automatic]": 0.6930745442708334,
+      "photos/mountain/images-5 copy.jpeg [automatic]": 0.5778203342618384,
+      "photos/mountain/images-5.jpeg [automatic]": 0.9785089590443686,
+      "photos/mountain/images-6.jpeg [automatic]": 0.5521444281524927,
+      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": 0.8327793768274854,
       "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343,
-      "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
-      "photos/other/Salento_ulivo_secolare.jpg [automatic]": 0.9866434733072916,
-      "photos/other/images-3 copy 2.jpeg [automatic]": 1.0,
       "photos/other/images-3 copy.jpeg [automatic]": 0.9430198669433594,
-      "photos/other/images-3.jpeg [automatic]": 0.5244072808159722,
-      "photos/other/images-4 copy.jpeg [automatic]": 0.6323644301470588,
-      "photos/other/images-4.jpeg [automatic]": 0.9979303533380682,
-      "photos/other/images-5 copy.jpeg [automatic]": 0.8179813508064516,
-      "photos/other/images-5.jpeg [automatic]": 0.9785089590443686,
-      "photos/other/images-6.jpeg [automatic]": 0.5521444281524927
+      "photos/other/images-4.jpeg [automatic]": 0.9979303533380682
     },
     "size": [
       500,
@@ -40,118 +58,136 @@
     ],
     "palette_colors": 12,
     "candidates_evaluated": 64,
-    "best_score": 0.016552409157156944,
+    "best_score": 0.01605234295129776,
     "score_components": {
-      "rgb_error": 0.002909924602136016,
-      "luminance_error": 0.03777778893709183,
-      "texture_error": 0.029585570096969604
+      "rgb_error": 0.0028055659495294094,
+      "luminance_error": 0.038332730531692505,
+      "texture_error": 0.027370937168598175
     },
-    "version": "phase_4_grouped_masked_hybrid",
+    "version": "phase_6_grouped_clean_patterns",
+    "style_profile": {
+      "max_chroma": 90.0,
+      "dark_floor": 72.0,
+      "dark_weight": 0.1,
+      "detail": 0.08,
+      "blur": 0.7
+    },
+    "dark_palette_weight": 0.10000000894069672,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
+          86,
+          86,
+          51
+        ],
+        "weight": 0.16781538724899292
+      },
+      {
+        "rgb": [
+          69,
+          69,
+          57
+        ],
+        "weight": 0.041096802800893784
+      },
+      {
+        "rgb": [
+          114,
+          106,
+          82
+        ],
+        "weight": 0.1498461365699768
+      },
+      {
+        "rgb": [
+          155,
+          139,
+          107
+        ],
+        "weight": 0.13520441949367523
+      },
+      {
+        "rgb": [
           60,
-          57,
-          31
+          62,
+          54
         ],
-        "weight": 0.12320666760206223
+        "weight": 0.03543482720851898
       },
       {
         "rgb": [
-          96,
-          87,
-          65
-        ],
-        "weight": 0.12007666379213333
-      },
-      {
-        "rgb": [
-          42,
-          44,
-          38
-        ],
-        "weight": 0.1127733364701271
-      },
-      {
-        "rgb": [
-          129,
-          116,
-          95
-        ],
-        "weight": 0.09789666533470154
-      },
-      {
-        "rgb": [
-          214,
-          172,
-          119
-        ],
-        "weight": 0.09641999751329422
-      },
-      {
-        "rgb": [
-          180,
-          144,
-          101
-        ],
-        "weight": 0.0935533344745636
-      },
-      {
-        "rgb": [
-          229,
           226,
-          214
+          227,
+          221
         ],
-        "weight": 0.08768666535615921
+        "weight": 0.09589298814535141
       },
       {
         "rgb": [
-          115,
-          74,
-          28
+          213,
+          177,
+          123
         ],
-        "weight": 0.08258000016212463
+        "weight": 0.0937475636601448
       },
       {
         "rgb": [
-          180,
-          180,
-          167
+          53,
+          54,
+          49
         ],
-        "weight": 0.05398000031709671
+        "weight": 0.023468373343348503
       },
       {
         "rgb": [
-          153,
-          102,
-          58
+          133,
+          86,
+          43
         ],
-        "weight": 0.052949998527765274
+        "weight": 0.0782199278473854
       },
       {
         "rgb": [
-          61,
-          112,
-          17
+          121,
+          145,
+          55
         ],
-        "weight": 0.04064333438873291
+        "weight": 0.06849347054958344
       },
       {
         "rgb": [
-          132,
-          147,
-          52
+          181,
+          182,
+          172
         ],
-        "weight": 0.038233332335948944
+        "weight": 0.05622132122516632
+      },
+      {
+        "rgb": [
+          183,
+          150,
+          93
+        ],
+        "weight": 0.0545588843524456
       }
     ]
   },
   "desert": {
     "input_images": [
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
+      "photos/desert/images-3 copy 2.jpeg [automatic]",
+      "photos/desert/images-3.jpeg [automatic]",
+      "photos/desert/images-4 copy.jpeg [automatic]",
+      "photos/desert/images-5 copy.jpeg [automatic]",
       "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]"
     ],
     "valid_pixel_fraction": {
+      "photos/desert/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
+      "photos/desert/images-3 copy 2.jpeg [automatic]": 1.0,
+      "photos/desert/images-3.jpeg [automatic]": 0.5244072808159722,
+      "photos/desert/images-4 copy.jpeg [automatic]": 0.6323644301470588,
+      "photos/desert/images-5 copy.jpeg [automatic]": 0.8179813508064516,
       "photos/desert/tamerice-nel-deserto-del-marocco-sahara.jpg [automatic]": 0.5273030598958334
     },
     "size": [
@@ -160,123 +196,141 @@
     ],
     "palette_colors": 12,
     "candidates_evaluated": 64,
-    "best_score": 0.011609913781285286,
+    "best_score": 0.013320080935955048,
     "score_components": {
-      "rgb_error": 0.0019095235038548708,
-      "luminance_error": 0.03222612664103508,
-      "texture_error": 0.016457799822092056
+      "rgb_error": 0.0026051755994558334,
+      "luminance_error": 0.03534650057554245,
+      "texture_error": 0.019271735101938248
     },
-    "version": "phase_4_grouped_masked_hybrid",
+    "version": "phase_6_grouped_clean_patterns",
+    "style_profile": {
+      "max_chroma": 75.0,
+      "dark_floor": 75.0,
+      "dark_weight": 0.08,
+      "detail": 0.06,
+      "blur": 0.9
+    },
+    "dark_palette_weight": 0.044483333826065063,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          187,
-          147,
-          108
+          117,
+          83,
+          57
         ],
-        "weight": 0.15164999663829803
+        "weight": 0.1391666680574417
       },
       {
         "rgb": [
-          176,
-          136,
+          200,
+          166,
+          125
+        ],
+        "weight": 0.1155666634440422
+      },
+      {
+        "rgb": [
+          140,
+          108,
+          79
+        ],
+        "weight": 0.10783333331346512
+      },
+      {
+        "rgb": [
+          229,
+          228,
+          218
+        ],
+        "weight": 0.10289166867733002
+      },
+      {
+        "rgb": [
+          169,
+          134,
           100
         ],
-        "weight": 0.14225000143051147
+        "weight": 0.09544166922569275
       },
       {
         "rgb": [
-          198,
+          193,
           158,
-          116
+          118
         ],
-        "weight": 0.10585000365972519
+        "weight": 0.0935249999165535
       },
       {
         "rgb": [
-          89,
-          72,
-          54
+          78,
+          69,
+          62
         ],
-        "weight": 0.08694999665021896
+        "weight": 0.07430833578109741
+      },
+      {
+        "rgb": [
+          219,
+          185,
+          144
+        ],
+        "weight": 0.07169999927282333
       },
       {
         "rgb": [
           171,
+          132,
+          96
+        ],
+        "weight": 0.060633331537246704
+      },
+      {
+        "rgb": [
+          178,
           190,
-          197
+          196
         ],
-        "weight": 0.08070000261068344
+        "weight": 0.050591666251420975
       },
       {
         "rgb": [
-          66,
-          51,
-          38
+          62,
+          58,
+          55
         ],
-        "weight": 0.07964999973773956
+        "weight": 0.044483333826065063
       },
       {
         "rgb": [
-          162,
-          125,
-          91
+          224,
+          209,
+          182
         ],
-        "weight": 0.07895000278949738
-      },
-      {
-        "rgb": [
-          109,
-          91,
-          71
-        ],
-        "weight": 0.07840000092983246
-      },
-      {
-        "rgb": [
-          48,
-          43,
-          41
-        ],
-        "weight": 0.05934999883174896
-      },
-      {
-        "rgb": [
-          139,
-          109,
-          78
-        ],
-        "weight": 0.049150001257658005
-      },
-      {
-        "rgb": [
-          117,
-          114,
-          110
-        ],
-        "weight": 0.04794999957084656
-      },
-      {
-        "rgb": [
-          143,
-          149,
-          149
-        ],
-        "weight": 0.03914999961853027
+        "weight": 0.04385833442211151
       }
     ]
   },
   "forest": {
     "input_images": [
+      "photos/forest/23853_135_PRBEI.jpeg [automatic]",
       "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
       "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
-      "photos/forest/orman-cesitleri.jpg [automatic]"
+      "photos/forest/images-3.jpeg [automatic]",
+      "photos/forest/images-4.jpeg [automatic]",
+      "photos/forest/images-5.jpeg [automatic]",
+      "photos/forest/orman-cesitleri.jpg [automatic]",
+      "photos/forest/veduta.jpg [automatic]"
     ],
     "valid_pixel_fraction": {
+      "photos/forest/23853_135_PRBEI.jpeg [automatic]": 0.76031494140625,
       "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
       "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
-      "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834
+      "photos/forest/images-3.jpeg [automatic]": 0.8027852376302084,
+      "photos/forest/images-4.jpeg [automatic]": 0.9998779296875,
+      "photos/forest/images-5.jpeg [automatic]": 0.9999160766601562,
+      "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
+      "photos/forest/veduta.jpg [automatic]": 0.954928
     },
     "size": [
       500,
@@ -284,118 +338,140 @@
     ],
     "palette_colors": 12,
     "candidates_evaluated": 64,
-    "best_score": 0.02354777231812477,
+    "best_score": 0.02091716229915619,
     "score_components": {
-      "rgb_error": 0.0033328779973089695,
-      "luminance_error": 0.03587675094604492,
-      "texture_error": 0.058157358318567276
+      "rgb_error": 0.002900384832173586,
+      "luminance_error": 0.04191238805651665,
+      "texture_error": 0.04375788941979408
     },
-    "version": "phase_4_grouped_masked_hybrid",
+    "version": "phase_6_grouped_clean_patterns",
+    "style_profile": {
+      "max_chroma": 85.0,
+      "dark_floor": 60.0,
+      "dark_weight": 0.18,
+      "detail": 0.1,
+      "blur": 0.6
+    },
+    "dark_palette_weight": 0.17999999225139618,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          80,
-          69,
-          24
-        ],
-        "weight": 0.14276666939258575
-      },
-      {
-        "rgb": [
-          43,
-          46,
-          37
-        ],
-        "weight": 0.11803333461284637
-      },
-      {
-        "rgb": [
-          52,
-          50,
-          40
-        ],
-        "weight": 0.11625000089406967
-      },
-      {
-        "rgb": [
-          112,
-          92,
-          21
-        ],
-        "weight": 0.11116666346788406
-      },
-      {
-        "rgb": [
-          39,
-          39,
-          36
-        ],
-        "weight": 0.10216666758060455
-      },
-      {
-        "rgb": [
-          43,
-          62,
-          36
-        ],
-        "weight": 0.08726666867733002
-      },
-      {
-        "rgb": [
-          119,
-          116,
-          66
-        ],
-        "weight": 0.07724999636411667
-      },
-      {
-        "rgb": [
           58,
-          114,
-          19
+          57,
+          48
         ],
-        "weight": 0.0746999979019165
+        "weight": 0.07531751692295074
       },
       {
         "rgb": [
-          174,
-          176,
-          88
+          50,
+          53,
+          43
         ],
-        "weight": 0.060616668313741684
+        "weight": 0.061601605266332626
       },
       {
         "rgb": [
-          145,
-          132,
-          50
+          75,
+          78,
+          51
         ],
-        "weight": 0.05458333343267441
+        "weight": 0.1657855063676834
       },
       {
         "rgb": [
-          90,
+          44,
+          45,
+          41
+        ],
+        "weight": 0.04308086261153221
+      },
+      {
+        "rgb": [
+          108,
+          112,
+          75
+        ],
+        "weight": 0.14313407242298126
+      },
+      {
+        "rgb": [
+          101,
+          80,
+          20
+        ],
+        "weight": 0.11322174221277237
+      },
+      {
+        "rgb": [
+          165,
+          159,
+          118
+        ],
+        "weight": 0.08272431045770645
+      },
+      {
+        "rgb": [
+          49,
+          101,
+          16
+        ],
+        "weight": 0.0825558677315712
+      },
+      {
+        "rgb": [
+          217,
+          220,
+          206
+        ],
+        "weight": 0.06470953673124313
+      },
+      {
+        "rgb": [
+          105,
           140,
-          45
+          55
         ],
-        "weight": 0.04078333452343941
+        "weight": 0.058938074856996536
       },
       {
         "rgb": [
-          223,
-          221,
-          193
+          141,
+          115,
+          56
         ],
-        "weight": 0.014416666701436043
+        "weight": 0.05615429952740669
+      },
+      {
+        "rgb": [
+          171,
+          185,
+          100
+        ],
+        "weight": 0.052776530385017395
       }
     ]
   },
   "mountain": {
     "input_images": [
+      "photos/mountain/bellino-paesaggio.jpg [automatic]",
+      "photos/mountain/images-3.jpeg [automatic]",
+      "photos/mountain/images-4.jpeg [automatic]",
+      "photos/mountain/images-5 copy.jpeg [automatic]",
+      "photos/mountain/images-5.jpeg [automatic]",
+      "photos/mountain/images-6.jpeg [automatic]",
+      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]",
       "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]"
     ],
     "valid_pixel_fraction": {
+      "photos/mountain/bellino-paesaggio.jpg [automatic]": 0.511512,
+      "photos/mountain/images-3.jpeg [automatic]": 0.6281603043002916,
+      "photos/mountain/images-4.jpeg [automatic]": 0.6930745442708334,
+      "photos/mountain/images-5 copy.jpeg [automatic]": 0.5778203342618384,
+      "photos/mountain/images-5.jpeg [automatic]": 0.9785089590443686,
+      "photos/mountain/images-6.jpeg [automatic]": 0.5521444281524927,
+      "photos/mountain/mercantour-otnca-1024x683.webp [automatic]": 0.8327793768274854,
       "photos/mountain/mountain-Alaskan-vegetation-tundra-fall.jpg.webp [automatic]": 0.9415461753731343
     },
     "size": [
@@ -404,137 +480,129 @@
     ],
     "palette_colors": 12,
     "candidates_evaluated": 64,
-    "best_score": 0.019550548866391182,
+    "best_score": 0.01564648374915123,
     "score_components": {
-      "rgb_error": 0.0022814844269305468,
-      "luminance_error": 0.03583099693059921,
-      "texture_error": 0.044518131762742996
+      "rgb_error": 0.002633866388350725,
+      "luminance_error": 0.037915922701358795,
+      "texture_error": 0.02645868994295597
     },
-    "version": "phase_4_grouped_masked_hybrid",
+    "version": "phase_6_grouped_clean_patterns",
+    "style_profile": {
+      "max_chroma": 80.0,
+      "dark_floor": 68.0,
+      "dark_weight": 0.14,
+      "detail": 0.07,
+      "blur": 0.8
+    },
+    "dark_palette_weight": 0.14000000059604645,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          65,
-          66,
-          41
-        ],
-        "weight": 0.15365000069141388
-      },
-      {
-        "rgb": [
-          88,
-          92,
-          41
-        ],
-        "weight": 0.11819999665021896
-      },
-      {
-        "rgb": [
-          116,
-          118,
+          67,
+          67,
           57
         ],
-        "weight": 0.11060000211000443
+        "weight": 0.06049405410885811
       },
       {
         "rgb": [
-          49,
-          47,
-          41
+          81,
+          87,
+          66
         ],
-        "weight": 0.10029999911785126
+        "weight": 0.1363285779953003
       },
       {
         "rgb": [
-          100,
-          88,
-          71
+          58,
+          60,
+          52
         ],
-        "weight": 0.08344999700784683
+        "weight": 0.04698767140507698
       },
       {
         "rgb": [
-          93,
-          51,
-          23
+          108,
+          112,
+          94
         ],
-        "weight": 0.08115000277757645
+        "weight": 0.1157904639840126
       },
       {
         "rgb": [
           126,
-          82,
-          38
+          139,
+          59
         ],
-        "weight": 0.0763000026345253
+        "weight": 0.1127668172121048
       },
       {
         "rgb": [
-          151,
-          107,
-          56
+          164,
+          155,
+          89
         ],
-        "weight": 0.07270000129938126
+        "weight": 0.10297021269798279
       },
       {
         "rgb": [
-          154,
-          128,
-          104
+          224,
+          227,
+          230
         ],
-        "weight": 0.07249999791383743
+        "weight": 0.08861546218395233
       },
       {
         "rgb": [
-          151,
-          144,
-          61
+          138,
+          140,
+          129
         ],
-        "weight": 0.06769999861717224
+        "weight": 0.08188784867525101
       },
       {
         "rgb": [
-          181,
-          165,
-          86
+          51,
+          52,
+          48
         ],
-        "weight": 0.042249999940395355
+        "weight": 0.03251827880740166
       },
       {
         "rgb": [
-          210,
-          189,
-          161
+          187,
+          183,
+          156
         ],
-        "weight": 0.021199999377131462
+        "weight": 0.07984689623117447
+      },
+      {
+        "rgb": [
+          119,
+          100,
+          52
+        ],
+        "weight": 0.07412464171648026
+      },
+      {
+        "rgb": [
+          85,
+          103,
+          30
+        ],
+        "weight": 0.06766916811466217
       }
     ]
   },
   "other": {
     "input_images": [
-      "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
-      "photos/other/Salento_ulivo_secolare.jpg [automatic]",
-      "photos/other/images-3 copy 2.jpeg [automatic]",
       "photos/other/images-3 copy.jpeg [automatic]",
-      "photos/other/images-3.jpeg [automatic]",
-      "photos/other/images-4 copy.jpeg [automatic]",
-      "photos/other/images-4.jpeg [automatic]",
-      "photos/other/images-5 copy.jpeg [automatic]",
-      "photos/other/images-5.jpeg [automatic]",
-      "photos/other/images-6.jpeg [automatic]"
+      "photos/other/images-4.jpeg [automatic]"
     ],
     "valid_pixel_fraction": {
-      "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
-      "photos/other/Salento_ulivo_secolare.jpg [automatic]": 0.9866434733072916,
-      "photos/other/images-3 copy 2.jpeg [automatic]": 1.0,
       "photos/other/images-3 copy.jpeg [automatic]": 0.9430198669433594,
-      "photos/other/images-3.jpeg [automatic]": 0.5244072808159722,
-      "photos/other/images-4 copy.jpeg [automatic]": 0.6323644301470588,
-      "photos/other/images-4.jpeg [automatic]": 0.9979303533380682,
-      "photos/other/images-5 copy.jpeg [automatic]": 0.8179813508064516,
-      "photos/other/images-5.jpeg [automatic]": 0.9785089590443686,
-      "photos/other/images-6.jpeg [automatic]": 0.5521444281524927
+      "photos/other/images-4.jpeg [automatic]": 0.9979303533380682
     },
     "size": [
       500,
@@ -542,110 +610,118 @@
     ],
     "palette_colors": 12,
     "candidates_evaluated": 64,
-    "best_score": 0.015662580728530884,
+    "best_score": 0.017878418788313866,
     "score_components": {
-      "rgb_error": 0.002968910150229931,
-      "luminance_error": 0.03821806237101555,
-      "texture_error": 0.025544269010424614
+      "rgb_error": 0.0027741447556763887,
+      "luminance_error": 0.030421873554587364,
+      "texture_error": 0.04107305780053139
     },
-    "version": "phase_4_grouped_masked_hybrid",
+    "version": "phase_6_grouped_clean_patterns",
+    "style_profile": {
+      "max_chroma": 95.0,
+      "dark_floor": 68.0,
+      "dark_weight": 0.14,
+      "detail": 0.08,
+      "blur": 0.7
+    },
+    "dark_palette_weight": 0.12697499990463257,
     "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
     "palette": [
       {
         "rgb": [
-          229,
-          226,
-          215
+          114,
+          102,
+          89
         ],
-        "weight": 0.12551000714302063
+        "weight": 0.11509999632835388
       },
       {
         "rgb": [
-          62,
-          62,
-          39
-        ],
-        "weight": 0.09995999932289124
-      },
-      {
-        "rgb": [
-          200,
-          156,
-          105
-        ],
-        "weight": 0.09949000179767609
-      },
-      {
-        "rgb": [
-          146,
-          134,
-          110
-        ],
-        "weight": 0.09826499968767166
-      },
-      {
-        "rgb": [
+          137,
           129,
-          99,
-          73
+          115
         ],
-        "weight": 0.09792999923229218
+        "weight": 0.11315000057220459
       },
       {
         "rgb": [
-          43,
-          44,
-          40
+          136,
+          87,
+          41
         ],
-        "weight": 0.09130000323057175
+        "weight": 0.10847499966621399
       },
       {
         "rgb": [
-          90,
-          91,
-          75
+          89,
+          74,
+          64
         ],
-        "weight": 0.09093999862670898
-      },
-      {
-        "rgb": [
-          223,
-          182,
-          128
-        ],
-        "weight": 0.08743999898433685
-      },
-      {
-        "rgb": [
-          121,
-          70,
-          32
-        ],
-        "weight": 0.07814999669790268
-      },
-      {
-        "rgb": [
-          180,
-          180,
-          168
-        ],
-        "weight": 0.05451500043272972
+        "weight": 0.10840000212192535
       },
       {
         "rgb": [
           159,
-          107,
+          106,
           64
         ],
-        "weight": 0.054044999182224274
+        "weight": 0.09327500313520432
       },
       {
         "rgb": [
-          105,
-          136,
-          41
+          137,
+          72,
+          42
         ],
-        "weight": 0.02245499938726425
+        "weight": 0.07909999787807465
+      },
+      {
+        "rgb": [
+          84,
+          64,
+          50
+        ],
+        "weight": 0.07684999704360962
+      },
+      {
+        "rgb": [
+          163,
+          159,
+          148
+        ],
+        "weight": 0.0716250017285347
+      },
+      {
+        "rgb": [
+          185,
+          144,
+          103
+        ],
+        "weight": 0.0681999996304512
+      },
+      {
+        "rgb": [
+          213,
+          182,
+          144
+        ],
+        "weight": 0.058775000274181366
+      },
+      {
+        "rgb": [
+          245,
+          244,
+          243
+        ],
+        "weight": 0.05692499876022339
+      },
+      {
+        "rgb": [
+          64,
+          59,
+          55
+        ],
+        "weight": 0.05012499913573265
       }
     ]
   }

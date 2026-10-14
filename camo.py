@@ -18,6 +18,15 @@ from PIL import Image, ImageDraw, ImageFilter
 
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
+DARK_LUMINANCE_THRESHOLD = 70.0
+
+STYLE_PROFILES = {
+    "universal": {"max_chroma": 90.0, "dark_floor": 72.0, "dark_weight": 0.10, "detail": 0.08, "blur": 0.7},
+    "forest": {"max_chroma": 85.0, "dark_floor": 60.0, "dark_weight": 0.18, "detail": 0.10, "blur": 0.6},
+    "mountain": {"max_chroma": 80.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.07, "blur": 0.8},
+    "desert": {"max_chroma": 75.0, "dark_floor": 75.0, "dark_weight": 0.08, "detail": 0.06, "blur": 0.9},
+    "other": {"max_chroma": 95.0, "dark_floor": 68.0, "dark_weight": 0.14, "detail": 0.08, "blur": 0.7},
+}
 
 
 @dataclass
@@ -170,7 +179,11 @@ def kmeans_palette(pixels: np.ndarray, colors: int, seed: int) -> tuple[np.ndarr
     return centers[order], weights[order]
 
 
-def naturalize_palette(palette: np.ndarray) -> np.ndarray:
+def naturalize_palette(
+    palette: np.ndarray,
+    max_chroma: float = 95.0,
+    dark_floor: float = 52.0,
+) -> np.ndarray:
     """Reduce artificial saturation while preserving the dominant palette.
 
     This is deliberately a mild correction: colors from water or sky should not
@@ -182,7 +195,7 @@ def naturalize_palette(palette: np.ndarray) -> np.ndarray:
     minimum = adjusted.min(axis=1)
     chroma = maximum - minimum
     # Compress only the most saturated colors toward their own luminance.
-    target_chroma = np.minimum(chroma, 95.0)
+    target_chroma = np.minimum(chroma, max_chroma)
     factor = np.divide(target_chroma, np.maximum(chroma, 1.0))
     luminance = adjusted.mean(axis=1, keepdims=True)
     adjusted = luminance + (adjusted - luminance) * factor[:, None]
@@ -195,9 +208,33 @@ def naturalize_palette(palette: np.ndarray) -> np.ndarray:
     adjusted[blue_dominant, 2] = 0.80 * adjusted[blue_dominant, 2] + 0.20 * blue_average
     # Lift near-black clusters: they usually represent shadows, not a useful
     # dominant fabric color.
-    dark = adjusted.mean(axis=1) < 42
-    adjusted[dark] = 0.35 * adjusted[dark] + 0.65 * 52.0
+    luminance = 0.2126 * adjusted[:, 0] + 0.7152 * adjusted[:, 1] + 0.0722 * adjusted[:, 2]
+    dark = luminance < DARK_LUMINANCE_THRESHOLD
+    adjusted[dark] = 0.35 * adjusted[dark] + 0.65 * dark_floor
     return np.clip(adjusted, 0, 255)
+
+
+def rebalance_dark_weights(
+    palette: np.ndarray,
+    weights: np.ndarray,
+    maximum_dark_weight: float,
+) -> np.ndarray:
+    """Limit the total area of very dark colors and redistribute the excess."""
+    luminance = (
+        0.2126 * palette[:, 0]
+        + 0.7152 * palette[:, 1]
+        + 0.0722 * palette[:, 2]
+    )
+    dark = luminance < DARK_LUMINANCE_THRESHOLD
+    current_dark_weight = float(weights[dark].sum())
+    if current_dark_weight <= maximum_dark_weight or not (~dark).any():
+        return weights
+    adjusted = weights.copy()
+    adjusted[dark] *= maximum_dark_weight / current_dark_weight
+    excess = current_dark_weight - maximum_dark_weight
+    light_total = adjusted[~dark].sum()
+    adjusted[~dark] += excess * adjusted[~dark] / max(light_total, 1e-8)
+    return adjusted / adjusted.sum()
 
 
 def make_pattern(
@@ -205,6 +242,8 @@ def make_pattern(
     weights: np.ndarray,
     size: int,
     seed: int,
+    detail_weight: float = 0.08,
+    blur_radius: float = 0.7,
 ) -> np.ndarray:
     """Generate irregular shapes at four spatial scales.
 
@@ -222,12 +261,9 @@ def make_pattern(
             dtype=np.float32,
         ) / 255
         fields.append(field)
-    field = (
-        0.50 * fields[0]
-        + 0.27 * fields[1]
-        + 0.15 * fields[2]
-        + 0.08 * fields[3]
-    )
+    scale_weights = np.array([0.50, 0.27, 0.15, detail_weight], dtype=np.float32)
+    scale_weights /= scale_weights.sum()
+    field = sum(weight * field for weight, field in zip(scale_weights, fields))
     low_frequency_jitter = rng.random((12, 12)).astype(np.float32)
     low_frequency_jitter = np.asarray(
         Image.fromarray((low_frequency_jitter * 255).astype(np.uint8), mode="L")
@@ -238,7 +274,9 @@ def make_pattern(
     thresholds = np.cumsum(weights)
     labels = np.searchsorted(thresholds, field)
     pattern = np.clip(palette[labels], 0, 255).astype(np.uint8)
-    softened = Image.fromarray(pattern, mode="RGB").filter(ImageFilter.GaussianBlur(radius=0.7))
+    softened = Image.fromarray(pattern, mode="RGB").filter(
+        ImageFilter.GaussianBlur(radius=blur_radius)
+    )
     return np.asarray(softened, dtype=np.uint8)
 
 
@@ -304,14 +342,27 @@ def run_group(
     args: argparse.Namespace,
 ) -> dict:
     output_dir.mkdir(parents=True, exist_ok=True)
+    profile = STYLE_PROFILES.get(output_dir.name, STYLE_PROFILES["other"])
     all_pixels = np.concatenate([image.pixels for image in images], axis=0)
     palette, weights = kmeans_palette(all_pixels, args.colors, args.seed)
-    palette = naturalize_palette(palette)
+    palette = naturalize_palette(
+        palette,
+        max_chroma=profile["max_chroma"],
+        dark_floor=profile["dark_floor"],
+    )
+    weights = rebalance_dark_weights(palette, weights, profile["dark_weight"])
     target_rgb, target_luminance, target_texture = mean_target(images)
 
     candidates: list[tuple[float, int, np.ndarray, dict[str, float]]] = []
     for index in range(args.candidates):
-        pattern = make_pattern(palette, weights, args.size, args.seed + index + 1)
+        pattern = make_pattern(
+            palette,
+            weights,
+            args.size,
+            args.seed + index + 1,
+            detail_weight=profile["detail"],
+            blur_radius=profile["blur"],
+        )
         score, components = score_pattern(pattern, target_rgb, target_luminance, target_texture)
         candidates.append((score, index, pattern, components))
     candidates.sort(key=lambda item: item[0])
@@ -329,7 +380,13 @@ def run_group(
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
-        "version": "phase_4_grouped_masked_hybrid",
+        "version": "phase_6_grouped_clean_patterns",
+        "style_profile": profile,
+        "dark_palette_weight": float(
+            weights[
+                (0.2126 * palette[:, 0] + 0.7152 * palette[:, 1] + 0.0722 * palette[:, 2]) < DARK_LUMINANCE_THRESHOLD
+            ].sum()
+        ),
         "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
         "palette": [
             {"rgb": [int(value) for value in color], "weight": float(weight)}

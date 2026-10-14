@@ -1,13 +1,23 @@
 {
   "input_images": [
+    "photos/forest/23853_135_PRBEI.jpeg [automatic]",
     "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]",
     "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]",
-    "photos/forest/orman-cesitleri.jpg [automatic]"
+    "photos/forest/images-3.jpeg [automatic]",
+    "photos/forest/images-4.jpeg [automatic]",
+    "photos/forest/images-5.jpeg [automatic]",
+    "photos/forest/orman-cesitleri.jpg [automatic]",
+    "photos/forest/veduta.jpg [automatic]"
   ],
   "valid_pixel_fraction": {
+    "photos/forest/23853_135_PRBEI.jpeg [automatic]": 0.76031494140625,
     "photos/forest/castagno-castanicoltura-by-antonio-ciero-adobe-stock-750x500.jpeg [automatic]": 0.9953033357771262,
     "photos/forest/foresta-di-sherwood-3.jpg.webp [automatic]": 0.9973044199486302,
-    "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834
+    "photos/forest/images-3.jpeg [automatic]": 0.8027852376302084,
+    "photos/forest/images-4.jpeg [automatic]": 0.9998779296875,
+    "photos/forest/images-5.jpeg [automatic]": 0.9999160766601562,
+    "photos/forest/orman-cesitleri.jpg [automatic]": 0.9966023763020834,
+    "photos/forest/veduta.jpg [automatic]": 0.954928
   },
   "size": [
     500,
@@ -15,110 +25,118 @@
   ],
   "palette_colors": 12,
   "candidates_evaluated": 64,
-  "best_score": 0.02354777231812477,
+  "best_score": 0.02091716229915619,
   "score_components": {
-    "rgb_error": 0.0033328779973089695,
-    "luminance_error": 0.03587675094604492,
-    "texture_error": 0.058157358318567276
+    "rgb_error": 0.002900384832173586,
+    "luminance_error": 0.04191238805651665,
+    "texture_error": 0.04375788941979408
   },
-  "version": "phase_4_grouped_masked_hybrid",
+  "version": "phase_6_grouped_clean_patterns",
+  "style_profile": {
+    "max_chroma": 85.0,
+    "dark_floor": 60.0,
+    "dark_weight": 0.18,
+    "detail": 0.1,
+    "blur": 0.6
+  },
+  "dark_palette_weight": 0.17999999225139618,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        80,
-        69,
-        24
-      ],
-      "weight": 0.14276666939258575
-    },
-    {
-      "rgb": [
-        43,
-        46,
-        37
-      ],
-      "weight": 0.11803333461284637
-    },
-    {
-      "rgb": [
-        52,
-        50,
-        40
-      ],
-      "weight": 0.11625000089406967
-    },
-    {
-      "rgb": [
-        112,
-        92,
-        21
-      ],
-      "weight": 0.11116666346788406
-    },
-    {
-      "rgb": [
-        39,
-        39,
-        36
-      ],
-      "weight": 0.10216666758060455
-    },
-    {
-      "rgb": [
-        43,
-        62,
-        36
-      ],
-      "weight": 0.08726666867733002
-    },
-    {
-      "rgb": [
-        119,
-        116,
-        66
-      ],
-      "weight": 0.07724999636411667
-    },
-    {
-      "rgb": [
         58,
-        114,
-        19
+        57,
+        48
       ],
-      "weight": 0.0746999979019165
+      "weight": 0.07531751692295074
     },
     {
       "rgb": [
-        174,
-        176,
-        88
+        50,
+        53,
+        43
       ],
-      "weight": 0.060616668313741684
+      "weight": 0.061601605266332626
     },
     {
       "rgb": [
-        145,
-        132,
-        50
+        75,
+        78,
+        51
       ],
-      "weight": 0.05458333343267441
+      "weight": 0.1657855063676834
     },
     {
       "rgb": [
-        90,
+        44,
+        45,
+        41
+      ],
+      "weight": 0.04308086261153221
+    },
+    {
+      "rgb": [
+        108,
+        112,
+        75
+      ],
+      "weight": 0.14313407242298126
+    },
+    {
+      "rgb": [
+        101,
+        80,
+        20
+      ],
+      "weight": 0.11322174221277237
+    },
+    {
+      "rgb": [
+        165,
+        159,
+        118
+      ],
+      "weight": 0.08272431045770645
+    },
+    {
+      "rgb": [
+        49,
+        101,
+        16
+      ],
+      "weight": 0.0825558677315712
+    },
+    {
+      "rgb": [
+        217,
+        220,
+        206
+      ],
+      "weight": 0.06470953673124313
+    },
+    {
+      "rgb": [
+        105,
         140,
-        45
+        55
       ],
-      "weight": 0.04078333452343941
+      "weight": 0.058938074856996536
     },
     {
       "rgb": [
-        223,
-        221,
-        193
+        141,
+        115,
+        56
       ],
-      "weight": 0.014416666701436043
+      "weight": 0.05615429952740669
+    },
+    {
+      "rgb": [
+        171,
+        185,
+        100
+      ],
+      "weight": 0.052776530385017395
     }
   ]
 }

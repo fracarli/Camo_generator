@@ -1,27 +1,11 @@
 {
   "input_images": [
-    "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]",
-    "photos/other/Salento_ulivo_secolare.jpg [automatic]",
-    "photos/other/images-3 copy 2.jpeg [automatic]",
     "photos/other/images-3 copy.jpeg [automatic]",
-    "photos/other/images-3.jpeg [automatic]",
-    "photos/other/images-4 copy.jpeg [automatic]",
-    "photos/other/images-4.jpeg [automatic]",
-    "photos/other/images-5 copy.jpeg [automatic]",
-    "photos/other/images-5.jpeg [automatic]",
-    "photos/other/images-6.jpeg [automatic]"
+    "photos/other/images-4.jpeg [automatic]"
   ],
   "valid_pixel_fraction": {
-    "photos/other/62ab4670f1633b1b93c4f93a506219ed_c11d4b5cae77602addd6962dfac90d7c275447c2.jpg [automatic]": 0.7640031067251462,
-    "photos/other/Salento_ulivo_secolare.jpg [automatic]": 0.9866434733072916,
-    "photos/other/images-3 copy 2.jpeg [automatic]": 1.0,
     "photos/other/images-3 copy.jpeg [automatic]": 0.9430198669433594,
-    "photos/other/images-3.jpeg [automatic]": 0.5244072808159722,
-    "photos/other/images-4 copy.jpeg [automatic]": 0.6323644301470588,
-    "photos/other/images-4.jpeg [automatic]": 0.9979303533380682,
-    "photos/other/images-5 copy.jpeg [automatic]": 0.8179813508064516,
-    "photos/other/images-5.jpeg [automatic]": 0.9785089590443686,
-    "photos/other/images-6.jpeg [automatic]": 0.5521444281524927
+    "photos/other/images-4.jpeg [automatic]": 0.9979303533380682
   },
   "size": [
     500,
@@ -29,110 +13,118 @@
   ],
   "palette_colors": 12,
   "candidates_evaluated": 64,
-  "best_score": 0.015662580728530884,
+  "best_score": 0.017878418788313866,
   "score_components": {
-    "rgb_error": 0.002968910150229931,
-    "luminance_error": 0.03821806237101555,
-    "texture_error": 0.025544269010424614
+    "rgb_error": 0.0027741447556763887,
+    "luminance_error": 0.030421873554587364,
+    "texture_error": 0.04107305780053139
   },
-  "version": "phase_4_grouped_masked_hybrid",
+  "version": "phase_6_grouped_clean_patterns",
+  "style_profile": {
+    "max_chroma": 95.0,
+    "dark_floor": 68.0,
+    "dark_weight": 0.14,
+    "detail": 0.08,
+    "blur": 0.7
+  },
+  "dark_palette_weight": 0.12697499990463257,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
       "rgb": [
-        229,
-        226,
-        215
+        114,
+        102,
+        89
       ],
-      "weight": 0.12551000714302063
+      "weight": 0.11509999632835388
     },
     {
       "rgb": [
-        62,
-        62,
-        39
-      ],
-      "weight": 0.09995999932289124
-    },
-    {
-      "rgb": [
-        200,
-        156,
-        105
-      ],
-      "weight": 0.09949000179767609
-    },
-    {
-      "rgb": [
-        146,
-        134,
-        110
-      ],
-      "weight": 0.09826499968767166
-    },
-    {
-      "rgb": [
+        137,
         129,
-        99,
-        73
+        115
       ],
-      "weight": 0.09792999923229218
+      "weight": 0.11315000057220459
     },
     {
       "rgb": [
-        43,
-        44,
-        40
+        136,
+        87,
+        41
       ],
-      "weight": 0.09130000323057175
+      "weight": 0.10847499966621399
     },
     {
       "rgb": [
-        90,
-        91,
-        75
+        89,
+        74,
+        64
       ],
-      "weight": 0.09093999862670898
-    },
-    {
-      "rgb": [
-        223,
-        182,
-        128
-      ],
-      "weight": 0.08743999898433685
-    },
-    {
-      "rgb": [
-        121,
-        70,
-        32
-      ],
-      "weight": 0.07814999669790268
-    },
-    {
-      "rgb": [
-        180,
-        180,
-        168
-      ],
-      "weight": 0.05451500043272972
+      "weight": 0.10840000212192535
     },
     {
       "rgb": [
         159,
-        107,
+        106,
         64
       ],
-      "weight": 0.054044999182224274
+      "weight": 0.09327500313520432
     },
     {
       "rgb": [
-        105,
-        136,
-        41
+        137,
+        72,
+        42
       ],
-      "weight": 0.02245499938726425
+      "weight": 0.07909999787807465
+    },
+    {
+      "rgb": [
+        84,
+        64,
+        50
+      ],
+      "weight": 0.07684999704360962
+    },
+    {
+      "rgb": [
+        163,
+        159,
+        148
+      ],
+      "weight": 0.0716250017285347
+    },
+    {
+      "rgb": [
+        185,
+        144,
+        103
+      ],
+      "weight": 0.0681999996304512
+    },
+    {
+      "rgb": [
+        213,
+        182,
+        144
+      ],
+      "weight": 0.058775000274181366
+    },
+    {
+      "rgb": [
+        245,
+        244,
+        243
+      ],
+      "weight": 0.05692499876022339
+    },
+    {
+      "rgb": [
+        64,
+        59,
+        55
+      ],
+      "weight": 0.05012499913573265
     }
   ]
 }
