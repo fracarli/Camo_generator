@@ -10,12 +10,12 @@
       "background_group": "forest",
       "background_file": "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
       "pattern_file": "output/optimized_train5/universal/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.016157688573002815,
-        "luminance_contrast": 0.004045882727950811,
-        "edge_contrast": 0.004183473996818066,
-        "visibility_score": 0.010122424340806901
+        "rgb_contrast": 0.04721222445368767,
+        "luminance_contrast": 0.03372703865170479,
+        "edge_contrast": 0.0,
+        "visibility_score": 0.03541057575494051
       },
       "human_test_file": "output/human_test/human_test/trial_0000.jpg"
     },
@@ -25,12 +25,12 @@
       "background_group": "forest",
       "background_file": "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
       "pattern_file": "output/optimized_train5/forest/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.014513054862618446,
-        "luminance_contrast": 0.01416587084531784,
-        "edge_contrast": 0.002440523589029908,
-        "visibility_score": 0.012580660765524955
+        "rgb_contrast": 0.07759857922792435,
+        "luminance_contrast": 0.07748547941446304,
+        "edge_contrast": 0.004518411587923765,
+        "visibility_score": 0.0665969691472128
       },
       "human_test_file": "output/human_test/human_test/trial_0001.jpg"
     },
@@ -40,12 +40,12 @@
       "background_group": "forest",
       "background_file": "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
       "pattern_file": "output/optimized_train5/desert/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.149971142411232,
-        "luminance_contrast": 0.14670269191265106,
-        "edge_contrast": 0.003039251547306776,
-        "visibility_score": 0.12678740110713987
+        "rgb_contrast": 0.13954533636569977,
+        "luminance_contrast": 0.13399817049503326,
+        "edge_contrast": 0.005161449778825045,
+        "visibility_score": 0.11744624532293528
       },
       "human_test_file": "output/human_test/human_test/trial_0002.jpg"
     },
@@ -55,12 +55,12 @@
       "background_group": "forest",
       "background_file": "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
       "pattern_file": "output/optimized_train5/mountain/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.0275386031717062,
-        "luminance_contrast": 0.02562941052019596,
-        "edge_contrast": 0.004789883270859718,
-        "visibility_score": 0.023458077758550643
+        "rgb_contrast": 0.12565059959888458,
+        "luminance_contrast": 0.1255466789007187,
+        "edge_contrast": 0.0015308005968108773,
+        "visibility_score": 0.10699625750421546
       },
       "human_test_file": "output/human_test/human_test/trial_0003.jpg"
     },
@@ -70,12 +70,12 @@
       "background_group": "forest",
       "background_file": "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
       "pattern_file": "output/optimized_train5/snow/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.220950186252594,
-        "luminance_contrast": 0.21295177936553955,
-        "edge_contrast": 0.009253880009055138,
-        "visibility_score": 0.1863962979055941
+        "rgb_contrast": 0.1827152669429779,
+        "luminance_contrast": 0.1791822910308838,
+        "edge_contrast": 0.0037873436231166124,
+        "visibility_score": 0.15463953687576576
       },
       "human_test_file": "output/human_test/human_test/trial_0004.jpg"
     },
@@ -85,12 +85,12 @@
       "background_group": "forest",
       "background_file": "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
       "pattern_file": "output/optimized_train5/jungle/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.022573499009013176,
-        "luminance_contrast": 0.017342181876301765,
-        "edge_contrast": 0.0,
-        "visibility_score": 0.017356513161212207
+        "rgb_contrast": 0.10887833684682846,
+        "luminance_contrast": 0.10824375599622726,
+        "edge_contrast": 0.004185381345450878,
+        "visibility_score": 0.0929522902239114
       },
       "human_test_file": "output/human_test/human_test/trial_0005.jpg"
     },
@@ -100,12 +100,12 @@
       "background_group": "desert",
       "background_file": "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
       "pattern_file": "output/optimized_train5/universal/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.23794808983802795,
-        "luminance_contrast": 0.22787834703922272,
-        "edge_contrast": 0.005267318803817034,
-        "visibility_score": 0.19952156420331446
+        "rgb_contrast": 0.2408522218465805,
+        "luminance_contrast": 0.2306671440601349,
+        "edge_contrast": 0.004809390753507614,
+        "visibility_score": 0.2018810199573636
       },
       "human_test_file": "output/human_test/human_test/trial_0006.jpg"
     },
@@ -115,12 +115,12 @@
       "background_group": "desert",
       "background_file": "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
       "pattern_file": "output/optimized_train5/forest/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.35512053966522217,
-        "luminance_contrast": 0.3476381301879883,
-        "edge_contrast": 0.010044015944004059,
-        "visibility_score": 0.3007402177900076
+        "rgb_contrast": 0.3473721742630005,
+        "luminance_contrast": 0.33917030692100525,
+        "edge_contrast": 0.011763988062739372,
+        "visibility_score": 0.29416029276326294
       },
       "human_test_file": "output/human_test/human_test/trial_0007.jpg"
     },
@@ -130,12 +130,12 @@
       "background_group": "desert",
       "background_file": "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
       "pattern_file": "output/optimized_train5/desert/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.1539129614830017,
-        "luminance_contrast": 0.14761073887348175,
-        "edge_contrast": 0.0012766519794240594,
-        "visibility_score": 0.12881173714413308
+        "rgb_contrast": 0.15391123294830322,
+        "luminance_contrast": 0.14826351404190063,
+        "edge_contrast": 0.0031931858975440264,
+        "visibility_score": 0.12932682427344844
       },
       "human_test_file": "output/human_test/human_test/trial_0008.jpg"
     },
@@ -145,12 +145,12 @@
       "background_group": "desert",
       "background_file": "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
       "pattern_file": "output/optimized_train5/mountain/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.30797073245048523,
-        "luminance_contrast": 0.297941654920578,
-        "edge_contrast": 0.012978688813745975,
-        "visibility_score": 0.2602117487695068
+        "rgb_contrast": 0.3098728656768799,
+        "luminance_contrast": 0.2998645007610321,
+        "edge_contrast": 0.016216522082686424,
+        "visibility_score": 0.26232148641720415
       },
       "human_test_file": "output/human_test/human_test/trial_0009.jpg"
     },
@@ -160,12 +160,12 @@
       "background_group": "desert",
       "background_file": "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
       "pattern_file": "output/optimized_train5/snow/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.23610976338386536,
-        "luminance_contrast": 0.2064448893070221,
-        "edge_contrast": 0.010862148366868496,
-        "visibility_score": 0.19193991520442066
+        "rgb_contrast": 0.2330877184867859,
+        "luminance_contrast": 0.2024330347776413,
+        "edge_contrast": 0.0120005514472723,
+        "visibility_score": 0.18919550413265823
       },
       "human_test_file": "output/human_test/human_test/trial_0010.jpg"
     },
@@ -175,12 +175,12 @@
       "background_group": "desert",
       "background_file": "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
       "pattern_file": "output/optimized_train5/jungle/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.3286726772785187,
-        "luminance_contrast": 0.31507551670074463,
-        "edge_contrast": 0.011948537081480026,
-        "visibility_score": 0.276405050046742
+        "rgb_contrast": 0.34385496377944946,
+        "luminance_contrast": 0.33082884550094604,
+        "edge_contrast": 0.01569923385977745,
+        "visibility_score": 0.2900724628940225
       },
       "human_test_file": "output/human_test/human_test/trial_0011.jpg"
     },
@@ -190,12 +190,12 @@
       "background_group": "mountain",
       "background_file": "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg",
       "pattern_file": "output/optimized_train5/universal/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.1003468781709671,
-        "luminance_contrast": 0.09879081696271896,
-        "edge_contrast": 0.0026964074932038784,
-        "visibility_score": 0.08515468614641576
+        "rgb_contrast": 0.08478261530399323,
+        "luminance_contrast": 0.0811784639954567,
+        "edge_contrast": 0.003018756862729788,
+        "visibility_score": 0.07125658357981593
       },
       "human_test_file": "output/human_test/human_test/trial_0012.jpg"
     },
@@ -205,12 +205,12 @@
       "background_group": "mountain",
       "background_file": "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg",
       "pattern_file": "output/optimized_train5/forest/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.15347452461719513,
-        "luminance_contrast": 0.15175224840641022,
-        "edge_contrast": 0.002964648185297847,
-        "visibility_score": 0.1302952464786358
+        "rgb_contrast": 0.13732528686523438,
+        "luminance_contrast": 0.13407295942306519,
+        "edge_contrast": 0.0028601628728210926,
+        "visibility_score": 0.11601720366161317
       },
       "human_test_file": "output/human_test/human_test/trial_0013.jpg"
     },
@@ -220,12 +220,12 @@
       "background_group": "mountain",
       "background_file": "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg",
       "pattern_file": "output/optimized_train5/desert/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.06285768002271652,
-        "luminance_contrast": 0.05325900763273239,
-        "edge_contrast": 0.002077319659292698,
-        "visibility_score": 0.0503810906317085
+        "rgb_contrast": 0.05222594365477562,
+        "luminance_contrast": 0.035723280161619186,
+        "edge_contrast": 0.0021560669410973787,
+        "visibility_score": 0.038939529925119135
       },
       "human_test_file": "output/human_test/human_test/trial_0014.jpg"
     },
@@ -235,12 +235,12 @@
       "background_group": "mountain",
       "background_file": "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg",
       "pattern_file": "output/optimized_train5/mountain/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.07386776804924011,
-        "luminance_contrast": 0.06911282986402512,
-        "edge_contrast": 0.0014969395706430078,
-        "visibility_score": 0.06134791541262529
+        "rgb_contrast": 0.061394426971673965,
+        "luminance_contrast": 0.051585596054792404,
+        "edge_contrast": 0.002128279535099864,
+        "visibility_score": 0.04907141403527931
       },
       "human_test_file": "output/human_test/human_test/trial_0015.jpg"
     },
@@ -250,12 +250,12 @@
       "background_group": "mountain",
       "background_file": "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg",
       "pattern_file": "output/optimized_train5/snow/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.0920976847410202,
-        "luminance_contrast": 0.04701334610581398,
-        "edge_contrast": 0.00229158578440547,
-        "visibility_score": 0.0628472513752058
+        "rgb_contrast": 0.10735217481851578,
+        "luminance_contrast": 0.06430047750473022,
+        "edge_contrast": 0.002892617601901293,
+        "visibility_score": 0.07661514717619866
       },
       "human_test_file": "output/human_test/human_test/trial_0016.jpg"
     },
@@ -265,12 +265,12 @@
       "background_group": "mountain",
       "background_file": "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg",
       "pattern_file": "output/optimized_train5/jungle/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.18469959497451782,
-        "luminance_contrast": 0.18262262642383575,
-        "edge_contrast": 0.0030143887270241976,
-        "visibility_score": 0.15671987504465504
+        "rgb_contrast": 0.16816064715385437,
+        "luminance_contrast": 0.16483360528945923,
+        "edge_contrast": 0.0034251417964696884,
+        "visibility_score": 0.14228585669770835
       },
       "human_test_file": "output/human_test/human_test/trial_0017.jpg"
     },
@@ -280,12 +280,12 @@
       "background_group": "urban",
       "background_file": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
       "pattern_file": "output/optimized_train5/universal/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.11532571166753769,
-        "luminance_contrast": 0.11090441048145294,
-        "edge_contrast": 0.014411982148885727,
-        "visibility_score": 0.09864119682461024
+        "rgb_contrast": 0.17903661727905273,
+        "luminance_contrast": 0.17474067211151123,
+        "edge_contrast": 0.016194617375731468,
+        "visibility_score": 0.15310673648491502
       },
       "human_test_file": "output/human_test/human_test/trial_0018.jpg"
     },
@@ -295,12 +295,12 @@
       "background_group": "urban",
       "background_file": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
       "pattern_file": "output/optimized_train5/forest/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.02955460548400879,
-        "luminance_contrast": 0.02816634811460972,
-        "edge_contrast": 0.0012155869044363499,
-        "visibility_score": 0.02481786261778325
+        "rgb_contrast": 0.015414854511618614,
+        "luminance_contrast": 0.01067543774843216,
+        "edge_contrast": 0.0013169307494536042,
+        "visibility_score": 0.011641370080178603
       },
       "human_test_file": "output/human_test/human_test/trial_0019.jpg"
     },
@@ -310,12 +310,12 @@
       "background_group": "urban",
       "background_file": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
       "pattern_file": "output/optimized_train5/desert/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.25595834851264954,
-        "luminance_contrast": 0.253207266330719,
-        "edge_contrast": 0.007459311280399561,
-        "visibility_score": 0.21772061416413635
+        "rgb_contrast": 0.2444988340139389,
+        "luminance_contrast": 0.24183759093284607,
+        "edge_contrast": 0.00816965289413929,
+        "visibility_score": 0.20811802176758645
       },
       "human_test_file": "output/human_test/human_test/trial_0020.jpg"
     },
@@ -325,12 +325,12 @@
       "background_group": "urban",
       "background_file": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
       "pattern_file": "output/optimized_train5/mountain/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.16154745221138,
-        "luminance_contrast": 0.161361962556839,
-        "edge_contrast": 0.003630148246884346,
-        "visibility_score": 0.13779493523761632
+        "rgb_contrast": 0.1409396231174469,
+        "luminance_contrast": 0.14052213728427887,
+        "edge_contrast": 0.0021275016479194164,
+        "visibility_score": 0.11997168485540896
       },
       "human_test_file": "output/human_test/human_test/trial_0021.jpg"
     },
@@ -340,12 +340,12 @@
       "background_group": "urban",
       "background_file": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
       "pattern_file": "output/optimized_train5/snow/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.2590844929218292,
-        "luminance_contrast": 0.25669240951538086,
-        "edge_contrast": 0.021064866334199905,
-        "visibility_score": 0.22254431974142788
+        "rgb_contrast": 0.32141730189323425,
+        "luminance_contrast": 0.32017529010772705,
+        "edge_contrast": 0.025196554139256477,
+        "visibility_score": 0.2765494856052101
       },
       "human_test_file": "output/human_test/human_test/trial_0022.jpg"
     },
@@ -355,12 +355,12 @@
       "background_group": "urban",
       "background_file": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
       "pattern_file": "output/optimized_train5/jungle/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.01872612163424492,
-        "luminance_contrast": 0.0027038275729864836,
-        "edge_contrast": 0.0005230847746133804,
-        "visibility_score": 0.010387863183859735
+        "rgb_contrast": 0.045317988842725754,
+        "luminance_contrast": 0.0414399690926075,
+        "edge_contrast": 0.0,
+        "visibility_score": 0.0371629836037755
       },
       "human_test_file": "output/human_test/human_test/trial_0023.jpg"
     },
@@ -370,12 +370,12 @@
       "background_group": "jungle",
       "background_file": "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
       "pattern_file": "output/optimized_train5/universal/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.11872753500938416,
-        "luminance_contrast": 0.09994138777256012,
-        "edge_contrast": 0.004603146575391293,
-        "visibility_score": 0.09503372521139682
+        "rgb_contrast": 0.15582843124866486,
+        "luminance_contrast": 0.14876769483089447,
+        "edge_contrast": 0.0066465637646615505,
+        "visibility_score": 0.13097989337984473
       },
       "human_test_file": "output/human_test/human_test/trial_0024.jpg"
     },
@@ -385,12 +385,12 @@
       "background_group": "jungle",
       "background_file": "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
       "pattern_file": "output/optimized_train5/forest/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.15979792177677155,
-        "luminance_contrast": 0.15383392572402954,
-        "edge_contrast": 0.00801012385636568,
-        "visibility_score": 0.13494235347025096
+        "rgb_contrast": 0.08797658979892731,
+        "luminance_contrast": 0.08014415949583054,
+        "edge_contrast": 0.006220851093530655,
+        "visibility_score": 0.07297187838703394
       },
       "human_test_file": "output/human_test/human_test/trial_0025.jpg"
     },
@@ -400,12 +400,12 @@
       "background_group": "jungle",
       "background_file": "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
       "pattern_file": "output/optimized_train5/desert/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.20692284405231476,
-        "luminance_contrast": 0.19683970510959625,
-        "edge_contrast": 0.009276315569877625,
-        "visibility_score": 0.17374676614999768
+        "rgb_contrast": 0.13731889426708221,
+        "luminance_contrast": 0.10946822911500931,
+        "edge_contrast": 0.0025829763617366552,
+        "visibility_score": 0.10736077377805486
       },
       "human_test_file": "output/human_test/human_test/trial_0026.jpg"
     },
@@ -415,12 +415,12 @@
       "background_group": "jungle",
       "background_file": "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
       "pattern_file": "output/optimized_train5/mountain/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.19036029279232025,
-        "luminance_contrast": 0.18605352938175201,
-        "edge_contrast": 0.007555654738098383,
-        "visibility_score": 0.16143222989048808
+        "rgb_contrast": 0.2565974295139313,
+        "luminance_contrast": 0.25276973843574524,
+        "edge_contrast": 0.013091753236949444,
+        "visibility_score": 0.21873188619501888
       },
       "human_test_file": "output/human_test/human_test/trial_0027.jpg"
     },
@@ -430,12 +430,12 @@
       "background_group": "jungle",
       "background_file": "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
       "pattern_file": "output/optimized_train5/snow/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.22589465975761414,
-        "luminance_contrast": 0.21679307520389557,
-        "edge_contrast": 0.00622164411470294,
-        "visibility_score": 0.18975815281737596
+        "rgb_contrast": 0.24471591413021088,
+        "luminance_contrast": 0.23859719932079315,
+        "edge_contrast": 0.01408047042787075,
+        "visibility_score": 0.20797904739156364
       },
       "human_test_file": "output/human_test/human_test/trial_0028.jpg"
     },
@@ -445,12 +445,12 @@
       "background_group": "jungle",
       "background_file": "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
       "pattern_file": "output/optimized_train5/jungle/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.13712218403816223,
-        "luminance_contrast": 0.1317392736673355,
-        "edge_contrast": 0.005335897672921419,
-        "visibility_score": 0.11547022245358675
+        "rgb_contrast": 0.1389625519514084,
+        "luminance_contrast": 0.1330389827489853,
+        "edge_contrast": 0.004972166381776333,
+        "visibility_score": 0.1167907448951155
       },
       "human_test_file": "output/human_test/human_test/trial_0029.jpg"
     },
@@ -460,12 +460,12 @@
       "background_group": "snow",
       "background_file": "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
       "pattern_file": "output/optimized_train5/universal/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.3742971420288086,
-        "luminance_contrast": 0.36756432056427,
-        "edge_contrast": 0.02193492092192173,
-        "visibility_score": 0.31908632135018705
+        "rgb_contrast": 0.37551841139793396,
+        "luminance_contrast": 0.36881351470947266,
+        "edge_contrast": 0.026201773434877396,
+        "visibility_score": 0.32077420186251404
       },
       "human_test_file": "output/human_test/human_test/trial_0030.jpg"
     },
@@ -475,12 +475,12 @@
       "background_group": "snow",
       "background_file": "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
       "pattern_file": "output/optimized_train5/forest/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.4250568151473999,
-        "luminance_contrast": 0.4205179512500763,
-        "edge_contrast": 0.024987200275063515,
-        "visibility_score": 0.3634577705524862
+        "rgb_contrast": 0.4261980950832367,
+        "luminance_contrast": 0.421671599149704,
+        "edge_contrast": 0.02820718288421631,
+        "visibility_score": 0.3649151846766472
       },
       "human_test_file": "output/human_test/human_test/trial_0031.jpg"
     },
@@ -490,12 +490,12 @@
       "background_group": "snow",
       "background_file": "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
       "pattern_file": "output/optimized_train5/desert/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.33122196793556213,
-        "luminance_contrast": 0.3220549523830414,
-        "edge_contrast": 0.01839769072830677,
-        "visibility_score": 0.28108987091109155
+        "rgb_contrast": 0.3324981927871704,
+        "luminance_contrast": 0.32338201999664307,
+        "edge_contrast": 0.02178247831761837,
+        "visibility_score": 0.282700175140053
       },
       "human_test_file": "output/human_test/human_test/trial_0032.jpg"
     },
@@ -505,12 +505,12 @@
       "background_group": "snow",
       "background_file": "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
       "pattern_file": "output/optimized_train5/mountain/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.34303465485572815,
-        "luminance_contrast": 0.3379022777080536,
-        "edge_contrast": 0.020332057029008865,
-        "visibility_score": 0.29283293318003417
+        "rgb_contrast": 0.3443268835544586,
+        "luminance_contrast": 0.3392149806022644,
+        "edge_contrast": 0.023771105334162712,
+        "visibility_score": 0.29445435078814625
       },
       "human_test_file": "output/human_test/human_test/trial_0033.jpg"
     },
@@ -520,12 +520,12 @@
       "background_group": "snow",
       "background_file": "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
       "pattern_file": "output/optimized_train5/snow/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.2219667136669159,
-        "luminance_contrast": 0.22177931666374207,
-        "edge_contrast": 0.014305608347058296,
-        "visibility_score": 0.19075195891782643
+        "rgb_contrast": 0.22354982793331146,
+        "luminance_contrast": 0.22335785627365112,
+        "edge_contrast": 0.01638942025601864,
+        "visibility_score": 0.19240857670083641
       },
       "human_test_file": "output/human_test/human_test/trial_0034.jpg"
     },
@@ -535,12 +535,12 @@
       "background_group": "snow",
       "background_file": "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
       "pattern_file": "output/optimized_train5/jungle/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.4556073844432831,
-        "luminance_contrast": 0.45139285922050476,
-        "edge_contrast": 0.028377501294016838,
-        "visibility_score": 0.3900478181429207
+        "rgb_contrast": 0.4566642642021179,
+        "luminance_contrast": 0.45245465636253357,
+        "edge_contrast": 0.0325973741710186,
+        "visibility_score": 0.3915808679535985
       },
       "human_test_file": "output/human_test/human_test/trial_0035.jpg"
     },
@@ -550,12 +550,12 @@
       "background_group": "taiga",
       "background_file": "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
       "pattern_file": "output/optimized_train5/universal/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.038071487098932266,
-        "luminance_contrast": 0.007780396845191717,
+        "rgb_contrast": 0.045534227043390274,
+        "luminance_contrast": 0.02619754523038864,
         "edge_contrast": 0.0,
-        "visibility_score": 0.021758882445283234
+        "visibility_score": 0.03193625435233116
       },
       "human_test_file": "output/human_test/human_test/trial_0036.jpg"
     },
@@ -565,12 +565,12 @@
       "background_group": "taiga",
       "background_file": "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
       "pattern_file": "output/optimized_train5/forest/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.04520823433995247,
-        "luminance_contrast": 0.041754599660634995,
-        "edge_contrast": 0.00034875309211201966,
-        "visibility_score": 0.037270540015015285
+        "rgb_contrast": 0.03089507669210434,
+        "luminance_contrast": 0.02866899035871029,
+        "edge_contrast": 0.0010134454350918531,
+        "visibility_score": 0.025633701786864548
       },
       "human_test_file": "output/human_test/human_test/trial_0037.jpg"
     },
@@ -580,12 +580,12 @@
       "background_group": "taiga",
       "background_file": "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
       "pattern_file": "output/optimized_train5/desert/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.06935275346040726,
-        "luminance_contrast": 0.041711755096912384,
-        "edge_contrast": 0.0011791902361437678,
-        "visibility_score": 0.04945236954954453
+        "rgb_contrast": 0.07681351900100708,
+        "luminance_contrast": 0.056164491921663284,
+        "edge_contrast": 0.002174235414713621,
+        "visibility_score": 0.05839046698529273
       },
       "human_test_file": "output/human_test/human_test/trial_0038.jpg"
     },
@@ -595,12 +595,12 @@
       "background_group": "taiga",
       "background_file": "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
       "pattern_file": "output/optimized_train5/mountain/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.1494058519601822,
-        "luminance_contrast": 0.126085102558136,
-        "edge_contrast": 0.0017046385910362005,
-        "visibility_score": 0.11908840766409412
+        "rgb_contrast": 0.15920321643352509,
+        "luminance_contrast": 0.13421648740768433,
+        "edge_contrast": 0.0008773504523560405,
+        "visibility_score": 0.12670898137730546
       },
       "human_test_file": "output/human_test/human_test/trial_0039.jpg"
     },
@@ -610,12 +610,12 @@
       "background_group": "taiga",
       "background_file": "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
       "pattern_file": "output/optimized_train5/snow/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.10700653493404388,
-        "luminance_contrast": 0.08246415108442307,
-        "edge_contrast": 0.004907054360955954,
-        "visibility_score": 0.0831017785007134
+        "rgb_contrast": 0.1404305100440979,
+        "luminance_contrast": 0.11928286403417587,
+        "edge_contrast": 0.002175559289753437,
+        "visibility_score": 0.11229059132747352
       },
       "human_test_file": "output/human_test/human_test/trial_0040.jpg"
     },
@@ -625,12 +625,12 @@
       "background_group": "taiga",
       "background_file": "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg",
       "pattern_file": "output/optimized_train5/jungle/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.09376004338264465,
-        "luminance_contrast": 0.09162723273038864,
+        "rgb_contrast": 0.059488486498594284,
+        "luminance_contrast": 0.05943220481276512,
         "edge_contrast": 0.0,
-        "visibility_score": 0.07894955314695834
+        "visibility_score": 0.05054551493376493
       },
       "human_test_file": "output/human_test/human_test/trial_0041.jpg"
     },
@@ -640,12 +640,12 @@
       "background_group": "tundra",
       "background_file": "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
       "pattern_file": "output/optimized_train5/universal/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.04835812374949455,
-        "luminance_contrast": 0.02931760810315609,
-        "edge_contrast": 0.003952449187636375,
-        "visibility_score": 0.03503309208899737
+        "rgb_contrast": 0.42628365755081177,
+        "luminance_contrast": 0.42125368118286133,
+        "edge_contrast": 0.02957255393266678,
+        "visibility_score": 0.3650165002793074
       },
       "human_test_file": "output/human_test/human_test/trial_0042.jpg"
     },
@@ -655,12 +655,12 @@
       "background_group": "tundra",
       "background_file": "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
       "pattern_file": "output/optimized_train5/forest/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.090719074010849,
-        "luminance_contrast": 0.06905320286750793,
-        "edge_contrast": 0.0017274444689974189,
-        "visibility_score": 0.06978727467940189
+        "rgb_contrast": 0.46316027641296387,
+        "luminance_contrast": 0.4593833088874817,
+        "edge_contrast": 0.031323958188295364,
+        "visibility_score": 0.39706289004534484
       },
       "human_test_file": "output/human_test/human_test/trial_0043.jpg"
     },
@@ -670,12 +670,12 @@
       "background_group": "tundra",
       "background_file": "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
       "pattern_file": "output/optimized_train5/desert/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.10621097683906555,
-        "luminance_contrast": 0.08652026951313019,
-        "edge_contrast": 0.002517453394830227,
-        "visibility_score": 0.08376520075835288
+        "rgb_contrast": 0.31821995973587036,
+        "luminance_contrast": 0.3074813187122345,
+        "edge_contrast": 0.02103181555867195,
+        "visibility_score": 0.26988321375101804
       },
       "human_test_file": "output/human_test/human_test/trial_0044.jpg"
     },
@@ -685,12 +685,12 @@
       "background_group": "tundra",
       "background_file": "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
       "pattern_file": "output/optimized_train5/mountain/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.39750760793685913,
-        "luminance_contrast": 0.39395377039909363,
-        "edge_contrast": 0.02398836612701416,
-        "visibility_score": 0.34023587852716447
+        "rgb_contrast": 0.11059840768575668,
+        "luminance_contrast": 0.08266487717628479,
+        "edge_contrast": 0.004696131683886051,
+        "visibility_score": 0.08493633060716092
       },
       "human_test_file": "output/human_test/human_test/trial_0045.jpg"
     },
@@ -700,12 +700,12 @@
       "background_group": "tundra",
       "background_file": "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
       "pattern_file": "output/optimized_train5/snow/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.26454660296440125,
-        "luminance_contrast": 0.2644434869289398,
-        "edge_contrast": 0.016213783994317055,
-        "visibility_score": 0.2272605895064771
+        "rgb_contrast": 0.2864585816860199,
+        "luminance_contrast": 0.2642931640148163,
+        "edge_contrast": 0.01211223192512989,
+        "visibility_score": 0.2375487330369651
       },
       "human_test_file": "output/human_test/human_test/trial_0046.jpg"
     },
@@ -715,12 +715,12 @@
       "background_group": "tundra",
       "background_file": "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
       "pattern_file": "output/optimized_train5/jungle/optimized_pattern.png",
-      "uniform_scale": 0.3,
+      "uniform_scale": 0.25,
       "metrics": {
-        "rgb_contrast": 0.08198855072259903,
-        "luminance_contrast": 0.05451962351799011,
-        "edge_contrast": 0.0010973649332299829,
-        "visibility_score": 0.06024074833258055
+        "rgb_contrast": 0.09930521249771118,
+        "luminance_contrast": 0.041591089218854904,
+        "edge_contrast": 0.0,
+        "visibility_score": 0.06420948747545481
       },
       "human_test_file": "output/human_test/human_test/trial_0047.jpg"
     }
@@ -730,421 +730,421 @@
       "pattern_group": "desert",
       "background_group": "desert",
       "scene_count": 1,
-      "mean_visibility_score": 0.12881173714413308,
-      "min_visibility_score": 0.12881173714413308,
-      "max_visibility_score": 0.12881173714413308
+      "mean_visibility_score": 0.12932682427344844,
+      "min_visibility_score": 0.12932682427344844,
+      "max_visibility_score": 0.12932682427344844
     },
     {
       "pattern_group": "desert",
       "background_group": "forest",
       "scene_count": 1,
-      "mean_visibility_score": 0.12678740110713987,
-      "min_visibility_score": 0.12678740110713987,
-      "max_visibility_score": 0.12678740110713987
+      "mean_visibility_score": 0.11744624532293528,
+      "min_visibility_score": 0.11744624532293528,
+      "max_visibility_score": 0.11744624532293528
     },
     {
       "pattern_group": "desert",
       "background_group": "jungle",
       "scene_count": 1,
-      "mean_visibility_score": 0.17374676614999768,
-      "min_visibility_score": 0.17374676614999768,
-      "max_visibility_score": 0.17374676614999768
+      "mean_visibility_score": 0.10736077377805486,
+      "min_visibility_score": 0.10736077377805486,
+      "max_visibility_score": 0.10736077377805486
     },
     {
       "pattern_group": "desert",
       "background_group": "mountain",
       "scene_count": 1,
-      "mean_visibility_score": 0.0503810906317085,
-      "min_visibility_score": 0.0503810906317085,
-      "max_visibility_score": 0.0503810906317085
+      "mean_visibility_score": 0.038939529925119135,
+      "min_visibility_score": 0.038939529925119135,
+      "max_visibility_score": 0.038939529925119135
     },
     {
       "pattern_group": "desert",
       "background_group": "snow",
       "scene_count": 1,
-      "mean_visibility_score": 0.28108987091109155,
-      "min_visibility_score": 0.28108987091109155,
-      "max_visibility_score": 0.28108987091109155
+      "mean_visibility_score": 0.282700175140053,
+      "min_visibility_score": 0.282700175140053,
+      "max_visibility_score": 0.282700175140053
     },
     {
       "pattern_group": "desert",
       "background_group": "taiga",
       "scene_count": 1,
-      "mean_visibility_score": 0.04945236954954453,
-      "min_visibility_score": 0.04945236954954453,
-      "max_visibility_score": 0.04945236954954453
+      "mean_visibility_score": 0.05839046698529273,
+      "min_visibility_score": 0.05839046698529273,
+      "max_visibility_score": 0.05839046698529273
     },
     {
       "pattern_group": "desert",
       "background_group": "tundra",
       "scene_count": 1,
-      "mean_visibility_score": 0.08376520075835288,
-      "min_visibility_score": 0.08376520075835288,
-      "max_visibility_score": 0.08376520075835288
+      "mean_visibility_score": 0.26988321375101804,
+      "min_visibility_score": 0.26988321375101804,
+      "max_visibility_score": 0.26988321375101804
     },
     {
       "pattern_group": "desert",
       "background_group": "urban",
       "scene_count": 1,
-      "mean_visibility_score": 0.21772061416413635,
-      "min_visibility_score": 0.21772061416413635,
-      "max_visibility_score": 0.21772061416413635
+      "mean_visibility_score": 0.20811802176758645,
+      "min_visibility_score": 0.20811802176758645,
+      "max_visibility_score": 0.20811802176758645
     },
     {
       "pattern_group": "forest",
       "background_group": "desert",
       "scene_count": 1,
-      "mean_visibility_score": 0.3007402177900076,
-      "min_visibility_score": 0.3007402177900076,
-      "max_visibility_score": 0.3007402177900076
+      "mean_visibility_score": 0.29416029276326294,
+      "min_visibility_score": 0.29416029276326294,
+      "max_visibility_score": 0.29416029276326294
     },
     {
       "pattern_group": "forest",
       "background_group": "forest",
       "scene_count": 1,
-      "mean_visibility_score": 0.012580660765524955,
-      "min_visibility_score": 0.012580660765524955,
-      "max_visibility_score": 0.012580660765524955
+      "mean_visibility_score": 0.0665969691472128,
+      "min_visibility_score": 0.0665969691472128,
+      "max_visibility_score": 0.0665969691472128
     },
     {
       "pattern_group": "forest",
       "background_group": "jungle",
       "scene_count": 1,
-      "mean_visibility_score": 0.13494235347025096,
-      "min_visibility_score": 0.13494235347025096,
-      "max_visibility_score": 0.13494235347025096
+      "mean_visibility_score": 0.07297187838703394,
+      "min_visibility_score": 0.07297187838703394,
+      "max_visibility_score": 0.07297187838703394
     },
     {
       "pattern_group": "forest",
       "background_group": "mountain",
       "scene_count": 1,
-      "mean_visibility_score": 0.1302952464786358,
-      "min_visibility_score": 0.1302952464786358,
-      "max_visibility_score": 0.1302952464786358
+      "mean_visibility_score": 0.11601720366161317,
+      "min_visibility_score": 0.11601720366161317,
+      "max_visibility_score": 0.11601720366161317
     },
     {
       "pattern_group": "forest",
       "background_group": "snow",
       "scene_count": 1,
-      "mean_visibility_score": 0.3634577705524862,
-      "min_visibility_score": 0.3634577705524862,
-      "max_visibility_score": 0.3634577705524862
+      "mean_visibility_score": 0.3649151846766472,
+      "min_visibility_score": 0.3649151846766472,
+      "max_visibility_score": 0.3649151846766472
     },
     {
       "pattern_group": "forest",
       "background_group": "taiga",
       "scene_count": 1,
-      "mean_visibility_score": 0.037270540015015285,
-      "min_visibility_score": 0.037270540015015285,
-      "max_visibility_score": 0.037270540015015285
+      "mean_visibility_score": 0.025633701786864548,
+      "min_visibility_score": 0.025633701786864548,
+      "max_visibility_score": 0.025633701786864548
     },
     {
       "pattern_group": "forest",
       "background_group": "tundra",
       "scene_count": 1,
-      "mean_visibility_score": 0.06978727467940189,
-      "min_visibility_score": 0.06978727467940189,
-      "max_visibility_score": 0.06978727467940189
+      "mean_visibility_score": 0.39706289004534484,
+      "min_visibility_score": 0.39706289004534484,
+      "max_visibility_score": 0.39706289004534484
     },
     {
       "pattern_group": "forest",
       "background_group": "urban",
       "scene_count": 1,
-      "mean_visibility_score": 0.02481786261778325,
-      "min_visibility_score": 0.02481786261778325,
-      "max_visibility_score": 0.02481786261778325
+      "mean_visibility_score": 0.011641370080178603,
+      "min_visibility_score": 0.011641370080178603,
+      "max_visibility_score": 0.011641370080178603
     },
     {
       "pattern_group": "jungle",
       "background_group": "desert",
       "scene_count": 1,
-      "mean_visibility_score": 0.276405050046742,
-      "min_visibility_score": 0.276405050046742,
-      "max_visibility_score": 0.276405050046742
+      "mean_visibility_score": 0.2900724628940225,
+      "min_visibility_score": 0.2900724628940225,
+      "max_visibility_score": 0.2900724628940225
     },
     {
       "pattern_group": "jungle",
       "background_group": "forest",
       "scene_count": 1,
-      "mean_visibility_score": 0.017356513161212207,
-      "min_visibility_score": 0.017356513161212207,
-      "max_visibility_score": 0.017356513161212207
+      "mean_visibility_score": 0.0929522902239114,
+      "min_visibility_score": 0.0929522902239114,
+      "max_visibility_score": 0.0929522902239114
     },
     {
       "pattern_group": "jungle",
       "background_group": "jungle",
       "scene_count": 1,
-      "mean_visibility_score": 0.11547022245358675,
-      "min_visibility_score": 0.11547022245358675,
-      "max_visibility_score": 0.11547022245358675
+      "mean_visibility_score": 0.1167907448951155,
+      "min_visibility_score": 0.1167907448951155,
+      "max_visibility_score": 0.1167907448951155
     },
     {
       "pattern_group": "jungle",
       "background_group": "mountain",
       "scene_count": 1,
-      "mean_visibility_score": 0.15671987504465504,
-      "min_visibility_score": 0.15671987504465504,
-      "max_visibility_score": 0.15671987504465504
+      "mean_visibility_score": 0.14228585669770835,
+      "min_visibility_score": 0.14228585669770835,
+      "max_visibility_score": 0.14228585669770835
     },
     {
       "pattern_group": "jungle",
       "background_group": "snow",
       "scene_count": 1,
-      "mean_visibility_score": 0.3900478181429207,
-      "min_visibility_score": 0.3900478181429207,
-      "max_visibility_score": 0.3900478181429207
+      "mean_visibility_score": 0.3915808679535985,
+      "min_visibility_score": 0.3915808679535985,
+      "max_visibility_score": 0.3915808679535985
     },
     {
       "pattern_group": "jungle",
       "background_group": "taiga",
       "scene_count": 1,
-      "mean_visibility_score": 0.07894955314695834,
-      "min_visibility_score": 0.07894955314695834,
-      "max_visibility_score": 0.07894955314695834
+      "mean_visibility_score": 0.05054551493376493,
+      "min_visibility_score": 0.05054551493376493,
+      "max_visibility_score": 0.05054551493376493
     },
     {
       "pattern_group": "jungle",
       "background_group": "tundra",
       "scene_count": 1,
-      "mean_visibility_score": 0.06024074833258055,
-      "min_visibility_score": 0.06024074833258055,
-      "max_visibility_score": 0.06024074833258055
+      "mean_visibility_score": 0.06420948747545481,
+      "min_visibility_score": 0.06420948747545481,
+      "max_visibility_score": 0.06420948747545481
     },
     {
       "pattern_group": "jungle",
       "background_group": "urban",
       "scene_count": 1,
-      "mean_visibility_score": 0.010387863183859735,
-      "min_visibility_score": 0.010387863183859735,
-      "max_visibility_score": 0.010387863183859735
+      "mean_visibility_score": 0.0371629836037755,
+      "min_visibility_score": 0.0371629836037755,
+      "max_visibility_score": 0.0371629836037755
     },
     {
       "pattern_group": "mountain",
       "background_group": "desert",
       "scene_count": 1,
-      "mean_visibility_score": 0.2602117487695068,
-      "min_visibility_score": 0.2602117487695068,
-      "max_visibility_score": 0.2602117487695068
+      "mean_visibility_score": 0.26232148641720415,
+      "min_visibility_score": 0.26232148641720415,
+      "max_visibility_score": 0.26232148641720415
     },
     {
       "pattern_group": "mountain",
       "background_group": "forest",
       "scene_count": 1,
-      "mean_visibility_score": 0.023458077758550643,
-      "min_visibility_score": 0.023458077758550643,
-      "max_visibility_score": 0.023458077758550643
+      "mean_visibility_score": 0.10699625750421546,
+      "min_visibility_score": 0.10699625750421546,
+      "max_visibility_score": 0.10699625750421546
     },
     {
       "pattern_group": "mountain",
       "background_group": "jungle",
       "scene_count": 1,
-      "mean_visibility_score": 0.16143222989048808,
-      "min_visibility_score": 0.16143222989048808,
-      "max_visibility_score": 0.16143222989048808
+      "mean_visibility_score": 0.21873188619501888,
+      "min_visibility_score": 0.21873188619501888,
+      "max_visibility_score": 0.21873188619501888
     },
     {
       "pattern_group": "mountain",
       "background_group": "mountain",
       "scene_count": 1,
-      "mean_visibility_score": 0.06134791541262529,
-      "min_visibility_score": 0.06134791541262529,
-      "max_visibility_score": 0.06134791541262529
+      "mean_visibility_score": 0.04907141403527931,
+      "min_visibility_score": 0.04907141403527931,
+      "max_visibility_score": 0.04907141403527931
     },
     {
       "pattern_group": "mountain",
       "background_group": "snow",
       "scene_count": 1,
-      "mean_visibility_score": 0.29283293318003417,
-      "min_visibility_score": 0.29283293318003417,
-      "max_visibility_score": 0.29283293318003417
+      "mean_visibility_score": 0.29445435078814625,
+      "min_visibility_score": 0.29445435078814625,
+      "max_visibility_score": 0.29445435078814625
     },
     {
       "pattern_group": "mountain",
       "background_group": "taiga",
       "scene_count": 1,
-      "mean_visibility_score": 0.11908840766409412,
-      "min_visibility_score": 0.11908840766409412,
-      "max_visibility_score": 0.11908840766409412
+      "mean_visibility_score": 0.12670898137730546,
+      "min_visibility_score": 0.12670898137730546,
+      "max_visibility_score": 0.12670898137730546
     },
     {
       "pattern_group": "mountain",
       "background_group": "tundra",
       "scene_count": 1,
-      "mean_visibility_score": 0.34023587852716447,
-      "min_visibility_score": 0.34023587852716447,
-      "max_visibility_score": 0.34023587852716447
+      "mean_visibility_score": 0.08493633060716092,
+      "min_visibility_score": 0.08493633060716092,
+      "max_visibility_score": 0.08493633060716092
     },
     {
       "pattern_group": "mountain",
       "background_group": "urban",
       "scene_count": 1,
-      "mean_visibility_score": 0.13779493523761632,
-      "min_visibility_score": 0.13779493523761632,
-      "max_visibility_score": 0.13779493523761632
+      "mean_visibility_score": 0.11997168485540896,
+      "min_visibility_score": 0.11997168485540896,
+      "max_visibility_score": 0.11997168485540896
     },
     {
       "pattern_group": "snow",
       "background_group": "desert",
       "scene_count": 1,
-      "mean_visibility_score": 0.19193991520442066,
-      "min_visibility_score": 0.19193991520442066,
-      "max_visibility_score": 0.19193991520442066
+      "mean_visibility_score": 0.18919550413265823,
+      "min_visibility_score": 0.18919550413265823,
+      "max_visibility_score": 0.18919550413265823
     },
     {
       "pattern_group": "snow",
       "background_group": "forest",
       "scene_count": 1,
-      "mean_visibility_score": 0.1863962979055941,
-      "min_visibility_score": 0.1863962979055941,
-      "max_visibility_score": 0.1863962979055941
+      "mean_visibility_score": 0.15463953687576576,
+      "min_visibility_score": 0.15463953687576576,
+      "max_visibility_score": 0.15463953687576576
     },
     {
       "pattern_group": "snow",
       "background_group": "jungle",
       "scene_count": 1,
-      "mean_visibility_score": 0.18975815281737596,
-      "min_visibility_score": 0.18975815281737596,
-      "max_visibility_score": 0.18975815281737596
+      "mean_visibility_score": 0.20797904739156364,
+      "min_visibility_score": 0.20797904739156364,
+      "max_visibility_score": 0.20797904739156364
     },
     {
       "pattern_group": "snow",
       "background_group": "mountain",
       "scene_count": 1,
-      "mean_visibility_score": 0.0628472513752058,
-      "min_visibility_score": 0.0628472513752058,
-      "max_visibility_score": 0.0628472513752058
+      "mean_visibility_score": 0.07661514717619866,
+      "min_visibility_score": 0.07661514717619866,
+      "max_visibility_score": 0.07661514717619866
     },
     {
       "pattern_group": "snow",
       "background_group": "snow",
       "scene_count": 1,
-      "mean_visibility_score": 0.19075195891782643,
-      "min_visibility_score": 0.19075195891782643,
-      "max_visibility_score": 0.19075195891782643
+      "mean_visibility_score": 0.19240857670083641,
+      "min_visibility_score": 0.19240857670083641,
+      "max_visibility_score": 0.19240857670083641
     },
     {
       "pattern_group": "snow",
       "background_group": "taiga",
       "scene_count": 1,
-      "mean_visibility_score": 0.0831017785007134,
-      "min_visibility_score": 0.0831017785007134,
-      "max_visibility_score": 0.0831017785007134
+      "mean_visibility_score": 0.11229059132747352,
+      "min_visibility_score": 0.11229059132747352,
+      "max_visibility_score": 0.11229059132747352
     },
     {
       "pattern_group": "snow",
       "background_group": "tundra",
       "scene_count": 1,
-      "mean_visibility_score": 0.2272605895064771,
-      "min_visibility_score": 0.2272605895064771,
-      "max_visibility_score": 0.2272605895064771
+      "mean_visibility_score": 0.2375487330369651,
+      "min_visibility_score": 0.2375487330369651,
+      "max_visibility_score": 0.2375487330369651
     },
     {
       "pattern_group": "snow",
       "background_group": "urban",
       "scene_count": 1,
-      "mean_visibility_score": 0.22254431974142788,
-      "min_visibility_score": 0.22254431974142788,
-      "max_visibility_score": 0.22254431974142788
+      "mean_visibility_score": 0.2765494856052101,
+      "min_visibility_score": 0.2765494856052101,
+      "max_visibility_score": 0.2765494856052101
     },
     {
       "pattern_group": "universal",
       "background_group": "desert",
       "scene_count": 1,
-      "mean_visibility_score": 0.19952156420331446,
-      "min_visibility_score": 0.19952156420331446,
-      "max_visibility_score": 0.19952156420331446
+      "mean_visibility_score": 0.2018810199573636,
+      "min_visibility_score": 0.2018810199573636,
+      "max_visibility_score": 0.2018810199573636
     },
     {
       "pattern_group": "universal",
       "background_group": "forest",
       "scene_count": 1,
-      "mean_visibility_score": 0.010122424340806901,
-      "min_visibility_score": 0.010122424340806901,
-      "max_visibility_score": 0.010122424340806901
+      "mean_visibility_score": 0.03541057575494051,
+      "min_visibility_score": 0.03541057575494051,
+      "max_visibility_score": 0.03541057575494051
     },
     {
       "pattern_group": "universal",
       "background_group": "jungle",
       "scene_count": 1,
-      "mean_visibility_score": 0.09503372521139682,
-      "min_visibility_score": 0.09503372521139682,
-      "max_visibility_score": 0.09503372521139682
+      "mean_visibility_score": 0.13097989337984473,
+      "min_visibility_score": 0.13097989337984473,
+      "max_visibility_score": 0.13097989337984473
     },
     {
       "pattern_group": "universal",
       "background_group": "mountain",
       "scene_count": 1,
-      "mean_visibility_score": 0.08515468614641576,
-      "min_visibility_score": 0.08515468614641576,
-      "max_visibility_score": 0.08515468614641576
+      "mean_visibility_score": 0.07125658357981593,
+      "min_visibility_score": 0.07125658357981593,
+      "max_visibility_score": 0.07125658357981593
     },
     {
       "pattern_group": "universal",
       "background_group": "snow",
       "scene_count": 1,
-      "mean_visibility_score": 0.31908632135018705,
-      "min_visibility_score": 0.31908632135018705,
-      "max_visibility_score": 0.31908632135018705
+      "mean_visibility_score": 0.32077420186251404,
+      "min_visibility_score": 0.32077420186251404,
+      "max_visibility_score": 0.32077420186251404
     },
     {
       "pattern_group": "universal",
       "background_group": "taiga",
       "scene_count": 1,
-      "mean_visibility_score": 0.021758882445283234,
-      "min_visibility_score": 0.021758882445283234,
-      "max_visibility_score": 0.021758882445283234
+      "mean_visibility_score": 0.03193625435233116,
+      "min_visibility_score": 0.03193625435233116,
+      "max_visibility_score": 0.03193625435233116
     },
     {
       "pattern_group": "universal",
       "background_group": "tundra",
       "scene_count": 1,
-      "mean_visibility_score": 0.03503309208899737,
-      "min_visibility_score": 0.03503309208899737,
-      "max_visibility_score": 0.03503309208899737
+      "mean_visibility_score": 0.3650165002793074,
+      "min_visibility_score": 0.3650165002793074,
+      "max_visibility_score": 0.3650165002793074
     },
     {
       "pattern_group": "universal",
       "background_group": "urban",
       "scene_count": 1,
-      "mean_visibility_score": 0.09864119682461024,
-      "min_visibility_score": 0.09864119682461024,
-      "max_visibility_score": 0.09864119682461024
+      "mean_visibility_score": 0.15310673648491502,
+      "min_visibility_score": 0.15310673648491502,
+      "max_visibility_score": 0.15310673648491502
     }
   ],
   "pairwise_comparison": [
     {
       "environment": "forest",
-      "universal_score": 0.010122424340806901,
-      "specific_score": 0.012580660765524955,
-      "specific_minus_universal": 0.002458236424718053,
+      "universal_score": 0.03541057575494051,
+      "specific_score": 0.0665969691472128,
+      "specific_minus_universal": 0.03118639339227229,
       "recommended_pattern": "universal"
     },
     {
       "environment": "desert",
-      "universal_score": 0.19952156420331446,
-      "specific_score": 0.12881173714413308,
-      "specific_minus_universal": -0.07070982705918138,
+      "universal_score": 0.2018810199573636,
+      "specific_score": 0.12932682427344844,
+      "specific_minus_universal": -0.07255419568391516,
       "recommended_pattern": "desert"
     },
     {
       "environment": "mountain",
-      "universal_score": 0.08515468614641576,
-      "specific_score": 0.06134791541262529,
-      "specific_minus_universal": -0.02380677073379047,
+      "universal_score": 0.07125658357981593,
+      "specific_score": 0.04907141403527931,
+      "specific_minus_universal": -0.022185169544536622,
       "recommended_pattern": "mountain"
     },
     {
       "environment": "jungle",
-      "universal_score": 0.09503372521139682,
-      "specific_score": 0.11547022245358675,
-      "specific_minus_universal": 0.020436497242189933,
-      "recommended_pattern": "universal"
+      "universal_score": 0.13097989337984473,
+      "specific_score": 0.1167907448951155,
+      "specific_minus_universal": -0.014189148484729228,
+      "recommended_pattern": "jungle"
     },
     {
       "environment": "snow",
-      "universal_score": 0.31908632135018705,
-      "specific_score": 0.19075195891782643,
-      "specific_minus_universal": -0.12833436243236063,
+      "universal_score": 0.32077420186251404,
+      "specific_score": 0.19240857670083641,
+      "specific_minus_universal": -0.12836562516167763,
       "recommended_pattern": "snow"
     }
   ]

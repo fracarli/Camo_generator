@@ -8,54 +8,54 @@ It is not a field concealment measurement and should be paired with blinded huma
 
 | Pattern | Background environment | Scenes | Mean visibility score |
 |---|---:|---:|---:|
-| desert | desert | 1 | 0.1288 |
-| desert | forest | 1 | 0.1268 |
-| desert | jungle | 1 | 0.1737 |
-| desert | mountain | 1 | 0.0504 |
-| desert | snow | 1 | 0.2811 |
-| desert | taiga | 1 | 0.0495 |
-| desert | tundra | 1 | 0.0838 |
-| desert | urban | 1 | 0.2177 |
-| forest | desert | 1 | 0.3007 |
-| forest | forest | 1 | 0.0126 |
-| forest | jungle | 1 | 0.1349 |
-| forest | mountain | 1 | 0.1303 |
-| forest | snow | 1 | 0.3635 |
-| forest | taiga | 1 | 0.0373 |
-| forest | tundra | 1 | 0.0698 |
-| forest | urban | 1 | 0.0248 |
-| jungle | desert | 1 | 0.2764 |
-| jungle | forest | 1 | 0.0174 |
-| jungle | jungle | 1 | 0.1155 |
-| jungle | mountain | 1 | 0.1567 |
-| jungle | snow | 1 | 0.3900 |
-| jungle | taiga | 1 | 0.0789 |
-| jungle | tundra | 1 | 0.0602 |
-| jungle | urban | 1 | 0.0104 |
-| mountain | desert | 1 | 0.2602 |
-| mountain | forest | 1 | 0.0235 |
-| mountain | jungle | 1 | 0.1614 |
-| mountain | mountain | 1 | 0.0613 |
-| mountain | snow | 1 | 0.2928 |
-| mountain | taiga | 1 | 0.1191 |
-| mountain | tundra | 1 | 0.3402 |
-| mountain | urban | 1 | 0.1378 |
-| snow | desert | 1 | 0.1919 |
-| snow | forest | 1 | 0.1864 |
-| snow | jungle | 1 | 0.1898 |
-| snow | mountain | 1 | 0.0628 |
-| snow | snow | 1 | 0.1908 |
-| snow | taiga | 1 | 0.0831 |
-| snow | tundra | 1 | 0.2273 |
-| snow | urban | 1 | 0.2225 |
-| universal | desert | 1 | 0.1995 |
-| universal | forest | 1 | 0.0101 |
-| universal | jungle | 1 | 0.0950 |
-| universal | mountain | 1 | 0.0852 |
-| universal | snow | 1 | 0.3191 |
-| universal | taiga | 1 | 0.0218 |
-| universal | tundra | 1 | 0.0350 |
-| universal | urban | 1 | 0.0986 |
+| desert | desert | 1 | 0.1293 |
+| desert | forest | 1 | 0.1174 |
+| desert | jungle | 1 | 0.1074 |
+| desert | mountain | 1 | 0.0389 |
+| desert | snow | 1 | 0.2827 |
+| desert | taiga | 1 | 0.0584 |
+| desert | tundra | 1 | 0.2699 |
+| desert | urban | 1 | 0.2081 |
+| forest | desert | 1 | 0.2942 |
+| forest | forest | 1 | 0.0666 |
+| forest | jungle | 1 | 0.0730 |
+| forest | mountain | 1 | 0.1160 |
+| forest | snow | 1 | 0.3649 |
+| forest | taiga | 1 | 0.0256 |
+| forest | tundra | 1 | 0.3971 |
+| forest | urban | 1 | 0.0116 |
+| jungle | desert | 1 | 0.2901 |
+| jungle | forest | 1 | 0.0930 |
+| jungle | jungle | 1 | 0.1168 |
+| jungle | mountain | 1 | 0.1423 |
+| jungle | snow | 1 | 0.3916 |
+| jungle | taiga | 1 | 0.0505 |
+| jungle | tundra | 1 | 0.0642 |
+| jungle | urban | 1 | 0.0372 |
+| mountain | desert | 1 | 0.2623 |
+| mountain | forest | 1 | 0.1070 |
+| mountain | jungle | 1 | 0.2187 |
+| mountain | mountain | 1 | 0.0491 |
+| mountain | snow | 1 | 0.2945 |
+| mountain | taiga | 1 | 0.1267 |
+| mountain | tundra | 1 | 0.0849 |
+| mountain | urban | 1 | 0.1200 |
+| snow | desert | 1 | 0.1892 |
+| snow | forest | 1 | 0.1546 |
+| snow | jungle | 1 | 0.2080 |
+| snow | mountain | 1 | 0.0766 |
+| snow | snow | 1 | 0.1924 |
+| snow | taiga | 1 | 0.1123 |
+| snow | tundra | 1 | 0.2375 |
+| snow | urban | 1 | 0.2765 |
+| universal | desert | 1 | 0.2019 |
+| universal | forest | 1 | 0.0354 |
+| universal | jungle | 1 | 0.1310 |
+| universal | mountain | 1 | 0.0713 |
+| universal | snow | 1 | 0.3208 |
+| universal | taiga | 1 | 0.0319 |
+| universal | tundra | 1 | 0.3650 |
+| universal | urban | 1 | 0.1531 |
 
 ## Universal versus environment-specific pattern
 
@@ -64,11 +64,11 @@ Lower scores are preferred by this proxy metric.
 
 | Environment | Universal | Specific | Recommended by proxy | Specific minus Universal |
 |---|---:|---:|---|---:|
-| forest | 0.0101 | 0.0126 | universal | +0.0025 |
-| desert | 0.1995 | 0.1288 | desert | -0.0707 |
-| mountain | 0.0852 | 0.0613 | mountain | -0.0238 |
-| jungle | 0.0950 | 0.1155 | universal | +0.0204 |
-| snow | 0.3191 | 0.1908 | snow | -0.1283 |
+| forest | 0.0354 | 0.0666 | universal | +0.0312 |
+| desert | 0.2019 | 0.1293 | desert | -0.0726 |
+| mountain | 0.0713 | 0.0491 | mountain | -0.0222 |
+| jungle | 0.1310 | 0.1168 | jungle | -0.0142 |
+| snow | 0.3208 | 0.1924 | snow | -0.1284 |
 
 ## Interpretation
 
