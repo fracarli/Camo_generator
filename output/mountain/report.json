@@ -23,15 +23,22 @@
     500,
     500
   ],
-  "palette_colors": 5,
+  "palette_colors": 3,
   "candidates_evaluated": 64,
-  "best_score": 0.014076534658670425,
+  "best_score": 0.014407548122107983,
   "score_components": {
-    "rgb_error": 0.0027946222107857466,
-    "luminance_error": 0.03768642246723175,
-    "texture_error": 0.020008830353617668
+    "rgb_error": 0.002989779459312558,
+    "luminance_error": 0.042971596121788025,
+    "texture_error": 0.016675401479005814
   },
-  "version": "phase_15_balanced_universal_coverage",
+  "version": "phase_16_standard_custom_validation",
+  "generation_mode": "custom",
+  "density": "high",
+  "custom_settings": {
+    "max_color_share": 0.2,
+    "green_share": 0.2,
+    "dark_share": 0.2
+  },
   "style_profile": {
     "max_chroma": 60.0,
     "dark_floor": 68.0,
@@ -48,43 +55,27 @@
   "palette": [
     {
       "rgb": [
-        77,
-        82,
-        51
+        138,
+        133,
+        89
       ],
-      "weight": 0.3044567406177521
+      "weight": 0.6571291089057922
     },
     {
       "rgb": [
-        134,
-        131,
-        83
-      ],
-      "weight": 0.29524141550064087
-    },
-    {
-      "rgb": [
-        55,
-        57,
-        51
+        61,
+        62,
+        54
       ],
       "weight": 0.14000000059604645
     },
     {
       "rgb": [
-        165,
-        156,
-        120
+        176,
+        161,
+        133
       ],
-      "weight": 0.1655559539794922
-    },
-    {
-      "rgb": [
-        180,
-        165,
-        140
-      ],
-      "weight": 0.09474587440490723
+      "weight": 0.2028709352016449
     }
   ]
 }

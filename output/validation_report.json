@@ -1,0 +1,269 @@
+{
+  "description": "Post-generation measurements of color coverage, luminance, and edge density.",
+  "groups": {
+    "universal": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          88,
+          106,
+          45
+        ],
+        [
+          94,
+          79,
+          52
+        ],
+        [
+          187,
+          168,
+          137
+        ]
+      ],
+      "actual_palette_share": [
+        0.335548,
+        0.331232,
+        0.33322
+      ],
+      "maximum_actual_color_share": 0.335548,
+      "color_entropy": 1.5849423065734665,
+      "normalized_color_entropy": 0.9999872589113746,
+      "mean_rgb": [
+        123.08537292480469,
+        117.76842498779297,
+        77.9554214477539
+      ],
+      "mean_luminance": 115.9372787475586,
+      "edge_density": 0.13657114228456912,
+      "best_score": 0.015188334509730339,
+      "score_components": {
+        "rgb_error": 0.0031325542367994785,
+        "luminance_error": 0.04176954925060272,
+        "texture_error": 0.02044607512652874
+      }
+    },
+    "desert": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          174,
+          150,
+          119
+        ],
+        [
+          101,
+          75,
+          53
+        ],
+        [
+          179,
+          163,
+          134
+        ]
+      ],
+      "actual_palette_share": [
+        0.473216,
+        0.34618,
+        0.180604
+      ],
+      "maximum_actual_color_share": 0.473216,
+      "color_entropy": 1.486528059121421,
+      "normalized_color_entropy": 0.937894782018535,
+      "mean_rgb": [
+        149.65065002441406,
+        126.81761169433594,
+        99.22351837158203
+      ],
+      "mean_luminance": 129.56248474121094,
+      "edge_density": 0.11642885771543086,
+      "best_score": 0.015081520192325115,
+      "score_components": {
+        "rgb_error": 0.003089605364948511,
+        "luminance_error": 0.040787000209093094,
+        "texture_error": 0.020899347960948944
+      }
+    },
+    "forest": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          54,
+          56,
+          48
+        ],
+        [
+          100,
+          110,
+          57
+        ],
+        [
+          170,
+          177,
+          144
+        ]
+      ],
+      "actual_palette_share": [
+        0.17258,
+        0.579924,
+        0.247496
+      ],
+      "maximum_actual_color_share": 0.579924,
+      "color_entropy": 1.391875988372888,
+      "normalized_color_entropy": 0.878175974346135,
+      "mean_rgb": [
+        109.04835510253906,
+        116.8234634399414,
+        76.87761688232422
+      ],
+      "mean_luminance": 112.33385467529297,
+      "edge_density": 0.14016633266533066,
+      "best_score": 0.01651063561439514,
+      "score_components": {
+        "rgb_error": 0.002992005320265889,
+        "luminance_error": 0.04229326918721199,
+        "texture_error": 0.02562551014125347
+      }
+    },
+    "mountain": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          138,
+          133,
+          89
+        ],
+        [
+          61,
+          62,
+          54
+        ],
+        [
+          176,
+          161,
+          133
+        ]
+      ],
+      "actual_palette_share": [
+        0.671492,
+        0.135812,
+        0.192696
+      ],
+      "maximum_actual_color_share": 0.671492,
+      "color_entropy": 1.2347615539696393,
+      "normalized_color_entropy": 0.7790478029655744,
+      "mean_rgb": [
+        134.9152069091797,
+        128.46807861328125,
+        92.86743927001953
+      ],
+      "mean_luminance": 127.47732543945312,
+      "edge_density": 0.10170541082164329,
+      "best_score": 0.014407548122107983,
+      "score_components": {
+        "rgb_error": 0.002989779459312558,
+        "luminance_error": 0.042971596121788025,
+        "texture_error": 0.016675401479005814
+      }
+    },
+    "other": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          110,
+          76,
+          51
+        ],
+        [
+          163,
+          142,
+          115
+        ],
+        [
+          186,
+          169,
+          143
+        ]
+      ],
+      "actual_palette_share": [
+        0.582888,
+        0.361164,
+        0.055948
+      ],
+      "maximum_actual_color_share": 0.582888,
+      "color_entropy": 1.2172800272099018,
+      "normalized_color_entropy": 0.7680181875950004,
+      "mean_rgb": [
+        133.79083251953125,
+        105.35889434814453,
+        79.71532440185547
+      ],
+      "mean_luminance": 109.53135681152344,
+      "edge_density": 0.11929258517034068,
+      "best_score": 0.019127551466226578,
+      "score_components": {
+        "rgb_error": 0.0031758127734065056,
+        "luminance_error": 0.04160106182098389,
+        "texture_error": 0.03624257072806358
+      }
+    },
+    "urban": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          157,
+          134,
+          112
+        ],
+        [
+          83,
+          69,
+          58
+        ],
+        [
+          180,
+          160,
+          133
+        ]
+      ],
+      "actual_palette_share": [
+        0.400604,
+        0.365492,
+        0.233904
+      ],
+      "maximum_actual_color_share": 0.400604,
+      "color_entropy": 1.549689770116752,
+      "normalized_color_entropy": 0.9777453847719709,
+      "mean_rgb": [
+        135.91700744628906,
+        116.93740844726562,
+        97.68789672851562
+      ],
+      "mean_luminance": 119.6497573852539,
+      "edge_density": 0.13913026052104208,
+      "best_score": 0.013120659627020359,
+      "score_components": {
+        "rgb_error": 0.003073491156101227,
+        "luminance_error": 0.04026603326201439,
+        "texture_error": 0.013508129864931107
+      }
+    }
+  }
+}

@@ -30,7 +30,9 @@ output/
 ├── urban/
 ├── other/
 ├── all_patterns_grid.png
-└── report.json
+├── report.json
+├── validation_report.json
+└── validation_report.md
 ```
 
 The `universal` pattern uses all reference images and gives every environment group equal weight, regardless of how many pixels or photographs it contains. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs.
@@ -59,6 +61,16 @@ Run the default 500x500 generation:
 python camo.py --input photos --output output
 ```
 
+When started without `--mode`, the terminal asks whether to use `standard` or `custom` mode. Choosing `standard` preserves the current generator behavior and defaults. Choosing `custom` asks for pattern density, the maximum Universal color share, the Universal green share, and the dark-color share. All prompts and generated reports are in English.
+
+The same custom settings can be supplied without interactive prompts:
+
+```bash
+python camo.py --mode custom --density high --max-color-share 0.30 --green-share 0.22 --dark-share 0.10
+```
+
+Available density levels are `low`, `standard`, and `high`. The color-share values are fractions from `0.00` to `1.00`, for example `0.22` means 22% of the Universal output. The color count can still be selected with `--colors 2` through `--colors 5`.
+
 The default palette contains 5 colors, which is suitable for a first industrial-style test. When running interactively, the program asks for the number of colors; pressing Enter keeps 5. The supported range is 2 to 5 colors. The default pattern now uses denser shape scales, so more distinct spots remain visible in the 500x500 output.
 
 You can also select the number directly from the command line:
@@ -80,6 +92,8 @@ Each generated group contains:
 - `report.json`: input files, mask coverage, score components, and parameters.
 
 The output root also contains `all_patterns_grid.png`, a labeled 3x2 overview of Urban, Desert, Forest, Mountain, Other, and Universal patterns. The grid is regenerated automatically after every run.
+
+The output root also contains `validation_report.json` and `validation_report.md`. These measure the rendered PNGs after blur, including actual palette coverage, maximum color share, color entropy, mean luminance, edge density, and the existing candidate score. They are intended to guide later improvements and are not a measure of real-world concealment.
 
 ## Masks
 

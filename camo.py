@@ -24,6 +24,12 @@ DEFAULT_COLORS = 5
 MIN_COLORS = 2
 MAX_COLORS = 5
 DEFAULT_PATTERN_SIZE = 500
+DEFAULT_DENSITY = "standard"
+DENSITY_SCALES = {
+    "low": (5, 10, 20, 40),
+    "standard": (8, 16, 32, 64),
+    "high": (12, 24, 48, 96),
+}
 
 # Approximate matte reference swatches based on Fosco military paint families.
 # They are style anchors, not a colorimetric reproduction of a specific can.
@@ -330,6 +336,9 @@ def build_palette(
 def balance_universal_palette_weights(
     palette: np.ndarray,
     weights: np.ndarray,
+    max_color_share: float | None = None,
+    green_share: float | None = None,
+    dark_share: float | None = None,
 ) -> np.ndarray:
     """Flatten Universal weights while keeping the dark-color limit intact."""
     luminance = (
@@ -339,12 +348,46 @@ def balance_universal_palette_weights(
     )
     dark = luminance < DARK_LUMINANCE_THRESHOLD
     adjusted = weights.astype(np.float32).copy()
-    if dark.any() and (~dark).any():
-        dark_total = min(float(adjusted[dark].sum()), 0.10)
-        adjusted[dark] = dark_total * adjusted[dark] / max(float(adjusted[dark].sum()), 1e-8)
-        adjusted[~dark] = (1.0 - dark_total) / int((~dark).sum())
-    else:
-        adjusted.fill(1.0 / len(adjusted))
+    if max_color_share is None and green_share is None and dark_share is None:
+        if dark.any() and (~dark).any():
+            dark_total = min(float(adjusted[dark].sum()), 0.10)
+            adjusted[dark] = dark_total * adjusted[dark] / max(float(adjusted[dark].sum()), 1e-8)
+            adjusted[~dark] = (1.0 - dark_total) / int((~dark).sum())
+        else:
+            adjusted.fill(1.0 / len(adjusted))
+        return adjusted / adjusted.sum()
+
+    # Custom mode exposes the most useful industrial controls while keeping
+    # the requested values feasible for any palette size.
+    dark_total = float(np.clip(dark_share if dark_share is not None else 0.10, 0.0, 0.25))
+    non_dark_indices = np.flatnonzero(~dark)
+    adjusted.fill(0.0)
+    if dark.any():
+        adjusted[dark] = dark_total / int(dark.sum())
+    if len(non_dark_indices):
+        non_dark_total = 1.0 - dark_total
+        limit = float(np.clip(max_color_share if max_color_share is not None else 0.30, 0.05, 0.80))
+        limit = max(limit, non_dark_total / len(non_dark_indices))
+        adjusted[non_dark_indices] = non_dark_total / len(non_dark_indices)
+        if green_share is not None and len(non_dark_indices) > 1:
+            green_index = int(np.argmax(palette[:, 1] - (palette[:, 0] + palette[:, 2]) / 2.0))
+            if not dark[green_index]:
+                requested_green = float(np.clip(green_share, 0.05, limit))
+                remaining = non_dark_total - requested_green
+                adjusted[green_index] = requested_green
+                others = non_dark_indices[non_dark_indices != green_index]
+                adjusted[others] = remaining / len(others)
+        # Redistribute any amount above the requested maximum.
+        for _ in range(len(adjusted)):
+            over = (~dark) & (adjusted > limit)
+            if not over.any():
+                break
+            excess = float((adjusted[over] - limit).sum())
+            adjusted[over] = limit
+            recipients = (~dark) & ~over
+            if not recipients.any():
+                break
+            adjusted[recipients] += excess / int(recipients.sum())
     return adjusted / adjusted.sum()
 
 
@@ -355,6 +398,7 @@ def make_pattern(
     seed: int,
     detail_weight: float = 0.08,
     blur_radius: float = 0.7,
+    density: str = DEFAULT_DENSITY,
 ) -> np.ndarray:
     """Generate adjacent, irregular color regions at four spatial scales.
 
@@ -363,12 +407,13 @@ def make_pattern(
     appear as an isolated island inside one dominant background.
     """
     rng = np.random.default_rng(seed)
+    scales = DENSITY_SCALES[density]
     scale_weights = np.array([0.22, 0.30, 0.30, detail_weight], dtype=np.float32)
     scale_weights /= scale_weights.sum()
     scores = np.empty((len(palette), size, size), dtype=np.float32)
     for color_index in range(len(palette)):
         field = np.zeros((size, size), dtype=np.float32)
-        for cells, weight in zip((8, 16, 32, 64), scale_weights):
+        for cells, weight in zip(scales, scale_weights):
             small = rng.random((cells, cells)).astype(np.float32)
             smooth = np.asarray(
                 Image.fromarray((small * 255).astype(np.uint8), mode="L")
@@ -507,7 +552,17 @@ def run_group(
         reserve_forest_green=balanced,
     )
     if balanced:
-        weights = balance_universal_palette_weights(palette, weights)
+        if args.mode == "custom":
+            weights = balance_universal_palette_weights(
+                palette,
+                weights,
+                max_color_share=args.max_color_share,
+                green_share=args.green_share,
+                dark_share=args.dark_share,
+            )
+        else:
+            # This is the original Universal behavior.
+            weights = balance_universal_palette_weights(palette, weights)
     target_rgb, target_luminance, target_texture = (
         balanced_group_target(images) if balanced else mean_target(images)
     )
@@ -521,6 +576,7 @@ def run_group(
             args.seed + index + 1,
             detail_weight=profile["detail"],
             blur_radius=profile["blur"],
+            density=args.density,
         )
         score, components = score_pattern(pattern, target_rgb, target_luminance, target_texture)
         candidates.append((score, index, pattern, components))
@@ -539,7 +595,14 @@ def run_group(
         "candidates_evaluated": args.candidates,
         "best_score": best_score,
         "score_components": best_components,
-        "version": "phase_15_balanced_universal_coverage",
+        "version": "phase_16_standard_custom_validation",
+        "generation_mode": args.mode,
+        "density": args.density,
+        "custom_settings": {
+            "max_color_share": args.max_color_share,
+            "green_share": args.green_share,
+            "dark_share": args.dark_share,
+        },
         "style_profile": profile,
         "weighting": "equal_environment_groups" if balanced else "pixel_weighted",
         "group_pixel_counts": {
@@ -594,9 +657,74 @@ def save_summary_grid(output_dir: Path, size: int) -> Path:
     return destination
 
 
+def write_validation_report(output_dir: Path, reports: dict[str, dict]) -> None:
+    """Measure the generated PNGs and save machine-readable and human-readable reports."""
+    validation: dict[str, object] = {
+        "description": "Post-generation measurements of color coverage, luminance, and edge density.",
+        "groups": {},
+    }
+    markdown_rows = []
+    for group, report in reports.items():
+        pattern_path = output_dir / group / "best_pattern.png"
+        if not pattern_path.exists():
+            continue
+        with Image.open(pattern_path) as source:
+            pattern = np.asarray(source.convert("RGB"), dtype=np.float32)
+        palette = np.asarray([item["rgb"] for item in report["palette"]], dtype=np.float32)
+        pixels = pattern.reshape(-1, 3)
+        distances = ((pixels[:, None, :] - palette[None, :, :]) ** 2).sum(axis=2)
+        labels = distances.argmin(axis=1)
+        counts = np.bincount(labels, minlength=len(palette)).astype(np.float64)
+        shares = counts / max(float(counts.sum()), 1.0)
+        gray = (
+            0.2126 * pattern[..., 0]
+            + 0.7152 * pattern[..., 1]
+            + 0.0722 * pattern[..., 2]
+        )
+        horizontal = np.abs(gray[:, 1:] - gray[:, :-1])
+        vertical = np.abs(gray[1:, :] - gray[:-1, :])
+        edge_density = float(np.mean(np.concatenate((horizontal.ravel(), vertical.ravel())) > 10.0))
+        entropy = float(-np.sum(shares[shares > 0] * np.log2(shares[shares > 0])))
+        normalized_entropy = entropy / max(np.log2(len(shares)), 1.0)
+        metrics = {
+            "image_size": [int(pattern.shape[1]), int(pattern.shape[0])],
+            "palette_rgb": [[int(value) for value in color] for color in palette],
+            "actual_palette_share": [float(value) for value in shares],
+            "maximum_actual_color_share": float(shares.max()),
+            "color_entropy": entropy,
+            "normalized_color_entropy": normalized_entropy,
+            "mean_rgb": [float(value) for value in pixels.mean(axis=0)],
+            "mean_luminance": float(gray.mean()),
+            "edge_density": edge_density,
+            "best_score": report["best_score"],
+            "score_components": report["score_components"],
+        }
+        validation["groups"][group] = metrics
+        markdown_rows.append(
+            f"| {group} | {metrics['maximum_actual_color_share']:.1%} | "
+            f"{metrics['normalized_color_entropy']:.2f} | {metrics['mean_luminance']:.1f} | "
+            f"{metrics['edge_density']:.1%} |"
+        )
+
+    (output_dir / "validation_report.json").write_text(
+        json.dumps(validation, indent=2), encoding="utf-8"
+    )
+    markdown = (
+        "# Validation Report\n\n"
+        "This report measures the generated images after rendering. It is a diagnostic tool, "
+        "not a measure of real-world concealment.\n\n"
+        "| Group | Maximum color share | Normalized color entropy | Mean luminance | Edge density |\n"
+        "|---|---:|---:|---:|---:|\n"
+        + "\n".join(markdown_rows)
+        + "\n"
+    )
+    (output_dir / "validation_report.md").write_text(markdown, encoding="utf-8")
+
+
 def run(args: argparse.Namespace) -> dict:
     input_dir = Path(args.input)
     output_dir = Path(args.output)
+    resolve_generation_settings(args)
     args.colors = resolve_color_count(args.colors)
     output_dir.mkdir(parents=True, exist_ok=True)
     paths = sorted(
@@ -621,6 +749,7 @@ def run(args: argparse.Namespace) -> dict:
         )
         reports[group] = run_group(images, output_dir / group, args)
     save_summary_grid(output_dir, args.size)
+    write_validation_report(output_dir, reports)
     (output_dir / "report.json").write_text(json.dumps(reports, indent=2), encoding="utf-8")
     return reports
 
@@ -629,6 +758,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default="photos", help="Folder containing reference images")
     parser.add_argument("--output", default="output", help="Folder for generated results")
+    parser.add_argument(
+        "--mode",
+        choices=("standard", "custom"),
+        default=None,
+        help="Generation mode; interactive prompt is used when omitted",
+    )
     parser.add_argument(
         "--size",
         type=int,
@@ -644,11 +779,104 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--candidates", type=int, default=64, help="Patterns to generate and compare")
     parser.add_argument("--seed", type=int, default=42, help="Seed for reproducible results")
     parser.add_argument(
+        "--density",
+        choices=tuple(DENSITY_SCALES),
+        default=None,
+        help="Pattern density for custom mode: low, standard, or high",
+    )
+    parser.add_argument(
+        "--max-color-share",
+        type=float,
+        default=None,
+        help="Maximum target share for a Universal non-dark color in custom mode",
+    )
+    parser.add_argument(
+        "--green-share",
+        type=float,
+        default=None,
+        help="Target Universal green share in custom mode",
+    )
+    parser.add_argument(
+        "--dark-share",
+        type=float,
+        default=None,
+        help="Target Universal dark-color share in custom mode",
+    )
+    parser.add_argument(
         "--no-auto-mask",
         action="store_true",
         help="Do not automatically exclude sky and water; use all image areas",
     )
     return parser.parse_args()
+
+
+def resolve_generation_settings(args: argparse.Namespace) -> None:
+    """Resolve standard/custom mode and its optional interactive settings."""
+    if args.mode is None:
+        args.mode = "standard"
+        if sys.stdin.isatty():
+            answer = input("Generation mode [standard/custom] (default: standard): ").strip().lower()
+            if answer:
+                if answer not in {"standard", "custom"}:
+                    raise ValueError("Generation mode must be 'standard' or 'custom'.")
+                args.mode = answer
+
+    if args.mode == "standard":
+        args.density = DEFAULT_DENSITY
+        args.max_color_share = None
+        args.green_share = None
+        args.dark_share = None
+        return
+
+    if args.density is None:
+        args.density = DEFAULT_DENSITY
+        if sys.stdin.isatty():
+            answer = input("Pattern density [low/standard/high] (default: standard): ").strip().lower()
+            if answer:
+                args.density = answer
+    if args.density not in DENSITY_SCALES:
+        raise ValueError("Pattern density must be low, standard, or high.")
+
+    def custom_float(
+        current: float | None,
+        prompt: str,
+        default: float,
+        minimum: float,
+        maximum: float,
+    ) -> float:
+        value = default if current is None else current
+        if current is None and sys.stdin.isatty():
+            answer = input(f"{prompt} [{default:.2f}]: ").strip()
+            if answer:
+                try:
+                    value = float(answer)
+                except ValueError as error:
+                    raise ValueError("Custom values must be numeric.") from error
+        if not minimum <= value <= maximum:
+            raise ValueError(f"Value must be between {minimum:.2f} and {maximum:.2f}.")
+        return value
+
+    args.max_color_share = custom_float(
+        args.max_color_share,
+        "Maximum Universal color share (0.20-0.50)",
+        0.30,
+        0.20,
+        0.50,
+    )
+    args.green_share = custom_float(
+        args.green_share,
+        "Universal green share (0.05-0.40)",
+        0.22,
+        0.05,
+        0.40,
+    )
+    args.dark_share = custom_float(
+        args.dark_share,
+        "Universal dark-color share (0.00-0.20)",
+        0.10,
+        0.00,
+        0.20,
+    )
 
 
 def resolve_color_count(requested: int | None) -> int:

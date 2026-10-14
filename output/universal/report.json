@@ -79,15 +79,22 @@
     500,
     500
   ],
-  "palette_colors": 5,
+  "palette_colors": 3,
   "candidates_evaluated": 64,
-  "best_score": 0.015377530828118324,
+  "best_score": 0.015188334509730339,
   "score_components": {
-    "rgb_error": 0.003061875933781266,
-    "luminance_error": 0.03982526808977127,
-    "texture_error": 0.02291378378868103
+    "rgb_error": 0.0031325542367994785,
+    "luminance_error": 0.04176954925060272,
+    "texture_error": 0.02044607512652874
   },
-  "version": "phase_15_balanced_universal_coverage",
+  "version": "phase_16_standard_custom_validation",
+  "generation_mode": "custom",
+  "density": "high",
+  "custom_settings": {
+    "max_color_share": 0.2,
+    "green_share": 0.2,
+    "dark_share": 0.2
+  },
   "style_profile": {
     "max_chroma": 70.0,
     "dark_floor": 72.0,
@@ -103,7 +110,7 @@
     "other": 40000,
     "urban": 140000
   },
-  "dark_palette_weight": 0.10000000894069672,
+  "dark_palette_weight": 0.0,
   "score_note": "The score combines color, luminance, and three-scale texture distributions; it is not a measure of real-world invisibility.",
   "palette": [
     {
@@ -112,39 +119,23 @@
         106,
         45
       ],
-      "weight": 0.22499999403953552
+      "weight": 0.3333333432674408
     },
     {
       "rgb": [
-        112,
-        92,
-        62
+        94,
+        79,
+        52
       ],
-      "weight": 0.22499999403953552
+      "weight": 0.3333333730697632
     },
     {
       "rgb": [
-        177,
-        152,
-        112
+        187,
+        168,
+        137
       ],
-      "weight": 0.22499999403953552
-    },
-    {
-      "rgb": [
-        67,
-        69,
-        56
-      ],
-      "weight": 0.10000000894069672
-    },
-    {
-      "rgb": [
-        180,
-        164,
-        136
-      ],
-      "weight": 0.22499999403953552
+      "weight": 0.3333333730697632
     }
   ]
 }
