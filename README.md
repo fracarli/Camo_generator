@@ -2,6 +2,42 @@
 
 An explainable Python prototype that generates camouflage-like patterns from reference landscape photographs.
 
+![Optimized pattern overview](output/optimized_final/all_optimized_patterns_grid.png)
+
+The repository contains a working procedural baseline, reproducible evaluation
+tools, and an incremental roadmap toward neural input analysis. It is designed
+to be easy to run as a demo while keeping experimental results and limitations
+visible.
+
+## Quick demo
+
+From a fresh clone:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python demo.py
+```
+
+The demo uses the reference photos already stored in `photos/`, generates five
+color patterns, and writes a contact sheet to
+`output/demo/all_patterns_grid.png`. It does not require the optional neural
+dependencies or a Hugging Face account.
+
+For a visual comparison of the optimized patterns and uniform mockups, see
+the generated [optimized pattern grid](output/optimized_final/all_optimized_patterns_grid.png)
+and [optimized uniform contact sheet](output/optimized_mockups/outfit_contact_sheet.png).
+
+## Project status
+
+The current release is a research prototype. The procedural generator and
+explainable optimizer are usable now; the optional SegFormer component is a
+pretrained neural model used to improve input masks. The project does not yet
+train a custom neural network or claim operational concealment performance.
+The planned neural work is documented in
+[docs/NEURAL_ROADMAP.md](docs/NEURAL_ROADMAP.md).
+
 The program:
 
 - extracts a representative color palette;

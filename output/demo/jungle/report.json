@@ -1,0 +1,273 @@
+{
+  "input_images": [
+    "photos/jungle/Amazon-plants.jpg [automatic]",
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]",
+    "photos/jungle/DSC_1137.jpg [automatic]",
+    "photos/jungle/images-3 copy.jpeg [automatic]",
+    "photos/jungle/images-3.jpeg [automatic]",
+    "photos/jungle/images-4 copy.jpeg [automatic]",
+    "photos/jungle/images-4.jpeg [automatic]",
+    "photos/jungle/images-5 copy.jpeg [automatic]",
+    "photos/jungle/images-5.jpeg [automatic]",
+    "photos/jungle/images-6.jpeg [automatic]",
+    "photos/jungle/p0ml01qd.jpg [automatic]",
+    "photos/jungle/p0ml02xf.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "photos/jungle/Amazon-plants.jpg [automatic]": 0.9618226882309941,
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": 0.9978388798701299,
+    "photos/jungle/DSC_1137.jpg [automatic]": 0.9981732536764706,
+    "photos/jungle/images-3 copy.jpeg [automatic]": 0.9881498994883041,
+    "photos/jungle/images-3.jpeg [automatic]": 0.9994403326023392,
+    "photos/jungle/images-4 copy.jpeg [automatic]": 0.9989204950142451,
+    "photos/jungle/images-4.jpeg [automatic]": 0.9980697855571847,
+    "photos/jungle/images-5 copy.jpeg [automatic]": 1.0,
+    "photos/jungle/images-5.jpeg [automatic]": 0.9965590533088236,
+    "photos/jungle/images-6.jpeg [automatic]": 0.997897518382353,
+    "photos/jungle/p0ml01qd.jpg [automatic]": 0.9982574349442379,
+    "photos/jungle/p0ml02xf.jpg [automatic]": 0.9990473977695167
+  },
+  "mask_sources": {
+    "photos/jungle/Amazon-plants.jpg [automatic]": "automatic",
+    "photos/jungle/Cordillera-de-Tilaran-Costa-Rica.jpg.webp [automatic]": "automatic",
+    "photos/jungle/DSC_1137.jpg [automatic]": "automatic",
+    "photos/jungle/images-3 copy.jpeg [automatic]": "automatic",
+    "photos/jungle/images-3.jpeg [automatic]": "automatic",
+    "photos/jungle/images-4 copy.jpeg [automatic]": "automatic",
+    "photos/jungle/images-4.jpeg [automatic]": "automatic",
+    "photos/jungle/images-5 copy.jpeg [automatic]": "automatic",
+    "photos/jungle/images-5.jpeg [automatic]": "automatic",
+    "photos/jungle/images-6.jpeg [automatic]": "automatic",
+    "photos/jungle/p0ml01qd.jpg [automatic]": "automatic",
+    "photos/jungle/p0ml02xf.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 64,
+  "best_score": 0.018605247139930725,
+  "score_components": {
+    "rgb_error": 0.0032585521694272757,
+    "luminance_error": 0.041004031896591187,
+    "texture_error": 0.03899766132235527,
+    "geometry_penalty": 0.00023580766374907267,
+    "directional_bias": 0.0029475957968634085,
+    "transition_density": 0.08906412825651303,
+    "fine_edge_density": 0.28857037401574803
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 39,
+      "score": 0.018605247139930725,
+      "score_components": {
+        "rgb_error": 0.0032585521694272757,
+        "luminance_error": 0.041004031896591187,
+        "texture_error": 0.03899766132235527,
+        "geometry_penalty": 0.00023580766374907267,
+        "directional_bias": 0.0029475957968634085,
+        "transition_density": 0.08906412825651303,
+        "fine_edge_density": 0.28857037401574803
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 30,
+      "score": 0.018636316061019897,
+      "score_components": {
+        "rgb_error": 0.0032589894253760576,
+        "luminance_error": 0.04104103147983551,
+        "texture_error": 0.038074251264333725,
+        "geometry_penalty": 0.0004816149318532799,
+        "directional_bias": 0.006020186648165999,
+        "transition_density": 0.08954509018036072,
+        "fine_edge_density": 0.2933070866141732
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 8,
+      "score": 0.01866636797785759,
+      "score_components": {
+        "rgb_error": 0.0032543332781642675,
+        "luminance_error": 0.041370030492544174,
+        "texture_error": 0.03876905143260956,
+        "geometry_penalty": 0.00028802391141905865,
+        "directional_bias": 0.003600298892738233,
+        "transition_density": 0.08850300601202404,
+        "fine_edge_density": 0.29023129921259844
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 13,
+      "score": 0.01869196631014347,
+      "score_components": {
+        "rgb_error": 0.0032664272002875805,
+        "luminance_error": 0.04097577929496765,
+        "texture_error": 0.03835182264447212,
+        "geometry_penalty": 0.00047867554435846886,
+        "directional_bias": 0.005983444304480861,
+        "transition_density": 0.08909018036072144,
+        "fine_edge_density": 0.2977054625984252
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 34,
+      "score": 0.018737787380814552,
+      "score_components": {
+        "rgb_error": 0.0032755520660430193,
+        "luminance_error": 0.041172780096530914,
+        "texture_error": 0.038973383605480194,
+        "geometry_penalty": 0.00033529845246868073,
+        "directional_bias": 0.004191230655858509,
+        "transition_density": 0.08702204408817635,
+        "fine_edge_density": 0.28451033464566927
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 61,
+      "score": 0.018778551369905472,
+      "score_components": {
+        "rgb_error": 0.0032660833094269037,
+        "luminance_error": 0.04144570976495743,
+        "texture_error": 0.03995896503329277,
+        "geometry_penalty": 9.512928722982475e-05,
+        "directional_bias": 0.0011891160903728093,
+        "transition_density": 0.08594989979959919,
+        "fine_edge_density": 0.27546751968503935
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 21,
+      "score": 0.018863411620259285,
+      "score_components": {
+        "rgb_error": 0.0032585207372903824,
+        "luminance_error": 0.041282206773757935,
+        "texture_error": 0.0391918383538723,
+        "geometry_penalty": 0.000397311219422054,
+        "directional_bias": 0.004966390242775675,
+        "transition_density": 0.0867555110220441,
+        "fine_edge_density": 0.2834953248031496
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 9,
+      "score": 0.018899764865636826,
+      "score_components": {
+        "rgb_error": 0.0032780051697045565,
+        "luminance_error": 0.04132920876145363,
+        "texture_error": 0.04085956886410713,
+        "geometry_penalty": 1.520767987833942e-05,
+        "directional_bias": 0.00019009599847924274,
+        "transition_density": 0.08433667334669338,
+        "fine_edge_density": 0.27660556102362205
+      }
+    },
+    {
+      "rank": 9,
+      "seed_offset": 58,
+      "score": 0.01891966722905636,
+      "score_components": {
+        "rgb_error": 0.003268395783379674,
+        "luminance_error": 0.041315458714962006,
+        "texture_error": 0.039606112986803055,
+        "geometry_penalty": 0.0003432195485916807,
+        "directional_bias": 0.004290244357396008,
+        "transition_density": 0.08594789579158316,
+        "fine_edge_density": 0.2842642716535433
+      }
+    },
+    {
+      "rank": 10,
+      "seed_offset": 41,
+      "score": 0.018956603482365608,
+      "score_components": {
+        "rgb_error": 0.003275161376222968,
+        "luminance_error": 0.041401207447052,
+        "texture_error": 0.03990217298269272,
+        "geometry_penalty": 0.0002902840773454317,
+        "directional_bias": 0.0036285509668178956,
+        "transition_density": 0.08394789579158317,
+        "fine_edge_density": 0.2790046751968504
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 62.0,
+    "dark_floor": 58.0,
+    "dark_weight": 0.16,
+    "detail": 0.19,
+    "blur": 0.65,
+    "blob_scale": 0.6,
+    "blob_weight": 0.38,
+    "blob_aspect": 0.78
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "jungle": 240000
+  },
+  "dark_palette_weight": 0.1600000262260437,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        45,
+        49,
+        43
+      ],
+      "weight": 0.08038141578435898
+    },
+    {
+      "rgb": [
+        53,
+        59,
+        48
+      ],
+      "weight": 0.07961860299110413
+    },
+    {
+      "rgb": [
+        82,
+        102,
+        52
+      ],
+      "weight": 0.44314631819725037
+    },
+    {
+      "rgb": [
+        141,
+        149,
+        95
+      ],
+      "weight": 0.28046056628227234
+    },
+    {
+      "rgb": [
+        173,
+        161,
+        124
+      ],
+      "weight": 0.11639311164617538
+    }
+  ]
+}

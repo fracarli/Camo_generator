@@ -1,0 +1,590 @@
+{
+  "description": "Post-generation measurements of color coverage, luminance, texture, and shape structure.",
+  "groups": {
+    "universal": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          88,
+          107,
+          46
+        ],
+        [
+          107,
+          91,
+          60
+        ],
+        [
+          59,
+          61,
+          54
+        ],
+        [
+          171,
+          153,
+          111
+        ],
+        [
+          180,
+          165,
+          139
+        ]
+      ],
+      "actual_palette_share": [
+        0.2177,
+        0.237836,
+        0.094548,
+        0.242572,
+        0.207344
+      ],
+      "maximum_actual_color_share": 0.242572,
+      "color_entropy": 2.2597157987485414,
+      "normalized_color_entropy": 0.9732066224290901,
+      "mean_rgb": [
+        128.91754150390625,
+        122.19742584228516,
+        85.55608367919922
+      ],
+      "mean_luminance": 120.94351196289062,
+      "edge_density": 0.07480761523046092,
+      "horizontal_edge_density": 0.07541082164328658,
+      "vertical_edge_density": 0.0742004008016032,
+      "directional_bias": 0.008090441491641748,
+      "transition_density": 0.07480561122244489,
+      "fine_edge_density": 0.2327140748031496,
+      "best_score": 0.016279352828860283,
+      "score_components": {
+        "rgb_error": 0.0031484796199947596,
+        "luminance_error": 0.04313142970204353,
+        "texture_error": 0.026225917041301727,
+        "geometry_penalty": 0.0006472353193313399,
+        "directional_bias": 0.008090441491641748,
+        "transition_density": 0.07480561122244489,
+        "fine_edge_density": 0.2327140748031496
+      }
+    },
+    "desert": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          121,
+          93,
+          69
+        ],
+        [
+          182,
+          157,
+          127
+        ],
+        [
+          179,
+          164,
+          136
+        ],
+        [
+          175,
+          150,
+          120
+        ],
+        [
+          73,
+          71,
+          58
+        ]
+      ],
+      "actual_palette_share": [
+        0.286268,
+        0.215916,
+        0.172472,
+        0.195804,
+        0.12954
+      ],
+      "maximum_actual_color_share": 0.286268,
+      "color_entropy": 2.2739765842271886,
+      "normalized_color_entropy": 0.9793484084344568,
+      "mean_rgb": [
+        148.1149444580078,
+        127.42371368408203,
+        102.06297302246094
+      ],
+      "mean_luminance": 130.09188842773438,
+      "edge_density": 0.07582965931863728,
+      "horizontal_edge_density": 0.07562324649298598,
+      "vertical_edge_density": 0.0756432865731463,
+      "directional_bias": 0.00013248191621844364,
+      "transition_density": 0.07563326653306614,
+      "fine_edge_density": 0.22148745078740156,
+      "best_score": 0.013387002050876617,
+      "score_components": {
+        "rgb_error": 0.0031897814478725195,
+        "luminance_error": 0.0442790612578392,
+        "texture_error": 0.015880336984992027,
+        "geometry_penalty": 1.0598553297475491e-05,
+        "directional_bias": 0.00013248191621844364,
+        "transition_density": 0.07563326653306614,
+        "fine_edge_density": 0.22148745078740156
+      }
+    },
+    "forest": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          73,
+          81,
+          43
+        ],
+        [
+          102,
+          114,
+          65
+        ],
+        [
+          51,
+          53,
+          46
+        ],
+        [
+          166,
+          163,
+          107
+        ],
+        [
+          171,
+          161,
+          137
+        ]
+      ],
+      "actual_palette_share": [
+        0.32158,
+        0.295688,
+        0.16638,
+        0.143172,
+        0.07318
+      ],
+      "maximum_actual_color_share": 0.32158,
+      "color_entropy": 2.154165938654692,
+      "normalized_color_entropy": 0.9277487719787428,
+      "mean_rgb": [
+        98.01097869873047,
+        103.01168060302734,
+        66.25109100341797
+      ],
+      "mean_luminance": 99.38143157958984,
+      "edge_density": 0.09331062124248497,
+      "horizontal_edge_density": 0.09307414829659319,
+      "vertical_edge_density": 0.09354308617234469,
+      "directional_bias": 0.0025128326281651956,
+      "transition_density": 0.09330861723446894,
+      "fine_edge_density": 0.29822834645669294,
+      "best_score": 0.016264867037534714,
+      "score_components": {
+        "rgb_error": 0.0028754095546901226,
+        "luminance_error": 0.041506022214889526,
+        "texture_error": 0.02981272153556347,
+        "geometry_penalty": 0.00020102661025321565,
+        "directional_bias": 0.0025128326281651956,
+        "transition_density": 0.09330861723446894,
+        "fine_edge_density": 0.29822834645669294
+      }
+    },
+    "jungle": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          45,
+          49,
+          43
+        ],
+        [
+          53,
+          59,
+          48
+        ],
+        [
+          82,
+          102,
+          52
+        ],
+        [
+          141,
+          149,
+          95
+        ],
+        [
+          173,
+          161,
+          124
+        ]
+      ],
+      "actual_palette_share": [
+        0.066896,
+        0.087016,
+        0.449388,
+        0.290232,
+        0.106468
+      ],
+      "maximum_actual_color_share": 0.449388,
+      "color_entropy": 1.9481585575656926,
+      "normalized_color_entropy": 0.8390262221536187,
+      "mean_rgb": [
+        103.72360229492188,
+        114.24010467529297,
+        71.42266845703125
+      ],
+      "mean_luminance": 109.02717590332031,
+      "edge_density": 0.08906412825651303,
+      "horizontal_edge_density": 0.08880160320641282,
+      "vertical_edge_density": 0.08932665330661323,
+      "directional_bias": 0.0029475957968634085,
+      "transition_density": 0.08906412825651303,
+      "fine_edge_density": 0.28857037401574803,
+      "best_score": 0.018605247139930725,
+      "score_components": {
+        "rgb_error": 0.0032585521694272757,
+        "luminance_error": 0.041004031896591187,
+        "texture_error": 0.03899766132235527,
+        "geometry_penalty": 0.00023580766374907267,
+        "directional_bias": 0.0029475957968634085,
+        "transition_density": 0.08906412825651303,
+        "fine_edge_density": 0.28857037401574803
+      }
+    },
+    "mountain": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          80,
+          89,
+          51
+        ],
+        [
+          137,
+          134,
+          87
+        ],
+        [
+          54,
+          57,
+          50
+        ],
+        [
+          165,
+          160,
+          131
+        ],
+        [
+          181,
+          167,
+          142
+        ]
+      ],
+      "actual_palette_share": [
+        0.320848,
+        0.313836,
+        0.126664,
+        0.163916,
+        0.074736
+      ],
+      "maximum_actual_color_share": 0.320848,
+      "color_entropy": 2.135804431369628,
+      "normalized_color_entropy": 0.9198409012201718,
+      "mean_rgb": [
+        115.95000457763672,
+        116.28380584716797,
+        82.79435729980469
+      ],
+      "mean_luminance": 113.89701843261719,
+      "edge_density": 0.07864529058116232,
+      "horizontal_edge_density": 0.07914228456913827,
+      "vertical_edge_density": 0.07815230460921843,
+      "directional_bias": 0.006293795387947511,
+      "transition_density": 0.07864729458917835,
+      "fine_edge_density": 0.25439837598425197,
+      "best_score": 0.014475497417151928,
+      "score_components": {
+        "rgb_error": 0.00289656943641603,
+        "luminance_error": 0.040833212435245514,
+        "texture_error": 0.021557213738560677,
+        "geometry_penalty": 0.000503503631035801,
+        "directional_bias": 0.006293795387947511,
+        "transition_density": 0.07864729458917835,
+        "fine_edge_density": 0.25439837598425197
+      }
+    },
+    "snow": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          225,
+          229,
+          230
+        ],
+        [
+          184,
+          188,
+          191
+        ],
+        [
+          76,
+          80,
+          81
+        ],
+        [
+          140,
+          144,
+          144
+        ],
+        [
+          91,
+          94,
+          92
+        ]
+      ],
+      "actual_palette_share": [
+        0.210188,
+        0.213296,
+        0.17244,
+        0.211488,
+        0.192588
+      ],
+      "maximum_actual_color_share": 0.213296,
+      "color_entropy": 2.317393416588228,
+      "normalized_color_entropy": 0.9980470203581587,
+      "mean_rgb": [
+        146.63461303710938,
+        150.41123962402344,
+        151.19631958007812
+      ],
+      "mean_luminance": 149.71519470214844,
+      "edge_density": 0.10043286573146293,
+      "horizontal_edge_density": 0.09992384769539078,
+      "vertical_edge_density": 0.09942685370741483,
+      "directional_bias": 0.002493063653544575,
+      "transition_density": 0.0996753507014028,
+      "fine_edge_density": 0.27346825787401574,
+      "best_score": 0.013899308629333973,
+      "score_components": {
+        "rgb_error": 0.0021849805489182472,
+        "luminance_error": 0.042105793952941895,
+        "texture_error": 0.020951373502612114,
+        "geometry_penalty": 0.00019944509228356601,
+        "directional_bias": 0.002493063653544575,
+        "transition_density": 0.0996753507014028,
+        "fine_edge_density": 0.27346825787401574
+      }
+    },
+    "taiga": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          88,
+          73,
+          52
+        ],
+        [
+          104,
+          111,
+          71
+        ],
+        [
+          150,
+          160,
+          111
+        ],
+        [
+          52,
+          53,
+          48
+        ],
+        [
+          176,
+          167,
+          143
+        ]
+      ],
+      "actual_palette_share": [
+        0.285464,
+        0.269216,
+        0.229332,
+        0.146312,
+        0.069676
+      ],
+      "maximum_actual_color_share": 0.285464,
+      "color_entropy": 2.186663383262025,
+      "normalized_color_entropy": 0.9417446595684097,
+      "mean_rgb": [
+        107.20708465576172,
+        106.41358184814453,
+        76.62602996826172
+      ],
+      "mean_luminance": 104.4882583618164,
+      "edge_density": 0.0931442885771543,
+      "horizontal_edge_density": 0.09282164328657315,
+      "vertical_edge_density": 0.0932064128256513,
+      "directional_bias": 0.0020683414487007905,
+      "transition_density": 0.09301402805611222,
+      "fine_edge_density": 0.296259842519685,
+      "best_score": 0.01459211204200983,
+      "score_components": {
+        "rgb_error": 0.002817054744809866,
+        "luminance_error": 0.03913068771362305,
+        "texture_error": 0.024894142523407936,
+        "geometry_penalty": 0.00016546731589606325,
+        "directional_bias": 0.0020683414487007905,
+        "transition_density": 0.09301402805611222,
+        "fine_edge_density": 0.296259842519685
+      }
+    },
+    "tundra": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          114,
+          85,
+          63
+        ],
+        [
+          106,
+          75,
+          57
+        ],
+        [
+          74,
+          71,
+          59
+        ],
+        [
+          167,
+          139,
+          112
+        ],
+        [
+          186,
+          172,
+          148
+        ]
+      ],
+      "actual_palette_share": [
+        0.30586,
+        0.248396,
+        0.159436,
+        0.176216,
+        0.110092
+      ],
+      "maximum_actual_color_share": 0.30586,
+      "color_entropy": 2.235963324428398,
+      "normalized_color_entropy": 0.9629769885431639,
+      "mean_rgb": [
+        122.77090454101562,
+        99.6071548461914,
+        79.34446716308594
+      ],
+      "mean_luminance": 103.06483459472656,
+      "edge_density": 0.06511222444889779,
+      "horizontal_edge_density": 0.06550701402805612,
+      "vertical_edge_density": 0.06470941883767535,
+      "directional_bias": 0.006125150050786445,
+      "transition_density": 0.06510821643286574,
+      "fine_edge_density": 0.19694266732283464,
+      "best_score": 0.015237338840961456,
+      "score_components": {
+        "rgb_error": 0.0031787343323230743,
+        "luminance_error": 0.03815091401338577,
+        "texture_error": 0.02621164731681347,
+        "geometry_penalty": 0.0004900120040629155,
+        "directional_bias": 0.006125150050786445,
+        "transition_density": 0.06510821643286574,
+        "fine_edge_density": 0.19694266732283464
+      }
+    },
+    "urban": {
+      "image_size": [
+        500,
+        500
+      ],
+      "palette_rgb": [
+        [
+          100,
+          83,
+          71
+        ],
+        [
+          154,
+          130,
+          108
+        ],
+        [
+          186,
+          162,
+          139
+        ],
+        [
+          62,
+          61,
+          58
+        ],
+        [
+          183,
+          165,
+          138
+        ]
+      ],
+      "actual_palette_share": [
+        0.278884,
+        0.254824,
+        0.203556,
+        0.092056,
+        0.17068
+      ],
+      "maximum_actual_color_share": 0.278884,
+      "color_entropy": 2.236004835161687,
+      "normalized_color_entropy": 0.9629948662429,
+      "mean_rgb": [
+        141.85023498535156,
+        123.0564193725586,
+        104.78298950195312
+      ],
+      "mean_luminance": 125.70868682861328,
+      "edge_density": 0.07249699398797595,
+      "horizontal_edge_density": 0.07428056112224449,
+      "vertical_edge_density": 0.07070541082164329,
+      "directional_bias": 0.02465859457068608,
+      "transition_density": 0.0724929859719439,
+      "fine_edge_density": 0.22736220472440946,
+      "best_score": 0.018290510401129723,
+      "score_components": {
+        "rgb_error": 0.0030270367860794067,
+        "luminance_error": 0.045856624841690063,
+        "texture_error": 0.027292124927043915,
+        "geometry_penalty": 0.0019726875656548865,
+        "directional_bias": 0.02465859457068608,
+        "transition_density": 0.0724929859719439,
+        "fine_edge_density": 0.22736220472440946
+      }
+    }
+  }
+}
