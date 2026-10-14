@@ -19,7 +19,6 @@ CANVAS_SIZE = (600, 900)
 
 
 def clothing_masks(size: tuple[int, int]) -> tuple[Image.Image, Image.Image, Image.Image]:
-    width, height = size
     shirt = Image.new("L", size, 0)
     trousers = Image.new("L", size, 0)
     boots = Image.new("L", size, 0)
@@ -27,35 +26,33 @@ def clothing_masks(size: tuple[int, int]) -> tuple[Image.Image, Image.Image, Ima
     trouser_draw = ImageDraw.Draw(trousers)
     boot_draw = ImageDraw.Draw(boots)
 
-    # Headless combat shirt: collar, torso, and separate sleeves.
-    shirt_draw.polygon([(205, 145), (395, 145), (470, 230), (405, 505), (195, 505), (130, 230)], fill=255)
-    shirt_draw.ellipse((265, 118, 335, 190), fill=255)
-    shirt_draw.polygon([(130, 220), (205, 165), (215, 405), (155, 430)], fill=255)
-    shirt_draw.polygon([(395, 165), (470, 220), (445, 430), (385, 405)], fill=255)
+    # Proportional headless combat shirt: a short neck, broad shoulders,
+    # tapered sleeves, and a separate torso rather than one trapezoid.
+    shirt_draw.polygon([(214, 166), (386, 166), (445, 220), (418, 470), (182, 470), (155, 220)], fill=255)
+    shirt_draw.polygon([(214, 176), (158, 204), (88, 400), (122, 432), (205, 310)], fill=255)
+    shirt_draw.polygon([(386, 176), (442, 204), (512, 400), (478, 432), (395, 310)], fill=255)
+    # A short upright collar is more natural than a circular mannequin neck.
+    shirt_draw.polygon([(273, 128), (327, 128), (335, 180), (265, 180)], fill=255)
 
-    # Cargo trousers with separate legs and broad pockets.
-    trouser_draw.polygon([(195, 465), (405, 465), (420, 580), (350, 615), (250, 615), (180, 580)], fill=255)
-    trouser_draw.polygon([(200, 560), (295, 560), (285, 785), (190, 785)], fill=255)
-    trouser_draw.polygon([(305, 560), (400, 560), (410, 785), (315, 785)], fill=255)
-    trouser_draw.rectangle((180, 590, 245, 700), fill=255)
-    trouser_draw.rectangle((355, 590, 420, 700), fill=255)
+    # Cargo trousers with a natural hip width and separated, tapered legs.
+    trouser_draw.polygon([(182, 440), (418, 440), (430, 545), (380, 595), (220, 595), (170, 545)], fill=255)
+    trouser_draw.polygon([(188, 535), (292, 535), (280, 785), (178, 785)], fill=255)
+    trouser_draw.polygon([(308, 535), (412, 535), (422, 785), (320, 785)], fill=255)
+    trouser_draw.polygon([(170, 566), (246, 566), (246, 695), (176, 695)], fill=255)
+    trouser_draw.polygon([(354, 566), (430, 566), (424, 695), (354, 695)], fill=255)
 
-    boot_draw.polygon([(188, 755), (285, 755), (292, 820), (320, 865), (305, 890), (145, 890), (135, 865)], fill=255)
-    boot_draw.polygon([(315, 755), (412, 755), (465, 865), (455, 890), (295, 890), (280, 865)], fill=255)
+    # Separate boots with a visible ankle and broad sole.
+    boot_draw.polygon([(178, 755), (280, 755), (288, 826), (314, 860), (300, 884), (126, 884), (118, 858)], fill=255)
+    boot_draw.polygon([(320, 755), (422, 755), (482, 858), (474, 884), (300, 884), (286, 860)], fill=255)
     return shirt, trousers, boots
 
 
 def texture_for(pattern_path: Path, size: tuple[int, int]) -> Image.Image:
     with Image.open(pattern_path) as source:
         pattern = source.convert("RGB")
-    # A repeated, gently resized texture keeps the square Camo pattern visible
-    # across the taller uniform without introducing new colors.
-    fitted = ImageOps.fit(pattern, (size[0] // 2, size[1] // 2), Image.Resampling.LANCZOS)
-    tiled = Image.new("RGB", size)
-    for x in range(0, size[0], fitted.width):
-        for y in range(0, size[1], fitted.height):
-            tiled.paste(fitted, (x, y))
-    return tiled
+    # One continuous projection avoids visible tile seams and keeps the same
+    # pattern context across shirt and trousers.
+    return ImageOps.fit(pattern, size, Image.Resampling.LANCZOS, centering=(0.5, 0.52))
 
 
 def render_outfit(pattern_path: Path, group: str, destination: Path) -> None:
@@ -72,20 +69,28 @@ def render_outfit(pattern_path: Path, group: str, destination: Path) -> None:
     shadow_layer = Image.new("RGB", size, "#9c9b95")
     canvas.paste(shadow_layer, (0, 12), shadow.point(lambda value: int(value * 0.22)))
 
-    canvas.paste(texture, (0, 0), shirt_mask)
-    canvas.paste(texture, (0, 0), trouser_mask)
-    canvas.paste(texture, (0, 0), boot_mask)
+    # Add restrained volume shading while preserving the exact source palette.
+    yy, xx = np.mgrid[0:size[1], 0:size[0]]
+    light = 0.86 + 0.14 * (1.0 - np.abs(xx - size[0] / 2) / (size[0] / 2))
+    shaded_array = np.clip(np.asarray(texture, dtype=np.float32) * light[..., None], 0, 255).astype(np.uint8)
+    shaded_texture = Image.fromarray(shaded_array, mode="RGB")
+    canvas.paste(shaded_texture, (0, 0), shirt_mask)
+    canvas.paste(shaded_texture, (0, 0), trouser_mask)
+    canvas.paste(shaded_texture, (0, 0), boot_mask)
 
     draw = ImageDraw.Draw(canvas)
     outline = "#252821"
     seam = "#55574d"
-    draw.line([(205, 145), (395, 145), (470, 230), (405, 505), (195, 505), (130, 230), (205, 145)], fill=outline, width=4, joint="curve")
-    draw.line([(195, 465), (405, 465), (420, 580), (350, 615), (250, 615), (180, 580), (195, 465)], fill=outline, width=4, joint="curve")
-    draw.line([(200, 560), (295, 560), (285, 785)], fill=seam, width=3)
-    draw.line([(305, 560), (400, 560), (410, 785)], fill=seam, width=3)
-    draw.line([(180, 590), (245, 590), (245, 700), (180, 700)], fill=seam, width=3)
-    draw.line([(355, 590), (420, 590), (420, 700), (355, 700)], fill=seam, width=3)
-    draw.line([(300, 180), (300, 450)], fill=seam, width=3)
+    draw.line([(214, 166), (386, 166), (445, 220), (418, 470), (182, 470), (155, 220), (214, 166)], fill=outline, width=4, joint="curve")
+    draw.line([(182, 440), (418, 440), (430, 545), (380, 595), (220, 595), (170, 545), (182, 440)], fill=outline, width=4, joint="curve")
+    draw.line([(188, 535), (292, 535), (280, 785)], fill=seam, width=3)
+    draw.line([(308, 535), (412, 535), (422, 785)], fill=seam, width=3)
+    draw.line([(170, 566), (246, 566), (246, 695), (176, 695)], fill=seam, width=3)
+    draw.line([(354, 566), (430, 566), (424, 695), (354, 695)], fill=seam, width=3)
+    draw.line([(300, 184), (300, 440)], fill=seam, width=3)
+    draw.line([(157, 205), (122, 432)], fill=seam, width=3)
+    draw.line([(443, 205), (478, 432)], fill=seam, width=3)
+    draw.line([(273, 128), (265, 180), (300, 198), (335, 180), (327, 128)], fill=seam, width=3, joint="curve")
     draw.text((18, 18), f"{group.title()} outfit mockup", fill="#20231e")
     draw.text((18, 52), "Headless visual comparison — not a manufacturing template", fill="#55574d")
     destination.parent.mkdir(parents=True, exist_ok=True)
