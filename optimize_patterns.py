@@ -19,7 +19,7 @@ import numpy as np
 from PIL import Image
 
 import camo
-from evaluate_camo import build_uniform_layer, composite, load_background, measure_visibility
+from evaluate_camo import build_uniform_layer, choose_position, composite, load_background, measure_visibility
 
 
 DEFAULT_GROUPS = ("universal", "forest", "taiga", "tundra", "urban", "desert", "mountain", "snow", "jungle")
@@ -44,13 +44,14 @@ def parse_csv(value: str) -> list[str]:
     return list(dict.fromkeys(item.strip().lower() for item in value.split(",") if item.strip()))
 
 
-def background_paths(root: Path, groups: list[str], limit: int) -> list[tuple[str, Path]]:
+def background_paths(root: Path, groups: list[str], limit: int, start: int = 0) -> list[tuple[str, Path]]:
     result = []
     for group in groups:
         paths = sorted(
             path for path in (root / group).glob("*")
             if path.is_file() and path.suffix.lower() in evaluate_extensions()
         )
+        paths = paths[start:]
         if limit > 0:
             paths = paths[:limit]
         result.extend((group, path) for path in paths)
@@ -167,10 +168,11 @@ def make_candidates(
 
 
 def score_candidate(candidate: Candidate, background: Image.Image, template_path: Path, seed: int) -> float:
-    uniform, mask = build_uniform_layer_from_pattern(candidate.pattern, template_path, round(600 * 0.80))
-    jitter = random.Random(seed).randint(-70, 70)
-    x = (900 - uniform.width) // 2 + jitter
-    y = 600 - uniform.height - random.Random(seed + 1).randint(0, 25)
+    uniform, mask = build_uniform_layer_from_pattern(candidate.pattern, template_path, round(600 * 0.25))
+    x, y = choose_position(
+        (900, 600), uniform.size, seed, "spread",
+        background=background, mask=mask, avoid_sky_water=True,
+    )
     scene, scene_mask = composite(background, uniform, mask, x, y)
     return float(measure_visibility(background, scene, scene_mask)["visibility_score"])
 
@@ -199,7 +201,12 @@ def build_uniform_layer_from_pattern(pattern: np.ndarray, template_path: Path, h
 
 
 def optimize_group(group: str, images: list[camo.ImageStats], background_root: Path, args: argparse.Namespace, output_root: Path) -> dict:
-    backgrounds = background_paths(background_root, (group,) if group != "universal" else args.background_groups, args.background_limit)
+    backgrounds = background_paths(
+        background_root,
+        (group,) if group != "universal" else args.background_groups,
+        args.background_limit,
+        args.background_start,
+    )
     if not backgrounds:
         return {"group": group, "status": "skipped", "reason": "No background images found"}
     baseline_path = Path(args.pattern_root) / group / "best_pattern.png"
@@ -265,6 +272,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--groups", default=",".join(DEFAULT_GROUPS))
     parser.add_argument("--background-groups", default="forest,desert,mountain,urban,jungle,taiga,tundra")
     parser.add_argument("--background-limit", type=int, default=10)
+    parser.add_argument(
+        "--background-start",
+        type=int,
+        default=0,
+        help="Number of sorted background images to skip in every environment.",
+    )
     parser.add_argument("--candidates", type=int, default=24)
     parser.add_argument("--beam-size", type=int, default=8)
     parser.add_argument("--colors", type=int, default=5)

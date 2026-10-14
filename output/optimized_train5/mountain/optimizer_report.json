@@ -1,0 +1,137 @@
+{
+  "group": "mountain",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+    "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+    "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg",
+    "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg",
+    "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg"
+  ],
+  "candidate_count": 12,
+  "beam_size": 4,
+  "best_candidate": "candidate_009",
+  "optimized_score": 0.09766912961495108,
+  "baseline_score": 0.1314235272211954,
+  "improvement": 0.033754397606244324,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 0.8261737191462161,
+    "blob_weight": 0.3029760957426585,
+    "blob_aspect": 1.0374663260983166,
+    "detail_weight": 0.14382026382348786,
+    "blur_radius": 0.7168378948880147,
+    "seed": 52,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        77,
+        92,
+        57
+      ],
+      "weight": 0.23170840740203857
+    },
+    {
+      "rgb": [
+        147,
+        138,
+        90
+      ],
+      "weight": 0.2838129997253418
+    },
+    {
+      "rgb": [
+        59,
+        60,
+        61
+      ],
+      "weight": 0.1337377429008484
+    },
+    {
+      "rgb": [
+        158,
+        156,
+        129
+      ],
+      "weight": 0.10157962888479233
+    },
+    {
+      "rgb": [
+        173,
+        158,
+        136
+      ],
+      "weight": 0.24916121363639832
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.19881860557943581,
+      "active_candidates": [
+        "candidate_002",
+        "candidate_009",
+        "candidate_001",
+        "candidate_000",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.11983819694141856,
+      "active_candidates": [
+        "candidate_002",
+        "candidate_001",
+        "candidate_009",
+        "candidate_000",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.10107873464779306,
+      "active_candidates": [
+        "candidate_002",
+        "candidate_009",
+        "candidate_001",
+        "candidate_000",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.08722022022266174,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_002",
+        "candidate_001",
+        "candidate_000",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.09766912961495108,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_002",
+        "candidate_001",
+        "candidate_000",
+        "current_best"
+      ]
+    }
+  ]
+}

@@ -19,7 +19,10 @@ candidate searches and large per-scene image dumps are intentionally omitted.
 ## Reports
 
 - `optimized_final/optimizer_report.json`: optimization summary for all groups.
-- `optimized_validation/evaluation_report.md`: comparison on the validation slice.
+- `optimized_validation/evaluation_report.md`: earlier validation-slice comparison.
+- `strict_validation/evaluation_report.md`: strict train-first-five/test-last-five comparison.
+- `human_test/human_test/`: 48 anonymous scenes for a blinded recognition test. The mapping is in `human_test/evaluation_report.json`.
+- `human_test/human_test_exposure_summary.md`: comparison of the 100, 250, and 500 ms CSV sessions.
 - `evaluation/evaluation_report.md`: earlier standard-pattern scene evaluation.
 - `benchmark/benchmark_report.md`: generator benchmark summary.
 - `validation_report.md`: image-structure diagnostics for standard outputs.

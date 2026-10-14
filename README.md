@@ -13,6 +13,15 @@ The program:
 
 This is an experimental image-statistics tool, not a guarantee of real-world concealment.
 
+## What this project demonstrates
+
+- procedural image generation from real reference photographs;
+- palette extraction and environment-specific style profiles;
+- optional semantic segmentation with a pretrained vision model;
+- explainable search-based optimization;
+- reproducible train/test evaluation;
+- image-based and human recognition testing.
+
 ## Project layout
 
 ```text
@@ -50,7 +59,16 @@ output/
 ├── summary_grid.json
 ├── evaluation/                # background composites, metrics, and human-test scenes
 └── segmentation_masks/       # created only when semantic segmentation is used
+
+src/camo/                     # reusable project metadata and the migration target for core modules
+tests/                        # fast regression tests
+scripts/                      # repeatable experiment helpers
+configs/                      # versioned experiment settings
+docs/                         # protocols and project documentation
 ```
+
+The original root command files remain available so existing commands continue
+to work while the implementation is migrated incrementally into `src/camo/`.
 
 The `universal` pattern uses all non-snow reference images and gives every non-snow environment group equal weight, regardless of how many pixels or photographs it contains. Snow references are deliberately excluded from Universal because their very bright palette would make the mixed pattern less useful for the other environments. Taiga, tundra, and jungle references are included because they represent useful non-snow environments. Environment-specific patterns use only images in the corresponding group. Urban images contribute to both `urban` and `universal` outputs; snow images contribute only to `snow`.
 
@@ -68,6 +86,12 @@ The generator deliberately does not copy directional high-frequency texture from
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+```
+
+Run the fast regression tests with:
+
+```bash
+python -m unittest discover -s tests -v
 ```
 
 The neural input stage is optional. Install its dependencies only when needed:
@@ -333,6 +357,60 @@ This is not a validated measure of real-world concealment. It does not model
 movement, depth, shadows, lighting changes, material reflectance, or a trained
 observer. It is a controlled comparison tool that helps decide which patterns
 deserve more demanding tests.
+
+## Strict train/test validation
+
+For a less biased experiment, optimize on the first five sorted backgrounds and
+evaluate on the last five:
+
+```bash
+python optimize_patterns.py \
+  --groups universal,forest,taiga,tundra,urban,desert,mountain,snow,jungle \
+  --background-groups forest,desert,mountain,urban,jungle,snow,taiga,tundra \
+  --background-start 0 --background-limit 5 \
+  --candidates 12 --beam-size 4 \
+  --output output/optimized_train5
+
+python evaluate_camo.py \
+  --pattern-root output/optimized_train5 \
+  --pattern-name optimized_pattern.png \
+  --background-start 5 --limit 5 \
+  --output output/strict_validation
+```
+
+The current strict report is in `output/strict_validation/`. A compact blinded
+human-test set is in `output/human_test/human_test/`; show one image at a time,
+record whether the uniform was detected and the response time, and keep
+`evaluation_report.json` hidden during the test.
+
+Prepare a randomized response sheet and analyze it after the observer has
+completed the experiment:
+
+```bash
+python scripts/prepare_human_test.py
+# Open output/human_test/human_test.html in a browser and complete the trials.
+# The browser measures latency_ms automatically with performance.now().
+python scripts/analyze_human_test.py
+```
+
+The current human-test scenes use a uniform height of `0.25` of the background,
+a nine-position spread layout, and the `--avoid-sky-water` filter. The subject
+is therefore not always centered or at the bottom of the frame, and obvious
+blue-dominant sky/water regions are avoided. The same placement model is used
+by the optimizer's proxy score.
+
+The complete procedure is documented in
+[`docs/HUMAN_TEST_PROTOCOL.md`](docs/HUMAN_TEST_PROTOCOL.md).
+
+When separate CSV files are available for multiple exposures, compare them
+with:
+
+```bash
+python scripts/analyze_exposure_series.py
+```
+
+This writes `human_test_exposure_summary.json` and
+`human_test_exposure_summary.md` under `output/human_test/`.
 
 Each generated group contains:
 

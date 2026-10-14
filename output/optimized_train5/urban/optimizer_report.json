@@ -1,0 +1,137 @@
+{
+  "group": "urban",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+    "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+    "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+    "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+    "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg"
+  ],
+  "candidate_count": 12,
+  "beam_size": 4,
+  "best_candidate": "candidate_009",
+  "optimized_score": 0.10922639946453272,
+  "baseline_score": 0.13786717985756697,
+  "improvement": 0.02864078039303425,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.9688081281759742,
+    "blob_weight": 0.34048883977355815,
+    "blob_aspect": 1.04195449132746,
+    "detail_weight": 0.16840680029926575,
+    "blur_radius": 0.8267186215684219,
+    "seed": 52,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        96,
+        81,
+        71
+      ],
+      "weight": 0.18226201832294464
+    },
+    {
+      "rgb": [
+        158,
+        135,
+        106
+      ],
+      "weight": 0.20285676419734955
+    },
+    {
+      "rgb": [
+        178,
+        152,
+        141
+      ],
+      "weight": 0.20647698640823364
+    },
+    {
+      "rgb": [
+        67,
+        72,
+        64
+      ],
+      "weight": 0.04475940763950348
+    },
+    {
+      "rgb": [
+        175,
+        156,
+        133
+      ],
+      "weight": 0.3636448383331299
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.1561210692394525,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_010",
+        "candidate_007",
+        "candidate_008",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.09866059042979032,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_010",
+        "candidate_007",
+        "candidate_008",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.11570900129154323,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_010",
+        "candidate_007",
+        "candidate_008",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.12848070957697927,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_010",
+        "candidate_007",
+        "candidate_008",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.10922639946453272,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_010",
+        "candidate_008",
+        "candidate_007",
+        "current_best"
+      ]
+    }
+  ]
+}

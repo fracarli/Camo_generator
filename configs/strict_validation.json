@@ -1,0 +1,31 @@
+{
+  "description": "Strict five-image train/test experiment.",
+  "environments": [
+    "universal",
+    "forest",
+    "taiga",
+    "tundra",
+    "urban",
+    "desert",
+    "mountain",
+    "snow",
+    "jungle"
+  ],
+  "background_groups": [
+    "forest",
+    "desert",
+    "mountain",
+    "urban",
+    "jungle",
+    "snow",
+    "taiga",
+    "tundra"
+  ],
+  "train_background_start": 0,
+  "train_background_limit": 5,
+  "test_background_start": 5,
+  "test_background_limit": 5,
+  "colors": 5,
+  "candidates": 12,
+  "beam_size": 4
+}

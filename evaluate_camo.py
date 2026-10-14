@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import random
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
@@ -52,6 +51,49 @@ def build_uniform_layer(pattern_path: Path, template_path: Path, height: int) ->
         Image.fromarray(shaded, mode="RGB").resize((width, height), Image.Resampling.LANCZOS),
         mask.resize((width, height), Image.Resampling.LANCZOS),
     )
+
+
+def choose_position(
+    background_size: tuple[int, int],
+    uniform_size: tuple[int, int],
+    trial_index: int,
+    placement: str = "spread",
+    background: Image.Image | None = None,
+    mask: Image.Image | None = None,
+    avoid_sky_water: bool = False,
+) -> tuple[int, int]:
+    """Place a uniform fully inside the background using a repeatable layout."""
+    background_width, background_height = background_size
+    uniform_width, uniform_height = uniform_size
+    max_x = max(0, background_width - uniform_width)
+    max_y = max(0, background_height - uniform_height)
+    if placement == "center":
+        return max_x // 2, max_y // 2
+    anchors = (
+        (0.05, 0.05), (0.50, 0.05), (0.95, 0.05),
+        (0.05, 0.50), (0.50, 0.50), (0.95, 0.50),
+        (0.05, 0.95), (0.50, 0.95), (0.95, 0.95),
+    )
+    candidates = [(round(max_x * horizontal), round(max_y * vertical)) for horizontal, vertical in anchors]
+    if avoid_sky_water and background is not None:
+        background_array = np.asarray(background.convert("RGB"), dtype=np.float32)
+        mask_array = np.asarray(mask, dtype=np.uint8) > 32 if mask is not None else None
+        scores = []
+        for x, y in candidates:
+            crop = background_array[y:y + uniform_height, x:x + uniform_width]
+            red, green, blue = crop[..., 0], crop[..., 1], crop[..., 2]
+            blue_dominant = (blue > 105.0) & (blue > red * 1.08) & (blue > green * 1.02)
+            if mask_array is not None:
+                visible = mask_array[:crop.shape[0], :crop.shape[1]]
+                score = float(blue_dominant[visible].mean()) if visible.any() else 1.0
+            else:
+                score = float(blue_dominant.mean())
+            scores.append(score)
+        best_score = min(scores)
+        best = [index for index, score in enumerate(scores) if score <= best_score + 1e-6]
+        return candidates[best[trial_index % len(best)]]
+    horizontal, vertical = anchors[trial_index % len(anchors)]
+    return round(max_x * horizontal), round(max_y * vertical)
 
 
 def composite(background: Image.Image, uniform: Image.Image, mask: Image.Image, x: int, y: int) -> tuple[Image.Image, np.ndarray]:
@@ -186,7 +228,18 @@ def parse_args() -> argparse.Namespace:
         default=0,
         help="Number of sorted background images to skip in every environment.",
     )
-    parser.add_argument("--sizes", default="0.70,0.85", help="Uniform height as a fraction of background height")
+    parser.add_argument("--sizes", default="0.25", help="Uniform height as a fraction of background height")
+    parser.add_argument(
+        "--placement",
+        choices=("center", "spread"),
+        default="spread",
+        help="Place uniforms centrally or across a nine-position layout.",
+    )
+    parser.add_argument(
+        "--avoid-sky-water",
+        action="store_true",
+        help="Prefer candidate positions with fewer blue-dominant sky/water pixels.",
+    )
     parser.add_argument("--seed", type=int, default=42)
     return parser.parse_args()
 
@@ -196,7 +249,6 @@ def main() -> None:
     patterns = parse_csv(args.groups or args.patterns)
     background_groups = parse_csv(args.groups or args.background_groups)
     sizes = [float(value) for value in parse_csv(args.sizes)]
-    randomizer = random.Random(args.seed)
     background_root = Path(args.backgrounds)
     output_root = Path(args.output)
     scene_root = output_root / "scenes"
@@ -221,8 +273,10 @@ def main() -> None:
             for pattern_group, pattern_path in pattern_paths.items():
                 for size in sizes:
                     uniform, mask = build_uniform_layer(pattern_path, Path(args.template), round(600 * size))
-                    x = (900 - uniform.width) // 2 + randomizer.randint(-75, 75)
-                    y = 600 - uniform.height - randomizer.randint(0, 25)
+                    x, y = choose_position(
+                        (900, 600), uniform.size, trial_index, args.placement,
+                        background=background, mask=mask, avoid_sky_water=args.avoid_sky_water,
+                    )
                     scene, scene_mask = composite(background, uniform, mask, x, y)
                     metrics = measure_visibility(background, scene, scene_mask)
                     scene_id = f"scene_{trial_index:04d}"
