@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import textwrap
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -84,7 +83,7 @@ def build() -> list[Image.Image]:
 
     page, draw = slide("CAMO", "Designing explainable camouflage patterns from real environments")
     add_text(draw, (100, 230), "Can a pattern be designed from the places where it will be used?", 38, GREEN)
-    wrapped(draw, (100, 320), "Reference photographs → analysis → pattern generation → human and computer validation → optimization", 29, 56)
+    wrapped(draw, (100, 320), "Reference photographs -> analysis -> pattern generation -> human and computer validation -> optimization", 29, 700)
     add_text(draw, (850, 175), "Current baseline patterns", 22, MUTED)
     place_image(page, initial_grid, (850, 200, 1510, 820))
     pages.append(page)
@@ -92,7 +91,7 @@ def build() -> list[Image.Image]:
     page, draw = slide("1. From photographs to a first pattern", "The baseline is procedural, transparent, and reproducible")
     card(draw, (90, 230, 430, 620), "INPUT", "Representative landscape photos for forest, desert, mountain, snow, urban, jungle, taiga, and tundra.")
     card(draw, (585, 230, 925, 620), "ANALYSIS", "Dominant colors, luminance, local contrast, texture, and relevant terrain pixels.", ACCENT)
-    card(draw, (1080, 230, 1510, 620), "OUTPUT", "A 500 × 500 finite-palette pattern with irregular connected regions.")
+    card(draw, (1080, 230, 1510, 620), "OUTPUT", "A 500 x 500 finite-palette pattern with irregular connected regions.")
     add_text(draw, (470, 390), "->", 38, GREEN)
     add_text(draw, (960, 390), "->", 38, GREEN)
     wrapped(draw, (100, 720), "Water and sky can be excluded or down-weighted when they are not relevant to the intended terrain.", 25, 1380, MUTED)
@@ -118,7 +117,7 @@ def build() -> list[Image.Image]:
         add_text(draw, (x + 50, 350), letter, 40, BG, anchor="mm")
         add_text(draw, (x, 445), label, 24, TEXT)
         if i < len(steps) - 1:
-            add_text(draw, (x + 180, 325), "→", 44, MUTED)
+            add_text(draw, (x + 180, 325), "->", 34, MUTED)
     wrapped(draw, (120, 590), "photos -> initial pattern -> human/computer evaluation -> adjusted pattern -> repeat", 34, 1350, GREEN)
     wrapped(draw, (120, 700), "Human CSV results are currently validation evidence. They are not yet used to train a neural network.", 25, 1350, MUTED)
     pages.append(page)
