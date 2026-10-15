@@ -554,6 +554,49 @@ small constrained variations of palette colors and color shares. Palette
 changes remain inside each environment's matte profile; neural pattern
 generation remains a future step.
 
+### Reproducible train/test split and neural evaluator
+
+Create deterministic manifests before optimization. Use `train.json` for
+search and keep `test.json` untouched until final evaluation:
+
+```bash
+python scripts/create_evaluation_split.py
+
+python optimize_patterns.py \
+  --background-manifest evaluation/splits/train.json \
+  --score-aggregation mean_worst \
+  --output output/optimized_train
+
+python evaluate_camo.py \
+  --pattern-root output/optimized_train \
+  --pattern-name optimized_pattern.png \
+  --background-manifest evaluation/splits/test.json \
+  --output output/evaluation_heldout
+```
+
+The optional neural component is a small evaluator trained on completed human
+recognition responses. It estimates scene detectability and adds a ranking
+signal; it does not generate camouflage and is not a validated field model.
+Complete the human test first, then run:
+
+```bash
+python scripts/train_neural_evaluator.py \
+  --csv output/human_test/responses.csv \
+  --image-root output/human_test/human_test
+
+python optimize_patterns.py \
+  --background-manifest evaluation/splits/train.json \
+  --neural-evaluator output/neural_evaluator/visibility_model.pt \
+  --neural-weight 0.35 \
+  --score-aggregation mean_worst \
+  --output output/optimized_neural
+```
+
+At least 10 answered trials are required for a smoke model; a meaningful
+study needs substantially more balanced responses across environments,
+patterns, and observers. Never use the held-out manifest for training or
+optimization.
+
 The score is still an internal visibility proxy. Use a held-out set and the
 anonymous human-test scenes before treating an optimization result as a real
 camouflage improvement.

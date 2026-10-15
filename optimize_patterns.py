@@ -56,10 +56,29 @@ def parse_csv(value: str) -> list[str]:
     return list(dict.fromkeys(item.strip().lower() for item in value.split(",") if item.strip()))
 
 
-def background_paths(root: Path, groups: list[str], limit: int, start: int = 0) -> list[tuple[str, Path]]:
+def _manifest_records(manifest: Path) -> list[dict]:
+    payload = json.loads(manifest.read_text(encoding="utf-8"))
+    return payload.get("records", payload) if isinstance(payload, dict) else payload
+
+
+def background_paths(
+    root: Path,
+    groups: list[str],
+    limit: int,
+    start: int = 0,
+    manifest: Path | None = None,
+) -> list[tuple[str, Path]]:
     result = []
+    manifest_by_group: dict[str, list[Path]] = {}
+    if manifest is not None:
+        for record in _manifest_records(manifest):
+            group = str(record["group"])
+            path = Path(str(record["file"]))
+            if not path.is_absolute():
+                path = Path.cwd() / path
+            manifest_by_group.setdefault(group, []).append(path)
     for group in groups:
-        paths = sorted(
+        paths = sorted(manifest_by_group.get(group, [])) if manifest is not None else sorted(
             path for path in (root / group).glob("*")
             if path.is_file() and path.suffix.lower() in evaluate_extensions()
         )
@@ -196,6 +215,8 @@ def score_candidate(
     template_path: Path,
     seed: int,
     objective_weights: dict[str, float] | None = None,
+    neural_evaluator=None,
+    neural_weight: float = 0.0,
 ) -> float:
     uniform, mask = build_uniform_layer_from_pattern(candidate.pattern, template_path, round(600 * 0.25))
     x, y = choose_position(
@@ -204,7 +225,12 @@ def score_candidate(
     )
     scene, scene_mask = composite(background, uniform, mask, x, y)
     metrics = measure_visibility(background, scene, scene_mask)
-    return weighted_visibility_score(metrics, objective_weights)
+    proxy_score = weighted_visibility_score(metrics, objective_weights)
+    if neural_evaluator is None or neural_weight <= 0:
+        return proxy_score
+    neural_score = neural_evaluator.predict(scene)
+    weight = min(1.0, max(0.0, neural_weight))
+    return (1.0 - weight) * proxy_score + weight * neural_score
 
 
 def build_uniform_layer_from_pattern(pattern: np.ndarray, template_path: Path, height: int) -> tuple[Image.Image, Image.Image]:
@@ -236,6 +262,7 @@ def optimize_group(group: str, images: list[camo.ImageStats], background_root: P
         (group,) if group != "universal" else args.background_groups,
         args.background_limit,
         args.background_start,
+        Path(args.background_manifest) if args.background_manifest else None,
     )
     if not backgrounds:
         return {"group": group, "status": "skipped", "reason": "No background images found"}
@@ -253,6 +280,8 @@ def optimize_group(group: str, images: list[camo.ImageStats], background_root: P
                 Path(args.template),
                 args.seed + background_index,
                 args.objective_weights,
+                args.neural_evaluator,
+                args.neural_weight,
             )
             candidate.cumulative_score += score
             candidate.scores_seen += 1
@@ -282,6 +311,9 @@ def optimize_group(group: str, images: list[camo.ImageStats], background_root: P
         "candidate_count": len(candidates),
         "beam_size": args.beam_size,
         "score_aggregation": args.score_aggregation,
+        "background_manifest": args.background_manifest,
+        "neural_evaluator": args.neural_evaluator_path,
+        "neural_weight": args.neural_weight,
         "best_candidate": best.candidate_id,
         "optimized_score": best.mean_score,
         "baseline_score": next((candidate.mean_score for candidate in candidates if candidate.candidate_id == "current_best"), None),
@@ -304,6 +336,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default="evaluation/backgrounds")
     parser.add_argument("--backgrounds", default="evaluation/backgrounds")
+    parser.add_argument("--background-manifest", default=None, help="Optional train/test JSON manifest limiting backgrounds used by the optimizer")
     parser.add_argument("--pattern-root", default="output")
     parser.add_argument("--output", default="output/optimized")
     parser.add_argument("--template", default="output/outfit_mockups/outfit_template_reference.png")
@@ -331,6 +364,9 @@ def parse_args() -> argparse.Namespace:
         "--score-aggregation", choices=("mean", "mean_worst"), default="mean",
         help="Candidate ranking strategy; mean_worst penalizes failure on the worst scene.",
     )
+    parser.add_argument("--neural-evaluator", default=None, help="Optional trained visibility model checkpoint")
+    parser.add_argument("--neural-weight", type=float, default=0.35, help="Blend weight for the neural detection score (0..1)")
+    parser.add_argument("--neural-device", default="cpu", help="Device for the neural evaluator: cpu, mps, or auto")
     return parser.parse_args()
 
 
@@ -345,6 +381,18 @@ def main() -> None:
             if key != "description" and isinstance(value, (int, float))
         }
     args.background_groups = parse_csv(args.background_groups)
+    neural_checkpoint = args.neural_evaluator
+    args.neural_evaluator = None
+    args.neural_evaluator_path = None
+    if neural_checkpoint:
+        try:
+            from neural_evaluator import NeuralEvaluator
+            args.neural_evaluator = NeuralEvaluator(neural_checkpoint, args.neural_device)
+            args.neural_evaluator_path = str(neural_checkpoint)
+        except (ImportError, RuntimeError, FileNotFoundError) as error:
+            raise SystemExit(f"Could not load neural evaluator: {error}") from error
+    if args.background_manifest and not Path(args.background_manifest).exists():
+        raise SystemExit(f"Background manifest not found: {args.background_manifest}")
     if args.colors < camo.MIN_COLORS or args.colors > camo.MAX_COLORS:
         raise SystemExit(f"--colors must be between {camo.MIN_COLORS} and {camo.MAX_COLORS}")
     if args.beam_size < 1 or args.beam_size > args.candidates:

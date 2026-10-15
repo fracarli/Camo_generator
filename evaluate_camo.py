@@ -189,10 +189,27 @@ def save_contact_sheet(paths: list[tuple[str, Path]], destination: Path, tile_si
     sheet.save(destination)
 
 
-def discover_backgrounds(root: Path, groups: list[str], limit: int, start: int = 0) -> dict[str, list[Path]]:
+def discover_backgrounds(
+    root: Path,
+    groups: list[str],
+    limit: int,
+    start: int = 0,
+    manifest: Path | None = None,
+) -> dict[str, list[Path]]:
     result: dict[str, list[Path]] = {}
+    manifest_by_group: dict[str, list[Path]] = defaultdict(list)
+    if manifest is not None:
+        payload = json.loads(manifest.read_text(encoding="utf-8"))
+        records = payload.get("records", payload) if isinstance(payload, dict) else payload
+        for record in records:
+            path = Path(str(record["file"]))
+            if not path.is_absolute():
+                path = Path.cwd() / path
+            manifest_by_group[str(record["group"])].append(path)
     for group in groups:
-        candidates = sorted(path for path in (root / group).glob("*") if path.suffix.lower() in IMAGE_EXTENSIONS)
+        candidates = sorted(manifest_by_group.get(group, [])) if manifest is not None else sorted(
+            path for path in (root / group).glob("*") if path.suffix.lower() in IMAGE_EXTENSIONS
+        )
         selected = candidates[start:]
         result[group] = selected[:limit] if limit > 0 else selected
     return result
@@ -242,6 +259,7 @@ def write_markdown(report: dict, destination: Path) -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--backgrounds", default="evaluation/backgrounds")
+    parser.add_argument("--background-manifest", default=None, help="Optional train/test JSON manifest of background files")
     parser.add_argument("--pattern-root", default="output", help="Directory containing one folder per pattern group")
     parser.add_argument(
         "--pattern-name",
@@ -285,7 +303,12 @@ def main() -> None:
     output_root = Path(args.output)
     scene_root = output_root / "scenes"
     human_root = output_root / "human_test"
-    background_map = discover_backgrounds(background_root, background_groups, args.limit, args.background_start)
+    if args.background_manifest and not Path(args.background_manifest).exists():
+        raise SystemExit(f"Background manifest not found: {args.background_manifest}")
+    background_map = discover_backgrounds(
+        background_root, background_groups, args.limit, args.background_start,
+        Path(args.background_manifest) if args.background_manifest else None,
+    )
     pattern_paths = {group: Path(args.pattern_root) / group / args.pattern_name for group in patterns}
     missing = [str(path) for path in pattern_paths.values() if not path.exists()]
     if missing:
@@ -367,6 +390,7 @@ def main() -> None:
         "seed": args.seed,
         "metric_note": "Lower visibility_score is better in this internal proxy; it is not a field concealment measurement.",
         "background_root": str(background_root),
+        "background_manifest": args.background_manifest,
         "records": records,
         "summary": summary,
         "pairwise_comparison": pairwise_comparison,

@@ -1,0 +1,377 @@
+{
+  "group": "urban",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+    "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+    "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+    "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+    "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+    "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
+    "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+    "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
+    "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+    "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg",
+    "evaluation/backgrounds/urban/11_Dura-Europos_archival_photograph_YUAG_negative_number_dura-d114_01_-object-id-14.jpg",
+    "evaluation/backgrounds/urban/12_Eldridge_Street_Synagogue_42773_.jpg",
+    "evaluation/backgrounds/urban/13_FEMA_-_5399_-_Photograph_by_Andrea_Booher_taken_on_09-28-2001_in_New_York.jpg",
+    "evaluation/backgrounds/urban/14_Flinders_Street_Station_Melbourne_at_the_intersection_of_Swanston_Street_and_Fli.jpg",
+    "evaluation/backgrounds/urban/15_Gare_fluviale_de_Qu_bec_Quebec_city_Canada.jpg",
+    "evaluation/backgrounds/urban/16_Homeless_on_Paulista_Avenue_S_o_Paulo_city_Brazil.jpg",
+    "evaluation/backgrounds/urban/17_Homeless_sleeping_on_Paulista_Avenue_S_o_Paulo_city_Brazil.jpg",
+    "evaluation/backgrounds/urban/18_Jaipur_03-2016_20_City_Palace_complex.jpg"
+  ],
+  "candidate_count": 32,
+  "beam_size": 8,
+  "score_aggregation": "mean_worst",
+  "best_candidate": "candidate_018",
+  "optimized_score": 0.13675305665656062,
+  "baseline_score": 0.15232490924348688,
+  "improvement": 0.015571852586926255,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 1.0797192444451749,
+    "blob_weight": 0.3196884895979254,
+    "blob_aspect": 1.1925178328260357,
+    "detail_weight": 0.16817445967998523,
+    "blur_radius": 0.5944048193392086,
+    "seed": 61,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        99,
+        82,
+        67
+      ],
+      "weight": 0.1625581681728363
+    },
+    {
+      "rgb": [
+        59,
+        62,
+        56
+      ],
+      "weight": 0.02644507586956024
+    },
+    {
+      "rgb": [
+        170,
+        151,
+        135
+      ],
+      "weight": 0.48502328991889954
+    },
+    {
+      "rgb": [
+        147,
+        120,
+        102
+      ],
+      "weight": 0.23325295746326447
+    },
+    {
+      "rgb": [
+        176,
+        161,
+        129
+      ],
+      "weight": 0.09272051602602005
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_022",
+      "best_running_score": 0.11851527996943331,
+      "active_candidates": [
+        "candidate_022",
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.14648877338312255,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_026",
+        "candidate_025",
+        "candidate_007",
+        "candidate_024",
+        "candidate_000",
+        "candidate_018",
+        "candidate_022",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_025",
+      "best_running_score": 0.14715766892975404,
+      "active_candidates": [
+        "candidate_025",
+        "candidate_026",
+        "candidate_009",
+        "candidate_007",
+        "candidate_024",
+        "candidate_000",
+        "candidate_022",
+        "candidate_018",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.15180699767913514,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_026",
+        "candidate_025",
+        "candidate_007",
+        "candidate_024",
+        "candidate_000",
+        "candidate_018",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.13620432174376523,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_026",
+        "candidate_007",
+        "candidate_025",
+        "candidate_024",
+        "current_best",
+        "candidate_000",
+        "candidate_018"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.12577284025972604,
+      "active_candidates": [
+        "candidate_009",
+        "current_best",
+        "candidate_026",
+        "candidate_007",
+        "candidate_025",
+        "candidate_024",
+        "candidate_000",
+        "candidate_018"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.14426438369810407,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_026",
+        "candidate_007",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.15652435360146533,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.14336901523190104,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.1322448503233027,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_025",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/11_Dura-Europos_archival_photograph_YUAG_negative_number_dura-d114_01_-object-id-14.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.12860907551091674,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_025",
+        "candidate_000",
+        "candidate_024",
+        "candidate_026",
+        "candidate_007",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/12_Eldridge_Street_Synagogue_42773_.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.12463815573570579,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/13_FEMA_-_5399_-_Photograph_by_Andrea_Booher_taken_on_09-28-2001_in_New_York.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.128620153767212,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_025",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/14_Flinders_Street_Station_Melbourne_at_the_intersection_of_Swanston_Street_and_Fli.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.1447367252821347,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/15_Gare_fluviale_de_Qu_bec_Quebec_city_Canada.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.14530940830288455,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/16_Homeless_on_Paulista_Avenue_S_o_Paulo_city_Brazil.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.14646999138014508,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/17_Homeless_sleeping_on_Paulista_Avenue_S_o_Paulo_city_Brazil.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.1395171635388397,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/18_Jaipur_03-2016_20_City_Palace_complex.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_018",
+      "best_running_score": 0.13675305665656062,
+      "active_candidates": [
+        "candidate_018",
+        "candidate_000",
+        "candidate_024",
+        "candidate_025",
+        "candidate_007",
+        "candidate_026",
+        "candidate_009",
+        "current_best"
+      ]
+    }
+  ]
+}

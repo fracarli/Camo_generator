@@ -1,0 +1,317 @@
+{
+  "source_manifest": "evaluation/sources.json",
+  "seed": 42,
+  "test_fraction": 0.25,
+  "note": "Split by environment; do not use test images during optimization.",
+  "split": "test",
+  "records": [
+    {
+      "group": "desert",
+      "file": "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg",
+      "source_filename": "Desert Landscape (22482862827).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Desert_Landscape_(22482862827).jpg",
+      "license": "public domain",
+      "author": " san bernardino nat'l forest ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "desert",
+      "file": "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg",
+      "source_filename": "Desert Landscape (24340754893).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Desert_Landscape_(24340754893).jpg",
+      "license": "public domain",
+      "author": " san bernardino nat'l forest ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "desert",
+      "file": "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg",
+      "source_filename": "Desert Landscape (54596765115).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Desert_Landscape_(54596765115).jpg",
+      "license": "public domain",
+      "author": " joshua tree national park ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "desert",
+      "file": "evaluation/backgrounds/desert/15_Desert_Landscape_with_Mountains.jpg",
+      "source_filename": "Desert Landscape with Mountains.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Desert_Landscape_with_Mountains.jpg",
+      "license": "public domain",
+      "author": "   jessie benton evans   ",
+      "downloaded_on": "2026-10-15",
+      "thumbnail_width": 960,
+      "promoted_on": "2026-10-15"
+    },
+    {
+      "group": "desert",
+      "file": "evaluation/backgrounds/desert/20_Desert_landscape_in_UAE.jpg",
+      "source_filename": "Desert landscape in UAE.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Desert_landscape_in_UAE.jpg",
+      "license": "cc by-sa 4.0",
+      "author": " carole marxer ",
+      "downloaded_on": "2026-10-15",
+      "thumbnail_width": 960,
+      "promoted_on": "2026-10-15"
+    },
+    {
+      "group": "forest",
+      "file": "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg",
+      "source_filename": "CFLRP (Collaborative Forest Landscape Restoration Program) (20130729-FS-Deschutes-001).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:CFLRP_(Collaborative_Forest_Landscape_Restoration_Program)_(20130729-FS-Deschutes-001).jpg",
+      "license": "public domain",
+      "author": " forest service photography ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "forest",
+      "file": "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+      "source_filename": "Cloud Forest, Gardens by the Bay, Singapore.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cloud_Forest,_Gardens_by_the_Bay,_Singapore.jpg",
+      "license": "cc by-sa 4.0",
+      "author": " basile morin ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "forest",
+      "file": "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg",
+      "source_filename": "Forest of Dean landscape - geograph.org.uk - 743958.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg",
+      "license": "cc by-sa 2.0",
+      "author": " graham horn ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "jungle",
+      "file": "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg",
+      "source_filename": "CSIRO ScienceImage 3731 Tropical rainforest canopy with palms and ferns near Cairns QLD.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cairns_QLD.jpg",
+      "license": "cc by 3.0",
+      "author": "willem van aken,  csiro ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "jungle",
+      "file": "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg",
+      "source_filename": "Eden Project - Rainforest Biome - geograph.org.uk - 7031527.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg",
+      "license": "cc by-sa 2.0",
+      "author": " lauren \u00a0     ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "jungle",
+      "file": "evaluation/backgrounds/jungle/12_Indoor_tropical_rainforest_at_Burgers_Zoo_c_.jpg",
+      "source_filename": "Indoor tropical rainforest at Burgers' Zoo (c).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Indoor_tropical_rainforest_at_Burgers%27_Zoo_(c).jpg",
+      "license": "cc by-sa 4.0",
+      "author": "  erikvanb \n ",
+      "downloaded_on": "2026-10-15",
+      "thumbnail_width": 960,
+      "promoted_on": "2026-10-15"
+    },
+    {
+      "group": "jungle",
+      "file": "evaluation/backgrounds/jungle/13_Inside_the_tropical_rainforest_11464713995_.jpg",
+      "source_filename": "Inside the tropical rainforest (11464713995).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Inside_the_tropical_rainforest_(11464713995).jpg",
+      "license": "cc by 2.0",
+      "author": " shankar s.  from dubai, united arab emirates",
+      "downloaded_on": "2026-10-15",
+      "thumbnail_width": 960,
+      "promoted_on": "2026-10-15"
+    },
+    {
+      "group": "jungle",
+      "file": "evaluation/backgrounds/jungle/19_Rainforest_fragment_TANTEA_Anamalais_vertical.jpg",
+      "source_filename": "Rainforest fragment TANTEA Anamalais vertical.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rainforest_fragment_TANTEA_Anamalais_vertical.jpg",
+      "license": "cc by 4.0",
+      "author": " t. r. shankar raman ",
+      "downloaded_on": "2026-10-15",
+      "thumbnail_width": 960,
+      "promoted_on": "2026-10-15"
+    },
+    {
+      "group": "mountain",
+      "file": "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg",
+      "source_filename": "Castle Mountain.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Castle_Mountain.jpg",
+      "license": "cc by-sa 4.0",
+      "author": " jakub fry\u0161 ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "mountain",
+      "file": "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg",
+      "source_filename": "Front view of a stream with a tree as vanishing point, mountains and mist in the countryside of Vang Vieng.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Front_view_of_a_stream_with_a_tree_as_vanishing_point,_mountains_and_mist_in_the_countryside_of_Vang_Vieng.jpg",
+      "license": "cc by-sa 4.0",
+      "author": " basile morin ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "mountain",
+      "file": "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg",
+      "source_filename": "Iceland's Mid-Atlantic Ridge during snow.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Iceland%27s_Mid-Atlantic_Ridge_during_snow.jpg",
+      "license": "cc by-sa 4.0",
+      "author": " \n  \n \n       \n \n \n this work taken by  bar harel . if you want to reuse it outside wikimedia foundation projects, please credit me as photographer: place the notice \u00ab \u00a9  bar harel, cc by-sa 4.0, wikimedia commons  \u00bb either below the photo, or the way it is visible after clicking on the photo.\n \n \n \n    ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "mountain",
+      "file": "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg",
+      "source_filename": "Ingushetia, Russia, Armkhi, Ingush tower.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ingushetia,_Russia,_Armkhi,_Ingush_tower.jpg",
+      "license": "cc by 4.0",
+      "author": " vyacheslav argenberg ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "mountain",
+      "file": "evaluation/backgrounds/mountain/19_Mountain_massif_of_Fj_lhaugen_at_Knutevika_in_Senja_Troms_Norway_2015_September.jpg",
+      "source_filename": "Mountain massif of Fj\u00f8lhaugen at Knutevika in Senja, Troms, Norway, 2015 September.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mountain_massif_of_Fj%C3%B8lhaugen_at_Knutevika_in_Senja,_Troms,_Norway,_2015_September.jpg",
+      "license": "cc by-sa 3.0",
+      "author": " ximonic  (simo r\u00e4s\u00e4nen)",
+      "downloaded_on": "2026-10-15",
+      "thumbnail_width": 960,
+      "promoted_on": "2026-10-15"
+    },
+    {
+      "group": "snow",
+      "file": "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+      "source_filename": "A snowy landscape-Southern Ontario.jpeg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:A_snowy_landscape-Southern_Ontario.jpeg",
+      "license": "cc by-sa 4.0",
+      "author": " shanu.pande ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "snow",
+      "file": "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg",
+      "source_filename": "Landscape snowy hills Heraklion.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Landscape_snowy_hills_Heraklion.jpg",
+      "license": "cc0",
+      "author": " jebulon ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "snow",
+      "file": "evaluation/backgrounds/snow/13_Snowy_High_Weald_Landscape_Trail_-_geograph.org.uk_-_6822653.jpg",
+      "source_filename": "Snowy High Weald Landscape Trail - geograph.org.uk - 6822653.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Snowy_High_Weald_Landscape_Trail_-_geograph.org.uk_-_6822653.jpg",
+      "license": "cc by-sa 2.0",
+      "author": " n chadwick \u00a0     ",
+      "downloaded_on": "2026-10-15",
+      "thumbnail_width": 960,
+      "promoted_on": "2026-10-15"
+    },
+    {
+      "group": "taiga",
+      "file": "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg",
+      "source_filename": "Boreal Forest Flora (53451032212).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Boreal_Forest_Flora_(53451032212).jpg",
+      "license": "public domain",
+      "author": " blm alaska ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "taiga",
+      "file": "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg",
+      "source_filename": "Boreal Forest Ring.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Boreal_Forest_Ring.jpg",
+      "license": "cc by-sa 4.0",
+      "author": "ray murphy",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "taiga",
+      "file": "evaluation/backgrounds/taiga/11_A_botanist_assesses_the_study_area_in_a_boreal_forest_781d2ecf-ab1c-466a-8d3a-d0.jpg",
+      "source_filename": "A botanist assesses the study area in a boreal forest (781d2ecf-ab1c-466a-8d3a-d078d8f0c4a1).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:A_botanist_assesses_the_study_area_in_a_boreal_forest_(781d2ecf-ab1c-466a-8d3a-d078d8f0c4a1).jpg",
+      "license": "public domain",
+      "author": "nps photo / kira heeschen",
+      "downloaded_on": "2026-10-15",
+      "thumbnail_width": 720,
+      "promoted_on": "2026-10-15"
+    },
+    {
+      "group": "tundra",
+      "file": "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+      "source_filename": "ATV Tracks on the Tundra (c4c30fb2-1dd8-b71c-077b-04f1ed994671).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:ATV_Tracks_on_the_Tundra_(c4c30fb2-1dd8-b71c-077b-04f1ed994671).jpg",
+      "license": "public domain",
+      "author": "nps photo",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "tundra",
+      "file": "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg",
+      "source_filename": "Arctic tundra in autumn colors near lake Lovozero in Murmansk Oblast, Russia.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast,_Russia.jpg",
+      "license": "cc by 4.0",
+      "author": " artem abdukakharov ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 1280
+    },
+    {
+      "group": "urban",
+      "file": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+      "source_filename": "06 2023 King Charles Street, London IMG 7517.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:06_2023_King_Charles_Street,_London_IMG_7517.jpg",
+      "license": "cc by-sa 4.0",
+      "author": " alexander-93 ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "urban",
+      "file": "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg",
+      "source_filename": "At New York City 2023 045 - 10th Avenue and 14th Street, Manhattan.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street,_Manhattan.jpg",
+      "license": "cc by-sa 4.0",
+      "author": "photograph by  mike peel  ( www.mikepeel.net ).",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "urban",
+      "file": "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg",
+      "source_filename": "Central Park New York City New York 23 cropped.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Central_Park_New_York_City_New_York_23_cropped.jpg",
+      "license": "public domain",
+      "author": "   jet lowe   ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    },
+    {
+      "group": "urban",
+      "file": "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
+      "source_filename": "Ch\u00e2teau Frontenac after a freezing rain day in Quebec city.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
+      "license": "cc by-sa 4.0",
+      "author": "   wilfredor   ",
+      "downloaded_on": "2026-10-14",
+      "thumbnail_width": 900
+    }
+  ]
+}
