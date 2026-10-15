@@ -40,8 +40,10 @@ python -m pip install -r requirements-demo.txt
 streamlit run app.py
 ```
 
-The web demo is intentionally optional; the CLI and JSON configurations remain
-the reproducible path used by tests and experiments.
+The web demo is the easiest entry point for a first look: upload a few photos,
+choose the environment and palette size, click one button, and inspect the
+pattern, palette, and report in separate tabs. The CLI and JSON configurations
+remain the reproducible path used by tests and experiments.
 
 The demo uses the verified reference photos already stored in `evaluation/backgrounds/`, generates five
 color patterns, and writes a contact sheet to

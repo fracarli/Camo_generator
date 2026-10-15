@@ -11,11 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs" / "PROJECT_PRESENTATION.pdf"
 LOGO = ROOT / "docs" / "assets" / "terrainweave_logo.png"
 SIZE = (1600, 900)
-BG = (18, 24, 29)
-TEXT = (238, 242, 239)
-MUTED = (174, 188, 184)
-GREEN = (130, 178, 92)
-ACCENT = (214, 157, 75)
+BG = (10, 16, 15)
+PANEL = (23, 35, 31)
+TEXT = (244, 246, 239)
+MUTED = (169, 185, 178)
+GREEN = (157, 207, 104)
+ACCENT = (232, 178, 83)
+BLUE = (95, 163, 174)
 
 
 def font(size: int):
@@ -47,11 +49,12 @@ def wrapped(draw: ImageDraw.ImageDraw, xy, text: str, size: int, max_width: int,
 def slide(title: str, subtitle: str | None = None) -> tuple[Image.Image, ImageDraw.ImageDraw]:
     image = Image.new("RGB", SIZE, BG)
     draw = ImageDraw.Draw(image)
-    draw.rectangle((0, 0, 1600, 14), fill=GREEN)
+    draw.rectangle((0, 0, 1600, 8), fill=GREEN)
+    add_text(draw, (90, 30), "TERRAINWEAVE / FIELD NOTES", 16, MUTED)
     place_image(image, LOGO, (1480, 28, 1570, 118))
-    add_text(draw, (90, 62), title, 48, TEXT)
+    add_text(draw, (90, 74), title, 54, TEXT)
     if subtitle:
-        add_text(draw, (92, 132), subtitle, 24, MUTED)
+        add_text(draw, (92, 148), subtitle, 23, MUTED)
     return image, draw
 
 
@@ -69,9 +72,10 @@ def place_image(canvas: Image.Image, path: Path, box: tuple[int, int, int, int])
 
 def card(draw: ImageDraw.ImageDraw, box, title: str, body: str, color=GREEN):
     x1, y1, x2, y2 = box
-    draw.rounded_rectangle(box, radius=18, fill=(29, 40, 43), outline=color, width=3)
-    add_text(draw, (x1 + 24, y1 + 22), title, 28, color)
-    wrapped(draw, (x1 + 24, y1 + 78), body, 23, x2 - x1 - 48, MUTED)
+    draw.rounded_rectangle(box, radius=18, fill=PANEL)
+    draw.rectangle((x1, y1, x1 + 8, y2), fill=color)
+    add_text(draw, (x1 + 28, y1 + 24), title, 25, color)
+    wrapped(draw, (x1 + 28, y1 + 78), body, 22, x2 - x1 - 56, MUTED)
 
 
 def build() -> list[Image.Image]:
@@ -83,16 +87,16 @@ def build() -> list[Image.Image]:
 
     pages: list[Image.Image] = []
 
-    page, draw = slide("TERRAINWEAVE", "Environment-aware camouflage design")
+    page, draw = slide("Design from place.", "Environment-aware camouflage design")
     place_image(page, LOGO, (100, 190, 430, 520))
-    add_text(draw, (100, 570), "A visual research prototype", 25, ACCENT)
+    add_text(draw, (100, 570), "TerrainWeave / a visual research prototype", 25, ACCENT)
     add_text(draw, (100, 640), "Can environments guide camouflage design?", 31, GREEN)
     wrapped(draw, (100, 725), "Reference photographs -> analysis -> pattern generation -> human and computer validation -> optimization", 25, 690)
     add_text(draw, (850, 175), "Current baseline patterns", 22, MUTED)
     place_image(page, initial_grid, (850, 200, 1510, 820))
     pages.append(page)
 
-    page, draw = slide("1. From photographs to a first pattern", "The baseline is procedural, transparent, and reproducible")
+    page, draw = slide("From pixels to palette.", "A transparent, reproducible baseline")
     card(draw, (90, 230, 430, 620), "INPUT", "Representative landscape photos for forest, desert, mountain, snow, urban, jungle, taiga, and tundra.")
     card(draw, (585, 230, 925, 620), "ANALYSIS", "Dominant colors, luminance, local contrast, texture, and relevant terrain pixels.", ACCENT)
     card(draw, (1080, 230, 1510, 620), "OUTPUT", "A 500 x 500 finite-palette pattern with irregular connected regions.")
@@ -101,19 +105,19 @@ def build() -> list[Image.Image]:
     wrapped(draw, (100, 720), "Water and sky can be excluded or down-weighted when they are not relevant to the intended terrain.", 25, 1380, MUTED)
     pages.append(page)
 
-    page, draw = slide("2. Apply the pattern to a human figure", "A flat square is not enough: scale, folds, seams, and garment pieces matter")
+    page, draw = slide("Make the pattern wearable.", "A flat square is not enough")
     place_image(page, uniforms, (90, 210, 1010, 820))
     card(draw, (1080, 230, 1510, 700), "WHAT WE CHECK", "- overly large patches\n- excessive dark colors\n- stripes or repetitive edges\n- behavior at different scales", ACCENT)
     pages.append(page)
 
-    page, draw = slide("3. Test recognition in real environments", "The figure is placed on terrain at different positions and scales")
+    page, draw = slide("Does it disappear fast enough?", "Recognition testing on real terrain")
     place_image(page, scenes, (90, 210, 980, 820))
     card(draw, (1060, 235, 1510, 395), "HUMAN TEST", "Short exposures and randomized locations measure how quickly observers notice the figure.")
     card(draw, (1060, 465, 1510, 625), "COMPUTER METRICS", "Color, luminance, edge, and visibility proxies compare candidate patterns.", ACCENT)
     card(draw, (1060, 695, 1510, 785), "RULE", "Prefer terrain over obvious sky or water regions.", GREEN)
     pages.append(page)
 
-    page, draw = slide("4. Improve the pattern with evidence", "Optimization balances several objectives instead of fitting one photograph")
+    page, draw = slide("Optimization is a loop.", "Balance multiple scenes instead of fitting one photograph")
     steps = [("A", "Generate candidates"), ("B", "Score multiple scenes"), ("C", "Compare human results"), ("D", "Keep the best balanced pattern")]
     for i, (letter, label) in enumerate(steps):
         x = 100 + i * 370
@@ -126,14 +130,14 @@ def build() -> list[Image.Image]:
     wrapped(draw, (120, 700), "Human CSV results are currently validation evidence. They are not yet used to train a neural network.", 25, 1350, MUTED)
     pages.append(page)
 
-    page, draw = slide("5. Where the neural network fits", "SegFormer improves scene understanding; it does not generate the camouflage")
+    page, draw = slide("Neural input. Procedural output.", "SegFormer improves scene understanding; it does not generate the camouflage")
     place_image(page, masks, (100, 220, 620, 760)) if masks else None
     card(draw, (760, 220, 1510, 390), "LANDSCAPE PHOTO", "The pretrained model assigns semantic labels such as vegetation, terrain, sky, and water.")
     card(draw, (760, 455, 1510, 625), "RELEVANT PIXELS", "The pipeline can focus color and texture extraction on the terrain that matters.", ACCENT)
     card(draw, (760, 690, 1510, 780), "LIMIT", "This is not custom neural-network training and not proof of real-world concealment.", GREEN)
     pages.append(page)
 
-    page, draw = slide("Current status", "A working research prototype with a reproducible workflow")
+    page, draw = slide("From idea to testable system.", "A working research prototype with a reproducible workflow")
     wrapped(draw, (110, 220), "[OK] 9 environment profiles\n[OK] 80 documented evaluation images\n[OK] standard and weighted multi-objective generation\n[OK] optional neural segmentation\n[OK] uniform mockups and blinded human testing\n[OK] JSON configurations, tests, and reports", 31, 700)
     add_text(draw, (920, 175), "Optimized final patterns", 22, MUTED)
     place_image(page, final_grid, (920, 230, 1510, 720))

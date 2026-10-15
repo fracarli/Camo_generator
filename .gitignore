@@ -10,3 +10,4 @@ photos/*
 !photos/README.md
 !photos/SOURCES.md
 .streamlit_uploads/
+output/app_results/
