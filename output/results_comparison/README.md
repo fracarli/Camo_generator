@@ -1,7 +1,7 @@
 # Initial vs optimized comparison
 
 The contact sheet compares the baseline pattern, the optimized pattern,
-and the complete optimized validation contact sheet for the environment.
+and one optimized uniform render on the corresponding validation scene.
 Lower proxy scores are better within this controlled experiment only.
 
 | Environment | Baseline | Optimized | Improvement |

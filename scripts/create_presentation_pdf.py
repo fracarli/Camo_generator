@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -65,6 +66,17 @@ def place_image(canvas: Image.Image, path: Path, box: tuple[int, int, int, int])
     x1, y1, x2, y2 = box
     scale = min((x2 - x1) / image.width, (y2 - y1) / image.height)
     resized = image.resize((max(1, int(image.width * scale)), max(1, int(image.height * scale))), Image.Resampling.LANCZOS)
+    x = x1 + ((x2 - x1) - resized.width) // 2
+    y = y1 + ((y2 - y1) - resized.height) // 2
+    canvas.paste(resized, (x, y), resized)
+
+
+def place_pil(canvas: Image.Image, image: Image.Image, box: tuple[int, int, int, int]) -> None:
+    """Place an already-loaded image using the same contain behavior."""
+    x1, y1, x2, y2 = box
+    source = image.convert("RGBA")
+    scale = min((x2 - x1) / source.width, (y2 - y1) / source.height)
+    resized = source.resize((max(1, int(source.width * scale)), max(1, int(source.height * scale))), Image.Resampling.LANCZOS)
     x = x1 + ((x2 - x1) - resized.width) // 2
     y = y1 + ((y2 - y1) - resized.height) // 2
     canvas.paste(resized, (x, y), resized)
@@ -142,6 +154,33 @@ def build() -> list[Image.Image]:
     add_text(draw, (920, 175), "Optimized final patterns", 22, MUTED)
     place_image(page, final_grid, (920, 230, 1510, 720))
     add_text(draw, (110, 760), "Next milestone: learn a ranking model from a larger human-test dataset while keeping the procedural baseline.", 24, GREEN)
+    pages.append(page)
+
+    page, draw = slide("Three examples, one iteration.", "Initial pattern -> optimized pattern -> measurable change")
+    examples = ("universal", "desert", "forest")
+    x_initial, x_final, x_score = 240, 610, 1010
+    add_text(draw, (x_initial, 190), "INITIAL", 20, MUTED)
+    add_text(draw, (x_final, 190), "OPTIMIZED", 20, MUTED)
+    add_text(draw, (x_score, 190), "PROXY SCORE", 20, MUTED)
+    for index, group in enumerate(examples):
+        y = 225 + index * 190
+        initial_path = ROOT / "output" / group / "best_pattern.png"
+        optimized_path = ROOT / "output" / "optimized_final" / group / "optimized_pattern.png"
+        add_text(draw, (95, y + 62), group.upper(), 23, GREEN)
+        place_image(page, initial_path, (x_initial, y, x_initial + 250, y + 150))
+        place_image(page, optimized_path, (x_final, y, x_final + 250, y + 150))
+        add_text(draw, (520, y + 60), "->", 30, ACCENT)
+        report_path = ROOT / "output" / "optimized_final" / group / "optimizer_report.json"
+        report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.exists() else {}
+        baseline = report.get("baseline_score")
+        optimized = report.get("optimized_score")
+        improvement = report.get("improvement")
+        if baseline is not None and optimized is not None:
+            add_text(draw, (x_score, y + 35), f"{baseline:.3f}  ->  {optimized:.3f}", 27, TEXT)
+            add_text(draw, (x_score, y + 82), f"change: {improvement:+.3f}", 22, GREEN)
+        else:
+            add_text(draw, (x_score, y + 55), "report unavailable", 22, MUTED)
+    wrapped(draw, (95, 820), "Lower proxy score is better within this controlled experiment. The full nine-environment comparison remains available in output/results_comparison/.", 21, 1380, MUTED)
     pages.append(page)
     return pages
 

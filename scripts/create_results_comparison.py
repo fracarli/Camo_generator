@@ -13,7 +13,6 @@ OUTPUT = ROOT / "output" / "results_comparison"
 GROUPS = ["universal", "forest", "desert", "mountain", "snow", "jungle", "taiga", "tundra", "urban"]
 GRID_GROUPS = ["universal", "forest", "taiga", "tundra", "urban", "desert", "mountain", "snow", "jungle"]
 GRID_COLUMNS = 3
-BACKGROUND_ROWS = 4
 CELL_WIDTH = 300
 CELL_HEIGHT = 220
 ROW_HEIGHT = 330
@@ -38,18 +37,18 @@ def pattern(path: Path, size: tuple[int, int]) -> Image.Image:
 
 
 def scene_crop(path: Path, group: str, row: int) -> Image.Image:
-    """Extract one group cell from the existing 3x3 validation contact sheet."""
+    """Extract one complete group cell from a validation contact sheet."""
     if not path.exists():
         return Image.new("RGB", (CELL_WIDTH, CELL_HEIGHT), (48, 57, 52))
     image = Image.open(path).convert("RGB")
     index = GRID_GROUPS.index(group)
     column = index % GRID_COLUMNS
     group_row = index // GRID_COLUMNS
-    # Contact sheets contain four background scenes. Each scene is a block of
-    # three rows, one row for every group triplet in GRID_GROUPS.
-    cell_height = image.height // (BACKGROUND_ROWS * 3)
-    scene_row = row % BACKGROUND_ROWS
-    sheet_row = scene_row * 3 + group_row
+    # The first three rows contain the nine groups in three columns; each cell
+    # is a complete scene, including the whole uniform. A fourth row is an
+    # additional scene set used by the legacy contact-sheet generator.
+    cell_height = image.height // 4
+    sheet_row = group_row + (3 if row > 0 and group_row == 0 else 0)
     return image.crop(
         (column * CELL_WIDTH, sheet_row * cell_height,
          (column + 1) * CELL_WIDTH, (sheet_row + 1) * cell_height)
@@ -57,13 +56,19 @@ def scene_crop(path: Path, group: str, row: int) -> Image.Image:
 
 
 def scene_pair(environment: str, size: tuple[int, int]) -> Image.Image:
-    source_environment = "forest" if environment == "universal" else environment
-    source = ROOT / "output" / "optimized_validation" / f"{source_environment}_contact_sheet.png"
+    # The first two rows intentionally share the verified real-forest reference
+    # rather than the legacy forest contact sheet that contained the mistaken
+    # face-like image. Show one corresponding uniform scene, not a wall of
+    # repeated figures.
+    if environment in {"universal", "forest"}:
+        source_environment = "verified forest reference"
+        source = ROOT / "output" / "evaluation" / "forest_contact_sheet.png"
+    else:
+        source_environment = environment
+        source = ROOT / "output" / "optimized_validation" / f"{source_environment}_contact_sheet.png"
     canvas = Image.new("RGB", size, (224, 230, 222))
     if source.exists():
-        # Keep the complete validation contact sheet: it avoids cropping away
-        # the figure and makes the comparison honest about multiple scenes.
-        validation = contain(Image.open(source), (size[0] - 10, size[1] - 42))
+        validation = contain(scene_crop(source, environment, 0), (size[0] - 10, size[1] - 42))
         canvas.paste(validation, ((size[0] - validation.width) // 2, 38))
     draw = ImageDraw.Draw(canvas)
     draw.text((8, 9), f"validation scenes / {source_environment}", fill=(29, 51, 41), font=SMALL_FONT)
@@ -114,7 +119,7 @@ def main() -> None:
     lines = [
         "# Initial vs optimized comparison", "",
         "The contact sheet compares the baseline pattern, the optimized pattern,",
-        "and two optimized uniform renders on the environment's validation scenes.",
+        "and one optimized uniform render on the corresponding validation scene.",
         "Lower proxy scores are better within this controlled experiment only.", "",
         "| Environment | Baseline | Optimized | Improvement |", "|---|---:|---:|---:|",
     ]

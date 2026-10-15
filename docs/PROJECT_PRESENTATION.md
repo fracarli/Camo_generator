@@ -87,6 +87,11 @@ in obvious sky or water regions.
 
 ![Example validation scenes](../output/evaluation/forest_contact_sheet.png)
 
+The complete baseline-to-final comparison is available in
+[`output/results_comparison/initial_vs_optimized.png`](../output/results_comparison/initial_vs_optimized.png).
+It compares the initial pattern, the optimized pattern, and validation scenes
+with the uniform for every environment.
+
 ---
 
 ## Slide 5 — Improve the pattern from the evidence

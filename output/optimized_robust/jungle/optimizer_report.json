@@ -1,0 +1,408 @@
+{
+  "group": "jungle",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+    "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+    "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg",
+    "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg",
+    "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg",
+    "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg",
+    "evaluation/backgrounds/jungle/11_Indoor_tropical_rainforest_at_Burgers_Zoo_b_.jpg",
+    "evaluation/backgrounds/jungle/12_Indoor_tropical_rainforest_at_Burgers_Zoo_c_.jpg",
+    "evaluation/backgrounds/jungle/13_Inside_the_tropical_rainforest_11464713995_.jpg",
+    "evaluation/backgrounds/jungle/14_Khao_Sok_primary_tropical_rainforest_southern_Thailand.jpg",
+    "evaluation/backgrounds/jungle/15_Lonely_road_through_tropical_rainforest_and_karst_formations_in_Surat_Thani_wild.jpg",
+    "evaluation/backgrounds/jungle/16_Rainforest_Biome_aerial_platform_-_geograph.org.uk_-_7893272.jpg",
+    "evaluation/backgrounds/jungle/17_Rainforest_at_Singapore_Botanic_Gardens.jpg",
+    "evaluation/backgrounds/jungle/18_Rainforest_fragment_TANTEA_Anamalais_horizontal.jpg",
+    "evaluation/backgrounds/jungle/19_Rainforest_fragment_TANTEA_Anamalais_vertical.jpg",
+    "evaluation/backgrounds/jungle/20_Rainforest_restoration_after_invasives_removal_Anamalais_20250923.jpg"
+  ],
+  "candidate_count": 32,
+  "beam_size": 8,
+  "score_aggregation": "mean_worst",
+  "best_candidate": "candidate_016",
+  "optimized_score": 0.09974451517971708,
+  "baseline_score": 0.09822729807383924,
+  "improvement": -0.0015172171058778355,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.659520704379723,
+    "blob_weight": 0.39940653470746734,
+    "blob_aspect": 0.700134752834492,
+    "detail_weight": 0.17435578869909604,
+    "blur_radius": 0.5888631476426945,
+    "seed": 59,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        54,
+        59,
+        55
+      ],
+      "weight": 0.1599999964237213
+    },
+    {
+      "rgb": [
+        70,
+        102,
+        58
+      ],
+      "weight": 0.3086806833744049
+    },
+    {
+      "rgb": [
+        139,
+        134,
+        104
+      ],
+      "weight": 0.3126528859138489
+    },
+    {
+      "rgb": [
+        154,
+        167,
+        142
+      ],
+      "weight": 0.14374500513076782
+    },
+    {
+      "rgb": [
+        177,
+        169,
+        131
+      ],
+      "weight": 0.07492143660783768
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.048983977972529825,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_023",
+        "candidate_006",
+        "current_best",
+        "candidate_010",
+        "candidate_016",
+        "candidate_002",
+        "candidate_027"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_023",
+      "best_running_score": 0.0580186951564004,
+      "active_candidates": [
+        "candidate_023",
+        "candidate_003",
+        "candidate_006",
+        "candidate_010",
+        "current_best",
+        "candidate_016",
+        "candidate_027",
+        "candidate_002"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.060464420228575656,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_023",
+        "candidate_006",
+        "current_best",
+        "candidate_010",
+        "candidate_016",
+        "candidate_002",
+        "candidate_027"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.05577291950583457,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_023",
+        "candidate_006",
+        "current_best",
+        "candidate_010",
+        "candidate_016",
+        "candidate_002",
+        "candidate_027"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.05511596716195344,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_023",
+        "candidate_006",
+        "current_best",
+        "candidate_010",
+        "candidate_016",
+        "candidate_002",
+        "candidate_027"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.05059129929959049,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_023",
+        "candidate_006",
+        "current_best",
+        "candidate_010",
+        "candidate_016",
+        "candidate_002",
+        "candidate_027"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.049728135622683016,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_023",
+        "candidate_006",
+        "current_best",
+        "candidate_010",
+        "candidate_016",
+        "candidate_002",
+        "candidate_027"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.0528165382882192,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_023",
+        "candidate_006",
+        "current_best",
+        "candidate_010",
+        "candidate_016",
+        "candidate_002",
+        "candidate_027"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.05465702681543512,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_023",
+        "candidate_006",
+        "current_best",
+        "candidate_010",
+        "candidate_016",
+        "candidate_002",
+        "candidate_027"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_023",
+      "best_running_score": 0.07501317675196333,
+      "active_candidates": [
+        "candidate_023",
+        "current_best",
+        "candidate_006",
+        "candidate_016",
+        "candidate_003",
+        "candidate_010",
+        "candidate_002",
+        "candidate_027"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/11_Indoor_tropical_rainforest_at_Burgers_Zoo_b_.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.0892242913090123,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_002",
+        "candidate_023",
+        "current_best",
+        "candidate_010",
+        "candidate_006",
+        "candidate_027",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/12_Indoor_tropical_rainforest_at_Burgers_Zoo_c_.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.08518268813413064,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_027",
+        "candidate_002",
+        "candidate_010",
+        "candidate_023",
+        "current_best",
+        "candidate_006",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/13_Inside_the_tropical_rainforest_11464713995_.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.08237177350004622,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_027",
+        "candidate_010",
+        "candidate_002",
+        "candidate_023",
+        "current_best",
+        "candidate_006",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/14_Khao_Sok_primary_tropical_rainforest_southern_Thailand.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.09873548606894302,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_027",
+        "candidate_002",
+        "candidate_010",
+        "current_best",
+        "candidate_023",
+        "candidate_006",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/15_Lonely_road_through_tropical_rainforest_and_karst_formations_in_Surat_Thani_wild.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.09795430444880752,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_027",
+        "candidate_010",
+        "candidate_002",
+        "candidate_023",
+        "current_best",
+        "candidate_006",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/16_Rainforest_Biome_aerial_platform_-_geograph.org.uk_-_7893272.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.10617469216732087,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_027",
+        "candidate_002",
+        "candidate_010",
+        "current_best",
+        "candidate_023",
+        "candidate_006",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/17_Rainforest_at_Singapore_Botanic_Gardens.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.10766987013499317,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_027",
+        "candidate_010",
+        "candidate_002",
+        "candidate_023",
+        "current_best",
+        "candidate_006",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/18_Rainforest_fragment_TANTEA_Anamalais_horizontal.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.10415620001064209,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_027",
+        "candidate_002",
+        "candidate_010",
+        "current_best",
+        "candidate_023",
+        "candidate_006",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/19_Rainforest_fragment_TANTEA_Anamalais_vertical.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.10172226726198252,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_027",
+        "candidate_002",
+        "candidate_010",
+        "current_best",
+        "candidate_023",
+        "candidate_006",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/20_Rainforest_restoration_after_invasives_removal_Anamalais_20250923.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_016",
+      "best_running_score": 0.09974451517971708,
+      "active_candidates": [
+        "candidate_016",
+        "candidate_027",
+        "candidate_002",
+        "candidate_010",
+        "candidate_023",
+        "current_best",
+        "candidate_006",
+        "candidate_003"
+      ]
+    }
+  ]
+}

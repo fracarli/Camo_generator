@@ -1,0 +1,302 @@
+{
+  "group": "snow",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+    "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+    "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+    "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+    "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg",
+    "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
+    "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg",
+    "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg",
+    "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg",
+    "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg",
+    "evaluation/backgrounds/snow/11_Moon_in_clouds_over_snowy_trees_in_Tuntorp.jpg",
+    "evaluation/backgrounds/snow/12_Pylon_in_a_snowy_landscape_-_geograph.org.uk_-_2218975.jpg",
+    "evaluation/backgrounds/snow/13_Snowy_High_Weald_Landscape_Trail_-_geograph.org.uk_-_6822653.jpg"
+  ],
+  "candidate_count": 32,
+  "beam_size": 8,
+  "score_aggregation": "mean_worst",
+  "best_candidate": "candidate_012",
+  "optimized_score": 0.12756684463429385,
+  "baseline_score": 0.13320158561088669,
+  "improvement": 0.005634740976592834,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 1.446217882036782,
+    "blob_weight": 0.2823338363712553,
+    "blob_aspect": 0.9057143417785672,
+    "detail_weight": 0.1263400329823784,
+    "blur_radius": 1.0261180215337138,
+    "seed": 55,
+    "palette_jitter": 5.2,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        89,
+        99,
+        102
+      ],
+      "weight": 0.17156440019607544
+    },
+    {
+      "rgb": [
+        200,
+        208,
+        213
+      ],
+      "weight": 0.2754538655281067
+    },
+    {
+      "rgb": [
+        143,
+        159,
+        149
+      ],
+      "weight": 0.22409255802631378
+    },
+    {
+      "rgb": [
+        78,
+        90,
+        84
+      ],
+      "weight": 0.20340034365653992
+    },
+    {
+      "rgb": [
+        141,
+        152,
+        163
+      ],
+      "weight": 0.12548881769180298
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+      "background_group": "snow",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.09436596944462508,
+      "active_candidates": [
+        "candidate_002",
+        "candidate_003",
+        "candidate_012",
+        "candidate_023",
+        "candidate_019",
+        "candidate_007",
+        "candidate_008",
+        "candidate_025",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.08353230580454693,
+      "active_candidates": [
+        "candidate_002",
+        "candidate_003",
+        "candidate_012",
+        "candidate_023",
+        "candidate_019",
+        "candidate_007",
+        "candidate_008",
+        "candidate_025",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.1015115791735136,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_025",
+        "candidate_019",
+        "candidate_023",
+        "candidate_008",
+        "candidate_012",
+        "candidate_007",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_025",
+      "best_running_score": 0.09049574465025217,
+      "active_candidates": [
+        "candidate_025",
+        "candidate_008",
+        "candidate_007",
+        "candidate_019",
+        "candidate_023",
+        "candidate_003",
+        "candidate_012",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_025",
+      "best_running_score": 0.09190561753821871,
+      "active_candidates": [
+        "candidate_025",
+        "candidate_007",
+        "candidate_008",
+        "candidate_019",
+        "candidate_012",
+        "candidate_003",
+        "candidate_023",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_012",
+      "best_running_score": 0.10553815599918985,
+      "active_candidates": [
+        "candidate_012",
+        "candidate_003",
+        "candidate_002",
+        "candidate_007",
+        "candidate_023",
+        "candidate_008",
+        "candidate_019",
+        "candidate_025",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_025",
+      "best_running_score": 0.12087042329078986,
+      "active_candidates": [
+        "candidate_025",
+        "candidate_008",
+        "candidate_019",
+        "candidate_023",
+        "candidate_007",
+        "candidate_003",
+        "candidate_012",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_019",
+      "best_running_score": 0.11943252230218301,
+      "active_candidates": [
+        "candidate_019",
+        "candidate_008",
+        "candidate_023",
+        "candidate_025",
+        "candidate_003",
+        "candidate_012",
+        "candidate_007",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_023",
+      "best_running_score": 0.11011763876304032,
+      "active_candidates": [
+        "candidate_023",
+        "candidate_019",
+        "candidate_008",
+        "candidate_003",
+        "candidate_012",
+        "candidate_025",
+        "candidate_002",
+        "candidate_007",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_025",
+      "best_running_score": 0.12210625133640134,
+      "active_candidates": [
+        "candidate_025",
+        "candidate_007",
+        "candidate_008",
+        "candidate_019",
+        "candidate_023",
+        "candidate_012",
+        "candidate_003",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/11_Moon_in_clouds_over_snowy_trees_in_Tuntorp.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_025",
+      "best_running_score": 0.11910367535236716,
+      "active_candidates": [
+        "candidate_025",
+        "candidate_007",
+        "candidate_008",
+        "candidate_019",
+        "candidate_023",
+        "candidate_012",
+        "candidate_003",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/12_Pylon_in_a_snowy_landscape_-_geograph.org.uk_-_2218975.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_025",
+      "best_running_score": 0.11372073506037446,
+      "active_candidates": [
+        "candidate_025",
+        "candidate_007",
+        "candidate_008",
+        "candidate_019",
+        "candidate_023",
+        "candidate_012",
+        "candidate_003",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/13_Snowy_High_Weald_Landscape_Trail_-_geograph.org.uk_-_6822653.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_012",
+      "best_running_score": 0.12756684463429385,
+      "active_candidates": [
+        "candidate_012",
+        "candidate_003",
+        "candidate_002",
+        "candidate_007",
+        "candidate_023",
+        "candidate_008",
+        "candidate_019",
+        "candidate_025",
+        "current_best"
+      ]
+    }
+  ]
+}

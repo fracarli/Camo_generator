@@ -1,0 +1,365 @@
+{
+  "group": "desert",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+    "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+    "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+    "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+    "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg",
+    "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg",
+    "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg",
+    "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg",
+    "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg",
+    "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg",
+    "evaluation/backgrounds/desert/11_Desert_Landscape_54598484368_.jpg",
+    "evaluation/backgrounds/desert/12_Desert_Landscape_-_New_Mexico_5989098056_.jpg",
+    "evaluation/backgrounds/desert/13_Desert_Landscape_Evans.jpg",
+    "evaluation/backgrounds/desert/14_Desert_Landscape_with_Mesas.jpg",
+    "evaluation/backgrounds/desert/15_Desert_Landscape_with_Mountains.jpg",
+    "evaluation/backgrounds/desert/16_Desert_landscape.jpg",
+    "evaluation/backgrounds/desert/17_Desert_landscape_at_Crack_Canyon_Trailhead_53934988117_.jpg",
+    "evaluation/backgrounds/desert/18_Desert_landscape_at_sunset_50733908043_.jpg",
+    "evaluation/backgrounds/desert/19_Desert_landscape_in_Barstow_California_2009.jpg",
+    "evaluation/backgrounds/desert/20_Desert_landscape_in_UAE.jpg"
+  ],
+  "candidate_count": 32,
+  "beam_size": 8,
+  "score_aggregation": "mean_worst",
+  "best_candidate": "current_best",
+  "optimized_score": 0.1163654660725248,
+  "baseline_score": 0.1163654660725248,
+  "improvement": 0.0,
+  "best_configuration": {
+    "source": "current_best"
+  },
+  "best_palette": null,
+  "history": [
+    {
+      "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.127859427727138,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_010",
+        "candidate_019",
+        "candidate_012",
+        "candidate_025",
+        "candidate_026",
+        "candidate_007",
+        "candidate_024",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_009",
+      "best_running_score": 0.08738167071249335,
+      "active_candidates": [
+        "candidate_009",
+        "candidate_010",
+        "candidate_025",
+        "candidate_019",
+        "candidate_012",
+        "candidate_026",
+        "candidate_007",
+        "candidate_024",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_026",
+      "best_running_score": 0.11498770945136332,
+      "active_candidates": [
+        "candidate_026",
+        "candidate_010",
+        "candidate_025",
+        "candidate_009",
+        "candidate_007",
+        "candidate_019",
+        "candidate_012",
+        "candidate_024",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_026",
+      "best_running_score": 0.11231877057231031,
+      "active_candidates": [
+        "candidate_026",
+        "candidate_007",
+        "candidate_024",
+        "candidate_019",
+        "candidate_010",
+        "candidate_025",
+        "candidate_012",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_026",
+      "best_running_score": 0.100247277066422,
+      "active_candidates": [
+        "candidate_026",
+        "candidate_007",
+        "candidate_010",
+        "candidate_019",
+        "candidate_024",
+        "candidate_012",
+        "candidate_025",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_026",
+      "best_running_score": 0.09392798366012155,
+      "active_candidates": [
+        "candidate_026",
+        "candidate_007",
+        "candidate_024",
+        "candidate_019",
+        "candidate_010",
+        "candidate_025",
+        "candidate_012",
+        "candidate_009",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.10636926304199733,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_026",
+        "candidate_007",
+        "candidate_025",
+        "candidate_012",
+        "candidate_019",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.09597731542225423,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_025",
+        "candidate_012",
+        "candidate_019",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_024",
+      "best_running_score": 0.1097398577548598,
+      "active_candidates": [
+        "candidate_024",
+        "candidate_026",
+        "candidate_007",
+        "candidate_025",
+        "candidate_012",
+        "candidate_019",
+        "current_best",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_024",
+      "best_running_score": 0.11097380024575007,
+      "active_candidates": [
+        "candidate_024",
+        "candidate_026",
+        "candidate_007",
+        "candidate_025",
+        "candidate_012",
+        "candidate_019",
+        "candidate_010",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/11_Desert_Landscape_54598484368_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_024",
+      "best_running_score": 0.10930353490783919,
+      "active_candidates": [
+        "candidate_024",
+        "candidate_026",
+        "candidate_007",
+        "candidate_025",
+        "candidate_010",
+        "candidate_012",
+        "candidate_019",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/12_Desert_Landscape_-_New_Mexico_5989098056_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_024",
+      "best_running_score": 0.11038413520572553,
+      "active_candidates": [
+        "candidate_024",
+        "candidate_026",
+        "candidate_007",
+        "candidate_025",
+        "candidate_010",
+        "candidate_012",
+        "candidate_019",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/13_Desert_Landscape_Evans.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.12173256949530556,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_019",
+        "candidate_012",
+        "candidate_025",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/14_Desert_Landscape_with_Mesas.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.1274360565008274,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_012",
+        "candidate_019",
+        "candidate_025",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/15_Desert_Landscape_with_Mountains.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.12582762517684346,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_012",
+        "candidate_019",
+        "candidate_025",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/16_Desert_landscape.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.12774046677618267,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_007",
+        "candidate_012",
+        "candidate_026",
+        "candidate_019",
+        "candidate_025",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/17_Desert_landscape_at_Crack_Canyon_Trailhead_53934988117_.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.12170181125656965,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_012",
+        "candidate_019",
+        "candidate_025",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/18_Desert_landscape_at_sunset_50733908043_.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.12085966507678944,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_012",
+        "candidate_019",
+        "candidate_025",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/19_Desert_landscape_in_Barstow_California_2009.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.11971531766294213,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_012",
+        "candidate_019",
+        "candidate_025",
+        "candidate_010"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/20_Desert_landscape_in_UAE.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.1163654660725248,
+      "active_candidates": [
+        "current_best",
+        "candidate_024",
+        "candidate_007",
+        "candidate_026",
+        "candidate_012",
+        "candidate_019",
+        "candidate_025",
+        "candidate_010"
+      ]
+    }
+  ]
+}
