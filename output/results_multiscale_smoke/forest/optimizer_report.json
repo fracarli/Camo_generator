@@ -1,0 +1,28 @@
+{
+  "group": "forest",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg"
+  ],
+  "candidate_count": 2,
+  "beam_size": 1,
+  "best_candidate": "current_best",
+  "optimized_score": 0.06446859423071147,
+  "baseline_score": 0.06446859423071147,
+  "improvement": 0.0,
+  "best_configuration": {
+    "source": "current_best"
+  },
+  "best_palette": null,
+  "history": [
+    {
+      "background": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+      "background_group": "forest",
+      "best_after_background": "current_best",
+      "best_running_score": 0.06446859423071147,
+      "active_candidates": [
+        "current_best"
+      ]
+    }
+  ]
+}

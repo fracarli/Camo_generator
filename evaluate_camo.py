@@ -110,6 +110,13 @@ def gradient_strength(image: np.ndarray) -> np.ndarray:
     return np.sqrt(gx * gx + gy * gy)
 
 
+def blurred_luminance(image: np.ndarray, radius: float) -> np.ndarray:
+    """Return luminance after spatial smoothing at a chosen visual scale."""
+    luminance = np.clip(image.astype(np.float32).mean(axis=2), 0, 255).astype(np.uint8)
+    filtered = Image.fromarray(luminance, mode="L").filter(ImageFilter.GaussianBlur(radius))
+    return np.asarray(filtered, dtype=np.float32)
+
+
 def measure_visibility(background: Image.Image, composite_image: Image.Image, mask: np.ndarray) -> dict[str, float]:
     background_array = np.asarray(background, dtype=np.float32)
     composite_array = np.asarray(composite_image, dtype=np.float32)
@@ -117,7 +124,14 @@ def measure_visibility(background: Image.Image, composite_image: Image.Image, ma
     ring = np.asarray(mask_image.filter(ImageFilter.MaxFilter(31)), dtype=np.uint8) > 0
     ring &= ~mask
     if not mask.any() or not ring.any():
-        return {"rgb_contrast": 1.0, "luminance_contrast": 1.0, "edge_contrast": 1.0, "visibility_score": 1.0}
+        return {
+            "rgb_contrast": 1.0,
+            "luminance_contrast": 1.0,
+            "edge_contrast": 1.0,
+            "texture_contrast": 1.0,
+            "multiscale_contrast": 1.0,
+            "visibility_score": 1.0,
+        }
 
     foreground = composite_array[mask]
     nearby = background_array[ring]
@@ -130,11 +144,29 @@ def measure_visibility(background: Image.Image, composite_image: Image.Image, ma
     composite_edges = gradient_strength(composite_array)
     border = ring & (np.asarray(mask_image.filter(ImageFilter.MaxFilter(9)), dtype=np.uint8) > 0)
     edge_contrast = float(np.clip((composite_edges[border].mean() - background_edges[border].mean()) / 255.0, 0.0, 1.0)) if border.any() else 0.0
-    visibility_score = float(0.50 * rgb_contrast + 0.35 * luminance_contrast + 0.15 * edge_contrast)
+    foreground_texture = float(np.std(foreground.mean(axis=1)) / 255.0)
+    nearby_texture = float(np.std(nearby.mean(axis=1)) / 255.0)
+    texture_contrast = float(np.clip(abs(foreground_texture - nearby_texture), 0.0, 1.0))
+
+    scale_residuals = []
+    for radius in (3.0, 9.0, 21.0):
+        blurred_background = blurred_luminance(background_array, radius)
+        blurred_composite = blurred_luminance(composite_array, radius)
+        scale_residuals.append(float(np.mean(np.abs(blurred_composite[mask] - blurred_background[mask])) / 255.0))
+    multiscale_contrast = float(np.clip(np.mean(scale_residuals), 0.0, 1.0))
+    visibility_score = float(
+        0.38 * rgb_contrast
+        + 0.25 * luminance_contrast
+        + 0.15 * edge_contrast
+        + 0.12 * texture_contrast
+        + 0.10 * multiscale_contrast
+    )
     return {
         "rgb_contrast": rgb_contrast,
         "luminance_contrast": luminance_contrast,
         "edge_contrast": edge_contrast,
+        "texture_contrast": texture_contrast,
+        "multiscale_contrast": multiscale_contrast,
         "visibility_score": visibility_score,
     }
 

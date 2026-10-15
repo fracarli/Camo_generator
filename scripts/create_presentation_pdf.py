@@ -78,6 +78,21 @@ def card(draw: ImageDraw.ImageDraw, box, title: str, body: str, color=GREEN):
     wrapped(draw, (x1 + 28, y1 + 78), body, 22, x2 - x1 - 56, MUTED)
 
 
+def callout(draw: ImageDraw.ImageDraw, box, eyebrow: str, body: str, color=GREEN):
+    """A lighter editorial callout for constraints and caveats.
+
+    These notes intentionally avoid the heavy black-card treatment used for
+    process steps, so a limitation reads like a field note rather than an
+    error message.
+    """
+    x1, y1, x2, y2 = box
+    tint = tuple(int((base * 3 + accent) / 4) for base, accent in zip(BG, color))
+    draw.rounded_rectangle(box, radius=22, fill=tint)
+    draw.rounded_rectangle((x1 + 18, y1 + 18, x1 + 30, y2 - 18), radius=6, fill=color)
+    add_text(draw, (x1 + 54, y1 + 23), eyebrow, 20, color)
+    wrapped(draw, (x1 + 54, y1 + 66), body, 23, x2 - x1 - 86, TEXT)
+
+
 def build() -> list[Image.Image]:
     initial_grid = ROOT / "output/all_patterns_grid.png"
     final_grid = ROOT / "output/optimized_final/all_optimized_patterns_grid.png"
@@ -114,7 +129,7 @@ def build() -> list[Image.Image]:
     place_image(page, scenes, (90, 210, 980, 820))
     card(draw, (1060, 235, 1510, 395), "HUMAN TEST", "Short exposures and randomized locations measure how quickly observers notice the figure.")
     card(draw, (1060, 465, 1510, 625), "COMPUTER METRICS", "Color, luminance, edge, and visibility proxies compare candidate patterns.", ACCENT)
-    card(draw, (1060, 695, 1510, 785), "RULE", "Prefer terrain over obvious sky or water regions.", GREEN)
+    callout(draw, (1060, 685, 1510, 795), "PLACEMENT PRINCIPLE", "Keep the figure on terrain, not in obvious sky or water regions.", GREEN)
     pages.append(page)
 
     page, draw = slide("Optimization is a loop.", "Balance multiple scenes instead of fitting one photograph")
@@ -134,7 +149,7 @@ def build() -> list[Image.Image]:
     place_image(page, masks, (100, 220, 620, 760)) if masks else None
     card(draw, (760, 220, 1510, 390), "LANDSCAPE PHOTO", "The pretrained model assigns semantic labels such as vegetation, terrain, sky, and water.")
     card(draw, (760, 455, 1510, 625), "RELEVANT PIXELS", "The pipeline can focus color and texture extraction on the terrain that matters.", ACCENT)
-    card(draw, (760, 690, 1510, 780), "LIMIT", "This is not custom neural-network training and not proof of real-world concealment.", GREEN)
+    callout(draw, (760, 675, 1510, 795), "CURRENT BOUNDARY", "Segmentation improves the input analysis. It does not generate the camouflage or prove field performance.", GREEN)
     pages.append(page)
 
     page, draw = slide("From idea to testable system.", "A working research prototype with a reproducible workflow")

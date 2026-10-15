@@ -20,3 +20,10 @@ Images under `photos/` are treated as user-provided input. Before publishing
 any image, record its source, author, license, and permission in
 `photos/SOURCES.md`. Unverified images should be kept local and excluded from
 public commits.
+
+## Candidate review pool
+
+Images under `evaluation/review_candidates/backgrounds/` are downloaded
+candidates and are not part of the official evaluation corpus. Review them with
+`evaluation/review_candidates/review.html` before promoting any image into
+`evaluation/backgrounds/`.

@@ -11,3 +11,4 @@ photos/*
 !photos/SOURCES.md
 .streamlit_uploads/
 output/app_results/
+evaluation/review_candidates/backgrounds/*

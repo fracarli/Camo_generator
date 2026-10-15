@@ -52,10 +52,15 @@ class GeneratorSmokeTests(unittest.TestCase):
     def test_weighted_visibility_score_is_normalized(self) -> None:
         from optimize_patterns import weighted_visibility_score
 
-        metrics = {"rgb_contrast": 0.2, "luminance_contrast": 0.4, "visibility_score": 0.9}
+        metrics = {
+            "rgb_contrast": 0.2,
+            "luminance_contrast": 0.4,
+            "texture_contrast": 0.6,
+            "visibility_score": 0.9,
+        }
         self.assertAlmostEqual(
-            weighted_visibility_score(metrics, {"rgb_contrast": 1, "luminance_contrast": 1}),
-            0.3,
+            weighted_visibility_score(metrics, {"rgb_contrast": 1, "luminance_contrast": 1, "texture_contrast": 1}),
+            0.4,
         )
 
 

@@ -1,0 +1,150 @@
+{
+  "generated_on": "2026-10-15",
+  "metric_note": "Lower visibility_score is better in this internal proxy; this is not field evidence.",
+  "reports": {
+    "universal": {
+      "group": "universal",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+        "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg"
+      ],
+      "candidate_count": 2,
+      "beam_size": 1,
+      "best_candidate": "current_best",
+      "optimized_score": 0.09825814257531117,
+      "baseline_score": 0.09825814257531117,
+      "improvement": 0.0,
+      "best_configuration": {
+        "source": "current_best"
+      },
+      "best_palette": null,
+      "history": [
+        {
+          "background": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+          "background_group": "forest",
+          "best_after_background": "current_best",
+          "best_running_score": 0.0635390046487252,
+          "active_candidates": [
+            "current_best"
+          ]
+        },
+        {
+          "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+          "background_group": "desert",
+          "best_after_background": "current_best",
+          "best_running_score": 0.09825814257531117,
+          "active_candidates": [
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "forest": {
+      "group": "forest",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg"
+      ],
+      "candidate_count": 2,
+      "beam_size": 1,
+      "best_candidate": "current_best",
+      "optimized_score": 0.06446859423071147,
+      "baseline_score": 0.06446859423071147,
+      "improvement": 0.0,
+      "best_configuration": {
+        "source": "current_best"
+      },
+      "best_palette": null,
+      "history": [
+        {
+          "background": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+          "background_group": "forest",
+          "best_after_background": "current_best",
+          "best_running_score": 0.06446859423071147,
+          "active_candidates": [
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "desert": {
+      "group": "desert",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg"
+      ],
+      "candidate_count": 2,
+      "beam_size": 1,
+      "best_candidate": "candidate_000",
+      "optimized_score": 0.14864600404165684,
+      "baseline_score": 0.15973621234608193,
+      "improvement": 0.011090208304425087,
+      "best_configuration": {
+        "density": "standard",
+        "blob_scale": 1.000154097001332,
+        "blob_weight": 0.3751123718056278,
+        "blob_aspect": 1.1008783194963525,
+        "detail_weight": 0.12217853378510475,
+        "blur_radius": 1.0589035557397135,
+        "seed": 43,
+        "palette_jitter": 8.0,
+        "weight_concentration": 35.0
+      },
+      "best_palette": [
+        {
+          "rgb": [
+            92,
+            73,
+            63
+          ],
+          "weight": 0.2117474228143692
+        },
+        {
+          "rgb": [
+            179,
+            156,
+            124
+          ],
+          "weight": 0.17409975826740265
+        },
+        {
+          "rgb": [
+            154,
+            139,
+            99
+          ],
+          "weight": 0.2696250379085541
+        },
+        {
+          "rgb": [
+            71,
+            74,
+            62
+          ],
+          "weight": 0.12130190432071686
+        },
+        {
+          "rgb": [
+            178,
+            157,
+            130
+          ],
+          "weight": 0.22322586178779602
+        }
+      ],
+      "history": [
+        {
+          "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_000",
+          "best_running_score": 0.14864600404165684,
+          "active_candidates": [
+            "candidate_000",
+            "current_best"
+          ]
+        }
+      ]
+    }
+  }
+}

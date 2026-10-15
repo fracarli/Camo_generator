@@ -108,7 +108,7 @@ def safe_filename(title: str, index: int) -> str:
     return f"{index:02d}_{stem}{suffix}"
 
 
-def download_image(candidate: dict, destination: Path) -> None:
+def download_image(candidate: dict, destination: Path, delay: float = 0.5) -> None:
     info = candidate["imageinfo"][0]
     urls = list(dict.fromkeys(item for item in (info.get("thumburl"), info.get("url")) if item))
     last_error: Exception | None = None
@@ -123,7 +123,7 @@ def download_image(candidate: dict, destination: Path) -> None:
             print(f"Thumbnail failed; trying the original file URL for {destination.name}")
     else:
         raise last_error or RuntimeError("No download URL available")
-    time.sleep(0.5)
+    time.sleep(max(0.0, delay))
 
 
 def write_manifest(root: Path, manifest: list[dict]) -> None:
@@ -162,6 +162,7 @@ def main() -> None:
     parser.add_argument("--groups", default=",".join(ENVIRONMENT_SEARCHES))
     parser.add_argument("--count", type=int, default=10, help="Photos per environment")
     parser.add_argument("--width", type=int, default=1280)
+    parser.add_argument("--delay", type=float, default=0.5, help="Seconds to wait between image downloads")
     parser.add_argument("--clean", action="store_true", help="Remove existing downloaded images in selected folders")
     args = parser.parse_args()
     groups = [item.strip().lower() for item in args.groups.split(",") if item.strip()]
@@ -196,7 +197,7 @@ def main() -> None:
                 continue
             try:
                 if not destination.exists():
-                    download_image(candidate, destination)
+                    download_image(candidate, destination, args.delay)
             except Exception as error:
                 print(f"Stopping {group} after download error: {error}")
                 break

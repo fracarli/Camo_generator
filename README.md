@@ -42,8 +42,22 @@ streamlit run app.py
 
 The web demo is the easiest entry point for a first look: upload a few photos,
 choose the environment and palette size, click one button, and inspect the
-pattern, palette, and report in separate tabs. The CLI and JSON configurations
-remain the reproducible path used by tests and experiments.
+pattern, palette, and report in separate tabs. It also prepares a randomized
+Human Test directly from the current run: brief exposures, randomized figure
+placement, and a downloadable CSV with detection and response time. The CLI and
+JSON configurations remain the reproducible path used by tests and experiments.
+
+To review newly collected background candidates before adding them to the
+official corpus:
+
+```bash
+python scripts/review_image_candidates.py
+open evaluation/review_candidates/review.html
+```
+
+The review board lets you mark each image as Keep, Reject, or Uncertain and
+exports a JSON decision file. Unreviewed candidate images are intentionally
+ignored by Git until they are approved.
 
 The demo uses the verified reference photos already stored in `evaluation/backgrounds/`, generates five
 color patterns, and writes a contact sheet to
@@ -65,8 +79,10 @@ The latest reproducible public demo is available in
 [output/results_demo_public/](output/results_demo_public/). Its contact sheet is
 [`all_patterns_grid.png`](output/results_demo_public/all_patterns_grid.png),
 and each environment contains a pattern, palette, report, and validation
-report. The current verified corpus contains 80 documented images: 70 used for
-the universal profile and 10 for each environment-specific profile.
+report. The current reviewed evaluation corpus contains 124 documented images;
+the exact per-environment counts and source/license records are maintained in
+[`evaluation/sources.json`](evaluation/sources.json). Universal is derived from
+the reviewed terrain groups rather than stored as a separate photo folder.
 
 The latest weighted multi-objective smoke run is in
 [output/results_multiobjective_smoke/](output/results_multiobjective_smoke/).
@@ -489,13 +505,14 @@ Download a balanced starter corpus and record its source metadata:
 python download_evaluation_backgrounds.py
 ```
 
-The downloader targets ten photographs per environment: forest, desert,
-mountain, urban, jungle, snow, taiga, and tundra. It searches Wikimedia
+The downloader targets a balanced set of photographs per environment: forest,
+desert, mountain, urban, jungle, snow, taiga, and tundra. It searches Wikimedia
 Commons, filters obvious artwork terms, downloads resized files, and records
-the source page, author, and license. You can add your own JPG, JPEG, PNG, or
-WEBP images to the corresponding folders. For a serious study, local
-photographs from the intended operating area are more valuable than generic
-online images.
+the source page, author, and license. Candidate images are reviewed in the
+browser before promotion into the official corpus. You can add your own JPG,
+JPEG, PNG, or WEBP images to the corresponding folders. For a serious study,
+local photographs from the intended operating area are more valuable than
+generic online images.
 
 The downloaded corpus can also be used as a balanced reference set for a new
 generation run, without mixing it into the existing `photos/` collection:
