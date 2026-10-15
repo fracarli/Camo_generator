@@ -9,6 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs" / "PROJECT_PRESENTATION.pdf"
+LOGO = ROOT / "docs" / "assets" / "terrainweave_logo.png"
 SIZE = (1600, 900)
 BG = (18, 24, 29)
 TEXT = (238, 242, 239)
@@ -47,6 +48,7 @@ def slide(title: str, subtitle: str | None = None) -> tuple[Image.Image, ImageDr
     image = Image.new("RGB", SIZE, BG)
     draw = ImageDraw.Draw(image)
     draw.rectangle((0, 0, 1600, 14), fill=GREEN)
+    place_image(image, LOGO, (1480, 28, 1570, 118))
     add_text(draw, (90, 62), title, 48, TEXT)
     if subtitle:
         add_text(draw, (92, 132), subtitle, 24, MUTED)
@@ -56,13 +58,13 @@ def slide(title: str, subtitle: str | None = None) -> tuple[Image.Image, ImageDr
 def place_image(canvas: Image.Image, path: Path, box: tuple[int, int, int, int]) -> None:
     if not path.exists():
         return
-    image = Image.open(path).convert("RGB")
+    image = Image.open(path).convert("RGBA")
     x1, y1, x2, y2 = box
     scale = min((x2 - x1) / image.width, (y2 - y1) / image.height)
     resized = image.resize((max(1, int(image.width * scale)), max(1, int(image.height * scale))), Image.Resampling.LANCZOS)
     x = x1 + ((x2 - x1) - resized.width) // 2
     y = y1 + ((y2 - y1) - resized.height) // 2
-    canvas.paste(resized, (x, y))
+    canvas.paste(resized, (x, y), resized)
 
 
 def card(draw: ImageDraw.ImageDraw, box, title: str, body: str, color=GREEN):
@@ -81,9 +83,11 @@ def build() -> list[Image.Image]:
 
     pages: list[Image.Image] = []
 
-    page, draw = slide("CAMO", "Designing explainable camouflage patterns from real environments")
-    add_text(draw, (100, 230), "Can a pattern be designed from the places where it will be used?", 38, GREEN)
-    wrapped(draw, (100, 320), "Reference photographs -> analysis -> pattern generation -> human and computer validation -> optimization", 29, 700)
+    page, draw = slide("TERRAINWEAVE", "Environment-aware camouflage design")
+    place_image(page, LOGO, (100, 190, 430, 520))
+    add_text(draw, (100, 570), "A visual research prototype", 25, ACCENT)
+    add_text(draw, (100, 640), "Can environments guide camouflage design?", 31, GREEN)
+    wrapped(draw, (100, 725), "Reference photographs -> analysis -> pattern generation -> human and computer validation -> optimization", 25, 690)
     add_text(draw, (850, 175), "Current baseline patterns", 22, MUTED)
     place_image(page, initial_grid, (850, 200, 1510, 820))
     pages.append(page)

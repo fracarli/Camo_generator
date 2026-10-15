@@ -1,6 +1,11 @@
-# Camo — Project Overview
+# TerrainWeave — Project Overview
 
 Short English presentation for a live demo or an informal project introduction.
+
+TerrainWeave is the public-facing project name. The repository and CLI keep the
+legacy `Camo` name for compatibility.
+
+![TerrainWeave logo](./assets/terrainweave_logo.png)
 
 The computer-readable PDF version is available as
 [PROJECT_PRESENTATION.pdf](./PROJECT_PRESENTATION.pdf). Regenerate it with

@@ -1,6 +1,12 @@
-# Camo
+# TerrainWeave
 
-An explainable Python prototype that generates camouflage-like patterns from reference landscape photographs.
+TerrainWeave is an explainable Python prototype that generates camouflage-like
+patterns from reference landscape photographs.
+
+![TerrainWeave logo](docs/assets/terrainweave_logo.png)
+
+The repository name and command-line entry points remain `Camo` for backward
+compatibility, while **TerrainWeave** is the project's public-facing name.
 
 ![Optimized pattern overview](output/optimized_final/all_optimized_patterns_grid.png)
 
