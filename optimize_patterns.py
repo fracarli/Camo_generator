@@ -11,7 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import random
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
@@ -34,10 +34,22 @@ class Candidate:
     weights: np.ndarray | None = None
     cumulative_score: float = 0.0
     scores_seen: int = 0
+    scores: list[float] = field(default_factory=list)
 
     @property
     def mean_score(self) -> float:
         return self.cumulative_score / max(self.scores_seen, 1)
+
+    @property
+    def worst_score(self) -> float:
+        return max(self.scores, default=self.mean_score)
+
+
+def ranking_score(candidate: Candidate, aggregation: str) -> float:
+    """Lower-is-better beam score with an optional worst-scene penalty."""
+    if aggregation == "mean_worst":
+        return 0.75 * candidate.mean_score + 0.25 * candidate.worst_score
+    return candidate.mean_score
 
 
 def parse_csv(value: str) -> list[str]:
@@ -244,7 +256,8 @@ def optimize_group(group: str, images: list[camo.ImageStats], background_root: P
             )
             candidate.cumulative_score += score
             candidate.scores_seen += 1
-            scored.append((candidate.mean_score, candidate))
+            candidate.scores.append(score)
+            scored.append((ranking_score(candidate, args.score_aggregation), candidate))
         scored.sort(key=lambda item: item[0])
         active = [candidate for _, candidate in scored[:args.beam_size]]
         baseline = next((candidate for _, candidate in scored if candidate.candidate_id == "current_best"), None)
@@ -258,7 +271,7 @@ def optimize_group(group: str, images: list[camo.ImageStats], background_root: P
             "active_candidates": [candidate.candidate_id for candidate in active],
         })
 
-    best = min(active, key=lambda candidate: candidate.mean_score)
+    best = min(active, key=lambda candidate: ranking_score(candidate, args.score_aggregation))
     group_output = output_root / group
     group_output.mkdir(parents=True, exist_ok=True)
     Image.fromarray(best.pattern, mode="RGB").save(group_output / "optimized_pattern.png")
@@ -268,6 +281,7 @@ def optimize_group(group: str, images: list[camo.ImageStats], background_root: P
         "backgrounds_evaluated": [str(path) for _, path in backgrounds],
         "candidate_count": len(candidates),
         "beam_size": args.beam_size,
+        "score_aggregation": args.score_aggregation,
         "best_candidate": best.candidate_id,
         "optimized_score": best.mean_score,
         "baseline_score": next((candidate.mean_score for candidate in candidates if candidate.candidate_id == "current_best"), None),
@@ -313,6 +327,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--segmentation-model", default=camo.DEFAULT_SEGMENTATION_MODEL)
     parser.add_argument("--device", default="auto")
     parser.add_argument("--objective-config", default=None, help="JSON file with weighted visibility objectives")
+    parser.add_argument(
+        "--score-aggregation", choices=("mean", "mean_worst"), default="mean",
+        help="Candidate ranking strategy; mean_worst penalizes failure on the worst scene.",
+    )
     return parser.parse_args()
 
 

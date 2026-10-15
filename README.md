@@ -141,7 +141,7 @@ The evaluator composites the uniform over photographs from the selected
 environment and records a visibility proxy. The following examples show the
 kind of scene contact sheets produced during validation:
 
-![Forest validation scenes](output/optimized_validation/forest_contact_sheet.png)
+![Forest validation scenes](output/evaluation/forest_contact_sheet.png)
 
 ![Desert validation scenes](output/optimized_validation/desert_contact_sheet.png)
 
@@ -557,6 +557,19 @@ generation remains a future step.
 The score is still an internal visibility proxy. Use a held-out set and the
 anonymous human-test scenes before treating an optimization result as a real
 camouflage improvement.
+
+For a more robust selection, use `--score-aggregation mean_worst`. It keeps
+the average visibility low while penalizing candidates that fail badly on one
+scene, reducing the chance of producing a pattern that works only on the
+easiest backgrounds:
+
+```bash
+python optimize_patterns.py \
+  --groups universal,forest,desert,mountain,snow,jungle,taiga,tundra,urban \
+  --background-limit 0 --candidates 32 --beam-size 8 \
+  --score-aggregation mean_worst \
+  --output output/optimized_robust
+```
 
 The optimized patterns can be evaluated directly by selecting their pattern
 root and filename:

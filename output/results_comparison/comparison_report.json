@@ -1,0 +1,56 @@
+[
+  {
+    "environment": "universal",
+    "baseline_score": 0.10691779176465388,
+    "optimized_score": 0.09420162291590031,
+    "improvement": 0.012716168848753567
+  },
+  {
+    "environment": "forest",
+    "baseline_score": 0.06671378747410243,
+    "optimized_score": 0.05994052853406175,
+    "improvement": 0.0067732589400406815
+  },
+  {
+    "environment": "desert",
+    "baseline_score": 0.09405627158354038,
+    "optimized_score": 0.09405627158354038,
+    "improvement": 0.0
+  },
+  {
+    "environment": "mountain",
+    "baseline_score": 0.11069197244709358,
+    "optimized_score": 0.07829607732652222,
+    "improvement": 0.032395895120571366
+  },
+  {
+    "environment": "snow",
+    "baseline_score": 0.08195669069536962,
+    "optimized_score": 0.05572000527987257,
+    "improvement": 0.02623668541549705
+  },
+  {
+    "environment": "jungle",
+    "baseline_score": 0.06854791850026232,
+    "optimized_score": 0.06266005690064048,
+    "improvement": 0.0058878615996218325
+  },
+  {
+    "environment": "taiga",
+    "baseline_score": 0.10897488506452646,
+    "optimized_score": 0.10037327037600334,
+    "improvement": 0.008601614688523121
+  },
+  {
+    "environment": "tundra",
+    "baseline_score": 0.06876943588547875,
+    "optimized_score": 0.054503814280033105,
+    "improvement": 0.014265621605445644
+  },
+  {
+    "environment": "urban",
+    "baseline_score": 0.09877001052955166,
+    "optimized_score": 0.0923645421685069,
+    "improvement": 0.006405468361044761
+  }
+]

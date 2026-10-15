@@ -85,7 +85,7 @@ exposure times to measure how quickly observers notice the figure.
 The test is more meaningful when the figure is placed on terrain rather than
 in obvious sky or water regions.
 
-![Example validation scenes](../output/optimized_validation/forest_contact_sheet.png)
+![Example validation scenes](../output/evaluation/forest_contact_sheet.png)
 
 ---
 

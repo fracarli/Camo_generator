@@ -75,22 +75,7 @@ def card(draw: ImageDraw.ImageDraw, box, title: str, body: str, color=GREEN):
     draw.rounded_rectangle(box, radius=18, fill=PANEL)
     draw.rectangle((x1, y1, x1 + 8, y2), fill=color)
     add_text(draw, (x1 + 28, y1 + 24), title, 25, color)
-    wrapped(draw, (x1 + 28, y1 + 78), body, 22, x2 - x1 - 56, MUTED)
-
-
-def callout(draw: ImageDraw.ImageDraw, box, eyebrow: str, body: str, color=GREEN):
-    """A lighter editorial callout for constraints and caveats.
-
-    These notes intentionally avoid the heavy black-card treatment used for
-    process steps, so a limitation reads like a field note rather than an
-    error message.
-    """
-    x1, y1, x2, y2 = box
-    tint = tuple(int((base * 3 + accent) / 4) for base, accent in zip(BG, color))
-    draw.rounded_rectangle(box, radius=22, fill=tint)
-    draw.rounded_rectangle((x1 + 18, y1 + 18, x1 + 30, y2 - 18), radius=6, fill=color)
-    add_text(draw, (x1 + 54, y1 + 23), eyebrow, 20, color)
-    wrapped(draw, (x1 + 54, y1 + 66), body, 23, x2 - x1 - 86, TEXT)
+    wrapped(draw, (x1 + 28, y1 + 78), body, 20, x2 - x1 - 56, MUTED)
 
 
 def build() -> list[Image.Image]:
@@ -127,9 +112,9 @@ def build() -> list[Image.Image]:
 
     page, draw = slide("Does it disappear fast enough?", "Recognition testing on real terrain")
     place_image(page, scenes, (90, 210, 980, 820))
-    card(draw, (1060, 235, 1510, 395), "HUMAN TEST", "Short exposures and randomized locations measure how quickly observers notice the figure.")
-    card(draw, (1060, 465, 1510, 625), "COMPUTER METRICS", "Color, luminance, edge, and visibility proxies compare candidate patterns.", ACCENT)
-    callout(draw, (1060, 685, 1510, 795), "PLACEMENT PRINCIPLE", "Keep the figure on terrain, not in obvious sky or water regions.", GREEN)
+    card(draw, (1060, 225, 1510, 405), "HUMAN TEST", "Short exposures and randomized locations measure how quickly observers notice the figure.")
+    card(draw, (1060, 440, 1510, 625), "COMPUTER METRICS", "Color, luminance, edge, and visibility proxies compare candidate patterns.", ACCENT)
+    card(draw, (1060, 660, 1510, 810), "RULE", "Keep the figure on terrain, not in obvious sky or water regions.", GREEN)
     pages.append(page)
 
     page, draw = slide("Optimization is a loop.", "Balance multiple scenes instead of fitting one photograph")
@@ -147,13 +132,13 @@ def build() -> list[Image.Image]:
 
     page, draw = slide("Neural input. Procedural output.", "SegFormer improves scene understanding; it does not generate the camouflage")
     place_image(page, masks, (100, 220, 620, 760)) if masks else None
-    card(draw, (760, 220, 1510, 390), "LANDSCAPE PHOTO", "The pretrained model assigns semantic labels such as vegetation, terrain, sky, and water.")
-    card(draw, (760, 455, 1510, 625), "RELEVANT PIXELS", "The pipeline can focus color and texture extraction on the terrain that matters.", ACCENT)
-    callout(draw, (760, 675, 1510, 795), "CURRENT BOUNDARY", "Segmentation improves the input analysis. It does not generate the camouflage or prove field performance.", GREEN)
+    card(draw, (760, 205, 1510, 395), "LANDSCAPE PHOTO", "The pretrained model assigns semantic labels such as vegetation, terrain, sky, and water.")
+    card(draw, (760, 430, 1510, 625), "RELEVANT PIXELS", "The pipeline can focus color and texture extraction on the terrain that matters.", ACCENT)
+    card(draw, (760, 660, 1510, 815), "LIMIT", "Segmentation improves the input analysis. It does not generate the camouflage or prove field performance.", GREEN)
     pages.append(page)
 
     page, draw = slide("From idea to testable system.", "A working research prototype with a reproducible workflow")
-    wrapped(draw, (110, 220), "[OK] 9 environment profiles\n[OK] 80 documented evaluation images\n[OK] standard and weighted multi-objective generation\n[OK] optional neural segmentation\n[OK] uniform mockups and blinded human testing\n[OK] JSON configurations, tests, and reports", 31, 700)
+    wrapped(draw, (110, 220), "[OK] 9 environment profiles\n[OK] 124 reviewed evaluation images\n[OK] standard and weighted multi-objective generation\n[OK] optional neural segmentation\n[OK] uniform mockups and blinded human testing\n[OK] JSON configurations, tests, and reports", 31, 700)
     add_text(draw, (920, 175), "Optimized final patterns", 22, MUTED)
     place_image(page, final_grid, (920, 230, 1510, 720))
     add_text(draw, (110, 760), "Next milestone: learn a ranking model from a larger human-test dataset while keeping the procedural baseline.", 24, GREEN)
