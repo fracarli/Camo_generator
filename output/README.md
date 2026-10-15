@@ -6,6 +6,9 @@ candidate searches and large per-scene image dumps are intentionally omitted.
 ## Start here
 
 - `RESULTS_INDEX.md` and the `results_<environment>/` folders: curated, clearly named public-facing results.
+- `results_demo_public/`: latest reproducible demo generated from the verified 80-image corpus.
+- `results_multiobjective_smoke/`: latest bounded weighted multi-objective optimization run.
+- `results_neural_smoke/`: neural semantic-segmentation smoke run with saved masks.
 - `results_validation/`: held-out and semantic-versus-baseline reports.
 - `results_uniforms/`: optimized uniform mockups.
 - `all_patterns_grid.png`: standard patterns generated from the source photos.

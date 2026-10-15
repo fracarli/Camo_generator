@@ -1,16 +1,6 @@
 [
   {
     "group": "forest",
-    "file": "evaluation/backgrounds/forest/01_-Man_in_a_Forest_Landscape-_MET_DT223780.jpg",
-    "source_filename": "-Man in a Forest Landscape- MET DT223780.jpg",
-    "source_page": "https://commons.wikimedia.org/wiki/File:-Man_in_a_Forest_Landscape-_MET_DT223780.jpg",
-    "license": "cc0",
-    "author": " \n creator:constant alexandre famin  ",
-    "downloaded_on": "2026-10-14",
-    "thumbnail_width": 1280
-  },
-  {
-    "group": "forest",
     "file": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
     "source_filename": "Beech Forest (AU), Great Otway National Park, Beauchamp Falls -- 2019 -- 1271.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Beech_Forest_(AU),_Great_Otway_National_Park,_Beauchamp_Falls_--_2019_--_1271.jpg",
@@ -41,16 +31,6 @@
   },
   {
     "group": "forest",
-    "file": "evaluation/backgrounds/forest/05_Checkerboard_forest_in_Idaho.jpg",
-    "source_filename": "Checkerboard forest in Idaho.jpg",
-    "source_page": "https://commons.wikimedia.org/wiki/File:Checkerboard_forest_in_Idaho.jpg",
-    "license": "public domain",
-    "author": "\"an astronaut aboard the international space station\"\u2014\"a member of the expedition 50 crew\"",
-    "downloaded_on": "2026-10-14",
-    "thumbnail_width": 1280
-  },
-  {
-    "group": "forest",
     "file": "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
     "source_filename": "Cloud Forest, Gardens by the Bay, Singapore.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Cloud_Forest,_Gardens_by_the_Bay,_Singapore.jpg",
@@ -75,7 +55,7 @@
     "source_filename": "A snowy landscape - geograph.org.uk - 5626339.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
     "license": "cc by-sa 2.0",
-    "author": " robert graham \u00a0     ",
+    "author": " robert graham       ",
     "downloaded_on": "2026-10-14",
     "thumbnail_width": 900
   },
@@ -105,7 +85,7 @@
     "source_filename": "A snowy landscape on Lommoltunturi, Muonio, Finland, 2019 January.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:A_snowy_landscape_on_Lommoltunturi,_Muonio,_Finland,_2019_January.jpg",
     "license": "cc by-sa 3.0",
-    "author": " ximonic (simo r\u00e4s\u00e4nen) ",
+    "author": " ximonic (simo räsänen) ",
     "downloaded_on": "2026-10-14",
     "thumbnail_width": 900
   },
@@ -141,31 +121,11 @@
   },
   {
     "group": "forest",
-    "file": "evaluation/backgrounds/forest/04_Checkerboard_forest_in_Idaho.jpg",
-    "source_filename": "Checkerboard forest in Idaho.jpg",
-    "source_page": "https://commons.wikimedia.org/wiki/File:Checkerboard_forest_in_Idaho.jpg",
-    "license": "public domain",
-    "author": "\"an astronaut aboard the international space station\"\u2014\"a member of the expedition 50 crew\"",
-    "downloaded_on": "2026-10-14",
-    "thumbnail_width": 900
-  },
-  {
-    "group": "forest",
     "file": "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
     "source_filename": "Cloud Forest, Gardens by the Bay, Singapore.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Cloud_Forest,_Gardens_by_the_Bay,_Singapore.jpg",
     "license": "cc by-sa 4.0",
     "author": " basile morin ",
-    "downloaded_on": "2026-10-14",
-    "thumbnail_width": 900
-  },
-  {
-    "group": "forest",
-    "file": "evaluation/backgrounds/forest/06_Forest_landscape_Koster_Koster_Everhardus.jpg",
-    "source_filename": "Forest landscape Koster Koster Everhardus.jpg",
-    "source_page": "https://commons.wikimedia.org/wiki/File:Forest_landscape_Koster_Koster_Everhardus.jpg",
-    "license": "public domain",
-    "author": "   everhardus koster   ",
     "downloaded_on": "2026-10-14",
     "thumbnail_width": 900
   },
@@ -222,7 +182,7 @@
   {
     "group": "mountain",
     "file": "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
-    "source_filename": "Barn on Mastl\u00e9 mountain Gherd\u00ebina.jpg",
+    "source_filename": "Barn on Mastlé mountain Gherdëina.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Barn_on_Mastl%C3%A9_mountain_Gherd%C3%ABina.jpg",
     "license": "cc by-sa 3.0",
     "author": " \n\n  \n         this photo  was taken by    wolfgang moroder   .       \n \n feel free to use my photos, but please mention me as the author and send me a   message .      \n    \n \n         \n   this image is  not in the  public domain  . please respect the copyright protection. it may only be used according to the rules mentioned here. this specifically  excludes use in social media , if applicable terms of the licenses listed here not appropriate. \n     \n \n         \n   please do not upload an updated image here without consultation with the author. the author would like to make corrections only at his own source. this ensures that the changes are preserved. please if you think that any changes should be required, please inform the author. otherwise you can upload a new image with a new name. please use one of the templates  derivative  or  extract . \n     ",
@@ -245,7 +205,7 @@
     "source_filename": "Castle Mountain.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Castle_Mountain.jpg",
     "license": "cc by-sa 4.0",
-    "author": " jakub fry\u0161 ",
+    "author": " jakub fryš ",
     "downloaded_on": "2026-10-14",
     "thumbnail_width": 900
   },
@@ -285,7 +245,7 @@
     "source_filename": "Frosty Raftsundet landscape with Trolltindan in morning, 2012 October.JPG",
     "source_page": "https://commons.wikimedia.org/wiki/File:Frosty_Raftsundet_landscape_with_Trolltindan_in_morning,_2012_October.JPG",
     "license": "cc by-sa 3.0",
-    "author": " ximonic (simo r\u00e4s\u00e4nen) ",
+    "author": " ximonic (simo räsänen) ",
     "downloaded_on": "2026-10-14",
     "thumbnail_width": 900
   },
@@ -295,7 +255,7 @@
     "source_filename": "Iceland's Mid-Atlantic Ridge during snow.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Iceland%27s_Mid-Atlantic_Ridge_during_snow.jpg",
     "license": "cc by-sa 4.0",
-    "author": " \n  \n \n       \n \n \n this work taken by  bar harel . if you want to reuse it outside wikimedia foundation projects, please credit me as photographer: place the notice \u00ab \u00a9  bar harel, cc by-sa 4.0, wikimedia commons  \u00bb either below the photo, or the way it is visible after clicking on the photo.\n \n \n \n    ",
+    "author": " \n  \n \n       \n \n \n this work taken by  bar harel . if you want to reuse it outside wikimedia foundation projects, please credit me as photographer: place the notice « ©  bar harel, cc by-sa 4.0, wikimedia commons  » either below the photo, or the way it is visible after clicking on the photo.\n \n \n \n    ",
     "downloaded_on": "2026-10-14",
     "thumbnail_width": 900
   },
@@ -392,7 +352,7 @@
   {
     "group": "urban",
     "file": "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
-    "source_filename": "Ch\u00e2teau Frontenac after a freezing rain day in Quebec city.jpg",
+    "source_filename": "Château Frontenac after a freezing rain day in Quebec city.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg",
     "license": "cc by-sa 4.0",
     "author": "   wilfredor   ",
@@ -402,7 +362,7 @@
   {
     "group": "urban",
     "file": "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
-    "source_filename": "Ch\u00e2teau Frontenac city at night.jpg",
+    "source_filename": "Château Frontenac city at night.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Frontenac_city_at_night.jpg",
     "license": "cc by-sa 4.0",
     "author": "   wilfredor   ",
@@ -412,7 +372,7 @@
   {
     "group": "urban",
     "file": "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg",
-    "source_filename": "Ch\u00e2teau Frontenac in Quebec city, Canada colorfull.jpg",
+    "source_filename": "Château Frontenac in Quebec city, Canada colorfull.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Frontenac_in_Quebec_city,_Canada_colorfull.jpg",
     "license": "cc0",
     "author": "   wilfredor   ",
@@ -495,7 +455,7 @@
     "source_filename": "Eden Project - Rainforest Biome - geograph.org.uk - 7031527.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg",
     "license": "cc by-sa 2.0",
-    "author": " lauren \u00a0     ",
+    "author": " lauren       ",
     "downloaded_on": "2026-10-14",
     "thumbnail_width": 900
   },
@@ -625,7 +585,7 @@
     "source_filename": "Iceland's Mid-Atlantic Ridge during snow.jpg",
     "source_page": "https://commons.wikimedia.org/wiki/File:Iceland%27s_Mid-Atlantic_Ridge_during_snow.jpg",
     "license": "cc by-sa 4.0",
-    "author": " \n  \n \n       \n \n \n this work taken by  bar harel . if you want to reuse it outside wikimedia foundation projects, please credit me as photographer: place the notice \u00ab \u00a9  bar harel, cc by-sa 4.0, wikimedia commons  \u00bb either below the photo, or the way it is visible after clicking on the photo.\n \n \n \n    ",
+    "author": " \n  \n \n       \n \n \n this work taken by  bar harel . if you want to reuse it outside wikimedia foundation projects, please credit me as photographer: place the notice « ©  bar harel, cc by-sa 4.0, wikimedia commons  » either below the photo, or the way it is visible after clicking on the photo.\n \n \n \n    ",
     "downloaded_on": "2026-10-14",
     "thumbnail_width": 1280
   },

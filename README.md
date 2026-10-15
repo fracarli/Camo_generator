@@ -20,7 +20,24 @@ python -m pip install -r requirements.txt
 python demo.py
 ```
 
-The demo uses the reference photos already stored in `photos/`, generates five
+For the reproducible JSON-driven workflow:
+
+```bash
+python scripts/run_from_config.py configs/generation_standard.json --dry-run
+python scripts/run_from_config.py configs/generation_standard.json
+```
+
+An optional upload-based web demo is available with:
+
+```bash
+python -m pip install -r requirements-demo.txt
+streamlit run app.py
+```
+
+The web demo is intentionally optional; the CLI and JSON configurations remain
+the reproducible path used by tests and experiments.
+
+The demo uses the verified reference photos already stored in `evaluation/backgrounds/`, generates five
 color patterns, and writes a contact sheet to
 `output/demo/all_patterns_grid.png`. It does not require the optional neural
 dependencies or a Hugging Face account.
@@ -35,6 +52,36 @@ For the clearest public-facing view, start with the curated folders named
 and the [curated results index](output/RESULTS_INDEX.md). Older folders remain
 available because they document intermediate experiments, but they are not the
 primary results.
+
+The latest reproducible public demo is available in
+[output/results_demo_public/](output/results_demo_public/). Its contact sheet is
+[`all_patterns_grid.png`](output/results_demo_public/all_patterns_grid.png),
+and each environment contains a pattern, palette, report, and validation
+report. The current verified corpus contains 80 documented images: 70 used for
+the universal profile and 10 for each environment-specific profile.
+
+The latest weighted multi-objective smoke run is in
+[output/results_multiobjective_smoke/](output/results_multiobjective_smoke/).
+It evaluates all nine environments with a bounded candidate search so that the
+workflow remains practical on a laptop. A separate neural segmentation smoke
+run, including generated masks, is in
+[output/results_neural_smoke/](output/results_neural_smoke/).
+
+For a simple English explanation of the project, use the
+[presentation slides](docs/PROJECT_PRESENTATION.md). To run the lightweight
+health check before a demo, execute:
+
+```bash
+python scripts/verify_project.py
+```
+
+For a presentation that opens directly on a computer, use the generated
+[PDF slide deck](docs/PROJECT_PRESENTATION.pdf). Regenerate it after changing
+the result images with:
+
+```bash
+python scripts/create_presentation_pdf.py
+```
 
 ## Visual results and validation examples
 

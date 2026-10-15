@@ -1,0 +1,14 @@
+{
+  "description": "Reproducible standard generation using the local reference photo set.",
+  "script": "camo.py",
+  "args": {
+    "input": "evaluation/backgrounds",
+    "output": "output/results_configured_standard",
+    "mode": "standard",
+    "segmentation": "none",
+    "colors": 5,
+    "candidates": 64,
+    "size": 500,
+    "summary-groups": "universal,desert,mountain,snow,jungle"
+  }
+}

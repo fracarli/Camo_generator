@@ -1,0 +1,239 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [automatic]",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [automatic]",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]",
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]",
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]",
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]",
+    "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [automatic]",
+    "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [automatic]",
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [automatic]",
+    "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [automatic]": 0.9404268236803519,
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [automatic]": 0.8396905637254902,
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": 0.9502178919797688,
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": 0.9491171423410405,
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": 0.7865180969238281,
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": 0.7856559753417969,
+    "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [automatic]": 0.9828228097507331,
+    "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [automatic]": 0.5060012975778547,
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [automatic]": 0.7361794442041523,
+    "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [automatic]": 0.730255126953125
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 8,
+  "best_score": 0.015433800406754017,
+  "score_components": {
+    "rgb_error": 0.0028398437425494194,
+    "luminance_error": 0.04267587512731552,
+    "texture_error": 0.025783834978938103,
+    "geometry_penalty": 0.0001441003493999457,
+    "directional_bias": 0.0018012543674993213,
+    "transition_density": 0.09234268537074147,
+    "fine_edge_density": 0.29798228346456695
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 4,
+      "score": 0.015433800406754017,
+      "score_components": {
+        "rgb_error": 0.0028398437425494194,
+        "luminance_error": 0.04267587512731552,
+        "texture_error": 0.025783834978938103,
+        "geometry_penalty": 0.0001441003493999457,
+        "directional_bias": 0.0018012543674993213,
+        "transition_density": 0.09234268537074147,
+        "fine_edge_density": 0.29798228346456695
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 7,
+      "score": 0.015720520168542862,
+      "score_components": {
+        "rgb_error": 0.0028442032635211945,
+        "luminance_error": 0.04283962398767471,
+        "texture_error": 0.026246653869748116,
+        "geometry_penalty": 0.00028808962788422844,
+        "directional_bias": 0.003601120348552855,
+        "transition_density": 0.09015230460921844,
+        "fine_edge_density": 0.2938607283464567
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 6,
+      "score": 0.01595698483288288,
+      "score_components": {
+        "rgb_error": 0.0028494999278336763,
+        "luminance_error": 0.04308512434363365,
+        "texture_error": 0.027772730216383934,
+        "geometry_penalty": 0.0001114568336971159,
+        "directional_bias": 0.0013932104212139487,
+        "transition_density": 0.08630460921843688,
+        "fine_edge_density": 0.2852485236220472
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 3,
+      "score": 0.016273263841867447,
+      "score_components": {
+        "rgb_error": 0.002838249783962965,
+        "luminance_error": 0.042778126895427704,
+        "texture_error": 0.027322547510266304,
+        "geometry_penalty": 0.000596664419752553,
+        "directional_bias": 0.007458305246906913,
+        "transition_density": 0.0921623246492986,
+        "fine_edge_density": 0.29223056102362205
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 1,
+      "score": 0.016404177993535995,
+      "score_components": {
+        "rgb_error": 0.0028351405635476112,
+        "luminance_error": 0.042795129120349884,
+        "texture_error": 0.02699248678982258,
+        "geometry_penalty": 0.0008052879422819348,
+        "directional_bias": 0.010066099278524185,
+        "transition_density": 0.09277354709418838,
+        "fine_edge_density": 0.2956754429133858
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 2,
+      "score": 0.01684040017426014,
+      "score_components": {
+        "rgb_error": 0.0028503125067800283,
+        "luminance_error": 0.0427941232919693,
+        "texture_error": 0.02740117907524109,
+        "geometry_penalty": 0.0011360185764043964,
+        "directional_bias": 0.014200232205054954,
+        "transition_density": 0.08975551102204408,
+        "fine_edge_density": 0.284787155511811
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 0,
+      "score": 0.01694137044250965,
+      "score_components": {
+        "rgb_error": 0.002851374913007021,
+        "luminance_error": 0.04297662526369095,
+        "texture_error": 0.027364671230316162,
+        "geometry_penalty": 0.0012123675949138374,
+        "directional_bias": 0.015154594936422967,
+        "transition_density": 0.08873146292585171,
+        "fine_edge_density": 0.2861712598425197
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 5,
+      "score": 0.01696353405714035,
+      "score_components": {
+        "rgb_error": 0.002836468629539013,
+        "luminance_error": 0.04258662462234497,
+        "texture_error": 0.025881478562951088,
+        "geometry_penalty": 0.0016681530555909458,
+        "directional_bias": 0.02085191319488682,
+        "transition_density": 0.09437675350701402,
+        "fine_edge_density": 0.3003198818897638
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 65.0,
+    "dark_floor": 60.0,
+    "dark_weight": 0.18,
+    "detail": 0.18,
+    "blur": 0.6,
+    "blob_scale": 0.72,
+    "blob_weight": 0.34,
+    "blob_aspect": 0.82
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "forest": 200000
+  },
+  "dark_palette_weight": 0.17999999225139618,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        49,
+        51,
+        47
+      ],
+      "weight": 0.09251349419355392
+    },
+    {
+      "rgb": [
+        59,
+        60,
+        54
+      ],
+      "weight": 0.08748649805784225
+    },
+    {
+      "rgb": [
+        102,
+        105,
+        77
+      ],
+      "weight": 0.37896281480789185
+    },
+    {
+      "rgb": [
+        162,
+        153,
+        126
+      ],
+      "weight": 0.22958451509475708
+    },
+    {
+      "rgb": [
+        181,
+        169,
+        145
+      ],
+      "weight": 0.2114526927471161
+    }
+  ]
+}

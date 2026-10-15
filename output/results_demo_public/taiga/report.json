@@ -1,0 +1,239 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg [automatic]",
+    "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg [automatic]",
+    "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg [automatic]",
+    "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg [automatic]",
+    "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg [automatic]",
+    "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg [automatic]",
+    "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg [automatic]",
+    "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg [automatic]",
+    "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg [automatic]",
+    "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg [automatic]": 0.8913675944010416,
+    "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg [automatic]": 0.5978775024414062,
+    "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg [automatic]": 0.9788143382352941,
+    "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg [automatic]": 0.5660316780821918,
+    "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg [automatic]": 0.6075471483236151,
+    "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg [automatic]": 0.9671398628048781,
+    "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg [automatic]": 0.8344251844618056,
+    "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg [automatic]": 0.9750467936197916,
+    "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg [automatic]": 0.734100341796875,
+    "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg [automatic]": 0.8058515401146131
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 8,
+  "best_score": 0.014399717561900616,
+  "score_components": {
+    "rgb_error": 0.00312349246814847,
+    "luminance_error": 0.04609400033950806,
+    "texture_error": 0.01788039319217205,
+    "geometry_penalty": 0.00024975732612744924,
+    "directional_bias": 0.003121966576593115,
+    "transition_density": 0.0763867735470942,
+    "fine_edge_density": 0.26002706692913385
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 2,
+      "score": 0.014399717561900616,
+      "score_components": {
+        "rgb_error": 0.00312349246814847,
+        "luminance_error": 0.04609400033950806,
+        "texture_error": 0.01788039319217205,
+        "geometry_penalty": 0.00024975732612744924,
+        "directional_bias": 0.003121966576593115,
+        "transition_density": 0.0763867735470942,
+        "fine_edge_density": 0.26002706692913385
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 4,
+      "score": 0.014502003788948059,
+      "score_components": {
+        "rgb_error": 0.0031256640795618296,
+        "luminance_error": 0.046035002917051315,
+        "texture_error": 0.01835618168115616,
+        "geometry_penalty": 0.000247386848628894,
+        "directional_bias": 0.003092335607861175,
+        "transition_density": 0.07841482965931863,
+        "fine_edge_density": 0.261841781496063
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 5,
+      "score": 0.014506326988339424,
+      "score_components": {
+        "rgb_error": 0.003127351636067033,
+        "luminance_error": 0.04582124948501587,
+        "texture_error": 0.01806083880364895,
+        "geometry_penalty": 0.0003602243855809618,
+        "directional_bias": 0.004502804819762023,
+        "transition_density": 0.07966533066132264,
+        "fine_edge_density": 0.2680548720472441
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 3,
+      "score": 0.014546125195920467,
+      "score_components": {
+        "rgb_error": 0.003122961148619652,
+        "luminance_error": 0.04601900279521942,
+        "texture_error": 0.01810336485505104,
+        "geometry_penalty": 0.0003564162653549986,
+        "directional_bias": 0.004455203316937482,
+        "transition_density": 0.07781763527054109,
+        "fine_edge_density": 0.26368725393700787
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 0,
+      "score": 0.014553257264196873,
+      "score_components": {
+        "rgb_error": 0.0031176016200333834,
+        "luminance_error": 0.046171754598617554,
+        "texture_error": 0.018569715321063995,
+        "geometry_penalty": 0.00022680904056596824,
+        "directional_bias": 0.002835113007074603,
+        "transition_density": 0.07563326653306612,
+        "fine_edge_density": 0.2578125
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 1,
+      "score": 0.014652682468295097,
+      "score_components": {
+        "rgb_error": 0.0031271486077457666,
+        "luminance_error": 0.04597475379705429,
+        "texture_error": 0.01795339025557041,
+        "geometry_penalty": 0.0005048380311316797,
+        "directional_bias": 0.006310475389145995,
+        "transition_density": 0.08097995991983968,
+        "fine_edge_density": 0.26731668307086615
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 6,
+      "score": 0.014712146483361721,
+      "score_components": {
+        "rgb_error": 0.00311525771394372,
+        "luminance_error": 0.046164751052856445,
+        "texture_error": 0.01915466971695423,
+        "geometry_penalty": 0.00024774193548387065,
+        "directional_bias": 0.003096774193548383,
+        "transition_density": 0.07765531062124248,
+        "fine_edge_density": 0.25716658464566927
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 7,
+      "score": 0.015885446220636368,
+      "score_components": {
+        "rgb_error": 0.0031127422116696835,
+        "luminance_error": 0.045765750110149384,
+        "texture_error": 0.01785144954919815,
+        "geometry_penalty": 0.001806892115874625,
+        "directional_bias": 0.022586151448432814,
+        "transition_density": 0.08100801603206412,
+        "fine_edge_density": 0.273560531496063
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 60.0,
+    "dark_floor": 60.0,
+    "dark_weight": 0.16,
+    "detail": 0.18,
+    "blur": 0.65,
+    "blob_scale": 0.78,
+    "blob_weight": 0.35,
+    "blob_aspect": 0.75
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "taiga": 200000
+  },
+  "dark_palette_weight": 0.1599999964237213,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        48,
+        49,
+        46
+      ],
+      "weight": 0.08285584300756454
+    },
+    {
+      "rgb": [
+        60,
+        60,
+        56
+      ],
+      "weight": 0.07714415341615677
+    },
+    {
+      "rgb": [
+        131,
+        121,
+        97
+      ],
+      "weight": 0.352989137172699
+    },
+    {
+      "rgb": [
+        174,
+        156,
+        136
+      ],
+      "weight": 0.3061520457267761
+    },
+    {
+      "rgb": [
+        186,
+        172,
+        146
+      ],
+      "weight": 0.1808588206768036
+    }
+  ]
+}

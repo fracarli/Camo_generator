@@ -9,3 +9,4 @@ __pycache__/
 photos/*
 !photos/README.md
 !photos/SOURCES.md
+.streamlit_uploads/

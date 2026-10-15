@@ -1,0 +1,79 @@
+{
+  "group": "desert",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "best_candidate": "candidate_002",
+  "optimized_score": 0.16079597814474256,
+  "baseline_score": 0.18701856981497259,
+  "improvement": 0.026222591670230028,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 1.3491756636374665,
+    "blob_weight": 0.38463173907732406,
+    "blob_aspect": 1.2485615600461855,
+    "detail_weight": 0.14365110858121932,
+    "blur_radius": 0.778269997275436,
+    "seed": 45,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        99,
+        78,
+        58
+      ],
+      "weight": 0.21597903966903687
+    },
+    {
+      "rgb": [
+        180,
+        153,
+        124
+      ],
+      "weight": 0.36848440766334534
+    },
+    {
+      "rgb": [
+        153,
+        128,
+        98
+      ],
+      "weight": 0.16499891877174377
+    },
+    {
+      "rgb": [
+        69,
+        71,
+        65
+      ],
+      "weight": 0.05646071955561638
+    },
+    {
+      "rgb": [
+        175,
+        156,
+        120
+      ],
+      "weight": 0.19407691061496735
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.16079597814474256,
+      "active_candidates": [
+        "candidate_002",
+        "candidate_000",
+        "current_best"
+      ]
+    }
+  ]
+}

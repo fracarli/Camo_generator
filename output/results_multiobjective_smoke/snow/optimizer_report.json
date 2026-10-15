@@ -1,0 +1,79 @@
+{
+  "group": "snow",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "best_candidate": "candidate_003",
+  "optimized_score": 0.10318179615074768,
+  "baseline_score": 0.14900761280674488,
+  "improvement": 0.04582581665599719,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 1.0692887376766806,
+    "blob_weight": 0.284333116825638,
+    "blob_aspect": 1.2217193404859636,
+    "detail_weight": 0.12879280925381648,
+    "blur_radius": 0.7896197659731456,
+    "seed": 46,
+    "palette_jitter": 5.2,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        145,
+        156,
+        155
+      ],
+      "weight": 0.2371784746646881
+    },
+    {
+      "rgb": [
+        92,
+        99,
+        105
+      ],
+      "weight": 0.38531288504600525
+    },
+    {
+      "rgb": [
+        206,
+        212,
+        208
+      ],
+      "weight": 0.24321813881397247
+    },
+    {
+      "rgb": [
+        83,
+        94,
+        92
+      ],
+      "weight": 0.07668465375900269
+    },
+    {
+      "rgb": [
+        168,
+        185,
+        190
+      ],
+      "weight": 0.05760585144162178
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+      "background_group": "snow",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.10318179615074768,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_002",
+        "current_best"
+      ]
+    }
+  ]
+}

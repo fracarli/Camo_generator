@@ -167,14 +167,32 @@ def make_candidates(
     return candidates
 
 
-def score_candidate(candidate: Candidate, background: Image.Image, template_path: Path, seed: int) -> float:
+def weighted_visibility_score(metrics: dict[str, float], weights: dict[str, float] | None = None) -> float:
+    """Combine visibility metrics with explicit, normalized objective weights."""
+    if not weights:
+        return float(metrics["visibility_score"])
+    selected = {key: float(value) for key, value in weights.items() if key in metrics and float(value) > 0}
+    if not selected:
+        return float(metrics["visibility_score"])
+    total = sum(selected.values())
+    return sum(metrics[key] * value for key, value in selected.items()) / total
+
+
+def score_candidate(
+    candidate: Candidate,
+    background: Image.Image,
+    template_path: Path,
+    seed: int,
+    objective_weights: dict[str, float] | None = None,
+) -> float:
     uniform, mask = build_uniform_layer_from_pattern(candidate.pattern, template_path, round(600 * 0.25))
     x, y = choose_position(
         (900, 600), uniform.size, seed, "spread",
         background=background, mask=mask, avoid_sky_water=True,
     )
     scene, scene_mask = composite(background, uniform, mask, x, y)
-    return float(measure_visibility(background, scene, scene_mask)["visibility_score"])
+    metrics = measure_visibility(background, scene, scene_mask)
+    return weighted_visibility_score(metrics, objective_weights)
 
 
 def build_uniform_layer_from_pattern(pattern: np.ndarray, template_path: Path, height: int) -> tuple[Image.Image, Image.Image]:
@@ -217,7 +235,13 @@ def optimize_group(group: str, images: list[camo.ImageStats], background_root: P
         background = load_background(background_path, (900, 600))
         scored = []
         for candidate in active:
-            score = score_candidate(candidate, background, Path(args.template), args.seed + background_index)
+            score = score_candidate(
+                candidate,
+                background,
+                Path(args.template),
+                args.seed + background_index,
+                args.objective_weights,
+            )
             candidate.cumulative_score += score
             candidate.scores_seen += 1
             scored.append((candidate.mean_score, candidate))
@@ -264,7 +288,7 @@ def optimize_group(group: str, images: list[camo.ImageStats], background_root: P
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="photos")
+    parser.add_argument("--input", default="evaluation/backgrounds")
     parser.add_argument("--backgrounds", default="evaluation/backgrounds")
     parser.add_argument("--pattern-root", default="output")
     parser.add_argument("--output", default="output/optimized")
@@ -288,11 +312,20 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--segmentation", choices=("none", "semantic"), default="none")
     parser.add_argument("--segmentation-model", default=camo.DEFAULT_SEGMENTATION_MODEL)
     parser.add_argument("--device", default="auto")
+    parser.add_argument("--objective-config", default=None, help="JSON file with weighted visibility objectives")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+    args.objective_weights = None
+    if args.objective_config:
+        objective_config = json.loads(Path(args.objective_config).read_text(encoding="utf-8"))
+        args.objective_weights = {
+            key: float(value)
+            for key, value in objective_config.items()
+            if key != "description" and isinstance(value, (int, float))
+        }
     args.background_groups = parse_csv(args.background_groups)
     if args.colors < camo.MIN_COLORS or args.colors > camo.MAX_COLORS:
         raise SystemExit(f"--colors must be between {camo.MIN_COLORS} and {camo.MAX_COLORS}")

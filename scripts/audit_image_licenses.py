@@ -16,6 +16,7 @@ def main() -> None:
         if path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}
     }
     missing = sorted(evaluation_images - known)
+    stale = sorted(known - evaluation_images)
     photo_images = [
         path for path in Path("photos").rglob("*")
         if path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}
@@ -25,6 +26,9 @@ def main() -> None:
     print(f"Evaluation images without manifest entries: {len(missing)}")
     for path in missing:
         print(f"  UNVERIFIED {path}")
+    print(f"Manifest entries without local image files: {len(stale)}")
+    for path in stale:
+        print(f"  STALE {path}")
     print(f"User reference photos: {len(photo_images)}")
     print("User photos require provenance in photos/SOURCES.md before publication.")
 

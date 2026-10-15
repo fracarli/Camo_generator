@@ -1,0 +1,79 @@
+{
+  "group": "urban",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "best_candidate": "candidate_000",
+  "optimized_score": 0.1643420460401103,
+  "baseline_score": 0.20577572878915817,
+  "improvement": 0.04143368274904788,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 0.7050817384646672,
+    "blob_weight": 0.325677679680586,
+    "blob_aspect": 1.1601015596639541,
+    "detail_weight": 0.1752803123582722,
+    "blur_radius": 0.717693808093698,
+    "seed": 43,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        86,
+        70,
+        65
+      ],
+      "weight": 0.2165917456150055
+    },
+    {
+      "rgb": [
+        181,
+        162,
+        129
+      ],
+      "weight": 0.1671924889087677
+    },
+    {
+      "rgb": [
+        69,
+        75,
+        61
+      ],
+      "weight": 0.10062696784734726
+    },
+    {
+      "rgb": [
+        152,
+        132,
+        100
+      ],
+      "weight": 0.3021666705608368
+    },
+    {
+      "rgb": [
+        172,
+        155,
+        135
+      ],
+      "weight": 0.21342214941978455
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_000",
+      "best_running_score": 0.1643420460401103,
+      "active_candidates": [
+        "candidate_000",
+        "candidate_004",
+        "current_best"
+      ]
+    }
+  ]
+}

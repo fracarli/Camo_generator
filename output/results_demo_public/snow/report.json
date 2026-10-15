@@ -1,0 +1,240 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg [automatic]",
+    "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg [automatic]",
+    "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg [automatic]",
+    "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg [automatic]",
+    "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg [automatic]",
+    "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg [automatic]",
+    "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg [automatic]",
+    "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg [automatic]",
+    "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]",
+    "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg [automatic]": 0.5641326904296875,
+    "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg [automatic]": 0.4498189290364583,
+    "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg [automatic]": 1.0,
+    "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg [automatic]": 1.0,
+    "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg [automatic]": 1.0,
+    "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg [automatic]": 0.9193623860677084,
+    "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg [automatic]": 0.6575995551215278,
+    "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg [automatic]": 0.6744232177734375,
+    "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": 0.5180079389158576,
+    "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg [automatic]": 1.0
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg [automatic]": "automatic",
+    "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 8,
+  "best_score": 0.013493798673152924,
+  "score_components": {
+    "rgb_error": 0.001905742334201932,
+    "luminance_error": 0.039321187883615494,
+    "texture_error": 0.019597172737121582,
+    "geometry_penalty": 0.0007597912454746317,
+    "directional_bias": 0.009497390568432896,
+    "transition_density": 0.08524649298597195,
+    "fine_edge_density": 0.2553211122047244
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 7,
+      "score": 0.013493798673152924,
+      "score_components": {
+        "rgb_error": 0.001905742334201932,
+        "luminance_error": 0.039321187883615494,
+        "texture_error": 0.019597172737121582,
+        "geometry_penalty": 0.0007597912454746317,
+        "directional_bias": 0.009497390568432896,
+        "transition_density": 0.08524649298597195,
+        "fine_edge_density": 0.2553211122047244
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 6,
+      "score": 0.014033297076821327,
+      "score_components": {
+        "rgb_error": 0.0019404765916988254,
+        "luminance_error": 0.04002818465232849,
+        "texture_error": 0.019875748082995415,
+        "geometry_penalty": 0.001087806220754198,
+        "directional_bias": 0.013597577759427475,
+        "transition_density": 0.07280561122244489,
+        "fine_edge_density": 0.2224717027559055
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 4,
+      "score": 0.014501417055726051,
+      "score_components": {
+        "rgb_error": 0.0019375546835362911,
+        "luminance_error": 0.04017193615436554,
+        "texture_error": 0.019983237609267235,
+        "geometry_penalty": 0.001505713645529912,
+        "directional_bias": 0.0188214205691239,
+        "transition_density": 0.07155110220440883,
+        "fine_edge_density": 0.21705831692913385
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 0,
+      "score": 0.01466483622789383,
+      "score_components": {
+        "rgb_error": 0.0019535860046744347,
+        "luminance_error": 0.040543437004089355,
+        "texture_error": 0.02030831389129162,
+        "geometry_penalty": 0.0015162283819000271,
+        "directional_bias": 0.01895285477375034,
+        "transition_density": 0.06767134268537074,
+        "fine_edge_density": 0.20666215551181102
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 2,
+      "score": 0.015567732974886894,
+      "score_components": {
+        "rgb_error": 0.0019452930428087711,
+        "luminance_error": 0.03981068730354309,
+        "texture_error": 0.01962479017674923,
+        "geometry_penalty": 0.0027192118226600933,
+        "directional_bias": 0.033990147783251164,
+        "transition_density": 0.07322645290581162,
+        "fine_edge_density": 0.2262549212598425
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 3,
+      "score": 0.01604774221777916,
+      "score_components": {
+        "rgb_error": 0.0019194609485566616,
+        "luminance_error": 0.03983268886804581,
+        "texture_error": 0.019846996292471886,
+        "geometry_penalty": 0.0031548480463096957,
+        "directional_bias": 0.039435600578871195,
+        "transition_density": 0.07754709418837674,
+        "fine_edge_density": 0.2341904527559055
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 1,
+      "score": 0.017271695658564568,
+      "score_components": {
+        "rgb_error": 0.001937570283189416,
+        "luminance_error": 0.040023189038038254,
+        "texture_error": 0.019209839403629303,
+        "geometry_penalty": 0.004488374068934261,
+        "directional_bias": 0.056104675861678256,
+        "transition_density": 0.07075951903807615,
+        "fine_edge_density": 0.21659694881889763
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 5,
+      "score": 0.01763838529586792,
+      "score_components": {
+        "rgb_error": 0.0019453982822597027,
+        "luminance_error": 0.04022643715143204,
+        "texture_error": 0.019832005724310875,
+        "geometry_penalty": 0.004665245668688861,
+        "directional_bias": 0.05831557085861077,
+        "transition_density": 0.07333466933867736,
+        "fine_edge_density": 0.22228715551181102
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 38.0,
+    "dark_floor": 82.0,
+    "dark_weight": 0.08,
+    "detail": 0.13,
+    "blur": 0.9,
+    "blob_scale": 1.28,
+    "blob_weight": 0.38,
+    "blob_aspect": 1.1,
+    "palette_family": "snow"
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "snow": 200000
+  },
+  "dark_palette_weight": 0.0,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        150,
+        156,
+        160
+      ],
+      "weight": 0.24500499665737152
+    },
+    {
+      "rgb": [
+        98,
+        106,
+        110
+      ],
+      "weight": 0.24209000170230865
+    },
+    {
+      "rgb": [
+        204,
+        208,
+        209
+      ],
+      "weight": 0.2352299988269806
+    },
+    {
+      "rgb": [
+        79,
+        84,
+        86
+      ],
+      "weight": 0.17923499643802643
+    },
+    {
+      "rgb": [
+        165,
+        180,
+        188
+      ],
+      "weight": 0.09843999892473221
+    }
+  ]
+}

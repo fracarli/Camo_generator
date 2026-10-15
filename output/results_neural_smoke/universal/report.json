@@ -1,0 +1,325 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [semantic]",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [semantic]",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]",
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]",
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]",
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]",
+    "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [semantic]",
+    "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [semantic]",
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]",
+    "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [semantic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [semantic]": 0.8326899285190615,
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [semantic]": 0.5995273109243697,
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": 0.9086772940751445,
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": 0.9076160585260116,
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": 0.7843170166015625,
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": 0.7828483581542969,
+    "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [semantic]": 0.8233366935483871,
+    "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [semantic]": 0.48508461288927335,
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": 0.5917022599480969,
+    "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [semantic]": 0.6120452880859375
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [semantic]": "semantic",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [semantic]": "semantic",
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": "semantic",
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": "semantic",
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": "semantic",
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": "semantic",
+    "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [semantic]": "semantic",
+    "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [semantic]": "semantic",
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": "semantic",
+    "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [semantic]": "semantic"
+  },
+  "semantic_labels": {
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [semantic]": [
+      "earth",
+      "fountain",
+      "plant",
+      "rock",
+      "tree",
+      "water",
+      "waterfall"
+    ],
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [semantic]": [
+      "earth",
+      "grass",
+      "mountain",
+      "plant",
+      "pole",
+      "sky",
+      "tree",
+      "water"
+    ],
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": [
+      "earth",
+      "fence",
+      "grass",
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": [
+      "earth",
+      "fence",
+      "grass",
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": [
+      "building",
+      "ceiling",
+      "earth",
+      "floor",
+      "path",
+      "plant",
+      "railing",
+      "road",
+      "sidewalk",
+      "sky",
+      "tree",
+      "wall"
+    ],
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": [
+      "building",
+      "ceiling",
+      "floor",
+      "path",
+      "plant",
+      "railing",
+      "sidewalk",
+      "sky",
+      "tree",
+      "wall"
+    ],
+    "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [semantic]": [
+      "dirt track",
+      "earth",
+      "field",
+      "hill",
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [semantic]": [
+      "earth",
+      "fence",
+      "field",
+      "grass",
+      "mountain",
+      "palm",
+      "sky",
+      "tree"
+    ],
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": [
+      "earth",
+      "field",
+      "grass",
+      "hill",
+      "mountain",
+      "path",
+      "plant",
+      "sky",
+      "tree"
+    ],
+    "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [semantic]": [
+      "building",
+      "earth",
+      "field",
+      "sky",
+      "tree"
+    ]
+  },
+  "semantic_excluded_labels": {
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [semantic]": [
+      "water"
+    ],
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [semantic]": [
+      "sky",
+      "water"
+    ],
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": [
+      "sky"
+    ],
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": [
+      "sky"
+    ],
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": [
+      "sky"
+    ],
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": [
+      "sky"
+    ],
+    "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [semantic]": [
+      "sky"
+    ],
+    "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [semantic]": [
+      "sky"
+    ],
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": [
+      "sky"
+    ],
+    "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [semantic]": [
+      "sky"
+    ]
+  },
+  "semantic_excluded_fraction": {
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [semantic]": 0.11368791239002933,
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [semantic]": 0.3910079656862745,
+    "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": 0.042601833453757225,
+    "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [semantic]": 0.04261876806358381,
+    "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": 0.004810333251953125,
+    "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [semantic]": 0.00604248046875,
+    "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [semantic]": 0.17446389296187684,
+    "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [semantic]": 0.47923875432525953,
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": 0.35171793901384085,
+    "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [semantic]": 0.3257497151692708
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 4,
+  "best_score": 0.01707688719034195,
+  "score_components": {
+    "rgb_error": 0.0025877070147544146,
+    "luminance_error": 0.041048564016819,
+    "texture_error": 0.03034905530512333,
+    "geometry_penalty": 0.0011105178857447994,
+    "directional_bias": 0.013881473571809994,
+    "transition_density": 0.06756312625250502,
+    "fine_edge_density": 0.21339812992125984
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 1,
+      "score": 0.01707688719034195,
+      "score_components": {
+        "rgb_error": 0.0025877070147544146,
+        "luminance_error": 0.041048564016819,
+        "texture_error": 0.03034905530512333,
+        "geometry_penalty": 0.0011105178857447994,
+        "directional_bias": 0.013881473571809994,
+        "transition_density": 0.06756312625250502,
+        "fine_edge_density": 0.21339812992125984
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 3,
+      "score": 0.01734425313770771,
+      "score_components": {
+        "rgb_error": 0.0025904413778334856,
+        "luminance_error": 0.04033393785357475,
+        "texture_error": 0.026624856516718864,
+        "geometry_penalty": 0.002398956975228164,
+        "directional_bias": 0.029986962190352053,
+        "transition_density": 0.07531663326653307,
+        "fine_edge_density": 0.2380967027559055
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 2,
+      "score": 0.017428135499358177,
+      "score_components": {
+        "rgb_error": 0.0025946912355720997,
+        "luminance_error": 0.04071993753314018,
+        "texture_error": 0.028288034722208977,
+        "geometry_penalty": 0.0020120724346076434,
+        "directional_bias": 0.025150905432595544,
+        "transition_density": 0.07171142284569137,
+        "fine_edge_density": 0.22557824803149606
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 0,
+      "score": 0.019373849034309387,
+      "score_components": {
+        "rgb_error": 0.0025844881311059,
+        "luminance_error": 0.04042281210422516,
+        "texture_error": 0.026943787932395935,
+        "geometry_penalty": 0.004338990438312134,
+        "directional_bias": 0.05423738047890167,
+        "transition_density": 0.07356513026052104,
+        "fine_edge_density": 0.23400590551181102
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "semantic",
+  "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 70.0,
+    "dark_floor": 72.0,
+    "dark_weight": 0.1,
+    "detail": 0.16,
+    "blur": 0.7,
+    "blob_scale": 1.0,
+    "blob_weight": 0.36,
+    "blob_aspect": 1.0
+  },
+  "weighting": "equal_environment_groups",
+  "group_pixel_counts": {
+    "other": 200000
+  },
+  "dark_palette_weight": 0.09999999403953552,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        55,
+        56,
+        52
+      ],
+      "weight": 0.09999999403953552
+    },
+    {
+      "rgb": [
+        69,
+        73,
+        60
+      ],
+      "weight": 0.22499999403953552
+    },
+    {
+      "rgb": [
+        96,
+        100,
+        72
+      ],
+      "weight": 0.22499999403953552
+    },
+    {
+      "rgb": [
+        152,
+        143,
+        116
+      ],
+      "weight": 0.22499999403953552
+    },
+    {
+      "rgb": [
+        175,
+        160,
+        132
+      ],
+      "weight": 0.22499999403953552
+    }
+  ]
+}

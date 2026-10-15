@@ -1047,7 +1047,11 @@ def run(args: argparse.Namespace) -> dict:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="photos", help="Folder containing reference images")
+    parser.add_argument(
+        "--input",
+        default="evaluation/backgrounds",
+        help="Folder containing reference images; use photos for private local inputs",
+    )
     parser.add_argument("--output", default="output", help="Folder for generated results")
     parser.add_argument(
         "--mode",

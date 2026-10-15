@@ -10,9 +10,10 @@ from pathlib import Path
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="photos")
+    parser.add_argument("--input", default="evaluation/backgrounds")
     parser.add_argument("--output", default="output/demo")
     parser.add_argument("--colors", type=int, default=5)
+    parser.add_argument("--candidates", type=int, default=24)
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent
@@ -24,6 +25,7 @@ def main() -> None:
         "--mode", "standard",
         "--segmentation", "none",
         "--colors", str(args.colors),
+        "--candidates", str(args.candidates),
         "--summary-groups", "universal,desert,mountain,snow,jungle",
     ]
     subprocess.run(command, cwd=root, check=True)

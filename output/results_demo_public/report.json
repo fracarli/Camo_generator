@@ -1,0 +1,2340 @@
+{
+  "universal": {
+    "input_images": [
+      "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg [automatic]",
+      "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg [automatic]",
+      "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg [automatic]",
+      "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg [automatic]",
+      "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg [automatic]",
+      "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg [automatic]",
+      "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg [automatic]",
+      "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg [automatic]",
+      "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg [automatic]",
+      "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg [automatic]",
+      "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [automatic]",
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [automatic]",
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]",
+      "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]",
+      "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]",
+      "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]",
+      "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [automatic]",
+      "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [automatic]",
+      "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [automatic]",
+      "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [automatic]",
+      "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg [automatic]",
+      "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg [automatic]",
+      "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg [automatic]",
+      "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]",
+      "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg [automatic]",
+      "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]",
+      "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]",
+      "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg [automatic]",
+      "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg [automatic]",
+      "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg [automatic]",
+      "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg [automatic]",
+      "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg [automatic]",
+      "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg [automatic]",
+      "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg [automatic]",
+      "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg [automatic]",
+      "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg [automatic]",
+      "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg [automatic]",
+      "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]",
+      "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg [automatic]",
+      "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg [automatic]",
+      "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg [automatic]",
+      "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg [automatic]",
+      "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg [automatic]",
+      "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg [automatic]",
+      "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg [automatic]",
+      "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg [automatic]",
+      "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg [automatic]",
+      "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg [automatic]",
+      "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg [automatic]",
+      "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg [automatic]",
+      "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg [automatic]",
+      "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg [automatic]",
+      "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg [automatic]",
+      "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg [automatic]",
+      "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg [automatic]",
+      "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg [automatic]",
+      "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg [automatic]",
+      "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg [automatic]",
+      "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg [automatic]",
+      "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg [automatic]",
+      "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg [automatic]",
+      "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg [automatic]",
+      "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg [automatic]",
+      "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg [automatic]",
+      "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg [automatic]": 0.7925918311403509,
+      "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg [automatic]": 0.5632781982421875,
+      "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg [automatic]": 0.7161267412023461,
+      "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg [automatic]": 0.7910843566715543,
+      "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg [automatic]": 0.9996735245601173,
+      "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg [automatic]": 0.8806703629032258,
+      "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg [automatic]": 0.7937133431085044,
+      "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg [automatic]": 0.5610489322100314,
+      "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg [automatic]": 0.999908357771261,
+      "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg [automatic]": 0.6833646444281525,
+      "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [automatic]": 0.9404268236803519,
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [automatic]": 0.8396905637254902,
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": 0.9502178919797688,
+      "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": 0.9491171423410405,
+      "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": 0.7865180969238281,
+      "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": 0.7856559753417969,
+      "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [automatic]": 0.9828228097507331,
+      "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [automatic]": 0.5060012975778547,
+      "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [automatic]": 0.7361794442041523,
+      "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [automatic]": 0.730255126953125,
+      "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg [automatic]": 0.9544677734375,
+      "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg [automatic]": 1.0,
+      "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg [automatic]": 0.9966702748493976,
+      "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": 0.9879282756024096,
+      "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg [automatic]": 0.9049910579819277,
+      "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": 0.9610022119728916,
+      "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": 0.9927463761295181,
+      "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg [automatic]": 0.5880751722440944,
+      "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg [automatic]": 1.0,
+      "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg [automatic]": 0.9189036299542683,
+      "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg [automatic]": 0.7777332294721407,
+      "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg [automatic]": 0.7844050480769231,
+      "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg [automatic]": 0.5875276548672567,
+      "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg [automatic]": 1.0,
+      "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg [automatic]": 0.5808461507161459,
+      "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg [automatic]": 0.73209228515625,
+      "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg [automatic]": 0.5328228705752213,
+      "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": 0.5180079389158576,
+      "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg [automatic]": 0.6003253299120235,
+      "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg [automatic]": 0.7792279411764705,
+      "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg [automatic]": 0.8913675944010416,
+      "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg [automatic]": 0.5978775024414062,
+      "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg [automatic]": 0.9788143382352941,
+      "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg [automatic]": 0.5660316780821918,
+      "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg [automatic]": 0.6075471483236151,
+      "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg [automatic]": 0.9671398628048781,
+      "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg [automatic]": 0.8344251844618056,
+      "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg [automatic]": 0.9750467936197916,
+      "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg [automatic]": 0.734100341796875,
+      "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg [automatic]": 0.8058515401146131,
+      "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg [automatic]": 0.8840974506578947,
+      "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg [automatic]": 0.7035087518328446,
+      "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg [automatic]": 0.651214599609375,
+      "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg [automatic]": 0.8095731763196481,
+      "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg [automatic]": 0.8810025659824047,
+      "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg [automatic]": 0.9660007331378299,
+      "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg [automatic]": 0.9312744140625,
+      "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg [automatic]": 0.5661364103618421,
+      "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg [automatic]": 0.5081138724035609,
+      "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg [automatic]": 0.7514365554156172,
+      "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg [automatic]": 0.9566169507575758,
+      "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg [automatic]": 0.8994627474340176,
+      "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg [automatic]": 0.9826103344298246,
+      "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg [automatic]": 0.7297024197048612,
+      "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg [automatic]": 0.9941298935439561,
+      "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg [automatic]": 0.9959955481843575,
+      "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg [automatic]": 0.7567569093208093,
+      "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg [automatic]": 0.6272865853658537,
+      "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg [automatic]": 0.9949073476239669,
+      "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg [automatic]": 0.8317491319444444
+    },
+    "mask_sources": {
+      "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "semantic_excluded_labels": {},
+    "semantic_excluded_fraction": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 8,
+    "best_score": 0.0171123705804348,
+    "score_components": {
+      "rgb_error": 0.002999117597937584,
+      "luminance_error": 0.04491536319255829,
+      "texture_error": 0.028112972155213356,
+      "geometry_penalty": 0.0007809327808215347,
+      "directional_bias": 0.009761659760269183,
+      "transition_density": 0.07205811623246493,
+      "fine_edge_density": 0.22216412401574803
+    },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 5,
+        "score": 0.0171123705804348,
+        "score_components": {
+          "rgb_error": 0.002999117597937584,
+          "luminance_error": 0.04491536319255829,
+          "texture_error": 0.028112972155213356,
+          "geometry_penalty": 0.0007809327808215347,
+          "directional_bias": 0.009761659760269183,
+          "transition_density": 0.07205811623246493,
+          "fine_edge_density": 0.22216412401574803
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 1,
+        "score": 0.017349790781736374,
+        "score_components": {
+          "rgb_error": 0.003016064641997218,
+          "luminance_error": 0.045231614261865616,
+          "texture_error": 0.02943703532218933,
+          "geometry_penalty": 0.0006351796642083715,
+          "directional_bias": 0.007939745802604644,
+          "transition_density": 0.06385771543086172,
+          "fine_edge_density": 0.2023560531496063
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 2,
+        "score": 0.01737014576792717,
+        "score_components": {
+          "rgb_error": 0.0030090021900832653,
+          "luminance_error": 0.0451398640871048,
+          "texture_error": 0.028431599959731102,
+          "geometry_penalty": 0.0009168851831118651,
+          "directional_bias": 0.011461064788898313,
+          "transition_density": 0.0680180360721443,
+          "fine_edge_density": 0.21425935039370078
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 6,
+        "score": 0.017805296927690506,
+        "score_components": {
+          "rgb_error": 0.0030029085464775562,
+          "luminance_error": 0.044832613319158554,
+          "texture_error": 0.029275039210915565,
+          "geometry_penalty": 0.001207963174714871,
+          "directional_bias": 0.01509953968393589,
+          "transition_density": 0.06835070140280561,
+          "fine_edge_density": 0.2124138779527559
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 0,
+        "score": 0.01832425780594349,
+        "score_components": {
+          "rgb_error": 0.002998251933604479,
+          "luminance_error": 0.04477086663246155,
+          "texture_error": 0.028733374550938606,
+          "geometry_penalty": 0.001870365128785738,
+          "directional_bias": 0.023379564109821727,
+          "transition_density": 0.07080160320641282,
+          "fine_edge_density": 0.22121062992125984
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 3,
+        "score": 0.018331201747059822,
+        "score_components": {
+          "rgb_error": 0.0030024240259081125,
+          "luminance_error": 0.04484736546874046,
+          "texture_error": 0.028018569573760033,
+          "geometry_penalty": 0.002033007823653707,
+          "directional_bias": 0.02541259779567134,
+          "transition_density": 0.07018436873747495,
+          "fine_edge_density": 0.21979576771653545
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 7,
+        "score": 0.01944561116397381,
+        "score_components": {
+          "rgb_error": 0.002999111544340849,
+          "luminance_error": 0.044865116477012634,
+          "texture_error": 0.02822571061551571,
+          "geometry_penalty": 0.0030961635964171065,
+          "directional_bias": 0.03870204495521383,
+          "transition_density": 0.07114629258517034,
+          "fine_edge_density": 0.22179502952755906
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 4,
+        "score": 0.020493408665060997,
+        "score_components": {
+          "rgb_error": 0.0030227364040911198,
+          "luminance_error": 0.045362867414951324,
+          "texture_error": 0.03125489875674248,
+          "geometry_penalty": 0.00331554783471895,
+          "directional_bias": 0.04144434793398687,
+          "transition_density": 0.06460120240480963,
+          "fine_edge_density": 0.19980314960629922
+        }
+      }
+    ],
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 70.0,
+      "dark_floor": 72.0,
+      "dark_weight": 0.1,
+      "detail": 0.16,
+      "blur": 0.7,
+      "blob_scale": 1.0,
+      "blob_weight": 0.36,
+      "blob_aspect": 1.0
+    },
+    "weighting": "equal_environment_groups",
+    "group_pixel_counts": {
+      "desert": 200000,
+      "forest": 200000,
+      "jungle": 200000,
+      "mountain": 200000,
+      "taiga": 200000,
+      "tundra": 200000,
+      "urban": 200000
+    },
+    "dark_palette_weight": 0.09999999403953552,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          78,
+          92,
+          48
+        ],
+        "weight": 0.22499999403953552
+      },
+      {
+        "rgb": [
+          90,
+          93,
+          61
+        ],
+        "weight": 0.22499999403953552
+      },
+      {
+        "rgb": [
+          58,
+          59,
+          54
+        ],
+        "weight": 0.09999999403953552
+      },
+      {
+        "rgb": [
+          161,
+          144,
+          116
+        ],
+        "weight": 0.22499999403953552
+      },
+      {
+        "rgb": [
+          179,
+          163,
+          137
+        ],
+        "weight": 0.22499999403953552
+      }
+    ]
+  },
+  "desert": {
+    "input_images": [
+      "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg [automatic]",
+      "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg [automatic]",
+      "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg [automatic]",
+      "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg [automatic]",
+      "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg [automatic]",
+      "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg [automatic]",
+      "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg [automatic]",
+      "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg [automatic]",
+      "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg [automatic]",
+      "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg [automatic]": 0.7925918311403509,
+      "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg [automatic]": 0.5632781982421875,
+      "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg [automatic]": 0.7161267412023461,
+      "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg [automatic]": 0.7910843566715543,
+      "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg [automatic]": 0.9996735245601173,
+      "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg [automatic]": 0.8806703629032258,
+      "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg [automatic]": 0.7937133431085044,
+      "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg [automatic]": 0.5610489322100314,
+      "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg [automatic]": 0.999908357771261,
+      "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg [automatic]": 0.6833646444281525
+    },
+    "mask_sources": {
+      "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "semantic_excluded_labels": {},
+    "semantic_excluded_fraction": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 8,
+    "best_score": 0.014958301559090614,
+    "score_components": {
+      "rgb_error": 0.0026456601917743683,
+      "luminance_error": 0.039894189685583115,
+      "texture_error": 0.021847203373908997,
+      "geometry_penalty": 0.0012111891820230701,
+      "directional_bias": 0.015139864775288376,
+      "transition_density": 0.07558116232464929,
+      "fine_edge_density": 0.2392347440944882
+    },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 6,
+        "score": 0.014958301559090614,
+        "score_components": {
+          "rgb_error": 0.0026456601917743683,
+          "luminance_error": 0.039894189685583115,
+          "texture_error": 0.021847203373908997,
+          "geometry_penalty": 0.0012111891820230701,
+          "directional_bias": 0.015139864775288376,
+          "transition_density": 0.07558116232464929,
+          "fine_edge_density": 0.2392347440944882
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 4,
+        "score": 0.015423265285789967,
+        "score_components": {
+          "rgb_error": 0.002647582208737731,
+          "luminance_error": 0.04043018817901611,
+          "texture_error": 0.023361453786492348,
+          "geometry_penalty": 0.0012152913026542754,
+          "directional_bias": 0.015191141283178443,
+          "transition_density": 0.07202805611222446,
+          "fine_edge_density": 0.22766978346456693
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 3,
+        "score": 0.015596712939441204,
+        "score_components": {
+          "rgb_error": 0.0026506599970161915,
+          "luminance_error": 0.040680937469005585,
+          "texture_error": 0.024242430925369263,
+          "geometry_penalty": 0.001130630630630632,
+          "directional_bias": 0.0141328828828829,
+          "transition_density": 0.07118236472945892,
+          "fine_edge_density": 0.22274852362204725
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 5,
+        "score": 0.01561063900589943,
+        "score_components": {
+          "rgb_error": 0.0026545196305960417,
+          "luminance_error": 0.04042443633079529,
+          "texture_error": 0.023729560896754265,
+          "geometry_penalty": 0.0013118857053471282,
+          "directional_bias": 0.0163985713168391,
+          "transition_density": 0.07686773547094189,
+          "fine_edge_density": 0.23557455708661418
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 7,
+        "score": 0.015628742054104805,
+        "score_components": {
+          "rgb_error": 0.0026370040141046047,
+          "luminance_error": 0.04026668891310692,
+          "texture_error": 0.022564301267266273,
+          "geometry_penalty": 0.0016468039003250249,
+          "directional_bias": 0.02058504875406281,
+          "transition_density": 0.0758376753507014,
+          "fine_edge_density": 0.23477485236220472
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 0,
+        "score": 0.017165031284093857,
+        "score_components": {
+          "rgb_error": 0.0026524728164076805,
+          "luminance_error": 0.04054618626832962,
+          "texture_error": 0.024307111278176308,
+          "geometry_penalty": 0.0027067749234659976,
+          "directional_bias": 0.03383468654332497,
+          "transition_density": 0.07528056112224449,
+          "fine_edge_density": 0.23345226377952755
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 2,
+        "score": 0.018492575734853745,
+        "score_components": {
+          "rgb_error": 0.0026767852250486612,
+          "luminance_error": 0.04134118929505348,
+          "texture_error": 0.026545822620391846,
+          "geometry_penalty": 0.003341772151898734,
+          "directional_bias": 0.04177215189873417,
+          "transition_density": 0.06332665330661323,
+          "fine_edge_density": 0.20174089566929135
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 1,
+        "score": 0.018986908718943596,
+        "score_components": {
+          "rgb_error": 0.0026739102322608232,
+          "luminance_error": 0.041066188365221024,
+          "texture_error": 0.025885269045829773,
+          "geometry_penalty": 0.004045574451366675,
+          "directional_bias": 0.050569680642083434,
+          "transition_density": 0.07141082164328658,
+          "fine_edge_density": 0.2180425688976378
+        }
+      }
+    ],
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 55.0,
+      "dark_floor": 75.0,
+      "dark_weight": 0.08,
+      "detail": 0.14,
+      "blur": 0.9,
+      "blob_scale": 1.45,
+      "blob_weight": 0.32,
+      "blob_aspect": 1.22
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "desert": 200000
+    },
+    "dark_palette_weight": 0.07999999821186066,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          96,
+          77,
+          59
+        ],
+        "weight": 0.24979442358016968
+      },
+      {
+        "rgb": [
+          179,
+          154,
+          124
+        ],
+        "weight": 0.24560467898845673
+      },
+      {
+        "rgb": [
+          149,
+          124,
+          94
+        ],
+        "weight": 0.2410729080438614
+      },
+      {
+        "rgb": [
+          62,
+          60,
+          56
+        ],
+        "weight": 0.07999999821186066
+      },
+      {
+        "rgb": [
+          180,
+          162,
+          133
+        ],
+        "weight": 0.18352800607681274
+      }
+    ]
+  },
+  "forest": {
+    "input_images": [
+      "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [automatic]",
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [automatic]",
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]",
+      "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]",
+      "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]",
+      "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]",
+      "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [automatic]",
+      "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [automatic]",
+      "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [automatic]",
+      "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [automatic]": 0.9404268236803519,
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [automatic]": 0.8396905637254902,
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": 0.9502178919797688,
+      "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": 0.9491171423410405,
+      "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": 0.7865180969238281,
+      "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": 0.7856559753417969,
+      "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [automatic]": 0.9828228097507331,
+      "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [automatic]": 0.5060012975778547,
+      "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [automatic]": 0.7361794442041523,
+      "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [automatic]": 0.730255126953125
+    },
+    "mask_sources": {
+      "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/08_Forest_landscape_near_Lloret_de_Mar_2012.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/forest/10_Forest_of_Dean_landscape_-_geograph.org.uk_-_743958.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "semantic_excluded_labels": {},
+    "semantic_excluded_fraction": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 8,
+    "best_score": 0.015433800406754017,
+    "score_components": {
+      "rgb_error": 0.0028398437425494194,
+      "luminance_error": 0.04267587512731552,
+      "texture_error": 0.025783834978938103,
+      "geometry_penalty": 0.0001441003493999457,
+      "directional_bias": 0.0018012543674993213,
+      "transition_density": 0.09234268537074147,
+      "fine_edge_density": 0.29798228346456695
+    },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 4,
+        "score": 0.015433800406754017,
+        "score_components": {
+          "rgb_error": 0.0028398437425494194,
+          "luminance_error": 0.04267587512731552,
+          "texture_error": 0.025783834978938103,
+          "geometry_penalty": 0.0001441003493999457,
+          "directional_bias": 0.0018012543674993213,
+          "transition_density": 0.09234268537074147,
+          "fine_edge_density": 0.29798228346456695
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 7,
+        "score": 0.015720520168542862,
+        "score_components": {
+          "rgb_error": 0.0028442032635211945,
+          "luminance_error": 0.04283962398767471,
+          "texture_error": 0.026246653869748116,
+          "geometry_penalty": 0.00028808962788422844,
+          "directional_bias": 0.003601120348552855,
+          "transition_density": 0.09015230460921844,
+          "fine_edge_density": 0.2938607283464567
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 6,
+        "score": 0.01595698483288288,
+        "score_components": {
+          "rgb_error": 0.0028494999278336763,
+          "luminance_error": 0.04308512434363365,
+          "texture_error": 0.027772730216383934,
+          "geometry_penalty": 0.0001114568336971159,
+          "directional_bias": 0.0013932104212139487,
+          "transition_density": 0.08630460921843688,
+          "fine_edge_density": 0.2852485236220472
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 3,
+        "score": 0.016273263841867447,
+        "score_components": {
+          "rgb_error": 0.002838249783962965,
+          "luminance_error": 0.042778126895427704,
+          "texture_error": 0.027322547510266304,
+          "geometry_penalty": 0.000596664419752553,
+          "directional_bias": 0.007458305246906913,
+          "transition_density": 0.0921623246492986,
+          "fine_edge_density": 0.29223056102362205
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 1,
+        "score": 0.016404177993535995,
+        "score_components": {
+          "rgb_error": 0.0028351405635476112,
+          "luminance_error": 0.042795129120349884,
+          "texture_error": 0.02699248678982258,
+          "geometry_penalty": 0.0008052879422819348,
+          "directional_bias": 0.010066099278524185,
+          "transition_density": 0.09277354709418838,
+          "fine_edge_density": 0.2956754429133858
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 2,
+        "score": 0.01684040017426014,
+        "score_components": {
+          "rgb_error": 0.0028503125067800283,
+          "luminance_error": 0.0427941232919693,
+          "texture_error": 0.02740117907524109,
+          "geometry_penalty": 0.0011360185764043964,
+          "directional_bias": 0.014200232205054954,
+          "transition_density": 0.08975551102204408,
+          "fine_edge_density": 0.284787155511811
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 0,
+        "score": 0.01694137044250965,
+        "score_components": {
+          "rgb_error": 0.002851374913007021,
+          "luminance_error": 0.04297662526369095,
+          "texture_error": 0.027364671230316162,
+          "geometry_penalty": 0.0012123675949138374,
+          "directional_bias": 0.015154594936422967,
+          "transition_density": 0.08873146292585171,
+          "fine_edge_density": 0.2861712598425197
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 5,
+        "score": 0.01696353405714035,
+        "score_components": {
+          "rgb_error": 0.002836468629539013,
+          "luminance_error": 0.04258662462234497,
+          "texture_error": 0.025881478562951088,
+          "geometry_penalty": 0.0016681530555909458,
+          "directional_bias": 0.02085191319488682,
+          "transition_density": 0.09437675350701402,
+          "fine_edge_density": 0.3003198818897638
+        }
+      }
+    ],
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 65.0,
+      "dark_floor": 60.0,
+      "dark_weight": 0.18,
+      "detail": 0.18,
+      "blur": 0.6,
+      "blob_scale": 0.72,
+      "blob_weight": 0.34,
+      "blob_aspect": 0.82
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "forest": 200000
+    },
+    "dark_palette_weight": 0.17999999225139618,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          49,
+          51,
+          47
+        ],
+        "weight": 0.09251349419355392
+      },
+      {
+        "rgb": [
+          59,
+          60,
+          54
+        ],
+        "weight": 0.08748649805784225
+      },
+      {
+        "rgb": [
+          102,
+          105,
+          77
+        ],
+        "weight": 0.37896281480789185
+      },
+      {
+        "rgb": [
+          162,
+          153,
+          126
+        ],
+        "weight": 0.22958451509475708
+      },
+      {
+        "rgb": [
+          181,
+          169,
+          145
+        ],
+        "weight": 0.2114526927471161
+      }
+    ]
+  },
+  "jungle": {
+    "input_images": [
+      "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg [automatic]",
+      "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg [automatic]",
+      "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg [automatic]",
+      "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]",
+      "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg [automatic]",
+      "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]",
+      "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]",
+      "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg [automatic]",
+      "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg [automatic]",
+      "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg [automatic]": 0.9544677734375,
+      "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg [automatic]": 1.0,
+      "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg [automatic]": 0.9966702748493976,
+      "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": 0.9879282756024096,
+      "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg [automatic]": 0.9049910579819277,
+      "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": 0.9610022119728916,
+      "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": 0.9927463761295181,
+      "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg [automatic]": 0.5880751722440944,
+      "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg [automatic]": 1.0,
+      "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg [automatic]": 0.9189036299542683
+    },
+    "mask_sources": {
+      "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "semantic_excluded_labels": {},
+    "semantic_excluded_fraction": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 8,
+    "best_score": 0.01818905584514141,
+    "score_components": {
+      "rgb_error": 0.0031329880002886057,
+      "luminance_error": 0.042065754532814026,
+      "texture_error": 0.03759193792939186,
+      "geometry_penalty": 2.8660994178237175e-05,
+      "directional_bias": 0.0003582624272279647,
+      "transition_density": 0.08949899799599198,
+      "fine_edge_density": 0.2879244586614173
+    },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 6,
+        "score": 0.01818905584514141,
+        "score_components": {
+          "rgb_error": 0.0031329880002886057,
+          "luminance_error": 0.042065754532814026,
+          "texture_error": 0.03759193792939186,
+          "geometry_penalty": 2.8660994178237175e-05,
+          "directional_bias": 0.0003582624272279647,
+          "transition_density": 0.08949899799599198,
+          "fine_edge_density": 0.2879244586614173
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 5,
+        "score": 0.018461117520928383,
+        "score_components": {
+          "rgb_error": 0.0031248631421476603,
+          "luminance_error": 0.04167518764734268,
+          "texture_error": 0.03626162186264992,
+          "geometry_penalty": 0.0006943616245941853,
+          "directional_bias": 0.008679520307427316,
+          "transition_density": 0.09073947895791583,
+          "fine_edge_density": 0.2936761811023622
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 7,
+        "score": 0.0186548363417387,
+        "score_components": {
+          "rgb_error": 0.0031351912766695023,
+          "luminance_error": 0.0419611856341362,
+          "texture_error": 0.03736751154065132,
+          "geometry_penalty": 0.0005660247750326292,
+          "directional_bias": 0.007075309687907864,
+          "transition_density": 0.08752104208416833,
+          "fine_edge_density": 0.28380290354330706
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 2,
+        "score": 0.01867152750492096,
+        "score_components": {
+          "rgb_error": 0.0031397694256156683,
+          "luminance_error": 0.04224199801683426,
+          "texture_error": 0.039237525314092636,
+          "geometry_penalty": 8.107716809034103e-05,
+          "directional_bias": 0.0010134646011292628,
+          "transition_density": 0.0830501002004008,
+          "fine_edge_density": 0.26860851377952755
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 3,
+        "score": 0.018738998100161552,
+        "score_components": {
+          "rgb_error": 0.0031336131505668163,
+          "luminance_error": 0.042097751051187515,
+          "texture_error": 0.038224268704652786,
+          "geometry_penalty": 0.00042077218126278053,
+          "directional_bias": 0.005259652265784756,
+          "transition_density": 0.08725250501002005,
+          "fine_edge_density": 0.2814345472440945
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 4,
+        "score": 0.01884680986404419,
+        "score_components": {
+          "rgb_error": 0.0031302068382501602,
+          "luminance_error": 0.042034685611724854,
+          "texture_error": 0.03804690018296242,
+          "geometry_penalty": 0.0005842072934913617,
+          "directional_bias": 0.007302591168642021,
+          "transition_density": 0.08809018036072144,
+          "fine_edge_density": 0.2857406496062992
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 1,
+        "score": 0.01920117624104023,
+        "score_components": {
+          "rgb_error": 0.003132456913590431,
+          "luminance_error": 0.0421297512948513,
+          "texture_error": 0.03876359760761261,
+          "geometry_penalty": 0.0007483296213808431,
+          "directional_bias": 0.009354120267260539,
+          "transition_density": 0.08548096192384769,
+          "fine_edge_density": 0.2794045275590551
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 0,
+        "score": 0.02005586214363575,
+        "score_components": {
+          "rgb_error": 0.003134816186502576,
+          "luminance_error": 0.042158499360084534,
+          "texture_error": 0.03886925429105759,
+          "geometry_penalty": 0.0015713034256996626,
+          "directional_bias": 0.01964129282124578,
+          "transition_density": 0.08692985971943888,
+          "fine_edge_density": 0.2830954724409449
+        }
+      }
+    ],
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 62.0,
+      "dark_floor": 58.0,
+      "dark_weight": 0.16,
+      "detail": 0.19,
+      "blur": 0.65,
+      "blob_scale": 0.6,
+      "blob_weight": 0.38,
+      "blob_aspect": 0.78
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "jungle": 200000
+    },
+    "dark_palette_weight": 0.1599999964237213,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          55,
+          61,
+          53
+        ],
+        "weight": 0.08866909146308899
+      },
+      {
+        "rgb": [
+          48,
+          50,
+          46
+        ],
+        "weight": 0.07133091241121292
+      },
+      {
+        "rgb": [
+          87,
+          113,
+          69
+        ],
+        "weight": 0.4507140517234802
+      },
+      {
+        "rgb": [
+          160,
+          157,
+          115
+        ],
+        "weight": 0.23350706696510315
+      },
+      {
+        "rgb": [
+          183,
+          168,
+          141
+        ],
+        "weight": 0.15577885508537292
+      }
+    ]
+  },
+  "mountain": {
+    "input_images": [
+      "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg [automatic]",
+      "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg [automatic]",
+      "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg [automatic]",
+      "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg [automatic]",
+      "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg [automatic]",
+      "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg [automatic]",
+      "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg [automatic]",
+      "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]",
+      "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg [automatic]",
+      "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg [automatic]": 0.7777332294721407,
+      "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg [automatic]": 0.7844050480769231,
+      "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg [automatic]": 0.5875276548672567,
+      "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg [automatic]": 1.0,
+      "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg [automatic]": 0.5808461507161459,
+      "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg [automatic]": 0.73209228515625,
+      "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg [automatic]": 0.5328228705752213,
+      "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": 0.5180079389158576,
+      "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg [automatic]": 0.6003253299120235,
+      "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg [automatic]": 0.7792279411764705
+    },
+    "mask_sources": {
+      "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "semantic_excluded_labels": {},
+    "semantic_excluded_fraction": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 8,
+    "best_score": 0.014987802132964134,
+    "score_components": {
+      "rgb_error": 0.0031914024148136377,
+      "luminance_error": 0.04627281427383423,
+      "texture_error": 0.0201261043548584,
+      "geometry_penalty": 0.00023273035015338895,
+      "directional_bias": 0.002909129376917362,
+      "transition_density": 0.07577555110220441,
+      "fine_edge_density": 0.2375123031496063
+    },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 4,
+        "score": 0.014987802132964134,
+        "score_components": {
+          "rgb_error": 0.0031914024148136377,
+          "luminance_error": 0.04627281427383423,
+          "texture_error": 0.0201261043548584,
+          "geometry_penalty": 0.00023273035015338895,
+          "directional_bias": 0.002909129376917362,
+          "transition_density": 0.07577555110220441,
+          "fine_edge_density": 0.2375123031496063
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 2,
+        "score": 0.015621395781636238,
+        "score_components": {
+          "rgb_error": 0.003156589809805155,
+          "luminance_error": 0.04591556265950203,
+          "texture_error": 0.020116746425628662,
+          "geometry_penalty": 0.0009502806736166781,
+          "directional_bias": 0.011878508420208477,
+          "transition_density": 0.07996793587174349,
+          "fine_edge_density": 0.24941560039370078
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 6,
+        "score": 0.01592068560421467,
+        "score_components": {
+          "rgb_error": 0.003169027389958501,
+          "luminance_error": 0.04612881317734718,
+          "texture_error": 0.01974794827401638,
+          "geometry_penalty": 0.0012934774035807243,
+          "directional_bias": 0.016168467544759053,
+          "transition_density": 0.07622645290581162,
+          "fine_edge_density": 0.24203371062992127
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 3,
+        "score": 0.016273152083158493,
+        "score_components": {
+          "rgb_error": 0.003166480455547571,
+          "luminance_error": 0.04656706005334854,
+          "texture_error": 0.020775843411684036,
+          "geometry_penalty": 0.0013216398123597818,
+          "directional_bias": 0.01652049765449727,
+          "transition_density": 0.06877955911823647,
+          "fine_edge_density": 0.22391732283464566
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 7,
+        "score": 0.01627352088689804,
+        "score_components": {
+          "rgb_error": 0.003176964819431305,
+          "luminance_error": 0.04620931297540665,
+          "texture_error": 0.019601896405220032,
+          "geometry_penalty": 0.0016629068643248444,
+          "directional_bias": 0.020786335804060554,
+          "transition_density": 0.07462124248496993,
+          "fine_edge_density": 0.2405880905511811
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 5,
+        "score": 0.0166616253554821,
+        "score_components": {
+          "rgb_error": 0.0031847304198890924,
+          "luminance_error": 0.04633881151676178,
+          "texture_error": 0.019931593909859657,
+          "geometry_penalty": 0.0019446917577229242,
+          "directional_bias": 0.024308646971536552,
+          "transition_density": 0.07427855711422846,
+          "fine_edge_density": 0.23523622047244094
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 0,
+        "score": 0.01882069557905197,
+        "score_components": {
+          "rgb_error": 0.0031894959975034,
+          "luminance_error": 0.04656706377863884,
+          "texture_error": 0.021142393350601196,
+          "geometry_penalty": 0.0037697015652927504,
+          "directional_bias": 0.04712126956615938,
+          "transition_density": 0.074,
+          "fine_edge_density": 0.22942298228346455
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 1,
+        "score": 0.020183349028229713,
+        "score_components": {
+          "rgb_error": 0.0031711366027593613,
+          "luminance_error": 0.04615781456232071,
+          "texture_error": 0.02102566324174404,
+          "geometry_penalty": 0.005243214529633472,
+          "directional_bias": 0.0655401816204184,
+          "transition_density": 0.07922444889779559,
+          "fine_edge_density": 0.24584768700787402
+        }
+      }
+    ],
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 60.0,
+      "dark_floor": 68.0,
+      "dark_weight": 0.14,
+      "detail": 0.15,
+      "blur": 0.8,
+      "blob_scale": 1.12,
+      "blob_weight": 0.34,
+      "blob_aspect": 1.05
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "mountain": 200000
+    },
+    "dark_palette_weight": 0.14000000059604645,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          96,
+          97,
+          57
+        ],
+        "weight": 0.3097335696220398
+      },
+      {
+        "rgb": [
+          58,
+          58,
+          53
+        ],
+        "weight": 0.14000000059604645
+      },
+      {
+        "rgb": [
+          147,
+          137,
+          119
+        ],
+        "weight": 0.21339283883571625
+      },
+      {
+        "rgb": [
+          173,
+          167,
+          158
+        ],
+        "weight": 0.18844930827617645
+      },
+      {
+        "rgb": [
+          180,
+          165,
+          140
+        ],
+        "weight": 0.14842428267002106
+      }
+    ]
+  },
+  "snow": {
+    "input_images": [
+      "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg [automatic]",
+      "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg [automatic]",
+      "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg [automatic]",
+      "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg [automatic]",
+      "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg [automatic]",
+      "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg [automatic]",
+      "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg [automatic]",
+      "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg [automatic]",
+      "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]",
+      "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg [automatic]": 0.5641326904296875,
+      "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg [automatic]": 0.4498189290364583,
+      "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg [automatic]": 1.0,
+      "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg [automatic]": 1.0,
+      "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg [automatic]": 1.0,
+      "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg [automatic]": 0.9193623860677084,
+      "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg [automatic]": 0.6575995551215278,
+      "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg [automatic]": 0.6744232177734375,
+      "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": 0.5180079389158576,
+      "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg [automatic]": 1.0
+    },
+    "mask_sources": {
+      "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg [automatic]": "automatic",
+      "evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/snow/08_Bare_tree_in_snowy_landscape_-_geograph.org.uk_-_1659913.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/snow/09_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/snow/10_Landscape_snowy_hills_Heraklion.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "semantic_excluded_labels": {},
+    "semantic_excluded_fraction": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 8,
+    "best_score": 0.013493798673152924,
+    "score_components": {
+      "rgb_error": 0.001905742334201932,
+      "luminance_error": 0.039321187883615494,
+      "texture_error": 0.019597172737121582,
+      "geometry_penalty": 0.0007597912454746317,
+      "directional_bias": 0.009497390568432896,
+      "transition_density": 0.08524649298597195,
+      "fine_edge_density": 0.2553211122047244
+    },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 7,
+        "score": 0.013493798673152924,
+        "score_components": {
+          "rgb_error": 0.001905742334201932,
+          "luminance_error": 0.039321187883615494,
+          "texture_error": 0.019597172737121582,
+          "geometry_penalty": 0.0007597912454746317,
+          "directional_bias": 0.009497390568432896,
+          "transition_density": 0.08524649298597195,
+          "fine_edge_density": 0.2553211122047244
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 6,
+        "score": 0.014033297076821327,
+        "score_components": {
+          "rgb_error": 0.0019404765916988254,
+          "luminance_error": 0.04002818465232849,
+          "texture_error": 0.019875748082995415,
+          "geometry_penalty": 0.001087806220754198,
+          "directional_bias": 0.013597577759427475,
+          "transition_density": 0.07280561122244489,
+          "fine_edge_density": 0.2224717027559055
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 4,
+        "score": 0.014501417055726051,
+        "score_components": {
+          "rgb_error": 0.0019375546835362911,
+          "luminance_error": 0.04017193615436554,
+          "texture_error": 0.019983237609267235,
+          "geometry_penalty": 0.001505713645529912,
+          "directional_bias": 0.0188214205691239,
+          "transition_density": 0.07155110220440883,
+          "fine_edge_density": 0.21705831692913385
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 0,
+        "score": 0.01466483622789383,
+        "score_components": {
+          "rgb_error": 0.0019535860046744347,
+          "luminance_error": 0.040543437004089355,
+          "texture_error": 0.02030831389129162,
+          "geometry_penalty": 0.0015162283819000271,
+          "directional_bias": 0.01895285477375034,
+          "transition_density": 0.06767134268537074,
+          "fine_edge_density": 0.20666215551181102
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 2,
+        "score": 0.015567732974886894,
+        "score_components": {
+          "rgb_error": 0.0019452930428087711,
+          "luminance_error": 0.03981068730354309,
+          "texture_error": 0.01962479017674923,
+          "geometry_penalty": 0.0027192118226600933,
+          "directional_bias": 0.033990147783251164,
+          "transition_density": 0.07322645290581162,
+          "fine_edge_density": 0.2262549212598425
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 3,
+        "score": 0.01604774221777916,
+        "score_components": {
+          "rgb_error": 0.0019194609485566616,
+          "luminance_error": 0.03983268886804581,
+          "texture_error": 0.019846996292471886,
+          "geometry_penalty": 0.0031548480463096957,
+          "directional_bias": 0.039435600578871195,
+          "transition_density": 0.07754709418837674,
+          "fine_edge_density": 0.2341904527559055
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 1,
+        "score": 0.017271695658564568,
+        "score_components": {
+          "rgb_error": 0.001937570283189416,
+          "luminance_error": 0.040023189038038254,
+          "texture_error": 0.019209839403629303,
+          "geometry_penalty": 0.004488374068934261,
+          "directional_bias": 0.056104675861678256,
+          "transition_density": 0.07075951903807615,
+          "fine_edge_density": 0.21659694881889763
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 5,
+        "score": 0.01763838529586792,
+        "score_components": {
+          "rgb_error": 0.0019453982822597027,
+          "luminance_error": 0.04022643715143204,
+          "texture_error": 0.019832005724310875,
+          "geometry_penalty": 0.004665245668688861,
+          "directional_bias": 0.05831557085861077,
+          "transition_density": 0.07333466933867736,
+          "fine_edge_density": 0.22228715551181102
+        }
+      }
+    ],
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 38.0,
+      "dark_floor": 82.0,
+      "dark_weight": 0.08,
+      "detail": 0.13,
+      "blur": 0.9,
+      "blob_scale": 1.28,
+      "blob_weight": 0.38,
+      "blob_aspect": 1.1,
+      "palette_family": "snow"
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "snow": 200000
+    },
+    "dark_palette_weight": 0.0,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          150,
+          156,
+          160
+        ],
+        "weight": 0.24500499665737152
+      },
+      {
+        "rgb": [
+          98,
+          106,
+          110
+        ],
+        "weight": 0.24209000170230865
+      },
+      {
+        "rgb": [
+          204,
+          208,
+          209
+        ],
+        "weight": 0.2352299988269806
+      },
+      {
+        "rgb": [
+          79,
+          84,
+          86
+        ],
+        "weight": 0.17923499643802643
+      },
+      {
+        "rgb": [
+          165,
+          180,
+          188
+        ],
+        "weight": 0.09843999892473221
+      }
+    ]
+  },
+  "taiga": {
+    "input_images": [
+      "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg [automatic]",
+      "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg [automatic]",
+      "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg [automatic]",
+      "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg [automatic]",
+      "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg [automatic]",
+      "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg [automatic]": 0.8913675944010416,
+      "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg [automatic]": 0.5978775024414062,
+      "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg [automatic]": 0.9788143382352941,
+      "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg [automatic]": 0.5660316780821918,
+      "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg [automatic]": 0.6075471483236151,
+      "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg [automatic]": 0.9671398628048781,
+      "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg [automatic]": 0.8344251844618056,
+      "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg [automatic]": 0.9750467936197916,
+      "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg [automatic]": 0.734100341796875,
+      "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg [automatic]": 0.8058515401146131
+    },
+    "mask_sources": {
+      "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/06_Boreal-forest-with-river-arctic-Norway.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/07_Boreal_Forest.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/08_Boreal_Forest_Flora_53451032212_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/09_Boreal_Forest_Horse_Ride_4127273666_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/taiga/10_Boreal_Forest_Ring.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "semantic_excluded_labels": {},
+    "semantic_excluded_fraction": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 8,
+    "best_score": 0.014399717561900616,
+    "score_components": {
+      "rgb_error": 0.00312349246814847,
+      "luminance_error": 0.04609400033950806,
+      "texture_error": 0.01788039319217205,
+      "geometry_penalty": 0.00024975732612744924,
+      "directional_bias": 0.003121966576593115,
+      "transition_density": 0.0763867735470942,
+      "fine_edge_density": 0.26002706692913385
+    },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 2,
+        "score": 0.014399717561900616,
+        "score_components": {
+          "rgb_error": 0.00312349246814847,
+          "luminance_error": 0.04609400033950806,
+          "texture_error": 0.01788039319217205,
+          "geometry_penalty": 0.00024975732612744924,
+          "directional_bias": 0.003121966576593115,
+          "transition_density": 0.0763867735470942,
+          "fine_edge_density": 0.26002706692913385
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 4,
+        "score": 0.014502003788948059,
+        "score_components": {
+          "rgb_error": 0.0031256640795618296,
+          "luminance_error": 0.046035002917051315,
+          "texture_error": 0.01835618168115616,
+          "geometry_penalty": 0.000247386848628894,
+          "directional_bias": 0.003092335607861175,
+          "transition_density": 0.07841482965931863,
+          "fine_edge_density": 0.261841781496063
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 5,
+        "score": 0.014506326988339424,
+        "score_components": {
+          "rgb_error": 0.003127351636067033,
+          "luminance_error": 0.04582124948501587,
+          "texture_error": 0.01806083880364895,
+          "geometry_penalty": 0.0003602243855809618,
+          "directional_bias": 0.004502804819762023,
+          "transition_density": 0.07966533066132264,
+          "fine_edge_density": 0.2680548720472441
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 3,
+        "score": 0.014546125195920467,
+        "score_components": {
+          "rgb_error": 0.003122961148619652,
+          "luminance_error": 0.04601900279521942,
+          "texture_error": 0.01810336485505104,
+          "geometry_penalty": 0.0003564162653549986,
+          "directional_bias": 0.004455203316937482,
+          "transition_density": 0.07781763527054109,
+          "fine_edge_density": 0.26368725393700787
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 0,
+        "score": 0.014553257264196873,
+        "score_components": {
+          "rgb_error": 0.0031176016200333834,
+          "luminance_error": 0.046171754598617554,
+          "texture_error": 0.018569715321063995,
+          "geometry_penalty": 0.00022680904056596824,
+          "directional_bias": 0.002835113007074603,
+          "transition_density": 0.07563326653306612,
+          "fine_edge_density": 0.2578125
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 1,
+        "score": 0.014652682468295097,
+        "score_components": {
+          "rgb_error": 0.0031271486077457666,
+          "luminance_error": 0.04597475379705429,
+          "texture_error": 0.01795339025557041,
+          "geometry_penalty": 0.0005048380311316797,
+          "directional_bias": 0.006310475389145995,
+          "transition_density": 0.08097995991983968,
+          "fine_edge_density": 0.26731668307086615
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 6,
+        "score": 0.014712146483361721,
+        "score_components": {
+          "rgb_error": 0.00311525771394372,
+          "luminance_error": 0.046164751052856445,
+          "texture_error": 0.01915466971695423,
+          "geometry_penalty": 0.00024774193548387065,
+          "directional_bias": 0.003096774193548383,
+          "transition_density": 0.07765531062124248,
+          "fine_edge_density": 0.25716658464566927
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 7,
+        "score": 0.015885446220636368,
+        "score_components": {
+          "rgb_error": 0.0031127422116696835,
+          "luminance_error": 0.045765750110149384,
+          "texture_error": 0.01785144954919815,
+          "geometry_penalty": 0.001806892115874625,
+          "directional_bias": 0.022586151448432814,
+          "transition_density": 0.08100801603206412,
+          "fine_edge_density": 0.273560531496063
+        }
+      }
+    ],
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 60.0,
+      "dark_floor": 60.0,
+      "dark_weight": 0.16,
+      "detail": 0.18,
+      "blur": 0.65,
+      "blob_scale": 0.78,
+      "blob_weight": 0.35,
+      "blob_aspect": 0.75
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "taiga": 200000
+    },
+    "dark_palette_weight": 0.1599999964237213,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          48,
+          49,
+          46
+        ],
+        "weight": 0.08285584300756454
+      },
+      {
+        "rgb": [
+          60,
+          60,
+          56
+        ],
+        "weight": 0.07714415341615677
+      },
+      {
+        "rgb": [
+          131,
+          121,
+          97
+        ],
+        "weight": 0.352989137172699
+      },
+      {
+        "rgb": [
+          174,
+          156,
+          136
+        ],
+        "weight": 0.3061520457267761
+      },
+      {
+        "rgb": [
+          186,
+          172,
+          146
+        ],
+        "weight": 0.1808588206768036
+      }
+    ]
+  },
+  "tundra": {
+    "input_images": [
+      "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg [automatic]",
+      "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg [automatic]",
+      "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg [automatic]",
+      "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg [automatic]",
+      "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg [automatic]",
+      "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg [automatic]",
+      "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg [automatic]",
+      "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg [automatic]",
+      "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg [automatic]",
+      "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg [automatic]": 0.8840974506578947,
+      "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg [automatic]": 0.7035087518328446,
+      "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg [automatic]": 0.651214599609375,
+      "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg [automatic]": 0.8095731763196481,
+      "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg [automatic]": 0.8810025659824047,
+      "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg [automatic]": 0.9660007331378299,
+      "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg [automatic]": 0.9312744140625,
+      "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg [automatic]": 0.5661364103618421,
+      "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg [automatic]": 0.5081138724035609,
+      "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg [automatic]": 0.7514365554156172
+    },
+    "mask_sources": {
+      "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "semantic_excluded_labels": {},
+    "semantic_excluded_fraction": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 8,
+    "best_score": 0.014923143200576305,
+    "score_components": {
+      "rgb_error": 0.00307949585840106,
+      "luminance_error": 0.038765810430049896,
+      "texture_error": 0.0223196130245924,
+      "geometry_penalty": 0.001048841790639221,
+      "directional_bias": 0.013110522382990262,
+      "transition_density": 0.05900200400801603,
+      "fine_edge_density": 0.1908833661417323
+    },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 4,
+        "score": 0.014923143200576305,
+        "score_components": {
+          "rgb_error": 0.00307949585840106,
+          "luminance_error": 0.038765810430049896,
+          "texture_error": 0.0223196130245924,
+          "geometry_penalty": 0.001048841790639221,
+          "directional_bias": 0.013110522382990262,
+          "transition_density": 0.05900200400801603,
+          "fine_edge_density": 0.1908833661417323
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 2,
+        "score": 0.01492602564394474,
+        "score_components": {
+          "rgb_error": 0.0030782613903284073,
+          "luminance_error": 0.038947559893131256,
+          "texture_error": 0.023098597303032875,
+          "geometry_penalty": 0.0008326705626058984,
+          "directional_bias": 0.01040838203257373,
+          "transition_density": 0.05795390781563126,
+          "fine_edge_density": 0.18393208661417323
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 6,
+        "score": 0.015689559280872345,
+        "score_components": {
+          "rgb_error": 0.0031006678473204374,
+          "luminance_error": 0.039211563766002655,
+          "texture_error": 0.024342214688658714,
+          "geometry_penalty": 0.0012390121389702765,
+          "directional_bias": 0.015487651737128457,
+          "transition_density": 0.052663326653306614,
+          "fine_edge_density": 0.17242864173228348
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 1,
+        "score": 0.016869476065039635,
+        "score_components": {
+          "rgb_error": 0.003087699180468917,
+          "luminance_error": 0.03887680917978287,
+          "texture_error": 0.02270386554300785,
+          "geometry_penalty": 0.0028788726829750136,
+          "directional_bias": 0.035985908537187666,
+          "transition_density": 0.06086773547094189,
+          "fine_edge_density": 0.18836122047244094
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 0,
+        "score": 0.017623957246541977,
+        "score_components": {
+          "rgb_error": 0.0030798553489148617,
+          "luminance_error": 0.03881455957889557,
+          "texture_error": 0.02219187282025814,
+          "geometry_penalty": 0.003771359550960959,
+          "directional_bias": 0.047141994387011985,
+          "transition_density": 0.05641082164328658,
+          "fine_edge_density": 0.18239419291338582
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 5,
+        "score": 0.01801188662648201,
+        "score_components": {
+          "rgb_error": 0.0030953395180404186,
+          "luminance_error": 0.03911906108260155,
+          "texture_error": 0.02339783124625683,
+          "geometry_penalty": 0.0038073060689855897,
+          "directional_bias": 0.04759132586231987,
+          "transition_density": 0.05507815631262525,
+          "fine_edge_density": 0.18091781496062992
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 7,
+        "score": 0.018520111218094826,
+        "score_components": {
+          "rgb_error": 0.003092089667916298,
+          "luminance_error": 0.03887881338596344,
+          "texture_error": 0.02245727926492691,
+          "geometry_penalty": 0.004586133774215577,
+          "directional_bias": 0.05732667217769471,
+          "transition_density": 0.05575751503006012,
+          "fine_edge_density": 0.18556225393700787
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 3,
+        "score": 0.020617039874196053,
+        "score_components": {
+          "rgb_error": 0.0030814490746706724,
+          "luminance_error": 0.03921724855899811,
+          "texture_error": 0.024198636412620544,
+          "geometry_penalty": 0.006209537069265573,
+          "directional_bias": 0.07761921336581966,
+          "transition_density": 0.05181763527054108,
+          "fine_edge_density": 0.16793799212598426
+        }
+      }
+    ],
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 55.0,
+      "dark_floor": 78.0,
+      "dark_weight": 0.1,
+      "detail": 0.14,
+      "blur": 0.85,
+      "blob_scale": 1.2,
+      "blob_weight": 0.35,
+      "blob_aspect": 1.15
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "tundra": 200000
+    },
+    "dark_palette_weight": 0.10000000894069672,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          90,
+          80,
+          52
+        ],
+        "weight": 0.39640066027641296
+      },
+      {
+        "rgb": [
+          70,
+          70,
+          57
+        ],
+        "weight": 0.10000000894069672
+      },
+      {
+        "rgb": [
+          135,
+          131,
+          108
+        ],
+        "weight": 0.17429329454898834
+      },
+      {
+        "rgb": [
+          120,
+          97,
+          68
+        ],
+        "weight": 0.1723548173904419
+      },
+      {
+        "rgb": [
+          176,
+          161,
+          137
+        ],
+        "weight": 0.15695127844810486
+      }
+    ]
+  },
+  "urban": {
+    "input_images": [
+      "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg [automatic]",
+      "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg [automatic]",
+      "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg [automatic]",
+      "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg [automatic]",
+      "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg [automatic]",
+      "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg [automatic]",
+      "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg [automatic]",
+      "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg [automatic]",
+      "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg [automatic]",
+      "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg [automatic]"
+    ],
+    "valid_pixel_fraction": {
+      "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg [automatic]": 0.9566169507575758,
+      "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg [automatic]": 0.8994627474340176,
+      "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg [automatic]": 0.9826103344298246,
+      "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg [automatic]": 0.7297024197048612,
+      "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg [automatic]": 0.9941298935439561,
+      "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg [automatic]": 0.9959955481843575,
+      "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg [automatic]": 0.7567569093208093,
+      "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg [automatic]": 0.6272865853658537,
+      "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg [automatic]": 0.9949073476239669,
+      "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg [automatic]": 0.8317491319444444
+    },
+    "mask_sources": {
+      "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg [automatic]": "automatic",
+      "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg [automatic]": "automatic"
+    },
+    "semantic_labels": {},
+    "semantic_excluded_labels": {},
+    "semantic_excluded_fraction": {},
+    "size": [
+      500,
+      500
+    ],
+    "palette_colors": 5,
+    "candidates_evaluated": 8,
+    "best_score": 0.020091934129595757,
+    "score_components": {
+      "rgb_error": 0.0031083517242223024,
+      "luminance_error": 0.046116940677165985,
+      "texture_error": 0.025670742616057396,
+      "geometry_penalty": 0.004075730722705156,
+      "directional_bias": 0.05094663403381444,
+      "transition_density": 0.07123647294589178,
+      "fine_edge_density": 0.22859251968503938
+    },
+    "top_candidates": [
+      {
+        "rank": 1,
+        "seed_offset": 6,
+        "score": 0.020091934129595757,
+        "score_components": {
+          "rgb_error": 0.0031083517242223024,
+          "luminance_error": 0.046116940677165985,
+          "texture_error": 0.025670742616057396,
+          "geometry_penalty": 0.004075730722705156,
+          "directional_bias": 0.05094663403381444,
+          "transition_density": 0.07123647294589178,
+          "fine_edge_density": 0.22859251968503938
+        }
+      },
+      {
+        "rank": 2,
+        "seed_offset": 5,
+        "score": 0.02038559690117836,
+        "score_components": {
+          "rgb_error": 0.0031088204123079777,
+          "luminance_error": 0.04628143832087517,
+          "texture_error": 0.02702031098306179,
+          "geometry_penalty": 0.00401565424536328,
+          "directional_bias": 0.050195678067041,
+          "transition_density": 0.07066533066132263,
+          "fine_edge_density": 0.22231791338582677
+        }
+      },
+      {
+        "rank": 3,
+        "seed_offset": 3,
+        "score": 0.021075237542390823,
+        "score_components": {
+          "rgb_error": 0.0030942109879106283,
+          "luminance_error": 0.04579368978738785,
+          "texture_error": 0.024586131796240807,
+          "geometry_penalty": 0.005384595293441639,
+          "directional_bias": 0.06730744116802048,
+          "transition_density": 0.07672745490981964,
+          "fine_edge_density": 0.2418799212598425
+        }
+      },
+      {
+        "rank": 4,
+        "seed_offset": 0,
+        "score": 0.02129136584699154,
+        "score_components": {
+          "rgb_error": 0.0031021172180771828,
+          "luminance_error": 0.04569093883037567,
+          "texture_error": 0.023698514327406883,
+          "geometry_penalty": 0.005828295042321646,
+          "directional_bias": 0.07285368802902058,
+          "transition_density": 0.07955110220440881,
+          "fine_edge_density": 0.24855437992125984
+        }
+      },
+      {
+        "rank": 5,
+        "seed_offset": 7,
+        "score": 0.021858276799321175,
+        "score_components": {
+          "rgb_error": 0.0031182735692709684,
+          "luminance_error": 0.04629369080066681,
+          "texture_error": 0.026883751153945923,
+          "geometry_penalty": 0.005514177141186782,
+          "directional_bias": 0.06892721426483478,
+          "transition_density": 0.06855711422845692,
+          "fine_edge_density": 0.21964197834645668
+        }
+      },
+      {
+        "rank": 6,
+        "seed_offset": 4,
+        "score": 0.022545987740159035,
+        "score_components": {
+          "rgb_error": 0.003121128771454096,
+          "luminance_error": 0.04642494022846222,
+          "texture_error": 0.026523077860474586,
+          "geometry_penalty": 0.00626339604667778,
+          "directional_bias": 0.07829245058347224,
+          "transition_density": 0.06731863727454909,
+          "fine_edge_density": 0.21693528543307086
+        }
+      },
+      {
+        "rank": 7,
+        "seed_offset": 1,
+        "score": 0.022835617884993553,
+        "score_components": {
+          "rgb_error": 0.003125582356005907,
+          "luminance_error": 0.046617187559604645,
+          "texture_error": 0.029067091643810272,
+          "geometry_penalty": 0.0059056298691753705,
+          "directional_bias": 0.07382037336469213,
+          "transition_density": 0.06816633266533066,
+          "fine_edge_density": 0.2133673720472441
+        }
+      },
+      {
+        "rank": 8,
+        "seed_offset": 2,
+        "score": 0.02386712096631527,
+        "score_components": {
+          "rgb_error": 0.003114882856607437,
+          "luminance_error": 0.04624418914318085,
+          "texture_error": 0.026949964463710785,
+          "geometry_penalty": 0.007517734505270894,
+          "directional_bias": 0.09397168131588617,
+          "transition_density": 0.07090781563126253,
+          "fine_edge_density": 0.22185654527559054
+        }
+      }
+    ],
+    "version": "phase_20_jungle_selectable_summary",
+    "segmentation": "none",
+    "segmentation_model": null,
+    "generation_mode": "standard",
+    "density": "standard",
+    "custom_settings": {
+      "max_color_share": null,
+      "green_share": null,
+      "dark_share": null
+    },
+    "style_profile": {
+      "max_chroma": 50.0,
+      "dark_floor": 72.0,
+      "dark_weight": 0.1,
+      "detail": 0.16,
+      "blur": 0.7,
+      "blob_scale": 0.88,
+      "blob_weight": 0.36,
+      "blob_aspect": 1.3
+    },
+    "weighting": "pixel_weighted",
+    "group_pixel_counts": {
+      "urban": 200000
+    },
+    "dark_palette_weight": 0.10000000149011612,
+    "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+    "palette": [
+      {
+        "rgb": [
+          88,
+          73,
+          60
+        ],
+        "weight": 0.25985825061798096
+      },
+      {
+        "rgb": [
+          178,
+          162,
+          136
+        ],
+        "weight": 0.2427581250667572
+      },
+      {
+        "rgb": [
+          59,
+          57,
+          54
+        ],
+        "weight": 0.10000000149011612
+      },
+      {
+        "rgb": [
+          146,
+          125,
+          101
+        ],
+        "weight": 0.21737684309482574
+      },
+      {
+        "rgb": [
+          172,
+          158,
+          139
+        ],
+        "weight": 0.18000680208206177
+      }
+    ]
+  }
+}

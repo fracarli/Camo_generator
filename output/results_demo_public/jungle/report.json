@@ -1,0 +1,239 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg [automatic]",
+    "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg [automatic]",
+    "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg [automatic]",
+    "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]",
+    "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg [automatic]",
+    "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]",
+    "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]",
+    "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg [automatic]",
+    "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg [automatic]",
+    "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg [automatic]": 0.9544677734375,
+    "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg [automatic]": 1.0,
+    "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg [automatic]": 0.9966702748493976,
+    "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": 0.9879282756024096,
+    "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg [automatic]": 0.9049910579819277,
+    "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": 0.9610022119728916,
+    "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": 0.9927463761295181,
+    "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg [automatic]": 0.5880751722440944,
+    "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg [automatic]": 1.0,
+    "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg [automatic]": 0.9189036299542683
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/jungle/03_CSIRO_ScienceImage_3731_Tropical_rainforest_canopy_with_palms_and_ferns_near_Cai.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/jungle/07_CSIRO_ScienceImage_3830_Tropical_rainforest_canopy_near_Cairns_QLD.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/jungle/08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/jungle/09_Guzmania_conifera_tropical_rainforest_plant_2025-07-30.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/jungle/10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 8,
+  "best_score": 0.01818905584514141,
+  "score_components": {
+    "rgb_error": 0.0031329880002886057,
+    "luminance_error": 0.042065754532814026,
+    "texture_error": 0.03759193792939186,
+    "geometry_penalty": 2.8660994178237175e-05,
+    "directional_bias": 0.0003582624272279647,
+    "transition_density": 0.08949899799599198,
+    "fine_edge_density": 0.2879244586614173
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 6,
+      "score": 0.01818905584514141,
+      "score_components": {
+        "rgb_error": 0.0031329880002886057,
+        "luminance_error": 0.042065754532814026,
+        "texture_error": 0.03759193792939186,
+        "geometry_penalty": 2.8660994178237175e-05,
+        "directional_bias": 0.0003582624272279647,
+        "transition_density": 0.08949899799599198,
+        "fine_edge_density": 0.2879244586614173
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 5,
+      "score": 0.018461117520928383,
+      "score_components": {
+        "rgb_error": 0.0031248631421476603,
+        "luminance_error": 0.04167518764734268,
+        "texture_error": 0.03626162186264992,
+        "geometry_penalty": 0.0006943616245941853,
+        "directional_bias": 0.008679520307427316,
+        "transition_density": 0.09073947895791583,
+        "fine_edge_density": 0.2936761811023622
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 7,
+      "score": 0.0186548363417387,
+      "score_components": {
+        "rgb_error": 0.0031351912766695023,
+        "luminance_error": 0.0419611856341362,
+        "texture_error": 0.03736751154065132,
+        "geometry_penalty": 0.0005660247750326292,
+        "directional_bias": 0.007075309687907864,
+        "transition_density": 0.08752104208416833,
+        "fine_edge_density": 0.28380290354330706
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 2,
+      "score": 0.01867152750492096,
+      "score_components": {
+        "rgb_error": 0.0031397694256156683,
+        "luminance_error": 0.04224199801683426,
+        "texture_error": 0.039237525314092636,
+        "geometry_penalty": 8.107716809034103e-05,
+        "directional_bias": 0.0010134646011292628,
+        "transition_density": 0.0830501002004008,
+        "fine_edge_density": 0.26860851377952755
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 3,
+      "score": 0.018738998100161552,
+      "score_components": {
+        "rgb_error": 0.0031336131505668163,
+        "luminance_error": 0.042097751051187515,
+        "texture_error": 0.038224268704652786,
+        "geometry_penalty": 0.00042077218126278053,
+        "directional_bias": 0.005259652265784756,
+        "transition_density": 0.08725250501002005,
+        "fine_edge_density": 0.2814345472440945
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 4,
+      "score": 0.01884680986404419,
+      "score_components": {
+        "rgb_error": 0.0031302068382501602,
+        "luminance_error": 0.042034685611724854,
+        "texture_error": 0.03804690018296242,
+        "geometry_penalty": 0.0005842072934913617,
+        "directional_bias": 0.007302591168642021,
+        "transition_density": 0.08809018036072144,
+        "fine_edge_density": 0.2857406496062992
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 1,
+      "score": 0.01920117624104023,
+      "score_components": {
+        "rgb_error": 0.003132456913590431,
+        "luminance_error": 0.0421297512948513,
+        "texture_error": 0.03876359760761261,
+        "geometry_penalty": 0.0007483296213808431,
+        "directional_bias": 0.009354120267260539,
+        "transition_density": 0.08548096192384769,
+        "fine_edge_density": 0.2794045275590551
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 0,
+      "score": 0.02005586214363575,
+      "score_components": {
+        "rgb_error": 0.003134816186502576,
+        "luminance_error": 0.042158499360084534,
+        "texture_error": 0.03886925429105759,
+        "geometry_penalty": 0.0015713034256996626,
+        "directional_bias": 0.01964129282124578,
+        "transition_density": 0.08692985971943888,
+        "fine_edge_density": 0.2830954724409449
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 62.0,
+    "dark_floor": 58.0,
+    "dark_weight": 0.16,
+    "detail": 0.19,
+    "blur": 0.65,
+    "blob_scale": 0.6,
+    "blob_weight": 0.38,
+    "blob_aspect": 0.78
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "jungle": 200000
+  },
+  "dark_palette_weight": 0.1599999964237213,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        55,
+        61,
+        53
+      ],
+      "weight": 0.08866909146308899
+    },
+    {
+      "rgb": [
+        48,
+        50,
+        46
+      ],
+      "weight": 0.07133091241121292
+    },
+    {
+      "rgb": [
+        87,
+        113,
+        69
+      ],
+      "weight": 0.4507140517234802
+    },
+    {
+      "rgb": [
+        160,
+        157,
+        115
+      ],
+      "weight": 0.23350706696510315
+    },
+    {
+      "rgb": [
+        183,
+        168,
+        141
+      ],
+      "weight": 0.15577885508537292
+    }
+  ]
+}

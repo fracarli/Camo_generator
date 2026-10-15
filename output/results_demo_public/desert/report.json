@@ -1,0 +1,239 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg [automatic]",
+    "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg [automatic]",
+    "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg [automatic]",
+    "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg [automatic]",
+    "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg [automatic]",
+    "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg [automatic]",
+    "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg [automatic]",
+    "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg [automatic]",
+    "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg [automatic]",
+    "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg [automatic]": 0.7925918311403509,
+    "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg [automatic]": 0.5632781982421875,
+    "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg [automatic]": 0.7161267412023461,
+    "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg [automatic]": 0.7910843566715543,
+    "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg [automatic]": 0.9996735245601173,
+    "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg [automatic]": 0.8806703629032258,
+    "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg [automatic]": 0.7937133431085044,
+    "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg [automatic]": 0.5610489322100314,
+    "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg [automatic]": 0.999908357771261,
+    "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg [automatic]": 0.6833646444281525
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/desert/05_Desert_Landscape_22482862827_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/desert/06_Desert_Landscape_24340754893_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/desert/08_Desert_Landscape_53611048151_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/desert/09_Desert_Landscape_54595335232_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/desert/10_Desert_Landscape_54596765115_.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 8,
+  "best_score": 0.014958301559090614,
+  "score_components": {
+    "rgb_error": 0.0026456601917743683,
+    "luminance_error": 0.039894189685583115,
+    "texture_error": 0.021847203373908997,
+    "geometry_penalty": 0.0012111891820230701,
+    "directional_bias": 0.015139864775288376,
+    "transition_density": 0.07558116232464929,
+    "fine_edge_density": 0.2392347440944882
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 6,
+      "score": 0.014958301559090614,
+      "score_components": {
+        "rgb_error": 0.0026456601917743683,
+        "luminance_error": 0.039894189685583115,
+        "texture_error": 0.021847203373908997,
+        "geometry_penalty": 0.0012111891820230701,
+        "directional_bias": 0.015139864775288376,
+        "transition_density": 0.07558116232464929,
+        "fine_edge_density": 0.2392347440944882
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 4,
+      "score": 0.015423265285789967,
+      "score_components": {
+        "rgb_error": 0.002647582208737731,
+        "luminance_error": 0.04043018817901611,
+        "texture_error": 0.023361453786492348,
+        "geometry_penalty": 0.0012152913026542754,
+        "directional_bias": 0.015191141283178443,
+        "transition_density": 0.07202805611222446,
+        "fine_edge_density": 0.22766978346456693
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 3,
+      "score": 0.015596712939441204,
+      "score_components": {
+        "rgb_error": 0.0026506599970161915,
+        "luminance_error": 0.040680937469005585,
+        "texture_error": 0.024242430925369263,
+        "geometry_penalty": 0.001130630630630632,
+        "directional_bias": 0.0141328828828829,
+        "transition_density": 0.07118236472945892,
+        "fine_edge_density": 0.22274852362204725
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 5,
+      "score": 0.01561063900589943,
+      "score_components": {
+        "rgb_error": 0.0026545196305960417,
+        "luminance_error": 0.04042443633079529,
+        "texture_error": 0.023729560896754265,
+        "geometry_penalty": 0.0013118857053471282,
+        "directional_bias": 0.0163985713168391,
+        "transition_density": 0.07686773547094189,
+        "fine_edge_density": 0.23557455708661418
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 7,
+      "score": 0.015628742054104805,
+      "score_components": {
+        "rgb_error": 0.0026370040141046047,
+        "luminance_error": 0.04026668891310692,
+        "texture_error": 0.022564301267266273,
+        "geometry_penalty": 0.0016468039003250249,
+        "directional_bias": 0.02058504875406281,
+        "transition_density": 0.0758376753507014,
+        "fine_edge_density": 0.23477485236220472
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 0,
+      "score": 0.017165031284093857,
+      "score_components": {
+        "rgb_error": 0.0026524728164076805,
+        "luminance_error": 0.04054618626832962,
+        "texture_error": 0.024307111278176308,
+        "geometry_penalty": 0.0027067749234659976,
+        "directional_bias": 0.03383468654332497,
+        "transition_density": 0.07528056112224449,
+        "fine_edge_density": 0.23345226377952755
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 2,
+      "score": 0.018492575734853745,
+      "score_components": {
+        "rgb_error": 0.0026767852250486612,
+        "luminance_error": 0.04134118929505348,
+        "texture_error": 0.026545822620391846,
+        "geometry_penalty": 0.003341772151898734,
+        "directional_bias": 0.04177215189873417,
+        "transition_density": 0.06332665330661323,
+        "fine_edge_density": 0.20174089566929135
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 1,
+      "score": 0.018986908718943596,
+      "score_components": {
+        "rgb_error": 0.0026739102322608232,
+        "luminance_error": 0.041066188365221024,
+        "texture_error": 0.025885269045829773,
+        "geometry_penalty": 0.004045574451366675,
+        "directional_bias": 0.050569680642083434,
+        "transition_density": 0.07141082164328658,
+        "fine_edge_density": 0.2180425688976378
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 55.0,
+    "dark_floor": 75.0,
+    "dark_weight": 0.08,
+    "detail": 0.14,
+    "blur": 0.9,
+    "blob_scale": 1.45,
+    "blob_weight": 0.32,
+    "blob_aspect": 1.22
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "desert": 200000
+  },
+  "dark_palette_weight": 0.07999999821186066,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        96,
+        77,
+        59
+      ],
+      "weight": 0.24979442358016968
+    },
+    {
+      "rgb": [
+        179,
+        154,
+        124
+      ],
+      "weight": 0.24560467898845673
+    },
+    {
+      "rgb": [
+        149,
+        124,
+        94
+      ],
+      "weight": 0.2410729080438614
+    },
+    {
+      "rgb": [
+        62,
+        60,
+        56
+      ],
+      "weight": 0.07999999821186066
+    },
+    {
+      "rgb": [
+        180,
+        162,
+        133
+      ],
+      "weight": 0.18352800607681274
+    }
+  ]
+}

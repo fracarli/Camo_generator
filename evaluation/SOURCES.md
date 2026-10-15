@@ -1,13 +1,10 @@
 # Evaluation background sources
 
-This starter corpus contains up to ten searched and resized Wikimedia Commons images per environment.
-The downloader excludes obvious artwork terms, but source pages and licenses should still be reviewed before redistribution.
+This starter corpus contains verified Wikimedia Commons images with source pages and reported licenses. Review each source page before redistribution.
 
-- `forest/01_-Man_in_a_Forest_Landscape-_MET_DT223780.jpg`: [-Man in a Forest Landscape- MET DT223780.jpg](https://commons.wikimedia.org/wiki/File:-Man_in_a_Forest_Landscape-_MET_DT223780.jpg) — cc0
 - `forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg`: [Beech Forest (AU), Great Otway National Park, Beauchamp Falls -- 2019 -- 1271.jpg](https://commons.wikimedia.org/wiki/File:Beech_Forest_(AU),_Great_Otway_National_Park,_Beauchamp_Falls_--_2019_--_1271.jpg) — cc by-sa 4.0
 - `forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20130729-FS-Deschutes-0.jpg`: [CFLRP (Collaborative Forest Landscape Restoration Program) (20130729-FS-Deschutes-001).jpg](https://commons.wikimedia.org/wiki/File:CFLRP_(Collaborative_Forest_Landscape_Restoration_Program)_(20130729-FS-Deschutes-001).jpg) — public domain
 - `forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg`: [CFLRP (Collaborative Forest Landscape Restoration Program) (20190422-FS-Cibola-001).jpg](https://commons.wikimedia.org/wiki/File:CFLRP_(Collaborative_Forest_Landscape_Restoration_Program)_(20190422-FS-Cibola-001).jpg) — public domain
-- `forest/05_Checkerboard_forest_in_Idaho.jpg`: [Checkerboard forest in Idaho.jpg](https://commons.wikimedia.org/wiki/File:Checkerboard_forest_in_Idaho.jpg) — public domain
 - `forest/06_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg`: [Cloud Forest, Gardens by the Bay, Singapore.jpg](https://commons.wikimedia.org/wiki/File:Cloud_Forest,_Gardens_by_the_Bay,_Singapore.jpg) — cc by-sa 4.0
 - `snow/01_A_snowy_landscape-Southern_Ontario.jpeg`: [A snowy landscape-Southern Ontario.jpeg](https://commons.wikimedia.org/wiki/File:A_snowy_landscape-Southern_Ontario.jpeg) — cc by-sa 4.0
 - `snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg`: [A snowy landscape - geograph.org.uk - 5626339.jpg](https://commons.wikimedia.org/wiki/File:A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg) — cc by-sa 2.0
@@ -17,9 +14,7 @@ The downloader excludes obvious artwork terms, but source pages and licenses sho
 - `snow/06_Anchorage_snowy_landscape_27068445737_.jpg`: [Anchorage snowy landscape (27068445737).jpg](https://commons.wikimedia.org/wiki/File:Anchorage_snowy_landscape_(27068445737).jpg) — cc by 2.0
 - `snow/07_Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg`: [Austevoll Havforskningsinstitutt and snowy landscape i Austevoll.jpg](https://commons.wikimedia.org/wiki/File:Austevoll_Havforskningsinstitutt_and_snowy_landscape_i_Austevoll.jpg) — cc by-sa 4.0
 - `forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg`: [CFLRP (Collaborative Forest Landscape Restoration Program) (20190422-FS-Cibola-001).jpg](https://commons.wikimedia.org/wiki/File:CFLRP_(Collaborative_Forest_Landscape_Restoration_Program)_(20190422-FS-Cibola-001).jpg) — public domain
-- `forest/04_Checkerboard_forest_in_Idaho.jpg`: [Checkerboard forest in Idaho.jpg](https://commons.wikimedia.org/wiki/File:Checkerboard_forest_in_Idaho.jpg) — public domain
 - `forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg`: [Cloud Forest, Gardens by the Bay, Singapore.jpg](https://commons.wikimedia.org/wiki/File:Cloud_Forest,_Gardens_by_the_Bay,_Singapore.jpg) — cc by-sa 4.0
-- `forest/06_Forest_landscape_Koster_Koster_Everhardus.jpg`: [Forest landscape Koster Koster Everhardus.jpg](https://commons.wikimedia.org/wiki/File:Forest_landscape_Koster_Koster_Everhardus.jpg) — public domain
 - `desert/01_A_Desert_Landscape_53437341027_.jpg`: [A Desert Landscape (53437341027).jpg](https://commons.wikimedia.org/wiki/File:A_Desert_Landscape_(53437341027).jpg) — public domain
 - `desert/02_Atacama_Desert_Landscape_-_panoramio.jpg`: [Atacama Desert Landscape - panoramio.jpg](https://commons.wikimedia.org/wiki/File:Atacama_Desert_Landscape_-_panoramio.jpg) — cc by-sa 3.0
 - `desert/03_Backcountry_Desert_Landscape_54268531959_.jpg`: [Backcountry Desert Landscape (54268531959).jpg](https://commons.wikimedia.org/wiki/File:Backcountry_Desert_Landscape_(54268531959).jpg) — public domain

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import unittest
+import json
+from pathlib import Path
 
 import numpy as np
 
@@ -36,6 +38,25 @@ class GeneratorSmokeTests(unittest.TestCase):
         self.assertEqual(len(ENVIRONMENT_GROUPS), 9)
         self.assertIn("forest", ENVIRONMENT_GROUPS)
         self.assertIn("snow", ENVIRONMENT_GROUPS)
+
+    def test_json_configs_are_well_formed(self) -> None:
+        config_dir = Path(__file__).resolve().parents[1] / "configs"
+        configs = sorted(config_dir.glob("*.json"))
+        self.assertGreaterEqual(len(configs), 4)
+        for path in configs:
+            with self.subTest(config=path.name):
+                document = json.loads(path.read_text(encoding="utf-8"))
+                self.assertIsInstance(document, dict)
+                self.assertIn("description", document)
+
+    def test_weighted_visibility_score_is_normalized(self) -> None:
+        from optimize_patterns import weighted_visibility_score
+
+        metrics = {"rgb_contrast": 0.2, "luminance_contrast": 0.4, "visibility_score": 0.9}
+        self.assertAlmostEqual(
+            weighted_visibility_score(metrics, {"rgb_contrast": 1, "luminance_contrast": 1}),
+            0.3,
+        )
 
 
 if __name__ == "__main__":

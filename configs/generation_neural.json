@@ -1,0 +1,16 @@
+{
+  "description": "Generation with pretrained semantic input masks.",
+  "script": "camo.py",
+  "args": {
+    "input": "evaluation/backgrounds",
+    "output": "output/results_configured_neural",
+    "mode": "standard",
+    "segmentation": "semantic",
+    "device": "auto",
+    "colors": 5,
+    "candidates": 64,
+    "size": 500,
+    "save-segmentation-masks": true,
+    "summary-groups": "universal,desert,mountain,snow,jungle"
+  }
+}

@@ -1,0 +1,2 @@
+# Optional web demo dependencies.
+streamlit>=1.35

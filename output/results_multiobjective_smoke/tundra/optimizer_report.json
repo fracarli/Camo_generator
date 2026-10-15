@@ -1,0 +1,79 @@
+{
+  "group": "tundra",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "best_candidate": "candidate_004",
+  "optimized_score": 0.03154576873523183,
+  "baseline_score": 0.03978726545348763,
+  "improvement": 0.008241496718255803,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 0.9519273915083466,
+    "blob_weight": 0.36289573799305336,
+    "blob_aspect": 1.3374724551571997,
+    "detail_weight": 0.13161727655008662,
+    "blur_radius": 1.0574525818303466,
+    "seed": 47,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        93,
+        72,
+        42
+      ],
+      "weight": 0.3743608593940735
+    },
+    {
+      "rgb": [
+        66,
+        80,
+        57
+      ],
+      "weight": 0.08674058318138123
+    },
+    {
+      "rgb": [
+        144,
+        133,
+        108
+      ],
+      "weight": 0.12815140187740326
+    },
+    {
+      "rgb": [
+        139,
+        122,
+        84
+      ],
+      "weight": 0.2591765224933624
+    },
+    {
+      "rgb": [
+        169,
+        153,
+        132
+      ],
+      "weight": 0.1515706330537796
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_004",
+      "best_running_score": 0.03154576873523183,
+      "active_candidates": [
+        "candidate_004",
+        "candidate_000",
+        "current_best"
+      ]
+    }
+  ]
+}

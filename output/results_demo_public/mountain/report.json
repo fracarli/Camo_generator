@@ -1,0 +1,239 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg [automatic]",
+    "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg [automatic]",
+    "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg [automatic]",
+    "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg [automatic]",
+    "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg [automatic]",
+    "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg [automatic]",
+    "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg [automatic]",
+    "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]",
+    "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg [automatic]",
+    "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg [automatic]": 0.7777332294721407,
+    "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg [automatic]": 0.7844050480769231,
+    "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg [automatic]": 0.5875276548672567,
+    "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg [automatic]": 1.0,
+    "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg [automatic]": 0.5808461507161459,
+    "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg [automatic]": 0.73209228515625,
+    "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg [automatic]": 0.5328228705752213,
+    "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": 0.5180079389158576,
+    "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg [automatic]": 0.6003253299120235,
+    "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg [automatic]": 0.7792279411764705
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/mountain/03_Castle_Mountain.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/mountain/06_Front_view_of_a_stream_with_a_tree_as_vanishing_point_mountains_and_mist_in_the_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/mountain/08_Iceland_s_Mid-Atlantic_Ridge_during_snow.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/mountain/09_Ingushetia_Russia_Armkhi_Ingush_tower.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/mountain/10_Landscape_Arnisee-region.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 8,
+  "best_score": 0.014987802132964134,
+  "score_components": {
+    "rgb_error": 0.0031914024148136377,
+    "luminance_error": 0.04627281427383423,
+    "texture_error": 0.0201261043548584,
+    "geometry_penalty": 0.00023273035015338895,
+    "directional_bias": 0.002909129376917362,
+    "transition_density": 0.07577555110220441,
+    "fine_edge_density": 0.2375123031496063
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 4,
+      "score": 0.014987802132964134,
+      "score_components": {
+        "rgb_error": 0.0031914024148136377,
+        "luminance_error": 0.04627281427383423,
+        "texture_error": 0.0201261043548584,
+        "geometry_penalty": 0.00023273035015338895,
+        "directional_bias": 0.002909129376917362,
+        "transition_density": 0.07577555110220441,
+        "fine_edge_density": 0.2375123031496063
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 2,
+      "score": 0.015621395781636238,
+      "score_components": {
+        "rgb_error": 0.003156589809805155,
+        "luminance_error": 0.04591556265950203,
+        "texture_error": 0.020116746425628662,
+        "geometry_penalty": 0.0009502806736166781,
+        "directional_bias": 0.011878508420208477,
+        "transition_density": 0.07996793587174349,
+        "fine_edge_density": 0.24941560039370078
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 6,
+      "score": 0.01592068560421467,
+      "score_components": {
+        "rgb_error": 0.003169027389958501,
+        "luminance_error": 0.04612881317734718,
+        "texture_error": 0.01974794827401638,
+        "geometry_penalty": 0.0012934774035807243,
+        "directional_bias": 0.016168467544759053,
+        "transition_density": 0.07622645290581162,
+        "fine_edge_density": 0.24203371062992127
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 3,
+      "score": 0.016273152083158493,
+      "score_components": {
+        "rgb_error": 0.003166480455547571,
+        "luminance_error": 0.04656706005334854,
+        "texture_error": 0.020775843411684036,
+        "geometry_penalty": 0.0013216398123597818,
+        "directional_bias": 0.01652049765449727,
+        "transition_density": 0.06877955911823647,
+        "fine_edge_density": 0.22391732283464566
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 7,
+      "score": 0.01627352088689804,
+      "score_components": {
+        "rgb_error": 0.003176964819431305,
+        "luminance_error": 0.04620931297540665,
+        "texture_error": 0.019601896405220032,
+        "geometry_penalty": 0.0016629068643248444,
+        "directional_bias": 0.020786335804060554,
+        "transition_density": 0.07462124248496993,
+        "fine_edge_density": 0.2405880905511811
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 5,
+      "score": 0.0166616253554821,
+      "score_components": {
+        "rgb_error": 0.0031847304198890924,
+        "luminance_error": 0.04633881151676178,
+        "texture_error": 0.019931593909859657,
+        "geometry_penalty": 0.0019446917577229242,
+        "directional_bias": 0.024308646971536552,
+        "transition_density": 0.07427855711422846,
+        "fine_edge_density": 0.23523622047244094
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 0,
+      "score": 0.01882069557905197,
+      "score_components": {
+        "rgb_error": 0.0031894959975034,
+        "luminance_error": 0.04656706377863884,
+        "texture_error": 0.021142393350601196,
+        "geometry_penalty": 0.0037697015652927504,
+        "directional_bias": 0.04712126956615938,
+        "transition_density": 0.074,
+        "fine_edge_density": 0.22942298228346455
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 1,
+      "score": 0.020183349028229713,
+      "score_components": {
+        "rgb_error": 0.0031711366027593613,
+        "luminance_error": 0.04615781456232071,
+        "texture_error": 0.02102566324174404,
+        "geometry_penalty": 0.005243214529633472,
+        "directional_bias": 0.0655401816204184,
+        "transition_density": 0.07922444889779559,
+        "fine_edge_density": 0.24584768700787402
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 60.0,
+    "dark_floor": 68.0,
+    "dark_weight": 0.14,
+    "detail": 0.15,
+    "blur": 0.8,
+    "blob_scale": 1.12,
+    "blob_weight": 0.34,
+    "blob_aspect": 1.05
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "mountain": 200000
+  },
+  "dark_palette_weight": 0.14000000059604645,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        96,
+        97,
+        57
+      ],
+      "weight": 0.3097335696220398
+    },
+    {
+      "rgb": [
+        58,
+        58,
+        53
+      ],
+      "weight": 0.14000000059604645
+    },
+    {
+      "rgb": [
+        147,
+        137,
+        119
+      ],
+      "weight": 0.21339283883571625
+    },
+    {
+      "rgb": [
+        173,
+        167,
+        158
+      ],
+      "weight": 0.18844930827617645
+    },
+    {
+      "rgb": [
+        180,
+        165,
+        140
+      ],
+      "weight": 0.14842428267002106
+    }
+  ]
+}

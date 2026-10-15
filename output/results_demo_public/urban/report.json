@@ -1,0 +1,239 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg [automatic]",
+    "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg [automatic]",
+    "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg [automatic]",
+    "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg [automatic]",
+    "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg [automatic]",
+    "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg [automatic]",
+    "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg [automatic]",
+    "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg [automatic]",
+    "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg [automatic]",
+    "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg [automatic]": 0.9566169507575758,
+    "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg [automatic]": 0.8994627474340176,
+    "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg [automatic]": 0.9826103344298246,
+    "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg [automatic]": 0.7297024197048612,
+    "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg [automatic]": 0.9941298935439561,
+    "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg [automatic]": 0.9959955481843575,
+    "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg [automatic]": 0.7567569093208093,
+    "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg [automatic]": 0.6272865853658537,
+    "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg [automatic]": 0.9949073476239669,
+    "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg [automatic]": 0.8317491319444444
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/urban/02_At_New_York_City_2023_045_-_10th_Avenue_and_14th_Street_Manhattan.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/urban/06_Central_Park_New_York_City_New_York_23_cropped.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/urban/08_Ch_teau_Frontenac_after_a_freezing_rain_day_in_Quebec_city.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/urban/10_Ch_teau_Frontenac_in_Quebec_city_Canada_colorfull.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 8,
+  "best_score": 0.020091934129595757,
+  "score_components": {
+    "rgb_error": 0.0031083517242223024,
+    "luminance_error": 0.046116940677165985,
+    "texture_error": 0.025670742616057396,
+    "geometry_penalty": 0.004075730722705156,
+    "directional_bias": 0.05094663403381444,
+    "transition_density": 0.07123647294589178,
+    "fine_edge_density": 0.22859251968503938
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 6,
+      "score": 0.020091934129595757,
+      "score_components": {
+        "rgb_error": 0.0031083517242223024,
+        "luminance_error": 0.046116940677165985,
+        "texture_error": 0.025670742616057396,
+        "geometry_penalty": 0.004075730722705156,
+        "directional_bias": 0.05094663403381444,
+        "transition_density": 0.07123647294589178,
+        "fine_edge_density": 0.22859251968503938
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 5,
+      "score": 0.02038559690117836,
+      "score_components": {
+        "rgb_error": 0.0031088204123079777,
+        "luminance_error": 0.04628143832087517,
+        "texture_error": 0.02702031098306179,
+        "geometry_penalty": 0.00401565424536328,
+        "directional_bias": 0.050195678067041,
+        "transition_density": 0.07066533066132263,
+        "fine_edge_density": 0.22231791338582677
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 3,
+      "score": 0.021075237542390823,
+      "score_components": {
+        "rgb_error": 0.0030942109879106283,
+        "luminance_error": 0.04579368978738785,
+        "texture_error": 0.024586131796240807,
+        "geometry_penalty": 0.005384595293441639,
+        "directional_bias": 0.06730744116802048,
+        "transition_density": 0.07672745490981964,
+        "fine_edge_density": 0.2418799212598425
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 0,
+      "score": 0.02129136584699154,
+      "score_components": {
+        "rgb_error": 0.0031021172180771828,
+        "luminance_error": 0.04569093883037567,
+        "texture_error": 0.023698514327406883,
+        "geometry_penalty": 0.005828295042321646,
+        "directional_bias": 0.07285368802902058,
+        "transition_density": 0.07955110220440881,
+        "fine_edge_density": 0.24855437992125984
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 7,
+      "score": 0.021858276799321175,
+      "score_components": {
+        "rgb_error": 0.0031182735692709684,
+        "luminance_error": 0.04629369080066681,
+        "texture_error": 0.026883751153945923,
+        "geometry_penalty": 0.005514177141186782,
+        "directional_bias": 0.06892721426483478,
+        "transition_density": 0.06855711422845692,
+        "fine_edge_density": 0.21964197834645668
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 4,
+      "score": 0.022545987740159035,
+      "score_components": {
+        "rgb_error": 0.003121128771454096,
+        "luminance_error": 0.04642494022846222,
+        "texture_error": 0.026523077860474586,
+        "geometry_penalty": 0.00626339604667778,
+        "directional_bias": 0.07829245058347224,
+        "transition_density": 0.06731863727454909,
+        "fine_edge_density": 0.21693528543307086
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 1,
+      "score": 0.022835617884993553,
+      "score_components": {
+        "rgb_error": 0.003125582356005907,
+        "luminance_error": 0.046617187559604645,
+        "texture_error": 0.029067091643810272,
+        "geometry_penalty": 0.0059056298691753705,
+        "directional_bias": 0.07382037336469213,
+        "transition_density": 0.06816633266533066,
+        "fine_edge_density": 0.2133673720472441
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 2,
+      "score": 0.02386712096631527,
+      "score_components": {
+        "rgb_error": 0.003114882856607437,
+        "luminance_error": 0.04624418914318085,
+        "texture_error": 0.026949964463710785,
+        "geometry_penalty": 0.007517734505270894,
+        "directional_bias": 0.09397168131588617,
+        "transition_density": 0.07090781563126253,
+        "fine_edge_density": 0.22185654527559054
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 50.0,
+    "dark_floor": 72.0,
+    "dark_weight": 0.1,
+    "detail": 0.16,
+    "blur": 0.7,
+    "blob_scale": 0.88,
+    "blob_weight": 0.36,
+    "blob_aspect": 1.3
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "urban": 200000
+  },
+  "dark_palette_weight": 0.10000000149011612,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        88,
+        73,
+        60
+      ],
+      "weight": 0.25985825061798096
+    },
+    {
+      "rgb": [
+        178,
+        162,
+        136
+      ],
+      "weight": 0.2427581250667572
+    },
+    {
+      "rgb": [
+        59,
+        57,
+        54
+      ],
+      "weight": 0.10000000149011612
+    },
+    {
+      "rgb": [
+        146,
+        125,
+        101
+      ],
+      "weight": 0.21737684309482574
+    },
+    {
+      "rgb": [
+        172,
+        158,
+        139
+      ],
+      "weight": 0.18000680208206177
+    }
+  ]
+}

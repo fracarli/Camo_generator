@@ -1,0 +1,20 @@
+{
+  "description": "Held-out multi-objective optimization configuration.",
+  "script": "optimize_patterns.py",
+  "args": {
+    "input": "evaluation/backgrounds",
+    "backgrounds": "evaluation/backgrounds",
+    "pattern-root": "output",
+    "output": "output/results_configured_optimized",
+    "groups": "universal,forest,taiga,tundra,urban,desert,mountain,snow,jungle",
+    "background-groups": "forest,desert,mountain,urban,jungle,snow,taiga,tundra",
+    "background-start": 0,
+    "background-limit": 5,
+    "candidates": 24,
+    "beam-size": 8,
+    "colors": 5,
+    "segmentation": "semantic",
+    "device": "auto",
+    "objective-config": "configs/objective_balanced.json"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "group": "universal",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+    "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+    "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+    "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+    "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+    "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+    "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "best_candidate": "current_best",
+  "optimized_score": 0.1213171533741115,
+  "baseline_score": 0.1213171533741115,
+  "improvement": 0.0,
+  "best_configuration": {
+    "source": "current_best"
+  },
+  "best_palette": null,
+  "history": [
+    {
+      "background": "evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+      "background_group": "forest",
+      "best_after_background": "current_best",
+      "best_running_score": 0.05308112423866987,
+      "active_candidates": [
+        "current_best",
+        "candidate_004"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "current_best",
+      "best_running_score": 0.10340435208054259,
+      "active_candidates": [
+        "current_best",
+        "candidate_004"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+      "background_group": "mountain",
+      "best_after_background": "current_best",
+      "best_running_score": 0.12583680346763382,
+      "active_candidates": [
+        "current_best",
+        "candidate_004"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/urban/01_06_2023_King_Charles_Street_London_IMG_7517.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_004",
+      "best_running_score": 0.1515183405065909,
+      "active_candidates": [
+        "candidate_004",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+      "background_group": "jungle",
+      "best_after_background": "current_best",
+      "best_running_score": 0.1257629444207996,
+      "active_candidates": [
+        "current_best",
+        "candidate_004"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/snow/01_A_snowy_landscape-Southern_Ontario.jpeg",
+      "background_group": "snow",
+      "best_after_background": "candidate_004",
+      "best_running_score": 0.1433959429090222,
+      "active_candidates": [
+        "candidate_004",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "candidate_004",
+      "best_running_score": 0.1342790631823508,
+      "active_candidates": [
+        "candidate_004",
+        "current_best"
+      ]
+    },
+    {
+      "background": "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg",
+      "background_group": "tundra",
+      "best_after_background": "current_best",
+      "best_running_score": 0.1213171533741115,
+      "active_candidates": [
+        "current_best",
+        "candidate_004"
+      ]
+    }
+  ]
+}

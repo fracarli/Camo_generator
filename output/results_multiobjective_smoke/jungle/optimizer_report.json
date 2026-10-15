@@ -1,0 +1,29 @@
+{
+  "group": "jungle",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "best_candidate": "current_best",
+  "optimized_score": 0.06242174237500876,
+  "baseline_score": 0.06242174237500876,
+  "improvement": 0.0,
+  "best_configuration": {
+    "source": "current_best"
+  },
+  "best_palette": null,
+  "history": [
+    {
+      "background": "evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+      "background_group": "jungle",
+      "best_after_background": "current_best",
+      "best_running_score": 0.06242174237500876,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    }
+  ]
+}

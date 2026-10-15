@@ -1,0 +1,79 @@
+{
+  "group": "mountain",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "best_candidate": "candidate_001",
+  "optimized_score": 0.2845345108397305,
+  "baseline_score": 0.36675999737344683,
+  "improvement": 0.08222548653371631,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 1.0007752275045485,
+    "blob_weight": 0.42709448023760466,
+    "blob_aspect": 0.9747602650747257,
+    "detail_weight": 0.1366073309336948,
+    "blur_radius": 0.9473697419573475,
+    "seed": 44,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        93,
+        101,
+        50
+      ],
+      "weight": 0.3370833098888397
+    },
+    {
+      "rgb": [
+        70,
+        68,
+        61
+      ],
+      "weight": 0.07744594663381577
+    },
+    {
+      "rgb": [
+        158,
+        135,
+        111
+      ],
+      "weight": 0.18317170441150665
+    },
+    {
+      "rgb": [
+        160,
+        160,
+        139
+      ],
+      "weight": 0.23977185785770416
+    },
+    {
+      "rgb": [
+        179,
+        163,
+        133
+      ],
+      "weight": 0.1625271737575531
+    }
+  ],
+  "history": [
+    {
+      "background": "evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+      "background_group": "mountain",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.2845345108397305,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_002",
+        "current_best"
+      ]
+    }
+  ]
+}

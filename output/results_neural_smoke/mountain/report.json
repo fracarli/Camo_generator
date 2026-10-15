@@ -1,0 +1,174 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": 0.5917022599480969
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": "semantic"
+  },
+  "semantic_labels": {
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": [
+      "earth",
+      "field",
+      "grass",
+      "hill",
+      "mountain",
+      "path",
+      "plant",
+      "sky",
+      "tree"
+    ]
+  },
+  "semantic_excluded_labels": {
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": [
+      "sky"
+    ]
+  },
+  "semantic_excluded_fraction": {
+    "evaluation/backgrounds/forest/09_Forest_landscape_with_mountain_in_Lloret_de_Mar_2012.jpg [semantic]": 0.35171793901384085
+  },
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 4,
+  "best_score": 0.014246584847569466,
+  "score_components": {
+    "rgb_error": 0.002800414338707924,
+    "luminance_error": 0.04364899918437004,
+    "texture_error": 0.019840238615870476,
+    "geometry_penalty": 0.00022790024981373611,
+    "directional_bias": 0.0028487531226717012,
+    "transition_density": 0.045725450901803605,
+    "fine_edge_density": 0.16144808070866143
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 3,
+      "score": 0.014246584847569466,
+      "score_components": {
+        "rgb_error": 0.002800414338707924,
+        "luminance_error": 0.04364899918437004,
+        "texture_error": 0.019840238615870476,
+        "geometry_penalty": 0.00022790024981373611,
+        "directional_bias": 0.0028487531226717012,
+        "transition_density": 0.045725450901803605,
+        "fine_edge_density": 0.16144808070866143
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 0,
+      "score": 0.015269579365849495,
+      "score_components": {
+        "rgb_error": 0.002792664337903261,
+        "luminance_error": 0.04359950125217438,
+        "texture_error": 0.019069520756602287,
+        "geometry_penalty": 0.001448652224243428,
+        "directional_bias": 0.01810815280304285,
+        "transition_density": 0.04847294589178357,
+        "fine_edge_density": 0.1654158464566929
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 2,
+      "score": 0.015518302097916603,
+      "score_components": {
+        "rgb_error": 0.0027858675457537174,
+        "luminance_error": 0.04339125007390976,
+        "texture_error": 0.0182179007679224,
+        "geometry_penalty": 0.00194264642422816,
+        "directional_bias": 0.024283080302852,
+        "transition_density": 0.05108416833667335,
+        "fine_edge_density": 0.17455093503937008
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 1,
+      "score": 0.01697560027241707,
+      "score_components": {
+        "rgb_error": 0.0027938205748796463,
+        "luminance_error": 0.043778497725725174,
+        "texture_error": 0.019930902868509293,
+        "geometry_penalty": 0.0029151431093178627,
+        "directional_bias": 0.03643928886647328,
+        "transition_density": 0.0476813627254509,
+        "fine_edge_density": 0.16292445866141733
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "semantic",
+  "segmentation_model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 60.0,
+    "dark_floor": 68.0,
+    "dark_weight": 0.14,
+    "detail": 0.15,
+    "blur": 0.8,
+    "blob_scale": 1.12,
+    "blob_weight": 0.34,
+    "blob_aspect": 1.05
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "other": 20000
+  },
+  "dark_palette_weight": 0.14000000059604645,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        49,
+        52,
+        48
+      ],
+      "weight": 0.0761265829205513
+    },
+    {
+      "rgb": [
+        56,
+        59,
+        53
+      ],
+      "weight": 0.06387341767549515
+    },
+    {
+      "rgb": [
+        68,
+        77,
+        49
+      ],
+      "weight": 0.4903509020805359
+    },
+    {
+      "rgb": [
+        101,
+        108,
+        76
+      ],
+      "weight": 0.2289397418498993
+    },
+    {
+      "rgb": [
+        171,
+        157,
+        132
+      ],
+      "weight": 0.14070938527584076
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "description": "Weights for the multi-objective visibility proxy.",
+  "rgb_contrast": 0.45,
+  "luminance_contrast": 0.25,
+  "edge_contrast": 0.20,
+  "visibility_score": 0.10
+}

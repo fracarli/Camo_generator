@@ -1,0 +1,239 @@
+{
+  "input_images": [
+    "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg [automatic]",
+    "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg [automatic]",
+    "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg [automatic]",
+    "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg [automatic]",
+    "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg [automatic]",
+    "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg [automatic]",
+    "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg [automatic]",
+    "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg [automatic]",
+    "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg [automatic]",
+    "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg [automatic]"
+  ],
+  "valid_pixel_fraction": {
+    "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg [automatic]": 0.8840974506578947,
+    "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg [automatic]": 0.7035087518328446,
+    "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg [automatic]": 0.651214599609375,
+    "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg [automatic]": 0.8095731763196481,
+    "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg [automatic]": 0.8810025659824047,
+    "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg [automatic]": 0.9660007331378299,
+    "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg [automatic]": 0.9312744140625,
+    "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg [automatic]": 0.5661364103618421,
+    "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg [automatic]": 0.5081138724035609,
+    "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg [automatic]": 0.7514365554156172
+  },
+  "mask_sources": {
+    "evaluation/backgrounds/tundra/01_ATV_Tracks_on_the_Tundra_c4c30fb2-1dd8-b71c-077b-04f1ed994671_.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/tundra/04_Arctic_tundra_in_autumn_colors_near_lake_Lovozero_in_Murmansk_Oblast_Russia.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/tundra/08_Crooked_Creek_landscape_Ivvavik_National_Park_YT.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/tundra/09_Firth_River_landscape_at_Sluice_Rapids_Ivvavik_National_Park_YT.jpg [automatic]": "automatic",
+    "evaluation/backgrounds/tundra/10_Independence_Pass_alpine_tundra_2.jpg [automatic]": "automatic"
+  },
+  "semantic_labels": {},
+  "semantic_excluded_labels": {},
+  "semantic_excluded_fraction": {},
+  "size": [
+    500,
+    500
+  ],
+  "palette_colors": 5,
+  "candidates_evaluated": 8,
+  "best_score": 0.014923143200576305,
+  "score_components": {
+    "rgb_error": 0.00307949585840106,
+    "luminance_error": 0.038765810430049896,
+    "texture_error": 0.0223196130245924,
+    "geometry_penalty": 0.001048841790639221,
+    "directional_bias": 0.013110522382990262,
+    "transition_density": 0.05900200400801603,
+    "fine_edge_density": 0.1908833661417323
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "seed_offset": 4,
+      "score": 0.014923143200576305,
+      "score_components": {
+        "rgb_error": 0.00307949585840106,
+        "luminance_error": 0.038765810430049896,
+        "texture_error": 0.0223196130245924,
+        "geometry_penalty": 0.001048841790639221,
+        "directional_bias": 0.013110522382990262,
+        "transition_density": 0.05900200400801603,
+        "fine_edge_density": 0.1908833661417323
+      }
+    },
+    {
+      "rank": 2,
+      "seed_offset": 2,
+      "score": 0.01492602564394474,
+      "score_components": {
+        "rgb_error": 0.0030782613903284073,
+        "luminance_error": 0.038947559893131256,
+        "texture_error": 0.023098597303032875,
+        "geometry_penalty": 0.0008326705626058984,
+        "directional_bias": 0.01040838203257373,
+        "transition_density": 0.05795390781563126,
+        "fine_edge_density": 0.18393208661417323
+      }
+    },
+    {
+      "rank": 3,
+      "seed_offset": 6,
+      "score": 0.015689559280872345,
+      "score_components": {
+        "rgb_error": 0.0031006678473204374,
+        "luminance_error": 0.039211563766002655,
+        "texture_error": 0.024342214688658714,
+        "geometry_penalty": 0.0012390121389702765,
+        "directional_bias": 0.015487651737128457,
+        "transition_density": 0.052663326653306614,
+        "fine_edge_density": 0.17242864173228348
+      }
+    },
+    {
+      "rank": 4,
+      "seed_offset": 1,
+      "score": 0.016869476065039635,
+      "score_components": {
+        "rgb_error": 0.003087699180468917,
+        "luminance_error": 0.03887680917978287,
+        "texture_error": 0.02270386554300785,
+        "geometry_penalty": 0.0028788726829750136,
+        "directional_bias": 0.035985908537187666,
+        "transition_density": 0.06086773547094189,
+        "fine_edge_density": 0.18836122047244094
+      }
+    },
+    {
+      "rank": 5,
+      "seed_offset": 0,
+      "score": 0.017623957246541977,
+      "score_components": {
+        "rgb_error": 0.0030798553489148617,
+        "luminance_error": 0.03881455957889557,
+        "texture_error": 0.02219187282025814,
+        "geometry_penalty": 0.003771359550960959,
+        "directional_bias": 0.047141994387011985,
+        "transition_density": 0.05641082164328658,
+        "fine_edge_density": 0.18239419291338582
+      }
+    },
+    {
+      "rank": 6,
+      "seed_offset": 5,
+      "score": 0.01801188662648201,
+      "score_components": {
+        "rgb_error": 0.0030953395180404186,
+        "luminance_error": 0.03911906108260155,
+        "texture_error": 0.02339783124625683,
+        "geometry_penalty": 0.0038073060689855897,
+        "directional_bias": 0.04759132586231987,
+        "transition_density": 0.05507815631262525,
+        "fine_edge_density": 0.18091781496062992
+      }
+    },
+    {
+      "rank": 7,
+      "seed_offset": 7,
+      "score": 0.018520111218094826,
+      "score_components": {
+        "rgb_error": 0.003092089667916298,
+        "luminance_error": 0.03887881338596344,
+        "texture_error": 0.02245727926492691,
+        "geometry_penalty": 0.004586133774215577,
+        "directional_bias": 0.05732667217769471,
+        "transition_density": 0.05575751503006012,
+        "fine_edge_density": 0.18556225393700787
+      }
+    },
+    {
+      "rank": 8,
+      "seed_offset": 3,
+      "score": 0.020617039874196053,
+      "score_components": {
+        "rgb_error": 0.0030814490746706724,
+        "luminance_error": 0.03921724855899811,
+        "texture_error": 0.024198636412620544,
+        "geometry_penalty": 0.006209537069265573,
+        "directional_bias": 0.07761921336581966,
+        "transition_density": 0.05181763527054108,
+        "fine_edge_density": 0.16793799212598426
+      }
+    }
+  ],
+  "version": "phase_20_jungle_selectable_summary",
+  "segmentation": "none",
+  "segmentation_model": null,
+  "generation_mode": "standard",
+  "density": "standard",
+  "custom_settings": {
+    "max_color_share": null,
+    "green_share": null,
+    "dark_share": null
+  },
+  "style_profile": {
+    "max_chroma": 55.0,
+    "dark_floor": 78.0,
+    "dark_weight": 0.1,
+    "detail": 0.14,
+    "blur": 0.85,
+    "blob_scale": 1.2,
+    "blob_weight": 0.35,
+    "blob_aspect": 1.15
+  },
+  "weighting": "pixel_weighted",
+  "group_pixel_counts": {
+    "tundra": 200000
+  },
+  "dark_palette_weight": 0.10000000894069672,
+  "score_note": "The score combines color, luminance, multiscale texture, and basic shape diagnostics; it is not a measure of real-world invisibility.",
+  "palette": [
+    {
+      "rgb": [
+        90,
+        80,
+        52
+      ],
+      "weight": 0.39640066027641296
+    },
+    {
+      "rgb": [
+        70,
+        70,
+        57
+      ],
+      "weight": 0.10000000894069672
+    },
+    {
+      "rgb": [
+        135,
+        131,
+        108
+      ],
+      "weight": 0.17429329454898834
+    },
+    {
+      "rgb": [
+        120,
+        97,
+        68
+      ],
+      "weight": 0.1723548173904419
+    },
+    {
+      "rgb": [
+        176,
+        161,
+        137
+      ],
+      "weight": 0.15695127844810486
+    }
+  ]
+}
