@@ -12,6 +12,7 @@ create table if not exists public.human_test_responses (
 );
 
 alter table public.human_test_responses enable row level security;
+grant insert on table public.human_test_responses to anon;
 create policy "allow anonymous test inserts"
   on public.human_test_responses for insert
   to anon with check (detected in ('yes', 'no') and language in ('en', 'it'));

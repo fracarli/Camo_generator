@@ -15,9 +15,11 @@ on a host such as Render or a small VPS. The QR code should point to that
 public HTTPS URL.
 
 For Supabase, create the table using `supabase_schema.sql`, then set
-`SUPABASE_URL` and `SUPABASE_ANON_KEY`. Local CSV storage remains a fallback
+`SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` (the older
+`SUPABASE_ANON_KEY` is also accepted). Local CSV storage remains a fallback
 if the cloud request fails. The app intentionally does not collect names,
-email addresses, or IP addresses.
+email addresses, or IP addresses. Never use a Supabase secret or service-role
+key in this public server configuration.
 
 ## Publish on Render
 

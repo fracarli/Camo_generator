@@ -50,7 +50,7 @@ def append_local(payload: dict) -> None:
 
 def send_supabase(payload: dict) -> None:
     url = os.environ.get("SUPABASE_URL", "").rstrip("/")
-    key = os.environ.get("SUPABASE_ANON_KEY", "")
+    key = os.environ.get("SUPABASE_PUBLISHABLE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
     table = os.environ.get("SUPABASE_TABLE", "human_test_responses")
     if not url or not key:
         return
@@ -94,9 +94,13 @@ class Handler(SimpleHTTPRequestHandler):
             payload = json.loads(self.rfile.read(size))
             if not isinstance(payload, dict) or payload.get("detected") not in {"yes", "no"}:
                 raise ValueError("Invalid response")
-            trial_ids = {item["trial_id"] for item in trial_records()}
+            trials = trial_records()
+            trial = next((item for item in trials if item["trial_id"] == payload.get("trial_id")), None)
+            trial_ids = {item["trial_id"] for item in trials}
             if payload.get("trial_id") not in trial_ids:
                 raise ValueError("Unknown trial")
+            payload["pattern_group"] = trial["pattern_group"]
+            payload["background_group"] = trial["background_group"]
             payload["timestamp"] = datetime.now(timezone.utc).isoformat()
             payload["session_id"] = str(payload.get("session_id") or uuid.uuid4())
             append_local(payload)

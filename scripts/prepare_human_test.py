@@ -96,10 +96,17 @@ function setProgress() {{ progress.textContent = `Trial ${{Math.min(index + 1, o
 function startTrial() {{
   if (index >= order.length) return;
   clearTimeout(hideTimer); awaiting = true; answers.hidden = true;
-  scene.src = `human_test/${{order[index]}}`; scene.style.display = 'block';
-  status.textContent = 'Observe...'; setProgress();
-  shownAt = performance.now();
-  hideTimer = setTimeout(() => {{ scene.style.visibility = 'hidden'; answers.hidden = false; status.textContent = 'Was a person or uniform visible?'; }}, Number(document.querySelector('#exposure').value));
+  let exposureStarted = false;
+  const beginExposure = () => {{
+    if (!awaiting || exposureStarted) return;
+    exposureStarted = true;
+    scene.style.visibility = 'visible'; status.textContent = 'Observe...'; setProgress();
+    shownAt = performance.now();
+    hideTimer = setTimeout(() => {{ scene.style.visibility = 'hidden'; answers.hidden = false; status.textContent = 'Was a person or uniform visible?'; }}, Number(document.querySelector('#exposure').value));
+  }};
+  scene.style.display = 'block'; scene.style.visibility = 'hidden'; scene.onload = beginExposure;
+  scene.src = `human_test/${{order[index]}}`;
+  if (scene.complete) beginExposure();
 }}
 function answer(detected) {{
   if (!awaiting) return;
