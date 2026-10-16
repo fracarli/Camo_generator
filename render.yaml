@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: terrainweave-human-test
+    runtime: python
+    plan: free
+    buildCommand: "echo 'TerrainWeave human test uses the Python standard library'"
+    startCommand: "python human_test_web/server.py --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_TABLE
+        value: human_test_responses

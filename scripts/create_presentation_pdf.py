@@ -92,7 +92,14 @@ def card(draw: ImageDraw.ImageDraw, box, title: str, body: str, color=GREEN):
 
 def build() -> list[Image.Image]:
     initial_grid = ROOT / "output/all_patterns_grid.png"
-    final_grid = ROOT / "output/optimized_final/all_optimized_patterns_grid.png"
+    final_grid = next(
+        (path for path in (
+            ROOT / "output/pipeline/neural/all_patterns_grid.png",
+            ROOT / "output/pipeline/optimized/all_optimized_patterns_grid.png",
+            ROOT / "output/optimized_final/all_optimized_patterns_grid.png",
+        ) if path.exists()),
+        ROOT / "output/optimized_final/all_optimized_patterns_grid.png",
+    )
     uniforms = ROOT / "output/optimized_mockups/outfit_contact_sheet.png"
     scenes = ROOT / "output/evaluation/forest_contact_sheet.png"
     masks = next((ROOT / "output/results_neural_smoke/segmentation_masks").glob("*.png"), None)
@@ -156,7 +163,13 @@ def build() -> list[Image.Image]:
     add_text(draw, (110, 760), "Next milestone: learn a ranking model from a larger human-test dataset while keeping the procedural baseline.", 24, GREEN)
     pages.append(page)
 
-    page, draw = slide("Three examples, one iteration.", "Initial pattern -> optimized pattern -> measurable change")
+    comparison = ROOT / "output/pipeline/comparison/presentation_comparison.png"
+    if comparison.exists():
+        page, draw = slide("Three versions, one held-out test.", "Original -> optimized -> neural-assisted")
+        place_image(page, comparison, (70, 190, 1530, 790))
+        wrapped(draw, (90, 815), "All versions use the same held-out backgrounds. Lower proxy score is preferable within this controlled experiment; the neural proposer changes interpretable generator parameters rather than drawing pixels directly.", 20, 1400, MUTED)
+        pages.append(page)
+        return pages
     examples = ("universal", "desert", "forest")
     x_initial, x_final, x_score = 240, 610, 1010
     add_text(draw, (x_initial, 190), "INITIAL", 20, MUTED)

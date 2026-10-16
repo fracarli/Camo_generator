@@ -784,7 +784,9 @@ def run_group(
     args: argparse.Namespace,
 ) -> dict:
     output_dir.mkdir(parents=True, exist_ok=True)
-    profile = STYLE_PROFILES.get(output_dir.name, STYLE_PROFILES["other"])
+    profile = dict(STYLE_PROFILES.get(output_dir.name, STYLE_PROFILES["other"]))
+    if getattr(args, "parameter_proposer", None) is not None:
+        profile.update(args.parameter_proposer.predict(images))
     balanced = output_dir.name == "universal"
     palette, weights = build_palette(
         images,
@@ -875,6 +877,7 @@ def run_group(
             "dark_share": args.dark_share,
         },
         "style_profile": profile,
+        "neural_parameter_proposer": getattr(args, "parameter_proposer_path", None),
         "weighting": "equal_environment_groups" if balanced else "pixel_weighted",
         "group_pixel_counts": {
             group: int(sum(len(image.pixels) for image in images if image.group == group))
@@ -999,6 +1002,18 @@ def run(args: argparse.Namespace) -> dict:
     input_dir = Path(args.input)
     output_dir = Path(args.output)
     resolve_generation_settings(args)
+    args.parameter_proposer = None
+    args.parameter_proposer_path = None
+    if args.parameter_proposer:
+        try:
+            from neural_parameter_proposer import NeuralParameterProposer
+            proposer_path = args.parameter_proposer
+            args.parameter_proposer = NeuralParameterProposer(
+                proposer_path, args.parameter_proposer_device
+            )
+            args.parameter_proposer_path = str(proposer_path)
+        except (ImportError, RuntimeError, FileNotFoundError) as error:
+            raise ValueError(f"Could not load neural parameter proposer: {error}") from error
     args.summary_groups = resolve_summary_groups(args.summary_groups)
     args.colors = resolve_color_count(args.colors)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -1128,6 +1143,17 @@ def parse_args() -> argparse.Namespace:
         "--no-auto-mask",
         action="store_true",
         help="Do not automatically exclude sky and water; use all image areas",
+    )
+    parser.add_argument(
+        "--parameter-proposer",
+        default=None,
+        help="Optional neural checkpoint that proposes interpretable pattern parameters",
+    )
+    parser.add_argument(
+        "--parameter-proposer-device",
+        choices=("auto", "cpu", "mps", "cuda"),
+        default="cpu",
+        help="Device used by the neural parameter proposer",
     )
     return parser.parse_args()
 

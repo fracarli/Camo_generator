@@ -107,6 +107,53 @@ the result images with:
 python scripts/create_presentation_pdf.py
 ```
 
+## One-command experiment
+
+To regenerate the reproducible comparison in one step, run:
+
+```bash
+python scripts/run_pipeline.py
+```
+
+This creates the train/test split, runs the procedural optimizer, evaluates
+the original and optimized versions on the held-out set, trains and runs the
+neural parameter proposer when ML dependencies are available, creates the
+three-way comparison, and refreshes the PDF presentation. Use
+`--skip-neural` when you only want the procedural stages:
+
+```bash
+python scripts/run_pipeline.py --skip-neural
+```
+
+The important outputs are collected under
+[output/pipeline/](output/pipeline/), especially
+`comparison/original_optimized_neural.png`,
+`comparison/comparison_report.json`, and the two held-out evaluation reports.
+
+## Shareable bilingual human test
+
+After generating the human-test scenes, start the lightweight web server:
+
+```bash
+python human_test_web/server.py --host 0.0.0.0 --port 8502
+```
+
+The test is available in English and Italian at `http://localhost:8502`.
+For external participants, deploy the `human_test_web/` folder and server
+behind HTTPS, then create a QR code with:
+
+```bash
+pip install -r requirements-human-test.txt
+python scripts/create_human_test_qr.py https://your-public-domain.example
+```
+
+Responses are always kept in
+`output/human_test/web_responses.csv`. Optional Supabase upload and the SQL
+schema are documented in [human_test_web/README.md](human_test_web/README.md).
+For a public HTTPS deployment, use the included [render.yaml](render.yaml)
+and follow the deployment instructions in
+[human_test_web/README.md](human_test_web/README.md).
+
 ## Visual results and validation examples
 
 The repository includes representative images so that a visitor can understand
@@ -596,6 +643,26 @@ At least 10 answered trials are required for a smoke model; a meaningful
 study needs substantially more balanced responses across environments,
 patterns, and observers. Never use the held-out manifest for training or
 optimization.
+
+### Neural parameter proposer
+
+The next hybrid stage predicts generator parameters from the reference-photo
+statistics while keeping the procedural renderer in control of the final
+texture. Bootstrap a proposer from the existing style profiles and optimizer
+reports with:
+
+```bash
+python scripts/train_parameter_proposer.py
+python camo.py \
+  --mode optimized \
+  --parameter-proposer output/neural_proposer/parameter_model.pt \
+  --output output/neural_parameter_demo
+```
+
+This is a warm start based on weak targets, not a trained pixel generator. The
+parameters remain inspectable in each group's `report.json`. Once enough
+human-test results are available, those results should become the targets for
+the next training version.
 
 The score is still an internal visibility proxy. Use a held-out set and the
 anonymous human-test scenes before treating an optimization result as a real

@@ -11,4 +11,8 @@ photos/*
 !photos/SOURCES.md
 .streamlit_uploads/
 output/app_results/
+output/human_test/web_responses.csv
+output/pipeline/
+output/neural_parameter_demo/
+output/neural_proposer/
 evaluation/review_candidates/backgrounds/*
