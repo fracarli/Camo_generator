@@ -1,0 +1,77 @@
+{
+  "group": "taiga",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "score_aggregation": "mean_worst",
+  "background_manifest": "evaluation/splits/train.json",
+  "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+  "neural_weight": 0.35,
+  "best_candidate": "current_best",
+  "optimized_score": 0.27227158580163957,
+  "baseline_score": 0.27227158580163957,
+  "improvement": 0.0,
+  "best_configuration": {
+    "source": "current_best"
+  },
+  "best_palette": null,
+  "history": [
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "current_best",
+      "best_running_score": 0.25627165659191087,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+      "background_group": "taiga",
+      "best_after_background": "current_best",
+      "best_running_score": 0.22947138520807495,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "current_best",
+      "best_running_score": 0.25109423265134034,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+      "background_group": "taiga",
+      "best_after_background": "current_best",
+      "best_running_score": 0.3049168257051594,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+      "background_group": "taiga",
+      "best_after_background": "current_best",
+      "best_running_score": 0.27227158580163957,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    }
+  ]
+}

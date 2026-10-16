@@ -163,11 +163,18 @@ def build() -> list[Image.Image]:
     add_text(draw, (110, 760), "Next milestone: learn a ranking model from a larger human-test dataset while keeping the procedural baseline.", 24, GREEN)
     pages.append(page)
 
-    comparison = ROOT / "output/pipeline/comparison/presentation_comparison.png"
+    comparison = next(
+        (path for path in (
+            ROOT / "output/neural_comparison/full/presentation_comparison.png",
+            ROOT / "output/neural_comparison/initial_optimized_neural.png",
+            ROOT / "output/pipeline/comparison/presentation_comparison.png",
+        ) if path.exists()),
+        ROOT / "output/neural_comparison/initial_optimized_neural.png",
+    )
     if comparison.exists():
-        page, draw = slide("Three versions, one held-out test.", "Original -> optimized -> neural-assisted")
-        place_image(page, comparison, (70, 190, 1530, 790))
-        wrapped(draw, (90, 815), "All versions use the same held-out backgrounds. Lower proxy score is preferable within this controlled experiment; the neural proposer changes interpretable generator parameters rather than drawing pixels directly.", 20, 1400, MUTED)
+        page, draw = slide("Three versions, one forest scene.", "Initial -> optimized -> neural-assisted")
+        place_image(page, comparison, (55, 180, 1545, 800))
+        wrapped(draw, (90, 815), "The comparison keeps the same pattern scale, forest background, and figure placement. Lower visibility score is preferable within this controlled experiment.", 20, 1400, MUTED)
         pages.append(page)
         return pages
     examples = ("universal", "desert", "forest")

@@ -1,0 +1,131 @@
+{
+  "group": "tundra",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "score_aggregation": "mean_worst",
+  "background_manifest": "evaluation/splits/train.json",
+  "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+  "neural_weight": 0.35,
+  "best_candidate": "candidate_001",
+  "optimized_score": 0.2767512558306218,
+  "baseline_score": 0.2805040951811514,
+  "improvement": 0.0037528393505295576,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 1.1322188223878007,
+    "blob_weight": 0.29483867774288697,
+    "blob_aspect": 1.1810195406414523,
+    "detail_weight": 0.1085853466057965,
+    "blur_radius": 0.808541293399997,
+    "seed": 44,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        94,
+        82,
+        47
+      ],
+      "weight": 0.41447243094444275
+    },
+    {
+      "rgb": [
+        78,
+        76,
+        66
+      ],
+      "weight": 0.04931458458304405
+    },
+    {
+      "rgb": [
+        150,
+        130,
+        103
+      ],
+      "weight": 0.14743007719516754
+    },
+    {
+      "rgb": [
+        98,
+        97,
+        59
+      ],
+      "weight": 0.22006675601005554
+    },
+    {
+      "rgb": [
+        176,
+        161,
+        131
+      ],
+      "weight": 0.168716162443161
+    }
+  ],
+  "history": [
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.14322441571756886,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.14131056253941884,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.21648998147344942,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.253332561047122,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg",
+      "background_group": "tundra",
+      "best_after_background": "candidate_001",
+      "best_running_score": 0.2767512558306218,
+      "active_candidates": [
+        "candidate_001",
+        "candidate_002",
+        "current_best"
+      ]
+    }
+  ]
+}

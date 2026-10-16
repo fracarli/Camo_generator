@@ -1,0 +1,126 @@
+{
+  "group": "jungle",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "score_aggregation": "mean_worst",
+  "background_manifest": "evaluation/splits/train.json",
+  "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+  "neural_weight": 0.35,
+  "best_candidate": "candidate_003",
+  "optimized_score": 0.15149703650289056,
+  "baseline_score": 0.15771149228548165,
+  "improvement": 0.006214455782591083,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.6599009865867611,
+    "blob_weight": 0.4545644925618936,
+    "blob_aspect": 0.9039523279432873,
+    "detail_weight": 0.22938846582570055,
+    "blur_radius": 0.7663926309241362,
+    "seed": 46,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        53,
+        57,
+        51
+      ],
+      "weight": 0.14678336679935455
+    },
+    {
+      "rgb": [
+        65,
+        79,
+        51
+      ],
+      "weight": 0.505959689617157
+    },
+    {
+      "rgb": [
+        147,
+        145,
+        99
+      ],
+      "weight": 0.24122656881809235
+    },
+    {
+      "rgb": [
+        171,
+        169,
+        137
+      ],
+      "weight": 0.055997710675001144
+    },
+    {
+      "rgb": [
+        179,
+        166,
+        137
+      ],
+      "weight": 0.05003269016742706
+    }
+  ],
+  "history": [
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.14494193234085104,
+      "active_candidates": [
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.144644927250493,
+      "active_candidates": [
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.13908111706395476,
+      "active_candidates": [
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.15245135191927933,
+      "active_candidates": [
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+      "background_group": "jungle",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.15149703650289056,
+      "active_candidates": [
+        "candidate_003",
+        "current_best"
+      ]
+    }
+  ]
+}

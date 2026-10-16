@@ -1,0 +1,73 @@
+{
+  "raw_response_count": 144,
+  "unique_scene_count": 48,
+  "train_count": 35,
+  "test_count": 13,
+  "predictions": [
+    {
+      "image": "output/human_test/human_test/trial_0001.jpg",
+      "label": 0.0,
+      "prediction": 0.3159617483615875
+    },
+    {
+      "image": "output/human_test/human_test/trial_0005.jpg",
+      "label": 0.0,
+      "prediction": 0.3159904479980469
+    },
+    {
+      "image": "output/human_test/human_test/trial_0006.jpg",
+      "label": 1.0,
+      "prediction": 0.8153042197227478
+    },
+    {
+      "image": "output/human_test/human_test/trial_0007.jpg",
+      "label": 1.0,
+      "prediction": 0.8101914525032043
+    },
+    {
+      "image": "output/human_test/human_test/trial_0009.jpg",
+      "label": 1.0,
+      "prediction": 0.8135199546813965
+    },
+    {
+      "image": "output/human_test/human_test/trial_0010.jpg",
+      "label": 1.0,
+      "prediction": 0.8190556764602661
+    },
+    {
+      "image": "output/human_test/human_test/trial_0014.jpg",
+      "label": 1.0,
+      "prediction": 0.6700431108474731
+    },
+    {
+      "image": "output/human_test/human_test/trial_0019.jpg",
+      "label": 0.3333333333333333,
+      "prediction": 0.3698679506778717
+    },
+    {
+      "image": "output/human_test/human_test/trial_0030.jpg",
+      "label": 1.0,
+      "prediction": 0.8112527132034302
+    },
+    {
+      "image": "output/human_test/human_test/trial_0032.jpg",
+      "label": 1.0,
+      "prediction": 0.8177576065063477
+    },
+    {
+      "image": "output/human_test/human_test/trial_0033.jpg",
+      "label": 1.0,
+      "prediction": 0.8137180805206299
+    },
+    {
+      "image": "output/human_test/human_test/trial_0042.jpg",
+      "label": 1.0,
+      "prediction": 0.9802474975585938
+    },
+    {
+      "image": "output/human_test/human_test/trial_0043.jpg",
+      "label": 1.0,
+      "prediction": 0.9803822040557861
+    }
+  ]
+}

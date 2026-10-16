@@ -29,18 +29,28 @@ def main() -> None:
     except ImportError as error:
         raise SystemExit("Install neural dependencies with: pip install -r requirements-ml.txt") from error
 
-    rows = []
+    raw_rows = []
     root = Path(args.image_root)
     with Path(args.csv).open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             detected = row.get("detected", "").strip().lower()
             if detected not in {"yes", "no", "true", "false", "1", "0"}:
                 continue
-            image_path = root / Path(row["image_file"]).name
+            image_name = row.get("image_file", "").strip()
+            if not image_name:
+                trial_id = row.get("trial_id", "").strip()
+                image_name = f"{trial_id}.jpg" if trial_id else ""
+            if not image_name:
+                continue
+            image_path = root / Path(image_name).name
             if image_path.exists():
-                rows.append((image_path, 1.0 if detected in {"yes", "true", "1"} else 0.0))
+                raw_rows.append((image_path, 1.0 if detected in {"yes", "true", "1"} else 0.0))
+    aggregated = {}
+    for image_path, label in raw_rows:
+        aggregated.setdefault(image_path, []).append(label)
+    rows = [(path, sum(labels) / len(labels)) for path, labels in sorted(aggregated.items())]
     if len(rows) < 10:
-        raise SystemExit(f"Need at least 10 answered trials; found {len(rows)}. Complete the human test first.")
+        raise SystemExit(f"Need at least 10 unique answered scenes; found {len(rows)}. Complete the human test first.")
 
     device = torch.device(args.device)
     model = build_model().to(device)
@@ -69,8 +79,8 @@ def main() -> None:
             predictions.append({"image": str(path), "label": label, "prediction": prediction})
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
-    torch.save({"model_state": model.state_dict(), "image_size": 128, "train_count": len(train_rows), "test_count": len(test_rows)}, output)
-    output.with_suffix(".json").write_text(json.dumps({"train_count": len(train_rows), "test_count": len(test_rows), "predictions": predictions}, indent=2) + "\n", encoding="utf-8")
+    torch.save({"model_state": model.state_dict(), "image_size": 128, "train_count": len(train_rows), "test_count": len(test_rows), "unique_scene_count": len(rows)}, output)
+    output.with_suffix(".json").write_text(json.dumps({"raw_response_count": len(raw_rows), "unique_scene_count": len(rows), "train_count": len(train_rows), "test_count": len(test_rows), "predictions": predictions}, indent=2) + "\n", encoding="utf-8")
     print(f"Saved neural evaluator to {output}; final training loss={total:.4f}")
 
 

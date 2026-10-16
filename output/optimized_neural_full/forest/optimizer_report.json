@@ -1,0 +1,126 @@
+{
+  "group": "forest",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "score_aggregation": "mean_worst",
+  "background_manifest": "evaluation/splits/train.json",
+  "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+  "neural_weight": 0.35,
+  "best_candidate": "candidate_003",
+  "optimized_score": 0.1883187098348814,
+  "baseline_score": 0.18728675238432674,
+  "improvement": -0.0010319574505546492,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 0.5957797279122793,
+    "blob_weight": 0.45886609368639025,
+    "blob_aspect": 0.7746098508916228,
+    "detail_weight": 0.20274541263017323,
+    "blur_radius": 0.5511018488743311,
+    "seed": 46,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        57,
+        60,
+        54
+      ],
+      "weight": 0.05904904007911682
+    },
+    {
+      "rgb": [
+        53,
+        54,
+        52
+      ],
+      "weight": 0.12095097452402115
+    },
+    {
+      "rgb": [
+        97,
+        109,
+        68
+      ],
+      "weight": 0.4848865866661072
+    },
+    {
+      "rgb": [
+        165,
+        159,
+        125
+      ],
+      "weight": 0.13327546417713165
+    },
+    {
+      "rgb": [
+        175,
+        164,
+        136
+      ],
+      "weight": 0.2018379271030426
+    }
+  ],
+  "history": [
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+      "background_group": "forest",
+      "best_after_background": "current_best",
+      "best_running_score": 0.15222880768589675,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+      "background_group": "forest",
+      "best_after_background": "current_best",
+      "best_running_score": 0.1508386977094536,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+      "background_group": "forest",
+      "best_after_background": "current_best",
+      "best_running_score": 0.15107662314722417,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+      "background_group": "forest",
+      "best_after_background": "current_best",
+      "best_running_score": 0.14905398229437802,
+      "active_candidates": [
+        "current_best",
+        "candidate_003"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg",
+      "background_group": "forest",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.1883187098348814,
+      "active_candidates": [
+        "candidate_003",
+        "current_best"
+      ]
+    }
+  ]
+}

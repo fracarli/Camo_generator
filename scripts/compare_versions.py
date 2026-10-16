@@ -72,7 +72,13 @@ def main() -> None:
         paths = {
             "baseline": Path(args.baseline_root) / group / "best_pattern.png",
             "optimized": Path(args.optimized_root) / group / "optimized_pattern.png",
-            "neural": Path(args.neural_root) / group / "best_pattern.png",
+            "neural": next(
+                (path for path in (
+                    Path(args.neural_root) / group / "optimized_pattern.png",
+                    Path(args.neural_root) / group / "best_pattern.png",
+                ) if path.exists()),
+                Path(args.neural_root) / group / "best_pattern.png",
+            ),
         }
         for x, key in ((190, "baseline"), (500, "optimized"), (810, "neural")):
             canvas.paste(tile(paths[key], tile_size), (x, y))

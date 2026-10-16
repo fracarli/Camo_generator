@@ -1,0 +1,126 @@
+{
+  "group": "urban",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "score_aggregation": "mean_worst",
+  "background_manifest": "evaluation/splits/train.json",
+  "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+  "neural_weight": 0.35,
+  "best_candidate": "candidate_002",
+  "optimized_score": 0.33050587717667224,
+  "baseline_score": 0.32908235942916947,
+  "improvement": -0.0014235177475027672,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 0.9179299913518533,
+    "blob_weight": 0.310410692456299,
+    "blob_aspect": 1.397233524066962,
+    "detail_weight": 0.15456349100739156,
+    "blur_radius": 0.8138845021800696,
+    "seed": 45,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        97,
+        77,
+        61
+      ],
+      "weight": 0.22840113937854767
+    },
+    {
+      "rgb": [
+        74,
+        72,
+        60
+      ],
+      "weight": 0.18559372425079346
+    },
+    {
+      "rgb": [
+        177,
+        155,
+        127
+      ],
+      "weight": 0.17997899651527405
+    },
+    {
+      "rgb": [
+        148,
+        126,
+        114
+      ],
+      "weight": 0.21763712167739868
+    },
+    {
+      "rgb": [
+        175,
+        157,
+        123
+      ],
+      "weight": 0.18838903307914734
+    }
+  ],
+  "history": [
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+      "background_group": "urban",
+      "best_after_background": "current_best",
+      "best_running_score": 0.24127935094262162,
+      "active_candidates": [
+        "current_best",
+        "candidate_002"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+      "background_group": "urban",
+      "best_after_background": "current_best",
+      "best_running_score": 0.28685357031761666,
+      "active_candidates": [
+        "current_best",
+        "candidate_002"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.32636909394969954,
+      "active_candidates": [
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.35472926280701844,
+      "active_candidates": [
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+      "background_group": "urban",
+      "best_after_background": "candidate_002",
+      "best_running_score": 0.33050587717667224,
+      "active_candidates": [
+        "candidate_002",
+        "current_best"
+      ]
+    }
+  ]
+}

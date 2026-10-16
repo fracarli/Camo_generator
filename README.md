@@ -628,7 +628,7 @@ Complete the human test first, then run:
 
 ```bash
 python scripts/train_neural_evaluator.py \
-  --csv output/human_test/responses.csv \
+  --csv output/human_test/web_responses.csv \
   --image-root output/human_test/human_test
 
 python optimize_patterns.py \

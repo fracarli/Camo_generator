@@ -1,0 +1,130 @@
+{
+  "group": "desert",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "score_aggregation": "mean_worst",
+  "background_manifest": "evaluation/splits/train.json",
+  "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+  "neural_weight": 0.35,
+  "best_candidate": "candidate_004",
+  "optimized_score": 0.3483193269246102,
+  "baseline_score": 0.34736493422011067,
+  "improvement": -0.0009543927044995404,
+  "best_configuration": {
+    "density": "standard",
+    "blob_scale": 1.8487028972724213,
+    "blob_weight": 0.34249697321537204,
+    "blob_aspect": 1.0485171617521505,
+    "detail_weight": 0.11706880982620382,
+    "blur_radius": 1.0516668538039464,
+    "seed": 47,
+    "palette_jitter": 8.0,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        168,
+        144,
+        113
+      ],
+      "weight": 0.2502426207065582
+    },
+    {
+      "rgb": [
+        146,
+        133,
+        97
+      ],
+      "weight": 0.21499072015285492
+    },
+    {
+      "rgb": [
+        89,
+        70,
+        55
+      ],
+      "weight": 0.16261586546897888
+    },
+    {
+      "rgb": [
+        182,
+        167,
+        126
+      ],
+      "weight": 0.29111066460609436
+    },
+    {
+      "rgb": [
+        69,
+        72,
+        65
+      ],
+      "weight": 0.08104012161493301
+    }
+  ],
+  "history": [
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.4053818735115541,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_004",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.2846269979953456,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_004",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.31453957743526234,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_004",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_004",
+      "best_running_score": 0.339163254935663,
+      "active_candidates": [
+        "candidate_004",
+        "candidate_003",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg",
+      "background_group": "desert",
+      "best_after_background": "candidate_004",
+      "best_running_score": 0.3483193269246102,
+      "active_candidates": [
+        "candidate_004",
+        "current_best"
+      ]
+    }
+  ]
+}

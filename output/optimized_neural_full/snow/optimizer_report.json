@@ -1,0 +1,131 @@
+{
+  "group": "snow",
+  "status": "optimized",
+  "backgrounds_evaluated": [
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg",
+    "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg"
+  ],
+  "candidate_count": 6,
+  "beam_size": 2,
+  "score_aggregation": "mean_worst",
+  "background_manifest": "evaluation/splits/train.json",
+  "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+  "neural_weight": 0.35,
+  "best_candidate": "candidate_003",
+  "optimized_score": 0.26285849954999674,
+  "baseline_score": 0.2752681276609345,
+  "improvement": 0.012409628110937765,
+  "best_configuration": {
+    "density": "high",
+    "blob_scale": 1.0692887376766806,
+    "blob_weight": 0.284333116825638,
+    "blob_aspect": 1.2217193404859636,
+    "detail_weight": 0.12879280925381648,
+    "blur_radius": 0.7896197659731456,
+    "seed": 46,
+    "palette_jitter": 5.2,
+    "weight_concentration": 35.0
+  },
+  "best_palette": [
+    {
+      "rgb": [
+        92,
+        104,
+        103
+      ],
+      "weight": 0.2708244323730469
+    },
+    {
+      "rgb": [
+        199,
+        203,
+        207
+      ],
+      "weight": 0.3604966998100281
+    },
+    {
+      "rgb": [
+        146,
+        156,
+        153
+      ],
+      "weight": 0.2212216705083847
+    },
+    {
+      "rgb": [
+        82,
+        94,
+        91
+      ],
+      "weight": 0.06619402021169662
+    },
+    {
+      "rgb": [
+        138,
+        157,
+        163
+      ],
+      "weight": 0.08126317709684372
+    }
+  ],
+  "history": [
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.28328242773128054,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.27873014599321566,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.2543253564732925,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.22767632273512817,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_002",
+        "current_best"
+      ]
+    },
+    {
+      "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
+      "background_group": "snow",
+      "best_after_background": "candidate_003",
+      "best_running_score": 0.26285849954999674,
+      "active_candidates": [
+        "candidate_003",
+        "candidate_002",
+        "current_best"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1440 @@
+{
+  "generated_on": "2026-10-16",
+  "metric_note": "Lower visibility_score is better in this internal proxy; this is not field evidence.",
+  "reports": {
+    "universal": {
+      "group": "universal",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg"
+      ],
+      "candidate_count": 6,
+      "beam_size": 2,
+      "score_aggregation": "mean_worst",
+      "background_manifest": "evaluation/splits/train.json",
+      "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+      "neural_weight": 0.35,
+      "best_candidate": "candidate_004",
+      "optimized_score": 0.27006347724444546,
+      "baseline_score": 0.2706783978627794,
+      "improvement": 0.0006149206183339584,
+      "best_configuration": {
+        "density": "high",
+        "blob_scale": 1.1703635662408414,
+        "blob_weight": 0.38538690254793956,
+        "blob_aspect": 1.1420382568750114,
+        "detail_weight": 0.14741606943969096,
+        "blur_radius": 0.866479633807213,
+        "seed": 47,
+        "palette_jitter": 8.0,
+        "weight_concentration": 35.0
+      },
+      "best_palette": [
+        {
+          "rgb": [
+            80,
+            87,
+            36
+          ],
+          "weight": 0.20000000298023224
+        },
+        {
+          "rgb": [
+            82,
+            100,
+            59
+          ],
+          "weight": 0.20000000298023224
+        },
+        {
+          "rgb": [
+            68,
+            71,
+            62
+          ],
+          "weight": 0.20000000298023224
+        },
+        {
+          "rgb": [
+            170,
+            156,
+            114
+          ],
+          "weight": 0.20000000298023224
+        },
+        {
+          "rgb": [
+            171,
+            154,
+            133
+          ],
+          "weight": 0.20000000298023224
+        }
+      ],
+      "history": [
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+          "background_group": "forest",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.1502676822990761,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+          "background_group": "forest",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.14816537586710182,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+          "background_group": "forest",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.14846641229475951,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+          "background_group": "forest",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.14766908813479435,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg",
+          "background_group": "forest",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.18649850191767328,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.21782086096169792,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.20670301720248313,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.23500945053611455,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.25700036572626167,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2722937258094316,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.27626277396591575,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2827926828482951,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2764888174061138,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.27661122154436696,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2721049155428747,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2707377713384873,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2739271448058642,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2821155783835523,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.29091627456821306,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2860966482553709,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.28055946483088856,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2770765461551121,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.27101968815404104,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.26867020973829336,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.26470530693612687,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+          "background_group": "taiga",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2641432978070315,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+          "background_group": "taiga",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.26343517208774725,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+          "background_group": "taiga",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.26445608947008514,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+          "background_group": "taiga",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2715332476733743,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+          "background_group": "taiga",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.26761327100805815,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.26340296948946373,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.25988837896941674,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.26350268224286943,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.2666693449310283,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.27006347724444546,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "forest": {
+      "group": "forest",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg"
+      ],
+      "candidate_count": 6,
+      "beam_size": 2,
+      "score_aggregation": "mean_worst",
+      "background_manifest": "evaluation/splits/train.json",
+      "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+      "neural_weight": 0.35,
+      "best_candidate": "candidate_003",
+      "optimized_score": 0.1883187098348814,
+      "baseline_score": 0.18728675238432674,
+      "improvement": -0.0010319574505546492,
+      "best_configuration": {
+        "density": "standard",
+        "blob_scale": 0.5957797279122793,
+        "blob_weight": 0.45886609368639025,
+        "blob_aspect": 0.7746098508916228,
+        "detail_weight": 0.20274541263017323,
+        "blur_radius": 0.5511018488743311,
+        "seed": 46,
+        "palette_jitter": 8.0,
+        "weight_concentration": 35.0
+      },
+      "best_palette": [
+        {
+          "rgb": [
+            57,
+            60,
+            54
+          ],
+          "weight": 0.05904904007911682
+        },
+        {
+          "rgb": [
+            53,
+            54,
+            52
+          ],
+          "weight": 0.12095097452402115
+        },
+        {
+          "rgb": [
+            97,
+            109,
+            68
+          ],
+          "weight": 0.4848865866661072
+        },
+        {
+          "rgb": [
+            165,
+            159,
+            125
+          ],
+          "weight": 0.13327546417713165
+        },
+        {
+          "rgb": [
+            175,
+            164,
+            136
+          ],
+          "weight": 0.2018379271030426
+        }
+      ],
+      "history": [
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/02_Beech_Forest_AU_Great_Otway_National_Park_Beauchamp_Falls_--_2019_--_1271.jpg",
+          "background_group": "forest",
+          "best_after_background": "current_best",
+          "best_running_score": 0.15222880768589675,
+          "active_candidates": [
+            "current_best",
+            "candidate_003"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/03_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+          "background_group": "forest",
+          "best_after_background": "current_best",
+          "best_running_score": 0.1508386977094536,
+          "active_candidates": [
+            "current_best",
+            "candidate_003"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/04_CFLRP_Collaborative_Forest_Landscape_Restoration_Program_20190422-FS-Cibola-001_.jpg",
+          "background_group": "forest",
+          "best_after_background": "current_best",
+          "best_running_score": 0.15107662314722417,
+          "active_candidates": [
+            "current_best",
+            "candidate_003"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/05_Cloud_Forest_Gardens_by_the_Bay_Singapore.jpg",
+          "background_group": "forest",
+          "best_after_background": "current_best",
+          "best_running_score": 0.14905398229437802,
+          "active_candidates": [
+            "current_best",
+            "candidate_003"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/forest/07_Forest_landscape_after_wildfire.jpg",
+          "background_group": "forest",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.1883187098348814,
+          "active_candidates": [
+            "candidate_003",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "desert": {
+      "group": "desert",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg"
+      ],
+      "candidate_count": 6,
+      "beam_size": 2,
+      "score_aggregation": "mean_worst",
+      "background_manifest": "evaluation/splits/train.json",
+      "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+      "neural_weight": 0.35,
+      "best_candidate": "candidate_004",
+      "optimized_score": 0.3483193269246102,
+      "baseline_score": 0.34736493422011067,
+      "improvement": -0.0009543927044995404,
+      "best_configuration": {
+        "density": "standard",
+        "blob_scale": 1.8487028972724213,
+        "blob_weight": 0.34249697321537204,
+        "blob_aspect": 1.0485171617521505,
+        "detail_weight": 0.11706880982620382,
+        "blur_radius": 1.0516668538039464,
+        "seed": 47,
+        "palette_jitter": 8.0,
+        "weight_concentration": 35.0
+      },
+      "best_palette": [
+        {
+          "rgb": [
+            168,
+            144,
+            113
+          ],
+          "weight": 0.2502426207065582
+        },
+        {
+          "rgb": [
+            146,
+            133,
+            97
+          ],
+          "weight": 0.21499072015285492
+        },
+        {
+          "rgb": [
+            89,
+            70,
+            55
+          ],
+          "weight": 0.16261586546897888
+        },
+        {
+          "rgb": [
+            182,
+            167,
+            126
+          ],
+          "weight": 0.29111066460609436
+        },
+        {
+          "rgb": [
+            69,
+            72,
+            65
+          ],
+          "weight": 0.08104012161493301
+        }
+      ],
+      "history": [
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/01_A_Desert_Landscape_53437341027_.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.4053818735115541,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/02_Atacama_Desert_Landscape_-_panoramio.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.2846269979953456,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/03_Backcountry_Desert_Landscape_54268531959_.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.31453957743526234,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_004",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/04_Caravan_in_the_desert.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.339163254935663,
+          "active_candidates": [
+            "candidate_004",
+            "candidate_003",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/desert/07_Desert_Landscape_24849617332_.jpg",
+          "background_group": "desert",
+          "best_after_background": "candidate_004",
+          "best_running_score": 0.3483193269246102,
+          "active_candidates": [
+            "candidate_004",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "mountain": {
+      "group": "mountain",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg"
+      ],
+      "candidate_count": 6,
+      "beam_size": 2,
+      "score_aggregation": "mean_worst",
+      "background_manifest": "evaluation/splits/train.json",
+      "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+      "neural_weight": 0.35,
+      "best_candidate": "candidate_001",
+      "optimized_score": 0.28871471473348015,
+      "baseline_score": 0.29209664803392565,
+      "improvement": 0.0033819333004455054,
+      "best_configuration": {
+        "density": "standard",
+        "blob_scale": 1.0007752275045485,
+        "blob_weight": 0.42709448023760466,
+        "blob_aspect": 0.9747602650747257,
+        "detail_weight": 0.1366073309336948,
+        "blur_radius": 0.9473697419573475,
+        "seed": 44,
+        "palette_jitter": 8.0,
+        "weight_concentration": 35.0
+      },
+      "best_palette": [
+        {
+          "rgb": [
+            86,
+            96,
+            49
+          ],
+          "weight": 0.32704082131385803
+        },
+        {
+          "rgb": [
+            160,
+            131,
+            103
+          ],
+          "weight": 0.16074766218662262
+        },
+        {
+          "rgb": [
+            62,
+            60,
+            57
+          ],
+          "weight": 0.12223009765148163
+        },
+        {
+          "rgb": [
+            154,
+            154,
+            131
+          ],
+          "weight": 0.21432605385780334
+        },
+        {
+          "rgb": [
+            178,
+            163,
+            132
+          ],
+          "weight": 0.17565535008907318
+        }
+      ],
+      "history": [
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/01_Barn_on_Mastl_mountain_Gherd_ina.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_002",
+          "best_running_score": 0.3767571910923968,
+          "active_candidates": [
+            "candidate_002",
+            "candidate_001",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/02_Blue_Mountains_National_Park_AU_Three_Sisters_--_2019_--_1987-9.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.3776206497147989,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/04_Cheops_Mountain_seen_the_Sir_Donald_Trail.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.30795704039261257,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/05_Field_corn_Liechtenstein_Mountains_Alps_Vaduz_sky_clouds_landscape.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.2999921232823787,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/mountain/07_Frosty_Raftsundet_landscape_with_Trolltindan_in_morning_2012_October.jpg",
+          "background_group": "mountain",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.28871471473348015,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "snow": {
+      "group": "snow",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg"
+      ],
+      "candidate_count": 6,
+      "beam_size": 2,
+      "score_aggregation": "mean_worst",
+      "background_manifest": "evaluation/splits/train.json",
+      "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+      "neural_weight": 0.35,
+      "best_candidate": "candidate_003",
+      "optimized_score": 0.26285849954999674,
+      "baseline_score": 0.2752681276609345,
+      "improvement": 0.012409628110937765,
+      "best_configuration": {
+        "density": "high",
+        "blob_scale": 1.0692887376766806,
+        "blob_weight": 0.284333116825638,
+        "blob_aspect": 1.2217193404859636,
+        "detail_weight": 0.12879280925381648,
+        "blur_radius": 0.7896197659731456,
+        "seed": 46,
+        "palette_jitter": 5.2,
+        "weight_concentration": 35.0
+      },
+      "best_palette": [
+        {
+          "rgb": [
+            92,
+            104,
+            103
+          ],
+          "weight": 0.2708244323730469
+        },
+        {
+          "rgb": [
+            199,
+            203,
+            207
+          ],
+          "weight": 0.3604966998100281
+        },
+        {
+          "rgb": [
+            146,
+            156,
+            153
+          ],
+          "weight": 0.2212216705083847
+        },
+        {
+          "rgb": [
+            82,
+            94,
+            91
+          ],
+          "weight": 0.06619402021169662
+        },
+        {
+          "rgb": [
+            138,
+            157,
+            163
+          ],
+          "weight": 0.08126317709684372
+        }
+      ],
+      "history": [
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/02_A_snowy_landscape_-_geograph.org.uk_-_5626339.jpg",
+          "background_group": "snow",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.28328242773128054,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/03_A_snowy_landscape_1961_JOKAKAL3B-10024_.jpg",
+          "background_group": "snow",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.27873014599321566,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg",
+          "background_group": "snow",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.2543253564732925,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/05_A_snowy_landscape_on_Lommoltunturi_Muonio_Finland_2019_January.jpg",
+          "background_group": "snow",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.22767632273512817,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/snow/06_Anchorage_snowy_landscape_27068445737_.jpg",
+          "background_group": "snow",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.26285849954999674,
+          "active_candidates": [
+            "candidate_003",
+            "candidate_002",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "jungle": {
+      "group": "jungle",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg"
+      ],
+      "candidate_count": 6,
+      "beam_size": 2,
+      "score_aggregation": "mean_worst",
+      "background_manifest": "evaluation/splits/train.json",
+      "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+      "neural_weight": 0.35,
+      "best_candidate": "candidate_003",
+      "optimized_score": 0.15149703650289056,
+      "baseline_score": 0.15771149228548165,
+      "improvement": 0.006214455782591083,
+      "best_configuration": {
+        "density": "high",
+        "blob_scale": 0.6599009865867611,
+        "blob_weight": 0.4545644925618936,
+        "blob_aspect": 0.9039523279432873,
+        "detail_weight": 0.22938846582570055,
+        "blur_radius": 0.7663926309241362,
+        "seed": 46,
+        "palette_jitter": 8.0,
+        "weight_concentration": 35.0
+      },
+      "best_palette": [
+        {
+          "rgb": [
+            53,
+            57,
+            51
+          ],
+          "weight": 0.14678336679935455
+        },
+        {
+          "rgb": [
+            65,
+            79,
+            51
+          ],
+          "weight": 0.505959689617157
+        },
+        {
+          "rgb": [
+            147,
+            145,
+            99
+          ],
+          "weight": 0.24122656881809235
+        },
+        {
+          "rgb": [
+            171,
+            169,
+            137
+          ],
+          "weight": 0.055997710675001144
+        },
+        {
+          "rgb": [
+            179,
+            166,
+            137
+          ],
+          "weight": 0.05003269016742706
+        }
+      ],
+      "history": [
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/01_20251225_Tropical_rainforest_in_the_Xishuangbanna_Tropical_Botanical_Garden_Chin.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.14494193234085104,
+          "active_candidates": [
+            "candidate_003",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/02_Americana_1920_Tropical_Forest_Products_-_Lauan_or_Dipterocarp_forest.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.144644927250493,
+          "active_candidates": [
+            "candidate_003",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/04_CSIRO_ScienceImage_3827_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.13908111706395476,
+          "active_candidates": [
+            "candidate_003",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/05_CSIRO_ScienceImage_3828_Tropical_rainforest_near_Cairns_QLD.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.15245135191927933,
+          "active_candidates": [
+            "candidate_003",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/jungle/06_CSIRO_ScienceImage_3829_Tropical_rainforest_canopy_near_Cairns_QLD.jpg",
+          "background_group": "jungle",
+          "best_after_background": "candidate_003",
+          "best_running_score": 0.15149703650289056,
+          "active_candidates": [
+            "candidate_003",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "taiga": {
+      "group": "taiga",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg"
+      ],
+      "candidate_count": 6,
+      "beam_size": 2,
+      "score_aggregation": "mean_worst",
+      "background_manifest": "evaluation/splits/train.json",
+      "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+      "neural_weight": 0.35,
+      "best_candidate": "current_best",
+      "optimized_score": 0.27227158580163957,
+      "baseline_score": 0.27227158580163957,
+      "improvement": 0.0,
+      "best_configuration": {
+        "source": "current_best"
+      },
+      "best_palette": null,
+      "history": [
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/01_AIVC_Boreal_Forest_53451028802_.jpg",
+          "background_group": "taiga",
+          "best_after_background": "current_best",
+          "best_running_score": 0.25627165659191087,
+          "active_candidates": [
+            "current_best",
+            "candidate_003"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/02_A_panoramic_example_of_the_boreal_forest_ecosystem._8586cf4b-db41-4540-ac12-c9dc.jpg",
+          "background_group": "taiga",
+          "best_after_background": "current_best",
+          "best_running_score": 0.22947138520807495,
+          "active_candidates": [
+            "current_best",
+            "candidate_003"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/03_Aurora_over_the_boreal_forest_57be20e1-a3cf-453e-9632-2d38df39b643_.jpg",
+          "background_group": "taiga",
+          "best_after_background": "current_best",
+          "best_running_score": 0.25109423265134034,
+          "active_candidates": [
+            "current_best",
+            "candidate_003"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/04_Autumn_colours_in_the_Boreal_Forest_near_Marathon_.jpg",
+          "background_group": "taiga",
+          "best_after_background": "current_best",
+          "best_running_score": 0.3049168257051594,
+          "active_candidates": [
+            "current_best",
+            "candidate_003"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/taiga/05_Baileys_Harbor_Boreal_Forest_and_Wetlands.jpg",
+          "background_group": "taiga",
+          "best_after_background": "current_best",
+          "best_running_score": 0.27227158580163957,
+          "active_candidates": [
+            "current_best",
+            "candidate_003"
+          ]
+        }
+      ]
+    },
+    "tundra": {
+      "group": "tundra",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg"
+      ],
+      "candidate_count": 6,
+      "beam_size": 2,
+      "score_aggregation": "mean_worst",
+      "background_manifest": "evaluation/splits/train.json",
+      "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+      "neural_weight": 0.35,
+      "best_candidate": "candidate_001",
+      "optimized_score": 0.2767512558306218,
+      "baseline_score": 0.2805040951811514,
+      "improvement": 0.0037528393505295576,
+      "best_configuration": {
+        "density": "high",
+        "blob_scale": 1.1322188223878007,
+        "blob_weight": 0.29483867774288697,
+        "blob_aspect": 1.1810195406414523,
+        "detail_weight": 0.1085853466057965,
+        "blur_radius": 0.808541293399997,
+        "seed": 44,
+        "palette_jitter": 8.0,
+        "weight_concentration": 35.0
+      },
+      "best_palette": [
+        {
+          "rgb": [
+            94,
+            82,
+            47
+          ],
+          "weight": 0.41447243094444275
+        },
+        {
+          "rgb": [
+            78,
+            76,
+            66
+          ],
+          "weight": 0.04931458458304405
+        },
+        {
+          "rgb": [
+            150,
+            130,
+            103
+          ],
+          "weight": 0.14743007719516754
+        },
+        {
+          "rgb": [
+            98,
+            97,
+            59
+          ],
+          "weight": 0.22006675601005554
+        },
+        {
+          "rgb": [
+            176,
+            161,
+            131
+          ],
+          "weight": 0.168716162443161
+        }
+      ],
+      "history": [
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/02_A_rainbow_arcing_over_high_alpine_tundra_in_Denali_cfe02062-d4da-48f5-87d2-ead7d.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.14322441571756886,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/03_Alaska_-tundra_landscape-11Aug2008.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.14131056253941884,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/05_Autumn_tundra_mosaic_Kola_Peninsula_Murmansk_Russia.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.21648998147344942,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/06_Boggy_tundra_in_fall_colors_near_Lovozero_lake_Murmansk_Russia.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.253332561047122,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/tundra/07_Bolshezemelskaja_tundra_1.jpg",
+          "background_group": "tundra",
+          "best_after_background": "candidate_001",
+          "best_running_score": 0.2767512558306218,
+          "active_candidates": [
+            "candidate_001",
+            "candidate_002",
+            "current_best"
+          ]
+        }
+      ]
+    },
+    "urban": {
+      "group": "urban",
+      "status": "optimized",
+      "backgrounds_evaluated": [
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+        "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg"
+      ],
+      "candidate_count": 6,
+      "beam_size": 2,
+      "score_aggregation": "mean_worst",
+      "background_manifest": "evaluation/splits/train.json",
+      "neural_evaluator": "output/neural_evaluator/visibility_model.pt",
+      "neural_weight": 0.35,
+      "best_candidate": "candidate_002",
+      "optimized_score": 0.33050587717667224,
+      "baseline_score": 0.32908235942916947,
+      "improvement": -0.0014235177475027672,
+      "best_configuration": {
+        "density": "high",
+        "blob_scale": 0.9179299913518533,
+        "blob_weight": 0.310410692456299,
+        "blob_aspect": 1.397233524066962,
+        "detail_weight": 0.15456349100739156,
+        "blur_radius": 0.8138845021800696,
+        "seed": 45,
+        "palette_jitter": 8.0,
+        "weight_concentration": 35.0
+      },
+      "best_palette": [
+        {
+          "rgb": [
+            97,
+            77,
+            61
+          ],
+          "weight": 0.22840113937854767
+        },
+        {
+          "rgb": [
+            74,
+            72,
+            60
+          ],
+          "weight": 0.18559372425079346
+        },
+        {
+          "rgb": [
+            177,
+            155,
+            127
+          ],
+          "weight": 0.17997899651527405
+        },
+        {
+          "rgb": [
+            148,
+            126,
+            114
+          ],
+          "weight": 0.21763712167739868
+        },
+        {
+          "rgb": [
+            175,
+            157,
+            123
+          ],
+          "weight": 0.18838903307914734
+        }
+      ],
+      "history": [
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/03_Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg",
+          "background_group": "urban",
+          "best_after_background": "current_best",
+          "best_running_score": 0.24127935094262162,
+          "active_candidates": [
+            "current_best",
+            "candidate_002"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/04_Brooklyn_Diner_New_York_City_2024_-L1006207.jpg",
+          "background_group": "urban",
+          "best_after_background": "current_best",
+          "best_running_score": 0.28685357031761666,
+          "active_candidates": [
+            "current_best",
+            "candidate_002"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/05_Cathedral_of_the_Holy_Trinity_Quebec_city_Canada_001.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_002",
+          "best_running_score": 0.32636909394969954,
+          "active_candidates": [
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/07_Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_002",
+          "best_running_score": 0.35472926280701844,
+          "active_candidates": [
+            "candidate_002",
+            "current_best"
+          ]
+        },
+        {
+          "background": "/Users/francescocarli/Desktop/Camo/evaluation/backgrounds/urban/09_Ch_teau_Frontenac_city_at_night.jpg",
+          "background_group": "urban",
+          "best_after_background": "candidate_002",
+          "best_running_score": 0.33050587717667224,
+          "active_candidates": [
+            "candidate_002",
+            "current_best"
+          ]
+        }
+      ]
+    }
+  }
+}
