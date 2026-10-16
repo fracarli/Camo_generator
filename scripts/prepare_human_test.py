@@ -97,12 +97,22 @@ function startTrial() {{
   if (index >= order.length) return;
   clearTimeout(hideTimer); awaiting = true; answers.hidden = true;
   let exposureStarted = false;
-  const beginExposure = () => {{
+  const beginExposure = async () => {{
     if (!awaiting || exposureStarted) return;
     exposureStarted = true;
-    scene.style.visibility = 'visible'; status.textContent = 'Observe...'; setProgress();
-    shownAt = performance.now();
-    hideTimer = setTimeout(() => {{ scene.style.visibility = 'hidden'; answers.hidden = false; status.textContent = 'Was a person or uniform visible?'; }}, Number(document.querySelector('#exposure').value));
+    try {{ if (scene.decode) await scene.decode(); }} catch (error) {{}}
+    requestAnimationFrame(() => requestAnimationFrame(() => {{
+      if (!awaiting) return;
+      scene.style.visibility = 'visible'; status.textContent = 'Observe...'; setProgress();
+      shownAt = performance.now();
+      const duration = Number(document.querySelector('#exposure').value);
+      const hideAt = (now) => {{
+        if (!awaiting) return;
+        if (now - shownAt >= duration) {{ scene.style.visibility = 'hidden'; answers.hidden = false; status.textContent = 'Was a person or uniform visible?'; }}
+        else hideTimer = requestAnimationFrame(hideAt);
+      }};
+      hideTimer = requestAnimationFrame(hideAt);
+    }}));
   }};
   scene.style.display = 'block'; scene.style.visibility = 'hidden'; scene.onload = beginExposure;
   scene.src = `human_test/${{order[index]}}`;
