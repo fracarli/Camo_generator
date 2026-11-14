@@ -10,16 +10,37 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
   "numpy>=1.26",
-  "Pillow>=10.0",
+  "Pillow>=10.1",
 ]
 
+[project.scripts]
+terrainweave = "terrainweave.cli:main"
+
 [project.optional-dependencies]
+dev = ["coverage[toml]>=7.10.6,<8", "ruff==0.17.5"]
+demo = ["streamlit>=1.35"]
+human = ["qrcode[pil]>=7.4"]
 ml = [
-  "torch",
-  "torchvision",
-  "transformers",
-  "accelerate",
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "transformers>=4.45",
 ]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+terrainweave = ["assets/*.png", "assets/human_test/*.html", "assets/human_test/*.sql"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-exclude = ["output", "results", "evaluation", "build"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.coverage.run]
+branch = true
+source_pkgs = ["terrainweave"]
+patch = ["subprocess"]

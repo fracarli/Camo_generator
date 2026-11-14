@@ -2,14 +2,14 @@
 
 from __future__ import annotations
 
-import unittest
 import json
+import unittest
 from pathlib import Path
 
 import numpy as np
 
-import camo
-from src.camo import ENVIRONMENT_GROUPS
+from terrainweave import ENVIRONMENT_GROUPS
+from terrainweave.patterns import make_pattern
 
 
 class GeneratorSmokeTests(unittest.TestCase):
@@ -19,7 +19,7 @@ class GeneratorSmokeTests(unittest.TestCase):
             dtype=np.float32,
         )
         weights = np.array([0.25, 0.25, 0.25, 0.25], dtype=np.float32)
-        pattern = camo.make_pattern(palette, weights, 64, seed=42)
+        pattern = make_pattern(palette, weights, 64, seed=42)
 
         self.assertEqual(pattern.shape, (64, 64, 3))
         self.assertEqual(pattern.dtype, np.uint8)
@@ -29,8 +29,8 @@ class GeneratorSmokeTests(unittest.TestCase):
         palette = np.array([[50, 60, 45], [110, 100, 75]], dtype=np.float32)
         weights = np.array([0.5, 0.5], dtype=np.float32)
 
-        first = camo.make_pattern(palette, weights, 32, seed=7)
-        second = camo.make_pattern(palette, weights, 32, seed=7)
+        first = make_pattern(palette, weights, 32, seed=7)
+        second = make_pattern(palette, weights, 32, seed=7)
 
         np.testing.assert_array_equal(first, second)
 
@@ -50,7 +50,7 @@ class GeneratorSmokeTests(unittest.TestCase):
                 self.assertIn("description", document)
 
     def test_weighted_visibility_score_is_normalized(self) -> None:
-        from optimize_patterns import weighted_visibility_score
+        from terrainweave.optimization import weighted_visibility_score
 
         metrics = {
             "rgb_contrast": 0.2,
@@ -59,7 +59,9 @@ class GeneratorSmokeTests(unittest.TestCase):
             "visibility_score": 0.9,
         }
         self.assertAlmostEqual(
-            weighted_visibility_score(metrics, {"rgb_contrast": 1, "luminance_contrast": 1, "texture_contrast": 1}),
+            weighted_visibility_score(
+                metrics, {"rgb_contrast": 1, "luminance_contrast": 1, "texture_contrast": 1}
+            ),
             0.4,
         )
 

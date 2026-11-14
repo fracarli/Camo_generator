@@ -1,29 +1,23 @@
-# Data and licensing policy
+# Data and licenses
 
-## Code and generated results
+The code is distributed under the [MIT License](../LICENSE). Background
+photographs retain the terms recorded in their source metadata.
 
-The source code is released under the MIT License in the repository
-`LICENSE`. Generated patterns and reports are project outputs, not official
-military patterns and not a claim of endorsement by any organization.
+## Public corpus
 
-## Evaluation backgrounds
+[Evaluation data](../evaluation/README.md) contains the reviewed photographs,
+source manifests, train/test manifests and the scenes used by the web test.
+Keep photograph attributions and source metadata with the data. To check
+coverage from the checkout, run `terrainweave data audit`.
 
-Images under `evaluation/backgrounds/` were collected from Wikimedia Commons
-and have source pages and reported licenses in `evaluation/sources.json` and
-`evaluation/SOURCES.md`. The metadata must remain with the images. Before a
-public release, review each source page and attribution requirement again. The
-current audit reports 80 local images and 80 matching manifest entries.
+## Local reference photos
 
-## User-provided reference photos
+Pass a folder to `terrainweave generate --input /path/to/photos` or to
+`terrainweave benchmark --input /path/to/photos`. Group photos into
+environment subfolders when working with multiple environments. Optional
+grayscale masks can sit beside the inputs as `<filename-stem>_mask.png`.
+White includes pixels and black excludes them.
 
-Images under `photos/` are treated as user-provided input. Before publishing
-any image, record its source, author, license, and permission in
-`photos/SOURCES.md`. Unverified images should be kept local and excluded from
-public commits.
-
-## Candidate review pool
-
-Images under `evaluation/review_candidates/backgrounds/` are downloaded
-candidates and are not part of the official evaluation corpus. Review them with
-`evaluation/review_candidates/review.html` before promoting any image into
-`evaluation/backgrounds/`.
+Keep private photographs in a local folder. If you use `photos/` inside this
+repository, Git ignores the folder. Record the source, author, license or
+permission for each image before redistributing it.

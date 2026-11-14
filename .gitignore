@@ -3,16 +3,15 @@ __pycache__/
 *.py[cod]
 .venv/
 .pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+*.egg-info/
+build/
+dist/
 
-# User-provided reference photos may contain material that cannot be
-# redistributed. Keep them local unless provenance is explicitly documented.
-photos/*
-!photos/README.md
-!photos/SOURCES.md
+# Local inputs, uploads and generated files.
+/photos/
 .streamlit_uploads/
-output/app_results/
-output/human_test/web_responses.csv
-output/pipeline/
-output/neural_parameter_demo/
-output/neural_proposer/
-evaluation/review_candidates/backgrounds/*
+/output/
+/evaluation/review_candidates/backgrounds/

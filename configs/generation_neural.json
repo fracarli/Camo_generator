@@ -1,6 +1,6 @@
 {
   "description": "Generation with pretrained semantic input masks.",
-  "script": "camo.py",
+  "command": "generate",
   "args": {
     "input": "evaluation/backgrounds",
     "output": "output/results_configured_neural",

@@ -1,6 +1,6 @@
 {
   "description": "Held-out multi-objective optimization configuration.",
-  "script": "optimize_patterns.py",
+  "command": "optimize",
   "args": {
     "input": "evaluation/backgrounds",
     "backgrounds": "evaluation/backgrounds",
