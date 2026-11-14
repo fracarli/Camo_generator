@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -89,6 +90,26 @@ class PackageWorkflowTests(unittest.TestCase):
         self.assertIn(
             b"human_test_responses", asset_path("human_test/supabase_schema.sql").read_bytes()
         )
+
+    def test_workspace_environment_applies_to_relative_cli_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            workspace = root / "project"
+            workspace.mkdir()
+            (workspace / "config.json").write_text('{"command": "generate"}')
+            result = subprocess.run(
+                [sys.executable, "-m", "terrainweave", "run-config", "config.json", "--dry-run"],
+                cwd=root,
+                env={
+                    **os.environ,
+                    **subprocess_environment(),
+                    "TERRAINWEAVE_WORKSPACE": str(workspace),
+                },
+                text=True,
+                capture_output=True,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn("-m terrainweave generate", result.stdout)
 
 
 if __name__ == "__main__":

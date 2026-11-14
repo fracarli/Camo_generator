@@ -1,5 +1,5 @@
 {
-  "description": "Strict five-image train/test experiment.",
+  "description": "Historical settings for the strict five-image train/test experiment.",
   "environments": [
     "universal",
     "forest",

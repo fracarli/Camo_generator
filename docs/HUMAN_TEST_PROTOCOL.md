@@ -6,9 +6,9 @@ camouflage performance.
 
 ## Preparation
 
-1. After generating patterns, run
-   `terrainweave evaluate --output output/human_test` and
-   `terrainweave human prepare`. To use the published trial images, run
+1. After running the procedural pipeline, use
+   `terrainweave evaluate --pattern-root output/pipeline/baseline --output output/human_test`
+   and `terrainweave human prepare`. To use the published trial images, run
    `terrainweave human prepare --input evaluation/human_test/scenes`.
 2. Keep the evaluation report away from observers. It maps trial images to
    their patterns and environments.
@@ -36,15 +36,16 @@ the same instructions and timings for every observer.
 
 ## Analysis
 
-After completing the CSV, run:
+After downloading the completed CSV, pass its path to the analyzer:
 
 ```bash
-terrainweave human analyze
+terrainweave human analyze --input /path/to/downloaded/responses.csv
 ```
 
 For the published scenes, pass
 `--report evaluation/human_test/evaluation_report.json` so the analysis uses
-the matching trial map.
+the matching trial map. Keep the corresponding JPEGs with that report.
+For a custom scene directory, pass it to the analyzer with `--image-root`.
 
 Compare detection rate and mean latency only between tests with the same number
 of trials, exposure time, observer instructions, and environment mix. Keep the
@@ -68,13 +69,25 @@ it is not a semantic segmentation model and should be validated visually.
 Run `terrainweave human serve --port 8502` and open
 [http://localhost:8502](http://localhost:8502/). The server uses the published
 scenes from a fresh checkout. When `output/human_test/human_test/` exists, it
-uses those local scenes and their corresponding evaluation report instead.
-Web responses go to `output/human_test/web_responses.csv`. Pass that file to
-`terrainweave human analyze --input` to analyze it.
+loads those local scenes and requires their corresponding evaluation report.
+Restart the server to load a new set of scenes. Each set has its own
+`output/human_test/web_responses_<trial_set_id>.csv`. The server prints the
+path at startup. Pass it to `terrainweave human analyze --input`. The CSV
+already includes the pattern and environment recorded when each response was saved.
+Use `terrainweave human exposures --input 250=path/to/responses.csv` to include
+the 250 ms responses. Repeat `--input` for each exposure to compare. The same
+web CSV can supply multiple durations.
+
+For `terrainweave ml train-evaluator`, keep the scene directory and evaluation
+report that go with the web CSV. Pass them with `--image-root` and `--report`.
+The trainer verifies the trial set ID against those files. Older web CSVs
+without an ID can still be summarized but cannot be verified for training.
 
 [render.yaml](../render.yaml) starts the server from source using Python's
 standard library. For persistent storage on Render, create the table with
 the [Supabase schema](../src/terrainweave/assets/human_test/supabase_schema.sql).
+For an existing table, run its `add column if not exists trial_set_id`
+statement before deploying this version.
 Set `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` in the service environment.
 `SUPABASE_ANON_KEY` is also supported. The server uses the insert-only policy
 and keeps a local CSV copy. Render's local filesystem is ephemeral.

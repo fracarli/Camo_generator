@@ -33,8 +33,8 @@ Generation, evaluation and optimization share the uniform renderer.
 ## Workspace and assets
 
 `paths.workspace_root()` checks `TERRAINWEAVE_WORKSPACE`, the source checkout,
-then the current directory. The CLI's `--workspace` flag also changes the
-working directory so relative configuration paths resolve inside that workspace.
+then the current directory. Setting `TERRAINWEAVE_WORKSPACE` or using the CLI's
+`--workspace` flag also sets the working directory for relative paths.
 
 Immutable assets live under `terrainweave/assets/` and ship in the wheel.
 The package serves the web page and includes its Supabase schema from

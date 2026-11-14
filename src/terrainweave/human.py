@@ -11,6 +11,8 @@ from pathlib import Path
 from statistics import mean, median
 from urllib.parse import quote
 
+from .human_server import load_trial_set
+
 _PREPARE_HUMAN_TEST_DESCRIPTION = (
     "Prepare a blinded response sheet for the generated human-test images."
 )
@@ -20,10 +22,22 @@ def prepare_main() -> None:
     parser = argparse.ArgumentParser(description=_PREPARE_HUMAN_TEST_DESCRIPTION)
     parser.add_argument("--input", default="output/human_test/human_test")
     parser.add_argument("--output", default="output/human_test/responses.csv")
+    parser.add_argument("--report", type=Path, help="Evaluation report for the input scenes")
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
-    images = sorted(Path(args.input).glob("trial_*.jpg"))
+    root = Path(args.input)
+    report = args.report or root.parent / "evaluation_report.json"
+    trial_set_id = None
+    if args.report or report.is_file() or root.name == "human_test":
+        try:
+            trial_set = load_trial_set(root, report)
+        except (OSError, ValueError, TypeError, KeyError) as error:
+            parser.error(f"Cannot load trial set from {report}: {error}")
+        images = sorted(root / f"{trial}.jpg" for trial in trial_set.images)
+        trial_set_id = trial_set.id
+    else:
+        images = sorted(root.glob("trial_*.jpg"))
     if not images:
         raise SystemExit(f"No human-test images found under {args.input}")
     randomizer = random.Random(args.seed)
@@ -37,6 +51,7 @@ def prepare_main() -> None:
             fieldnames=(
                 "display_order",
                 "image_file",
+                "trial_set_id",
                 "detected",
                 "latency_ms",
                 "confidence",
@@ -49,6 +64,7 @@ def prepare_main() -> None:
                 {
                     "display_order": order,
                     "image_file": image.name,
+                    "trial_set_id": trial_set_id,
                     "detected": "",
                     "latency_ms": "",
                     "confidence": "",
@@ -59,14 +75,16 @@ def prepare_main() -> None:
     image_names = [image.name for image in images]
     image_directory = Path(os.path.relpath(Path(args.input).resolve(), html_path.parent.resolve()))
     image_prefix = quote(image_directory.as_posix())
-    html_path.write_text(build_html(image_names, image_prefix), encoding="utf-8")
+    html_path.write_text(build_html(image_names, image_prefix, trial_set_id), encoding="utf-8")
     print(f"Prepared {len(images)} randomized trials in {destination}")
     print(f"Open this local test page in a browser: {html_path}")
 
 
-def build_html(image_names: list[str], image_prefix: str = "human_test") -> str:
+def build_html(
+    image_names: list[str], image_prefix: str = "human_test", trial_set_id: str | None = None
+) -> str:
     """Create a self-contained local browser test with millisecond timing."""
-    image_json = json.dumps(image_names)
+    image_json = json.dumps(image_names).replace("<", "\\u003c")
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -103,50 +121,57 @@ def build_html(image_names: list[str], image_prefix: str = "human_test") -> str:
 </main>
 <script>
 const images = {image_json};
+const trialSetId = {json.dumps(trial_set_id or "")};
 let order = [...images].sort(() => Math.random() - 0.5);
-let index = 0, shownAt = 0, hideTimer = null, awaiting = false;
+let index = 0, shownAt = 0, duration = 0, awaiting = false;
 const rows = [];
 const scene = document.querySelector('#scene');
 const status = document.querySelector('#status');
 const answers = document.querySelector('#answers');
 const progress = document.querySelector('#progress');
+const start = document.querySelector('#start');
+const exposure = document.querySelector('#exposure');
 function setProgress() {{ progress.textContent = `Trial ${{Math.min(index + 1, order.length)}} / ${{order.length}}`; }}
 function startTrial() {{
-  if (index >= order.length) return;
-  clearTimeout(hideTimer); awaiting = true; answers.hidden = true;
+  if (start.disabled || index >= order.length) return;
+  start.disabled = true; exposure.disabled = true; answers.hidden = true;
+  duration = Number(exposure.value);
   let exposureStarted = false;
+  const loadFailed = () => {{
+    start.disabled = false; exposure.disabled = false;
+    status.textContent = 'Could not load this scene. Check the image files and try again.';
+  }};
   const beginExposure = async () => {{
-    if (!awaiting || exposureStarted) return;
+    if (exposureStarted) return;
     exposureStarted = true;
-    try {{ if (scene.decode) await scene.decode(); }} catch (error) {{}}
+    try {{ if (scene.decode) await scene.decode(); }} catch {{ loadFailed(); return; }}
     requestAnimationFrame(() => requestAnimationFrame(() => {{
-      if (!awaiting) return;
       scene.style.visibility = 'visible'; status.textContent = 'Observe...'; setProgress();
       shownAt = performance.now();
-      const duration = Number(document.querySelector('#exposure').value);
       const hideAt = (now) => {{
-        if (!awaiting) return;
-        if (now - shownAt >= duration) {{ scene.style.visibility = 'hidden'; answers.hidden = false; status.textContent = 'Was a person or uniform visible?'; }}
-        else hideTimer = requestAnimationFrame(hideAt);
+        if (now - shownAt >= duration) {{ scene.style.visibility = 'hidden'; answers.hidden = false; awaiting = true; status.textContent = 'Was a person or uniform visible?'; }}
+        else requestAnimationFrame(hideAt);
       }};
-      hideTimer = requestAnimationFrame(hideAt);
+      requestAnimationFrame(hideAt);
     }}));
   }};
   scene.style.display = 'block'; scene.style.visibility = 'hidden'; scene.onload = beginExposure;
+  scene.onerror = loadFailed;
   scene.src = {json.dumps(image_prefix)} + "/" + encodeURIComponent(order[index]);
-  if (scene.complete) beginExposure();
+  if (scene.complete && scene.naturalWidth) beginExposure();
 }}
 function answer(detected) {{
   if (!awaiting) return;
   awaiting = false; const latency = Math.round(performance.now() - shownAt);
-  rows.push({{ order: index + 1, file: order[index], detected, latency }});
+  rows.push({{ order: index + 1, file: order[index], detected, latency, exposure: duration }});
   scene.style.display = 'none'; scene.style.visibility = 'visible'; answers.hidden = true;
   index += 1; status.textContent = index < order.length ? 'Answer recorded.' : 'Test complete. Download the CSV.';
-  document.querySelector('#start').disabled = index >= order.length;
+  start.disabled = index >= order.length;
+  exposure.disabled = index >= order.length;
   document.querySelector('#download').hidden = index < order.length; setProgress();
 }}
 function download() {{
-  const csv = ['display_order,image_file,detected,latency_ms,confidence,notes', ...rows.map(r => `${{r.order}},${{r.file}},${{r.detected}},${{r.latency}},,`)].join('\\n');
+  const csv = ['display_order,image_file,trial_set_id,exposure_ms,detected,latency_ms,confidence,notes', ...rows.map(r => `${{r.order}},${{r.file}},${{trialSetId}},${{r.exposure}},${{r.detected}},${{r.latency}},,`)].join('\\n');
   const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([csv], {{type: 'text/csv'}})); link.download = 'responses.csv'; link.click();
 }}
 document.querySelector('#start').onclick = startTrial;
@@ -166,27 +191,72 @@ def as_bool(value: str) -> bool:
     return value.strip().lower() in {"1", "true", "yes", "y", "si", "s"}
 
 
+def read_responses(path: Path) -> list[dict[str, str]]:
+    with path.open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    for row in rows:
+        if not row.get("image_file") and row.get("trial_id"):
+            row["image_file"] = f"{row['trial_id']}.jpg"
+    return rows
+
+
+def read_trial_map(path: Path) -> dict[str, dict]:
+    if not path.exists():
+        return {}
+    report = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        Path(record["human_test_file"]).name: record
+        for record in report.get("records", [])
+        if record.get("human_test_file")
+    }
+
+
+def verify_offline_responses(
+    rows: list[dict[str, str]], report: Path, image_root: Path | None
+) -> None:
+    ids = {
+        row["trial_set_id"] for row in rows if row.get("trial_set_id") and not row.get("trial_id")
+    }
+    if not ids:
+        return
+    if image_root is None:
+        image_root = report.parent / (
+            "scenes"
+            if (report.parent / "scenes").is_dir() and not (report.parent / "human_test").is_dir()
+            else "human_test"
+        )
+    if ids != {load_trial_set(image_root, report).id}:
+        raise ValueError("Offline responses belong to a different trial set")
+
+
+def response_groups(row: dict[str, str], records: dict[str, dict]) -> dict[str, str]:
+    record = records.get(Path(row.get("image_file") or "").name, {})
+    # Web responses carry the labels assigned by the server that served the trial.
+    if row.get("trial_id") and (
+        row.get("trial_set_id") or (row.get("pattern_group") and row.get("background_group"))
+    ):
+        record = row
+    return {
+        field: record.get(field) or row.get(field) or "unknown"
+        for field in ("pattern_group", "background_group")
+    }
+
+
 def analyze_main() -> None:
     parser = argparse.ArgumentParser(description=_ANALYZE_HUMAN_TEST_DESCRIPTION)
     parser.add_argument("--input", default="output/human_test/responses.csv")
     parser.add_argument("--output", default="output/human_test/human_test_summary.json")
     parser.add_argument("--report", default="output/human_test/evaluation_report.json")
+    parser.add_argument("--image-root", type=Path, help="Scene directory for verified offline CSVs")
     args = parser.parse_args()
 
-    with Path(args.input).open(newline="", encoding="utf-8") as handle:
-        rows = list(csv.DictReader(handle))
-    for row in rows:
-        if not row.get("image_file") and row.get("trial_id"):
-            row["image_file"] = f"{row['trial_id']}.jpg"
-    report_records = {}
-    report_path = Path(args.report)
-    if report_path.exists():
-        report = json.loads(report_path.read_text(encoding="utf-8"))
-        report_records = {
-            Path(record["human_test_file"]).name: record
-            for record in report.get("records", [])
-            if record.get("human_test_file")
-        }
+    report = Path(args.report)
+    try:
+        rows = read_responses(Path(args.input))
+        verify_offline_responses(rows, report, args.image_root)
+        report_records = read_trial_map(report)
+    except (OSError, ValueError, TypeError, KeyError) as error:
+        parser.error(f"Cannot analyze {args.input}: {error}")
     answered = [row for row in rows if row.get("detected", "").strip()]
     detections = [as_bool(row["detected"]) for row in answered]
     latencies = [float(row["latency_ms"]) for row in answered if row.get("latency_ms", "").strip()]
@@ -204,19 +274,13 @@ def analyze_main() -> None:
 
     enriched = []
     for row in answered:
-        record = report_records.get(Path(row.get("image_file", "")).name, {})
         enriched.append(
             {
                 "detected": as_bool(row["detected"]),
                 "latency_ms": float(row["latency_ms"])
                 if row.get("latency_ms", "").strip()
                 else None,
-                "pattern_group": record.get("pattern_group")
-                or row.get("pattern_group")
-                or "unknown",
-                "background_group": record.get("background_group")
-                or row.get("background_group")
-                or "unknown",
+                **response_groups(row, report_records),
             }
         )
 
@@ -235,7 +299,12 @@ def analyze_main() -> None:
         "by_pattern": grouped_by("pattern_group"),
         "by_environment": grouped_by("background_group"),
         "unmatched_report_records": sum(
-            1 for row in answered if Path(row.get("image_file", "")).name not in report_records
+            1
+            for row in answered
+            if not (
+                row.get("trial_id") and row.get("pattern_group") and row.get("background_group")
+            )
+            and Path(row.get("image_file") or "").name not in report_records
         ),
         "note": "Detection rate and latency are observer-specific and should be compared across patterns under the same protocol.",
     }
@@ -256,15 +325,13 @@ def summarize(rows: list[dict[str, str]], records: dict[str, dict]) -> dict[str,
     latencies = [float(row["latency_ms"]) for row in answered if row.get("latency_ms", "").strip()]
     enriched = []
     for row in answered:
-        record = records.get(Path(row["image_file"]).name, {})
         enriched.append(
             {
                 "detected": as_bool(row["detected"]),
                 "latency_ms": float(row["latency_ms"])
                 if row.get("latency_ms", "").strip()
                 else None,
-                "pattern_group": record.get("pattern_group", "unknown"),
-                "background_group": record.get("background_group", "unknown"),
+                **response_groups(row, records),
             }
         )
 
@@ -272,18 +339,15 @@ def summarize(rows: list[dict[str, str]], records: dict[str, dict]) -> dict[str,
         result: dict[str, list[dict[str, object]]] = {}
         for item in enriched:
             result.setdefault(str(item[key]), []).append(item)
-        return {
-            name: {
+        summaries = {}
+        for name, items in sorted(result.items()):
+            timings = [item["latency_ms"] for item in items if item["latency_ms"] is not None]
+            summaries[name] = {
                 "trials": len(items),
-                "detection_rate": mean(bool(item["detected"]) for item in items) if items else None,
-                "mean_latency_ms": mean(
-                    item["latency_ms"] for item in items if item["latency_ms"] is not None
-                )
-                if items
-                else None,
+                "detection_rate": mean(bool(item["detected"]) for item in items),
+                "mean_latency_ms": mean(timings) if timings else None,
             }
-            for name, items in sorted(result.items())
-        }
+        return summaries
 
     return {
         "total_trials": len(rows),
@@ -302,11 +366,12 @@ def parse_inputs(values: list[str], root: Path) -> dict[str, Path]:
         result = {}
         for value in values:
             exposure, separator, filename = value.partition("=")
-            if not separator:
+            exposure = exposure.removesuffix("ms")
+            if not separator or exposure not in {"100", "250", "500"} or not filename:
                 raise SystemExit(
                     "Use --input EXPOSURE=PATH, for example 100=output/human_test/responses_100.csv"
                 )
-            result[exposure.rstrip("ms")] = Path(filename)
+            result[exposure] = Path(filename)
         return result
     return {exposure: root / f"responses_{exposure}.csv" for exposure in ("100", "250", "500")}
 
@@ -315,6 +380,7 @@ def exposures_main() -> None:
     parser = argparse.ArgumentParser(description=_ANALYZE_EXPOSURE_SERIES_DESCRIPTION)
     parser.add_argument("--root", default="output/human_test")
     parser.add_argument("--report", default="output/human_test/evaluation_report.json")
+    parser.add_argument("--image-root", type=Path, help="Scene directory for verified offline CSVs")
     parser.add_argument("--output", default="output/human_test/human_test_exposure_summary.json")
     parser.add_argument("--markdown", default="output/human_test/human_test_exposure_summary.md")
     parser.add_argument(
@@ -323,16 +389,21 @@ def exposures_main() -> None:
     args = parser.parse_args()
 
     input_paths = parse_inputs(args.input or [], Path(args.root))
-    report = json.loads(Path(args.report).read_text(encoding="utf-8"))
-    records = {
-        Path(item["human_test_file"]).name: item
-        for item in report.get("records", [])
-        if item.get("human_test_file")
-    }
+    report = Path(args.report)
     summaries = {}
-    for exposure, path in sorted(input_paths.items(), key=lambda item: int(item[0])):
-        with path.open(newline="", encoding="utf-8") as handle:
-            summaries[exposure] = summarize(list(csv.DictReader(handle)), records)
+    try:
+        records = read_trial_map(report)
+        for exposure, path in sorted(input_paths.items(), key=lambda item: int(item[0])):
+            rows = read_responses(path)
+            verify_offline_responses(rows, report, args.image_root)
+            matching = [
+                row for row in rows if not row.get("exposure_ms") or row["exposure_ms"] == exposure
+            ]
+            if not matching:
+                parser.error(f"No trials with a {exposure} ms exposure in {path}")
+            summaries[exposure] = summarize(matching, records)
+    except (OSError, ValueError, TypeError, KeyError) as error:
+        parser.error(f"Cannot analyze the exposure series: {error}")
 
     result = {
         "exposures_ms": list(summaries),
@@ -352,9 +423,17 @@ def exposures_main() -> None:
         "|---:|---:|---:|---:|---:|---:|",
     ]
     for exposure, summary in summaries.items():
+        rate, average, middle = (
+            "n/a" if summary[key] is None else format(summary[key], spec)
+            for key, spec in (
+                ("detection_rate", ".1%"),
+                ("mean_latency_ms", ".1f"),
+                ("median_latency_ms", ".1f"),
+            )
+        )
         lines.append(
             f"| {exposure} | {summary['total_trials']} | {summary['completion_rate']:.1%} | "
-            f"{summary['detection_rate']:.1%} | {summary['mean_latency_ms']:.1f} | {summary['median_latency_ms']:.1f} |"
+            f"{rate} | {average} | {middle} |"
         )
     lines.extend(
         [
@@ -400,7 +479,9 @@ def exposures_main() -> None:
             + " | ".join("n/a" if value is None else f"{value:.1%}" for value in values)
             + " |"
         )
-    Path(args.markdown).write_text("\n".join(lines) + "\n", encoding="utf-8")
+    markdown = Path(args.markdown)
+    markdown.parent.mkdir(parents=True, exist_ok=True)
+    markdown.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))
 
 

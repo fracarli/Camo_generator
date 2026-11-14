@@ -120,33 +120,22 @@ def card(draw: ImageDraw.ImageDraw, box, title: str, body: str, color=GREEN):
 
 def build(pipeline_root: Path | None = None) -> list[Image.Image]:
     initial_grid = ROOT / "results/baseline/all_patterns_grid.png"
-    final_grid = next(
-        (
-            path
-            for path in (
-                ROOT / "output/pipeline/neural/all_patterns_grid.png",
-                ROOT / "output/pipeline/optimized/all_optimized_patterns_grid.png",
-                ROOT / "results/optimized_final/all_optimized_patterns_grid.png",
-            )
-            if path.exists()
-        ),
-        ROOT / "results/optimized_final/all_optimized_patterns_grid.png",
-    )
+    final_grid = ROOT / "results/optimized_final/all_optimized_patterns_grid.png"
     uniforms = ROOT / "results/optimized_mockups/outfit_contact_sheet.png"
     scenes = ROOT / "results/evaluation/forest_contact_sheet.png"
-    masks = next((ROOT / "output/results_neural_smoke/segmentation_masks").glob("*.png"), None)
+    comparison = ROOT / "results/comparison/neural_assisted.png"
     if pipeline_root is not None:
         initial_grid = pipeline_root / "baseline/all_patterns_grid.png"
         final_grid = pipeline_root / "optimized/all_optimized_patterns_grid.png"
         uniforms = pipeline_root / "mockups/outfit_contact_sheet.png"
         scenes = pipeline_root / "evaluation_optimized/forest_contact_sheet.png"
-        masks = None
+        comparison = pipeline_root / "comparison/presentation_comparison.png"
         required = (
             initial_grid,
             final_grid,
             uniforms,
             scenes,
-            pipeline_root / "comparison/presentation_comparison.png",
+            comparison,
         )
         missing = [str(path) for path in required if not path.is_file()]
         if missing:
@@ -263,7 +252,7 @@ def build(pipeline_root: Path | None = None) -> list[Image.Image]:
     wrapped(
         draw,
         (120, 700),
-        "Human CSV results are currently validation evidence. They are not yet used to train a neural network.",
+        "Completed human-test CSVs can be used to train an experimental visibility evaluator.",
         25,
         1350,
         MUTED,
@@ -274,23 +263,22 @@ def build(pipeline_root: Path | None = None) -> list[Image.Image]:
         "Neural input. Procedural output.",
         "SegFormer improves scene understanding; it does not generate the camouflage",
     )
-    place_image(page, masks, (100, 220, 620, 760)) if masks else None
     card(
         draw,
-        (760, 205, 1510, 395),
+        (110, 205, 1490, 385),
         "LANDSCAPE PHOTO",
         "The pretrained model assigns semantic labels such as vegetation, terrain, sky, and water.",
     )
     card(
         draw,
-        (760, 430, 1510, 625),
+        (110, 415, 1490, 595),
         "RELEVANT PIXELS",
         "The pipeline can focus color and texture extraction on the terrain that matters.",
         ACCENT,
     )
     card(
         draw,
-        (760, 660, 1510, 815),
+        (110, 625, 1490, 805),
         "LIMIT",
         "Segmentation improves the input analysis. It does not generate the camouflage or prove field performance.",
         GREEN,
@@ -318,29 +306,16 @@ def build(pipeline_root: Path | None = None) -> list[Image.Image]:
     )
     pages.append(page)
 
-    comparison = next(
-        (
-            path
-            for path in (
-                ROOT / "results/comparison/neural_assisted.png",
-                ROOT / "output/neural_comparison/initial_optimized_neural.png",
-                ROOT / "output/pipeline/comparison/presentation_comparison.png",
-            )
-            if path.exists()
-        ),
-        ROOT / "output/neural_comparison/initial_optimized_neural.png",
-    )
-    if pipeline_root is not None:
-        comparison = pipeline_root / "comparison/presentation_comparison.png"
     if comparison.exists():
         page, draw = slide(
-            "Three versions, one forest scene.", "Initial -> optimized -> neural-assisted"
+            "Pattern comparison",
+            "Published experiment" if pipeline_root is None else "Results of this experiment",
         )
         place_image(page, comparison, (55, 180, 1545, 800))
         wrapped(
             draw,
             (90, 815),
-            "The comparison keeps the same pattern scale, forest background, and figure placement. Lower visibility score is preferable within this controlled experiment.",
+            "Lower proxy scores indicate lower estimated visibility in this experiment.",
             20,
             1400,
             MUTED,

@@ -8,11 +8,14 @@ import hashlib
 import importlib
 import json
 import sys
+from io import BytesIO
 from pathlib import Path
 
 import numpy as np
+from PIL import Image
 
 from .configuration import STYLE_PROFILES
+from .human_server import load_trial_set
 from .images import classify_group, discover_reference_paths, load_images
 from .ml import PARAMETER_HIGH, PARAMETER_LOW, build_parameter_model, extract_features
 
@@ -54,6 +57,8 @@ def train_proposer_main() -> None:
     parser.add_argument("--augment", type=int, default=24)
     parser.add_argument("--device", default="cpu")
     args = parser.parse_args()
+    if args.epochs < 1 or args.augment < 0:
+        parser.error("--epochs must be positive and --augment cannot be negative")
     try:
         import torch
     except ImportError as error:
@@ -73,6 +78,8 @@ def train_proposer_main() -> None:
         group = classify_group(path, input_root)
         if group in STYLE_PROFILES and group != "snow":
             grouped.setdefault(group, []).append(path)
+    if len(grouped) < 2:
+        parser.error("Need at least two environment groups with reference images")
     samples, targets = [], []
     rng = np.random.default_rng(42)
     for group, group_paths in sorted(grouped.items()):
@@ -84,9 +91,7 @@ def train_proposer_main() -> None:
         for _ in range(args.augment):
             samples.append(features + rng.normal(0.0, 0.002, features.shape).astype(np.float32))
             targets.append(np.clip(target + rng.normal(0.0, 0.015, target.shape), 0.0, 1.0))
-    if len(samples) < 2:
-        raise SystemExit("Need at least two environment groups with reference images")
-
+    torch.manual_seed(42)
     device = torch.device(args.device)
     model = build_parameter_model(len(samples[0])).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=2e-3, weight_decay=1e-4)
@@ -132,6 +137,41 @@ _TRAIN_NEURAL_EVALUATOR_DESCRIPTION = (
 )
 
 
+def evaluator_responses(
+    csv_path: Path, root: Path, report_path: Path
+) -> tuple[list[tuple[Path, float]], dict[str, bytes]]:
+    with csv_path.open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    identified_rows = [row for row in rows if row.get("trial_id") or row.get("trial_set_id")]
+    trial_set = None
+    if identified_rows:
+        if len(identified_rows) != len(rows) or any(not row.get("trial_set_id") for row in rows):
+            raise ValueError("Use a response CSV with a trial set ID on every row")
+        trial_set = load_trial_set(root, report_path)
+        if any(row["trial_set_id"] != trial_set.id for row in rows):
+            raise ValueError("Response CSV belongs to a different trial set")
+
+    responses = []
+    for row in rows:
+        detected = (row.get("detected") or "").strip().lower()
+        if detected not in {"yes", "no", "true", "false", "1", "0"}:
+            continue
+        if trial_set is not None:
+            trial = row.get("trial_id") or Path(row.get("image_file") or "").stem
+            if trial not in trial_set.images:
+                raise ValueError(f"Unknown trial in response CSV: {trial}")
+            image_path = root / f"{trial}.jpg"
+        else:
+            image_name = (row.get("image_file") or "").strip()
+            if not image_name:
+                continue
+            image_path = root / Path(image_name).name
+            if not image_path.is_file():
+                continue
+        responses.append((image_path, float(detected in {"yes", "true", "1"})))
+    return responses, {} if trial_set is None else trial_set.images
+
+
 def train_evaluator_main() -> None:
     parser = argparse.ArgumentParser(description=_TRAIN_NEURAL_EVALUATOR_DESCRIPTION)
     parser.add_argument("--csv", default="output/human_test/responses.csv")
@@ -144,10 +184,18 @@ def train_evaluator_main() -> None:
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--device", default="cpu")
     args = parser.parse_args()
+    if args.epochs < 1 or args.batch_size < 1:
+        parser.error("--epochs and --batch-size must be positive")
+
+    root = Path(args.image_root)
+    report_path = Path(args.report) if args.report else root.parent / "evaluation_report.json"
+    try:
+        raw_rows, trial_images = evaluator_responses(Path(args.csv), root, report_path)
+    except (OSError, ValueError, TypeError, KeyError) as error:
+        parser.error(f"Cannot load responses from {args.csv}: {error}")
 
     try:
         import torch
-        from PIL import Image
         from torch import nn
 
         from .ml import build_model, image_tensor
@@ -156,22 +204,12 @@ def train_evaluator_main() -> None:
             "Install neural dependencies with: python -m pip install -e '.[ml]'"
         ) from error
 
-    raw_rows = []
-    root = Path(args.image_root)
-    with Path(args.csv).open(newline="", encoding="utf-8") as handle:
-        for row in csv.DictReader(handle):
-            detected = row.get("detected", "").strip().lower()
-            if detected not in {"yes", "no", "true", "false", "1", "0"}:
-                continue
-            image_name = row.get("image_file", "").strip()
-            if not image_name:
-                trial_id = row.get("trial_id", "").strip()
-                image_name = f"{trial_id}.jpg" if trial_id else ""
-            if not image_name:
-                continue
-            image_path = root / Path(image_name).name
-            if image_path.exists():
-                raw_rows.append((image_path, 1.0 if detected in {"yes", "true", "1"} else 0.0))
+    def load_tensor(path: Path):
+        # Train on the same image bytes used to verify the trial set ID.
+        source = BytesIO(trial_images[path.stem]) if trial_images else path
+        with Image.open(source) as image:
+            return image_tensor(image)
+
     aggregated = {}
     for image_path, label in raw_rows:
         aggregated.setdefault(image_path, []).append(label)
@@ -181,7 +219,6 @@ def train_evaluator_main() -> None:
             f"Need at least 10 unique answered scenes; found {len(rows)}. Complete the human test first."
         )
 
-    report_path = Path(args.report) if args.report else root.parent / "evaluation_report.json"
     background_by_image = {}
     if report_path.exists():
         report = json.loads(report_path.read_text(encoding="utf-8"))
@@ -213,7 +250,7 @@ def train_evaluator_main() -> None:
         total = 0.0
         for start in range(0, len(train_rows), args.batch_size):
             batch = train_rows[start : start + args.batch_size]
-            inputs = torch.stack([image_tensor(Image.open(path)) for path, _ in batch]).to(device)
+            inputs = torch.stack([load_tensor(path) for path, _ in batch]).to(device)
             labels = torch.tensor([label for _, label in batch], dtype=torch.float32, device=device)
             optimizer.zero_grad()
             loss = loss_fn(model(inputs), labels)
@@ -225,7 +262,7 @@ def train_evaluator_main() -> None:
     with torch.no_grad():
         predictions = []
         for path, label in test_rows:
-            prediction = float(model(image_tensor(Image.open(path)).unsqueeze(0).to(device)).item())
+            prediction = float(model(load_tensor(path).unsqueeze(0).to(device)).item())
             predictions.append({"image": str(path), "label": label, "prediction": prediction})
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

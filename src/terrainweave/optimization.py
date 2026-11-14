@@ -484,7 +484,10 @@ def main() -> None:
     segmenter = None
     if args.segmentation == "semantic":
         print(f"Loading semantic segmentation model: {args.segmentation_model}")
-        segmenter = SemanticSegmenter(args.segmentation_model, args.device)
+        try:
+            segmenter = SemanticSegmenter(args.segmentation_model, args.device)
+        except (RuntimeError, ValueError) as error:
+            raise SystemExit(str(error)) from error
     input_root = Path(args.input)
     background_root = Path(args.backgrounds)
     if (

@@ -7,13 +7,18 @@ from pathlib import Path
 
 
 def workspace_root() -> Path:
-    configured = os.environ.get("TERRAINWEAVE_WORKSPACE")
-    if configured:
-        return Path(configured).expanduser().resolve()
+    configured = configured_workspace()
+    if configured is not None:
+        return configured
     checkout = Path(__file__).resolve().parents[2]
     if (checkout / "pyproject.toml").is_file() and (checkout / "src/terrainweave").is_dir():
         return checkout
     return Path.cwd().resolve()
+
+
+def configured_workspace() -> Path | None:
+    configured = os.environ.get("TERRAINWEAVE_WORKSPACE")
+    return Path(configured).expanduser().resolve() if configured else None
 
 
 def asset_path(name: str) -> Path:

@@ -2,6 +2,7 @@ create table if not exists public.human_test_responses (
   timestamp timestamptz not null,
   session_id text not null,
   language text not null check (language in ('en', 'it')),
+  trial_set_id text,
   trial_id text not null,
   pattern_group text,
   background_group text,
@@ -10,6 +11,8 @@ create table if not exists public.human_test_responses (
   latency_ms integer not null,
   confidence text
 );
+
+alter table public.human_test_responses add column if not exists trial_set_id text;
 
 alter table public.human_test_responses enable row level security;
 grant insert on table public.human_test_responses to anon;

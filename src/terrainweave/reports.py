@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 import statistics
+from collections import Counter, defaultdict
+from itertools import combinations
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
@@ -18,12 +21,23 @@ _COMPARE_VERSIONS_DESCRIPTION = (
 GROUPS = ("universal", "forest", "desert", "mountain", "snow", "jungle", "taiga", "tundra", "urban")
 
 
-def score_map(report_path: Path) -> dict[tuple[str, str], float]:
-    report = json.loads(report_path.read_text(encoding="utf-8"))
+def score_map(report: dict) -> dict[tuple[str, str], float]:
     return {
         (item["pattern_group"], item["background_group"]): float(item["mean_visibility_score"])
         for item in report.get("summary", [])
     }
+
+
+def comparison_scenes(report: dict) -> dict[str, Counter[tuple[str, Path, float, int, int]]]:
+    scenes: dict[str, Counter[tuple[str, Path, float, int, int]]] = defaultdict(Counter)
+    for row in report["records"]:
+        pattern, background = row["pattern_group"], row["background_group"]
+        if pattern == "universal" or pattern == background:
+            x, y = row["position"]
+            scenes[pattern][
+                (background, Path(row["background_file"]).resolve(), row["uniform_scale"], x, y)
+            ] += 1
+    return scenes
 
 
 def score(scores: dict[tuple[str, str], float], group: str) -> float | None:
@@ -85,29 +99,67 @@ def versions_main() -> None:
         for group in GROUPS
     }
     reports = {key: {} for key in roots}
+    scenes_by_version = {}
     problems = []
     for key, report_path in report_paths.items():
         if key == "neural" and args.skip_neural:
             continue
         if key == "neural":
             for paths in patterns.values():
-                if not paths[key].is_file():
-                    paths[key] = paths[key].with_name("best_pattern.png")
+                generated = paths[key].with_name("best_pattern.png")
+                if generated.is_file():
+                    paths[key] = generated
         if not report_path.is_file():
             problems.append(f"{key} evaluation report missing: {report_path}")
             continue
         try:
-            reports[key] = score_map(report_path)
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            reports[key] = score_map(report)
         except (OSError, ValueError, TypeError, AttributeError, KeyError):
             problems.append(f"{key} evaluation report unreadable or invalid: {report_path}")
             continue
-        if not any(
-            paths[key].is_file() and score(reports[key], group) is not None
-            for group, paths in patterns.items()
-        ):
+        scored_groups = {group for group in patterns if score(reports[key], group) is not None}
+        if not scored_groups or any(not patterns[group][key].is_file() for group in scored_groups):
             problems.append(
-                f"{key} has no pattern images with scores: {roots[key]} ({report_path})"
+                f"{key} is missing pattern images or scores: {roots[key]} ({report_path})"
             )
+            continue
+        try:
+            scenes = comparison_scenes(report)
+            pattern_hashes = {
+                group: hashlib.sha256(patterns[group][key].read_bytes()).hexdigest()
+                for group in scored_groups
+            }
+            scored_pairs = {
+                (pattern, background)
+                for pattern, background in reports[key]
+                if pattern in scored_groups and (pattern == "universal" or pattern == background)
+            }
+            scene_pairs = {
+                (pattern, scene[0]) for pattern in scored_groups for scene in scenes[pattern]
+            }
+            if scored_pairs != scene_pairs:
+                raise ValueError("Scene records do not match the scored backgrounds")
+        except (OSError, ValueError, TypeError, KeyError):
+            problems.append(f"{key} evaluation report lacks valid scene records: {report_path}")
+            continue
+        if any(
+            row.get("pattern_sha256")
+            and row["pattern_group"] in scored_groups
+            and pattern_hashes[row["pattern_group"]] != row["pattern_sha256"]
+            for row in report["records"]
+        ):
+            problems.append(f"{key} pattern images differ from the evaluated files: {report_path}")
+            continue
+        scenes_by_version[key] = {group: scenes[group] for group in scored_groups}
+
+    for (left, left_scenes), (right, right_scenes) in combinations(scenes_by_version.items(), 2):
+        shared_groups = left_scenes.keys() & right_scenes.keys()
+        if not shared_groups:
+            problems.append(f"{left} and {right} have no scored patterns in common")
+        for group in sorted(shared_groups):
+            if left_scenes[group] != right_scenes[group]:
+                problems.append(f"{left} and {right} use different scenes for {group}")
     if problems:
         pipeline = "terrainweave pipeline"
         if args.skip_neural:
@@ -125,7 +177,8 @@ def versions_main() -> None:
     draw.rectangle((0, 0, width, 12), fill=(121, 159, 79))
     draw.text(
         (48, 35),
-        "TerrainWeave / original -> optimized -> neural-assisted",
+        "TerrainWeave / original -> optimized"
+        + ("" if args.skip_neural else " -> neural-assisted"),
         fill=(23, 43, 34),
         font=title,
     )
@@ -135,7 +188,11 @@ def versions_main() -> None:
         fill=(86, 106, 94),
         font=font,
     )
-    columns = ((190, "ORIGINAL"), (500, "OPTIMIZED"), (810, "NEURAL-ASSISTED"))
+    columns = (
+        (190, "ORIGINAL"),
+        (500, "OPTIMIZED"),
+        (810, "NEURAL STAGE SKIPPED" if args.skip_neural else "NEURAL-ASSISTED"),
+    )
     for x, label in columns:
         draw.text((x, 125), label, fill=(86, 106, 94), font=font)
     rows = []
@@ -191,7 +248,7 @@ def versions_main() -> None:
         formatted = [f"{value:.4f}" if value is not None else "n/a" for value in values]
         lines.append(f"| {row['environment']} | {' | '.join(formatted)} |")
     (output / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"Three-way comparison written to {output / 'original_optimized_neural.png'}")
+    print(f"Comparison written to {output / 'original_optimized_neural.png'}")
 
 
 _COMPARE_HELDOUT_DESCRIPTION = (

@@ -183,7 +183,9 @@ def run_group(
     return report
 
 
-def save_summary_grid(output_dir: Path, size: int, groups: list[str]) -> Path:
+def save_summary_grid(
+    output_dir: Path, size: int, groups: list[str], *, generated_groups: set[str] | None = None
+) -> Path:
     """Save the selected pattern types in one labeled overview image."""
     layout = [(group, group.title()) for group in groups]
     columns = min(3, max(1, len(layout)))
@@ -198,7 +200,7 @@ def save_summary_grid(output_dir: Path, size: int, groups: list[str]) -> Path:
         if group is None:
             continue
         image_path = output_dir / group / "best_pattern.png"
-        if image_path.exists():
+        if (generated_groups is None or group in generated_groups) and image_path.is_file():
             with Image.open(image_path) as source:
                 tile = source.convert("RGB").resize((size, size), Image.Resampling.LANCZOS)
             canvas.paste(tile, (left, top + label_height))
@@ -280,6 +282,8 @@ def write_validation_report(output_dir: Path, reports: dict[str, dict]) -> None:
 
 
 def run(args: argparse.Namespace) -> dict:
+    if args.candidates < 1 or args.size < 1:
+        raise ValueError("--candidates and --size must be positive")
     input_dir = Path(args.input)
     output_dir = Path(args.output)
     resolve_generation_settings(args)
@@ -298,7 +302,6 @@ def run(args: argparse.Namespace) -> dict:
             raise ValueError(f"Could not load neural parameter proposer: {error}") from error
     args.summary_groups = resolve_summary_groups(args.summary_groups)
     args.colors = resolve_color_count(args.colors)
-    output_dir.mkdir(parents=True, exist_ok=True)
     input_manifest = getattr(args, "input_manifest", None)
     if input_manifest:
         input_dir = input_dir.resolve()
@@ -341,7 +344,7 @@ def run(args: argparse.Namespace) -> dict:
             for image in images:
                 image.group = selected_environment
         reports[group] = run_group(images, output_dir / group, args)
-    save_summary_grid(output_dir, args.size, args.summary_groups)
+    save_summary_grid(output_dir, args.size, args.summary_groups, generated_groups=set(reports))
     (output_dir / "summary_grid.json").write_text(
         json.dumps({"groups": args.summary_groups}, indent=2), encoding="utf-8"
     )
@@ -351,7 +354,10 @@ def run(args: argparse.Namespace) -> dict:
 
 
 def main() -> None:
-    reports = run(parse_args())
+    try:
+        reports = run(parse_args())
+    except (OSError, RuntimeError, ValueError) as error:
+        raise SystemExit(f"Generation failed: {error}") from error
     for group, report in reports.items():
         print(f"{group}: {len(report['input_images'])} images, score {report['best_score']:.6f}")
 

@@ -260,6 +260,8 @@ def studio_main() -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    from .paths import configured_workspace
+
     parser = argparse.ArgumentParser(
         prog="terrainweave",
         description="Generate, evaluate, and compare reproducible camouflage patterns.",
@@ -288,8 +290,8 @@ def main(argv: list[str] | None = None) -> int:
         leaf = parent.add_parser(parts[-1], help=command.help, add_help=False)
         leaf.set_defaults(selected_command=command)
     args, remaining = parser.parse_known_args(argv)
-    if args.workspace:
-        workspace = args.workspace.expanduser().resolve()
+    workspace = args.workspace.expanduser().resolve() if args.workspace else configured_workspace()
+    if workspace is not None:
         if not workspace.is_dir():
             parser.error(f"Workspace directory does not exist: {workspace}")
         os.environ["TERRAINWEAVE_WORKSPACE"] = str(workspace)

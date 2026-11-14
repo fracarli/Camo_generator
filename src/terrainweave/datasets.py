@@ -184,11 +184,9 @@ def download_image(candidate: dict, destination: Path, delay: float = 0.5) -> No
     for url in urls:
         try:
             request = Request(url, headers={"User-Agent": "CamoResearchPrototype/1.0"})
-            with (
-                open_with_retry(request, timeout=120) as response,
-                destination.open("wb") as output,
-            ):
-                output.write(response.read())
+            with open_with_retry(request, timeout=120) as response:
+                content = response.read()
+            destination.write_bytes(content)
             break
         except Exception as error:
             last_error = error
@@ -233,7 +231,7 @@ def collect_group(group: str, count: int, width: int) -> list[dict]:
 
 def download_main() -> None:
     parser = argparse.ArgumentParser(description=_DOWNLOAD_EVALUATION_BACKGROUNDS_DESCRIPTION)
-    parser.add_argument("--output", default="evaluation/backgrounds")
+    parser.add_argument("--output", default="evaluation/review_candidates/backgrounds")
     parser.add_argument("--groups", default=",".join(ENVIRONMENT_SEARCHES))
     parser.add_argument("--count", type=int, default=10, help="Photos per environment")
     parser.add_argument("--width", type=int, default=1280)
@@ -271,16 +269,21 @@ def download_main() -> None:
         candidates = collect_group(group, args.count, args.width)
         if len(candidates) < args.count:
             print(f"Warning: found only {len(candidates)} suitable images for {group}")
-        known_sources = {item.get("source_filename") for item in manifest}
+        known_sources = {
+            item.get("source_filename") for item in manifest if Path(item["file"]).is_file()
+        }
+        used_paths = {Path(item["file"]).resolve() for item in manifest}
         for index, candidate in enumerate(candidates[: args.count], start=1):
             title = candidate["title"]
             destination = destination_root / safe_filename(title, index)
             source_name = title.removeprefix("File:")
-            if source_name in known_sources and destination.exists():
+            if source_name in known_sources:
                 continue
+            while destination.exists() or destination.resolve() in used_paths:
+                index += 1
+                destination = destination_root / safe_filename(title, index)
             try:
-                if not destination.exists():
-                    download_image(candidate, destination, args.delay)
+                download_image(candidate, destination, args.delay)
             except Exception as error:
                 print(f"Stopping {group} after download error: {error}")
                 break
@@ -300,7 +303,8 @@ def download_main() -> None:
                     "thumbnail_width": args.width,
                 }
             )
-            known_sources.add(title)
+            known_sources.add(source_name)
+            used_paths.add(destination.resolve())
             write_manifest(root, manifest)
             print(f"Downloaded {group} {index}/{args.count}: {destination.name}")
 
@@ -325,8 +329,9 @@ def load_records(root: Path) -> list[dict]:
     return [
         record
         for record in records
-        if Path(record.get("file", "")).exists()
+        if Path(record.get("file", "")).is_file()
         and Path(record["file"]).suffix.lower() in REVIEW_IMAGE_EXTENSIONS
+        and Path(record["file"]).resolve().is_relative_to(root.resolve())
     ]
 
 
@@ -369,7 +374,7 @@ def build_html(records: list[dict], output_name: str, page_directory: Path) -> s
   <input class='note' data-index='{index}' value='{note}' placeholder='Optional note'>
 </article>"""
         )
-    records_json = json.dumps(records)
+    records_json = json.dumps(records).replace("<", "\\u003c")
     return f"""<!doctype html>
 <html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>TerrainWeave candidate review</title>
@@ -420,6 +425,8 @@ def review_main() -> None:
     args = parser.parse_args()
     root = Path(args.root)
     records = load_records(root)
+    if not records:
+        parser.error(f"No candidate images under {root}. Run terrainweave data download first.")
     decisions_path = Path(args.decisions)
     if decisions_path.exists():
         previous = json.loads(decisions_path.read_text(encoding="utf-8"))
@@ -590,17 +597,17 @@ def split_records(
 def split_main() -> None:
     parser = argparse.ArgumentParser(description=_CREATE_EVALUATION_SPLIT_DESCRIPTION)
     parser.add_argument("--manifest", default="evaluation/sources.json")
-    parser.add_argument("--output", default="evaluation/splits")
+    parser.add_argument("--output", default="output/splits")
     parser.add_argument("--test-fraction", type=float, default=0.25)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
     if not 0.0 < args.test_fraction < 1.0:
         raise SystemExit("--test-fraction must be between 0 and 1")
 
-    records = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
     try:
+        records = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
         train, test = split_records(records, args.test_fraction, args.seed)
-    except (ValueError, OSError) as error:
+    except (ValueError, OSError, KeyError, TypeError) as error:
         raise SystemExit(f"Could not create evaluation split: {error}") from error
 
     output = Path(args.output)

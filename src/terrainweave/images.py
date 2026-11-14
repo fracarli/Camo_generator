@@ -32,13 +32,9 @@ class SemanticSegmenter:
         self.torch = torch
         try:
             self.processor = AutoImageProcessor.from_pretrained(model_name)
+            self.model = AutoModelForSemanticSegmentation.from_pretrained(model_name)
         except Exception as error:
-            raise RuntimeError(
-                "The semantic model could not initialize its image processor. "
-                "Install compatible torch, torchvision, and transformers packages "
-                "with: python -m pip install --timeout 600 --retries 10 -e '.[ml]'"
-            ) from error
-        self.model = AutoModelForSemanticSegmentation.from_pretrained(model_name)
+            raise RuntimeError(f"Cannot load semantic model {model_name!r}: {error}") from error
         if device_name == "auto":
             if torch.backends.mps.is_available():
                 device_name = "mps"

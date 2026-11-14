@@ -8,7 +8,9 @@ The metrics are proxies; they are not proof of field concealment."""
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import shutil
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
@@ -130,13 +132,25 @@ def blurred_luminance(image: np.ndarray, radius: float) -> np.ndarray:
     return np.asarray(filtered, dtype=np.float32)
 
 
+def expand_mask(mask: np.ndarray, radius: int) -> np.ndarray:
+    """Expand a boolean mask by a square of side 2 * radius + 1."""
+    width = 2 * radius + 1
+    # A square maximum is the maximum along each axis in turn.
+    for axis in (0, 1):
+        padding = [(0, 0), (0, 0)]
+        padding[axis] = (radius, radius)
+        padded = np.pad(mask, padding)
+        windows = np.lib.stride_tricks.sliding_window_view(padded, width, axis=axis)
+        mask = windows.any(axis=-1)
+    return mask
+
+
 def measure_visibility(
     background: Image.Image, composite_image: Image.Image, mask: np.ndarray
 ) -> dict[str, float]:
     background_array = np.asarray(background, dtype=np.float32)
     composite_array = np.asarray(composite_image, dtype=np.float32)
-    mask_image = Image.fromarray((mask * 255).astype(np.uint8), mode="L")
-    ring = np.asarray(mask_image.filter(ImageFilter.MaxFilter(31)), dtype=np.uint8) > 0
+    ring = expand_mask(mask, radius=15)
     ring &= ~mask
     if not mask.any() or not ring.any():
         return {
@@ -157,7 +171,7 @@ def measure_visibility(
 
     background_edges = gradient_strength(background_array)
     composite_edges = gradient_strength(composite_array)
-    border = ring & (np.asarray(mask_image.filter(ImageFilter.MaxFilter(9)), dtype=np.uint8) > 0)
+    border = ring & expand_mask(mask, radius=4)
     edge_contrast = (
         float(
             np.clip(
@@ -359,7 +373,16 @@ def main() -> None:
     args = parse_args()
     patterns = parse_csv(args.groups or args.patterns)
     background_groups = parse_csv(args.groups or args.background_groups)
-    sizes = [float(value) for value in parse_csv(args.sizes)]
+    try:
+        sizes = [float(value) for value in parse_csv(args.sizes)]
+    except ValueError as error:
+        raise SystemExit("--sizes must contain comma-separated numbers") from error
+    if not sizes or any(not 0 < size <= 1 or round(600 * size) < 1 for size in sizes):
+        raise SystemExit("--sizes must specify uniform heights from 1 to 600 pixels as fractions")
+    if not patterns or not background_groups:
+        raise SystemExit("Select at least one pattern and one background group")
+    if args.limit < 0 or args.background_start < 0:
+        raise SystemExit("--limit and --background-start cannot be negative")
     background_root = Path(args.backgrounds)
     output_root = Path(args.output)
     scene_root = output_root / "scenes"
@@ -385,18 +408,24 @@ def main() -> None:
         raise SystemExit(f"No background images found under {background_root}")
 
     records: list[dict] = []
+    pattern_hashes = {
+        group: hashlib.sha256(path.read_bytes()).hexdigest()
+        for group, path in pattern_paths.items()
+    }
     summary_buckets: dict[tuple[str, str], list[float]] = defaultdict(list)
     contact_paths: dict[str, list[tuple[str, Path]]] = defaultdict(list)
     trial_index = 0
     background_index = 0
+    layers = {
+        group: [build_uniform_layer(path, Path(args.template), round(600 * size)) for size in sizes]
+        for group, path in pattern_paths.items()
+    }
     for background_group, background_paths in background_map.items():
         for background_path in background_paths:
             background = load_background(background_path, (900, 600))
             for pattern_group, pattern_path in pattern_paths.items():
                 for size_index, size in enumerate(sizes):
-                    uniform, mask = build_uniform_layer(
-                        pattern_path, Path(args.template), round(600 * size)
-                    )
+                    uniform, mask = layers[pattern_group][size_index]
                     placement_index = args.seed + background_index * len(sizes) + size_index
                     x, y = choose_position(
                         (900, 600),
@@ -419,17 +448,19 @@ def main() -> None:
                     scene.save(labeled_path, quality=88, optimize=True)
                     human_path = human_root / f"trial_{trial_index:04d}.jpg"
                     human_path.parent.mkdir(parents=True, exist_ok=True)
-                    scene.save(human_path, quality=88, optimize=True)
+                    shutil.copyfile(labeled_path, human_path)
                     record = {
                         "scene_id": scene_id,
                         "pattern_group": pattern_group,
                         "background_group": background_group,
                         "background_file": str(background_path),
                         "pattern_file": str(pattern_path),
+                        "pattern_sha256": pattern_hashes[pattern_group],
                         "uniform_scale": size,
                         "position": [x, y],
                         "metrics": metrics,
                         "human_test_file": str(human_path),
+                        "human_test_sha256": hashlib.sha256(human_path.read_bytes()).hexdigest(),
                     }
                     records.append(record)
                     summary_buckets[(pattern_group, background_group)].append(

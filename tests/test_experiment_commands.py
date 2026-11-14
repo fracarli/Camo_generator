@@ -8,10 +8,12 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import numpy as np
 from PIL import Image
 
+from terrainweave import datasets
 from terrainweave.paths import subprocess_environment
 
 
@@ -38,6 +40,32 @@ class ExperimentCommandTests(unittest.TestCase):
         destination = self.root / path
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(json.dumps(payload), encoding="utf-8")
+
+    def test_download_rerun_keeps_distinct_sources_with_colliding_filenames(self) -> None:
+        backgrounds = self.root / "backgrounds"
+        titles = ("File:Forest (photo).jpg", "File:Forest (photo)!.jpg")
+        self.assertEqual(*(datasets.safe_filename(title, 1) for title in titles))
+        argv = ["download", "--output", str(backgrounds), "--groups", "forest", "--count", "1"]
+
+        def download(candidate, destination, _delay):
+            destination.write_text(candidate["title"])
+
+        with (
+            patch.object(sys, "argv", argv),
+            patch.object(datasets, "download_image", side_effect=download) as download_mock,
+        ):
+            for title in (*titles, titles[0]):
+                with patch.object(
+                    datasets, "collect_group", return_value=[{"title": title, "imageinfo": [{}]}]
+                ):
+                    datasets.download_main()
+        records = json.loads((self.root / "sources.json").read_text())
+        self.assertEqual(download_mock.call_count, 2)
+        self.assertEqual(len(records), 2)
+        for record in records:
+            self.assertEqual(
+                Path(record["file"]).read_text().removeprefix("File:"), record["source_filename"]
+            )
 
     def read_json(self, path: str):
         return json.loads((self.root / path).read_text(encoding="utf-8"))

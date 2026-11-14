@@ -18,6 +18,18 @@ same run directory. For a different workspace, put
 `--workspace /path/to/workspace` before the subcommand. The workspace needs its
 own `evaluation/` data for corpus-based workflows.
 
+Each pipeline run needs a new output directory. After the first run, use
+`terrainweave pipeline --skip-neural --output output/pipeline-repeat`.
+If the neural stage fails, the command reports failure and leaves the
+procedural comparison available in the selected directory.
+
+`terrainweave data split` writes to `output/splits/`. Use
+`--output evaluation/splits` to update the checked-in reference split.
+
+After running the pipeline, `terrainweave run-config configs/optimization_balanced.json`
+uses its baseline patterns and training manifest to run the balanced-objective
+optimization. This configuration requires the `ml` extra for semantic masks.
+
 The demo and benchmark default to the reviewed corpus under
 `evaluation/backgrounds/`. Both accept `--input` for a different photo set.
 
@@ -32,7 +44,10 @@ The demo and benchmark default to the reviewed corpus under
 `terrainweave report compare` reads pattern images and evaluation reports from
 `output/pipeline/`. Run the pipeline first or set the input paths shown by
 `terrainweave report compare --help`. For a procedural run, pass `--skip-neural`
-to both commands.
+to both commands. For a custom run directory, pass the corresponding pattern
+roots and evaluation reports to `report compare`. For each shared pattern,
+the reports must contain matching backgrounds, scales and positions. New
+evaluation reports also identify the evaluated pattern by its SHA-256 digest.
 
 ## Optional dependencies
 

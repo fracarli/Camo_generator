@@ -9,11 +9,107 @@
 <div class="panel" id="done" hidden><h2 id="done-title"></h2><p id="done-text" class="muted"></p></div></main>
 <script>
 const copy={en:{title:'Can you spot the figure?',subtitle:'This is an anonymous visual-recognition study. Each scene is shown briefly, then you answer from memory.',rulesTitle:'Before you begin',rules:['Look at each scene only during the timed exposure.','After the image disappears, answer whether you noticed a person or uniform.','There are no right or wrong answers. Please do not repeat the test.','No name, email address, or IP address is intentionally collected.'],agree:'I have read the rules and agree to participate.',begin:'Begin test',exposure:'Exposure time',start:'Start trial',ready:'Ready.',observe:'Observe...',question:'Was a person or uniform visible?',yes:'Yes, I detected it',no:'No, I did not detect it',recorded:'Answer recorded.',complete:'Test complete.',thank:'Thank you for participating. Your anonymous responses were saved.',upload:'Sending response...'},it:{title:'Riesci a vedere la figura?',subtitle:'Questo è uno studio anonimo di riconoscimento visivo. Ogni scena viene mostrata brevemente, poi rispondi a memoria.',rulesTitle:'Prima di iniziare',rules:['Osserva ogni scena solo durante il tempo stabilito.','Quando l’immagine scompare, indica se hai notato una persona o una divisa.','Non ci sono risposte giuste o sbagliate. Non ripetere il test.','Non vengono intenzionalmente raccolti nome, email o indirizzo IP.'],agree:'Ho letto le regole e accetto di partecipare.',begin:'Inizia il test',exposure:'Tempo di esposizione',start:'Inizia prova',ready:'Pronto.',observe:'Osserva...',question:'Era visibile una persona o una divisa?',yes:'Sì, l’ho vista',no:'No, non l’ho vista',recorded:'Risposta registrata.',complete:'Test completato.',thank:'Grazie per aver partecipato. Le tue risposte anonime sono state salvate.',upload:'Invio della risposta...'}};
-let lang='en',words=copy.en,trials=[],order=[],index=0,session=crypto.randomUUID(),shownAt=0,timer=null,waiting=false;const $=id=>document.getElementById(id);
+let lang='en',words=copy.en,trialSetId='',order=[],index=0,session=crypto.randomUUID(),shownAt=0,exposureMs=0,waiting=false;const $=id=>document.getElementById(id);
 function render(){words=copy[lang];$('title').textContent=words.title;$('subtitle').textContent=words.subtitle;$('rules-title').textContent=words.rulesTitle;$('rules').innerHTML=words.rules.map(x=>`<li>${x}</li>`).join('');$('agree-label').textContent=words.agree;$('begin').textContent=words.begin;$('exposure-label').textContent=words.exposure;$('start').textContent=words.start;$('status').textContent=words.ready;$('yes').textContent=words.yes;$('no').textContent=words.no;$('done-title').textContent=words.complete;$('done-text').textContent=words.thank}
 $('language').onchange=e=>{lang=e.target.value;render()};$('agree').onchange=e=>$('begin').disabled=!e.target.checked;render();
-$('begin').onclick=async()=>{const response=await fetch('/api/trials');const data=await response.json();trials=data.trials;order=[...trials].sort(()=>Math.random()-.5);if(!order.length){alert('No test scenes available');return}$('consent').hidden=true;$('test').hidden=false;progress()};function progress(){$('progress').textContent=`${Math.min(index+1,order.length)} / ${order.length}`}
-$('start').onclick=()=>{if(index>=order.length)return;clearTimeout(timer);waiting=true;$('answers').hidden=true;const item=order[index];let exposureStarted=false;const beginExposure=async()=>{if(!waiting||exposureStarted)return;exposureStarted=true;try{if($('scene').decode)await $('scene').decode()}catch(e){}requestAnimationFrame(()=>requestAnimationFrame(()=>{if(!waiting)return;$('scene').style.visibility='visible';$('status').textContent=words.observe;progress();shownAt=performance.now();const duration=Number($('exposure').value);const hideAt=now=>{if(!waiting)return;if(now-shownAt>=duration){$('scene').style.visibility='hidden';$('answers').hidden=false;$('status').textContent=words.question}else{timer=requestAnimationFrame(hideAt)}};timer=requestAnimationFrame(hideAt)}))};$('scene').style.display='block';$('scene').style.visibility='hidden';$('scene').onload=beginExposure;$('scene').src=item.image;if($('scene').complete)beginExposure()};
-async function answer(value){if(!waiting)return;waiting=false;const item=order[index];const payload={session_id:session,language:lang,trial_id:item.trial_id,exposure_ms:Number($('exposure').value),detected:value,latency_ms:Math.round(performance.now()-shownAt),confidence:''};$('status').textContent=words.upload;try{const response=await fetch('/api/responses',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!response.ok)throw new Error(`HTTP ${response.status}`)}catch(e){$('status').textContent='Connection error. Please retry.';waiting=true;return}$('scene').style.display='none';$('answers').hidden=true;index++;progress();if(index<order.length)$('status').textContent=words.recorded;else{$('test').hidden=true;$('done').hidden=false}}
+$('begin').onclick=async()=>{const response=await fetch('/api/trials');const data=await response.json();trialSetId=data.trial_set_id;order=[...data.trials].sort(()=>Math.random()-.5);if(!order.length){alert('No test scenes available');return}$('consent').hidden=true;$('test').hidden=false;progress()};function showReloadMessage(){$('status').textContent=lang==='it'?'Le scene non sono disponibili. Ricarica la pagina.':'The scenes are unavailable. Reload the page.'}
+function progress(){$('progress').textContent=`${Math.min(index+1,order.length)} / ${order.length}`}
+function setTrialActive(active) {
+  $('start').disabled = active;
+  $('exposure').disabled = active;
+}
+
+$('start').onclick = () => {
+  if ($('start').disabled || index >= order.length) return;
+  setTrialActive(true);
+  exposureMs = Number($('exposure').value);
+  $('answers').hidden = true;
+  const scene = $('scene');
+  let exposureStarted = false;
+
+  const beginExposure = async () => {
+    if (exposureStarted) return;
+    exposureStarted = true;
+    try {
+      if (scene.decode) await scene.decode();
+    } catch {
+      setTrialActive(false);
+      showReloadMessage();
+      return;
+    }
+    requestAnimationFrame(() => requestAnimationFrame(now => {
+      scene.style.visibility = 'visible';
+      $('status').textContent = words.observe;
+      shownAt = now;
+      const hideAt = frameTime => {
+        if (frameTime - shownAt < exposureMs) {
+          requestAnimationFrame(hideAt);
+          return;
+        }
+        scene.style.visibility = 'hidden';
+        $('answers').hidden = false;
+        $('status').textContent = words.question;
+        waiting = true;
+      };
+      requestAnimationFrame(hideAt);
+    }));
+  };
+
+  scene.style.display = 'block';
+  scene.style.visibility = 'hidden';
+  scene.onload = beginExposure;
+  scene.onerror = () => {
+    setTrialActive(false);
+    showReloadMessage();
+  };
+  scene.src = order[index].image;
+  if (scene.complete && scene.naturalWidth) beginExposure();
+};
+
+async function answer(value) {
+  if (!waiting) return;
+  waiting = false;
+  const payload = {
+    session_id: session,
+    language: lang,
+    trial_set_id: trialSetId,
+    trial_id: order[index].trial_id,
+    exposure_ms: exposureMs,
+    detected: value,
+    latency_ms: Math.round(Math.max(0, performance.now() - shownAt)),
+    confidence: '',
+  };
+  $('status').textContent = words.upload;
+  try {
+    const response = await fetch('/api/responses', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+    });
+    if (response.status === 409) {
+      $('answers').hidden = true;
+      showReloadMessage();
+      return;
+    }
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  } catch {
+    $('status').textContent = lang === 'it'
+      ? 'Errore di connessione. Riprova.'
+      : 'Connection error. Please retry.';
+    waiting = true;
+    return;
+  }
+  $('scene').style.display = 'none';
+  $('answers').hidden = true;
+  index++;
+  progress();
+  if (index < order.length) {
+    setTrialActive(false);
+    $('status').textContent = words.recorded;
+  } else {
+    $('test').hidden = true;
+    $('done').hidden = false;
+  }
+}
 $('yes').onclick=()=>answer('yes');$('no').onclick=()=>answer('no');
 </script></body></html>

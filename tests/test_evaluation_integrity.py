@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import io
 import json
@@ -14,7 +15,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 
 from terrainweave import evaluation as evaluate_camo
 from terrainweave import generation as camo
@@ -23,6 +24,17 @@ from terrainweave import project as run_pipeline
 from terrainweave import studio as app
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+class MaskExpansionTests(unittest.TestCase):
+    def test_expansion_matches_pillow_at_image_edges(self) -> None:
+        mask = np.zeros((13, 39), dtype=bool)
+        mask[0, 0] = mask[6, 18] = mask[-1, -1] = True
+        image = Image.fromarray(mask.astype(np.uint8) * 255)
+        for radius in (4, 15):
+            with self.subTest(radius=radius):
+                expected = np.asarray(image.filter(ImageFilter.MaxFilter(2 * radius + 1))) > 0
+                np.testing.assert_array_equal(evaluate_camo.expand_mask(mask, radius), expected)
 
 
 class PairedSceneTests(unittest.TestCase):
@@ -327,6 +339,24 @@ class PipelineInputTests(unittest.TestCase):
             with self.assertRaisesRegex(FileNotFoundError, "Missing pipeline results"):
                 create_presentation_pdf.build(Path(temporary))
 
+    def test_pipeline_requires_a_new_output_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            pipeline = Path(temporary) / "pipeline"
+            pipeline.mkdir()
+            marker = pipeline / "old-result"
+            marker.write_text("previous run")
+            with (
+                patch.object(sys, "argv", ["pipeline", "--output", str(pipeline)]),
+                patch.object(run_pipeline, "run") as run,
+                patch("sys.stderr", io.StringIO()) as errors,
+                self.assertRaises(SystemExit) as failure,
+            ):
+                run_pipeline.main()
+            self.assertEqual(failure.exception.code, 2)
+            self.assertIn("Output already exists", errors.getvalue())
+            self.assertEqual(marker.read_text(), "previous run")
+            run.assert_not_called()
+
     def test_pipeline_presentation_uses_the_current_experiment(self) -> None:
         from terrainweave import presentation as create_presentation_pdf
 
@@ -356,10 +386,7 @@ class PipelineInputTests(unittest.TestCase):
                         create_presentation_pdf.main()
 
             with patch.object(sys, "argv", ["pipeline", "--skip-neural", "--candidates", "1"]):
-                with (
-                    patch.object(run_pipeline, "PIPELINE", pipeline),
-                    patch.object(run_pipeline, "run", side_effect=run),
-                ):
+                with patch.object(run_pipeline, "run", side_effect=run):
                     with (
                         patch.object(create_presentation_pdf, "ROOT", root),
                     ):
@@ -369,7 +396,12 @@ class PipelineInputTests(unittest.TestCase):
                             side_effect=lambda _canvas, path, _box: used.append(path),
                         ):
                             with redirect_stdout(io.StringIO()):
-                                run_pipeline.main()
+                                run_pipeline.run_pipeline(
+                                    argparse.Namespace(
+                                        candidates=1, colors=5, test_fraction=0.25, skip_neural=True
+                                    ),
+                                    pipeline,
+                                )
             self.assertTrue((pipeline / "presentation.pdf").is_file())
             self.assertNotIn(stale, used)
             self.assertIn(pipeline / "baseline/all_patterns_grid.png", used)
@@ -396,13 +428,22 @@ class PipelineInputTests(unittest.TestCase):
                 report.write_text(
                     json.dumps(
                         {
+                            "records": [
+                                {
+                                    "pattern_group": "universal",
+                                    "background_group": "forest",
+                                    "background_file": "background.jpg",
+                                    "uniform_scale": 0.25,
+                                    "position": [10, 20],
+                                }
+                            ],
                             "summary": [
                                 {
                                     "pattern_group": "universal",
                                     "background_group": "forest",
                                     "mean_visibility_score": 0.5,
                                 }
-                            ]
+                            ],
                         }
                     ),
                     encoding="utf-8",
@@ -414,18 +455,55 @@ class PipelineInputTests(unittest.TestCase):
                         compare_versions.versions_main()
 
             with patch.object(sys, "argv", ["pipeline", "--skip-neural", "--candidates", "1"]):
-                with (
-                    patch.object(run_pipeline, "PIPELINE", pipeline),
-                    patch.object(run_pipeline, "run", side_effect=run),
-                ):
+                with patch.object(run_pipeline, "run", side_effect=run):
                     with redirect_stdout(io.StringIO()):
-                        run_pipeline.main()
+                        run_pipeline.run_pipeline(
+                            argparse.Namespace(
+                                candidates=1, colors=5, test_fraction=0.25, skip_neural=True
+                            ),
+                            pipeline,
+                        )
             with Image.open(pipeline / "comparison/original_optimized_neural.png") as image:
                 self.assertEqual(image.getpixel((820, 170)), (45, 56, 49))
 
+            report = pipeline / "evaluation_optimized/evaluation_report.json"
+            original = json.loads(report.read_text())
+            for field, value, expected_error in (
+                ("background_file", "different.jpg", "use different scenes for universal"),
+                ("uniform_scale", 0.3, "use different scenes for universal"),
+                ("position", [15, 20], "use different scenes for universal"),
+                ("pattern_sha256", "wrong", "pattern images differ from the evaluated files"),
+            ):
+                with self.subTest(field=field):
+                    payload = json.loads(json.dumps(original))
+                    payload["records"][0][field] = value
+                    report.write_text(json.dumps(payload))
+                    errors = io.StringIO()
+                    with (
+                        patch("sys.stderr", errors),
+                        self.assertRaises(SystemExit) as failure,
+                    ):
+                        run(
+                            "report compare",
+                            "--skip-neural",
+                            "--baseline-root",
+                            str(pipeline / "baseline"),
+                            "--optimized-root",
+                            str(pipeline / "optimized"),
+                            "--baseline-report",
+                            str(pipeline / "evaluation_baseline/evaluation_report.json"),
+                            "--optimized-report",
+                            str(report),
+                            "--output",
+                            str(pipeline / "invalid"),
+                        )
+                    self.assertEqual(failure.exception.code, 2)
+                    self.assertIn(expected_error, errors.getvalue())
+                    self.assertFalse((pipeline / "invalid").exists())
+
     def commands(self, skip_neural: bool):
         with tempfile.TemporaryDirectory() as temporary:
-            pipeline = Path(temporary) / "pipeline"
+            pipeline = Path(temporary).resolve() / "pipeline"
             arguments = ["run_pipeline.py", "--candidates", "1"]
             if skip_neural:
                 arguments.append("--skip-neural")

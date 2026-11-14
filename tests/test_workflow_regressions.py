@@ -185,20 +185,31 @@ class HumanTestAnalysisTests(unittest.TestCase):
         self.assertEqual(summary["unmatched_report_records"], 0)
 
     def test_analyzer_accepts_the_server_csv(self) -> None:
-        with patch.object(server, "CSV_PATH", self.csv_path):
+        with (
+            patch.object(server, "RUN_ROOT", self.root),
+            patch.object(self, "csv_path", self.root / "web_responses_test-set.csv"),
+        ):
             for index, (detected, latency) in enumerate((("yes", 800), ("no", 1200))):
                 server.append_local(
                     {
                         "session_id": "test-session",
                         "language": "it",
+                        "trial_set_id": "test-set",
                         "trial_id": f"trial_{index:04d}",
+                        "pattern_group": ("forest", "universal")[index],
+                        "background_group": "forest",
                         "exposure_ms": 250,
                         "detected": detected,
                         "latency_ms": latency,
                     }
                 )
 
-        self.assert_analysis_succeeds()
+            # The server labels take precedence over another set with the same trial IDs.
+            report = json.loads(self.report_path.read_text())
+            for record in report["records"]:
+                record["pattern_group"] = "snow"
+            self.report_path.write_text(json.dumps(report))
+            self.assert_analysis_succeeds()
 
     def test_analyzer_keeps_offline_csv_compatibility(self) -> None:
         with self.csv_path.open("w", newline="", encoding="utf-8") as handle:
