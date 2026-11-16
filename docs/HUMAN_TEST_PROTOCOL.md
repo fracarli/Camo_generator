@@ -6,7 +6,7 @@ camouflage performance.
 
 ## Preparation
 
-1. After running the procedural pipeline, use
+1. After running the procedural pipeline in `output/pipeline/`, use
    `terrainweave evaluate --pattern-root output/pipeline/baseline --output output/human_test`
    and `terrainweave human prepare`. To use the published trial images, run
    `terrainweave human prepare --input evaluation/human_test/scenes`.
@@ -42,9 +42,14 @@ After downloading the completed CSV, pass its path to the analyzer:
 terrainweave human analyze --input /path/to/downloaded/responses.csv
 ```
 
-For the published scenes, pass
-`--report evaluation/human_test/evaluation_report.json` so the analysis uses
-the matching trial map. Keep the corresponding JPEGs with that report.
+For the published scenes, use:
+
+```bash
+terrainweave human analyze --input /path/to/downloaded/responses.csv \
+  --report evaluation/human_test/evaluation_report.json
+```
+
+Keep the corresponding JPEGs with that report.
 For a custom scene directory, pass it to the analyzer with `--image-root`.
 
 Compare detection rate and mean latency only between tests with the same number

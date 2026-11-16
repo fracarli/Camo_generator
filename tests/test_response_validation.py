@@ -72,6 +72,14 @@ class ResponseValidationTests(unittest.TestCase):
         self.assertEqual(rows[0]["latency_ms"], "800")
         self.assertEqual(rows[0]["trial_set_id"], "test-set")
 
+    def test_retry_acknowledges_an_answer_without_saving_it_twice(self) -> None:
+        self.assertEqual(self.submit(self.payload), 200)
+        self.assertEqual(self.submit(self.payload), 200)
+        self.assertEqual(self.submit({**self.payload, "exposure_ms": 500}), 200)
+        with self.csv_path.open(newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual([row["exposure_ms"] for row in rows], ["250", "500"])
+
     def test_supabase_credentials_use_the_expected_headers(self) -> None:
         for key in ("sb_publishable_test", "legacy-anon-jwt"):
             with (

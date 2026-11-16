@@ -34,6 +34,22 @@ class GeneratorSmokeTests(unittest.TestCase):
 
         np.testing.assert_array_equal(first, second)
 
+    def test_periodic_renderer_is_reproducible_with_flat_palette_colors(self) -> None:
+        palette = np.array([[50, 60, 45], [110, 100, 75], [160, 150, 130], [0, 0, 0]])
+        weights = np.array([0.61, 0.27, 0.12, 0.0])
+
+        pattern = make_pattern(palette, weights, 48, seed=7, texture_model="periodic")
+        same = make_pattern(palette, weights, 48, seed=7, texture_model="periodic")
+        other = make_pattern(palette, weights, 48, seed=8, texture_model="periodic")
+
+        np.testing.assert_array_equal(pattern, same)
+        self.assertFalse(np.array_equal(pattern, other))
+        self.assertEqual(pattern.shape, (48, 48, 3))
+        self.assertEqual(pattern.dtype, np.uint8)
+        np.testing.assert_array_equal(np.unique(pattern.reshape(-1, 3), axis=0), palette[:3])
+        shares = (pattern[..., None, :] == palette).all(axis=-1).mean(axis=(0, 1))
+        np.testing.assert_allclose(shares, weights, atol=0.002, rtol=0)
+
     def test_environment_registry_is_complete(self) -> None:
         self.assertEqual(len(ENVIRONMENT_GROUPS), 9)
         self.assertIn("forest", ENVIRONMENT_GROUPS)

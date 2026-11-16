@@ -19,6 +19,8 @@ def make_pattern(
     blob_scale: float = 1.0,
     blob_weight: float = 0.36,
     blob_aspect: float = 1.0,
+    *,
+    texture_model: str = "procedural",
 ) -> np.ndarray:
     """Generate adjacent, irregular color regions at several spatial scales.
 
@@ -27,7 +29,16 @@ def make_pattern(
     appear as an isolated island inside one dominant background. Organic blob
     fields are mixed into the smooth fields so the output contains connected,
     irregular regions rather than grid-like bands.
+
+    The experimental periodic renderer uses density to set its octave scales
+    and writes flat palette colors. The blur and ellipse controls are specific
+    to the procedural renderer.
     """
+    if texture_model == "periodic":
+        return _make_periodic_pattern(palette, weights, size, seed, density)
+    if texture_model != "procedural":
+        raise ValueError(f"Unknown texture model: {texture_model}")
+
     rng = np.random.default_rng(seed)
     scales = DENSITY_SCALES[density]
     scale_weights = np.array([0.16, 0.23, 0.25, detail_weight], dtype=np.float32)
@@ -100,3 +111,64 @@ def make_pattern(
         ImageFilter.GaussianBlur(radius=blur_radius)
     )
     return np.asarray(softened, dtype=np.uint8)
+
+
+def _make_periodic_pattern(
+    palette: np.ndarray, weights: np.ndarray, size: int, seed: int, density: str
+) -> np.ndarray:
+    """Select flat colors from competing multiscale fields on a periodic grid."""
+    colors = np.clip(palette, 0, 255).astype(np.uint8)
+    active = weights > 0
+    colors = colors[active]
+    target = weights[active].astype(np.float64)
+    if not len(colors):
+        raise ValueError("The periodic renderer needs a positive palette weight")
+    if len(colors) == 1 or size == 1:
+        return np.broadcast_to(colors[target.argmax()], (size, size, 3)).copy()
+    target /= target.sum()
+
+    # FFT frequencies are in cycles per tile. The octave bands overlap and are
+    # attenuated at fine scales so the large regions keep their shape.
+    radius = np.hypot(np.fft.fftfreq(size)[:, None], np.fft.rfftfreq(size)) * size
+    spectrum = np.zeros_like(radius)
+    for cells, amplitude in zip(DENSITY_SCALES[density], (1.0, 0.60, 0.32, 0.16)):
+        center = min(cells / 2.0, size / 2.0)
+        band = np.exp(-0.5 * ((radius - center) / (0.45 * center)) ** 2)
+        band[0, 0] = 0.0
+        spectrum += amplitude**2 * (band / np.linalg.norm(band)) ** 2
+    kernel = np.sqrt(spectrum)
+    rng = np.random.default_rng(seed)
+    fields = np.empty((len(colors), size * size), dtype=np.float64)
+    for field in fields:
+        noise = np.fft.rfft2(rng.standard_normal((size, size)))
+        field[:] = np.fft.irfft2(noise * kernel, s=(size, size), axes=(0, 1)).ravel()
+        field /= field.std()
+
+    labels = _calibrate_periodic_fields(fields, target)
+    return colors[labels.reshape(size, size)]
+
+
+def _calibrate_periodic_fields(fields: np.ndarray, target: np.ndarray) -> np.ndarray:
+    """Adjust one offset at a time until palette areas are close to target."""
+    n_colors, n_pixels = fields.shape
+    target_pixels = np.clip(np.rint(target * n_pixels).astype(int), 0, n_pixels)
+    biases = np.zeros(n_colors)
+    color_indices = np.arange(n_colors)
+    for _ in range(24):
+        for index, count in enumerate(target_pixels):
+            others = color_indices != index
+            greatest_other = (fields[others] + biases[others, None]).max(axis=0)
+            margin = greatest_other - fields[index]
+            # This color wins where its bias is greater than the margin.
+            if count == 0:
+                biases[index] = np.nextafter(margin.min(), -np.inf)
+            elif count == n_pixels:
+                biases[index] = np.nextafter(margin.max(), np.inf)
+            else:
+                ordered = np.partition(margin, (count - 1, count))
+                biases[index] = (ordered[count - 1] + ordered[count]) / 2
+        labels = (fields + biases[:, None]).argmax(axis=0)
+        counts = np.bincount(labels, minlength=n_colors)
+        if np.max(np.abs(counts - target_pixels)) <= max(1, 0.001 * n_pixels):
+            break
+    return labels

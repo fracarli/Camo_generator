@@ -13,8 +13,10 @@ coverage from the checkout, run `terrainweave data audit`.
 ## Local reference photos
 
 Pass a folder to `terrainweave generate --input /path/to/photos` or to
-`terrainweave benchmark --input /path/to/photos`. Group photos into
-environment subfolders when working with multiple environments. Optional
+`terrainweave benchmark --input /path/to/photos`. To assign an environment
+explicitly, use subfolders such as `photos/forest/` and `photos/snow/`, and
+pass their parent directory as `--input`. Images directly inside the input
+directory are classified by filename. Optional
 grayscale masks can sit beside the inputs as `<filename-stem>_mask.png`.
 White includes pixels and black excludes them.
 

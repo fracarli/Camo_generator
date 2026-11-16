@@ -26,6 +26,7 @@ from .configuration import (
     SEMANTIC_EXCLUDE_LABELS,
     SNOW_MATTE_TONES,
     STYLE_PROFILES,
+    TEXTURE_MODELS,
     parse_args,
     resolve_color_count,
     resolve_generation_settings,
@@ -96,6 +97,7 @@ def run_group(
         balanced_group_target(images) if balanced else mean_target(images)
     )
 
+    texture_model = getattr(args, "texture_model", TEXTURE_MODELS[0])
     candidates: list[tuple[float, int, np.ndarray, dict[str, float]]] = []
     for index in range(args.candidates):
         pattern = make_pattern(
@@ -109,6 +111,7 @@ def run_group(
             blob_scale=profile.get("blob_scale", 1.0),
             blob_weight=profile.get("blob_weight", 0.36),
             blob_aspect=profile.get("blob_aspect", 1.0),
+            texture_model=texture_model,
         )
         score, components = score_pattern(pattern, target_rgb, target_luminance, target_texture)
         candidates.append((score, index, pattern, components))
@@ -155,6 +158,7 @@ def run_group(
         "segmentation_model": args.segmentation_model if args.segmentation == "semantic" else None,
         "generation_mode": args.mode,
         "density": args.density,
+        "texture_model": texture_model,
         "custom_settings": {
             "max_color_share": args.max_color_share,
             "green_share": args.green_share,

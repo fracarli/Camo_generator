@@ -1,115 +1,484 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TerrainWeave Human Test</title>
-<style>
-:root{color-scheme:dark}body{margin:0;background:#101714;color:#edf2e9;font:16px system-ui,sans-serif;text-align:center}main{max-width:860px;margin:24px auto;padding:0 18px 40px}.eyebrow{color:#9dcf68;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}h1{font-size:clamp(28px,5vw,48px);margin:14px 0 8px}.intro{color:#c6d5cb;line-height:1.55;max-width:680px;margin:0 auto 22px}.panel{background:#172b25;border:1px solid #365345;border-radius:18px;padding:24px;margin:18px auto;text-align:left}button,select{font:inherit;padding:12px 18px;margin:5px;border:0;border-radius:999px;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}#begin{background:#9dcf68;color:#102016;font-weight:700}#yes{background:#e8b253;color:#1e170b}#no{background:#a9bbb2;color:#102016}#scene{width:min(92vw,820px);max-height:58vh;object-fit:contain;background:#080c0a;display:none;margin:20px auto;border-radius:10px}#answers[hidden],#test[hidden],#done[hidden]{display:none}.muted{color:#aabcb2}.rules li{margin:10px 0}.progress{color:#9dcf68;margin:14px}
-</style></head><body><main><div class="eyebrow">TerrainWeave / Human Test</div><h1 id="title"></h1><p class="intro" id="subtitle"></p>
-<div class="panel" id="consent"><label>Language / Lingua: <select id="language"><option value="en">English</option><option value="it">Italiano</option></select></label><h2 id="rules-title"></h2><ul class="rules" id="rules"></ul><label><input type="checkbox" id="agree"> <span id="agree-label"></span></label><br><button id="begin" disabled></button></div>
-<div id="test" hidden><label id="exposure-label"></label><select id="exposure"><option value="100">100 ms</option><option value="250">250 ms</option><option value="500" selected>500 ms</option></select><button id="start"></button><div class="progress" id="progress"></div><img id="scene" alt="Test scene"><p id="status" class="muted"></p><div id="answers" hidden><button id="yes"></button><button id="no"></button></div></div>
-<div class="panel" id="done" hidden><h2 id="done-title"></h2><p id="done-text" class="muted"></p></div></main>
-<script>
-const copy={en:{title:'Can you spot the figure?',subtitle:'This is an anonymous visual-recognition study. Each scene is shown briefly, then you answer from memory.',rulesTitle:'Before you begin',rules:['Look at each scene only during the timed exposure.','After the image disappears, answer whether you noticed a person or uniform.','There are no right or wrong answers. Please do not repeat the test.','No name, email address, or IP address is intentionally collected.'],agree:'I have read the rules and agree to participate.',begin:'Begin test',exposure:'Exposure time',start:'Start trial',ready:'Ready.',observe:'Observe...',question:'Was a person or uniform visible?',yes:'Yes, I detected it',no:'No, I did not detect it',recorded:'Answer recorded.',complete:'Test complete.',thank:'Thank you for participating. Your anonymous responses were saved.',upload:'Sending response...'},it:{title:'Riesci a vedere la figura?',subtitle:'Questo è uno studio anonimo di riconoscimento visivo. Ogni scena viene mostrata brevemente, poi rispondi a memoria.',rulesTitle:'Prima di iniziare',rules:['Osserva ogni scena solo durante il tempo stabilito.','Quando l’immagine scompare, indica se hai notato una persona o una divisa.','Non ci sono risposte giuste o sbagliate. Non ripetere il test.','Non vengono intenzionalmente raccolti nome, email o indirizzo IP.'],agree:'Ho letto le regole e accetto di partecipare.',begin:'Inizia il test',exposure:'Tempo di esposizione',start:'Inizia prova',ready:'Pronto.',observe:'Osserva...',question:'Era visibile una persona o una divisa?',yes:'Sì, l’ho vista',no:'No, non l’ho vista',recorded:'Risposta registrata.',complete:'Test completato.',thank:'Grazie per aver partecipato. Le tue risposte anonime sono state salvate.',upload:'Invio della risposta...'}};
-let lang='en',words=copy.en,trialSetId='',order=[],index=0,session=crypto.randomUUID(),shownAt=0,exposureMs=0,waiting=false;const $=id=>document.getElementById(id);
-function render(){words=copy[lang];$('title').textContent=words.title;$('subtitle').textContent=words.subtitle;$('rules-title').textContent=words.rulesTitle;$('rules').innerHTML=words.rules.map(x=>`<li>${x}</li>`).join('');$('agree-label').textContent=words.agree;$('begin').textContent=words.begin;$('exposure-label').textContent=words.exposure;$('start').textContent=words.start;$('status').textContent=words.ready;$('yes').textContent=words.yes;$('no').textContent=words.no;$('done-title').textContent=words.complete;$('done-text').textContent=words.thank}
-$('language').onchange=e=>{lang=e.target.value;render()};$('agree').onchange=e=>$('begin').disabled=!e.target.checked;render();
-$('begin').onclick=async()=>{const response=await fetch('/api/trials');const data=await response.json();trialSetId=data.trial_set_id;order=[...data.trials].sort(()=>Math.random()-.5);if(!order.length){alert('No test scenes available');return}$('consent').hidden=true;$('test').hidden=false;progress()};function showReloadMessage(){$('status').textContent=lang==='it'?'Le scene non sono disponibili. Ricarica la pagina.':'The scenes are unavailable. Reload the page.'}
-function progress(){$('progress').textContent=`${Math.min(index+1,order.length)} / ${order.length}`}
-function setTrialActive(active) {
-  $('start').disabled = active;
-  $('exposure').disabled = active;
-}
-
-$('start').onclick = () => {
-  if ($('start').disabled || index >= order.length) return;
-  setTrialActive(true);
-  exposureMs = Number($('exposure').value);
-  $('answers').hidden = true;
-  const scene = $('scene');
-  let exposureStarted = false;
-
-  const beginExposure = async () => {
-    if (exposureStarted) return;
-    exposureStarted = true;
-    try {
-      if (scene.decode) await scene.decode();
-    } catch {
-      setTrialActive(false);
-      showReloadMessage();
-      return;
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f1e8">
+  <title>TerrainWeave Human Test</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, system-ui, sans-serif;
+      --paper: #f3f1e8;
+      --ink: #20281c;
+      --muted: #51594b;
+      --line: #c9cebf;
+      --pine: #283724;
+      --panel: #fbfaf4;
     }
-    requestAnimationFrame(() => requestAnimationFrame(now => {
-      scene.style.visibility = 'visible';
-      $('status').textContent = words.observe;
-      shownAt = now;
-      const hideAt = frameTime => {
-        if (frameTime - shownAt < exposureMs) {
-          requestAnimationFrame(hideAt);
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    button, select { font: inherit; }
+    button, select, input[type='checkbox'] { cursor: pointer; }
+    :focus-visible { outline: 3px solid #416629; outline-offset: 4px; }
+    button:disabled, select:disabled { cursor: default; opacity: .68; }
+    .shell { width: min(1120px, calc(100% - 72px)); margin-inline: auto; }
+    .header { border-bottom: 1px solid var(--line); }
+    .header .shell {
+      min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .wordmark { display: flex; gap: 10px; align-items: center; font-size: 21px; font-weight: 750; letter-spacing: -.055em; }
+    .symbol {
+      width: 24px; height: 24px; border-radius: 4px; flex: none;
+      background: linear-gradient(135deg, #45593d 0 35%, #9bac70 35% 51%, #d5e2ad 51% 67%, #45593d 67%);
+    }
+    select { min-height: 42px; border: 1px solid var(--line); border-radius: 7px; padding: 6px 9px; background: var(--panel); color: var(--ink); }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: clamp(37px, 6vw, 82px); line-height: .99; letter-spacing: -.07em; font-weight: 760; text-wrap: balance; }
+    h2 { font-size: 22px; line-height: 1.2; letter-spacing: -.025em; }
+    p, li { line-height: 1.55; }
+    .intro { min-height: min(660px, calc(100vh - 120px)); display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: clamp(24px, 6vw, 86px); padding-block: 44px; }
+    .intro-copy p { margin-top: 21px; max-width: 39ch; color: var(--muted); font-size: clamp(16px, 1.8vw, 20px); }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 15px; padding: clamp(20px, 3vw, 34px); }
+    .rules { margin: 15px 0 19px; padding-left: 21px; color: var(--muted); font-size: 15px; }
+    .rules li + li { margin-top: 8px; }
+    .agreement { display: flex; gap: 9px; align-items: flex-start; border-top: 1px solid var(--line); padding-top: 16px; font-size: 14px; line-height: 1.5; }
+    .agreement input { flex: none; width: 19px; height: 19px; margin: 1px 0 0; accent-color: #3f5734; }
+    .button { border: 1px solid transparent; text-align: center; min-height: 46px; padding: 10px 16px; border-radius: 7px; font-weight: 700; background: var(--pine); color: white; }
+    .button:hover:not(:disabled) { background: #394e34; }
+    .button.light { background: #e1e6d6; border-color: #bfc8b4; color: var(--ink); }
+    .button.light:hover:not(:disabled) { background: #d4dec8; }
+    .consent-button { margin-top: 18px; width: 100%; }
+    .error { color: #8a392c; font-size: 14px; margin-top: 10px; }
+    .error:empty { display: none; }
+    .game { max-width: 900px; margin-inline: auto; padding-block: 25px 23px; }
+    .game-top { display: flex; align-items: flex-end; gap: 16px; justify-content: space-between; margin-bottom: 11px; }
+    .game-top h1 { font-size: clamp(29px, 4vw, 47px); letter-spacing: -.06em; }
+    .counter { color: var(--muted); font-size: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 680; }
+    progress { display: block; width: 100%; height: 7px; appearance: none; border: 0; border-radius: 10px; overflow: hidden; background: #d9decf; accent-color: #557345; }
+    progress::-webkit-progress-bar { background: #d9decf; }
+    progress::-webkit-progress-value { background: #557345; }
+    progress::-moz-progress-bar { background: #557345; }
+    .stage { margin-top: 15px; position: relative; display: grid; place-items: center; isolation: isolate; margin-inline: auto; width: 100%; height: clamp(260px, 52vh, 510px); overflow: hidden; border-radius: 11px; background: #202a20; color: #f3f5e7; }
+    .stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; visibility: hidden; }
+    .stage img.exposed { visibility: visible; }
+    .stage-message { text-align: center; max-width: 35ch; padding: 18px; line-height: 1.35; letter-spacing: -.02em; font-size: clamp(19px, 3vw, 29px); font-weight: 670; }
+    .controls { display: grid; grid-template-areas: 'controls'; margin-top: 13px; min-height: 51px; }
+    .controls > div { grid-area: controls; display: flex; align-items: center; gap: 10px; }
+    .ready { justify-content: space-between; }
+    .duration { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
+    .controls .answers > button { flex: 1; }
+    .controls .retry { justify-content: center; }
+    kbd { display: inline-grid; margin-right: 7px; min-width: 24px; min-height: 24px; padding: 1px 4px; place-items: center; border: 1px solid currentColor; border-radius: 4px; font: 650 13px Inter, system-ui, sans-serif; }
+    .done { max-width: 590px; margin: clamp(35px, 15vh, 125px) auto; }
+    .done h1 { font-size: clamp(36px, 6vw, 62px); }
+    .done p { margin-top: 15px; color: var(--muted); }
+    .done progress { margin-top: 24px; }
+    .done .button { margin-top: 20px; }
+    .done details { margin-top: 18px; color: var(--muted); font-size: 13px; }
+    .done a { color: #34572c; }
+    @media (max-width: 720px) {
+      .shell { width: calc(100% - 38px); }
+      .intro { min-height: 0; grid-template-columns: 1fr; gap: 21px; padding-block: 29px; }
+      .intro-copy p { margin-top: 11px; }
+      .game { padding-top: 19px; }
+      .stage { height: clamp(200px, 48svh, 400px); }
+    }
+    @media (max-width: 420px) {
+      .shell { width: calc(100% - 24px); }
+      .header .shell { min-height: 57px; }
+      .wordmark { font-size: 19px; }
+      .stage { height: clamp(185px, 42svh, 310px); }
+      .button { padding-inline: 9px; }
+      .duration { gap: 5px; font-size: 13px; }
+      kbd { margin-right: 4px; min-width: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="shell">
+      <span class="wordmark"><span class="symbol" aria-hidden="true"></span>TerrainWeave</span>
+      <select id="language" aria-label="Language / Lingua">
+        <option value="en" lang="en">English</option>
+        <option value="it" lang="it">Italiano</option>
+      </select>
+    </div>
+  </header>
+  <main class="shell">
+    <section id="consent" class="intro">
+      <div class="intro-copy">
+        <h1 id="title">Can you spot the figure?</h1>
+        <p id="subtitle"></p>
+      </div>
+      <div class="card">
+        <h2 id="rules-title"></h2>
+        <ul id="rules" class="rules"></ul>
+        <label class="agreement"><input type="checkbox" id="agree" autocomplete="off"> <span id="agree-label"></span></label>
+        <button class="button consent-button" id="begin" type="button" disabled></button>
+        <p id="intro-error" class="error" role="status"></p>
+      </div>
+    </section>
+    <section id="test" class="game" hidden>
+      <div class="game-top">
+        <h1 id="game-title" tabindex="-1"></h1>
+        <span id="progress-label" class="counter"></span>
+      </div>
+      <progress id="progress" max="1" value="0" aria-label="Completed trials"></progress>
+      <div class="stage">
+        <img id="scene" alt="">
+        <p id="status" class="stage-message" role="status" tabindex="-1"></p>
+      </div>
+      <div class="controls">
+        <div id="ready-controls" class="ready" hidden>
+          <label class="duration"><span id="exposure-label"></span>
+            <select id="exposure">
+              <option value="100">100 ms</option>
+              <option value="250">250 ms</option>
+              <option value="500" selected>500 ms</option>
+            </select>
+          </label>
+          <button class="button" id="start" type="button"></button>
+        </div>
+        <div id="answers" class="answers" hidden>
+          <button class="button" id="yes" type="button"><kbd id="yes-key" aria-hidden="true"></kbd><span id="yes-label"></span></button>
+          <button class="button light" id="no" type="button"><kbd aria-hidden="true">N</kbd><span id="no-label"></span></button>
+        </div>
+        <div id="save-controls" class="retry" hidden>
+          <button class="button" id="retry" type="button"></button>
+        </div>
+        <div id="reload-controls" class="retry" hidden>
+          <button class="button light" id="reload" type="button"></button>
+        </div>
+      </div>
+    </section>
+    <section id="done" class="card done" hidden>
+      <h1 id="done-title" tabindex="-1"></h1>
+      <p id="done-text"></p>
+      <progress max="1" value="1" id="done-progress" aria-label="Test completed"></progress>
+      <button class="button" id="download" type="button" hidden></button>
+      <!-- OFFLINE_PHOTO_CREDITS -->
+    </section>
+  </main>
+  <!-- OFFLINE_TRIAL_SET -->
+  <script>
+    'use strict';
+
+    const copy = {
+      en: {
+        title: 'Can you spot the figure?',
+        subtitle: 'Look at each scene briefly, then answer from memory.',
+        rulesTitle: 'Before you begin',
+        rules: [
+          'Watch the scene during the timed exposure.',
+          'Once it disappears, say whether you noticed a person or a uniform.',
+          'There are no right or wrong answers. Please take the test once.',
+          'Your answers are saved without your name, email address or IP address.',
+        ],
+        agree: 'I have read the rules and agree to participate.',
+        begin: 'Begin test', loadingTrials: 'Loading the test…',
+        trialsError: 'Could not load the test. Try again.',
+        gameTitle: 'Visual test', progress: (number, total) => `Trial ${number} of ${total}`,
+        progressLabel: 'Completed trials', exposure: 'Exposure time', start: 'Start trial',
+        ready: 'Ready when you are.', loadingScene: 'Loading the scene…',
+        sceneError: 'Could not load the scene. Start this trial again.',
+        interrupted: 'The scene was interrupted. Start this trial again.',
+        question: 'Did you notice a person or a uniform?', yes: 'Yes', no: 'No', yesKey: 'Y',
+        saving: 'Saving your answer…', saveError: 'Could not confirm the save. Retry your answer.',
+        retry: 'Retry save', expired: 'The trial set has changed. Reload the page to begin again.',
+        reload: 'Reload the test', doneTitle: 'Test complete.',
+        doneText: total => `All ${total} anonymous responses were saved. Thank you for participating.`,
+        offlineDone: total => `You finished ${total} trials. Download your answers to keep them.`,
+        download: 'Download answers',
+      },
+      it: {
+        title: 'Riesci a vedere la figura?',
+        subtitle: 'Osserva ogni scena per un istante, poi rispondi a memoria.',
+        rulesTitle: 'Prima di iniziare',
+        rules: [
+          'Osserva la scena durante il tempo di esposizione.',
+          'Quando scompare, indica se hai notato una persona o una divisa.',
+          'Non ci sono risposte giuste o sbagliate. Fai il test una sola volta.',
+          'Le risposte vengono salvate senza nome, email o indirizzo IP.',
+        ],
+        agree: 'Ho letto le regole e accetto di partecipare.',
+        begin: 'Inizia il test', loadingTrials: 'Caricamento del test…',
+        trialsError: 'Impossibile caricare il test. Riprova.',
+        gameTitle: 'Test visivo', progress: (number, total) => `Prova ${number} di ${total}`,
+        progressLabel: 'Prove completate', exposure: 'Tempo di esposizione', start: 'Inizia la prova',
+        ready: 'Inizia quando vuoi.', loadingScene: 'Caricamento della scena…',
+        sceneError: 'Impossibile caricare la scena. Avvia di nuovo la prova.',
+        interrupted: 'La visione si è interrotta. Avvia di nuovo la prova.',
+        question: 'Hai notato una persona o una divisa?', yes: 'Sì', no: 'No', yesKey: 'S',
+        saving: 'Salvataggio della risposta…', saveError: 'Salvataggio da confermare. Riprova l’invio della risposta.',
+        retry: 'Riprova il salvataggio', expired: 'Le scene del test sono cambiate. Ricarica la pagina per ripartire.',
+        reload: 'Ricarica il test', doneTitle: 'Test completato.',
+        doneText: total => `Hai salvato ${total} risposte anonime. Grazie per aver partecipato.`,
+        offlineDone: total => `Hai completato ${total} prove. Scarica le risposte per conservarle.`,
+        download: 'Scarica le risposte',
+      },
+    };
+
+    const $ = id => document.getElementById(id);
+    const scene = $('scene');
+    const offlineData = $('embedded-trials')?.textContent;
+    const offline = offlineData ? JSON.parse(offlineData) : null;
+    const localAnswers = [];
+    const session = crypto.randomUUID ? crypto.randomUUID() : Array.from(
+      crypto.getRandomValues(new Uint8Array(16)), byte => byte.toString(16).padStart(2, '0')
+    ).join('');
+    let lang = $('language').value === 'it' ? 'it' : 'en';
+    let phase = 'intro';
+    let message = 'ready';
+    let order = [];
+    let trialSetId = '';
+    let index = 0;
+    let attempt = 0;
+    let sceneTimeout;
+    let exposureMs = 0;
+    let shownAt = 0;
+    let pending = null;
+
+    function render() {
+      const words = copy[lang];
+      const intro = phase === 'intro' || phase === 'loadingTrials';
+      $('consent').hidden = !intro;
+      $('test').hidden = intro || phase === 'done';
+      $('done').hidden = phase !== 'done';
+      $('begin').disabled = phase !== 'intro' || !$('agree').checked;
+      $('begin').textContent = phase === 'loadingTrials' ? words.loadingTrials : words.begin;
+      $('language').disabled = phase !== 'intro';
+      $('ready-controls').hidden = phase !== 'ready';
+      $('start').disabled = phase !== 'ready';
+      $('exposure').disabled = phase !== 'ready';
+      $('answers').hidden = phase !== 'answering';
+      $('save-controls').hidden = phase !== 'saveError';
+      $('reload-controls').hidden = phase !== 'expired';
+      scene.classList.toggle('exposed', phase === 'showing');
+      $('status').hidden = phase === 'showing';
+      $('status').textContent = phase === 'showing' ? '' : words[message];
+      $('progress').max = Math.max(order.length, 1);
+      $('progress').value = index;
+      if (order.length) {
+        $('progress-label').textContent = words.progress(Math.min(index + 1, order.length), order.length);
+      }
+      $('download').hidden = !offline || phase !== 'done';
+      if (phase === 'done') {
+        $('done-text').textContent = (offline ? words.offlineDone : words.doneText)(order.length);
+      }
+    }
+
+    function transition(next, status = next, focus) {
+      phase = next;
+      message = status;
+      render();
+      if (focus) $(focus).focus({ preventScroll: true });
+    }
+
+    function translate() {
+      document.documentElement.lang = lang;
+      const words = copy[lang];
+      const text = {
+        title: words.title, subtitle: words.subtitle, 'rules-title': words.rulesTitle,
+        'agree-label': words.agree, 'game-title': words.gameTitle, 'exposure-label': words.exposure,
+        start: words.start, 'yes-label': words.yes, 'no-label': words.no, 'yes-key': words.yesKey,
+        retry: words.retry, reload: words.reload, 'done-title': words.doneTitle,
+        download: words.download,
+      };
+      for (const [id, value] of Object.entries(text)) $(id).textContent = value;
+      $('rules').replaceChildren(...words.rules.map(rule => {
+        const item = document.createElement('li');
+        item.textContent = rule;
+        return item;
+      }));
+      $('yes').setAttribute('aria-keyshortcuts', words.yesKey);
+      $('no').setAttribute('aria-keyshortcuts', 'N');
+      $('progress').setAttribute('aria-label', words.progressLabel);
+      $('done-progress').setAttribute('aria-label', words.doneTitle);
+      $('intro-error').textContent = '';
+      render();
+    }
+
+    function shuffled(trials) {
+      const result = [...trials];
+      for (let position = result.length - 1; position > 0; position--) {
+        const other = Math.floor(Math.random() * (position + 1));
+        [result[position], result[other]] = [result[other], result[position]];
+      }
+      return result;
+    }
+
+    async function request(path, options) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
+      try {
+        return await fetch(path, { ...options, signal: controller.signal });
+      } finally {
+        clearTimeout(timeout);
+      }
+    }
+
+    async function begin() {
+      if (phase !== 'intro' || !$('agree').checked) return;
+      $('intro-error').textContent = '';
+      transition('loadingTrials');
+      try {
+        let data = offline;
+        if (!data) {
+          const response = await request('/api/trials');
+          if (!response.ok) throw new Error('Could not load trials');
+          data = await response.json();
+        }
+        if (!data.trial_set_id || !Array.isArray(data.trials) || !data.trials.length) {
+          throw new Error('No trials available');
+        }
+        trialSetId = data.trial_set_id;
+        order = shuffled(data.trials);
+      } catch {
+        transition('intro', 'ready', 'begin');
+        $('intro-error').textContent = copy[lang].trialsError;
+        return;
+      }
+      transition('ready', 'ready', 'start');
+    }
+
+    function clearScene() {
+      scene.onload = null;
+      scene.onerror = null;
+      scene.removeAttribute('src');
+    }
+
+    function cancelScene(status) {
+      attempt++;
+      clearTimeout(sceneTimeout);
+      clearScene();
+      transition('ready', status, 'start');
+    }
+
+    function startTrial() {
+      if (phase !== 'ready' || document.hidden || index >= order.length) return;
+      const current = ++attempt;
+      exposureMs = Number($('exposure').value);
+      transition('loadingScene');
+      let decoding = false;
+      const valid = () => current === attempt;
+      const fail = () => {
+        if (valid()) cancelScene('sceneError');
+      };
+      const expose = async () => {
+        if (!valid() || decoding) return;
+        decoding = true;
+        try {
+          if (scene.decode) await scene.decode();
+        } catch {
+          fail();
           return;
         }
-        scene.style.visibility = 'hidden';
-        $('answers').hidden = false;
-        $('status').textContent = words.question;
-        waiting = true;
+        if (!valid()) return;
+        // Give the decoded image a frame before starting the exposure clock.
+        requestAnimationFrame(() => requestAnimationFrame(now => {
+          if (!valid()) return;
+          clearTimeout(sceneTimeout);
+          scene.onload = null;
+          scene.onerror = null;
+          shownAt = now;
+          transition('showing');
+          const hideAt = frameTime => {
+            if (!valid()) return;
+            if (frameTime - shownAt < exposureMs) {
+              requestAnimationFrame(hideAt);
+            } else {
+              transition('answering', 'question', 'status');
+            }
+          };
+          requestAnimationFrame(hideAt);
+        }));
       };
-      requestAnimationFrame(hideAt);
-    }));
-  };
-
-  scene.style.display = 'block';
-  scene.style.visibility = 'hidden';
-  scene.onload = beginExposure;
-  scene.onerror = () => {
-    setTrialActive(false);
-    showReloadMessage();
-  };
-  scene.src = order[index].image;
-  if (scene.complete && scene.naturalWidth) beginExposure();
-};
-
-async function answer(value) {
-  if (!waiting) return;
-  waiting = false;
-  const payload = {
-    session_id: session,
-    language: lang,
-    trial_set_id: trialSetId,
-    trial_id: order[index].trial_id,
-    exposure_ms: exposureMs,
-    detected: value,
-    latency_ms: Math.round(Math.max(0, performance.now() - shownAt)),
-    confidence: '',
-  };
-  $('status').textContent = words.upload;
-  try {
-    const response = await fetch('/api/responses', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(payload),
-    });
-    if (response.status === 409) {
-      $('answers').hidden = true;
-      showReloadMessage();
-      return;
+      scene.onload = expose;
+      scene.onerror = fail;
+      sceneTimeout = setTimeout(fail, 15000);
+      scene.src = order[index].image;
+      if (scene.complete && scene.naturalWidth) expose();
     }
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  } catch {
-    $('status').textContent = lang === 'it'
-      ? 'Errore di connessione. Riprova.'
-      : 'Connection error. Please retry.';
-    waiting = true;
-    return;
-  }
-  $('scene').style.display = 'none';
-  $('answers').hidden = true;
-  index++;
-  progress();
-  if (index < order.length) {
-    setTrialActive(false);
-    $('status').textContent = words.recorded;
-  } else {
-    $('test').hidden = true;
-    $('done').hidden = false;
-  }
-}
-$('yes').onclick=()=>answer('yes');$('no').onclick=()=>answer('no');
-</script></body></html>
+
+    async function saveAnswer() {
+      transition('saving');
+      try {
+        if (offline) {
+          localAnswers.push(pending);
+        } else {
+          const response = await request('/api/responses', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(pending),
+          });
+          if (response.status === 409) {
+            transition('expired', 'expired', 'reload');
+            return;
+          }
+          if (!response.ok) throw new Error('Could not save the answer');
+        }
+      } catch {
+        transition('saveError', 'saveError', 'retry');
+        return;
+      }
+      pending = null;
+      index++;
+      clearScene();
+      if (index === order.length) {
+        transition('done', 'doneTitle', 'done-title');
+      } else {
+        transition('ready', 'ready', 'start');
+      }
+    }
+
+    function answer(value) {
+      if (phase !== 'answering') return;
+      pending = {
+        session_id: session, language: lang, trial_set_id: trialSetId, trial_id: order[index].trial_id,
+        exposure_ms: exposureMs, detected: value,
+        latency_ms: Math.round(Math.max(0, performance.now() - shownAt)), confidence: '',
+      };
+      return saveAnswer();
+    }
+
+    $('language').onchange = event => {
+      lang = event.target.value;
+      translate();
+    };
+    $('agree').onchange = render;
+    $('begin').onclick = begin;
+    $('start').onclick = startTrial;
+    $('yes').onclick = () => answer('yes');
+    $('no').onclick = () => answer('no');
+    $('retry').onclick = () => {
+      if (phase === 'saveError') return saveAnswer();
+    };
+    $('reload').onclick = () => location.reload();
+    $('download').onclick = () => {
+      const header = 'display_order,image_file,trial_set_id,exposure_ms,detected,latency_ms,confidence,notes';
+      const rows = localAnswers.map((row, i) => [
+        i + 1, row.trial_id + '.jpg', row.trial_set_id, row.exposure_ms, row.detected, row.latency_ms, '', '',
+      ].join(','));
+      const url = URL.createObjectURL(new Blob([[header, ...rows].join('\n') + '\n'], { type: 'text/csv' }));
+      const link = document.createElement('a');
+      link.download = 'terrainweave-responses.csv';
+      link.href = url;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    };
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && (phase === 'loadingScene' || phase === 'showing')) cancelScene('interrupted');
+    });
+    document.addEventListener('keydown', event => {
+      if (phase !== 'answering' || event.repeat || event.altKey || event.ctrlKey || event.metaKey) return;
+      const key = event.key.toUpperCase();
+      if (key === copy[lang].yesKey || key === 'N') {
+        event.preventDefault();
+        answer(key === 'N' ? 'no' : 'yes');
+      }
+    });
+    translate();
+  </script>
+</body>
+</html>

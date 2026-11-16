@@ -28,6 +28,9 @@ DEFAULT_PATTERN_SIZE = 500
 DEFAULT_DENSITY = "standard"
 
 
+TEXTURE_MODELS = ("procedural", "periodic")
+
+
 DEFAULT_SEGMENTATION_MODEL = "nvidia/segformer-b0-finetuned-ade-512-512"
 
 
@@ -239,6 +242,12 @@ def parse_args() -> argparse.Namespace:
         "--candidates", type=int, default=64, help="Patterns to generate and compare"
     )
     parser.add_argument("--seed", type=int, default=42, help="Seed for reproducible results")
+    parser.add_argument(
+        "--texture-model",
+        choices=TEXTURE_MODELS,
+        default=TEXTURE_MODELS[0],
+        help="Pattern renderer: procedural (default) or experimental periodic palette fields",
+    )
     parser.add_argument(
         "--segmentation",
         choices=("none", "semantic"),

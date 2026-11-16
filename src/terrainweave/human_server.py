@@ -41,6 +41,18 @@ CSV_FIELDS = (
     "confidence",
 )
 
+# Retries resend the original answer. Excluding the server timestamp keeps
+# retries idempotent while allowing another exposure for the same trial.
+ANSWER_FIELDS = (
+    "session_id",
+    "language",
+    "trial_id",
+    "exposure_ms",
+    "detected",
+    "latency_ms",
+    "confidence",
+)
+
 
 CSV_LOCK = threading.Lock()
 
@@ -84,15 +96,28 @@ def load_trial_set(image_root: Path, report: Path) -> TrialSet:
     return TrialSet(hashlib.sha256(fingerprint).hexdigest(), images, labels)
 
 
-def append_local(payload: dict) -> None:
+def append_local(payload: dict) -> bool:
+    """Return whether the answer was newly stored."""
     csv_path = RUN_ROOT / f"web_responses_{payload['trial_set_id']}.csv"
     csv_path.parent.mkdir(parents=True, exist_ok=True)
+    answer = tuple(
+        str(payload[field]) if payload.get(field) is not None else "" for field in ANSWER_FIELDS
+    )
     with CSV_LOCK:
-        with csv_path.open("a", newline="", encoding="utf-8") as handle:
+        with csv_path.open("a+", newline="", encoding="utf-8") as handle:
+            handle.seek(0)
+            for row in csv.DictReader(handle):
+                if (
+                    row.get("session_id") == answer[0]
+                    and tuple(row.get(field, "") for field in ANSWER_FIELDS) == answer
+                ):
+                    return False
+            handle.seek(0, os.SEEK_END)
             writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
             if handle.tell() == 0:
                 writer.writeheader()
             writer.writerow({field: payload.get(field, "") for field in CSV_FIELDS})
+    return True
 
 
 def send_supabase(payload: dict) -> None:
@@ -182,11 +207,11 @@ class Handler(SimpleHTTPRequestHandler):
             payload["timestamp"] = datetime.now(timezone.utc).isoformat()
             payload["session_id"] = payload.get("session_id") or str(uuid.uuid4())
             payload = {field: payload.get(field) for field in CSV_FIELDS}
-            append_local(payload)
-            try:
-                send_supabase(payload)
-            except Exception as error:
-                print(f"Supabase upload failed; response kept locally: {error}")
+            if append_local(payload):
+                try:
+                    send_supabase(payload)
+                except Exception as error:
+                    print(f"Supabase upload failed; response kept locally: {error}")
             self.send_json({"ok": True})
         except ValueError as error:
             self.send_error(400, str(error))
@@ -212,8 +237,11 @@ def main() -> None:
     parser.add_argument("--port", type=int, default=8502)
     args = parser.parse_args()
     local_images = RUN_ROOT / "human_test"
+    grounded_game = RUN_ROOT.parent / "game-grounded"
     if local_images.is_dir():
         image_root, report = local_images, RUN_ROOT / "evaluation_report.json"
+    elif (grounded_game / "evaluation_report.json").is_file():
+        image_root, report = grounded_game / "scenes", grounded_game / "evaluation_report.json"
     else:
         image_root, report = REFERENCE_ROOT / "scenes", REFERENCE_ROOT / "evaluation_report.json"
     try:

@@ -7,7 +7,8 @@ The command-line entry point is `terrainweave`.
 ![TerrainWeave logo](../../src/terrainweave/assets/terrainweave_logo.png)
 
 See the [historical PDF](overview.pdf). Run `terrainweave report presentation`
-to generate a new PDF under `output/`.
+to generate a new PDF under `output/` using the published results. Pass
+`--pipeline-root` to build the PDF for a specific run.
 
 ---
 
@@ -23,7 +24,7 @@ similarity to the selected environments.
 The project is an explainable research prototype. It is not a certified
 military pattern and it does not claim guaranteed real-world concealment.
 
-![Current generated patterns](../../results/baseline/all_patterns_grid.png)
+![Published baseline patterns](../../results/baseline/all_patterns_grid.png)
 
 ---
 

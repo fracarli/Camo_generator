@@ -18,6 +18,14 @@ same run directory. For a different workspace, put
 `--workspace /path/to/workspace` before the subcommand. The workspace needs its
 own `evaluation/` data for corpus-based workflows.
 
+| Path within a run | Contents |
+|---|---|
+| `splits/` | Training and held-out manifests |
+| `baseline/`, `optimized/`, `neural/` | Pattern images and per-group reports. The neural directory is optional. |
+| `evaluation_baseline/`, `evaluation_optimized/`, `evaluation_neural/` | Rendered scenes, contact sheets and JSON evaluation reports |
+| `comparison/` | Visual comparison boards and `comparison_report.json` |
+| `mockups/`, `presentation.pdf` | Uniform renders and the experiment presentation |
+
 Each pipeline run needs a new output directory. After the first run, use
 `terrainweave pipeline --skip-neural --output output/pipeline-repeat`.
 If the neural stage fails, the command reports failure and leaves the
@@ -26,9 +34,10 @@ procedural comparison available in the selected directory.
 `terrainweave data split` writes to `output/splits/`. Use
 `--output evaluation/splits` to update the checked-in reference split.
 
-After running the pipeline, `terrainweave run-config configs/optimization_balanced.json`
-uses its baseline patterns and training manifest to run the balanced-objective
-optimization. This configuration requires the `ml` extra for semantic masks.
+After running the pipeline in the default `output/pipeline/` directory,
+`terrainweave run-config configs/optimization_balanced.json` uses its baseline
+patterns and training manifest. For a custom run directory, update the paths
+in a copy of the configuration. This command requires the `ml` extra.
 
 The demo and benchmark default to the reviewed corpus under
 `evaluation/backgrounds/`. Both accept `--input` for a different photo set.
@@ -57,7 +66,7 @@ terrainweave studio
 
 python -m pip install -e '.[ml]'
 terrainweave ml check
-terrainweave pipeline
+terrainweave pipeline --output output/pipeline-neural
 
 python -m pip install -e '.[human]'
 ```
@@ -65,6 +74,13 @@ python -m pip install -e '.[human]'
 The `human` extra adds QR-code export. The web server itself uses Python's
 standard library. Extras can be combined, for example
 `python -m pip install -e '.[demo,ml,human]'`.
+
+Studio accepts local image uploads and displays the generated pattern, palette
+and report. The neural pipeline uses a pretrained SegFormer model that is
+downloaded and cached on first use. The pipeline creates its comparison and
+PDF automatically. To regenerate a PDF for a specific run, use
+`terrainweave report presentation --pipeline-root output/pipeline-neural`.
+With no arguments, `report presentation` uses the published results.
 
 ## Migrating old commands
 

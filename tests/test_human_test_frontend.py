@@ -1,4 +1,4 @@
-"""Execute the response handler as JavaScript without a browser or network."""
+"""Exercise the web trial flow in JavaScript without network calls."""
 
 import shutil
 import subprocess
@@ -9,67 +9,107 @@ from terrainweave.paths import asset_path
 
 @unittest.skipUnless(shutil.which("node"), "Node.js is optional")
 class HumanTestFrontendTests(unittest.TestCase):
-    def test_http_failure_keeps_the_trial_available_for_retry(self) -> None:
+    def test_trial_error_recovery_and_retry_preserve_original_answer(self) -> None:
         script = r"""
 const fs = require('node:fs');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
-const html = fs.readFileSync(process.argv[1], 'utf8');
-const source = html.match(/<script>([\s\S]*?)<\/script>/)[1];
-const elements = new Map();
-const frames = [];
+const elements = new Map(), listeners = new Map(), frames = [], requests = [];
+let now = 700;
+function element(id) {
+  if (!elements.has(id)) elements.set(id, {
+    value: id === 'exposure' ? '500' : '',
+    classList: { toggle() {} }, setAttribute() {}, replaceChildren() {}, focus() {},
+    removeAttribute(key) { delete this[key]; },
+  });
+  return elements.get(id);
+}
+const document = {
+  documentElement: {}, getElementById: element, createElement: () => ({}),
+  addEventListener(event, callback) { listeners.set(event, callback); },
+};
 const context = vm.createContext({
-  document: { getElementById(id) {
-    if (!elements.has(id)) elements.set(id, {value: id === 'exposure' ? '500' : '', style: {}, hidden: false});
-    return elements.get(id);
-  }},
-  crypto: { randomUUID: () => 'test-session' },
-  performance: { now: () => 1000 },
-  fetch: async () => ({ok: false, status: 500}),
-  requestAnimationFrame(callback) { frames.push(callback); }, console,
+  document, crypto: { randomUUID: () => 'test-session' }, AbortController, setTimeout, clearTimeout,
+  performance: { now: () => now },
+  requestAnimationFrame(callback) { frames.push(callback); },
 });
-vm.runInContext(source, context);
-vm.runInContext("trialSetId='test-set';order=[{trial_id:'trial_0000'}]", context);
+const html = fs.readFileSync(process.argv[1], 'utf8');
+vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1], context);
+function setFetch(status, json) {
+  context.fetch = async (url, request) => {
+    requests.push([url, request.body]);
+    return { ok: status === 200, status, json: async () => json };
+  };
+}
 (async () => {
-  elements.get('start').onclick();
-  assert.equal(elements.get('start').disabled, true);
-  assert.equal(elements.get('exposure').disabled, true);
-  await elements.get('scene').onload();
+  element('language').onchange({target: {value: 'it'}});
+  assert.equal(document.documentElement.lang, 'it');
+  assert.equal(element('begin').disabled, true);
+  element('agree').checked = true;
+  element('agree').onchange();
+  setFetch(500);
+  await element('begin').onclick();
+  assert.match(element('intro-error').textContent, /Impossibile caricare il test/);
+  assert.equal(element('begin').disabled, false);
+  setFetch(200, {trial_set_id: 'test-set', trials: [{trial_id: 'trial_0000', image: 'one.jpg'}]});
+  await element('begin').onclick();
+  assert.equal(element('test').hidden, false);
+  assert.equal(element('progress-label').textContent, 'Prova 1 di 1');
+
+  element('start').onclick();
+  assert.equal(element('exposure').disabled, true);
+  element('scene').onerror();
+  assert.equal(element('start').disabled, false);
+
+  element('start').onclick();
+  await element('scene').onload();
   frames.shift()(0);
   frames.shift()(100);
-  elements.get('exposure').value = '100';
-  await vm.runInContext("answer('yes')", context);
-  assert.equal(vm.runInContext('waiting', context), false);
+  document.hidden = true;
+  listeners.get('visibilitychange')();
   frames.shift()(200);
-  assert.equal(elements.get('answers').hidden, true);
+  assert.equal(element('answers').hidden, true);
+  assert.equal(element('start').disabled, false);
+
+  document.hidden = false;
+  element('start').onclick();
+  await element('scene').onload();
+  frames.shift()(0);
+  frames.shift()(100);
+  element('exposure').value = '100';
+  await element('yes').onclick();
+  assert.equal(requests.length, 2, 'No answer during exposure');
+  frames.shift()(599);
+  assert.equal(element('answers').hidden, true);
   frames.shift()(600);
-  assert.equal(elements.get('answers').hidden, false);
-  await vm.runInContext("answer('yes')", context);
-  assert.equal(vm.runInContext('index', context), 0, 'An HTTP error must not advance the trial');
-  assert.equal(vm.runInContext('waiting', context), true);
-  context.fetch = async () => ({ok: false, status: 409});
-  await vm.runInContext("answer('yes')", context);
-  assert.equal(vm.runInContext('index', context), 0);
-  assert.match(elements.get('status').textContent, /Reload the page/);
-  assert.equal(vm.runInContext('waiting', context), false);
-  vm.runInContext('waiting=true', context);
-  context.fetch = async (_url, request) => {
-    assert.equal(JSON.parse(request.body).trial_set_id, 'test-set');
-    assert.equal(JSON.parse(request.body).exposure_ms, 500);
-    return {ok: true, status: 200};
-  };
-  await vm.runInContext("answer('yes')", context);
-  assert.equal(vm.runInContext('index', context), 1);
-  assert.equal(vm.runInContext('waiting', context), false);
-})().catch(error => {console.error(error); process.exitCode=1;});
+  assert.equal(element('answers').hidden, false);
+
+  setFetch(500);
+  await element('yes').onclick();
+  const sent = requests.at(-1)[1];
+  assert.deepEqual(JSON.parse(sent), {
+    session_id: 'test-session', language: 'it', trial_set_id: 'test-set', trial_id: 'trial_0000',
+    exposure_ms: 500, detected: 'yes', latency_ms: 600, confidence: '',
+  });
+  assert.equal(element('progress').value, 0);
+  assert.equal(element('answers').hidden, true);
+  assert.equal(element('save-controls').hidden, false);
+  now = 5000;
+  setFetch(200);
+  await element('retry').onclick();
+  assert.equal(requests.at(-1)[1], sent);
+  assert.equal(element('done').hidden, false);
+  assert.equal(element('progress').value, 1);
+
+  setFetch(409);
+  await vm.runInContext("pending={}; saveAnswer()", context);
+  assert.equal(element('reload-controls').hidden, false);
+  assert.equal(element('save-controls').hidden, true);
+  assert.match(element('status').textContent, /Ricarica la pagina/);
+})().catch(error => { console.error(error); process.exitCode = 1; });
 """
         result = subprocess.run(
-            [
-                shutil.which("node"),
-                "-e",
-                script,
-                str(asset_path("human_test/index.html")),
-            ],
+            [shutil.which("node"), "-e", script, str(asset_path("human_test/index.html"))],
             capture_output=True,
             text=True,
         )
