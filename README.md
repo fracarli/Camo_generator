@@ -12,7 +12,8 @@ compares them in synthetic scenes.
 Scan the code with a phone camera or open the link in any browser. Three one-minute games (Hunt, Duel, Flash) ask players to find a camouflaged
 figure. Each anonymous round compares the TerrainWeave patterns with a plain
 olive control and feeds the next optimization cycle. See the
-[game guide](docs/GAME.md) for building, hosting and analysis.
+[game guide](docs/GAME.md) for building, hosting, analysis and the
+LinkedIn carousel and video generator.
 
 ## How it works
 
