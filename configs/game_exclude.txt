@@ -1,0 +1,22 @@
+# Backgrounds left out of the web game after visual review (one file name per line).
+# Rebuild with: terrainweave game build
+# s01 macro shot, wrong scale
+06_Desert_Landscape_24340754893_.jpg
+# s03 painting
+15_Desert_Landscape_with_Mountains.jpg
+# s10 Eden Project domes
+08_Eden_Project_-_Rainforest_Biome_-_geograph.org.uk_-_7031527.jpg
+# s11 indoor greenhouse
+10_Indoor_tropical_rainforest_at_Burgers_Zoo_a_.jpg
+# s16 black and white
+15_Mountain_Peak_Alaska_1999_.jpg
+# s18 black and white
+04_A_snowy_landscape_1961_JOKAKAL3B-10025_.jpg
+# s21 museum diorama
+01_AIVC_Boreal_Forest_53451028802_.jpg
+# s23 contains a real person
+11_A_botanist_assesses_the_study_area_in_a_boreal_forest_781d2ecf-ab1c-466a-8d3a-d0.jpg
+# s26 close-up wall, wrong scale
+01_06_2023_King_Charles_Street_London_IMG_7517.jpg
+# s29 figure on icy river
+15_Gare_fluviale_de_Qu_bec_Quebec_city_Canada.jpg

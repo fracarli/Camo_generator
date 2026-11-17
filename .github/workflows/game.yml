@@ -1,0 +1,58 @@
+name: game
+
+# Builds the static web game and publishes it on GitHub Pages (free).
+# One-time setup in the repository settings:
+#   Settings -> Pages -> Source: GitHub Actions
+#   Settings -> Secrets and variables -> Actions -> Variables:
+#     SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY (public, insert-only key)
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/terrainweave/**"
+      - "configs/game_exclude.txt"
+      - "results/**"
+      - "evaluation/splits/**"
+      - ".github/workflows/game.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: python -m pip install .
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Build the game
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: terrainweave game build --output site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

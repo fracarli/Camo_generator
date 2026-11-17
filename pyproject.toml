@@ -30,7 +30,7 @@ ml = [
 where = ["src"]
 
 [tool.setuptools.package-data]
-terrainweave = ["assets/*.png", "assets/human_test/*.html", "assets/human_test/*.sql"]
+terrainweave = ["assets/*.png", "assets/human_test/*.html", "assets/human_test/*.sql", "assets/game/*"]
 
 [tool.ruff]
 target-version = "py310"

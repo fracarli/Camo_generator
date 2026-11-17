@@ -58,7 +58,8 @@ chosen output directory.
 
 Run `terrainweave pipeline --skip-neural` to generate and compare the
 procedural versions on held-out photographs. The [workflow guide](docs/WORKFLOWS.md)
-lists the outputs and explains how to run the optional neural stage. The
+lists the outputs and explains how to run the optional neural stage. The [web game](docs/GAME.md) collects public
+feedback on the patterns through three short browser games. The
 [observer-test protocol](docs/HUMAN_TEST_PROTOCOL.md) covers the offline test
 and the bilingual web server.
 

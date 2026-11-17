@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f2a1c">
+  <title>TerrainWeave · Trova l'omino</title>
+  <meta name="description" content="Un gioco da un minuto: trova l'omino mimetizzato nel paesaggio e aiutaci a capire quali mimetismi funzionano davvero.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Riesci a trovare l'omino mimetizzato?">
+  <meta property="og:description" content="Tre mini giochi da un minuto. Le tue risposte anonime aiutano a migliorare i mimetismi di TerrainWeave.">
+  <meta property="og:image" content="__SITE_URL__og.jpg">
+  <meta property="og:url" content="__SITE_URL__">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --paper: #f3f1e8;
+      --panel: #fbfaf4;
+      --ink: #1d251a;
+      --muted: #56604f;
+      --line: #cdd2c2;
+      --pine: #263623;
+      --moss: #557345;
+      --sand: #c8a96a;
+      --hit: #2f9e44;
+      --miss: #d9480f;
+      --night: #182016;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); }
+    body { min-height: 100svh; -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    :focus-visible { outline: 3px solid #6b8f3c; outline-offset: 3px; }
+    h1, h2, h3, p { margin: 0; }
+    p, li { line-height: 1.55; }
+    a { color: #34572c; }
+    .wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
+
+    /* Header */
+    .top { border-bottom: 1px solid var(--line); background: var(--paper); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
+    .top .wrap { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 9px; font-weight: 780; letter-spacing: -.05em; font-size: 19px; background: none; border: 0; padding: 0; }
+    .brand i { width: 22px; height: 22px; border-radius: 5px; background: linear-gradient(135deg, #45593d 0 35%, #9bac70 35% 51%, #d5e2ad 51% 67%, #45593d 67%); }
+    .lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+    .lang button { border: 0; background: transparent; padding: 6px 11px; font-size: 13px; font-weight: 700; color: var(--muted); }
+    .lang button[aria-pressed="true"] { background: var(--pine); color: #fff; }
+
+    /* Home */
+    .hero { padding-block: clamp(28px, 7vw, 72px) clamp(20px, 4vw, 36px); display: grid; gap: 18px; }
+    .eyebrow { font-size: 13px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; color: var(--moss); }
+    .hero h1 { font-size: clamp(38px, 7.5vw, 84px); line-height: .96; letter-spacing: -.065em; font-weight: 800; text-wrap: balance; max-width: 15ch; }
+    .hero p { color: var(--muted); font-size: clamp(16px, 2vw, 20px); max-width: 52ch; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 650; background: var(--panel); }
+    .games { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-bottom: 28px; }
+    .game-card { text-align: left; border: 1px solid var(--line); background: var(--panel); border-radius: 18px; padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease; }
+    .game-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgba(30, 45, 25, .55); }
+    .game-art { aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: var(--night); }
+    .game-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .game-art.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .game-art.duo img:last-child { transform: scaleX(-1); }
+    .game-art .badge { position: absolute; left: 12px; top: 12px; background: rgba(20, 28, 18, .78); color: #fff; font-weight: 800; border-radius: 8px; padding: 3px 9px; font-size: 13px; letter-spacing: .02em; }
+    .game-art .flashbar { position: absolute; inset: auto 0 0 0; height: 5px; background: linear-gradient(90deg, #ffd43b 0 22%, transparent 22%); }
+    .game-body { padding: 16px 18px 18px; display: grid; gap: 7px; flex: 1; align-content: start; }
+    .game-body h2 { font-size: 23px; letter-spacing: -.035em; }
+    .game-body .hook { font-weight: 700; color: var(--pine); }
+    .game-body p { color: var(--muted); font-size: 15px; }
+    .game-meta { margin-top: auto; padding-top: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); font-weight: 650; }
+    .play-pill { background: var(--pine); color: #fff; border-radius: 999px; padding: 6px 14px; font-weight: 750; }
+    .best { color: var(--moss); }
+    .why { border-top: 1px solid var(--line); padding-block: 22px 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; color: var(--muted); font-size: 14px; }
+    .why h3 { color: var(--ink); font-size: 15px; margin-bottom: 4px; }
+    footer { border-top: 1px solid var(--line); padding-block: 18px 34px; color: var(--muted); font-size: 13px; }
+    footer details { margin-top: 8px; }
+    footer summary { cursor: pointer; font-weight: 650; }
+    footer ul { padding-left: 18px; }
+
+    /* Buttons */
+    .btn { border: 1px solid transparent; min-height: 50px; padding: 11px 20px; border-radius: 11px; font-weight: 750; background: var(--pine); color: #fff; font-size: 16px; }
+    .btn:hover { background: #34492f; }
+    .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+    .btn.ghost:hover { background: #e7e9dc; }
+    .btn.big { min-height: 64px; font-size: 20px; flex: 1; }
+
+    /* Tutorial */
+    .tutorial { padding-block: clamp(22px, 5vw, 52px); display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(20px, 5vw, 56px); align-items: center; }
+    .tutorial h1 { font-size: clamp(34px, 5.5vw, 62px); letter-spacing: -.06em; line-height: 1; }
+    .steps { list-style: none; padding: 0; margin: 20px 0 24px; display: grid; gap: 14px; }
+    .steps li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; font-size: 16px; }
+    .steps b.n { width: 34px; height: 34px; border-radius: 50%; background: var(--pine); color: #fff; display: grid; place-items: center; font-size: 15px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .demo { border-radius: 16px; overflow: hidden; position: relative; background: var(--night); }
+    .demo-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 14px; background: linear-gradient(transparent, rgba(10, 14, 9, .85)); color: #fff; font-weight: 700; font-size: 15px; }
+
+    /* Play */
+    .play { padding-block: 14px 24px; display: grid; gap: 12px; }
+    .hud { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
+    .hud .round { font-weight: 750; }
+    .hud .score { font-weight: 800; font-size: 20px; letter-spacing: -.03em; }
+    .hud .quit { border: 0; background: none; color: var(--muted); font-size: 14px; padding: 6px; text-decoration: underline; }
+    .timer { height: 6px; border-radius: 6px; background: #d9decf; overflow: hidden; }
+    .timer span { display: block; height: 100%; width: 100%; background: var(--moss); transform-origin: left; }
+    .prompt { text-align: center; font-weight: 700; color: var(--muted); min-height: 1.5em; }
+    .board { display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); }
+    .board.duo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .frame { position: relative; aspect-ratio: 3 / 2; width: min(100%, calc((100svh - 230px) * 1.5)); margin-inline: auto; border-radius: 12px; overflow: hidden; background: var(--night); touch-action: manipulation; user-select: none; -webkit-user-select: none; cursor: crosshair; }
+    .board.duo .frame { width: min(100%, calc((100svh - 230px) * 1.5)); }
+    .frame img, .frame canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; -webkit-user-drag: none; }
+    .frame img.mirror { transform: scaleX(-1); }
+    .frame .veil { position: absolute; inset: 0; display: grid; place-items: center; background: var(--night); color: #f1f4e6; font-size: clamp(22px, 4vw, 38px); font-weight: 800; letter-spacing: -.03em; text-align: center; padding: 16px; }
+    .ring { position: absolute; border: 3px solid var(--hit); border-radius: 50% / 40%; box-shadow: 0 0 0 4px rgba(255, 255, 255, .55), 0 0 22px rgba(47, 158, 68, .8); animation: pop .35s ease-out; pointer-events: none; }
+    .ring.reveal { border-color: #ffd43b; box-shadow: 0 0 0 4px rgba(0, 0, 0, .35), 0 0 24px rgba(255, 212, 59, .9); }
+    .mark { position: absolute; width: 30px; height: 30px; margin: -15px 0 0 -15px; pointer-events: none; animation: fade .8s ease-out forwards; }
+    .mark::before, .mark::after { content: ""; position: absolute; left: 13px; top: 2px; width: 4px; height: 26px; border-radius: 2px; background: var(--miss); box-shadow: 0 0 0 2px rgba(255, 255, 255, .7); }
+    .mark::before { transform: rotate(45deg); } .mark::after { transform: rotate(-45deg); }
+    .float { position: absolute; transform: translate(-50%, -100%); font-weight: 900; font-size: 22px; color: #fff; text-shadow: 0 2px 6px rgba(0, 0, 0, .7); animation: rise .9s ease-out forwards; pointer-events: none; }
+    .shake { animation: shake .3s; }
+    @keyframes pop { from { transform: scale(1.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes fade { 0% { opacity: 1; transform: scale(.6); } 30% { transform: scale(1); } 100% { opacity: 0; } }
+    @keyframes rise { from { opacity: 1; } to { opacity: 0; margin-top: -34px; } }
+    @keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+    .answers { display: flex; gap: 12px; width: min(100%, 560px); margin-inline: auto; }
+    .answers .btn.no { background: #e1e6d6; color: var(--ink); border-color: #bfc8b4; }
+    .feedback { text-align: center; font-weight: 800; font-size: 18px; min-height: 1.6em; }
+    .feedback.ok { color: var(--hit); } .feedback.ko { color: var(--miss); }
+
+    /* Results */
+    .results { padding-block: clamp(24px, 6vw, 60px); max-width: 720px; margin-inline: auto; display: grid; gap: 18px; }
+    .results .rank { font-size: clamp(40px, 8vw, 76px); font-weight: 850; letter-spacing: -.065em; line-height: .95; }
+    .results .points { font-size: 20px; font-weight: 750; color: var(--moss); }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+    .stat b { display: block; font-size: 26px; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+    .stat span { font-size: 13px; color: var(--muted); }
+    .insight { background: var(--pine); color: #eef3e2; border-radius: 16px; padding: 18px 20px; display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; }
+    .insight img { width: 120px; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+    .insight h3 { font-size: 19px; color: #fff; margin-bottom: 4px; }
+    .insight p { font-size: 15px; }
+    .thanks { color: var(--muted); font-size: 15px; }
+    .loading { padding: 80px 0; text-align: center; color: var(--muted); font-weight: 650; }
+
+    @media (max-width: 860px) {
+      .games { grid-template-columns: 1fr; }
+      .game-card { flex-direction: row; }
+      .game-art { aspect-ratio: auto; width: 38%; min-height: 150px; flex: none; }
+      .tutorial { grid-template-columns: 1fr; }
+      .tutorial .demo { order: -1; }
+      .why { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .game-card { flex-direction: column; }
+      .game-art { width: 100%; min-height: 0; aspect-ratio: 16 / 8; }
+      .board.duo { grid-template-columns: minmax(0, 1fr); }
+      .board.duo .frame { width: min(100%, calc((100svh - 250px) / 2 * 1.5)); }
+      .stats { grid-template-columns: 1fr 1fr 1fr; }
+      .stat b { font-size: 21px; }
+      .insight { grid-template-columns: 76px 1fr; }
+      .insight img { width: 76px; }
+      .btn.big { min-height: 72px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <button class="brand" id="home-link" type="button"><i aria-hidden="true"></i>TerrainWeave</button>
+      <div class="lang" role="group" aria-label="Lingua / Language">
+        <button type="button" data-lang="it" aria-pressed="true">IT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <p class="loading" id="loading" data-t="loading"></p>
+
+    <section id="home" hidden>
+      <div class="wrap hero">
+        <span class="eyebrow" data-t="eyebrow"></span>
+        <h1 data-t="heroTitle"></h1>
+        <p data-t="heroText"></p>
+        <div class="chips"><span class="chip" data-t="chip1"></span><span class="chip" data-t="chip2"></span><span class="chip" data-t="chip3"></span></div>
+      </div>
+      <div class="wrap games" id="games"></div>
+      <div class="wrap why">
+        <div><h3 data-t="why1t"></h3><p data-t="why1"></p></div>
+        <div><h3 data-t="why2t"></h3><p data-t="why2"></p></div>
+        <div><h3 data-t="why3t"></h3><p data-t="why3"></p></div>
+      </div>
+    </section>
+
+    <section id="tutorial" hidden>
+      <div class="wrap tutorial">
+        <div>
+          <span class="eyebrow" id="tut-eyebrow"></span>
+          <h1 id="tut-title" tabindex="-1"></h1>
+          <ol class="steps" id="tut-steps"></ol>
+          <div class="actions">
+            <button class="btn" id="tut-go" type="button"></button>
+            <button class="btn ghost" id="tut-back" type="button" data-t="back"></button>
+          </div>
+        </div>
+        <div class="demo" id="tut-demo"></div>
+      </div>
+    </section>
+
+    <section id="play" hidden>
+      <div class="wrap play">
+        <div class="hud">
+          <span class="round" id="hud-round"></span>
+          <span class="score" id="hud-score"></span>
+          <button class="quit" id="quit" type="button" data-t="quit"></button>
+        </div>
+        <div class="timer"><span id="timer"></span></div>
+        <p class="prompt" id="prompt" aria-live="polite"></p>
+        <div class="board" id="board"></div>
+        <div class="answers" id="answers" hidden>
+          <button class="btn big" id="yes" type="button"></button>
+          <button class="btn big no" id="no" type="button"></button>
+        </div>
+        <p class="feedback" id="feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="results" hidden>
+      <div class="wrap results">
+        <span class="eyebrow" id="res-game"></span>
+        <h1 class="rank" id="res-rank" tabindex="-1"></h1>
+        <p class="points" id="res-points"></p>
+        <div class="stats" id="res-stats"></div>
+        <div class="insight" id="res-insight"></div>
+        <p class="thanks" data-t="thanks"></p>
+        <div class="actions">
+          <button class="btn" id="res-share" type="button" data-t="share"></button>
+          <button class="btn ghost" id="res-again" type="button" data-t="again"></button>
+          <button class="btn ghost" id="res-other" type="button" data-t="other"></button>
+        </div>
+        <p class="thanks" id="share-note" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p data-t="privacy"></p>
+      <details><summary data-t="howTitle"></summary><p data-t="how"></p></details>
+      <details><summary data-t="creditsTitle"></summary><ul id="credits"></ul></details>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script>
+  'use strict';
+  const CONFIG = window.TW_CONFIG || {};
+  const ROUND_MS = 15000;
+  const FLASH_MS = 250;
+  const MASK_MS = 300;
+  const GAMES = {
+    find: { rounds: 10, badge: 'A' },
+    duel: { rounds: 8, badge: 'B' },
+    flash: { rounds: 12, badge: 'C' },
+  };
+
+  const TEXT = {
+    it: {
+      loading: 'Carico i paesaggi…',
+      eyebrow: 'Un esperimento di mimetismo · 1 minuto a partita',
+      heroTitle: 'Riesci a trovare l’omino mimetizzato?',
+      heroText: 'Abbiamo generato dei mimetismi analizzando foto di boschi, deserti, montagne e città. Ora serve il tuo occhio: ogni partita ci dice quali funzionano davvero e quali no.',
+      chip1: '3 mini giochi', chip2: 'Paesaggi reali da tutto il mondo', chip3: 'Anonimo, senza registrazione',
+      why1t: 'Perché giocare?', why1: 'Gli algoritmi misurano colori e contrasti, ma solo l’occhio umano dice se un mimetismo inganna davvero.',
+      why2t: 'Cosa confrontiamo', why2: 'Lo stesso paesaggio con mimetismi diversi: TerrainWeave ottimizzato, base, universale e una tinta unita verde oliva come riferimento.',
+      why3t: 'Cosa succede ai dati', why3: 'Tempi e tocchi anonimi alimentano il prossimo ciclo di ottimizzazione. Più partite, mimetismi migliori.',
+      games: {
+        find: { name: 'Caccia', hook: 'Quanto ci metti a trovarlo?', text: '10 paesaggi, un omino nascosto in ognuno. Toccalo appena lo vedi: più sei veloce, più punti fai.' },
+        duel: { name: 'Duello', hook: 'Due immagini, un solo vincitore', text: 'Lo stesso paesaggio con due mimetismi diversi. Tocca l’omino nell’immagine in cui lo scovi per prima.' },
+        flash: { name: 'Lampo', hook: 'Hai solo un quarto di secondo', text: 'L’immagine appare per un istante. C’era qualcuno o no? Attento: a volte il paesaggio è vuoto.' },
+      },
+      minute: '~1 min', play: 'Gioca', best: (n) => `Record: ${n}`,
+      tutorial: 'Come si gioca',
+      steps: {
+        find: ['Appare un paesaggio con un omino mimetizzato, come quello evidenziato nell\u2019immagine.', 'Toccalo o cliccaci sopra il prima possibile. I tocchi sbagliati costano punti.', 'Hai 15 secondi: se non lo trovi, ti mostriamo dov’era.'],
+        duel: ['Vedi due versioni dello stesso paesaggio, ognuna con un omino vestito con un mimetismo diverso.', 'Tocca l’omino nella prima immagine in cui lo trovi: basta trovarne uno.', 'Così scopriamo quale dei due mimetismi si nota di più.'],
+        flash: ['Tieni lo sguardo al centro: l’immagine appare per 0,25 secondi.', 'Rispondi: c’era un omino? Sì o No. Puoi usare anche i tasti S e N.', 'In circa metà delle immagini non c’è nessuno: non tirare a indovinare!'],
+      },
+      demoCaption: 'Eccolo! Questo è l’omino da cercare.',
+      go: 'Ho capito, giochiamo!', back: 'Indietro', quit: 'Esci',
+      round: (i, n) => `Round ${i}/${n}`, points: (n) => `${n} pt`,
+      ready: ['3', '2', '1'],
+      promptFind: 'Tocca l’omino!', promptDuel: 'Trova l’omino in una delle due immagini!',
+      promptFlash: 'Guarda il centro…', askFlash: 'C’era un omino?',
+      yes: 'Sì (S)', no: 'No (N)',
+      found: (s) => `Trovato in ${s} s!`, timeout: 'Tempo scaduto: eccolo qui.', miss: 'Mancato!',
+      right: 'Giusto!', wrong: 'Sbagliato!', wasThere: 'C’era: guarda dov’era.', wasEmpty: 'Non c’era nessuno.',
+      ranks: ['Recluta', 'Esploratore', 'Ranger', 'Occhio di falco'],
+      statFound: 'trovati', statTime: 'tempo medio', statMiss: 'tocchi a vuoto', statCorrect: 'risposte giuste', statFa: 'falsi allarmi', statHits: 'omini visti',
+      insightTitle: (v) => `Il mimetismo che ti ha ingannato di più: ${v}`,
+      insightFind: (s, env) => `In media ci hai messo ${s} s a trovarlo (${env}).`,
+      insightFlash: (p) => `Te lo sei perso nel ${p}% delle apparizioni.`,
+      insightNone: 'Nessun mimetismo ti ha messo in difficoltà. Prova un altro gioco!',
+      thanks: 'Grazie! Ogni partita viene salvata in forma anonima e ci aiuta a migliorare i mimetismi.',
+      share: 'Condividi la sfida', again: 'Rigioca', other: 'Prova un altro gioco',
+      shareText: (rank, pts, game) => `Ho fatto ${pts} punti a "${game}" su TerrainWeave: sono ${rank}. Riesci a fare meglio a trovare l’omino mimetizzato?`,
+      copied: 'Link copiato: incollalo dove vuoi!',
+      privacy: 'Registriamo in forma anonima solo le risposte, i tempi, i punti toccati e il tipo di schermo. Nessun dato personale, nessun cookie di tracciamento.',
+      howTitle: 'Come funziona l’esperimento',
+      how: 'Ogni paesaggio è una foto reale mai usata per creare i mimetismi. L’omino è sempre nello stesso punto e cambia solo il mimetismo, assegnato a caso: così le differenze nei tempi dipendono dal mimetismo stesso. È un confronto visivo su schermo, non una prova sul campo.',
+      creditsTitle: 'Crediti fotografici',
+      env: { forest: 'bosco', desert: 'deserto', mountain: 'montagna', urban: 'città', jungle: 'giungla', snow: 'neve', taiga: 'taiga', tundra: 'tundra' },
+      variants: { optimized: 'TerrainWeave ottimizzato', baseline: 'TerrainWeave base', universal: 'TerrainWeave universale', control: 'verde oliva tinta unita' },
+    },
+    en: {
+      loading: 'Loading landscapes…',
+      eyebrow: 'A camouflage experiment · 1 minute per game',
+      heroTitle: 'Can you spot the hidden figure?',
+      heroText: 'We generated camouflage patterns by analysing photos of forests, deserts, mountains and cities. Now we need your eyes: every game tells us which ones really work.',
+      chip1: '3 mini games', chip2: 'Real landscapes from around the world', chip3: 'Anonymous, no sign-up',
+      why1t: 'Why play?', why1: 'Algorithms measure colour and contrast, but only human eyes can tell whether camouflage really fools you.',
+      why2t: 'What we compare', why2: 'The same landscape with different patterns: TerrainWeave optimized, baseline, universal and a plain olive green for reference.',
+      why3t: 'What happens to the data', why3: 'Anonymous times and taps feed the next optimisation round. More games, better camouflage.',
+      games: {
+        find: { name: 'Hunt', hook: 'How fast can you find it?', text: '10 landscapes, one hidden figure in each. Tap it as soon as you see it: the faster, the more points.' },
+        duel: { name: 'Duel', hook: 'Two pictures, one winner', text: 'The same landscape with two different patterns. Tap the figure in whichever picture you spot it first.' },
+        flash: { name: 'Flash', hook: 'You get a quarter of a second', text: 'The picture appears for an instant. Was someone there? Careful: sometimes the landscape is empty.' },
+      },
+      minute: '~1 min', play: 'Play', best: (n) => `Best: ${n}`,
+      tutorial: 'How to play',
+      steps: {
+        find: ['A landscape appears with a camouflaged figure, like the one highlighted in the picture.', 'Tap or click it as fast as you can. Wrong taps cost points.', 'You have 15 seconds: if you miss it, we show you where it was.'],
+        duel: ['You see two versions of the same landscape, each with a figure in a different pattern.', 'Tap the figure in the first picture where you find it: one is enough.', 'This tells us which of the two patterns stands out more.'],
+        flash: ['Keep your eyes on the centre: the picture shows for 0.25 seconds.', 'Answer: was there a figure? Yes or No. You can also use the Y and N keys.', 'About half the pictures are empty: don’t just guess!'],
+      },
+      demoCaption: 'There it is! This is the figure to look for.',
+      go: 'Got it, let’s play!', back: 'Back', quit: 'Quit',
+      round: (i, n) => `Round ${i}/${n}`, points: (n) => `${n} pts`,
+      ready: ['3', '2', '1'],
+      promptFind: 'Tap the figure!', promptDuel: 'Find the figure in either picture!',
+      promptFlash: 'Look at the centre…', askFlash: 'Was there a figure?',
+      yes: 'Yes (Y)', no: 'No (N)',
+      found: (s) => `Found in ${s} s!`, timeout: 'Time’s up: here it is.', miss: 'Missed!',
+      right: 'Correct!', wrong: 'Wrong!', wasThere: 'It was there: see where.', wasEmpty: 'Nobody was there.',
+      ranks: ['Recruit', 'Scout', 'Ranger', 'Hawk eye'],
+      statFound: 'found', statTime: 'average time', statMiss: 'wrong taps', statCorrect: 'correct answers', statFa: 'false alarms', statHits: 'figures seen',
+      insightTitle: (v) => `The pattern that fooled you most: ${v}`,
+      insightFind: (s, env) => `On average it took you ${s} s to find it (${env}).`,
+      insightFlash: (p) => `You missed it in ${p}% of appearances.`,
+      insightNone: 'No pattern gave you trouble. Try another game!',
+      thanks: 'Thank you! Every game is stored anonymously and helps us improve the patterns.',
+      share: 'Share the challenge', again: 'Play again', other: 'Try another game',
+      shareText: (rank, pts, game) => `I scored ${pts} points in "${game}" on TerrainWeave: I’m a ${rank}. Can you beat me at spotting the camouflaged figure?`,
+      copied: 'Link copied: paste it anywhere!',
+      privacy: 'We anonymously record only answers, times, tap positions and screen type. No personal data, no tracking cookies.',
+      howTitle: 'How the experiment works',
+      how: 'Each landscape is a real photo never used to create the patterns. The figure is always in the same spot and only the pattern changes, assigned at random, so differences in time come from the pattern itself. It is an on-screen visual comparison, not a field test.',
+      creditsTitle: 'Photo credits',
+      env: { forest: 'forest', desert: 'desert', mountain: 'mountain', urban: 'city', jungle: 'jungle', snow: 'snow', taiga: 'taiga', tundra: 'tundra' },
+      variants: { optimized: 'TerrainWeave optimized', baseline: 'TerrainWeave baseline', universal: 'TerrainWeave universal', control: 'plain olive green' },
+    },
+  };
+
+  // ---------- state ----------
+  const $ = (id) => document.getElementById(id);
+  const store = {
+    get(key, fallback) { try { const v = localStorage.getItem(key); return v === null ? fallback : JSON.parse(v); } catch { return fallback; } },
+    set(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* storage unavailable */ } },
+  };
+  let lang = store.get('tw-lang', null) || ((navigator.language || 'it').toLowerCase().startsWith('it') ? 'it' : 'en');
+  let manifest = null;
+  let current = null; // the running game
+  let timers = [];
+  const player = store.get('tw-player', null) || randomId(10);
+  store.set('tw-player', player);
+  const t = () => TEXT[lang];
+
+  function randomId(length) {
+    const bytes = new Uint8Array(length);
+    crypto.getRandomValues(bytes);
+    return Array.from(bytes, (b) => 'abcdefghijkmnpqrstuvwxyz23456789'[b % 32]).join('');
+  }
+  function shuffle(list) {
+    const result = [...list];
+    for (let i = result.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+  }
+  function later(fn, ms) { const id = setTimeout(fn, ms); timers.push(id); return id; }
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(current && current.raf); }
+  function imageUrl(scene, variant) { return `scenes/${scene.id}/${variant}.jpg`; }
+  function device() {
+    const touch = matchMedia('(pointer: coarse)').matches;
+    const short = Math.min(screen.width, screen.height);
+    if (touch && short < 600) return 'phone';
+    if (touch && short < 1100) return 'tablet';
+    return 'desktop';
+  }
+
+  // ---------- data upload ----------
+  const QUEUE_KEY = 'tw-queue';
+  let flushing = false;
+  function record(event) {
+    const row = {
+      build_id: manifest.build_id, session_id: current.session, game: current.game,
+      lang, device: device(), viewport_w: Math.round(innerWidth), viewport_h: Math.round(innerHeight),
+      dpr: Math.round(devicePixelRatio * 100) / 100, ...event,
+    };
+    if (!CONFIG.supabaseUrl || !CONFIG.supabaseKey) { (window.twLocalRows ||= []).push(row); console.info('[TerrainWeave] local mode', JSON.stringify(row)); return; }
+    const queue = store.get(QUEUE_KEY, []);
+    queue.push(row);
+    store.set(QUEUE_KEY, queue.slice(-300));
+    flush();
+  }
+  async function flush() {
+    if (flushing || !CONFIG.supabaseUrl) return;
+    const queue = store.get(QUEUE_KEY, []);
+    if (!queue.length) return;
+    flushing = true;
+    const headers = { apikey: CONFIG.supabaseKey, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
+    if (!CONFIG.supabaseKey.startsWith('sb_publishable_')) headers.Authorization = `Bearer ${CONFIG.supabaseKey}`;
+    try {
+      const batch = queue.slice(0, 20);
+      const response = await fetch(`${CONFIG.supabaseUrl}/rest/v1/${CONFIG.table || 'game_events'}`, {
+        method: 'POST', headers, body: JSON.stringify(batch), keepalive: true,
+      });
+      // 409 means these rows were already stored by an earlier retry.
+      if (response.ok || response.status === 409) {
+        store.set(QUEUE_KEY, store.get(QUEUE_KEY, []).slice(batch.length));
+      } else if (response.status === 400) {
+        console.warn('[TerrainWeave] rejected rows', await response.text());
+        store.set(QUEUE_KEY, store.get(QUEUE_KEY, []).slice(batch.length));
+      }
+    } catch { /* offline: retry later */ }
+    flushing = false;
+    if (store.get(QUEUE_KEY, []).length && navigator.onLine !== false) later(flush, 4000);
+  }
+  addEventListener('online', flush);
+  addEventListener('pagehide', flush);
+
+  // ---------- navigation ----------
+  function show(id) {
+    for (const section of ['loading', 'home', 'tutorial', 'play', 'results']) $(section).hidden = section !== id;
+    scrollTo(0, 0);
+  }
+  function translate() {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-t]').forEach((node) => { node.textContent = t()[node.dataset.t]; });
+    document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    $('yes').textContent = t().yes; $('no').textContent = t().no;
+    if (manifest) renderHome();
+  }
+  function renderHome() {
+    const sample = manifest.scenes.find((s) => s.environment === 'forest') || manifest.scenes[0];
+    const other = manifest.scenes.find((s) => s.environment === 'desert') || sample;
+    const best = store.get('tw-best', {});
+    $('games').innerHTML = '';
+    for (const [game, info] of Object.entries(GAMES)) {
+      const copy = t().games[game];
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'game-card';
+      const art = game === 'duel'
+        ? `<div class="game-art duo"><img alt="" src="${imageUrl(other, 'baseline')}"><img alt="" src="${imageUrl(other, 'optimized')}"><span class="badge">${info.badge}</span></div>`
+        : `<div class="game-art"><img alt="" src="${imageUrl(game === 'find' ? sample : manifest.scenes[manifest.scenes.length - 1], 'optimized')}"><span class="badge">${info.badge}</span>${game === 'flash' ? '<span class="flashbar"></span>' : ''}</div>`;
+      card.innerHTML = `${art}<div class="game-body"><h2>${copy.name}</h2><p class="hook">${copy.hook}</p><p>${copy.text}</p>
+        <div class="game-meta"><span>${t().minute}${best[game] ? ` · <span class="best">${t().best(best[game])}</span>` : ''}</span><span class="play-pill">${t().play} →</span></div></div>`;
+      card.onclick = () => openTutorial(game);
+      $('games').append(card);
+    }
+    $('credits').innerHTML = '';
+    for (const credit of manifest.credits) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = credit.url; a.textContent = credit.title; a.target = '_blank'; a.rel = 'noopener';
+      li.append(a, ` · ${credit.author} · ${credit.license}`);
+      $('credits').append(li);
+    }
+  }
+  function goHome() { clearTimers(); current = null; show('home'); location.hash = ''; }
+
+  // ---------- tutorial ----------
+  function openTutorial(game) {
+    const copy = t().games[game];
+    $('tut-eyebrow').textContent = `${t().tutorial} · ${GAMES[game].badge}`;
+    $('tut-title').textContent = copy.name;
+    $('tut-steps').innerHTML = '';
+    t().steps[game].forEach((step, i) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<b class="n">${i + 1}</b><span></span>`;
+      li.querySelector('span').textContent = step;
+      $('tut-steps').append(li);
+    });
+    $('tut-go').textContent = t().go;
+    $('tut-go').onclick = () => startGame(game);
+    // The example uses a training photo, so no game landscape is revealed in advance.
+    const demo = $('tut-demo');
+    demo.innerHTML = '';
+    const frame = makeFrame({ id: '', box: manifest.demo.box }, 'demo', false);
+    frame.img.src = 'demo.jpg';
+    frame.el.style.cursor = 'default';
+    frame.el.style.width = '100%';
+    demo.append(frame.el);
+    frame.img.onload = () => ring(frame, manifest.demo.box, false, true);
+    const caption = document.createElement('div');
+    caption.className = 'demo-caption';
+    caption.textContent = t().demoCaption;
+    demo.append(caption);
+    show('tutorial');
+    $('tut-title').focus();
+  }
+
+  // ---------- scene frames ----------
+  function makeFrame(scene, variant, mirror) {
+    const el = document.createElement('div');
+    el.className = 'frame';
+    const img = document.createElement('img');
+    img.alt = '';
+    img.draggable = false;
+    img.src = imageUrl(scene, variant);
+    if (mirror) img.classList.add('mirror');
+    el.append(img);
+    return { el, img, scene, variant, mirror };
+  }
+  function boxFor(frame, box) {
+    const [x, y, w, h] = box;
+    return [frame.mirror ? 1 - x - w : x, y, w, h];
+  }
+  function ring(frame, box, hit, reveal) {
+    const [x, y, w, h] = boxFor(frame, box);
+    const el = document.createElement('div');
+    el.className = 'ring' + (reveal && !hit ? ' reveal' : '');
+    const padX = w * 0.45, padY = h * 0.12;
+    Object.assign(el.style, { left: `${(x - padX) * 100}%`, top: `${(y - padY) * 100}%`, width: `${(w + 2 * padX) * 100}%`, height: `${(h + 2 * padY) * 100}%` });
+    frame.el.append(el);
+  }
+  function floatText(frame, px, py, text) {
+    const el = document.createElement('div');
+    el.className = 'float';
+    el.textContent = text;
+    Object.assign(el.style, { left: `${px * 100}%`, top: `${py * 100}%` });
+    frame.el.append(el);
+  }
+  function tapPosition(frame, event) {
+    const rect = frame.el.getBoundingClientRect();
+    const px = (event.clientX - rect.left) / rect.width;
+    const py = (event.clientY - rect.top) / rect.height;
+    return { px, py, x: frame.mirror ? 1 - px : px, y: py, width: rect.width };
+  }
+  function isHit(box, x, y) {
+    const [bx, by, bw, bh] = box;
+    const marginX = Math.max(0.025, bw * 0.35), marginY = 0.025;
+    return x >= bx - marginX && x <= bx + bw + marginX && y >= by - marginY && y <= by + bh + marginY;
+  }
+  function preload(urls) {
+    return Promise.all(urls.map((url) => new Promise((resolve) => {
+      const img = new Image();
+      img.onload = img.onerror = () => (img.decode ? img.decode().catch(() => {}) : Promise.resolve()).then(resolve);
+      img.src = url;
+    })));
+  }
+
+  // ---------- round planning ----------
+  function pickScenes(count) {
+    // Prefer landscapes this player has not seen, spread across environments.
+    const seen = new Set(store.get('tw-seen', []));
+    const fresh = shuffle(manifest.scenes.filter((s) => !seen.has(s.id)));
+    const old = shuffle(manifest.scenes.filter((s) => seen.has(s.id)));
+    const byEnv = {};
+    for (const scene of [...fresh, ...old]) (byEnv[scene.environment] ||= []).push(scene);
+    const picked = [];
+    const envs = shuffle(Object.keys(byEnv));
+    while (picked.length < count && envs.some((e) => byEnv[e].length)) {
+      for (const env of envs) if (byEnv[env].length && picked.length < count) picked.push(byEnv[env].shift());
+    }
+    // A short corpus can be smaller than the game: repeat with other variants.
+    while (picked.length < count) picked.push(manifest.scenes[picked.length % manifest.scenes.length]);
+    store.set('tw-seen', [...new Set([...seen, ...picked.map((s) => s.id)])].slice(-manifest.scenes.length + 4));
+    return shuffle(picked);
+  }
+  function balanced(options, count) {
+    let pool = [];
+    while (pool.length < count) pool = pool.concat(shuffle(options));
+    return pool.slice(0, count);
+  }
+  function plan(game) {
+    const scenes = pickScenes(GAMES[game].rounds);
+    const variants = ['optimized', 'baseline', 'universal', 'control'];
+    if (game === 'find') {
+      const order = balanced(variants, scenes.length);
+      return scenes.map((scene, i) => ({ scene, variant: scene.variants.includes(order[i]) ? order[i] : scene.variants[0] }));
+    }
+    if (game === 'duel') {
+      const pairs = [];
+      for (let i = 0; i < variants.length; i++) for (let j = i + 1; j < variants.length; j++) pairs.push([variants[i], variants[j]]);
+      const order = balanced(pairs, scenes.length);
+      return scenes.map((scene, i) => {
+        let [a, b] = shuffle(order[i]);
+        if (!scene.variants.includes(a) || !scene.variants.includes(b)) [a, b] = shuffle(scene.variants).slice(0, 2);
+        return { scene, variant: a, variant_b: b, mirrorRight: Math.random() < 0.5 };
+      });
+    }
+    // flash: half the trials are empty landscapes.
+    const present = shuffle(Array.from({ length: scenes.length }, (_, i) => i < Math.ceil(scenes.length / 2)));
+    const order = balanced(variants, scenes.length);
+    return scenes.map((scene, i) => ({ scene, present: present[i], variant: present[i] ? (scene.variants.includes(order[i]) ? order[i] : scene.variants[0]) : 'absent' }));
+  }
+
+  // ---------- game loop ----------
+  async function startGame(game) {
+    clearTimers();
+    const rounds = plan(game);
+    current = { game, rounds, index: -1, score: 0, log: [], session: `${player}.${randomId(6)}`, raf: 0 };
+    show('play');
+    $('board').innerHTML = '';
+    $('board').className = 'board';
+    $('answers').hidden = true;
+    $('feedback').textContent = '';
+    $('prompt').textContent = t().loading;
+    hud();
+    const urls = rounds.flatMap((r) => [imageUrl(r.scene, r.variant), ...(r.variant_b ? [imageUrl(r.scene, r.variant_b)] : [])]);
+    await preload(urls.slice(0, 4));
+    preload(urls.slice(4));
+    location.hash = game;
+    countdown(0);
+  }
+  function countdown(step) {
+    const words = t().ready;
+    $('board').innerHTML = `<div class="frame"><div class="veil">${words[step]}</div></div>`;
+    $('prompt').textContent = '';
+    if (step < words.length - 1) later(() => countdown(step + 1), 550);
+    else later(nextRound, 550);
+  }
+  function hud() {
+    const n = current.rounds.length;
+    $('hud-round').textContent = t().round(Math.min(n, Math.max(1, current.index + 1)), n);
+    $('hud-score').textContent = t().points(current.score);
+  }
+  function runTimer(ms, onEnd) {
+    const bar = $('timer');
+    const start = performance.now();
+    const tick = (now) => {
+      const left = Math.max(0, 1 - (now - start) / ms);
+      bar.style.transform = `scaleX(${left})`;
+      bar.style.background = left < 0.25 ? 'var(--miss)' : 'var(--moss)';
+      if (left > 0) current.raf = requestAnimationFrame(tick);
+      else onEnd();
+    };
+    current.raf = requestAnimationFrame(tick);
+  }
+  function nextRound() {
+    clearTimers();
+    current.index++;
+    if (current.index >= current.rounds.length) return finish();
+    hud();
+    $('feedback').textContent = '';
+    $('feedback').className = 'feedback';
+    const round = current.rounds[current.index];
+    if (current.game === 'flash') return flashRound(round);
+    searchRound(round);
+  }
+
+  function searchRound(round) {
+    const board = $('board');
+    board.innerHTML = '';
+    board.className = 'board' + (current.game === 'duel' ? ' duo' : '');
+    const frames = current.game === 'duel'
+      ? [makeFrame(round.scene, round.variant, !round.mirrorRight), makeFrame(round.scene, round.variant_b, round.mirrorRight)]
+      : [makeFrame(round.scene, round.variant, false)];
+    frames.forEach((f) => board.append(f.el));
+    $('prompt').textContent = current.game === 'duel' ? t().promptDuel : t().promptFind;
+    let misses = 0, done = false, shownAt = 0;
+    const end = (frame, tap) => {
+      if (done) return;
+      done = true;
+      cancelAnimationFrame(current.raf);
+      const latency = Math.round(performance.now() - shownAt);
+      const found = Boolean(frame);
+      frames.forEach((f) => ring(f, round.scene.box, found && f === frame, true));
+      const gained = found ? Math.max(20, 100 + Math.round(200 * (1 - latency / ROUND_MS)) - 20 * misses) : 0;
+      current.score += gained;
+      hud();
+      if (found) floatText(frame, tap.px, tap.py, `+${gained}`);
+      $('feedback').className = 'feedback ' + (found ? 'ok' : 'ko');
+      $('feedback').textContent = found ? t().found((latency / 1000).toFixed(1)) : t().timeout;
+      const entry = {
+        round: current.index, scene_id: round.scene.id, environment: round.scene.environment,
+        variant: round.variant, variant_b: round.variant_b || null, outcome: found ? 'found' : 'timeout',
+        chosen: found ? frame.variant : null, latency_ms: found ? latency : ROUND_MS, misses,
+        tap_x: tap ? Math.round(tap.x * 1000) / 1000 : null, tap_y: tap ? Math.round(tap.y * 1000) / 1000 : null,
+        image_w: Math.round(frames[0].el.getBoundingClientRect().width),
+      };
+      current.log.push({ ...entry, gained });
+      record(entry);
+      later(nextRound, found ? 1100 : 1900);
+    };
+    frames.forEach((frame) => {
+      frame.el.addEventListener('pointerdown', (event) => {
+        if (done || !shownAt) return;
+        event.preventDefault();
+        const tap = tapPosition(frame, event);
+        if (isHit(round.scene.box, tap.x, tap.y)) return end(frame, tap);
+        misses++;
+        const mark = document.createElement('div');
+        mark.className = 'mark';
+        Object.assign(mark.style, { left: `${tap.px * 100}%`, top: `${tap.py * 100}%` });
+        frame.el.append(mark);
+        later(() => mark.remove(), 800);
+        frame.el.classList.remove('shake'); void frame.el.offsetWidth; frame.el.classList.add('shake');
+        $('feedback').className = 'feedback ko';
+        $('feedback').textContent = t().miss;
+      });
+    });
+    Promise.all(frames.map((f) => f.img.decode().catch(() => {}))).then(() => {
+      if (done) return;
+      shownAt = performance.now();
+      runTimer(ROUND_MS, () => end(null, null));
+    });
+  }
+
+  function noiseMask(canvas) {
+    const ctx = canvas.getContext('2d');
+    canvas.width = 96; canvas.height = 64;
+    const colors = ['#2f3a26', '#5b6b3c', '#8b8a5c', '#3d4a35', '#a69a70', '#1f2a1c', '#6f7d55', '#c2b48a'];
+    for (let y = 0; y < 64; y += 4) for (let x = 0; x < 96; x += 4) {
+      ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+      ctx.fillRect(x, y, 4, 4);
+    }
+  }
+  function flashRound(round) {
+    const board = $('board');
+    board.className = 'board';
+    board.innerHTML = '';
+    const frame = makeFrame(round.scene, round.present ? round.variant : 'absent', false);
+    frame.el.style.cursor = 'default';
+    frame.img.style.visibility = 'hidden';
+    const fixation = document.createElement('div');
+    fixation.className = 'veil';
+    fixation.textContent = '+';
+    const mask = document.createElement('canvas');
+    mask.hidden = true;
+    frame.el.append(fixation, mask);
+    board.append(frame.el);
+    $('answers').hidden = true;
+    $('prompt').textContent = t().promptFlash;
+    $('timer').style.transform = 'scaleX(1)';
+    let exposure = 0, answeredAt = 0, done = false;
+    frame.img.decode().catch(() => {}).then(() => later(() => {
+      fixation.hidden = true;
+      frame.img.style.visibility = 'visible';
+      // Measure the real on-screen time: frames, not timers, decide visibility.
+      requestAnimationFrame((first) => {
+        const step = (now) => {
+          if (now - first + 8 < FLASH_MS) return (current.raf = requestAnimationFrame(step));
+          frame.img.style.visibility = 'hidden';
+          noiseMask(mask);
+          mask.hidden = false;
+          exposure = Math.round(now - first);
+          later(() => {
+            mask.hidden = true;
+            fixation.textContent = '?';
+            fixation.hidden = false;
+            $('prompt').textContent = t().askFlash;
+            $('answers').hidden = false;
+            answeredAt = performance.now();
+          }, MASK_MS);
+        };
+        current.raf = requestAnimationFrame(step);
+      });
+    }, 500 + Math.random() * 500));
+    current.answer = (value) => {
+      if (done || !answeredAt) return;
+      done = true;
+      current.answer = null;
+      const latency = Math.round(performance.now() - answeredAt);
+      const correct = (value === 'yes') === round.present;
+      const gained = correct ? 100 : 0;
+      current.score += gained;
+      hud();
+      $('answers').hidden = true;
+      fixation.hidden = true;
+      frame.img.style.visibility = 'visible';
+      if (round.present) ring(frame, round.scene.box, correct, true);
+      $('feedback').className = 'feedback ' + (correct ? 'ok' : 'ko');
+      $('feedback').textContent = `${correct ? t().right : t().wrong} ${round.present ? t().wasThere : t().wasEmpty}`;
+      const entry = {
+        round: current.index, scene_id: round.scene.id, environment: round.scene.environment,
+        variant: round.present ? round.variant : null, outcome: 'answered', latency_ms: latency,
+        exposure_ms: exposure, figure_present: round.present, answer: value, correct,
+        image_w: Math.round(frame.el.getBoundingClientRect().width),
+      };
+      current.log.push({ ...entry, gained });
+      record(entry);
+      later(nextRound, 1300);
+    };
+  }
+  $('yes').onclick = () => current && current.answer && current.answer('yes');
+  $('no').onclick = () => current && current.answer && current.answer('no');
+  addEventListener('keydown', (event) => {
+    if (!current || !current.answer || event.repeat) return;
+    const key = event.key.toLowerCase();
+    if (key === 's' || key === 'y') current.answer('yes');
+    if (key === 'n') current.answer('no');
+  });
+
+  // ---------- results ----------
+  function finish() {
+    clearTimers();
+    const { game, log, score } = current;
+    const max = log.length * (game === 'flash' ? 100 : 300);
+    const ratio = max ? score / max : 0;
+    const rank = t().ranks[ratio < 0.35 ? 0 : ratio < 0.6 ? 1 : ratio < 0.8 ? 2 : 3];
+    const best = store.get('tw-best', {});
+    best[game] = Math.max(best[game] || 0, score);
+    store.set('tw-best', best);
+    current.rank = rank;
+    $('res-game').textContent = t().games[game].name;
+    $('res-rank').textContent = rank;
+    $('res-points').textContent = t().points(score);
+    const stat = (value, label) => `<div class="stat"><b>${value}</b><span>${label}</span></div>`;
+    let insight = null;
+    if (game === 'flash') {
+      const present = log.filter((e) => e.figure_present);
+      const absent = log.filter((e) => !e.figure_present);
+      $('res-stats').innerHTML = stat(`${log.filter((e) => e.correct).length}/${log.length}`, t().statCorrect)
+        + stat(`${present.filter((e) => e.answer === 'yes').length}/${present.length}`, t().statHits)
+        + stat(`${absent.filter((e) => e.answer === 'yes').length}/${absent.length}`, t().statFa);
+      const missed = {};
+      for (const e of present) { (missed[e.variant] ||= { n: 0, miss: 0, e }); missed[e.variant].n++; missed[e.variant].miss += e.answer === 'no'; }
+      const worst = Object.entries(missed).sort((a, b) => b[1].miss / b[1].n - a[1].miss / a[1].n)[0];
+      if (worst && worst[1].miss) insight = { variant: worst[0], scene: worst[1].e.scene_id, text: t().insightFlash(Math.round(100 * worst[1].miss / worst[1].n)) };
+    } else {
+      const found = log.filter((e) => e.outcome === 'found');
+      const avg = found.length ? (found.reduce((s, e) => s + e.latency_ms, 0) / found.length / 1000).toFixed(1) : '–';
+      $('res-stats').innerHTML = stat(`${found.length}/${log.length}`, t().statFound)
+        + stat(`${avg} s`, t().statTime) + stat(log.reduce((s, e) => s + e.misses, 0), t().statMiss);
+      // The hardest pattern is the slowest one to find; in a duel, the one not chosen.
+      const cost = {};
+      for (const e of log) {
+        const hidden = game === 'duel' ? (e.chosen === e.variant ? e.variant_b : e.variant) : e.variant;
+        (cost[hidden] ||= { total: 0, n: 0, e }); cost[hidden].total += e.latency_ms; cost[hidden].n++;
+        if (e.latency_ms > cost[hidden].e.latency_ms) cost[hidden].e = e;
+      }
+      const worst = Object.entries(cost).sort((a, b) => b[1].total / b[1].n - a[1].total / a[1].n)[0];
+      if (worst) insight = { variant: worst[0], scene: worst[1].e.scene_id, text: t().insightFind((worst[1].total / worst[1].n / 1000).toFixed(1), t().env[worst[1].e.environment] || worst[1].e.environment) };
+    }
+    if (insight) {
+      $('res-insight').innerHTML = `<img alt="" src="scenes/${insight.scene}/${insight.variant}.jpg"><div><h3></h3><p></p></div>`;
+      $('res-insight').querySelector('h3').textContent = t().insightTitle(t().variants[insight.variant] || insight.variant);
+      $('res-insight').querySelector('p').textContent = insight.text;
+    } else {
+      $('res-insight').innerHTML = '<div><p></p></div>';
+      $('res-insight').querySelector('p').textContent = t().insightNone;
+    }
+    $('share-note').textContent = '';
+    show('results');
+    $('res-rank').focus();
+    flush();
+  }
+  async function share() {
+    const url = location.href.split('#')[0];
+    const text = t().shareText(current.rank, current.score, t().games[current.game].name);
+    if (navigator.share) {
+      try { await navigator.share({ title: 'TerrainWeave', text, url }); return; } catch { /* cancelled */ }
+    }
+    try { await navigator.clipboard.writeText(`${text} ${url}`); $('share-note').textContent = t().copied; } catch { /* clipboard blocked */ }
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'noopener');
+  }
+
+  // ---------- wiring ----------
+  $('home-link').onclick = goHome;
+  $('quit').onclick = goHome;
+  $('tut-back').onclick = goHome;
+  $('res-again').onclick = () => openTutorialOrStart(current.game);
+  $('res-other').onclick = goHome;
+  $('res-share').onclick = share;
+  function openTutorialOrStart(game) { startGame(game); }
+  document.querySelectorAll('.lang button').forEach((button) => {
+    button.onclick = () => { lang = button.dataset.lang; store.set('tw-lang', lang); translate(); };
+  });
+
+  translate();
+  fetch('manifest.json', { cache: 'no-cache' })
+    .then((r) => r.json())
+    .then((data) => {
+      manifest = data;
+      translate();
+      const game = location.hash.slice(1);
+      if (GAMES[game]) openTutorial(game); else show('home');
+      flush();
+    })
+    .catch(() => { $('loading').textContent = 'Errore nel caricamento / Loading error. Ricarica la pagina.'; });
+  </script>
+</body>
+</html>

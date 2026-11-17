@@ -126,6 +126,8 @@ COMMANDS = (
         "human_test_web/server.py",
         "Serve the human test and collect responses",
     ),
+    Command("game build", "game", "build_main", "", "Build the static web game"),
+    Command("game analyze", "game", "analyze_main", "", "Summarize exported game events"),
     Command(
         "ml train-proposer",
         "training",
@@ -280,6 +282,7 @@ def main(argv: list[str] | None = None) -> int:
                     parts[0],
                     help={
                         "data": "Manage reference images",
+                        "game": "Build and analyze the public web game",
                         "human": "Prepare and analyze visual tests",
                         "ml": "Train and check neural models",
                         "report": "Create comparisons and visual reports",
