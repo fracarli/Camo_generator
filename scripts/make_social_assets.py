@@ -16,7 +16,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 
 URL = "https://fracarli.github.io/Camo_generator/"
 SHORT_URL = "fracarli.github.io/Camo_generator"
