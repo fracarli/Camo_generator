@@ -27,8 +27,9 @@ MOSS = (155, 172, 112)
 LIME = (213, 226, 173)
 GOLD = (255, 212, 59)
 ROOT = Path(__file__).resolve().parents[1]
-CHALLENGE = ("s03-forest", "s07-jungle", "s00-desert")
-COMPARE = "s05-forest"
+# Scenes are chosen by photo title, so they survive changes to the scene order.
+CHALLENGE = ("Beech Forest (AU)", "CSIRO ScienceImage 3827", "Desert Landscape (22482862827)")
+COMPARE = "Green Carpets"
 FONT_FILE = Path("/System/Library/Fonts/Avenir Next.ttc")
 FACES = {"heavy": 8, "bold": 0, "medium": 5, "regular": 7}
 
@@ -44,6 +45,17 @@ class Site:
         self.root = root
         manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
         self.scenes = {scene["id"]: scene for scene in manifest["scenes"]}
+        self.titles = {
+            scene["id"]: manifest["credits"][scene["credit"]]["title"]
+            for scene in manifest["scenes"]
+        }
+
+    def find(self, title: str) -> str:
+        """Return the scene id whose photo title contains the given text."""
+        for scene_id, scene_title in self.titles.items():
+            if title in scene_title:
+                return scene_id
+        raise SystemExit(f"No game scene matches the photo title {title!r}")
 
     def image(self, scene_id: str, variant: str = "optimized") -> Image.Image:
         with Image.open(self.root / "scenes" / scene_id / f"{variant}.jpg") as image:
@@ -358,6 +370,9 @@ def main() -> None:
     parser.add_argument("--no-video", action="store_true")
     args = parser.parse_args()
     site = Site(args.site)
+    global CHALLENGE, COMPARE
+    CHALLENGE = tuple(site.find(title) for title in CHALLENGE)
+    COMPARE = site.find(COMPARE)
     args.output.mkdir(parents=True, exist_ok=True)
     slides = [
         challenge_slide(

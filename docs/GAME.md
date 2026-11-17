@@ -9,13 +9,31 @@ The public game has four modes that share the same backgrounds:
 | C · Flash (`flash`) | 250 ms exposure and a noise mask, then yes/no; half the scenes are empty | Hit rate, false alarms and d′ |
 | D · Squad (`squad`) | Four figures in one photo, one per pattern; find them all in 25 s | Discovery order per pattern and environment |
 
-Every scene uses a held-out background from `evaluation/splits/test.json` with
-one fixed figure position. Only the pattern changes: TerrainWeave optimized,
+Every scene uses a held-out background with one fixed figure position. The
+backgrounds come from `evaluation/splits/test.json` and from
+[evaluation/game_backgrounds/](../evaluation/game_backgrounds/), a game-only set
+of sharp, ground-level Wikimedia Commons photos that are never used to generate
+or optimize patterns. The build skips any background whose lower half, where
+the figures stand, is too soft (`MIN_FOREGROUND_SHARPNESS`): a sharp figure on
+a blurred photo stands out regardless of its pattern. Only the pattern changes: TerrainWeave optimized,
 baseline, universal, and a plain olive control. The page assigns patterns at
 random and balances them within each game. In Squad, each background has
 four layouts that rotate the patterns over the same four positions, so the
 discovery order measures the pattern rather than the position. The tutorial example uses a
 training photo so no game scene is revealed in advance.
+
+## More backgrounds
+
+```bash
+python scripts/collect_game_backgrounds.py --per-group 12
+python scripts/collect_game_backgrounds.py --approve approved.txt
+```
+
+The first command searches Commons, skips files already in the corpus, keeps
+free licenses and sharp foregrounds, and writes
+`output/game_background_candidates.jpg`. Write the indices of suitable photos
+(no people, signs, artwork, close-ups or water where figures would stand) to a
+text file and approve them; the others are deleted.
 
 ## Build and preview
 

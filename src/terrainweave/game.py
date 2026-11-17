@@ -23,7 +23,7 @@ from pathlib import Path
 from statistics import median
 
 import numpy as np
-from PIL import Image, ImageOps
+from PIL import Image, ImageFilter, ImageOps
 
 from .evaluation import composite, load_background
 from .paths import asset_path, uniform_template, workspace_root
@@ -39,6 +39,9 @@ VARIANTS = {
     "control": None,
 }
 GAME_TABLE = "game_events"
+# Backgrounds softer than this in the lower half make sharp figures pop out.
+MIN_FOREGROUND_SHARPNESS = 20.0
+GAME_MANIFESTS = ("evaluation/splits/test.json", "evaluation/game_backgrounds/game.json")
 
 
 def _seed(text: str) -> int:
@@ -169,8 +172,21 @@ def build_demo(root: Path, output: Path) -> dict:
     }
 
 
-def load_test_records(root: Path, manifest: Path, exclude: set[str]) -> list[dict]:
-    records = json.loads(manifest.read_text(encoding="utf-8"))["records"]
+def foreground_sharpness(image: Image.Image) -> float:
+    """Mean absolute Laplacian of the lower half, where the figures stand."""
+    gray = image.convert("L").filter(
+        ImageFilter.Kernel((3, 3), [0, 1, 0, 1, -4, 1, 0, 1, 0], 1, 128)
+    )
+    values = np.asarray(gray, dtype=np.float32) - 128
+    return float(np.abs(values[int(values.shape[0] * 0.45) :]).mean())
+
+
+def load_records(root: Path, manifests: list[Path], exclude: set[str]) -> list[dict]:
+    """Held-out backgrounds only: neither manifest is used to make patterns."""
+    records = []
+    for manifest in manifests:
+        if manifest.is_file():
+            records += json.loads(manifest.read_text(encoding="utf-8"))["records"]
     return [record for record in records if Path(record["file"]).name not in exclude]
 
 
@@ -185,8 +201,8 @@ def build_site(
     site_url: str = "",
 ) -> dict:
     root = root or workspace_root()
-    manifest = manifest or root / "evaluation/splits/test.json"
-    records = load_test_records(root, manifest, exclude or set())
+    manifests = [manifest] if manifest else [root / name for name in GAME_MANIFESTS]
+    records = load_records(root, manifests, exclude or set())
     if limit is not None:
         records = records[:limit]
     if not records:
@@ -199,10 +215,15 @@ def build_site(
     scenes = []
     credits = []
     digest = hashlib.sha256()
-    for index, record in enumerate(records):
+    for record in records:
         group = record["group"]
-        scene_id = f"s{index:02d}-{group}"
         background = load_background(root / record["file"], SCENE_SIZE)
+        sharpness = foreground_sharpness(background)
+        # Snow is smooth by nature, so it gets a lower threshold.
+        if sharpness < MIN_FOREGROUND_SHARPNESS * (0.6 if group == "snow" else 1.0):
+            print(f"Skipping soft background ({sharpness:.1f}): {record['file']}")
+            continue
+        scene_id = f"s{len(scenes):02d}-{group}"
         foot_x, foot_y, figure = choose_placement(background, Path(record["file"]).name)
         folder = scenes_root / scene_id
         folder.mkdir()
@@ -293,7 +314,9 @@ def build_site(
 def build_main() -> None:
     parser = argparse.ArgumentParser(description="Build the static web game.")
     parser.add_argument("--output", type=Path, default=Path("output/game-site"))
-    parser.add_argument("--manifest", type=Path, help="Background manifest (default: test split)")
+    parser.add_argument(
+        "--manifest", type=Path, help="Background manifest (default: test split and game set)"
+    )
     parser.add_argument(
         "--exclude",
         default="",

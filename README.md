@@ -87,7 +87,7 @@ See the [uniform mockups](results/optimized_mockups/outfit_contact_sheet.png),
 |---|---|
 | [src/terrainweave/](src/terrainweave/) | Application code, CLI and packaged assets |
 | [configs/](configs/) | Reproducible configurations |
-| [evaluation/](evaluation/) | Public photographs, provenance, splits and web-test scenes |
+| [evaluation/](evaluation/) | Public photographs, provenance, splits, web-test scenes and game-only backgrounds |
 | [results/](results/README.md) | Selected historical results |
 | [tests/](tests/) | Automated tests |
 | [docs/](docs/README.md) | Workflows, architecture, data, human-test and web-game documentation |
