@@ -212,7 +212,7 @@ def build_site(
     output.mkdir(parents=True, exist_ok=True)
     (output / "manifest.json").write_text(json.dumps(build, indent=1) + "\n", encoding="utf-8")
     config = {
-        "supabaseUrl": supabase_url.rstrip("/"),
+        "supabaseUrl": supabase_url.strip().rstrip("/").removesuffix("/rest/v1"),
         "supabaseKey": supabase_key,
         "table": GAME_TABLE,
     }

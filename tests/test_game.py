@@ -11,7 +11,7 @@ class GameBuildTest(unittest.TestCase):
     def test_build_writes_consistent_scenes(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "site"
-            build = build_site(output, limit=2, supabase_url="https://x.supabase.co/")
+            build = build_site(output, limit=2, supabase_url="https://x.supabase.co/rest/v1/")
             manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(manifest, build)
             self.assertEqual(len(manifest["scenes"]), 2)
