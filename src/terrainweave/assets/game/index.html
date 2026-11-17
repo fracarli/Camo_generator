@@ -8,7 +8,7 @@
   <meta name="description" content="Un gioco da un minuto: trova l'omino mimetizzato nel paesaggio e aiutaci a capire quali mimetismi funzionano davvero.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Riesci a trovare l'omino mimetizzato?">
-  <meta property="og:description" content="Tre mini giochi da un minuto. Le tue risposte anonime aiutano a migliorare i mimetismi di TerrainWeave.">
+  <meta property="og:description" content="Quattro mini giochi da un minuto. Le tue risposte anonime aiutano a migliorare i mimetismi di TerrainWeave.">
   <meta property="og:image" content="__SITE_URL__og.jpg">
   <meta property="og:url" content="__SITE_URL__">
   <meta name="twitter:card" content="summary_large_image">
@@ -56,7 +56,8 @@
     .hero p { color: var(--muted); font-size: clamp(16px, 2vw, 20px); max-width: 52ch; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip { border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 650; background: var(--panel); }
-    .games { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-bottom: 28px; }
+    .games { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding-bottom: 28px; }
+    .game-card.new .badge { background: #c2410c; }
     .game-card { text-align: left; border: 1px solid var(--line); background: var(--panel); border-radius: 18px; padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease; }
     .game-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgba(30, 45, 25, .55); }
     .game-art { aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: var(--night); }
@@ -258,12 +259,15 @@
   'use strict';
   const CONFIG = window.TW_CONFIG || {};
   const ROUND_MS = 15000;
+  const SQUAD_MS = 25000;
+  const SQUAD_ROUND_MAX = 700;
   const FLASH_MS = 250;
   const MASK_MS = 300;
   const GAMES = {
     find: { rounds: 10, badge: 'A' },
     duel: { rounds: 8, badge: 'B' },
     flash: { rounds: 12, badge: 'C' },
+    squad: { rounds: 6, badge: 'D' },
   };
 
   const TEXT = {
@@ -272,7 +276,7 @@
       eyebrow: 'Un esperimento di mimetismo · 1 minuto a partita',
       heroTitle: 'Riesci a trovare l’omino mimetizzato?',
       heroText: 'Abbiamo generato dei mimetismi analizzando foto di boschi, deserti, montagne e città. Ora serve il tuo occhio: ogni partita ci dice quali funzionano davvero e quali no.',
-      chip1: '3 mini giochi', chip2: 'Paesaggi reali da tutto il mondo', chip3: 'Anonimo, senza registrazione',
+      chip1: '4 mini giochi', chip2: 'Paesaggi reali da tutto il mondo', chip3: 'Anonimo, senza registrazione',
       why1t: 'Perché giocare?', why1: 'Gli algoritmi misurano colori e contrasti, ma solo l’occhio umano dice se un mimetismo inganna davvero.',
       why2t: 'Cosa confrontiamo', why2: 'Lo stesso paesaggio con mimetismi diversi: TerrainWeave ottimizzato, base, universale e una tinta unita verde oliva come riferimento.',
       why3t: 'Cosa succede ai dati', why3: 'Tempi e tocchi anonimi alimentano il prossimo ciclo di ottimizzazione. Più partite, mimetismi migliori.',
@@ -280,6 +284,7 @@
         find: { name: 'Caccia', hook: 'Quanto ci metti a trovarlo?', text: '10 paesaggi, un omino nascosto in ognuno. Toccalo appena lo vedi: più sei veloce, più punti fai.' },
         duel: { name: 'Duello', hook: 'Due immagini, un solo vincitore', text: 'Lo stesso paesaggio con due mimetismi diversi. Tocca l’omino nell’immagine in cui lo scovi per prima.' },
         flash: { name: 'Lampo', hook: 'Hai solo un quarto di secondo', text: 'L’immagine appare per un istante. C’era qualcuno o no? Attento: a volte il paesaggio è vuoto.' },
+        squad: { name: 'Pattuglia', hook: 'Quattro omini, una sola foto', text: 'Nella stessa foto si nascondono 4 omini, ognuno con un mimetismo diverso. Trovali tutti prima che scada il tempo!' },
       },
       minute: '~1 min', play: 'Gioca', best: (n) => `Record: ${n}`,
       tutorial: 'Come si gioca',
@@ -287,6 +292,7 @@
         find: ['Appare un paesaggio con un omino mimetizzato, come quello evidenziato nell\u2019immagine.', 'Toccalo o cliccaci sopra il prima possibile. I tocchi sbagliati costano punti.', 'Hai 15 secondi: se non lo trovi, ti mostriamo dov’era.'],
         duel: ['Vedi due versioni dello stesso paesaggio, ognuna con un omino vestito con un mimetismo diverso.', 'Tocca l’omino nella prima immagine in cui lo trovi: basta trovarne uno.', 'Così scopriamo quale dei due mimetismi si nota di più.'],
         flash: ['Tieni lo sguardo al centro: l’immagine appare per 0,25 secondi.', 'Rispondi: c’era un omino? Sì o No. Puoi usare anche i tasti S e N.', 'In circa metà delle immagini non c’è nessuno: non tirare a indovinare!'],
+        squad: ['In ogni foto si nascondono 4 omini, ognuno vestito con un mimetismo diverso.', 'Toccali tutti, uno alla volta: l’ordine in cui li trovi ci dice quale mimetismo si nota di più.', 'Hai 25 secondi per foto. I tocchi a vuoto costano punti, trovarli tutti vale un bonus.'],
       },
       demoCaption: 'Eccolo! Questo è l’omino da cercare.',
       go: 'Ho capito, giochiamo!', back: 'Indietro', quit: 'Esci',
@@ -294,6 +300,8 @@
       ready: ['3', '2', '1'],
       promptFind: 'Tocca l’omino!', promptDuel: 'Trova l’omino in una delle due immagini!',
       promptFlash: 'Guarda il centro…', askFlash: 'C’era un omino?',
+      promptSquad: (found, total) => `Trovati ${found} di ${total}: continua!`, allFound: 'Tutti trovati! +100 bonus', squadTimeout: (n) => `Tempo scaduto: ne mancavano ${n}.`,
+      insightSquad: (r) => `In media è stato trovato per ${r}° su 4 (5 = mai trovato).`,
       yes: 'Sì (S)', no: 'No (N)',
       found: (s) => `Trovato in ${s} s!`, timeout: 'Tempo scaduto: eccolo qui.', miss: 'Mancato!',
       right: 'Giusto!', wrong: 'Sbagliato!', wasThere: 'C’era: guarda dov’era.', wasEmpty: 'Non c’era nessuno.',
@@ -319,7 +327,7 @@
       eyebrow: 'A camouflage experiment · 1 minute per game',
       heroTitle: 'Can you spot the hidden figure?',
       heroText: 'We generated camouflage patterns by analysing photos of forests, deserts, mountains and cities. Now we need your eyes: every game tells us which ones really work.',
-      chip1: '3 mini games', chip2: 'Real landscapes from around the world', chip3: 'Anonymous, no sign-up',
+      chip1: '4 mini games', chip2: 'Real landscapes from around the world', chip3: 'Anonymous, no sign-up',
       why1t: 'Why play?', why1: 'Algorithms measure colour and contrast, but only human eyes can tell whether camouflage really fools you.',
       why2t: 'What we compare', why2: 'The same landscape with different patterns: TerrainWeave optimized, baseline, universal and a plain olive green for reference.',
       why3t: 'What happens to the data', why3: 'Anonymous times and taps feed the next optimisation round. More games, better camouflage.',
@@ -327,6 +335,7 @@
         find: { name: 'Hunt', hook: 'How fast can you find it?', text: '10 landscapes, one hidden figure in each. Tap it as soon as you see it: the faster, the more points.' },
         duel: { name: 'Duel', hook: 'Two pictures, one winner', text: 'The same landscape with two different patterns. Tap the figure in whichever picture you spot it first.' },
         flash: { name: 'Flash', hook: 'You get a quarter of a second', text: 'The picture appears for an instant. Was someone there? Careful: sometimes the landscape is empty.' },
+        squad: { name: 'Squad', hook: 'Four figures, one photo', text: 'Four figures hide in the same photo, each in a different pattern. Find them all before time runs out!' },
       },
       minute: '~1 min', play: 'Play', best: (n) => `Best: ${n}`,
       tutorial: 'How to play',
@@ -334,6 +343,7 @@
         find: ['A landscape appears with a camouflaged figure, like the one highlighted in the picture.', 'Tap or click it as fast as you can. Wrong taps cost points.', 'You have 15 seconds: if you miss it, we show you where it was.'],
         duel: ['You see two versions of the same landscape, each with a figure in a different pattern.', 'Tap the figure in the first picture where you find it: one is enough.', 'This tells us which of the two patterns stands out more.'],
         flash: ['Keep your eyes on the centre: the picture shows for 0.25 seconds.', 'Answer: was there a figure? Yes or No. You can also use the Y and N keys.', 'About half the pictures are empty: don’t just guess!'],
+        squad: ['Four figures hide in each photo, each wearing a different pattern.', 'Tap them all, one at a time: the order you find them in tells us which pattern stands out most.', 'You have 25 seconds per photo. Wrong taps cost points; finding all four earns a bonus.'],
       },
       demoCaption: 'There it is! This is the figure to look for.',
       go: 'Got it, let’s play!', back: 'Back', quit: 'Quit',
@@ -341,6 +351,8 @@
       ready: ['3', '2', '1'],
       promptFind: 'Tap the figure!', promptDuel: 'Find the figure in either picture!',
       promptFlash: 'Look at the centre…', askFlash: 'Was there a figure?',
+      promptSquad: (found, total) => `Found ${found} of ${total}: keep going!`, allFound: 'All found! +100 bonus', squadTimeout: (n) => `Time’s up: ${n} still hidden.`,
+      insightSquad: (r) => `On average it was found number ${r} of 4 (5 = never found).`,
       yes: 'Yes (Y)', no: 'No (N)',
       found: (s) => `Found in ${s} s!`, timeout: 'Time’s up: here it is.', miss: 'Missed!',
       right: 'Correct!', wrong: 'Wrong!', wasThere: 'It was there: see where.', wasEmpty: 'Nobody was there.',
@@ -463,8 +475,10 @@
       const copy = t().games[game];
       const card = document.createElement('button');
       card.type = 'button';
-      card.className = 'game-card';
-      const art = game === 'duel'
+      card.className = 'game-card' + (game === 'squad' ? ' new' : '');
+      const art = game === 'squad'
+        ? `<div class="game-art"><img alt="" src="scenes/${(manifest.scenes[3] || sample).id}/multi_0.jpg"><span class="badge">${info.badge}</span></div>`
+        : game === 'duel'
         ? `<div class="game-art duo"><img alt="" src="${imageUrl(other, 'baseline')}"><img alt="" src="${imageUrl(other, 'optimized')}"><span class="badge">${info.badge}</span></div>`
         : `<div class="game-art"><img alt="" src="${imageUrl(game === 'find' ? sample : manifest.scenes[manifest.scenes.length - 1], 'optimized')}"><span class="badge">${info.badge}</span>${game === 'flash' ? '<span class="flashbar"></span>' : ''}</div>`;
       card.innerHTML = `${art}<div class="game-body"><h2>${copy.name}</h2><p class="hook">${copy.hook}</p><p>${copy.text}</p>
@@ -604,6 +618,13 @@
         return { scene, variant: a, variant_b: b, mirrorRight: Math.random() < 0.5 };
       });
     }
+    if (game === 'squad') {
+      const layouts = balanced([0, 1, 2, 3], scenes.length);
+      return scenes.map((scene, i) => {
+        const layout = layouts[i] % scene.squad.length;
+        return { scene, layout, variant: `multi_${layout}`, targets: scene.squad[layout] };
+      });
+    }
     // flash: half the trials are empty landscapes.
     const present = shuffle(Array.from({ length: scenes.length }, (_, i) => i < Math.ceil(scenes.length / 2)));
     const order = balanced(variants, scenes.length);
@@ -661,6 +682,7 @@
     $('feedback').className = 'feedback';
     const round = current.rounds[current.index];
     if (current.game === 'flash') return flashRound(round);
+    if (current.game === 'squad') return squadRound(round);
     searchRound(round);
   }
 
@@ -719,6 +741,82 @@
       if (done) return;
       shownAt = performance.now();
       runTimer(ROUND_MS, () => end(null, null));
+    });
+  }
+
+  function squadRound(round) {
+    const board = $('board');
+    board.className = 'board';
+    board.innerHTML = '';
+    const frame = makeFrame(round.scene, round.variant, false);
+    board.append(frame.el);
+    const total = round.targets.length;
+    const found = new Set();
+    let misses = 0, done = false, shownAt = 0, roundScore = 0;
+    $('prompt').textContent = t().promptSquad(0, total);
+    const base = {
+      round: current.index, scene_id: round.scene.id, environment: round.scene.environment, layout: round.layout,
+    };
+    const finishRound = () => {
+      if (done) return;
+      done = true;
+      cancelAnimationFrame(current.raf);
+      const missing = round.targets.map((target, i) => [target, i]).filter(([, i]) => !found.has(i));
+      for (const [target, i] of missing) {
+        ring(frame, target.box, false, true);
+        const entry = { ...base, target: i, variant: target.variant, outcome: 'timeout', latency_ms: SQUAD_MS, misses: 0, found_order: null, image_w: Math.round(frame.el.getBoundingClientRect().width) };
+        current.log.push(entry);
+        record(entry);
+      }
+      if (!missing.length) { current.score += 100; roundScore += 100; }
+      hud();
+      $('feedback').className = 'feedback ' + (missing.length ? 'ko' : 'ok');
+      $('feedback').textContent = missing.length ? t().squadTimeout(missing.length) : t().allFound;
+      later(nextRound, missing.length ? 2200 : 1300);
+    };
+    frame.el.addEventListener('pointerdown', (event) => {
+      if (done || !shownAt) return;
+      event.preventDefault();
+      const tap = tapPosition(frame, event);
+      const index = round.targets.findIndex((target) => isHit(target.box, tap.x, tap.y));
+      if (index >= 0 && found.has(index)) return; // already found: not a miss
+      if (index >= 0) {
+        found.add(index);
+        const latency = Math.round(performance.now() - shownAt);
+        const gained = Math.max(10, 50 + Math.round(100 * (1 - latency / SQUAD_MS)) - 15 * misses);
+        current.score += gained; roundScore += gained;
+        hud();
+        const target = round.targets[index];
+        ring(frame, target.box, true, true);
+        floatText(frame, tap.px, tap.py, `#${found.size} +${gained}`);
+        const entry = {
+          ...base, target: index, variant: target.variant, outcome: 'found', latency_ms: latency, misses,
+          found_order: found.size, tap_x: Math.round(tap.x * 1000) / 1000, tap_y: Math.round(tap.y * 1000) / 1000,
+          image_w: Math.round(frame.el.getBoundingClientRect().width),
+        };
+        current.log.push(entry);
+        record(entry);
+        misses = 0;
+        $('feedback').className = 'feedback ok';
+        $('feedback').textContent = '';
+        $('prompt').textContent = t().promptSquad(found.size, total);
+        if (found.size === total) finishRound();
+        return;
+      }
+      misses++;
+      const mark = document.createElement('div');
+      mark.className = 'mark';
+      Object.assign(mark.style, { left: `${tap.px * 100}%`, top: `${tap.py * 100}%` });
+      frame.el.append(mark);
+      later(() => mark.remove(), 800);
+      frame.el.classList.remove('shake'); void frame.el.offsetWidth; frame.el.classList.add('shake');
+      $('feedback').className = 'feedback ko';
+      $('feedback').textContent = t().miss;
+    });
+    frame.img.decode().catch(() => {}).then(() => {
+      if (done) return;
+      shownAt = performance.now();
+      runTimer(SQUAD_MS, finishRound);
     });
   }
 
@@ -811,7 +909,7 @@
   function finish() {
     clearTimers();
     const { game, log, score } = current;
-    const max = log.length * (game === 'flash' ? 100 : 300);
+    const max = game === 'squad' ? current.rounds.length * SQUAD_ROUND_MAX : log.length * (game === 'flash' ? 100 : 300);
     const ratio = max ? score / max : 0;
     const rank = t().ranks[ratio < 0.35 ? 0 : ratio < 0.6 ? 1 : ratio < 0.8 ? 2 : 3];
     const best = store.get('tw-best', {});
@@ -823,7 +921,21 @@
     $('res-points').textContent = t().points(score);
     const stat = (value, label) => `<div class="stat"><b>${value}</b><span>${label}</span></div>`;
     let insight = null;
-    if (game === 'flash') {
+    if (game === 'squad') {
+      const found = log.filter((e) => e.outcome === 'found');
+      const avg = found.length ? (found.reduce((s, e) => s + e.latency_ms, 0) / found.length / 1000).toFixed(1) : '–';
+      $('res-stats').innerHTML = stat(`${found.length}/${log.length}`, t().statFound)
+        + stat(`${avg} s`, t().statTime) + stat(log.reduce((s, e) => s + (e.misses || 0), 0), t().statMiss);
+      // The hardest pattern is the one found last on average (missed counts as 5).
+      const ranks = {};
+      for (const e of log) {
+        (ranks[e.variant] ||= { total: 0, n: 0, e });
+        ranks[e.variant].total += e.found_order || 5; ranks[e.variant].n++;
+        if ((e.found_order || 5) >= (ranks[e.variant].e.found_order || 5)) ranks[e.variant].e = e;
+      }
+      const worst = Object.entries(ranks).sort((a, b) => b[1].total / b[1].n - a[1].total / a[1].n)[0];
+      if (worst) insight = { variant: worst[0], scene: worst[1].e.scene_id, text: t().insightSquad((worst[1].total / worst[1].n).toFixed(1)) };
+    } else if (game === 'flash') {
       const present = log.filter((e) => e.figure_present);
       const absent = log.filter((e) => !e.figure_present);
       $('res-stats').innerHTML = stat(`${log.filter((e) => e.correct).length}/${log.length}`, t().statCorrect)

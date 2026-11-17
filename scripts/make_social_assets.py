@@ -204,12 +204,13 @@ def compare_slide(site, page):
 def call_slide(page):
     image, draw = canvas()
     y = text_block(draw, (50, 130), "Mettiti alla prova.", "heavy", 84)
-    y = text_block(draw, (50, y), "3 giochi da 1 minuto.", "heavy", 84, fill=LIME)
+    y = text_block(draw, (50, y), "4 giochi da 1 minuto.", "heavy", 84, fill=LIME)
     y += 30
     for name, text in (
         ("Caccia", "trova l'omino il più in fretta possibile"),
         ("Duello", "due mimetismi a confronto: quale scovi prima?"),
         ("Lampo", "un quarto di secondo: c'era o no?"),
+        ("Pattuglia", "4 omini nella stessa foto: trovali tutti"),
     ):
         draw.text((50, y), name, font=font("heavy", 42), fill=CREAM)
         y = text_block(draw, (290, y + 6), text, "medium", 34, fill=LIME, width=740) + 18

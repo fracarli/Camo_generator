@@ -21,6 +21,16 @@ class GameBuildTest(unittest.TestCase):
                 self.assertIn("control", scene["variants"])
                 for variant in scene["variants"]:
                     self.assertTrue((folder / f"{variant}.jpg").is_file())
+                # Squad layouts rotate every variant over every position.
+                self.assertEqual(len(scene["squad"]), len(scene["variants"]))
+                for layout, targets in enumerate(scene["squad"]):
+                    self.assertTrue((folder / f"multi_{layout}.jpg").is_file())
+                    self.assertEqual(
+                        sorted(t["variant"] for t in targets), sorted(scene["variants"])
+                    )
+                slots = list(zip(*[[t["variant"] for t in layout] for layout in scene["squad"]]))
+                for slot in slots:
+                    self.assertEqual(sorted(slot), sorted(scene["variants"]))
                 x, y, w, h = scene["box"]
                 self.assertTrue(0 <= x < x + w <= 1 and 0 <= y < y + h <= 1)
                 # The figure stands in the lower part of the picture.
@@ -44,6 +54,8 @@ class GameBuildTest(unittest.TestCase):
             "figure_present",
             "viewport_w",
             "image_w",
+            "found_order",
+            "layout",
         ):
             self.assertIn(column, schema)
             self.assertIn(column, page)
@@ -96,8 +108,40 @@ class GameAnalysisTest(unittest.TestCase):
                 "answer": "yes",
             },
         ]
+        rows += [
+            {
+                "session_id": "c",
+                "game": "squad",
+                "environment": "forest",
+                "variant": "universal",
+                "outcome": "found",
+                "found_order": "4",
+                "latency_ms": "9000",
+            },
+            {
+                "session_id": "c",
+                "game": "squad",
+                "environment": "forest",
+                "variant": "control",
+                "outcome": "found",
+                "found_order": "1",
+                "latency_ms": "800",
+            },
+            {
+                "session_id": "c",
+                "game": "squad",
+                "environment": "forest",
+                "variant": "optimized",
+                "outcome": "timeout",
+                "found_order": "",
+                "latency_ms": "25000",
+            },
+        ]
         summary = analyze_rows(rows)
-        self.assertEqual(summary["sessions"], 2)
+        self.assertEqual(summary["squad"]["forest"]["universal"]["mean_rank"], 4.0)
+        self.assertEqual(summary["squad"]["forest"]["optimized"]["mean_rank"], 5.0)
+        self.assertEqual(summary["squad"]["all"]["control"]["found_rate"], 1.0)
+        self.assertEqual(summary["sessions"], 3)
         self.assertEqual(summary["find"]["optimized"]["found_rate"], 0.5)
         self.assertEqual(summary["find"]["control"]["median_ms"], 900)
         self.assertEqual(summary["duel"]["optimized"]["survival_rate"], 1.0)

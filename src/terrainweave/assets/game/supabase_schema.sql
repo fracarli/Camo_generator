@@ -5,7 +5,7 @@ create table if not exists public.game_events (
   created_at timestamptz not null default now(),
   build_id text not null check (char_length(build_id) <= 32),
   session_id text not null check (char_length(session_id) <= 64),
-  game text not null check (game in ('find', 'duel', 'flash')),
+  game text not null check (game in ('find', 'duel', 'flash', 'squad')),
   round smallint not null check (round between 0 and 99),
   scene_id text not null check (char_length(scene_id) <= 40),
   environment text check (char_length(environment) <= 20),
@@ -27,7 +27,11 @@ create table if not exists public.game_events (
   viewport_h smallint,
   image_w smallint,
   dpr real,
-  unique (session_id, game, round, scene_id)
+  target smallint,
+  found_order smallint,
+  layout smallint,
+  constraint game_events_unique_round
+    unique nulls not distinct (session_id, game, round, scene_id, target)
 );
 
 alter table public.game_events enable row level security;

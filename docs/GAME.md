@@ -1,17 +1,20 @@
 # Web game
 
-The public game has three modes that share the same scenes:
+The public game has four modes that share the same backgrounds:
 
 | Mode | Task | What it measures |
 |---|---|---|
 | A · Hunt (`find`) | Tap the figure as fast as possible, 15 s limit | Time to find and found rate per pattern |
 | B · Duel (`duel`) | Two copies of a landscape with different patterns; tap the figure in either | Which of two patterns is found first |
 | C · Flash (`flash`) | 250 ms exposure and a noise mask, then yes/no; half the scenes are empty | Hit rate, false alarms and d′ |
+| D · Squad (`squad`) | Four figures in one photo, one per pattern; find them all in 25 s | Discovery order per pattern and environment |
 
 Every scene uses a held-out background from `evaluation/splits/test.json` with
 one fixed figure position. Only the pattern changes: TerrainWeave optimized,
 baseline, universal, and a plain olive control. The page assigns patterns at
-random and balances them within each game. The tutorial example uses a
+random and balances them within each game. In Squad, each background has
+four layouts that rotate the patterns over the same four positions, so the
+discovery order measures the pattern rather than the position. The tutorial example uses a
 training photo so no game scene is revealed in advance.
 
 ## Build and preview
@@ -30,7 +33,8 @@ browser console.
 
 1. Create a free Supabase project. In the SQL editor, run
    [supabase_schema.sql](../src/terrainweave/assets/game/supabase_schema.sql).
-   Visitors can insert rounds but cannot read them.
+   Visitors can insert rounds but cannot read them. A table created before the
+   Squad mode needs [migration_002_squad.sql](../src/terrainweave/assets/game/migration_002_squad.sql).
 2. In the GitHub repository, open **Settings → Pages** and set **Source** to
    **GitHub Actions**.
 3. In **Settings → Secrets and variables → Actions → Variables**, add
@@ -50,7 +54,8 @@ Export `game_events` from the Supabase table editor as CSV, then run:
 terrainweave game analyze --input game_events.csv --json output/game_summary.json
 ```
 
-Compare patterns within a single `build_id`. The rows also record device type
+The Squad section ranks the patterns in each environment by mean discovery
+order (a missed figure counts as 5). Compare patterns within a single `build_id`. The rows also record device type
 and image width, so phone and desktop results can be analyzed separately.
 
 ## Social media assets

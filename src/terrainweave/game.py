@@ -58,10 +58,7 @@ def choose_placement(background: Image.Image, scene_id: str) -> tuple[int, int, 
     on the other side of the image in the pairwise game.
     """
     rng = np.random.default_rng(_seed(scene_id))
-    pixels = np.asarray(background.convert("RGB"), dtype=np.float32)
-    red, green, blue = pixels[..., 0], pixels[..., 1], pixels[..., 2]
-    luminance = pixels.mean(axis=2)
-    unsuitable = ((blue > 105) & (blue > red * 1.08) & (blue > green * 1.02)) | (luminance > 232)
+    unsuitable = unsuitable_ground(background)
     width, height = SCENE_SIZE
     candidates = []
     for _ in range(60):
@@ -83,6 +80,47 @@ def choose_placement(background: Image.Image, scene_id: str) -> tuple[int, int, 
     best = candidates[: max(1, len(candidates) // 6)]
     _, foot_x, foot_y, figure = best[int(rng.integers(len(best)))]
     return foot_x, foot_y, figure
+
+
+def unsuitable_ground(background: Image.Image) -> np.ndarray:
+    pixels = np.asarray(background.convert("RGB"), dtype=np.float32)
+    red, green, blue = pixels[..., 0], pixels[..., 1], pixels[..., 2]
+    luminance = pixels.mean(axis=2)
+    return ((blue > 105) & (blue > red * 1.08) & (blue > green * 1.02)) | (luminance > 232)
+
+
+def choose_positions(
+    background: Image.Image, seed: str, count: int = 4
+) -> list[tuple[int, int, int]]:
+    """Return several well separated foot positions on plausible ground for the squad game."""
+    rng = np.random.default_rng(_seed(seed))
+    unsuitable = unsuitable_ground(background)
+    width, height = SCENE_SIZE
+    candidates = []
+    for _ in range(400):
+        foot_x, foot_y = rng.uniform(0.06, 0.94), rng.uniform(0.66, 0.95)
+        figure = figure_height(foot_y)
+        half = figure * 0.22
+        x0, x1 = int(foot_x * width - half), int(foot_x * width + half)
+        y0, y1 = int(foot_y * height - figure), int(foot_y * height)
+        if y0 < 0 or x0 < 0 or x1 > width:
+            continue
+        score = float(unsuitable[y0:y1, x0:x1].mean()) + rng.uniform(0, 0.05)
+        candidates.append((score, round(foot_x * width), round(foot_y * height), figure))
+    candidates.sort(key=lambda item: item[0])
+    chosen: list[tuple[int, int, int]] = []
+    for separation in (0.16, 0.12, 0.09):
+        for _, x, y, figure in candidates:
+            if len(chosen) == count:
+                break
+            # Keep figures apart horizontally so each one is a separate search target.
+            if all(abs(x - other[0]) > separation * width for other in chosen):
+                chosen.append((x, y, figure))
+        if len(chosen) == count:
+            break
+    if len(chosen) < count:
+        raise ValueError(f"Cannot place {count} separate figures in {seed}")
+    return sorted(chosen)
 
 
 def control_texture() -> Image.Image:
@@ -181,12 +219,34 @@ def build_site(
             image.save(path, quality=80, optimize=True)
             digest.update(path.read_bytes())
             variants.append(variant)
+        # Squad game: one figure per variant, rotating variants over the positions
+        # (a Latin square) so position and pattern effects can be separated.
+        positions = choose_positions(background, f"squad-{Path(record['file']).name}")
+        textures = {
+            variant: control_texture()
+            if pattern_source(root, variant, group) is None
+            else pattern_source(root, variant, group)
+            for variant in variants
+        }
+        squad = []
+        for layout in range(len(variants)):
+            image = background
+            targets = []
+            for slot, (foot_x, foot_y, figure) in enumerate(positions[: len(variants)]):
+                variant = variants[(slot + layout) % len(variants)]
+                image, target_box = place_figure(image, textures[variant], foot_x, foot_y, figure)
+                targets.append({"variant": variant, "box": target_box})
+            path = folder / f"multi_{layout}.jpg"
+            image.save(path, quality=80, optimize=True)
+            digest.update(path.read_bytes())
+            squad.append(targets)
         scenes.append(
             {
                 "id": scene_id,
                 "environment": group,
                 "box": box,
                 "variants": variants,
+                "squad": squad,
                 "credit": len(credits),
             }
         )
@@ -321,6 +381,8 @@ def analyze_rows(rows: list[dict]) -> dict:
     duel = defaultdict(lambda: {"wins": 0, "games": 0})
     flash = defaultdict(lambda: {"present": 0, "hits": 0})
     flash_absent = {"absent": 0, "false_alarms": 0}
+    # Squad: (environment, variant) -> discovery ranks; a missed figure ranks last + 1.
+    squad = defaultdict(lambda: {"targets": 0, "found": 0, "ranks": [], "times": []})
     sessions = set()
     for row in rows:
         sessions.add(row.get("session_id"))
@@ -340,6 +402,18 @@ def analyze_rows(rows: list[dict]) -> dict:
                 duel[variant]["games"] += 1
             # A pattern "wins" the duel when the player found the other one first.
             duel[loser]["wins"] += 1
+        elif game == "squad":
+            found = row.get("outcome") == "found"
+            order = _number(row.get("found_order"))
+            rank = order if found and order is not None else 5.0
+            for key in ((row.get("environment") or "?", row["variant"]), ("all", row["variant"])):
+                stats = squad[key]
+                stats["targets"] += 1
+                stats["found"] += found
+                stats["ranks"].append(rank)
+                latency = _number(row.get("latency_ms"))
+                if found and latency is not None:
+                    stats["times"].append(latency)
         elif game == "flash":
             present = str(row.get("figure_present")).lower() in ("true", "t", "1")
             said_yes = row.get("answer") == "yes"
@@ -351,7 +425,21 @@ def analyze_rows(rows: list[dict]) -> dict:
                 flash_absent["absent"] += 1
                 flash_absent["false_alarms"] += said_yes
 
-    summary = {"sessions": len(sessions), "events": len(rows), "find": {}, "duel": {}, "flash": {}}
+    summary = {
+        "sessions": len(sessions),
+        "events": len(rows),
+        "find": {},
+        "duel": {},
+        "flash": {},
+        "squad": {},
+    }
+    for (environment, variant), stats in sorted(squad.items()):
+        summary["squad"].setdefault(environment, {})[variant] = {
+            "targets": stats["targets"],
+            "found_rate": stats["found"] / stats["targets"],
+            "mean_rank": sum(stats["ranks"]) / len(stats["ranks"]),
+            "median_ms": median(stats["times"]) if stats["times"] else None,
+        }
     for variant, stats in sorted(find.items()):
         summary["find"][variant] = {
             "rounds": stats["rounds"],
@@ -395,6 +483,16 @@ def format_summary(summary: dict) -> str:
     for variant, stats in summary["duel"].items():
         lines.append(
             f"  {variant:<10} duels {stats['duels']:>5}  survival {pct(stats['survival_rate'])}"
+        )
+    lines += ["", "Squad (higher mean rank = found later = better camouflage; missed = 5)"]
+    for environment, variants in summary.get("squad", {}).items():
+        ranking = sorted(variants.items(), key=lambda item: -item[1]["mean_rank"])
+        lines.append(
+            f"  {environment:<9} "
+            + "  ".join(
+                f"{variant} {stats['mean_rank']:.2f} ({pct(stats['found_rate'])}, n={stats['targets']})"
+                for variant, stats in ranking
+            )
         )
     flash = dict(summary["flash"])
     lines += ["", f"Flash (false alarms {pct(flash.pop('false_alarm_rate'))}; lower d' = better)"]
