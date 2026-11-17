@@ -6,7 +6,10 @@ TerrainWeave generates camouflage patterns from landscape photographs and
 compares them in synthetic scenes.
 
 **Play the web game: [fracarli.github.io/Camo_generator](https://fracarli.github.io/Camo_generator/)**
-Three one-minute games (Hunt, Duel, Flash) ask players to find a camouflaged
+
+<a href="https://fracarli.github.io/Camo_generator/"><img src="docs/game_qr.png" alt="QR code linking to the TerrainWeave web game" width="160"></a>
+
+Scan the code with a phone camera or open the link in any browser. Three one-minute games (Hunt, Duel, Flash) ask players to find a camouflaged
 figure. Each anonymous round compares the TerrainWeave patterns with a plain
 olive control and feeds the next optimization cycle. See the
 [game guide](docs/GAME.md) for building, hosting and analysis.
