@@ -85,5 +85,7 @@ python scripts/make_social_assets.py --site output/game-site --output output/lin
 The script writes a six-slide carousel (`carousel_1.png` to `carousel_6.png`
 and `carousel.pdf` for LinkedIn document posts), a single image with a QR code
 (`post_single.png`), a standalone `qr_code.png` and a 25-second vertical video
-(`video_trova_omino.mp4`, requires ffmpeg). The text is in Italian; the
-challenge scenes are set by `CHALLENGE` in the script.
+(`video_trova_omino.mp4`, requires ffmpeg). The text is in Italian;
+add `--lang en` for English captions (the video is then
+`video_find_the_figure.mp4`). The challenge scenes are chosen by photo title
+in `CHALLENGE`.
