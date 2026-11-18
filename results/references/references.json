@@ -1,0 +1,22 @@
+{
+  "woodland": {
+    "description": "Four-colour woodland family, after the public-domain US M81",
+    "seed": 7,
+    "px_per_cm": 2.6
+  },
+  "desert3": {
+    "description": "Three-colour desert family, after the US DCU",
+    "seed": 8,
+    "px_per_cm": 2.6
+  },
+  "digital3": {
+    "description": "Three-colour grey digital family, after the US UCP",
+    "seed": 9,
+    "px_per_cm": 2.6
+  },
+  "transitional": {
+    "description": "Generic transitional design (soft blend across environments)",
+    "seed": 10,
+    "px_per_cm": 2.6
+  }
+}

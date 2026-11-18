@@ -13,8 +13,10 @@ Scan the code with a phone camera or open the link in any browser. Four one-minu
 camouflaged figures; Squad hides four figures with different patterns in one
 photo and ranks them by discovery order in each environment. Each anonymous round compares the TerrainWeave patterns with a plain
 olive control and feeds the next optimization cycle. See the
-[game guide](docs/GAME.md) for building, hosting, analysis and the
-LinkedIn carousel and video generator.
+[game guide](docs/GAME.md) for building, hosting, analysis, reference
+patterns and the LinkedIn carousel and video generator, and the
+[study plan](docs/STUDY_universal_vs_references.md) comparing universal with
+reference patterns.
 
 ## How it works
 

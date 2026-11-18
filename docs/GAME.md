@@ -22,6 +22,36 @@ four layouts that rotate the patterns over the same four positions, so the
 discovery order measures the pattern rather than the position. The tutorial example uses a
 training photo so no game scene is revealed in advance.
 
+## Studies and reference patterns
+
+A study fixes which patterns appear together. `launch` (the published game)
+compares the TerrainWeave optimized, baseline and universal patterns with a
+plain olive control. `references` compares universal with reference pattern
+families drawn from scratch:
+
+```bash
+terrainweave game references                 # writes results/references/
+terrainweave game build --study references --output output/game-references
+```
+
+Squad shows one figure per pattern, so `references` hides five figures per
+photo. Each build stores the automatic visibility score of every scene and
+pattern; after collecting Hunt data, check whether that score predicts people:
+
+```bash
+terrainweave game calibrate --input game_events.csv --manifest output/game-site/manifest.json
+```
+
+The study plan is in [STUDY_universal_vs_references.md](STUDY_universal_vs_references.md).
+
+## Test sessions
+
+Open the game once with `?test=1` (for example
+`https://fracarli.github.io/Camo_generator/?test=1`) to mark that browser's
+games as tests; a TEST badge appears next to the logo and session ids start
+with `TEST`. `?test=0` switches it off. Remove test rows with
+`delete from game_events where session_id like 'TEST%';`.
+
 ## More backgrounds
 
 ```bash

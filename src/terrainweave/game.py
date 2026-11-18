@@ -25,19 +25,32 @@ from statistics import median
 import numpy as np
 from PIL import Image, ImageFilter, ImageOps
 
-from .evaluation import composite, load_background
+from .evaluation import composite, load_background, measure_visibility
 from .paths import asset_path, uniform_template, workspace_root
 from .rendering import build_uniform_layer
 
 SCENE_SIZE = (960, 640)
 # Flat olive drab is the reference: a single-color uniform without any pattern.
 CONTROL_COLOR = (88, 92, 62)
-VARIANTS = {
+PATTERNS = {
     "optimized": "results/optimized_final/{group}/optimized_pattern.png",
     "baseline": "results/baseline/{group}/best_pattern.png",
     "universal": "results/optimized_final/universal/optimized_pattern.png",
     "control": None,
+    # Reference families drawn from scratch by `terrainweave game references`.
+    "woodland": "results/references/woodland/pattern.png",
+    "desert3": "results/references/desert3/pattern.png",
+    "digital3": "results/references/digital3/pattern.png",
+    "transitional": "results/references/transitional/pattern.png",
 }
+# A study fixes which patterns appear together. Keep each study small: every
+# extra pattern needs more games for the same precision, and Squad shows one
+# figure per pattern.
+STUDIES = {
+    "launch": ("optimized", "baseline", "universal", "control"),
+    "references": ("universal", "transitional", "digital3", "woodland", "control"),
+}
+VARIANTS = PATTERNS  # backwards-compatible name
 GAME_TABLE = "game_events"
 # Backgrounds softer than this in the lower half make sharp figures pop out.
 MIN_FOREGROUND_SHARPNESS = 20.0
@@ -131,12 +144,17 @@ def control_texture() -> Image.Image:
 
 
 def pattern_source(root: Path, variant: str, group: str) -> Path | None:
-    template = VARIANTS[variant]
+    template = PATTERNS[variant]
     return None if template is None else root / template.format(group=group)
 
 
 def place_figure(
-    background: Image.Image, pattern, foot_x: int, foot_y: int, figure: int
+    background: Image.Image,
+    pattern,
+    foot_x: int,
+    foot_y: int,
+    figure: int,
+    proxy: dict | None = None,
 ) -> tuple[Image.Image, list[float]]:
     """Composite the figure standing at the foot point; return the image and its box."""
     uniform, mask = build_uniform_layer(pattern, uniform_template(), figure)
@@ -145,13 +163,17 @@ def place_figure(
     y = foot_y - int(ys.max())
     x = min(max(0, x), SCENE_SIZE[0] - uniform.width)
     y = min(max(0, y), SCENE_SIZE[1] - uniform.height)
-    image, _ = composite(background, uniform, mask, x, y)
+    image, full_mask = composite(background, uniform, mask, x, y)
     box = [
         round((x + int(xs.min())) / SCENE_SIZE[0], 4),
         round((y + int(ys.min())) / SCENE_SIZE[1], 4),
         round((int(xs.max()) - int(xs.min()) + 1) / SCENE_SIZE[0], 4),
         round((int(ys.max()) - int(ys.min()) + 1) / SCENE_SIZE[1], 4),
     ]
+    if proxy is not None:
+        proxy["score"] = round(
+            measure_visibility(background, image, full_mask)["visibility_score"], 4
+        )
     return image, box
 
 
@@ -199,6 +221,7 @@ def build_site(
     supabase_url: str = "",
     supabase_key: str = "",
     site_url: str = "",
+    study: str = "launch",
 ) -> dict:
     root = root or workspace_root()
     manifests = [manifest] if manifest else [root / name for name in GAME_MANIFESTS]
@@ -230,19 +253,23 @@ def build_site(
         background.save(folder / "absent.jpg", quality=80, optimize=True)
         box = None
         variants = []
-        for variant in VARIANTS:
+        proxies = {}
+        for variant in STUDIES[study]:
             source = pattern_source(root, variant, group)
             if source is not None and not source.is_file():
                 continue
             pattern = control_texture() if source is None else source
-            image, box = place_figure(background, pattern, foot_x, foot_y, figure)
+            proxies[variant] = {}
+            image, box = place_figure(background, pattern, foot_x, foot_y, figure, proxies[variant])
             path = folder / f"{variant}.jpg"
             image.save(path, quality=80, optimize=True)
             digest.update(path.read_bytes())
             variants.append(variant)
         # Squad game: one figure per variant, rotating variants over the positions
         # (a Latin square) so position and pattern effects can be separated.
-        positions = choose_positions(background, f"squad-{Path(record['file']).name}")
+        positions = choose_positions(
+            background, f"squad-{Path(record['file']).name}", count=len(variants)
+        )
         textures = {
             variant: control_texture()
             if pattern_source(root, variant, group) is None
@@ -268,6 +295,8 @@ def build_site(
                 "box": box,
                 "variants": variants,
                 "squad": squad,
+                # Automatic visibility score (lower = better hidden), for calibration.
+                "proxy": {variant: value["score"] for variant, value in proxies.items()},
                 "credit": len(credits),
             }
         )
@@ -285,6 +314,8 @@ def build_site(
     credits.append({key: demo.pop(key) for key in ("title", "author", "license", "url")})
     build = {
         "build_id": digest.hexdigest()[:12],
+        "study": study,
+        "variants": list(STUDIES[study]),
         "demo": demo,
         "size": list(SCENE_SIZE),
         "scenes": scenes,
@@ -323,6 +354,9 @@ def build_main() -> None:
         help="Comma-separated background file names to leave out after visual review",
     )
     parser.add_argument("--limit", type=int, help="Use only the first N backgrounds")
+    parser.add_argument(
+        "--study", choices=sorted(STUDIES), default="launch", help="Patterns compared in this build"
+    )
     args = parser.parse_args()
     exclude = {name.strip() for name in args.exclude.split(",") if name.strip()}
     exclude_file = workspace_root() / "configs/game_exclude.txt"
@@ -337,6 +371,7 @@ def build_main() -> None:
         manifest=args.manifest,
         exclude=exclude,
         limit=args.limit,
+        study=args.study,
         supabase_url=os.environ.get("SUPABASE_URL", ""),
         supabase_key=os.environ.get("SUPABASE_PUBLISHABLE_KEY")
         or os.environ.get("SUPABASE_ANON_KEY", ""),
@@ -407,6 +442,11 @@ def analyze_rows(rows: list[dict]) -> dict:
     # Squad: (environment, variant) -> discovery ranks; a missed figure ranks last + 1.
     squad = defaultdict(lambda: {"targets": 0, "found": 0, "ranks": [], "times": []})
     sessions = set()
+    # Figures per squad round: a missed figure ranks after all of them.
+    squad_size = defaultdict(int)
+    for row in rows:
+        if row.get("game") == "squad":
+            squad_size[(row.get("session_id"), row.get("round"))] += 1
     for row in rows:
         sessions.add(row.get("session_id"))
         game = row.get("game")
@@ -428,7 +468,8 @@ def analyze_rows(rows: list[dict]) -> dict:
         elif game == "squad":
             found = row.get("outcome") == "found"
             order = _number(row.get("found_order"))
-            rank = order if found and order is not None else 5.0
+            missed = squad_size[(row.get("session_id"), row.get("round"))] + 1
+            rank = order if found and order is not None else float(missed)
             for key in ((row.get("environment") or "?", row["variant"]), ("all", row["variant"])):
                 stats = squad[key]
                 stats["targets"] += 1
@@ -463,6 +504,15 @@ def analyze_rows(rows: list[dict]) -> dict:
             "mean_rank": sum(stats["ranks"]) / len(stats["ranks"]),
             "median_ms": median(stats["times"]) if stats["times"] else None,
         }
+    # Worst case: the environment where each pattern is found earliest.
+    worst = {}
+    for environment, variants in summary["squad"].items():
+        if environment == "all":
+            continue
+        for variant, stats in variants.items():
+            if variant not in worst or stats["mean_rank"] < worst[variant]["mean_rank"]:
+                worst[variant] = {"environment": environment, "mean_rank": stats["mean_rank"]}
+    summary["squad_worst_case"] = worst
     for variant, stats in sorted(find.items()):
         summary["find"][variant] = {
             "rounds": stats["rounds"],
@@ -507,7 +557,7 @@ def format_summary(summary: dict) -> str:
         lines.append(
             f"  {variant:<10} duels {stats['duels']:>5}  survival {pct(stats['survival_rate'])}"
         )
-    lines += ["", "Squad (higher mean rank = found later = better camouflage; missed = 5)"]
+    lines += ["", "Squad (higher mean rank = found later = better camouflage; missed = last + 1)"]
     for environment, variants in summary.get("squad", {}).items():
         ranking = sorted(variants.items(), key=lambda item: -item[1]["mean_rank"])
         lines.append(
@@ -517,6 +567,12 @@ def format_summary(summary: dict) -> str:
                 for variant, stats in ranking
             )
         )
+    if summary.get("squad_worst_case"):
+        lines += ["", "Squad worst case (environment where each pattern is found earliest)"]
+        for variant, stats in sorted(
+            summary["squad_worst_case"].items(), key=lambda item: -item[1]["mean_rank"]
+        ):
+            lines.append(f"  {variant:<12} {stats['mean_rank']:.2f} in {stats['environment']}")
     flash = dict(summary["flash"])
     lines += ["", f"Flash (false alarms {pct(flash.pop('false_alarm_rate'))}; lower d' = better)"]
     for variant, stats in flash.items():
@@ -539,3 +595,87 @@ def analyze_main() -> None:
     print(format_summary(summary))
     if args.json:
         args.json.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+
+
+# --- Calibration -----------------------------------------------------------------
+
+
+def _ranks(values: list[float]) -> list[float]:
+    order = sorted(range(len(values)), key=values.__getitem__)
+    ranks = [0.0] * len(values)
+    position = 0
+    while position < len(order):
+        end = position
+        while end + 1 < len(order) and values[order[end + 1]] == values[order[position]]:
+            end += 1
+        for index in order[position : end + 1]:
+            ranks[index] = (position + end) / 2 + 1
+        position = end + 1
+    return ranks
+
+
+def spearman(x: list[float], y: list[float]) -> float | None:
+    if len(x) < 3:
+        return None
+    rx, ry = _ranks(x), _ranks(y)
+    mx, my = sum(rx) / len(rx), sum(ry) / len(ry)
+    cov = sum((a - mx) * (b - my) for a, b in zip(rx, ry))
+    var = math.sqrt(sum((a - mx) ** 2 for a in rx) * sum((b - my) ** 2 for b in ry))
+    return cov / var if var else None
+
+
+def calibrate(rows: list[dict], manifest: dict, min_rounds: int = 3) -> dict:
+    """Compare the automatic visibility score with human Hunt times per scene and pattern.
+
+    A strong negative correlation (more visible by the score = found faster) means
+    the score can stand in for people during optimization; a weak one means the
+    score misses what people notice and needs to be recalibrated.
+    """
+    proxy = {
+        (scene["id"], variant): score
+        for scene in manifest["scenes"]
+        for variant, score in scene.get("proxy", {}).items()
+    }
+    times = defaultdict(list)
+    for row in rows:
+        if row.get("game") != "find" or row.get("build_id") != manifest["build_id"]:
+            continue
+        latency = _number(row.get("latency_ms"))
+        if latency is not None:
+            times[(row["scene_id"], row["variant"])].append(latency)
+    pairs = [
+        (proxy[key], median(values))
+        for key, values in times.items()
+        if key in proxy and len(values) >= min_rounds
+    ]
+    rho = spearman([p for p, _ in pairs], [t for _, t in pairs])
+    return {"build_id": manifest["build_id"], "pairs": len(pairs), "spearman": rho}
+
+
+def calibrate_main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Check whether the automatic visibility score predicts human Hunt times."
+    )
+    parser.add_argument("--input", type=Path, required=True, help="CSV export of game_events")
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        default=Path("output/game-site/manifest.json"),
+        help="manifest.json of the build that produced the rows",
+    )
+    parser.add_argument("--min-rounds", type=int, default=3)
+    args = parser.parse_args()
+    manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
+    if not any("proxy" in scene for scene in manifest["scenes"]):
+        raise SystemExit(
+            "This manifest has no proxy scores; rebuild it with `terrainweave game build`."
+        )
+    with args.input.open(newline="", encoding="utf-8") as handle:
+        result = calibrate(list(csv.DictReader(handle)), manifest, args.min_rounds)
+    rho = result["spearman"]
+    print(f"Build {result['build_id']}: {result['pairs']} scene/pattern pairs")
+    if rho is None:
+        print("Not enough data yet (need at least 3 pairs with enough rounds).")
+    else:
+        verdict = "useful" if rho <= -0.5 else "weak" if rho <= -0.2 else "not predictive"
+        print(f"Spearman(score, median time) = {rho:.2f} -> the score is {verdict}")

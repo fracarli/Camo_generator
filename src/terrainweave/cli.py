@@ -128,6 +128,10 @@ COMMANDS = (
     ),
     Command("game build", "game", "build_main", "", "Build the static web game"),
     Command("game analyze", "game", "analyze_main", "", "Summarize exported game events"),
+    Command("game references", "references", "main", "", "Draw the reference patterns"),
+    Command(
+        "game calibrate", "game", "calibrate_main", "", "Compare the proxy score with human times"
+    ),
     Command(
         "ml train-proposer",
         "training",

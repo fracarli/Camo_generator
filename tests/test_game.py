@@ -139,7 +139,8 @@ class GameAnalysisTest(unittest.TestCase):
         ]
         summary = analyze_rows(rows)
         self.assertEqual(summary["squad"]["forest"]["universal"]["mean_rank"], 4.0)
-        self.assertEqual(summary["squad"]["forest"]["optimized"]["mean_rank"], 5.0)
+        # Three figures in this round, so a missed one ranks fourth.
+        self.assertEqual(summary["squad"]["forest"]["optimized"]["mean_rank"], 4.0)
         self.assertEqual(summary["squad"]["all"]["control"]["found_rate"], 1.0)
         self.assertEqual(summary["sessions"], 3)
         self.assertEqual(summary["find"]["optimized"]["found_rate"], 0.5)
@@ -152,3 +153,76 @@ class GameAnalysisTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ReferenceStudyTest(unittest.TestCase):
+    def test_reference_patterns_and_study_build(self):
+        from terrainweave.references import build as build_references
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            paths = build_references(root / "refs")
+            self.assertEqual(len(paths), 4)
+            for path in paths:
+                self.assertTrue(path.is_file())
+        build = build_site(Path(tempfile.mkdtemp()) / "site", limit=1, study="references")
+        scene = build["scenes"][0]
+        self.assertEqual(build["study"], "references")
+        self.assertEqual(scene["variants"], build["variants"])
+        self.assertEqual(len(scene["squad"]), 5)
+        self.assertTrue(all(len(layout) == 5 for layout in scene["squad"]))
+        self.assertEqual(set(scene["proxy"]), set(scene["variants"]))
+
+    def test_missed_rank_follows_squad_size(self):
+        rows = [
+            {
+                "session_id": "s",
+                "game": "squad",
+                "round": "0",
+                "environment": "forest",
+                "variant": name,
+                "outcome": "found",
+                "found_order": str(order),
+                "latency_ms": "1",
+            }
+            for order, name in enumerate(["a", "b", "c", "d"], 1)
+        ] + [
+            {
+                "session_id": "s",
+                "game": "squad",
+                "round": "0",
+                "environment": "forest",
+                "variant": "e",
+                "outcome": "timeout",
+                "found_order": "",
+                "latency_ms": "25000",
+            }
+        ]
+        summary = analyze_rows(rows)
+        self.assertEqual(summary["squad"]["forest"]["e"]["mean_rank"], 6.0)
+        self.assertEqual(summary["squad_worst_case"]["a"]["mean_rank"], 1.0)
+
+
+class CalibrationTest(unittest.TestCase):
+    def test_spearman_and_calibrate(self):
+        from terrainweave.game import calibrate, spearman
+
+        self.assertAlmostEqual(spearman([1, 2, 3, 4], [8, 6, 4, 2]), -1.0)
+        manifest = {
+            "build_id": "b",
+            "scenes": [{"id": f"s{i}", "proxy": {"x": 0.1 * i}} for i in range(1, 5)],
+        }
+        rows = [
+            {
+                "game": "find",
+                "build_id": "b",
+                "scene_id": f"s{i}",
+                "variant": "x",
+                "latency_ms": str(10000 - 2000 * i),
+            }
+            for i in range(1, 5)
+            for _ in range(3)
+        ]
+        result = calibrate(rows, manifest)
+        self.assertEqual(result["pairs"], 4)
+        self.assertAlmostEqual(result["spearman"], -1.0)

@@ -54,6 +54,8 @@
     .eyebrow { font-size: 13px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; color: var(--moss); }
     .hero h1 { font-size: clamp(38px, 7.5vw, 84px); line-height: .96; letter-spacing: -.065em; font-weight: 800; text-wrap: balance; max-width: 15ch; }
     .hero p { color: var(--muted); font-size: clamp(16px, 2vw, 20px); max-width: 52ch; }
+    .actions .btn.quick { flex: none; padding-inline: 34px; }
+    .test-badge { margin-left: 8px; font-size: 11px; font-weight: 800; color: #fff; background: #c2410c; border-radius: 6px; padding: 2px 6px; letter-spacing: .04em; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip { border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 650; background: var(--panel); }
     .games { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding-bottom: 28px; }
@@ -185,6 +187,7 @@
         <span class="eyebrow" data-t="eyebrow"></span>
         <h1 data-t="heroTitle"></h1>
         <p data-t="heroText"></p>
+        <div class="actions"><button class="btn big quick" id="quick" type="button" data-t="quick"></button></div>
         <div class="chips"><span class="chip" data-t="chip1"></span><span class="chip" data-t="chip2"></span><span class="chip" data-t="chip3"></span></div>
       </div>
       <div class="wrap games" id="games"></div>
@@ -260,7 +263,6 @@
   const CONFIG = window.TW_CONFIG || {};
   const ROUND_MS = 15000;
   const SQUAD_MS = 25000;
-  const SQUAD_ROUND_MAX = 700;
   const FLASH_MS = 250;
   const MASK_MS = 300;
   const GAMES = {
@@ -278,13 +280,14 @@
       heroText: 'Abbiamo generato dei mimetismi analizzando foto di boschi, deserti, montagne e città. Ora serve il tuo occhio: ogni partita ci dice quali funzionano davvero e quali no.',
       chip1: '4 mini giochi', chip2: 'Paesaggi reali da tutto il mondo', chip3: 'Anonimo, senza registrazione',
       why1t: 'Perché giocare?', why1: 'Gli algoritmi misurano colori e contrasti, ma solo l’occhio umano dice se un mimetismo inganna davvero.',
-      why2t: 'Cosa confrontiamo', why2: 'Lo stesso paesaggio con mimetismi diversi: TerrainWeave ottimizzato, base, universale e una tinta unita verde oliva come riferimento.',
+      why2t: 'Cosa confrontiamo', why2: 'Lo stesso paesaggio con mimetismi diversi, generati da TerrainWeave o di riferimento, sempre nello stesso punto: cambia solo il mimetismo.',
+      quick: 'Gioca subito →',
       why3t: 'Cosa succede ai dati', why3: 'Tempi e tocchi anonimi alimentano il prossimo ciclo di ottimizzazione. Più partite, mimetismi migliori.',
       games: {
         find: { name: 'Caccia', hook: 'Quanto ci metti a trovarlo?', text: '10 paesaggi, un omino nascosto in ognuno. Toccalo appena lo vedi: più sei veloce, più punti fai.' },
         duel: { name: 'Duello', hook: 'Due immagini, un solo vincitore', text: 'Lo stesso paesaggio con due mimetismi diversi. Tocca l’omino nell’immagine in cui lo scovi per prima.' },
         flash: { name: 'Lampo', hook: 'Hai solo un quarto di secondo', text: 'L’immagine appare per un istante. C’era qualcuno o no? Attento: a volte il paesaggio è vuoto.' },
-        squad: { name: 'Pattuglia', hook: 'Quattro omini, una sola foto', text: 'Nella stessa foto si nascondono 4 omini, ognuno con un mimetismo diverso. Trovali tutti prima che scada il tempo!' },
+        squad: { name: 'Pattuglia', hook: '{n} omini, una sola foto', text: 'Nella stessa foto si nascondono {n} omini, ognuno con un mimetismo diverso. Trovali tutti prima che scada il tempo!' },
       },
       minute: '~1 min', play: 'Gioca', best: (n) => `Record: ${n}`,
       tutorial: 'Come si gioca',
@@ -292,7 +295,7 @@
         find: ['Appare un paesaggio con un omino mimetizzato, come quello evidenziato nell\u2019immagine.', 'Toccalo o cliccaci sopra il prima possibile. I tocchi sbagliati costano punti.', 'Hai 15 secondi: se non lo trovi, ti mostriamo dov’era.'],
         duel: ['Vedi due versioni dello stesso paesaggio, ognuna con un omino vestito con un mimetismo diverso.', 'Tocca l’omino nella prima immagine in cui lo trovi: basta trovarne uno.', 'Così scopriamo quale dei due mimetismi si nota di più.'],
         flash: ['Tieni lo sguardo al centro: l’immagine appare per 0,25 secondi.', 'Rispondi: c’era un omino? Sì o No. Puoi usare anche i tasti S e N.', 'In circa metà delle immagini non c’è nessuno: non tirare a indovinare!'],
-        squad: ['In ogni foto si nascondono 4 omini, ognuno vestito con un mimetismo diverso.', 'Toccali tutti, uno alla volta: l’ordine in cui li trovi ci dice quale mimetismo si nota di più.', 'Hai 25 secondi per foto. I tocchi a vuoto costano punti, trovarli tutti vale un bonus.'],
+        squad: ['In ogni foto si nascondono {n} omini, ognuno vestito con un mimetismo diverso.', 'Toccali tutti, uno alla volta: l’ordine in cui li trovi ci dice quale mimetismo si nota di più.', 'Hai 25 secondi per foto. I tocchi a vuoto costano punti, trovarli tutti vale un bonus.'],
       },
       demoCaption: 'Eccolo! Questo è l’omino da cercare.',
       go: 'Ho capito, giochiamo!', back: 'Indietro', quit: 'Esci',
@@ -301,7 +304,7 @@
       promptFind: 'Tocca l’omino!', promptDuel: 'Trova l’omino in una delle due immagini!',
       promptFlash: 'Guarda il centro…', askFlash: 'C’era un omino?',
       promptSquad: (found, total) => `Trovati ${found} di ${total}: continua!`, allFound: 'Tutti trovati! +100 bonus', squadTimeout: (n) => `Tempo scaduto: ne mancavano ${n}.`,
-      insightSquad: (r) => `In media è stato trovato per ${r}° su 4 (5 = mai trovato).`,
+      insightSquad: (r, n) => `In media è stato trovato per ${r}° su ${n} (${n + 1} = mai trovato).`,
       yes: 'Sì (S)', no: 'No (N)',
       found: (s) => `Trovato in ${s} s!`, timeout: 'Tempo scaduto: eccolo qui.', miss: 'Mancato!',
       right: 'Giusto!', wrong: 'Sbagliato!', wasThere: 'C’era: guarda dov’era.', wasEmpty: 'Non c’era nessuno.',
@@ -320,7 +323,7 @@
       how: 'Ogni paesaggio è una foto reale mai usata per creare i mimetismi. L’omino è sempre nello stesso punto e cambia solo il mimetismo, assegnato a caso: così le differenze nei tempi dipendono dal mimetismo stesso. È un confronto visivo su schermo, non una prova sul campo.',
       creditsTitle: 'Crediti fotografici',
       env: { forest: 'bosco', desert: 'deserto', mountain: 'montagna', urban: 'città', jungle: 'giungla', snow: 'neve', taiga: 'taiga', tundra: 'tundra' },
-      variants: { optimized: 'TerrainWeave ottimizzato', baseline: 'TerrainWeave base', universal: 'TerrainWeave universale', control: 'verde oliva tinta unita' },
+      variants: { optimized: 'TerrainWeave ottimizzato', baseline: 'TerrainWeave base', universal: 'TerrainWeave universale', control: 'verde oliva tinta unita', woodland: 'woodland classico', desert3: 'deserto a 3 colori', digital3: 'digitale grigio', transitional: 'transizionale multi-ambiente' },
     },
     en: {
       loading: 'Loading landscapes…',
@@ -329,13 +332,14 @@
       heroText: 'We generated camouflage patterns by analysing photos of forests, deserts, mountains and cities. Now we need your eyes: every game tells us which ones really work.',
       chip1: '4 mini games', chip2: 'Real landscapes from around the world', chip3: 'Anonymous, no sign-up',
       why1t: 'Why play?', why1: 'Algorithms measure colour and contrast, but only human eyes can tell whether camouflage really fools you.',
-      why2t: 'What we compare', why2: 'The same landscape with different patterns: TerrainWeave optimized, baseline, universal and a plain olive green for reference.',
+      why2t: 'What we compare', why2: 'The same landscape with different patterns, from TerrainWeave or for reference, always in the same spot: only the pattern changes.',
+      quick: 'Play now →',
       why3t: 'What happens to the data', why3: 'Anonymous times and taps feed the next optimisation round. More games, better camouflage.',
       games: {
         find: { name: 'Hunt', hook: 'How fast can you find it?', text: '10 landscapes, one hidden figure in each. Tap it as soon as you see it: the faster, the more points.' },
         duel: { name: 'Duel', hook: 'Two pictures, one winner', text: 'The same landscape with two different patterns. Tap the figure in whichever picture you spot it first.' },
         flash: { name: 'Flash', hook: 'You get a quarter of a second', text: 'The picture appears for an instant. Was someone there? Careful: sometimes the landscape is empty.' },
-        squad: { name: 'Squad', hook: 'Four figures, one photo', text: 'Four figures hide in the same photo, each in a different pattern. Find them all before time runs out!' },
+        squad: { name: 'Squad', hook: '{n} figures, one photo', text: '{n} figures hide in the same photo, each in a different pattern. Find them all before time runs out!' },
       },
       minute: '~1 min', play: 'Play', best: (n) => `Best: ${n}`,
       tutorial: 'How to play',
@@ -343,7 +347,7 @@
         find: ['A landscape appears with a camouflaged figure, like the one highlighted in the picture.', 'Tap or click it as fast as you can. Wrong taps cost points.', 'You have 15 seconds: if you miss it, we show you where it was.'],
         duel: ['You see two versions of the same landscape, each with a figure in a different pattern.', 'Tap the figure in the first picture where you find it: one is enough.', 'This tells us which of the two patterns stands out more.'],
         flash: ['Keep your eyes on the centre: the picture shows for 0.25 seconds.', 'Answer: was there a figure? Yes or No. You can also use the Y and N keys.', 'About half the pictures are empty: don’t just guess!'],
-        squad: ['Four figures hide in each photo, each wearing a different pattern.', 'Tap them all, one at a time: the order you find them in tells us which pattern stands out most.', 'You have 25 seconds per photo. Wrong taps cost points; finding all four earns a bonus.'],
+        squad: ['{n} figures hide in each photo, each wearing a different pattern.', 'Tap them all, one at a time: the order you find them in tells us which pattern stands out most.', 'You have 25 seconds per photo. Wrong taps cost points; finding them all earns a bonus.'],
       },
       demoCaption: 'There it is! This is the figure to look for.',
       go: 'Got it, let’s play!', back: 'Back', quit: 'Quit',
@@ -352,7 +356,7 @@
       promptFind: 'Tap the figure!', promptDuel: 'Find the figure in either picture!',
       promptFlash: 'Look at the centre…', askFlash: 'Was there a figure?',
       promptSquad: (found, total) => `Found ${found} of ${total}: keep going!`, allFound: 'All found! +100 bonus', squadTimeout: (n) => `Time’s up: ${n} still hidden.`,
-      insightSquad: (r) => `On average it was found number ${r} of 4 (5 = never found).`,
+      insightSquad: (r, n) => `On average it was found number ${r} of ${n} (${n + 1} = never found).`,
       yes: 'Yes (Y)', no: 'No (N)',
       found: (s) => `Found in ${s} s!`, timeout: 'Time’s up: here it is.', miss: 'Missed!',
       right: 'Correct!', wrong: 'Wrong!', wasThere: 'It was there: see where.', wasEmpty: 'Nobody was there.',
@@ -371,7 +375,7 @@
       how: 'Each landscape is a real photo never used to create the patterns. The figure is always in the same spot and only the pattern changes, assigned at random, so differences in time come from the pattern itself. It is an on-screen visual comparison, not a field test.',
       creditsTitle: 'Photo credits',
       env: { forest: 'forest', desert: 'desert', mountain: 'mountain', urban: 'city', jungle: 'jungle', snow: 'snow', taiga: 'taiga', tundra: 'tundra' },
-      variants: { optimized: 'TerrainWeave optimized', baseline: 'TerrainWeave baseline', universal: 'TerrainWeave universal', control: 'plain olive green' },
+      variants: { optimized: 'TerrainWeave optimized', baseline: 'TerrainWeave baseline', universal: 'TerrainWeave universal', control: 'plain olive green', woodland: 'classic woodland', desert3: 'three-colour desert', digital3: 'grey digital', transitional: 'multi-environment transitional' },
     },
   };
 
@@ -385,6 +389,10 @@
   let manifest = null;
   let current = null; // the running game
   let timers = [];
+  // Open the game once with ?test=1 to mark this browser's games as tests (?test=0 undoes it).
+  const testParam = new URLSearchParams(location.search).get('test');
+  if (testParam !== null) store.set('tw-test', testParam !== '0');
+  const TEST = store.get('tw-test', false) === true;
   const player = store.get('tw-player', null) || randomId(10);
   store.set('tw-player', player);
   const t = () => TEXT[lang];
@@ -470,6 +478,7 @@
     const sample = manifest.scenes.find((s) => s.environment === 'forest') || manifest.scenes[0];
     const other = manifest.scenes.find((s) => s.environment === 'desert') || sample;
     const best = store.get('tw-best', {});
+    const cardVariants = manifest.variants || ['optimized', 'baseline'];
     $('games').innerHTML = '';
     for (const [game, info] of Object.entries(GAMES)) {
       const copy = t().games[game];
@@ -479,11 +488,11 @@
       const art = game === 'squad'
         ? `<div class="game-art"><img alt="" src="scenes/${(manifest.scenes[3] || sample).id}/multi_0.jpg"><span class="badge">${info.badge}</span></div>`
         : game === 'duel'
-        ? `<div class="game-art duo"><img alt="" src="${imageUrl(other, 'baseline')}"><img alt="" src="${imageUrl(other, 'optimized')}"><span class="badge">${info.badge}</span></div>`
-        : `<div class="game-art"><img alt="" src="${imageUrl(game === 'find' ? sample : manifest.scenes[manifest.scenes.length - 1], 'optimized')}"><span class="badge">${info.badge}</span>${game === 'flash' ? '<span class="flashbar"></span>' : ''}</div>`;
-      card.innerHTML = `${art}<div class="game-body"><h2>${copy.name}</h2><p class="hook">${copy.hook}</p><p>${copy.text}</p>
+        ? `<div class="game-art duo"><img alt="" src="${imageUrl(other, cardVariants[1])}"><img alt="" src="${imageUrl(other, cardVariants[0])}"><span class="badge">${info.badge}</span></div>`
+        : `<div class="game-art"><img alt="" src="${imageUrl(game === 'find' ? sample : manifest.scenes[manifest.scenes.length - 1], cardVariants[0])}"><span class="badge">${info.badge}</span>${game === 'flash' ? '<span class="flashbar"></span>' : ''}</div>`;
+      card.innerHTML = `${art}<div class="game-body"><h2>${copy.name}</h2><p class="hook">${fill(copy.hook)}</p><p>${fill(copy.text)}</p>
         <div class="game-meta"><span>${t().minute}${best[game] ? ` · <span class="best">${t().best(best[game])}</span>` : ''}</span><span class="play-pill">${t().play} →</span></div></div>`;
-      card.onclick = () => openTutorial(game);
+      card.onclick = () => playGame(game);
       $('games').append(card);
     }
     $('credits').innerHTML = '';
@@ -494,6 +503,13 @@
       li.append(a, ` · ${credit.author} · ${credit.license}`);
       $('credits').append(li);
     }
+  }
+  function squadSize() { return (manifest && manifest.variants && manifest.variants.length) || 4; }
+  function fill(text) { return text.replaceAll('{n}', squadSize()); }
+  function buzz(ms) { try { if (navigator.vibrate) navigator.vibrate(ms); } catch { /* unsupported */ } }
+  // Show the tutorial only the first time a game is played in this browser.
+  function playGame(game) {
+    if (store.get('tw-tutorials', []).includes(game)) startGame(game); else openTutorial(game);
   }
   function goHome() { clearTimers(); current = null; show('home'); location.hash = ''; }
 
@@ -506,11 +522,14 @@
     t().steps[game].forEach((step, i) => {
       const li = document.createElement('li');
       li.innerHTML = `<b class="n">${i + 1}</b><span></span>`;
-      li.querySelector('span').textContent = step;
+      li.querySelector('span').textContent = fill(step);
       $('tut-steps').append(li);
     });
     $('tut-go').textContent = t().go;
-    $('tut-go').onclick = () => startGame(game);
+    $('tut-go').onclick = () => {
+      store.set('tw-tutorials', [...new Set([...store.get('tw-tutorials', []), game])]);
+      startGame(game);
+    };
     // The example uses a training photo, so no game landscape is revealed in advance.
     const demo = $('tut-demo');
     demo.innerHTML = '';
@@ -603,7 +622,8 @@
   }
   function plan(game) {
     const scenes = pickScenes(GAMES[game].rounds);
-    const variants = ['optimized', 'baseline', 'universal', 'control'];
+    const variants = (manifest.variants || ['optimized', 'baseline', 'universal', 'control'])
+      .filter((v) => manifest.scenes.every((s) => s.variants.includes(v)));
     if (game === 'find') {
       const order = balanced(variants, scenes.length);
       return scenes.map((scene, i) => ({ scene, variant: scene.variants.includes(order[i]) ? order[i] : scene.variants[0] }));
@@ -619,7 +639,7 @@
       });
     }
     if (game === 'squad') {
-      const layouts = balanced([0, 1, 2, 3], scenes.length);
+      const layouts = balanced(Array.from({ length: squadSize() }, (_, i) => i), scenes.length);
       return scenes.map((scene, i) => {
         const layout = layouts[i] % scene.squad.length;
         return { scene, layout, variant: `multi_${layout}`, targets: scene.squad[layout] };
@@ -635,7 +655,7 @@
   async function startGame(game) {
     clearTimers();
     const rounds = plan(game);
-    current = { game, rounds, index: -1, score: 0, log: [], session: `${player}.${randomId(6)}`, raf: 0 };
+    current = { game, rounds, index: -1, score: 0, log: [], session: `${TEST ? 'TEST-' : ''}${player}.${randomId(6)}`, raf: 0 };
     show('play');
     $('board').innerHTML = '';
     $('board').className = 'board';
@@ -725,7 +745,8 @@
         if (done || !shownAt) return;
         event.preventDefault();
         const tap = tapPosition(frame, event);
-        if (isHit(round.scene.box, tap.x, tap.y)) return end(frame, tap);
+        if (isHit(round.scene.box, tap.x, tap.y)) { buzz(25); return end(frame, tap); }
+        buzz(70);
         misses++;
         const mark = document.createElement('div');
         mark.className = 'mark';
@@ -788,6 +809,7 @@
         hud();
         const target = round.targets[index];
         ring(frame, target.box, true, true);
+        buzz(25);
         floatText(frame, tap.px, tap.py, `#${found.size} +${gained}`);
         const entry = {
           ...base, target: index, variant: target.variant, outcome: 'found', latency_ms: latency, misses,
@@ -909,7 +931,7 @@
   function finish() {
     clearTimers();
     const { game, log, score } = current;
-    const max = game === 'squad' ? current.rounds.length * SQUAD_ROUND_MAX : log.length * (game === 'flash' ? 100 : 300);
+    const max = game === 'squad' ? current.rounds.length * (150 * squadSize() + 100) : log.length * (game === 'flash' ? 100 : 300);
     const ratio = max ? score / max : 0;
     const rank = t().ranks[ratio < 0.35 ? 0 : ratio < 0.6 ? 1 : ratio < 0.8 ? 2 : 3];
     const best = store.get('tw-best', {});
@@ -930,11 +952,12 @@
       const ranks = {};
       for (const e of log) {
         (ranks[e.variant] ||= { total: 0, n: 0, e });
-        ranks[e.variant].total += e.found_order || 5; ranks[e.variant].n++;
-        if ((e.found_order || 5) >= (ranks[e.variant].e.found_order || 5)) ranks[e.variant].e = e;
+        const missed = squadSize() + 1;
+        ranks[e.variant].total += e.found_order || missed; ranks[e.variant].n++;
+        if ((e.found_order || missed) >= (ranks[e.variant].e.found_order || missed)) ranks[e.variant].e = e;
       }
       const worst = Object.entries(ranks).sort((a, b) => b[1].total / b[1].n - a[1].total / a[1].n)[0];
-      if (worst) insight = { variant: worst[0], scene: worst[1].e.scene_id, text: t().insightSquad((worst[1].total / worst[1].n).toFixed(1)) };
+      if (worst) insight = { variant: worst[0], scene: worst[1].e.scene_id, text: t().insightSquad((worst[1].total / worst[1].n).toFixed(1), squadSize()) };
     } else if (game === 'flash') {
       const present = log.filter((e) => e.figure_present);
       const absent = log.filter((e) => !e.figure_present);
@@ -985,6 +1008,8 @@
 
   // ---------- wiring ----------
   $('home-link').onclick = goHome;
+  $('quick').onclick = () => playGame('squad');
+  if (TEST) $('home-link').insertAdjacentHTML('beforeend', '<span class="test-badge">TEST</span>');
   $('quit').onclick = goHome;
   $('tut-back').onclick = goHome;
   $('res-again').onclick = () => openTutorialOrStart(current.game);
