@@ -1,5 +1,6 @@
 # Backgrounds left out of the web game after visual review (one file name per line).
 # Rebuild with: terrainweave game build
+# Lines starting with # are comments; a push that changes this file redeploys the game.
 # s01 macro shot, wrong scale
 06_Desert_Landscape_24340754893_.jpg
 # s03 painting
