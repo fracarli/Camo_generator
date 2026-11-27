@@ -232,7 +232,48 @@ class ReferenceStudyTest(unittest.TestCase):
         ]
         summary = analyze_rows(rows)
         self.assertEqual(summary["squad"]["forest"]["e"]["mean_rank"], 6.0)
-        self.assertEqual(summary["squad_worst_case"]["a"]["mean_rank"], 1.0)
+        # The four finds came at the same instant, so they tie at the mean rank 2.5.
+        self.assertEqual(summary["squad_worst_case"]["a"]["mean_rank"], 2.5)
+        self.assertEqual(summary["squad"]["forest"]["a"]["mean_order"], 1.0)
+
+    def test_quick_taps_tie_and_slow_finds_rank(self):
+        def squad_row(round_id, slot, variant, order, latency):
+            return {
+                "session_id": "s",
+                "game": "squad",
+                "round": str(round_id),
+                "environment": "forest",
+                "target": str(slot),
+                "variant": variant,
+                "outcome": "found",
+                "found_order": str(order),
+                "latency_ms": str(latency),
+            }
+
+        rows = [
+            # Round 0: one sweep left to right in 1.2 s, then nothing to learn.
+            squad_row(0, 0, "a", 1, 1000),
+            squad_row(0, 1, "b", 2, 1400),
+            squad_row(0, 2, "c", 3, 1800),
+            squad_row(0, 3, "d", 4, 2200),
+            # Round 1: "a" took much longer to find than the rest.
+            squad_row(1, 0, "b", 1, 900),
+            squad_row(1, 1, "c", 2, 1300),
+            squad_row(1, 2, "d", 3, 1700),
+            squad_row(1, 3, "a", 4, 9000),
+        ]
+        summary = analyze_rows(rows)
+        info = summary["squad_info"]
+        self.assertEqual(info["rounds"], 2)
+        self.assertEqual(info["neutral_rounds"], 1)
+        forest = summary["squad"]["forest"]
+        # Ties: 2.5 in round 0; "a" ranks 4 in round 1, the others share 2.
+        self.assertEqual(forest["a"]["mean_rank"], (2.5 + 4) / 2)
+        self.assertEqual(forest["b"]["mean_rank"], (2.5 + 2) / 2)
+        # Raw tap order would have rewarded the position, not the pattern.
+        self.assertEqual(forest["b"]["mean_order"], 1.5)
+        self.assertIn("4 figures, position 4", info["position_effect"])
+        self.assertIn("neutral", format_summary(summary))
 
 
 class CalibrationTest(unittest.TestCase):

@@ -9,7 +9,7 @@ compares them in synthetic scenes.
 
 <a href="https://fracarli.github.io/Camo_generator/"><img src="docs/game_qr.png" alt="QR code linking to the TerrainWeave web game" width="160"></a>
 
-Scan the code with a phone camera or open the link in any browser. Four one-minute games (Squad, Hunt, Flash, Camo Showdown) ask players to find
+Scan the code with a phone camera or open the link in any browser. Four games of less than a minute each (Squad, Hunt, Flash, Camo Showdown) ask players to find
 camouflaged figures; Squad hides four figures with different patterns in one
 photo and ranks them by discovery order in each environment. Each anonymous round compares the TerrainWeave patterns with a plain
 olive control and feeds the next optimization cycle. Camo Showdown (*Sfida delle

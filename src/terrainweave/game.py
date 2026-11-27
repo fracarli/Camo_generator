@@ -447,20 +447,132 @@ def _z(rate: float) -> float:
     return NormalDist().inv_cdf(rate)
 
 
-def analyze_rows(rows: list[dict]) -> dict:
+# Squad: finds closer together than this are one sweep of the finger, not a ranking.
+SQUAD_TIE_MS = 700
+SQUAD_ROUND_MS = 25000
+
+
+def _quantiles(values: list[float], points=(0.1, 0.25, 0.5, 0.75, 0.9)) -> dict:
+    ordered = sorted(values)
+    return {
+        f"p{round(100 * q)}": ordered[min(len(ordered) - 1, int(q * len(ordered)))] for q in points
+    }
+
+
+def squad_ranks(rows: list[dict], tie_ms: float = SQUAD_TIE_MS) -> tuple[list[dict], dict]:
+    """Rank every Squad figure within its round, with ties for quick successive taps.
+
+    Players who see every figure at once tap them in scanning order (left to right
+    or the reverse); that order says nothing about the patterns. Consecutive finds
+    less than `tie_ms` apart therefore share the mean of their ranks. A missed
+    figure ranks last + 1. Rounds where everything was found in one sweep are
+    counted as neutral: they carry no ranking information.
+    """
+    rounds = defaultdict(list)
+    for row in rows:
+        if row.get("game") == "squad":
+            rounds[(row.get("session_id"), row.get("round"))].append(row)
+    ranked, gaps, neutral = [], [], 0
+    for members in rounds.values():
+        size = len(members)
+        found = []
+        for row in members:
+            order = _number(row.get("found_order"))
+            if row.get("outcome") == "found" and order is not None:
+                found.append((order, _number(row.get("latency_ms")), row))
+        found.sort(key=lambda item: item[0])
+        rank_of = {}
+        group = []
+
+        def close(group):
+            mean = sum(order for order, _, _ in group) / len(group)
+            for _, _, row in group:
+                rank_of[id(row)] = mean
+
+        for item in found:
+            previous = group[-1] if group else None
+            if previous is not None:
+                gap = (
+                    None
+                    if item[1] is None or previous[1] is None or item[0] != previous[0] + 1
+                    else item[1] - previous[1]
+                )
+                if gap is not None:
+                    gaps.append(gap)
+                if gap is None or gap >= tie_ms:
+                    close(group)
+                    group = []
+            group.append(item)
+        if group:
+            close(group)
+        if found and len(found) == size and len(group) == size:
+            neutral += 1  # every figure found within one quick sweep
+        for row in members:
+            order = _number(row.get("found_order"))
+            is_found = row.get("outcome") == "found"
+            ranked.append(
+                {
+                    "row": row,
+                    "size": size,
+                    "found": is_found,
+                    "order": order if is_found and order is not None else float(size + 1),
+                    "rank": rank_of.get(id(row), float(size + 1)),
+                    "slot": _number(row.get("target")),
+                    "time": _number(row.get("latency_ms")) if is_found else SQUAD_ROUND_MS,
+                }
+            )
+    info = {
+        "tie_ms": tie_ms,
+        "rounds": len(rounds),
+        "neutral_rounds": neutral,
+        "gaps": len(gaps),
+        "gap_ms": _quantiles(gaps) if gaps else None,
+        "gaps_below_tie": sum(gap < tie_ms for gap in gaps) / len(gaps) if gaps else None,
+    }
+    # Position effect: figures are numbered left to right, and the Latin square moves
+    # every pattern over every position. Remove the mean rank of each position.
+    by_slot = defaultdict(list)
+    by_size = defaultdict(list)
+    for item in ranked:
+        by_size[item["size"]].append(item["rank"])
+        if item["slot"] is not None:
+            by_slot[(item["size"], item["slot"])].append(item["rank"])
+    slot_effect = {
+        key: sum(values) / len(values) - sum(by_size[key[0]]) / len(by_size[key[0]])
+        for key, values in by_slot.items()
+    }
+    for item in ranked:
+        item["adjusted"] = item["rank"] - slot_effect.get((item["size"], item["slot"]), 0.0)
+    info["position_effect"] = {
+        f"{size} figures, position {int(slot) + 1}": round(effect, 3)
+        for (size, slot), effect in sorted(slot_effect.items())
+    }
+    return ranked, info
+
+
+def analyze_rows(rows: list[dict], tie_ms: float = SQUAD_TIE_MS) -> dict:
     """Summarize exported game events by game and pattern variant."""
     find = defaultdict(lambda: {"rounds": 0, "found": 0, "times": []})
     duel = defaultdict(lambda: {"wins": 0, "games": 0})
     flash = defaultdict(lambda: {"present": 0, "hits": 0})
     flash_absent = {"absent": 0, "false_alarms": 0}
     # Squad: (environment, variant) -> discovery ranks; a missed figure ranks last + 1.
-    squad = defaultdict(lambda: {"targets": 0, "found": 0, "ranks": [], "times": []})
+    squad = defaultdict(
+        lambda: {"targets": 0, "found": 0, "ranks": [], "orders": [], "adjusted": [], "times": []}
+    )
+    ranked, squad_info = squad_ranks(rows, tie_ms)
+    for item in ranked:
+        row = item["row"]
+        for key in ((row.get("environment") or "?", row["variant"]), ("all", row["variant"])):
+            stats = squad[key]
+            stats["targets"] += 1
+            stats["found"] += item["found"]
+            stats["ranks"].append(item["rank"])
+            stats["orders"].append(item["order"])
+            stats["adjusted"].append(item["adjusted"])
+            if item["time"] is not None:
+                stats["times"].append(item["time"])
     sessions = set()
-    # Figures per squad round: a missed figure ranks after all of them.
-    squad_size = defaultdict(int)
-    for row in rows:
-        if row.get("game") == "squad":
-            squad_size[(row.get("session_id"), row.get("round"))] += 1
     for row in rows:
         sessions.add(row.get("session_id"))
         game = row.get("game")
@@ -479,19 +591,6 @@ def analyze_rows(rows: list[dict]) -> dict:
                 duel[variant]["games"] += 1
             # A pattern "wins" the duel when the player found the other one first.
             duel[loser]["wins"] += 1
-        elif game == "squad":
-            found = row.get("outcome") == "found"
-            order = _number(row.get("found_order"))
-            missed = squad_size[(row.get("session_id"), row.get("round"))] + 1
-            rank = order if found and order is not None else float(missed)
-            for key in ((row.get("environment") or "?", row["variant"]), ("all", row["variant"])):
-                stats = squad[key]
-                stats["targets"] += 1
-                stats["found"] += found
-                stats["ranks"].append(rank)
-                latency = _number(row.get("latency_ms"))
-                if found and latency is not None:
-                    stats["times"].append(latency)
         elif game == "flash":
             present = str(row.get("figure_present")).lower() in ("true", "t", "1")
             said_yes = row.get("answer") == "yes"
@@ -510,13 +609,18 @@ def analyze_rows(rows: list[dict]) -> dict:
         "duel": {},
         "flash": {},
         "squad": {},
+        "squad_info": squad_info,
     }
     for (environment, variant), stats in sorted(squad.items()):
         summary["squad"].setdefault(environment, {})[variant] = {
             "targets": stats["targets"],
             "found_rate": stats["found"] / stats["targets"],
+            # Tie-aware rank (main outcome), raw tap order and position-adjusted rank.
             "mean_rank": sum(stats["ranks"]) / len(stats["ranks"]),
-            "median_ms": median(stats["times"]) if stats["times"] else None,
+            "mean_order": sum(stats["orders"]) / len(stats["orders"]),
+            "mean_rank_adjusted": sum(stats["adjusted"]) / len(stats["adjusted"]),
+            # Time to find, with a missed figure counted as the full 25 s.
+            "mean_time_ms": sum(stats["times"]) / len(stats["times"]) if stats["times"] else None,
         }
     # Worst case: the environment where each pattern is found earliest.
     worst = {}
@@ -571,8 +675,42 @@ def format_summary(summary: dict) -> str:
         lines.append(
             f"  {variant:<10} duels {stats['duels']:>5}  survival {pct(stats['survival_rate'])}"
         )
-    lines += ["", "Squad (higher mean rank = found later = better camouflage; missed = last + 1)"]
+    info = summary.get("squad_info") or {}
+    lines += [
+        "",
+        "Squad (higher rank = found later = better camouflage; missed = last + 1;"
+        f" taps < {info.get('tie_ms', SQUAD_TIE_MS):.0f} ms apart tie)",
+    ]
+    if info.get("rounds"):
+        lines.append(
+            f"  rounds {info['rounds']}, neutral (all found in one sweep) {info['neutral_rounds']}"
+        )
+    if info.get("gap_ms"):
+        quantiles = "  ".join(f"{key} {value:.0f}" for key, value in info["gap_ms"].items())
+        lines.append(
+            f"  gap between taps (ms): {quantiles}; below tie {pct(info['gaps_below_tie'])}"
+        )
+    if info.get("position_effect"):
+        lines.append(
+            "  position effect on rank (left to right): "
+            + "  ".join(
+                f"{key.split(', ')[1]} {value:+.2f}"
+                for key, value in info["position_effect"].items()
+            )
+        )
+    all_variants = summary.get("squad", {}).get("all", {})
+    if all_variants:
+        lines.append("  all environments: rank / position-adjusted / raw order / mean time")
+        for variant, stats in sorted(all_variants.items(), key=lambda item: -item[1]["mean_rank"]):
+            time = "-" if stats["mean_time_ms"] is None else f"{stats['mean_time_ms'] / 1000:.1f} s"
+            lines.append(
+                f"    {variant:<13} {stats['mean_rank']:.2f} / {stats['mean_rank_adjusted']:.2f}"
+                f" / {stats['mean_order']:.2f} / {time}"
+                f"  (found {pct(stats['found_rate'])}, n={stats['targets']})"
+            )
     for environment, variants in summary.get("squad", {}).items():
+        if environment == "all":
+            continue
         ranking = sorted(variants.items(), key=lambda item: -item[1]["mean_rank"])
         lines.append(
             f"  {environment:<9} "
@@ -605,6 +743,12 @@ def analyze_main() -> None:
     parser.add_argument(
         "--build-id", help="Only rows from this build (the main game and Camo Showdown differ)"
     )
+    parser.add_argument(
+        "--tie-ms",
+        type=float,
+        default=SQUAD_TIE_MS,
+        help="Squad: consecutive finds closer than this share their rank",
+    )
     args = parser.parse_args()
     with args.input.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
@@ -618,7 +762,7 @@ def analyze_main() -> None:
         for build, count in sorted(builds.items(), key=lambda item: -item[1]):
             print(f"  {build}  {count} events")
         print()
-    summary = analyze_rows(rows)
+    summary = analyze_rows(rows, args.tie_ms)
     print(format_summary(summary))
     if args.json:
         args.json.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")

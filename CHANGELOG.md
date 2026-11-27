@@ -11,6 +11,9 @@
 - Home page progress bar: games collected towards a goal of 100, read from
   the `game_count()` function (migration_003_game_count.sql).
 - The beta section and the first comparison study (/beta/) were removed.
+- Squad analysis: taps less than 700 ms apart tie, neutral rounds are
+  counted, the left-to-right position effect is removed, and mean time to
+  find is reported. Games are described as taking less than a minute.
 - Added a non-interactive `demo.py` entry point for fresh clones.
 - Added visual README documentation for generated patterns, uniform mockups,
   and environmental validation scenes.

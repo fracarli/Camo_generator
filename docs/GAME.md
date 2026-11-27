@@ -139,7 +139,23 @@ terrainweave game analyze --input game_events.csv --json output/game_summary.jso
 ```
 
 The Squad section ranks the patterns in each environment by mean discovery
-order (a missed figure counts as 5). Compare patterns within a single `build_id`. The rows also record device type
+rank (a missed figure ranks last + 1). Players who see every figure at once
+tap them in scanning order, left to right or the reverse, and that order says
+nothing about the patterns. The analysis therefore:
+
+- **ties quick taps:** consecutive finds less than 700 ms apart (`--tie-ms`)
+  share the mean of their ranks, so one sweep of the finger counts as a draw;
+- **reports neutral rounds:** rounds where every figure was found in one sweep
+  carry no ranking information and are counted separately;
+- **prints the gaps between taps** (10th to 90th percentile), to check where the
+  tie threshold sits against real players;
+- **removes the position effect:** figures are numbered left to right and the
+  Latin square moves every pattern over every position, so the mean rank of
+  each position is subtracted (`mean_rank_adjusted`);
+- **adds the mean time to find**, with a missed figure counted as 25 s, and the
+  raw tap order (`mean_order`) for comparison.
+
+Compare patterns within a single `build_id`. The rows also record device type
 and image width, so phone and desktop results can be analyzed separately.
 
 ## Social media assets

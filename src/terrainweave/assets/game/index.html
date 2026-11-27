@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#1f2a1c">
   <title>TerrainWeave · Trova l'omino</title>
-  <meta name="description" content="Un gioco da un minuto: trova l'omino mimetizzato nel paesaggio e aiutaci a capire quali mimetismi funzionano davvero.">
+  <meta name="description" content="Un gioco da meno di un minuto: trova l'omino mimetizzato nel paesaggio e aiutaci a capire quali mimetismi funzionano davvero.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Riesci a trovare l'omino mimetizzato?">
-  <meta property="og:description" content="Quattro mini giochi da un minuto. Le tue risposte anonime aiutano a migliorare i mimetismi di TerrainWeave.">
+  <meta property="og:description" content="Quattro mini giochi da meno di un minuto. Le tue risposte anonime aiutano a migliorare i mimetismi di TerrainWeave.">
   <meta property="og:image" content="__SITE_URL__og.jpg">
   <meta property="og:url" content="__SITE_URL__">
   <meta name="twitter:card" content="summary_large_image">
@@ -288,7 +288,7 @@
   const TEXT = {
     it: {
       loading: 'Carico i paesaggi…',
-      eyebrow: 'Un esperimento di mimetismo · 1 minuto a partita',
+      eyebrow: 'Un esperimento di mimetismo · meno di un minuto a partita',
       heroTitle: 'Riesci a trovare l’omino mimetizzato?',
       heroText: 'Abbiamo generato dei mimetismi analizzando foto di boschi, deserti, montagne e città. Ora serve il tuo occhio: ogni partita ci dice quali funzionano davvero e quali no.',
       chip1: '4 mini giochi', chip2: 'Paesaggi reali da tutto il mondo', chip3: 'Anonimo, senza registrazione',
@@ -303,7 +303,7 @@
         flash: { name: 'Lampo', hook: 'Hai solo mezzo secondo', text: 'L’immagine appare per un istante. C’era qualcuno o no? Attento: a volte il paesaggio è vuoto.' },
         squad: { name: 'Pattuglia', hook: '{n} omini, una sola foto', text: 'Nella stessa foto si nascondono {n} omini, ognuno con un mimetismo diverso. Trovali tutti prima che scada il tempo!' },
       },
-      minute: '~1 min', play: 'Gioca', best: (n) => `Record: ${n}`,
+      minute: '< 1 min', play: 'Gioca', best: (n) => `Record: ${n}`,
       tutorial: 'Come si gioca',
       steps: {
         find: ['Appare un paesaggio con un omino mimetizzato, come quello evidenziato nell\u2019immagine.', 'Toccalo o cliccaci sopra il prima possibile. I tocchi sbagliati costano punti.', 'Hai 15 secondi: se non lo trovi, ti mostriamo dov’era.'],
@@ -341,7 +341,7 @@
       extraHero: {
         references2: 'In ogni foto si nascondono {n} omini: uno col mimetismo universale di TerrainWeave, gli altri con mimetiche in stile MultiCam, Flecktarn, Vegetato e Flora digitale russa, più una tinta unita. Sono versioni ridisegnate da noi, non i tessuti originali.',
       },
-      extraEyebrow: 'Gioco D · 1 minuto a partita',
+      extraEyebrow: 'Gioco D · meno di un minuto a partita',
       extraChips: ['{n} omini per foto', 'Mimetiche da tutto il mondo', 'Anonimo, senza registrazione'],
       backMain: '← Torna ai giochi principali',
       env: { forest: 'bosco', desert: 'deserto', mountain: 'montagna', urban: 'città', jungle: 'giungla', snow: 'neve', taiga: 'taiga', tundra: 'tundra' },
@@ -349,7 +349,7 @@
     },
     en: {
       loading: 'Loading landscapes…',
-      eyebrow: 'A camouflage experiment · 1 minute per game',
+      eyebrow: 'A camouflage experiment · less than a minute per game',
       heroTitle: 'Can you spot the hidden figure?',
       heroText: 'We generated camouflage patterns by analysing photos of forests, deserts, mountains and cities. Now we need your eyes: every game tells us which ones really work.',
       chip1: '4 mini games', chip2: 'Real landscapes from around the world', chip3: 'Anonymous, no sign-up',
@@ -364,7 +364,7 @@
         flash: { name: 'Flash', hook: 'You get half a second', text: 'The picture appears for an instant. Was someone there? Careful: sometimes the landscape is empty.' },
         squad: { name: 'Squad', hook: '{n} figures, one photo', text: '{n} figures hide in the same photo, each in a different pattern. Find them all before time runs out!' },
       },
-      minute: '~1 min', play: 'Play', best: (n) => `Best: ${n}`,
+      minute: '< 1 min', play: 'Play', best: (n) => `Best: ${n}`,
       tutorial: 'How to play',
       steps: {
         find: ['A landscape appears with a camouflaged figure, like the one highlighted in the picture.', 'Tap or click it as fast as you can. Wrong taps cost points.', 'You have 15 seconds: if you miss it, we show you where it was.'],
@@ -402,7 +402,7 @@
       extraHero: {
         references2: '{n} figures hide in every photo: one in the TerrainWeave universal pattern, the others in MultiCam, Flecktarn, Vegetato and Russian digital Flora styles, plus a plain colour. They are our own redrawings, not the original fabrics.',
       },
-      extraEyebrow: 'Game D · 1 minute per game',
+      extraEyebrow: 'Game D · less than a minute per game',
       extraChips: ['{n} figures per photo', 'Camouflage from around the world', 'Anonymous, no sign-up'],
       backMain: '← Back to the main games',
       env: { forest: 'forest', desert: 'desert', mountain: 'mountain', urban: 'city', jungle: 'jungle', snow: 'snow', taiga: 'taiga', tundra: 'tundra' },
