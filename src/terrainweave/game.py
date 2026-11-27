@@ -54,7 +54,14 @@ STUDIES = {
     "launch": ("optimized", "baseline", "universal", "control"),
     "references": ("universal", "transitional", "digital3", "woodland", "control"),
     # Second beta: European and multi-terrain families; universal and control anchor both.
-    "references2": ("universal", "multiterrain", "flecktarn", "vegetato", "digitalflora", "control"),
+    "references2": (
+        "universal",
+        "multiterrain",
+        "flecktarn",
+        "vegetato",
+        "digitalflora",
+        "control",
+    ),
 }
 VARIANTS = PATTERNS  # backwards-compatible name
 GAME_TABLE = "game_events"

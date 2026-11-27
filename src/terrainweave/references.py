@@ -140,10 +140,15 @@ def rough_field(rng, sigma_x_cm: float, sigma_y_cm: float, roughness: float) -> 
 
 
 def soft_layer(canvas: np.ndarray, mask: np.ndarray, color: str, blur_px: float) -> np.ndarray:
-    alpha = np.asarray(
-        Image.fromarray((mask * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(blur_px)),
-        dtype=np.float32,
-    )[..., None] / 255
+    alpha = (
+        np.asarray(
+            Image.fromarray((mask * 255).astype(np.uint8)).filter(
+                ImageFilter.GaussianBlur(blur_px)
+            ),
+            dtype=np.float32,
+        )[..., None]
+        / 255
+    )
     return canvas * (1 - alpha) + hex_rgb(color) * alpha
 
 
@@ -266,7 +271,10 @@ REFERENCES = {
     "multiterrain": (multiterrain, "Seven-colour multi-terrain family, in the spirit of MultiCam"),
     "flecktarn": (flecktarn, "Five-colour dot family, after the German Flecktarn"),
     "vegetato": (vegetato, "Four-colour leaf family, after the Italian Vegetato"),
-    "digitalflora": (digitalflora, "Four-colour digital leaf family, after the Italian Digital Flora"),
+    "digitalflora": (
+        digitalflora,
+        "Four-colour digital leaf family, after the Italian Digital Flora",
+    ),
 }
 
 
