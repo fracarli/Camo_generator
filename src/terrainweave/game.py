@@ -53,7 +53,7 @@ PATTERNS = {
 STUDIES = {
     "launch": ("optimized", "baseline", "universal", "control"),
     "references": ("universal", "transitional", "digital3", "woodland", "control"),
-    # Second beta: European and multi-terrain families; universal and control anchor both.
+    # Camo Showdown (game D): MultiCam-, Flecktarn-, Vegetato- and EMR-style families.
     "references2": (
         "universal",
         "multiterrain",
@@ -603,7 +603,7 @@ def analyze_main() -> None:
     parser.add_argument("--input", type=Path, required=True, help="CSV export of game_events")
     parser.add_argument("--json", type=Path, help="Also write the summary as JSON")
     parser.add_argument(
-        "--build-id", help="Only rows from this build (the launch game and the beta study differ)"
+        "--build-id", help="Only rows from this build (the main game and Camo Showdown differ)"
     )
     args = parser.parse_args()
     with args.input.open(newline="", encoding="utf-8") as handle:

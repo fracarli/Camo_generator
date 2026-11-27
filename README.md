@@ -9,13 +9,12 @@ compares them in synthetic scenes.
 
 <a href="https://fracarli.github.io/Camo_generator/"><img src="docs/game_qr.png" alt="QR code linking to the TerrainWeave web game" width="160"></a>
 
-Scan the code with a phone camera or open the link in any browser. Three one-minute games (Squad, Hunt, Flash) ask players to find
+Scan the code with a phone camera or open the link in any browser. Four one-minute games (Squad, Hunt, Flash, Camo Showdown) ask players to find
 camouflaged figures; Squad hides four figures with different patterns in one
 photo and ranks them by discovery order in each environment. Each anonymous round compares the TerrainWeave patterns with a plain
-olive control and feeds the next optimization cycle. A Beta section tests the
-universal pattern against reference patterns inspired by existing camouflage
-(woodland, grey digital, MultiCam, Flecktarn, Vegetato, Russian digital Flora),
-and a progress bar on the home page shows how many games have been collected
+olive control and feeds the next optimization cycle. Camo Showdown (*Sfida delle
+mimetiche*) pits the universal pattern against our redrawings of MultiCam,
+Flecktarn, Vegetato and the Russian digital Flora (EMR), and a progress bar on the home page shows how many games have been collected
 towards the current goal of 100. See the
 [game guide](docs/GAME.md) for building, hosting, analysis, reference
 patterns and the LinkedIn carousel and video generator, and the
@@ -76,7 +75,7 @@ chosen output directory.
 Run `terrainweave pipeline --skip-neural` to generate and compare the
 procedural versions on held-out photographs. The [workflow guide](docs/WORKFLOWS.md)
 lists the outputs and explains how to run the optional neural stage. The [web game](docs/GAME.md) collects public
-feedback on the patterns through three short browser games and a beta study. The
+feedback on the patterns through four short browser games. The
 [observer-test protocol](docs/HUMAN_TEST_PROTOCOL.md) covers the offline test
 and the bilingual web server.
 

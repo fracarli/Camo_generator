@@ -43,24 +43,16 @@ jobs:
           SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
           SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: terrainweave game build --output site
-      # Beta: universal against the US reference patterns, served at /beta/.
-      - name: Build the beta study
+      # Game D, Camo Showdown: universal against MultiCam-, Flecktarn-, Vegetato-
+      # and EMR-style patterns, served at /versus/ and listed last on the home page.
+      - name: Build the Camo Showdown study
         env:
           SUPABASE_URL: ${{ vars.SUPABASE_URL }}
           SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
-          SITE_URL: ${{ steps.pages.outputs.base_url }}/beta
+          SITE_URL: ${{ steps.pages.outputs.base_url }}/versus
         run: |
-          terrainweave game build --study references --output beta-site
-          mv beta-site site/beta
-      # Beta 2: universal against MultiCam-, Flecktarn-, Vegetato- and Digital Flora-style patterns.
-      - name: Build the second beta study
-        env:
-          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
-          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
-          SITE_URL: ${{ steps.pages.outputs.base_url }}/beta2
-        run: |
-          terrainweave game build --study references2 --output beta2-site
-          mv beta2-site site/beta2
+          terrainweave game build --study references2 --output versus-site
+          mv versus-site site/versus
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

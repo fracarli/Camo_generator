@@ -24,7 +24,7 @@ The reference patterns are original renditions drawn by
 fabric scale (about 2.6 px per cm on a 500 px texture). The three-colour desert
 family (`desert3`) is available for a desert-specific follow-up.
 
-### Second set (study `references2`, played at `/beta2/`)
+### Second set (study `references2`, played as Camo Showdown at `/versus/`)
 
 | Name | Role |
 |---|---|

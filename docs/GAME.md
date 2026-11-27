@@ -1,27 +1,25 @@
 # Web game
 
-The public game has three modes that share the same backgrounds:
+The public game has four modes. A to C share the same backgrounds and the
+`launch` study; D is a separate build of the `references2` study:
 
 | Mode | Task | What it measures |
 |---|---|---|
 | A · Squad (`squad`) | Four figures in one photo, one per pattern; find them all in 25 s | Discovery order per pattern and environment |
 | B · Hunt (`find`) | Tap the figure as fast as possible, 15 s limit | Time to find and found rate per pattern |
 | C · Flash (`flash`) | 500 ms exposure and a noise mask, then yes/no; half the scenes are empty | Hit rate, false alarms and d′ |
+| D · Camo Showdown (*Sfida delle mimetiche*, `squad` at `/versus/`) | Six figures in one photo: universal against MultiCam-, Flecktarn-, Vegetato- and EMR-style patterns and the plain control | Discovery order of universal against the reference patterns |
 
 Flash used a 250 ms exposure until players reported seeing nothing; every row
 stores the measured `exposure_ms`, so analyze the two exposures separately.
 Duel (`duel`, two copies of a landscape with different patterns) was retired
 because it added little over Squad; `game analyze` still reads its old rows.
 
-A **Beta** section on the home page links two separate builds, each a Squad
-game against reference families (below): `/beta/` (study `references`, five
-figures: universal, transitional, grey digital, woodland, control) and
-`/beta2/` (study `references2`, six figures: universal, multi-terrain in the
-spirit of MultiCam, Flecktarn, Vegetato and Russian digital Flora (EMR) styles,
-control).
-Universal and control appear in both, so the two betas share anchors. Each
-beta page keeps its records and progress apart from the main game, and its
-rows carry their own `build_id`.
+Camo Showdown is listed last among the game cards on the home page and opens
+its own page at `/versus/`. That page keeps its records and progress apart from
+the main game, and its rows carry their own `build_id`. The first comparison
+study (`references`: transitional, grey digital, woodland) ran briefly at
+`/beta/` and is no longer deployed; its rows keep build id `95dddadb02cc`.
 
 Every scene uses a held-out background with one fixed figure position. The
 backgrounds come from `evaluation/splits/test.json` and from
@@ -62,8 +60,8 @@ terrainweave game calibrate --input game_events.csv --manifest output/game-site/
 
 The study plan is in [STUDY_universal_vs_references.md](STUDY_universal_vs_references.md).
 
-The deploy workflow builds three studies: `launch` at the site root,
-`references` at `/beta/` and `references2` at `/beta2/`. Analyze each build on its own:
+The deploy workflow builds two studies: `launch` at the site root and
+`references2` at `/versus/`. Analyze each build on its own:
 
 ```bash
 terrainweave game analyze --input game_events.csv --build-id <build_id>
@@ -129,7 +127,7 @@ The home page shows how many games have been collected against a goal of 100
 (`GOAL` in [index.html](../src/terrainweave/assets/game/index.html)), with a
 message that changes at 25, 50, 75 and 100 %. The count comes from the
 `game_count()` database function: the number of distinct non-test sessions,
-across the main game and the beta pages. It exposes that single number and no
+across the main game and Camo Showdown. It exposes that single number and no
 rows. Until the function exists the bar stays hidden.
 
 ## Analysis
