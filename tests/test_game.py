@@ -70,6 +70,19 @@ class GameBuildTest(unittest.TestCase):
         self.assertLess(games.index("squad"), games.index("find"))
         self.assertIn("const FLASH_MS = 500;", page)
 
+    def test_progress_bar_reads_only_the_count(self):
+        root = workspace_root() / "src/terrainweave/assets/game"
+        page = (root / "index.html").read_text(encoding="utf-8")
+        self.assertIn("rpc/game_count", page)
+        self.assertIn("const GOAL = 100;", page)
+        for name in ("supabase_schema.sql", "migration_003_game_count.sql"):
+            sql = (root / name).read_text(encoding="utf-8")
+            self.assertIn("function public.game_count()", sql)
+            self.assertIn("grant execute on function public.game_count() to anon", sql)
+            self.assertIn("not like 'TEST%'", sql)
+            # Visitors still get no select rights on the rows themselves.
+            self.assertNotIn("grant select", sql)
+
 
 class GameAnalysisTest(unittest.TestCase):
     def test_summary_by_game(self):

@@ -17,7 +17,8 @@ A **Beta** section on the home page links two separate builds, each a Squad
 game against reference families (below): `/beta/` (study `references`, five
 figures: universal, transitional, grey digital, woodland, control) and
 `/beta2/` (study `references2`, six figures: universal, multi-terrain in the
-spirit of MultiCam, Flecktarn, Vegetato and Digital Flora styles, control).
+spirit of MultiCam, Flecktarn, Vegetato and Russian digital Flora (EMR) styles,
+control).
 Universal and control appear in both, so the two betas share anchors. Each
 beta page keeps its records and progress apart from the main game, and its
 rows carry their own `build_id`.
@@ -108,7 +109,9 @@ browser console.
 1. Create a free Supabase project. In the SQL editor, run
    [supabase_schema.sql](../src/terrainweave/assets/game/supabase_schema.sql).
    Visitors can insert rounds but cannot read them. A table created before the
-   Squad mode needs [migration_002_squad.sql](../src/terrainweave/assets/game/migration_002_squad.sql).
+   Squad mode needs [migration_002_squad.sql](../src/terrainweave/assets/game/migration_002_squad.sql),
+   and one created before the progress bar needs
+   [migration_003_game_count.sql](../src/terrainweave/assets/game/migration_003_game_count.sql).
 2. In the GitHub repository, open **Settings → Pages** and set **Source** to
    **GitHub Actions**.
 3. In **Settings → Secrets and variables → Actions → Variables**, add
@@ -119,6 +122,15 @@ browser console.
 
 The free Supabase plan pauses a project after a week without requests;
 restore it from the dashboard if that happens.
+
+## Progress bar
+
+The home page shows how many games have been collected against a goal of 100
+(`GOAL` in [index.html](../src/terrainweave/assets/game/index.html)), with a
+message that changes at 25, 50, 75 and 100 %. The count comes from the
+`game_count()` database function: the number of distinct non-test sessions,
+across the main game and the beta pages. It exposes that single number and no
+rows. Until the function exists the bar stays hidden.
 
 ## Analysis
 

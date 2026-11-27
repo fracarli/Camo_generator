@@ -35,7 +35,7 @@
     "px_per_cm": 2.6
   },
   "digitalflora": {
-    "description": "Four-colour digital leaf family, after the Italian Digital Flora",
+    "description": "Four-colour pixel family, after the Russian EMR (digital Flora)",
     "seed": 14,
     "px_per_cm": 2.6
   }

@@ -6,8 +6,8 @@ published descriptions, but no artwork is copied. Proprietary patterns
 (MultiCam, MTP) are represented only by generic designs built on the same idea
 ("transitional", "multiterrain"); the game names them only to say what they
 resemble. The colours and element sizes of multiterrain, flecktarn, vegetato and
-digitalflora were matched by eye to public swatch photographs on Wikimedia
-Commons, which are used as references only.
+digitalflora were matched by eye to public swatch images on Wikimedia Commons,
+which are used as references only.
 
 All textures share the scale of the TerrainWeave patterns: a 500 x 500 texture
 covers about 1.9 m of fabric on the rendered figure (about 2.6 px per cm).
@@ -31,13 +31,19 @@ def hex_rgb(value: str) -> np.ndarray:
     return np.array([int(value[i : i + 2], 16) for i in (1, 3, 5)], dtype=np.float32)
 
 
-def smooth_noise(rng, sigma_x_cm: float, sigma_y_cm: float | None = None) -> np.ndarray:
-    """Tileable Gaussian-filtered noise with zero mean and unit variance."""
+def smooth_noise(
+    rng, sigma_x_cm: float, sigma_y_cm: float | None = None, size: int = SIZE
+) -> np.ndarray:
+    """Tileable Gaussian-filtered noise with zero mean and unit variance.
+
+    With a smaller `size` the grid is coarser: each cell covers SIZE / size pixels.
+    """
     sigma_y_cm = sigma_x_cm if sigma_y_cm is None else sigma_y_cm
-    noise = rng.standard_normal((SIZE, SIZE))
-    fy = np.fft.fftfreq(SIZE)[:, None]
-    fx = np.fft.fftfreq(SIZE)[None, :]
-    sx, sy = sigma_x_cm * PX_PER_CM, sigma_y_cm * PX_PER_CM
+    noise = rng.standard_normal((size, size))
+    fy = np.fft.fftfreq(size)[:, None]
+    fx = np.fft.fftfreq(size)[None, :]
+    cell = PX_PER_CM * size / SIZE
+    sx, sy = sigma_x_cm * cell, sigma_y_cm * cell
     kernel = np.exp(-2 * np.pi**2 * ((fx * sx) ** 2 + (fy * sy) ** 2))
     field = np.real(np.fft.ifft2(np.fft.fft2(noise) * kernel))
     return (field - field.mean()) / (field.std() + 1e-9)
@@ -254,11 +260,18 @@ def vegetato(rng) -> Image.Image:
 
 
 def digitalflora(rng) -> Image.Image:
-    """The same four-colour family drawn in square pixels (style of the Italian Digital Flora)."""
-    image = palette_image(vegetato_labels(rng), ["#c9bf9f", "#7e7f4e", "#7f6249", "#4f3d45"])
-    block = max(1, round(1.0 * PX_PER_CM))  # pixels of about 1 cm
-    small = image.resize((SIZE // block, SIZE // block), Image.Resampling.NEAREST)
-    return small.resize((SIZE, SIZE), Image.Resampling.NEAREST)
+    """Four-colour pixel family (in the style of the Russian EMR, the "digital Flora").
+
+    Square pixels of about 0.8 cm in dark green, brown and black on a light olive
+    base, scattered singly and in small clumps that gather into larger clouds.
+    """
+    cells = SIZE // 2  # pixels of 2 px, about 0.8 cm
+    labels = np.zeros((cells, cells), dtype=np.int64)
+    for index, (coverage, cluster_cm) in enumerate(((0.34, 7), (0.24, 6), (0.11, 6)), start=1):
+        score = smooth_noise(rng, 0.5, size=cells) + 1.0 * smooth_noise(rng, cluster_cm, size=cells)
+        labels[score > np.quantile(score, 1 - coverage)] = index
+    image = palette_image(labels, ["#909668", "#43503e", "#5f4b3e", "#2b2f34"])
+    return image.resize((SIZE, SIZE), Image.Resampling.NEAREST)
 
 
 REFERENCES = {
@@ -272,7 +285,7 @@ REFERENCES = {
     "vegetato": (vegetato, "Four-colour frayed-leaf family, after the Italian Vegetato"),
     "digitalflora": (
         digitalflora,
-        "Four-colour digital leaf family, after the Italian Digital Flora",
+        "Four-colour pixel family, after the Russian EMR (digital Flora)",
     ),
 }
 

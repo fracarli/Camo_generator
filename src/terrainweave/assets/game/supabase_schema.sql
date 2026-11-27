@@ -41,5 +41,20 @@ drop policy if exists "anonymous game inserts" on public.game_events;
 create policy "anonymous game inserts"
   on public.game_events for insert to anon with check (true);
 -- No select policy: visitors can add rounds but cannot read anyone's data.
+
+-- Progress bar: one number (distinct non-test game sessions), no rows exposed.
+create or replace function public.game_count()
+returns integer
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select count(distinct session_id)::integer
+  from public.game_events
+  where session_id not like 'TEST%';
+$$;
+revoke all on function public.game_count() from public;
+grant execute on function public.game_count() to anon;
 -- Export from the dashboard (Table editor -> Export to CSV) and run:
 --   terrainweave game analyze --input game_events.csv
