@@ -15,6 +15,11 @@ class GameBuildTest(unittest.TestCase):
             manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(manifest, build)
             self.assertEqual(len(manifest["scenes"]), 2)
+            for swatch in manifest["swatches"]:
+                self.assertTrue((output / swatch["file"]).is_file())
+            per_environment = {s["variant"]: s["per_environment"] for s in manifest["swatches"]}
+            self.assertTrue(per_environment["optimized"])
+            self.assertFalse(per_environment["control"])
             for scene in manifest["scenes"]:
                 folder = output / "scenes" / scene["id"]
                 self.assertTrue((folder / "absent.jpg").is_file())
@@ -210,6 +215,9 @@ class ReferenceStudyTest(unittest.TestCase):
         variants = build["scenes"][0]["variants"]
         self.assertEqual(len(variants), 6)
         self.assertEqual(variants[:2], ["universal", "universal2"])
+        # The home page legend shows one square per pattern of the study.
+        self.assertEqual([item["variant"] for item in build["swatches"]], variants)
+        self.assertFalse(build["swatches"][0]["per_environment"])
         page = (workspace_root() / "src/terrainweave/assets/game/index.html").read_text(
             encoding="utf-8"
         )

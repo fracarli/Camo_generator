@@ -167,6 +167,39 @@ def control_texture() -> Image.Image:
     return Image.new("RGB", (512, 512), CONTROL_COLOR)
 
 
+def write_swatches(root: Path, output: Path, variants: list[str], group: str = "forest") -> list:
+    """Save a small square of every pattern in the study for the home page legend.
+
+    Environment-specific patterns (optimized, baseline) have one version per
+    environment; the legend shows the forest one and says so.
+    """
+    folder = output / "patterns"
+    if folder.exists():
+        shutil.rmtree(folder)
+    folder.mkdir(parents=True)
+    swatches = []
+    for variant in variants:
+        source = pattern_source(root, variant, group)
+        if source is not None and not source.is_file():
+            continue
+        image = control_texture() if source is None else Image.open(source).convert("RGB")
+        # About 70 cm of fabric (the textures are about 1.9 m wide), shown at 160 px.
+        side = min(image.size) * 3 // 8
+        left, top = (image.width - side) // 2, (image.height - side) // 2
+        square = image.crop((left, top, left + side, top + side)).resize(
+            (160, 160), Image.Resampling.LANCZOS
+        )
+        square.save(folder / f"{variant}.jpg", quality=88)
+        swatches.append(
+            {
+                "variant": variant,
+                "file": f"patterns/{variant}.jpg",
+                "per_environment": PATTERNS[variant] is not None and "{group}" in PATTERNS[variant],
+            }
+        )
+    return swatches
+
+
 def pattern_source(root: Path, variant: str, group: str) -> Path | None:
     template = PATTERNS[variant]
     return None if template is None else root / template.format(group=group)
@@ -335,6 +368,7 @@ def build_site(
 
     output.mkdir(parents=True, exist_ok=True)
     demo = build_demo(root, output)
+    swatches = write_swatches(root, output, list(STUDIES[study]))
     credits.append({key: demo.pop(key) for key in ("title", "author", "license", "url")})
     build = {
         "build_id": digest.hexdigest()[:12],
@@ -344,6 +378,7 @@ def build_site(
         "size": list(SCENE_SIZE),
         "scenes": scenes,
         "credits": credits,
+        "swatches": swatches,
     }
     output.mkdir(parents=True, exist_ok=True)
     (output / "manifest.json").write_text(json.dumps(build, indent=1) + "\n", encoding="utf-8")

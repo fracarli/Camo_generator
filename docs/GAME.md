@@ -124,6 +124,15 @@ browser console.
 The free Supabase plan pauses a project after a week without requests;
 restore it from the dashboard if that happens.
 
+## Pattern legend
+
+Each build saves a 160 px square of every pattern in its study (about 70 cm of
+fabric) under `patterns/` and lists them as `swatches` in `manifest.json`. The
+home page shows them in a "camouflage in play" section, grouped as games A–C
+and game D. Environment-specific patterns (optimized, baseline) show their
+forest version. The swatches do not change the `build_id`, which depends on the
+scene images only.
+
 ## Progress bar
 
 The home page shows how many games have been collected against a goal of 100

@@ -14,6 +14,7 @@
 - Squad analysis: taps less than 700 ms apart tie, neutral rounds are
   counted, the left-to-right position effect is removed, and mean time to
   find is reported. Games are described as taking less than a minute.
+- Home page legend: one square per pattern in play, for games A–C and D.
 - Universal v2: re-optimized with 240 candidates, environments interleaved,
   a 14-background warm-up before pruning and a worst-environment penalty
   (new optimizer options `--background-order`, `--warmup`,

@@ -81,6 +81,16 @@
     .best { color: var(--moss); }
     .game-card.link { text-decoration: none; color: inherit; }
     .back-main { font-size: 14px; font-weight: 700; padding-bottom: 22px; }
+    .camos { border-top: 1px solid var(--line); padding-block: 22px 26px; display: grid; gap: 14px; }
+    .camos h2 { font-size: 22px; letter-spacing: -.035em; }
+    .camos .note { color: var(--muted); font-size: 14px; }
+    .camo-group { display: grid; gap: 8px; }
+    .camo-group h3 { font-size: 14px; color: var(--moss); text-transform: uppercase; letter-spacing: .06em; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 12px; }
+    .swatch { display: grid; gap: 6px; align-content: start; font-size: 13px; font-weight: 650; line-height: 1.3; }
+    .swatch img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
+    .swatch small { display: block; color: var(--muted); font-weight: 500; }
+    #camo-groups { display: grid; gap: 20px; }
     .why { border-top: 1px solid var(--line); padding-block: 22px 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; color: var(--muted); font-size: 14px; }
     .why h3 { color: var(--ink); font-size: 15px; margin-bottom: 4px; }
     footer { border-top: 1px solid var(--line); padding-block: 18px 34px; color: var(--muted); font-size: 13px; }
@@ -198,6 +208,11 @@
       </div>
       <div class="wrap games" id="games"></div>
       <p class="wrap back-main" id="back-main" hidden><a href="../" data-t="backMain"></a></p>
+      <div class="wrap camos" id="camos" hidden>
+        <h2 data-t="camosTitle"></h2>
+        <p class="note" data-t="camosNote"></p>
+        <div id="camo-groups"></div>
+      </div>
       <div class="wrap why">
         <div><h3 data-t="why1t"></h3><p data-t="why1"></p></div>
         <div><h3 data-t="why2t"></h3><p data-t="why2"></p></div>
@@ -295,6 +310,9 @@
       why1t: 'Perché giocare?', why1: 'Gli algoritmi misurano colori e contrasti, ma solo l’occhio umano dice se un mimetismo inganna davvero.',
       why2t: 'Cosa confrontiamo', why2: 'Lo stesso paesaggio con mimetismi diversi, generati da TerrainWeave o di riferimento, sempre nello stesso punto: cambia solo il mimetismo.',
       quick: 'Gioca subito →',
+      camosTitle: 'Le mimetiche in gioco',
+      camosNote: 'Circa 70 cm di tessuto per ogni quadrato. Le mimetiche di riferimento sono ridisegnate da noi, non i tessuti originali.',
+      camosMain: 'Giochi A–C', camosExtra: 'Gioco D · Sfida delle mimetiche', perEnvironment: 'versione bosco, una per ambiente',
       goalCount: (n, g) => `${n} partite raccolte su ${g}`,
       goalMsgs: ['Siamo appena partiti: ogni partita conta!', 'Bel ritmo! Aiutaci ad arrivare a metà.', 'Siamo a metà strada: continua così!', 'Ci siamo quasi! Ne mancano solo {left}.', 'Obiettivo raggiunto, grazie! Ogni partita in più rende i risultati più solidi.'],
       why3t: 'Cosa succede ai dati', why3: 'Tempi e tocchi anonimi alimentano il prossimo ciclo di ottimizzazione. Più partite, mimetismi migliori.',
@@ -358,6 +376,9 @@
       why1t: 'Why play?', why1: 'Algorithms measure colour and contrast, but only human eyes can tell whether camouflage really fools you.',
       why2t: 'What we compare', why2: 'The same landscape with different patterns, from TerrainWeave or for reference, always in the same spot: only the pattern changes.',
       quick: 'Play now →',
+      camosTitle: 'The camouflage in play',
+      camosNote: 'Each square shows about 70 cm of fabric. The reference patterns are our own redrawings, not the original fabrics.',
+      camosMain: 'Games A–C', camosExtra: 'Game D · Camo Showdown', perEnvironment: 'forest version, one per environment',
       goalCount: (n, g) => `${n} of ${g} games collected`,
       goalMsgs: ['We have just started: every game counts!', 'Good pace! Help us reach halfway.', 'Halfway there: keep going!', 'Almost there! Only {left} to go.', 'Goal reached, thank you! Every extra game makes the results more solid.'],
       why3t: 'What happens to the data', why3: 'Anonymous times and taps feed the next optimisation round. More games, better camouflage.',
@@ -579,6 +600,47 @@
       $('credits').append(li);
     }
     renderExtra();
+    renderCamos();
+  }
+  // Legend: one square per pattern, for this page's games and the extra games it links.
+  function renderCamos() {
+    const groups = [];
+    if (manifest.swatches && manifest.swatches.length) groups.push([EXTRA ? t().camosExtra : t().camosMain, '', manifest.swatches]);
+    if (!EXTRA && extraManifests) {
+      for (const [, path] of EXTRA_PAGES) {
+        const data = extraManifests[path];
+        if (data && data.swatches && data.swatches.length) groups.push([t().camosExtra, path, data.swatches]);
+      }
+    }
+    $('camos').hidden = !groups.length;
+    $('camo-groups').replaceChildren(...groups.map(([title, prefix, swatches]) => {
+      const group = document.createElement('div');
+      group.className = 'camo-group';
+      const heading = document.createElement('h3');
+      heading.textContent = title;
+      const grid = document.createElement('div');
+      grid.className = 'swatches';
+      for (const swatch of swatches) {
+        const item = document.createElement('figure');
+        item.className = 'swatch';
+        item.style.margin = '0';
+        const img = document.createElement('img');
+        img.alt = '';
+        img.loading = 'lazy';
+        img.src = prefix + swatch.file;
+        const caption = document.createElement('figcaption');
+        caption.textContent = t().variants[swatch.variant] || swatch.variant;
+        if (swatch.per_environment) {
+          const note = document.createElement('small');
+          note.textContent = t().perEnvironment;
+          caption.append(note);
+        }
+        item.append(img, caption);
+        grid.append(item);
+      }
+      group.append(heading, grid);
+      return group;
+    }));
   }
   // The main page lists each extra study deployed next to it (versus/) as its last game cards.
   let extraManifests = null;
