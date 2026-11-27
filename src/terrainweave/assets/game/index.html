@@ -276,7 +276,10 @@
   // A non-launch study (the beta page) compares universal with reference patterns in Squad only.
   const STUDY = CONFIG.study || 'launch';
   const BETA = STUDY !== 'launch';
-  const GAMES = BETA ? { squad: { rounds: 6, badge: 'β' } } : {
+  // Beta studies deployed next to the main game, in this order on the home page.
+  const BETA_PAGES = [['references', 'beta/', 'β1'], ['references2', 'beta2/', 'β2']];
+  const BETA_BADGE = (BETA_PAGES.find(([study]) => study === STUDY) || [, , 'β'])[2];
+  const GAMES = BETA ? { squad: { rounds: 6, badge: BETA_BADGE } } : {
     squad: { rounds: 6, badge: 'A' },
     find: { rounds: 10, badge: 'B' },
     flash: { rounds: 12, badge: 'C' },
@@ -332,14 +335,19 @@
       creditsTitle: 'Crediti fotografici',
       betaTitle: 'In fase di test', betaTag: 'Beta',
       betaIntro: 'Un nuovo esperimento ancora in prova: il mimetismo universale di TerrainWeave contro mimetiche ispirate a quelle esistenti.',
-      betaGame: { name: 'Universale contro le mimetiche esistenti', hook: '{n} omini, una sola foto', text: 'Il mimetismo universale di TerrainWeave contro woodland, digitale grigio e transizionale (ridisegnati da noi) e una tinta unita. Chi resiste di più?' },
+      betaGames: {
+        references: { name: 'Universale contro le mimetiche esistenti', hook: '{n} omini, una sola foto', text: 'Il mimetismo universale di TerrainWeave contro woodland, digitale grigio e transizionale (ridisegnati da noi) e una tinta unita. Chi resiste di più?' },
+        references2: { name: 'Universale contro MultiCam, Flecktarn e Vegetato', hook: '{n} omini, una sola foto', text: 'Il mimetismo universale di TerrainWeave contro mimetiche in stile MultiCam, Flecktarn, Vegetato e Digital Flora (ridisegnate da noi) e una tinta unita. Chi resiste di più?' },
+      },
+      betaHero: {
+        references: 'In ogni foto si nascondono {n} omini: uno col mimetismo universale di TerrainWeave, gli altri con mimetiche ispirate a woodland, digitale grigio e transizionale, più una tinta unita. Esperimento in prova: i risultati sono preliminari.',
+        references2: 'In ogni foto si nascondono {n} omini: uno col mimetismo universale di TerrainWeave, gli altri con mimetiche ispirate a MultiCam, Flecktarn, Vegetato e Digital Flora, più una tinta unita. Sono versioni ridisegnate da noi, non i tessuti originali. Esperimento in prova: i risultati sono preliminari.',
+      },
       betaEyebrow: 'Beta · in fase di test',
-      betaHeroTitle: 'Universale contro le mimetiche esistenti',
-      betaHeroText: 'In ogni foto si nascondono {n} omini: uno col mimetismo universale di TerrainWeave, gli altri con mimetiche ispirate a woodland, digitale grigio e transizionale, più una tinta unita. Esperimento in prova: i risultati sono preliminari.',
       betaChips: ['{n} omini per foto', 'In fase di test', 'Anonimo, senza registrazione'],
       backMain: '← Torna ai giochi principali',
       env: { forest: 'bosco', desert: 'deserto', mountain: 'montagna', urban: 'città', jungle: 'giungla', snow: 'neve', taiga: 'taiga', tundra: 'tundra' },
-      variants: { optimized: 'TerrainWeave ottimizzato', baseline: 'TerrainWeave base', universal: 'TerrainWeave universale', control: 'verde oliva tinta unita', woodland: 'woodland classico', desert3: 'deserto a 3 colori', digital3: 'digitale grigio', transitional: 'transizionale multi-ambiente' },
+      variants: { optimized: 'TerrainWeave ottimizzato', baseline: 'TerrainWeave base', universal: 'TerrainWeave universale', control: 'verde oliva tinta unita', woodland: 'woodland classico', desert3: 'deserto a 3 colori', digital3: 'digitale grigio', transitional: 'transizionale multi-ambiente', multiterrain: 'multi-terreno (stile MultiCam)', flecktarn: 'a macchie (stile Flecktarn)', vegetato: 'vegetato', digitalflora: 'vegetato digitale (stile Digital Flora)' },
     },
     en: {
       loading: 'Loading landscapes…',
@@ -390,14 +398,19 @@
       creditsTitle: 'Photo credits',
       betaTitle: 'Being tested', betaTag: 'Beta',
       betaIntro: 'A new experiment still in trial: the TerrainWeave universal pattern against patterns inspired by existing camouflage.',
-      betaGame: { name: 'Universal vs existing camouflage', hook: '{n} figures, one photo', text: 'The TerrainWeave universal pattern against woodland, grey digital and transitional (redrawn by us) and a plain colour. Which one lasts longest?' },
+      betaGames: {
+        references: { name: 'Universal vs existing camouflage', hook: '{n} figures, one photo', text: 'The TerrainWeave universal pattern against woodland, grey digital and transitional (redrawn by us) and a plain colour. Which one lasts longest?' },
+        references2: { name: 'Universal vs MultiCam, Flecktarn and Vegetato', hook: '{n} figures, one photo', text: 'The TerrainWeave universal pattern against patterns in the style of MultiCam, Flecktarn, Vegetato and Digital Flora (redrawn by us) and a plain colour. Which one lasts longest?' },
+      },
+      betaHero: {
+        references: '{n} figures hide in every photo: one in the TerrainWeave universal pattern, the others in patterns inspired by woodland, grey digital and transitional, plus a plain colour. This is a trial: results are preliminary.',
+        references2: '{n} figures hide in every photo: one in the TerrainWeave universal pattern, the others in patterns inspired by MultiCam, Flecktarn, Vegetato and Digital Flora, plus a plain colour. They are our own redrawings, not the original fabrics. This is a trial: results are preliminary.',
+      },
       betaEyebrow: 'Beta · being tested',
-      betaHeroTitle: 'Universal vs existing camouflage',
-      betaHeroText: '{n} figures hide in every photo: one in the TerrainWeave universal pattern, the others in patterns inspired by woodland, grey digital and transitional, plus a plain colour. This is a trial: results are preliminary.',
       betaChips: ['{n} figures per photo', 'Being tested', 'Anonymous, no sign-up'],
       backMain: '← Back to the main games',
       env: { forest: 'forest', desert: 'desert', mountain: 'mountain', urban: 'city', jungle: 'jungle', snow: 'snow', taiga: 'taiga', tundra: 'tundra' },
-      variants: { optimized: 'TerrainWeave optimized', baseline: 'TerrainWeave baseline', universal: 'TerrainWeave universal', control: 'plain olive green', woodland: 'classic woodland', desert3: 'three-colour desert', digital3: 'grey digital', transitional: 'multi-environment transitional' },
+      variants: { optimized: 'TerrainWeave optimized', baseline: 'TerrainWeave baseline', universal: 'TerrainWeave universal', control: 'plain olive green', woodland: 'classic woodland', desert3: 'three-colour desert', digital3: 'grey digital', transitional: 'multi-environment transitional', multiterrain: 'multi-terrain (MultiCam style)', flecktarn: 'dot pattern (Flecktarn style)', vegetato: 'Vegetato style', digitalflora: 'digital leaf (Digital Flora style)' },
     },
   };
 
@@ -420,7 +433,8 @@
   const t = () => TEXT[lang];
   // Same origin as the main game: keep per-game progress apart for the beta study.
   const key = (name) => (BETA ? `${name}-${STUDY}` : name);
-  const gameCopy = (game) => (BETA && game === 'squad' ? t().betaGame : t().games[game]);
+  const betaCopy = (study) => t().betaGames[study] || t().betaGames.references;
+  const gameCopy = (game) => (BETA && game === 'squad' ? betaCopy(STUDY) : t().games[game]);
 
   function randomId(length) {
     const bytes = new Uint8Array(length);
@@ -500,10 +514,10 @@
     if (BETA) {
       const hero = document.querySelector('.hero');
       hero.querySelector('[data-t="eyebrow"]').textContent = t().betaEyebrow;
-      hero.querySelector('h1').textContent = t().betaHeroTitle;
-      hero.querySelector('p').textContent = fill(t().betaHeroText);
+      hero.querySelector('h1').textContent = betaCopy(STUDY).name;
+      hero.querySelector('p').textContent = fill(t().betaHero[STUDY] || t().betaHero.references);
       hero.querySelectorAll('.chip').forEach((chip, i) => { chip.textContent = fill(t().betaChips[i]); });
-      document.title = `TerrainWeave Beta · ${t().betaHeroTitle}`;
+      document.title = `TerrainWeave Beta · ${betaCopy(STUDY).name}`;
     }
     if (manifest) renderHome();
   }
@@ -535,34 +549,41 @@
     }
     renderBeta();
   }
-  // The main page links the beta study when it is deployed next to it (beta/).
-  let betaManifest;
+  // The main page links each beta study that is deployed next to it (beta/, beta2/).
+  let betaManifests = null;
   function renderBeta() {
     $('back-main').hidden = !BETA;
     if (BETA) return;
-    if (betaManifest === undefined) {
-      betaManifest = null;
-      fetch('beta/manifest.json', { cache: 'no-cache' })
-        .then((r) => (r.ok ? r.json() : null))
-        .then((data) => { if (data && data.scenes && data.scenes.length) { betaManifest = data; renderBeta(); } })
-        .catch(() => {});
+    if (betaManifests === null) {
+      betaManifests = {};
+      for (const [, path] of BETA_PAGES) {
+        fetch(`${path}manifest.json`, { cache: 'no-cache' })
+          .then((r) => (r.ok ? r.json() : null))
+          .then((data) => { if (data && data.scenes && data.scenes.length) { betaManifests[path] = data; renderBeta(); } })
+          .catch(() => {});
+      }
       return;
     }
-    if (!betaManifest) return;
-    const scene = betaManifest.scenes[3] || betaManifest.scenes[0];
-    const n = betaManifest.variants.length;
-    const copy = t().betaGame;
-    const card = document.createElement('a');
-    card.className = 'game-card link';
-    card.href = 'beta/';
-    card.innerHTML = `<div class="game-art"><img alt="" src="beta/scenes/${scene.id}/multi_0.jpg"><span class="badge">β</span></div>
-      <div class="game-body"><h2></h2><p class="hook"></p><p></p><div class="game-meta"><span>${t().minute}</span><span class="play-pill">${t().play} →</span></div></div>`;
-    const [title, hook, text] = card.querySelectorAll('.game-body h2, .game-body p');
-    title.textContent = copy.name;
-    hook.textContent = copy.hook.replaceAll('{n}', n);
-    text.textContent = copy.text.replaceAll('{n}', n);
-    $('beta-games').replaceChildren(card);
-    $('beta').hidden = false;
+    const cards = [];
+    for (const [study, path, badge] of BETA_PAGES) {
+      const data = betaManifests[path];
+      if (!data) continue;
+      const scene = data.scenes[3] || data.scenes[0];
+      const n = data.variants.length;
+      const copy = betaCopy(study);
+      const card = document.createElement('a');
+      card.className = 'game-card link';
+      card.href = path;
+      card.innerHTML = `<div class="game-art"><img alt="" src="${path}scenes/${scene.id}/multi_0.jpg"><span class="badge">${badge}</span></div>
+        <div class="game-body"><h2></h2><p class="hook"></p><p></p><div class="game-meta"><span>${t().minute}</span><span class="play-pill">${t().play} →</span></div></div>`;
+      const [title, hook, text] = card.querySelectorAll('.game-body h2, .game-body p');
+      title.textContent = copy.name;
+      hook.textContent = copy.hook.replaceAll('{n}', n);
+      text.textContent = copy.text.replaceAll('{n}', n);
+      cards.push(card);
+    }
+    $('beta-games').replaceChildren(...cards);
+    $('beta').hidden = !cards.length;
   }
   function squadSize() { return (manifest && manifest.variants && manifest.variants.length) || 4; }
   function fill(text) { return text.replaceAll('{n}', squadSize()); }

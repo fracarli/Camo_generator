@@ -42,6 +42,10 @@ PATTERNS = {
     "desert3": "results/references/desert3/pattern.png",
     "digital3": "results/references/digital3/pattern.png",
     "transitional": "results/references/transitional/pattern.png",
+    "multiterrain": "results/references/multiterrain/pattern.png",
+    "flecktarn": "results/references/flecktarn/pattern.png",
+    "vegetato": "results/references/vegetato/pattern.png",
+    "digitalflora": "results/references/digitalflora/pattern.png",
 }
 # A study fixes which patterns appear together. Keep each study small: every
 # extra pattern needs more games for the same precision, and Squad shows one
@@ -49,6 +53,8 @@ PATTERNS = {
 STUDIES = {
     "launch": ("optimized", "baseline", "universal", "control"),
     "references": ("universal", "transitional", "digital3", "woodland", "control"),
+    # Second beta: European and multi-terrain families; universal and control anchor both.
+    "references2": ("universal", "multiterrain", "flecktarn", "vegetato", "digitalflora", "control"),
 }
 VARIANTS = PATTERNS  # backwards-compatible name
 GAME_TABLE = "game_events"

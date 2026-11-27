@@ -172,7 +172,7 @@ class ReferenceStudyTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             paths = build_references(root / "refs")
-            self.assertEqual(len(paths), 4)
+            self.assertEqual(len(paths), 8)
             for path in paths:
                 self.assertTrue(path.is_file())
         build = build_site(Path(tempfile.mkdtemp()) / "site", limit=1, study="references")
@@ -182,6 +182,15 @@ class ReferenceStudyTest(unittest.TestCase):
         self.assertEqual(len(scene["squad"]), 5)
         self.assertTrue(all(len(layout) == 5 for layout in scene["squad"]))
         self.assertEqual(set(scene["proxy"]), set(scene["variants"]))
+
+    def test_second_reference_study_hides_six_figures(self):
+        build = build_site(Path(tempfile.mkdtemp()) / "site", limit=1, study="references2")
+        scene = build["scenes"][0]
+        self.assertEqual(
+            scene["variants"],
+            ["universal", "multiterrain", "flecktarn", "vegetato", "digitalflora", "control"],
+        )
+        self.assertTrue(all(len(layout) == 6 for layout in scene["squad"]))
 
     def test_missed_rank_follows_squad_size(self):
         rows = [

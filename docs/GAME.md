@@ -13,10 +13,14 @@ stores the measured `exposure_ms`, so analyze the two exposures separately.
 Duel (`duel`, two copies of a landscape with different patterns) was retired
 because it added little over Squad; `game analyze` still reads its old rows.
 
-A **Beta** section on the home page links `/beta/`, a separate build of the
-`references` study (below) where Squad hides five figures: universal, three
-reference families and the plain control. The beta page keeps its records and
-progress apart from the main game, and its rows carry their own `build_id`.
+A **Beta** section on the home page links two separate builds, each a Squad
+game against reference families (below): `/beta/` (study `references`, five
+figures: universal, transitional, grey digital, woodland, control) and
+`/beta2/` (study `references2`, six figures: universal, multi-terrain in the
+spirit of MultiCam, Flecktarn, Vegetato and Digital Flora styles, control).
+Universal and control appear in both, so the two betas share anchors. Each
+beta page keeps its records and progress apart from the main game, and its
+rows carry their own `build_id`.
 
 Every scene uses a held-out background with one fixed figure position. The
 backgrounds come from `evaluation/splits/test.json` and from
@@ -35,12 +39,16 @@ training photo so no game scene is revealed in advance.
 
 A study fixes which patterns appear together. `launch` (the published game)
 compares the TerrainWeave optimized, baseline and universal patterns with a
-plain olive control. `references` compares universal with reference pattern
-families drawn from scratch:
+plain olive control. `references` and `references2` compare universal with
+reference pattern families drawn from scratch (`references2` adds
+`multiterrain`, `flecktarn`, `vegetato` and `digitalflora`). They are original
+renditions that follow published colours and element sizes; no artwork is
+copied:
 
 ```bash
 terrainweave game references                 # writes results/references/
 terrainweave game build --study references --output output/game-references
+terrainweave game build --study references2 --output output/game-references2
 ```
 
 Squad shows one figure per pattern, so `references` hides five figures per
@@ -53,8 +61,8 @@ terrainweave game calibrate --input game_events.csv --manifest output/game-site/
 
 The study plan is in [STUDY_universal_vs_references.md](STUDY_universal_vs_references.md).
 
-The deploy workflow builds both studies: `launch` at the site root and
-`references` at `/beta/`. Analyze each build on its own:
+The deploy workflow builds three studies: `launch` at the site root,
+`references` at `/beta/` and `references2` at `/beta2/`. Analyze each build on its own:
 
 ```bash
 terrainweave game analyze --input game_events.csv --build-id <build_id>

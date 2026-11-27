@@ -18,5 +18,25 @@
     "description": "Generic transitional design (soft blend across environments)",
     "seed": 10,
     "px_per_cm": 2.6
+  },
+  "multiterrain": {
+    "description": "Seven-colour multi-terrain family, in the spirit of MultiCam",
+    "seed": 11,
+    "px_per_cm": 2.6
+  },
+  "flecktarn": {
+    "description": "Five-colour dot family, after the German Flecktarn",
+    "seed": 12,
+    "px_per_cm": 2.6
+  },
+  "vegetato": {
+    "description": "Four-colour leaf family, after the Italian Vegetato",
+    "seed": 13,
+    "px_per_cm": 2.6
+  },
+  "digitalflora": {
+    "description": "Four-colour digital leaf family, after the Italian Digital Flora",
+    "seed": 14,
+    "px_per_cm": 2.6
   }
 }

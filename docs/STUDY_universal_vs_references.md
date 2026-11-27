@@ -24,6 +24,21 @@ The reference patterns are original renditions drawn by
 fabric scale (about 2.6 px per cm on a 500 px texture). The three-colour desert
 family (`desert3`) is available for a desert-specific follow-up.
 
+### Second set (study `references2`, played at `/beta2/`)
+
+| Name | Role |
+|---|---|
+| `universal` | TerrainWeave universal pattern under test (shared anchor) |
+| `multiterrain` | Seven-colour multi-terrain design in the spirit of MultiCam: tan-to-green gradient, soft vertical blobs, cream highlights, thin twigs |
+| `flecktarn` | Five-colour dot family, after the German Flecktarn |
+| `vegetato` | Four-colour leaf and brushstroke family, after the Italian Vegetato |
+| `digitalflora` | The same leaf family pixelated at about 1.2 cm, after the Italian Digital Flora |
+| `control` | Plain olive green (shared anchor) |
+
+Squad hides six figures per photo in this set, so a missed figure ranks 7.
+The hypotheses H1 and H2 apply to each set separately; `universal` and
+`control` link the two sets.
+
 ## Material
 
 Held-out backgrounds only: `evaluation/splits/test.json` and

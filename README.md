@@ -13,7 +13,8 @@ Scan the code with a phone camera or open the link in any browser. Three one-min
 camouflaged figures; Squad hides four figures with different patterns in one
 photo and ranks them by discovery order in each environment. Each anonymous round compares the TerrainWeave patterns with a plain
 olive control and feeds the next optimization cycle. A Beta section tests the
-universal pattern against reference patterns inspired by existing camouflage. See the
+universal pattern against reference patterns inspired by existing camouflage
+(woodland, grey digital, MultiCam, Flecktarn, Vegetato, Digital Flora). See the
 [game guide](docs/GAME.md) for building, hosting, analysis, reference
 patterns and the LinkedIn carousel and video generator, and the
 [study plan](docs/STUDY_universal_vs_references.md) comparing universal with
