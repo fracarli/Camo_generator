@@ -29,13 +29,16 @@ family (`desert3`) is available for a desert-specific follow-up.
 | Name | Role |
 |---|---|
 | `universal` | TerrainWeave universal pattern under test (shared anchor) |
-| `multiterrain` | Seven-colour multi-terrain design in the spirit of MultiCam: tan-to-green gradient, soft vertical blobs, cream highlights, thin twigs |
-| `flecktarn` | Five-colour dot family, after the German Flecktarn |
-| `vegetato` | Four-colour leaf and brushstroke family, after the Italian Vegetato |
-| `digitalflora` | The same leaf family pixelated at about 1.2 cm, after the Italian Digital Flora |
+| `multiterrain` | Six-colour multi-terrain design in the spirit of MultiCam: soft horizontal patches in tan, mauve-brown and pale greens, crisp cream streaks, dark brown-purple bars, faint upright stems |
+| `flecktarn` | Five-colour spot family, after the German Flecktarn: dense rounded lumps of 2-6 cm in light green, orange-brown, dark blue-green and black on mid green |
+| `vegetato` | Four-colour family after the Italian Vegetato: large interlocking cream, olive, brown and purple-brown shapes with frayed edges |
+| `digitalflora` | The same family drawn in square pixels of about 1 cm, after the Italian Digital Flora |
 | `control` | Plain olive green (shared anchor) |
 
-Squad hides six figures per photo in this set, so a missed figure ranks 7.
+Palettes and element sizes of this set were matched by eye to public swatch
+photographs on Wikimedia Commons (`File:Flecktarn.jpg`, `File:Multicam
+pattern.jpg`, `File:Vegetato.jpg`); the swatches are references only and are
+not used as textures. Squad hides six figures per photo in this set, so a missed figure ranks 7.
 The hypotheses H1 and H2 apply to each set separately; `universal` and
 `control` link the two sets.
 

@@ -5,7 +5,9 @@ These are approximate, original renditions: colours and element sizes follow
 published descriptions, but no artwork is copied. Proprietary patterns
 (MultiCam, MTP) are represented only by generic designs built on the same idea
 ("transitional", "multiterrain"); the game names them only to say what they
-resemble.
+resemble. The colours and element sizes of multiterrain, flecktarn, vegetato and
+digitalflora were matched by eye to public swatch photographs on Wikimedia
+Commons, which are used as references only.
 
 All textures share the scale of the TerrainWeave patterns: a 500 x 500 texture
 covers about 1.9 m of fabric on the rendered figure (about 2.6 px per cm).
@@ -131,12 +133,57 @@ def transitional(rng) -> Image.Image:
     return image
 
 
-def rough_field(rng, sigma_x_cm: float, sigma_y_cm: float, roughness: float) -> np.ndarray:
-    """Smooth shapes with jagged, leaf-like edges (more fine detail = rougher)."""
+def frayed_field(rng, sigma_x_cm: float, sigma_y_cm: float, fray: float) -> np.ndarray:
+    """Large shapes whose edges break up into small splinters and specks."""
     field = smooth_noise(rng, sigma_x_cm, sigma_y_cm)
-    field += roughness * smooth_noise(rng, sigma_x_cm / 4, sigma_y_cm / 4)
-    field += 0.5 * roughness * smooth_noise(rng, 0.5)
+    field += 0.45 * smooth_noise(rng, sigma_x_cm / 3.5, sigma_y_cm / 3.5)
+    field += fray * smooth_noise(rng, 0.45)
     return field
+
+
+def tessellate(fields: list[np.ndarray], shares: list[float]) -> np.ndarray:
+    """Give every pixel to one field (argmax), with offsets tuned to the target shares."""
+    stack = np.stack([(f - f.mean()) / f.std() for f in fields])
+    offsets = np.zeros(len(fields))
+    for _ in range(60):
+        labels = np.argmax(stack + offsets[:, None, None], axis=0)
+        actual = np.bincount(labels.ravel(), minlength=len(fields)) / labels.size
+        offsets += 0.8 * (np.asarray(shares) - actual)
+    return np.argmax(stack + offsets[:, None, None], axis=0)
+
+
+def palette_image(labels: np.ndarray, colors: list[str]) -> Image.Image:
+    table = np.stack([hex_rgb(color) for color in colors])
+    return Image.fromarray(table[labels].astype(np.uint8), mode="RGB")
+
+
+def multiterrain(rng) -> Image.Image:
+    """Six-colour multi-terrain family (in the spirit of MultiCam, no artwork copied).
+
+    Soft, horizontally stretched patches in tans, pinkish browns and pale greens,
+    with crisp cream streaks and small dark brown-purple bars on top.
+    """
+    colors = ["#b5a78f", "#a48d84", "#8f9a82", "#727b62"]  # tan, mauve-brown, pale green, olive
+    fields = [smooth_noise(rng, 7, 2.2) + 0.35 * smooth_noise(rng, 2, 0.7) for _ in colors]
+    # A slow drift from tan (top) to green (bottom) gives the transitional look.
+    y = np.linspace(-1, 1, SIZE)[:, None]
+    drift = 0.35 * smooth_noise(rng, 40, 30) + 0.25 * y
+    fields[0] = fields[0] - drift
+    fields[3] = fields[3] + drift
+    stack = np.stack([(f - f.mean()) / f.std() for f in fields])
+    weights = np.exp(7.0 * stack)  # softmax: soft but defined edges between patches
+    weights /= weights.sum(axis=0, keepdims=True)
+    table = np.stack([hex_rgb(color) for color in colors])
+    canvas = np.einsum("khw,kc->hwc", weights, table)
+    for color, coverage, sx, sy in (
+        ("#6f8169", 0.025, 0.35, 5.0),  # faint upright green stems
+        ("#dcd7ce", 0.10, 3.2, 1.0),  # cream streaks
+        ("#5a4450", 0.10, 3.0, 0.9),  # dark brown-purple bars
+    ):
+        field = smooth_noise(rng, sx, sy) + 0.3 * smooth_noise(rng, 0.6, 0.3)
+        mask = field > np.quantile(field, 1 - coverage)
+        canvas = soft_layer(canvas, mask, color, 0.5)
+    return Image.fromarray(canvas.astype(np.uint8), mode="RGB")
 
 
 def soft_layer(canvas: np.ndarray, mask: np.ndarray, color: str, blur_px: float) -> np.ndarray:
@@ -152,112 +199,64 @@ def soft_layer(canvas: np.ndarray, mask: np.ndarray, color: str, blur_px: float)
     return canvas * (1 - alpha) + hex_rgb(color) * alpha
 
 
-def multiterrain(rng) -> Image.Image:
-    """Seven-colour multi-terrain family (in the spirit of MultiCam, no artwork copied).
-
-    A tan-to-green base gradient, soft vertical blobs in browns and greens, small
-    cream highlights and thin forked twigs.
-    """
-    y = np.linspace(0, 1, SIZE)[:, None]
-    mix = np.clip(0.45 + 0.30 * smooth_noise(rng, 35, 45) + 0.35 * (y - 0.5), 0, 1)
-    canvas = hex_rgb("#c0b190") * (1 - mix[..., None]) + hex_rgb("#8e8a62") * mix[..., None]
-    for color, coverage, sx, sy in (
-        ("#a48c68", 0.30, 7, 11),  # light brown
-        ("#6f7049", 0.24, 6, 10),  # olive green
-        ("#7a6247", 0.16, 5, 8),  # brown
-        ("#4f5636", 0.10, 4, 7),  # dark green
-        ("#d4c9a8", 0.07, 2.2, 3.5),  # cream highlights
-    ):
-        field = rough_field(rng, sx, sy, 0.45)
-        canvas = soft_layer(canvas, field > np.quantile(field, 1 - coverage), color, 1.4)
-    image = Image.fromarray(canvas.astype(np.uint8), mode="RGB")
-    draw = ImageDraw.Draw(image)
-    width = max(2, round(0.6 * PX_PER_CM))
-    for _ in range(34):  # thin twigs, mostly upright, with short side shoots
-        x, y0 = rng.uniform(0, SIZE, 2)
-        angle = -np.pi / 2 + rng.normal(0, 0.6)
-        points = [(x, y0)]
-        for _ in range(int(rng.integers(2, 5))):
-            angle += rng.normal(0, 0.45)
-            step = rng.uniform(3, 7) * PX_PER_CM
-            x, y0 = x + step * np.cos(angle), y0 + step * np.sin(angle)
-            points.append((x, y0))
-            if rng.random() < 0.5:
-                side = angle + rng.choice([-1, 1]) * rng.uniform(0.6, 1.1)
-                length = rng.uniform(1.5, 3.5) * PX_PER_CM
-                draw.line(
-                    [(x, y0), (x + length * np.cos(side), y0 + length * np.sin(side))],
-                    fill="#4b3c2b",
-                    width=width,
-                )
-        draw.line(points, fill="#4b3c2b", width=width)
-    return image
-
-
-def dot_mask(rng, coverage: float, cluster_cm: float, radius_cm: tuple[float, float]):
-    """Round, slightly irregular dots whose density follows a clustering field."""
-    weight = np.exp(0.9 * smooth_noise(rng, cluster_cm)).ravel()
+def lump_mask(rng, coverage: float, cluster_cm: float, radius_cm: tuple[float, float]):
+    """Rounded lumps of 3-7 overlapping discs, denser where a clustering field is high."""
+    weight = np.exp(1.0 * smooth_noise(rng, cluster_cm)).ravel()
     weight /= weight.sum()
     mask = Image.new("L", (SIZE, SIZE), 0)
     draw = ImageDraw.Draw(mask)
     while np.asarray(mask).mean() / 255 < coverage:
-        for index in rng.choice(SIZE * SIZE, size=60, p=weight):
+        for index in rng.choice(SIZE * SIZE, size=25, p=weight):
             cy, cx = divmod(int(index), SIZE)
-            radius = rng.uniform(*radius_cm) * PX_PER_CM
-            # Two or three overlapping ellipses make a lumpy rather than perfect dot.
-            for _ in range(int(rng.integers(1, 4))):
-                ox, oy = rng.normal(0, radius * 0.45, 2)
-                rx, ry = radius * rng.uniform(0.6, 1.0, 2)
-                for dx in (-SIZE, 0, SIZE):  # draw wrapped copies so the texture tiles
+            x0, y0 = float(cx), float(cy)
+            for _ in range(int(rng.integers(3, 8))):
+                radius = rng.uniform(*radius_cm) * PX_PER_CM
+                for dx in (-SIZE, 0, SIZE):  # wrapped copies so the texture tiles
                     for dy in (-SIZE, 0, SIZE):
-                        x, y = cx + ox + dx, cy + oy + dy
-                        draw.ellipse((x - rx, y - ry, x + rx, y + ry), fill=255)
+                        x, y = x0 + dx, y0 + dy
+                        draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=255)
+                # The next disc grows out of this one: lumps, not perfect circles.
+                angle = rng.uniform(0, 2 * np.pi)
+                x0 += 1.1 * radius * np.cos(angle)
+                y0 += 1.1 * radius * np.sin(angle)
     return np.asarray(mask) > 127
 
 
 def flecktarn(rng) -> Image.Image:
-    """Five-colour dot family (in the style of the German Flecktarn).
+    """Five-colour spot family (in the style of the German Flecktarn).
 
-    Round spots of about 1-4 cm that cluster into larger groups on a pale base.
+    Rounded, lumpy spots of about 2-6 cm that cluster and merge, over a mid green.
     """
     return paint(
         [
-            ("#9d9c78", None),  # pale grey-green base
-            ("#6c7a45", dot_mask(rng, 0.30, 9, (0.8, 1.9))),  # light green
-            ("#3f4a2c", dot_mask(rng, 0.24, 8, (0.7, 1.7))),  # dark green
-            ("#5d4130", dot_mask(rng, 0.14, 7, (0.6, 1.4))),  # red-brown
-            ("#1f1f1a", dot_mask(rng, 0.06, 6, (0.4, 1.0))),  # black
+            ("#6f7656", None),  # mid green base
+            ("#8f9764", lump_mask(rng, 0.32, 10, (0.6, 1.1))),  # light green
+            ("#9a6038", lump_mask(rng, 0.22, 9, (0.6, 1.1))),  # orange-brown
+            ("#434e48", lump_mask(rng, 0.46, 9, (0.6, 1.2))),  # dark blue-green
+            ("#26292a", lump_mask(rng, 0.07, 8, (0.5, 0.9))),  # black
         ]
     )
 
 
-VEGETATO = ("#a49b73", "#57663b", "#6d5236", "#27281f")
+VEGETATO = ["#d2cab0", "#878553", "#86664c", "#56404c"]  # cream, olive, brown, purple-brown
+VEGETATO_SHARES = [0.20, 0.33, 0.30, 0.17]
 
 
-def vegetato_masks(rng):
-    """Leaf- and brushstroke-like shapes of 5-25 cm with jagged edges."""
-    green = rough_field(rng, 10, 7, 0.6)
-    brown = rough_field(rng, 8, 5.5, 0.6)
-    dark = rough_field(rng, 4, 2.8, 0.7)
-    return [
-        green > np.quantile(green, 0.58),
-        brown > np.quantile(brown, 0.76),
-        dark > np.quantile(dark, 0.88),
-    ]
+def vegetato_labels(rng) -> np.ndarray:
+    """Large interlocking shapes of 8-25 cm whose edges fray into specks."""
+    fields = [frayed_field(rng, 6.5, 5.5, 0.32) for _ in VEGETATO]
+    return tessellate(fields, VEGETATO_SHARES)
 
 
 def vegetato(rng) -> Image.Image:
-    """Four-colour leaf family (in the style of the Italian Vegetato)."""
-    masks = vegetato_masks(rng)
-    return paint([(VEGETATO[0], None)] + list(zip(VEGETATO[1:], masks)))
+    """Four-colour frayed-leaf family (in the style of the Italian Vegetato)."""
+    return palette_image(vegetato_labels(rng), VEGETATO)
 
 
 def digitalflora(rng) -> Image.Image:
-    """Four-colour digital leaf family (in the style of the Italian Digital Flora)."""
-    masks = vegetato_masks(rng)
-    palette = ("#ada37c", "#5a693d", "#6c543a", "#2c2c24")
-    image = paint([(palette[0], None)] + list(zip(palette[1:], masks)))
-    block = max(1, round(1.2 * PX_PER_CM))  # pixels of about 1.2 cm
+    """The same four-colour family drawn in square pixels (style of the Italian Digital Flora)."""
+    image = palette_image(vegetato_labels(rng), ["#c9bf9f", "#7e7f4e", "#7f6249", "#4f3d45"])
+    block = max(1, round(1.0 * PX_PER_CM))  # pixels of about 1 cm
     small = image.resize((SIZE // block, SIZE // block), Image.Resampling.NEAREST)
     return small.resize((SIZE, SIZE), Image.Resampling.NEAREST)
 
@@ -268,9 +267,9 @@ REFERENCES = {
     "digital3": (digital3, "Three-colour grey digital family, after the US UCP"),
     "transitional": (transitional, "Generic transitional design (soft blend across environments)"),
     # Added later: new entries go last so the seeds of the earlier ones stay the same.
-    "multiterrain": (multiterrain, "Seven-colour multi-terrain family, in the spirit of MultiCam"),
-    "flecktarn": (flecktarn, "Five-colour dot family, after the German Flecktarn"),
-    "vegetato": (vegetato, "Four-colour leaf family, after the Italian Vegetato"),
+    "multiterrain": (multiterrain, "Six-colour multi-terrain family, in the spirit of MultiCam"),
+    "flecktarn": (flecktarn, "Five-colour spot family, after the German Flecktarn"),
+    "vegetato": (vegetato, "Four-colour frayed-leaf family, after the Italian Vegetato"),
     "digitalflora": (
         digitalflora,
         "Four-colour digital leaf family, after the Italian Digital Flora",
