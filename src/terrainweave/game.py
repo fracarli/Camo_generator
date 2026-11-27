@@ -36,6 +36,8 @@ PATTERNS = {
     "optimized": "results/optimized_final/{group}/optimized_pattern.png",
     "baseline": "results/baseline/{group}/best_pattern.png",
     "universal": "results/optimized_final/universal/optimized_pattern.png",
+    # Universal v2: wider search, environments interleaved, worst environment penalized.
+    "universal2": "results/optimized_v2/universal/optimized_pattern.png",
     "control": None,
     # Reference families drawn from scratch by `terrainweave game references`.
     "woodland": "results/references/woodland/pattern.png",
@@ -61,6 +63,15 @@ STUDIES = {
         "vegetato",
         "digitalflora",
         "control",
+    ),
+    # Camo Showdown with universal v1 and v2 side by side (control stays in the main game).
+    "references3": (
+        "universal",
+        "universal2",
+        "multiterrain",
+        "flecktarn",
+        "vegetato",
+        "digitalflora",
     ),
 }
 VARIANTS = PATTERNS  # backwards-compatible name

@@ -205,6 +205,16 @@ class ReferenceStudyTest(unittest.TestCase):
         )
         self.assertTrue(all(len(layout) == 6 for layout in scene["squad"]))
 
+    def test_showdown_study_has_both_universal_versions(self):
+        build = build_site(Path(tempfile.mkdtemp()) / "site", limit=1, study="references3")
+        variants = build["scenes"][0]["variants"]
+        self.assertEqual(len(variants), 6)
+        self.assertEqual(variants[:2], ["universal", "universal2"])
+        page = (workspace_root() / "src/terrainweave/assets/game/index.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("['references3', 'versus/', 'D']", page)
+
     def test_missed_rank_follows_squad_size(self):
         rows = [
             {

@@ -14,6 +14,12 @@
 - Squad analysis: taps less than 700 ms apart tie, neutral rounds are
   counted, the left-to-right position effect is removed, and mean time to
   find is reported. Games are described as taking less than a minute.
+- Universal v2: re-optimized with 240 candidates, environments interleaved,
+  a 14-background warm-up before pruning and a worst-environment penalty
+  (new optimizer options `--background-order`, `--warmup`,
+  `--score-aggregation environment_worst`). Camo Showdown (`references3`)
+  shows v1 and v2 side by side; `scripts/compare_universal.py` compares them
+  on held-out backgrounds.
 - Added a non-interactive `demo.py` entry point for fresh clones.
 - Added visual README documentation for generated patterns, uniform mockups,
   and environmental validation scenes.

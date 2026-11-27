@@ -32,6 +32,15 @@ class Candidate:
     cumulative_score: float = 0.0
     scores_seen: int = 0
     scores: list[float] = field(default_factory=list)
+    environment_scores: dict[str, list[float]] = field(default_factory=dict)
+
+    @property
+    def environment_means(self) -> dict[str, float]:
+        return {
+            environment: sum(values) / len(values)
+            for environment, values in self.environment_scores.items()
+            if values
+        }
 
     @property
     def mean_score(self) -> float:

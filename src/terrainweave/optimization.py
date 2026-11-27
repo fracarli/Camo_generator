@@ -51,10 +51,35 @@ DEFAULT_GROUPS = (
 
 
 def ranking_score(candidate: Candidate, aggregation: str) -> float:
-    """Lower-is-better beam score with an optional worst-scene penalty."""
+    """Lower-is-better beam score with an optional worst-scene or worst-environment penalty.
+
+    `environment_worst` averages the scores within each environment first, so an
+    environment with many backgrounds does not dominate, then weighs the mean over
+    environments equally with the worst environment. A universal pattern should not
+    fail badly anywhere.
+    """
     if aggregation == "mean_worst":
         return 0.75 * candidate.mean_score + 0.25 * candidate.worst_score
+    if aggregation == "environment_worst":
+        means = list(candidate.environment_means.values())
+        if not means:
+            return candidate.mean_score
+        return 0.5 * sum(means) / len(means) + 0.5 * max(means)
     return candidate.mean_score
+
+
+def interleave_backgrounds(backgrounds: list[tuple[str, Path]]) -> list[tuple[str, Path]]:
+    """Order backgrounds round-robin over environments (forest, desert, ..., forest, ...)."""
+    by_group: dict[str, list[tuple[str, Path]]] = {}
+    for item in backgrounds:
+        by_group.setdefault(item[0], []).append(item)
+    queues = list(by_group.values())
+    ordered = []
+    while any(queues):
+        for queue in queues:
+            if queue:
+                ordered.append(queue.pop(0))
+    return ordered
 
 
 def parse_csv(value: str) -> list[str]:
@@ -289,6 +314,9 @@ def optimize_group(
     )
     if not backgrounds:
         return {"group": group, "status": "skipped", "reason": "No background images found"}
+    if getattr(args, "background_order", "grouped") == "interleaved":
+        backgrounds = interleave_backgrounds(backgrounds)
+    warmup = max(0, int(getattr(args, "warmup", 0)))
     baseline_path = Path(args.pattern_root) / group / "best_pattern.png"
     candidates = make_candidates(images, group, args, baseline_path)
     active = candidates
@@ -309,9 +337,13 @@ def optimize_group(
             candidate.cumulative_score += score
             candidate.scores_seen += 1
             candidate.scores.append(score)
+            candidate.environment_scores.setdefault(background_group, []).append(score)
             scored.append((ranking_score(candidate, args.score_aggregation), candidate))
         scored.sort(key=lambda item: item[0])
-        active = [candidate for _, candidate in scored[: args.beam_size]]
+        # During the warm-up every candidate sees a balanced set of backgrounds
+        # before any is dropped, so the first environment does not decide alone.
+        keep = len(scored) if background_index + 1 < warmup else args.beam_size
+        active = [candidate for _, candidate in scored[:keep]]
         baseline = next(
             (candidate for _, candidate in scored if candidate.candidate_id == "current_best"), None
         )
@@ -338,6 +370,11 @@ def optimize_group(
         "candidate_count": len(candidates),
         "beam_size": args.beam_size,
         "score_aggregation": args.score_aggregation,
+        "background_order": getattr(args, "background_order", "grouped"),
+        "warmup": warmup,
+        "environment_scores": {
+            environment: round(value, 5) for environment, value in best.environment_means.items()
+        },
         "background_manifest": args.background_manifest,
         "input_manifest": getattr(args, "input_manifest", None),
         "reference_images": [image.path for image in images],
@@ -432,9 +469,22 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--score-aggregation",
-        choices=("mean", "mean_worst"),
+        choices=("mean", "mean_worst", "environment_worst"),
         default="mean",
-        help="Candidate ranking strategy; mean_worst penalizes failure on the worst scene.",
+        help="Candidate ranking strategy; mean_worst penalizes failure on the worst scene, "
+        "environment_worst on the worst environment.",
+    )
+    parser.add_argument(
+        "--background-order",
+        choices=("grouped", "interleaved"),
+        default="grouped",
+        help="interleaved alternates environments so pruning is not driven by the first one",
+    )
+    parser.add_argument(
+        "--warmup",
+        type=int,
+        default=0,
+        help="Score every candidate on this many backgrounds before the beam starts pruning",
     )
     parser.add_argument(
         "--neural-evaluator", default=None, help="Optional trained visibility model checkpoint"

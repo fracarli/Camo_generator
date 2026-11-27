@@ -13,8 +13,9 @@ Scan the code with a phone camera or open the link in any browser. Four games of
 camouflaged figures; Squad hides four figures with different patterns in one
 photo and ranks them by discovery order in each environment. Each anonymous round compares the TerrainWeave patterns with a plain
 olive control and feeds the next optimization cycle. Camo Showdown (*Sfida delle
-mimetiche*) pits the universal pattern against our redrawings of MultiCam,
-Flecktarn, Vegetato and the Russian digital Flora (EMR), and a progress bar on the home page shows how many games have been collected
+mimetiche*) pits two versions of the universal pattern against our redrawings
+of MultiCam, Flecktarn, Vegetato and the Russian digital Flora (EMR); see the
+[universal v2 comparison](results/optimized_v2/heldout_comparison.md). A progress bar on the home page shows how many games have been collected
 towards the current goal of 100. See the
 [game guide](docs/GAME.md) for building, hosting, analysis, reference
 patterns and the LinkedIn carousel and video generator, and the

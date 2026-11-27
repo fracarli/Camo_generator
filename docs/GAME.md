@@ -1,14 +1,14 @@
 # Web game
 
 The public game has four modes. A to C share the same backgrounds and the
-`launch` study; D is a separate build of the `references2` study:
+`launch` study; D is a separate build of the `references3` study:
 
 | Mode | Task | What it measures |
 |---|---|---|
 | A · Squad (`squad`) | Four figures in one photo, one per pattern; find them all in 25 s | Discovery order per pattern and environment |
 | B · Hunt (`find`) | Tap the figure as fast as possible, 15 s limit | Time to find and found rate per pattern |
 | C · Flash (`flash`) | 500 ms exposure and a noise mask, then yes/no; half the scenes are empty | Hit rate, false alarms and d′ |
-| D · Camo Showdown (*Sfida delle mimetiche*, `squad` at `/versus/`) | Six figures in one photo: universal against MultiCam-, Flecktarn-, Vegetato- and EMR-style patterns and the plain control | Discovery order of universal against the reference patterns |
+| D · Camo Showdown (*Sfida delle mimetiche*, `squad` at `/versus/`) | Six figures in one photo: universal v1 and v2 against MultiCam-, Flecktarn-, Vegetato- and EMR-style patterns (no plain control | Discovery order of universal against the reference patterns |
 
 Flash used a 250 ms exposure until players reported seeing nothing; every row
 stores the measured `exposure_ms`, so analyze the two exposures separately.
@@ -20,6 +20,9 @@ its own page at `/versus/`. That page keeps its records and progress apart from
 the main game, and its rows carry their own `build_id`. The first comparison
 study (`references`: transitional, grey digital, woodland) ran briefly at
 `/beta/` and is no longer deployed; its rows keep build id `95dddadb02cc`.
+The `references2` version of Camo Showdown (with the plain control instead of
+universal v2) ran until universal v2 was added; its rows keep build id
+`24cdd01b4305`.
 
 Every scene uses a held-out background with one fixed figure position. The
 backgrounds come from `evaluation/splits/test.json` and from
@@ -38,8 +41,8 @@ training photo so no game scene is revealed in advance.
 
 A study fixes which patterns appear together. `launch` (the published game)
 compares the TerrainWeave optimized, baseline and universal patterns with a
-plain olive control. `references` and `references2` compare universal with
-reference pattern families drawn from scratch (`references2` adds
+plain olive control. `references`, `references2` and `references3` compare
+universal with reference pattern families drawn from scratch (`references2` adds
 `multiterrain`, `flecktarn`, `vegetato` and `digitalflora`). They are original
 renditions that follow published colours and element sizes; no artwork is
 copied:
@@ -47,7 +50,7 @@ copied:
 ```bash
 terrainweave game references                 # writes results/references/
 terrainweave game build --study references --output output/game-references
-terrainweave game build --study references2 --output output/game-references2
+terrainweave game build --study references3 --output output/game-references3
 ```
 
 Squad shows one figure per pattern, so `references` hides five figures per
@@ -61,7 +64,7 @@ terrainweave game calibrate --input game_events.csv --manifest output/game-site/
 The study plan is in [STUDY_universal_vs_references.md](STUDY_universal_vs_references.md).
 
 The deploy workflow builds two studies: `launch` at the site root and
-`references2` at `/versus/`. Analyze each build on its own:
+`references3` at `/versus/`. Analyze each build on its own:
 
 ```bash
 terrainweave game analyze --input game_events.csv --build-id <build_id>

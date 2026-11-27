@@ -277,7 +277,7 @@
   const STUDY = CONFIG.study || 'launch';
   const EXTRA = STUDY !== 'launch';
   // Studies deployed next to the main game and listed after its games on the home page.
-  const EXTRA_PAGES = [['references2', 'versus/', 'D']];
+  const EXTRA_PAGES = [['references3', 'versus/', 'D']];
   const EXTRA_BADGE = (EXTRA_PAGES.find(([study]) => study === STUDY) || [, , 'D'])[2];
   const GAMES = EXTRA ? { squad: { rounds: 6, badge: EXTRA_BADGE } } : {
     squad: { rounds: 6, badge: 'A' },
@@ -337,15 +337,17 @@
       creditsTitle: 'Crediti fotografici',
       extraGames: {
         references2: { name: 'Sfida delle mimetiche', hook: 'TerrainWeave contro le mimetiche degli eserciti', text: '{n} omini nella stessa foto: il nostro universale contro MultiCam, Flecktarn, Vegetato e Flora digitale russa (ridisegnate da noi) e una tinta unita. Quale resiste di più?' },
+        references3: { name: 'Sfida delle mimetiche', hook: 'TerrainWeave contro le mimetiche degli eserciti', text: '{n} omini nella stessa foto: due versioni del nostro universale contro MultiCam, Flecktarn, Vegetato e Flora digitale russa (ridisegnate da noi). Quale resiste di più?' },
       },
       extraHero: {
         references2: 'In ogni foto si nascondono {n} omini: uno col mimetismo universale di TerrainWeave, gli altri con mimetiche in stile MultiCam, Flecktarn, Vegetato e Flora digitale russa, più una tinta unita. Sono versioni ridisegnate da noi, non i tessuti originali.',
+        references3: 'In ogni foto si nascondono {n} omini: due con le versioni del mimetismo universale di TerrainWeave, gli altri con mimetiche in stile MultiCam, Flecktarn, Vegetato e Flora digitale russa. Sono versioni ridisegnate da noi, non i tessuti originali.',
       },
       extraEyebrow: 'Gioco D · meno di un minuto a partita',
       extraChips: ['{n} omini per foto', 'Mimetiche da tutto il mondo', 'Anonimo, senza registrazione'],
       backMain: '← Torna ai giochi principali',
       env: { forest: 'bosco', desert: 'deserto', mountain: 'montagna', urban: 'città', jungle: 'giungla', snow: 'neve', taiga: 'taiga', tundra: 'tundra' },
-      variants: { optimized: 'TerrainWeave ottimizzato', baseline: 'TerrainWeave base', universal: 'TerrainWeave universale', control: 'verde oliva tinta unita', woodland: 'woodland classico', desert3: 'deserto a 3 colori', digital3: 'digitale grigio', transitional: 'transizionale multi-ambiente', multiterrain: 'multi-terreno (stile MultiCam)', flecktarn: 'a macchie (stile Flecktarn)', vegetato: 'vegetato', digitalflora: 'Flora digitale russa (stile EMR)' },
+      variants: { optimized: 'TerrainWeave ottimizzato', baseline: 'TerrainWeave base', universal: 'TerrainWeave universale', universal2: 'TerrainWeave universale v2', control: 'verde oliva tinta unita', woodland: 'woodland classico', desert3: 'deserto a 3 colori', digital3: 'digitale grigio', transitional: 'transizionale multi-ambiente', multiterrain: 'multi-terreno (stile MultiCam)', flecktarn: 'a macchie (stile Flecktarn)', vegetato: 'vegetato', digitalflora: 'Flora digitale russa (stile EMR)' },
     },
     en: {
       loading: 'Loading landscapes…',
@@ -398,15 +400,17 @@
       creditsTitle: 'Photo credits',
       extraGames: {
         references2: { name: 'Camo Showdown', hook: 'TerrainWeave vs army camouflage', text: '{n} figures in the same photo: our universal pattern against MultiCam, Flecktarn, Vegetato and Russian digital Flora (redrawn by us) and a plain colour. Which one lasts longest?' },
+        references3: { name: 'Camo Showdown', hook: 'TerrainWeave vs army camouflage', text: '{n} figures in the same photo: two versions of our universal pattern against MultiCam, Flecktarn, Vegetato and Russian digital Flora (redrawn by us). Which one lasts longest?' },
       },
       extraHero: {
         references2: '{n} figures hide in every photo: one in the TerrainWeave universal pattern, the others in MultiCam, Flecktarn, Vegetato and Russian digital Flora styles, plus a plain colour. They are our own redrawings, not the original fabrics.',
+        references3: '{n} figures hide in every photo: two in versions of the TerrainWeave universal pattern, the others in MultiCam, Flecktarn, Vegetato and Russian digital Flora styles. They are our own redrawings, not the original fabrics.',
       },
       extraEyebrow: 'Game D · less than a minute per game',
       extraChips: ['{n} figures per photo', 'Camouflage from around the world', 'Anonymous, no sign-up'],
       backMain: '← Back to the main games',
       env: { forest: 'forest', desert: 'desert', mountain: 'mountain', urban: 'city', jungle: 'jungle', snow: 'snow', taiga: 'taiga', tundra: 'tundra' },
-      variants: { optimized: 'TerrainWeave optimized', baseline: 'TerrainWeave baseline', universal: 'TerrainWeave universal', control: 'plain olive green', woodland: 'classic woodland', desert3: 'three-colour desert', digital3: 'grey digital', transitional: 'multi-environment transitional', multiterrain: 'multi-terrain (MultiCam style)', flecktarn: 'dot pattern (Flecktarn style)', vegetato: 'Vegetato style', digitalflora: 'Russian digital Flora (EMR style)' },
+      variants: { optimized: 'TerrainWeave optimized', baseline: 'TerrainWeave baseline', universal: 'TerrainWeave universal', universal2: 'TerrainWeave universal v2', control: 'plain olive green', woodland: 'classic woodland', desert3: 'three-colour desert', digital3: 'grey digital', transitional: 'multi-environment transitional', multiterrain: 'multi-terrain (MultiCam style)', flecktarn: 'dot pattern (Flecktarn style)', vegetato: 'Vegetato style', digitalflora: 'Russian digital Flora (EMR style)' },
     },
   };
 
@@ -429,7 +433,7 @@
   const t = () => TEXT[lang];
   // Same origin as the main game: keep per-game progress apart for the other studies.
   const key = (name) => (EXTRA ? `${name}-${STUDY}` : name);
-  const extraCopy = (study) => t().extraGames[study] || t().extraGames.references2;
+  const extraCopy = (study) => t().extraGames[study] || t().extraGames.references3;
   const gameCopy = (game) => (EXTRA && game === 'squad' ? extraCopy(STUDY) : t().games[game]);
 
   function randomId(length) {
@@ -541,7 +545,7 @@
       const hero = document.querySelector('.hero');
       hero.querySelector('[data-t="eyebrow"]').textContent = t().extraEyebrow;
       hero.querySelector('h1').textContent = extraCopy(STUDY).name;
-      hero.querySelector('p').textContent = fill(t().extraHero[STUDY] || t().extraHero.references2);
+      hero.querySelector('p').textContent = fill(t().extraHero[STUDY] || t().extraHero.references3);
       hero.querySelectorAll('.chip').forEach((chip, i) => { chip.textContent = fill(t().extraChips[i]); });
       document.title = `TerrainWeave · ${extraCopy(STUDY).name}`;
     }

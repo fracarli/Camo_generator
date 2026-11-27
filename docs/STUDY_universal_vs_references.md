@@ -24,7 +24,7 @@ The reference patterns are original renditions drawn by
 fabric scale (about 2.6 px per cm on a 500 px texture). The three-colour desert
 family (`desert3`) is available for a desert-specific follow-up.
 
-### Second set (study `references2`, played as Camo Showdown at `/versus/`)
+### Second set (study `references2`, then `references3` as Camo Showdown at `/versus/`)
 
 | Name | Role |
 |---|---|
@@ -41,6 +41,16 @@ pattern.jpg`, `File:Vegetato.jpg`, `File:EMR Regular camouflage.png`); the swatc
 not used as textures. Squad hides six figures per photo in this set, so a missed figure ranks 7.
 The hypotheses H1 and H2 apply to each set separately; `universal` and
 `control` link the two sets.
+
+`references3` replaces `control` with `universal2`, the universal pattern
+re-optimized with a wider search (240 candidates instead of 24), environments
+interleaved during pruning and the worst environment penalized
+(`--score-aggregation environment_worst`). The control stays in the main game.
+On the automatic proxy over held-out backgrounds, universal v2 has the best
+mean of all patterns but a worse worst case (urban) than v1; see
+[heldout_comparison.md](../results/optimized_v2/heldout_comparison.md). The
+game decides between them: compare `universal` and `universal2` within the
+`references3` build.
 
 ## Material
 
