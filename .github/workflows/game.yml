@@ -43,6 +43,15 @@ jobs:
           SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
           SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: terrainweave game build --output site
+      # Beta: universal against the reference patterns, served at /beta/.
+      - name: Build the beta study
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}/beta
+        run: |
+          terrainweave game build --study references --output beta-site
+          mv beta-site site/beta
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

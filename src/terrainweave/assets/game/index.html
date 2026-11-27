@@ -8,7 +8,7 @@
   <meta name="description" content="Un gioco da un minuto: trova l'omino mimetizzato nel paesaggio e aiutaci a capire quali mimetismi funzionano davvero.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Riesci a trovare l'omino mimetizzato?">
-  <meta property="og:description" content="Quattro mini giochi da un minuto. Le tue risposte anonime aiutano a migliorare i mimetismi di TerrainWeave.">
+  <meta property="og:description" content="Tre mini giochi da un minuto. Le tue risposte anonime aiutano a migliorare i mimetismi di TerrainWeave.">
   <meta property="og:image" content="__SITE_URL__og.jpg">
   <meta property="og:url" content="__SITE_URL__">
   <meta name="twitter:card" content="summary_large_image">
@@ -59,15 +59,12 @@
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip { border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 650; background: var(--panel); }
     .games { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding-bottom: 28px; }
-    .game-card.new .badge { background: #c2410c; }
     .game-card { text-align: left; border: 1px solid var(--line); background: var(--panel); border-radius: 18px; padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease; }
     .game-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgba(30, 45, 25, .55); }
     .game-art { aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: var(--night); }
     .game-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .game-art.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
-    .game-art.duo img:last-child { transform: scaleX(-1); }
     .game-art .badge { position: absolute; left: 12px; top: 12px; background: rgba(20, 28, 18, .78); color: #fff; font-weight: 800; border-radius: 8px; padding: 3px 9px; font-size: 13px; letter-spacing: .02em; }
-    .game-art .flashbar { position: absolute; inset: auto 0 0 0; height: 5px; background: linear-gradient(90deg, #ffd43b 0 22%, transparent 22%); }
+    .game-art .flashbar { position: absolute; inset: auto 0 0 0; height: 5px; background: linear-gradient(90deg, #ffd43b 0 40%, transparent 40%); }
     .game-body { padding: 16px 18px 18px; display: grid; gap: 7px; flex: 1; align-content: start; }
     .game-body h2 { font-size: 23px; letter-spacing: -.035em; }
     .game-body .hook { font-weight: 700; color: var(--pine); }
@@ -75,6 +72,14 @@
     .game-meta { margin-top: auto; padding-top: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); font-weight: 650; }
     .play-pill { background: var(--pine); color: #fff; border-radius: 999px; padding: 6px 14px; font-weight: 750; }
     .best { color: var(--moss); }
+    .beta { border-top: 1px solid var(--line); padding-block: 26px 30px; display: grid; gap: 14px; }
+    .beta-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .beta-head h2 { font-size: 24px; letter-spacing: -.035em; }
+    .beta-tag { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--pine); border: 1.5px dashed var(--moss); border-radius: 999px; padding: 3px 10px; }
+    .beta-intro { color: var(--muted); font-size: 15px; max-width: 70ch; }
+    .beta .games { padding-bottom: 0; }
+    .game-card.link { text-decoration: none; color: inherit; }
+    .back-main { font-size: 14px; font-weight: 700; padding-bottom: 22px; }
     .why { border-top: 1px solid var(--line); padding-block: 22px 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; color: var(--muted); font-size: 14px; }
     .why h3 { color: var(--ink); font-size: 15px; margin-bottom: 4px; }
     footer { border-top: 1px solid var(--line); padding-block: 18px 34px; color: var(--muted); font-size: 13px; }
@@ -109,9 +114,7 @@
     .timer span { display: block; height: 100%; width: 100%; background: var(--moss); transform-origin: left; }
     .prompt { text-align: center; font-weight: 700; color: var(--muted); min-height: 1.5em; }
     .board { display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); }
-    .board.duo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
     .frame { position: relative; aspect-ratio: 3 / 2; width: min(100%, calc((100svh - 230px) * 1.5)); margin-inline: auto; border-radius: 12px; overflow: hidden; background: var(--night); touch-action: manipulation; user-select: none; -webkit-user-select: none; cursor: crosshair; }
-    .board.duo .frame { width: min(100%, calc((100svh - 230px) * 1.5)); }
     .frame img, .frame canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; -webkit-user-drag: none; }
     .frame img.mirror { transform: scaleX(-1); }
     .frame .veil { position: absolute; inset: 0; display: grid; place-items: center; background: var(--night); color: #f1f4e6; font-size: clamp(22px, 4vw, 38px); font-weight: 800; letter-spacing: -.03em; text-align: center; padding: 16px; }
@@ -157,8 +160,6 @@
     @media (max-width: 560px) {
       .game-card { flex-direction: column; }
       .game-art { width: 100%; min-height: 0; aspect-ratio: 16 / 8; }
-      .board.duo { grid-template-columns: minmax(0, 1fr); }
-      .board.duo .frame { width: min(100%, calc((100svh - 250px) / 2 * 1.5)); }
       .stats { grid-template-columns: 1fr 1fr 1fr; }
       .stat b { font-size: 21px; }
       .insight { grid-template-columns: 76px 1fr; }
@@ -191,6 +192,12 @@
         <div class="chips"><span class="chip" data-t="chip1"></span><span class="chip" data-t="chip2"></span><span class="chip" data-t="chip3"></span></div>
       </div>
       <div class="wrap games" id="games"></div>
+      <div class="wrap beta" id="beta" hidden>
+        <div class="beta-head"><h2 data-t="betaTitle"></h2><span class="beta-tag" data-t="betaTag"></span></div>
+        <p class="beta-intro" data-t="betaIntro"></p>
+        <div class="games" id="beta-games"></div>
+      </div>
+      <p class="wrap back-main" id="back-main" hidden><a href="../" data-t="backMain"></a></p>
       <div class="wrap why">
         <div><h3 data-t="why1t"></h3><p data-t="why1"></p></div>
         <div><h3 data-t="why2t"></h3><p data-t="why2"></p></div>
@@ -263,13 +270,16 @@
   const CONFIG = window.TW_CONFIG || {};
   const ROUND_MS = 15000;
   const SQUAD_MS = 25000;
-  const FLASH_MS = 250;
+  // Players found 250 ms too short to see anything; rows store the real exposure_ms.
+  const FLASH_MS = 500;
   const MASK_MS = 300;
-  const GAMES = {
-    find: { rounds: 10, badge: 'A' },
-    duel: { rounds: 8, badge: 'B' },
+  // A non-launch study (the beta page) compares universal with reference patterns in Squad only.
+  const STUDY = CONFIG.study || 'launch';
+  const BETA = STUDY !== 'launch';
+  const GAMES = BETA ? { squad: { rounds: 6, badge: 'β' } } : {
+    squad: { rounds: 6, badge: 'A' },
+    find: { rounds: 10, badge: 'B' },
     flash: { rounds: 12, badge: 'C' },
-    squad: { rounds: 6, badge: 'D' },
   };
 
   const TEXT = {
@@ -278,30 +288,28 @@
       eyebrow: 'Un esperimento di mimetismo · 1 minuto a partita',
       heroTitle: 'Riesci a trovare l’omino mimetizzato?',
       heroText: 'Abbiamo generato dei mimetismi analizzando foto di boschi, deserti, montagne e città. Ora serve il tuo occhio: ogni partita ci dice quali funzionano davvero e quali no.',
-      chip1: '4 mini giochi', chip2: 'Paesaggi reali da tutto il mondo', chip3: 'Anonimo, senza registrazione',
+      chip1: '3 mini giochi', chip2: 'Paesaggi reali da tutto il mondo', chip3: 'Anonimo, senza registrazione',
       why1t: 'Perché giocare?', why1: 'Gli algoritmi misurano colori e contrasti, ma solo l’occhio umano dice se un mimetismo inganna davvero.',
       why2t: 'Cosa confrontiamo', why2: 'Lo stesso paesaggio con mimetismi diversi, generati da TerrainWeave o di riferimento, sempre nello stesso punto: cambia solo il mimetismo.',
       quick: 'Gioca subito →',
       why3t: 'Cosa succede ai dati', why3: 'Tempi e tocchi anonimi alimentano il prossimo ciclo di ottimizzazione. Più partite, mimetismi migliori.',
       games: {
         find: { name: 'Caccia', hook: 'Quanto ci metti a trovarlo?', text: '10 paesaggi, un omino nascosto in ognuno. Toccalo appena lo vedi: più sei veloce, più punti fai.' },
-        duel: { name: 'Duello', hook: 'Due immagini, un solo vincitore', text: 'Lo stesso paesaggio con due mimetismi diversi. Tocca l’omino nell’immagine in cui lo scovi per prima.' },
-        flash: { name: 'Lampo', hook: 'Hai solo un quarto di secondo', text: 'L’immagine appare per un istante. C’era qualcuno o no? Attento: a volte il paesaggio è vuoto.' },
+        flash: { name: 'Lampo', hook: 'Hai solo mezzo secondo', text: 'L’immagine appare per un istante. C’era qualcuno o no? Attento: a volte il paesaggio è vuoto.' },
         squad: { name: 'Pattuglia', hook: '{n} omini, una sola foto', text: 'Nella stessa foto si nascondono {n} omini, ognuno con un mimetismo diverso. Trovali tutti prima che scada il tempo!' },
       },
       minute: '~1 min', play: 'Gioca', best: (n) => `Record: ${n}`,
       tutorial: 'Come si gioca',
       steps: {
         find: ['Appare un paesaggio con un omino mimetizzato, come quello evidenziato nell\u2019immagine.', 'Toccalo o cliccaci sopra il prima possibile. I tocchi sbagliati costano punti.', 'Hai 15 secondi: se non lo trovi, ti mostriamo dov’era.'],
-        duel: ['Vedi due versioni dello stesso paesaggio, ognuna con un omino vestito con un mimetismo diverso.', 'Tocca l’omino nella prima immagine in cui lo trovi: basta trovarne uno.', 'Così scopriamo quale dei due mimetismi si nota di più.'],
-        flash: ['Tieni lo sguardo al centro: l’immagine appare per 0,25 secondi.', 'Rispondi: c’era un omino? Sì o No. Puoi usare anche i tasti S e N.', 'In circa metà delle immagini non c’è nessuno: non tirare a indovinare!'],
+        flash: ['Tieni lo sguardo al centro: l’immagine appare per mezzo secondo.', 'Rispondi: c’era un omino? Sì o No. Puoi usare anche i tasti S e N.', 'In circa metà delle immagini non c’è nessuno: non tirare a indovinare!'],
         squad: ['In ogni foto si nascondono {n} omini, ognuno vestito con un mimetismo diverso.', 'Toccali tutti, uno alla volta: l’ordine in cui li trovi ci dice quale mimetismo si nota di più.', 'Hai 25 secondi per foto. I tocchi a vuoto costano punti, trovarli tutti vale un bonus.'],
       },
       demoCaption: 'Eccolo! Questo è l’omino da cercare.',
       go: 'Ho capito, giochiamo!', back: 'Indietro', quit: 'Esci',
       round: (i, n) => `Round ${i}/${n}`, points: (n) => `${n} pt`,
       ready: ['3', '2', '1'],
-      promptFind: 'Tocca l’omino!', promptDuel: 'Trova l’omino in una delle due immagini!',
+      promptFind: 'Tocca l’omino!',
       promptFlash: 'Guarda il centro…', askFlash: 'C’era un omino?',
       promptSquad: (found, total) => `Trovati ${found} di ${total}: continua!`, allFound: 'Tutti trovati! +100 bonus', squadTimeout: (n) => `Tempo scaduto: ne mancavano ${n}.`,
       insightSquad: (r, n) => `In media è stato trovato per ${r}° su ${n} (${n + 1} = mai trovato).`,
@@ -322,6 +330,14 @@
       howTitle: 'Come funziona l’esperimento',
       how: 'Ogni paesaggio è una foto reale mai usata per creare i mimetismi. L’omino è sempre nello stesso punto e cambia solo il mimetismo, assegnato a caso: così le differenze nei tempi dipendono dal mimetismo stesso. È un confronto visivo su schermo, non una prova sul campo.',
       creditsTitle: 'Crediti fotografici',
+      betaTitle: 'In fase di test', betaTag: 'Beta',
+      betaIntro: 'Un nuovo esperimento ancora in prova: il mimetismo universale di TerrainWeave contro mimetiche ispirate a quelle esistenti.',
+      betaGame: { name: 'Universale contro le mimetiche esistenti', hook: '{n} omini, una sola foto', text: 'Il mimetismo universale di TerrainWeave contro woodland, digitale grigio e transizionale (ridisegnati da noi) e una tinta unita. Chi resiste di più?' },
+      betaEyebrow: 'Beta · in fase di test',
+      betaHeroTitle: 'Universale contro le mimetiche esistenti',
+      betaHeroText: 'In ogni foto si nascondono {n} omini: uno col mimetismo universale di TerrainWeave, gli altri con mimetiche ispirate a woodland, digitale grigio e transizionale, più una tinta unita. Esperimento in prova: i risultati sono preliminari.',
+      betaChips: ['{n} omini per foto', 'In fase di test', 'Anonimo, senza registrazione'],
+      backMain: '← Torna ai giochi principali',
       env: { forest: 'bosco', desert: 'deserto', mountain: 'montagna', urban: 'città', jungle: 'giungla', snow: 'neve', taiga: 'taiga', tundra: 'tundra' },
       variants: { optimized: 'TerrainWeave ottimizzato', baseline: 'TerrainWeave base', universal: 'TerrainWeave universale', control: 'verde oliva tinta unita', woodland: 'woodland classico', desert3: 'deserto a 3 colori', digital3: 'digitale grigio', transitional: 'transizionale multi-ambiente' },
     },
@@ -330,30 +346,28 @@
       eyebrow: 'A camouflage experiment · 1 minute per game',
       heroTitle: 'Can you spot the hidden figure?',
       heroText: 'We generated camouflage patterns by analysing photos of forests, deserts, mountains and cities. Now we need your eyes: every game tells us which ones really work.',
-      chip1: '4 mini games', chip2: 'Real landscapes from around the world', chip3: 'Anonymous, no sign-up',
+      chip1: '3 mini games', chip2: 'Real landscapes from around the world', chip3: 'Anonymous, no sign-up',
       why1t: 'Why play?', why1: 'Algorithms measure colour and contrast, but only human eyes can tell whether camouflage really fools you.',
       why2t: 'What we compare', why2: 'The same landscape with different patterns, from TerrainWeave or for reference, always in the same spot: only the pattern changes.',
       quick: 'Play now →',
       why3t: 'What happens to the data', why3: 'Anonymous times and taps feed the next optimisation round. More games, better camouflage.',
       games: {
         find: { name: 'Hunt', hook: 'How fast can you find it?', text: '10 landscapes, one hidden figure in each. Tap it as soon as you see it: the faster, the more points.' },
-        duel: { name: 'Duel', hook: 'Two pictures, one winner', text: 'The same landscape with two different patterns. Tap the figure in whichever picture you spot it first.' },
-        flash: { name: 'Flash', hook: 'You get a quarter of a second', text: 'The picture appears for an instant. Was someone there? Careful: sometimes the landscape is empty.' },
+        flash: { name: 'Flash', hook: 'You get half a second', text: 'The picture appears for an instant. Was someone there? Careful: sometimes the landscape is empty.' },
         squad: { name: 'Squad', hook: '{n} figures, one photo', text: '{n} figures hide in the same photo, each in a different pattern. Find them all before time runs out!' },
       },
       minute: '~1 min', play: 'Play', best: (n) => `Best: ${n}`,
       tutorial: 'How to play',
       steps: {
         find: ['A landscape appears with a camouflaged figure, like the one highlighted in the picture.', 'Tap or click it as fast as you can. Wrong taps cost points.', 'You have 15 seconds: if you miss it, we show you where it was.'],
-        duel: ['You see two versions of the same landscape, each with a figure in a different pattern.', 'Tap the figure in the first picture where you find it: one is enough.', 'This tells us which of the two patterns stands out more.'],
-        flash: ['Keep your eyes on the centre: the picture shows for 0.25 seconds.', 'Answer: was there a figure? Yes or No. You can also use the Y and N keys.', 'About half the pictures are empty: don’t just guess!'],
+        flash: ['Keep your eyes on the centre: the picture shows for half a second.', 'Answer: was there a figure? Yes or No. You can also use the Y and N keys.', 'About half the pictures are empty: don’t just guess!'],
         squad: ['{n} figures hide in each photo, each wearing a different pattern.', 'Tap them all, one at a time: the order you find them in tells us which pattern stands out most.', 'You have 25 seconds per photo. Wrong taps cost points; finding them all earns a bonus.'],
       },
       demoCaption: 'There it is! This is the figure to look for.',
       go: 'Got it, let’s play!', back: 'Back', quit: 'Quit',
       round: (i, n) => `Round ${i}/${n}`, points: (n) => `${n} pts`,
       ready: ['3', '2', '1'],
-      promptFind: 'Tap the figure!', promptDuel: 'Find the figure in either picture!',
+      promptFind: 'Tap the figure!',
       promptFlash: 'Look at the centre…', askFlash: 'Was there a figure?',
       promptSquad: (found, total) => `Found ${found} of ${total}: keep going!`, allFound: 'All found! +100 bonus', squadTimeout: (n) => `Time’s up: ${n} still hidden.`,
       insightSquad: (r, n) => `On average it was found number ${r} of ${n} (${n + 1} = never found).`,
@@ -374,6 +388,14 @@
       howTitle: 'How the experiment works',
       how: 'Each landscape is a real photo never used to create the patterns. The figure is always in the same spot and only the pattern changes, assigned at random, so differences in time come from the pattern itself. It is an on-screen visual comparison, not a field test.',
       creditsTitle: 'Photo credits',
+      betaTitle: 'Being tested', betaTag: 'Beta',
+      betaIntro: 'A new experiment still in trial: the TerrainWeave universal pattern against patterns inspired by existing camouflage.',
+      betaGame: { name: 'Universal vs existing camouflage', hook: '{n} figures, one photo', text: 'The TerrainWeave universal pattern against woodland, grey digital and transitional (redrawn by us) and a plain colour. Which one lasts longest?' },
+      betaEyebrow: 'Beta · being tested',
+      betaHeroTitle: 'Universal vs existing camouflage',
+      betaHeroText: '{n} figures hide in every photo: one in the TerrainWeave universal pattern, the others in patterns inspired by woodland, grey digital and transitional, plus a plain colour. This is a trial: results are preliminary.',
+      betaChips: ['{n} figures per photo', 'Being tested', 'Anonymous, no sign-up'],
+      backMain: '← Back to the main games',
       env: { forest: 'forest', desert: 'desert', mountain: 'mountain', urban: 'city', jungle: 'jungle', snow: 'snow', taiga: 'taiga', tundra: 'tundra' },
       variants: { optimized: 'TerrainWeave optimized', baseline: 'TerrainWeave baseline', universal: 'TerrainWeave universal', control: 'plain olive green', woodland: 'classic woodland', desert3: 'three-colour desert', digital3: 'grey digital', transitional: 'multi-environment transitional' },
     },
@@ -396,6 +418,9 @@
   const player = store.get('tw-player', null) || randomId(10);
   store.set('tw-player', player);
   const t = () => TEXT[lang];
+  // Same origin as the main game: keep per-game progress apart for the beta study.
+  const key = (name) => (BETA ? `${name}-${STUDY}` : name);
+  const gameCopy = (game) => (BETA && game === 'squad' ? t().betaGame : t().games[game]);
 
   function randomId(length) {
     const bytes = new Uint8Array(length);
@@ -472,23 +497,28 @@
     document.querySelectorAll('[data-t]').forEach((node) => { node.textContent = t()[node.dataset.t]; });
     document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
     $('yes').textContent = t().yes; $('no').textContent = t().no;
+    if (BETA) {
+      const hero = document.querySelector('.hero');
+      hero.querySelector('[data-t="eyebrow"]').textContent = t().betaEyebrow;
+      hero.querySelector('h1').textContent = t().betaHeroTitle;
+      hero.querySelector('p').textContent = fill(t().betaHeroText);
+      hero.querySelectorAll('.chip').forEach((chip, i) => { chip.textContent = fill(t().betaChips[i]); });
+      document.title = `TerrainWeave Beta · ${t().betaHeroTitle}`;
+    }
     if (manifest) renderHome();
   }
   function renderHome() {
     const sample = manifest.scenes.find((s) => s.environment === 'forest') || manifest.scenes[0];
-    const other = manifest.scenes.find((s) => s.environment === 'desert') || sample;
-    const best = store.get('tw-best', {});
+    const best = store.get(key('tw-best'), {});
     const cardVariants = manifest.variants || ['optimized', 'baseline'];
     $('games').innerHTML = '';
     for (const [game, info] of Object.entries(GAMES)) {
-      const copy = t().games[game];
+      const copy = gameCopy(game);
       const card = document.createElement('button');
       card.type = 'button';
-      card.className = 'game-card' + (game === 'squad' ? ' new' : '');
+      card.className = 'game-card';
       const art = game === 'squad'
         ? `<div class="game-art"><img alt="" src="scenes/${(manifest.scenes[3] || sample).id}/multi_0.jpg"><span class="badge">${info.badge}</span></div>`
-        : game === 'duel'
-        ? `<div class="game-art duo"><img alt="" src="${imageUrl(other, cardVariants[1])}"><img alt="" src="${imageUrl(other, cardVariants[0])}"><span class="badge">${info.badge}</span></div>`
         : `<div class="game-art"><img alt="" src="${imageUrl(game === 'find' ? sample : manifest.scenes[manifest.scenes.length - 1], cardVariants[0])}"><span class="badge">${info.badge}</span>${game === 'flash' ? '<span class="flashbar"></span>' : ''}</div>`;
       card.innerHTML = `${art}<div class="game-body"><h2>${copy.name}</h2><p class="hook">${fill(copy.hook)}</p><p>${fill(copy.text)}</p>
         <div class="game-meta"><span>${t().minute}${best[game] ? ` · <span class="best">${t().best(best[game])}</span>` : ''}</span><span class="play-pill">${t().play} →</span></div></div>`;
@@ -503,19 +533,49 @@
       li.append(a, ` · ${credit.author} · ${credit.license}`);
       $('credits').append(li);
     }
+    renderBeta();
+  }
+  // The main page links the beta study when it is deployed next to it (beta/).
+  let betaManifest;
+  function renderBeta() {
+    $('back-main').hidden = !BETA;
+    if (BETA) return;
+    if (betaManifest === undefined) {
+      betaManifest = null;
+      fetch('beta/manifest.json', { cache: 'no-cache' })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => { if (data && data.scenes && data.scenes.length) { betaManifest = data; renderBeta(); } })
+        .catch(() => {});
+      return;
+    }
+    if (!betaManifest) return;
+    const scene = betaManifest.scenes[3] || betaManifest.scenes[0];
+    const n = betaManifest.variants.length;
+    const copy = t().betaGame;
+    const card = document.createElement('a');
+    card.className = 'game-card link';
+    card.href = 'beta/';
+    card.innerHTML = `<div class="game-art"><img alt="" src="beta/scenes/${scene.id}/multi_0.jpg"><span class="badge">β</span></div>
+      <div class="game-body"><h2></h2><p class="hook"></p><p></p><div class="game-meta"><span>${t().minute}</span><span class="play-pill">${t().play} →</span></div></div>`;
+    const [title, hook, text] = card.querySelectorAll('.game-body h2, .game-body p');
+    title.textContent = copy.name;
+    hook.textContent = copy.hook.replaceAll('{n}', n);
+    text.textContent = copy.text.replaceAll('{n}', n);
+    $('beta-games').replaceChildren(card);
+    $('beta').hidden = false;
   }
   function squadSize() { return (manifest && manifest.variants && manifest.variants.length) || 4; }
   function fill(text) { return text.replaceAll('{n}', squadSize()); }
   function buzz(ms) { try { if (navigator.vibrate) navigator.vibrate(ms); } catch { /* unsupported */ } }
   // Show the tutorial only the first time a game is played in this browser.
   function playGame(game) {
-    if (store.get('tw-tutorials', []).includes(game)) startGame(game); else openTutorial(game);
+    if (store.get(key('tw-tutorials'), []).includes(game)) startGame(game); else openTutorial(game);
   }
   function goHome() { clearTimers(); current = null; show('home'); location.hash = ''; }
 
   // ---------- tutorial ----------
   function openTutorial(game) {
-    const copy = t().games[game];
+    const copy = gameCopy(game);
     $('tut-eyebrow').textContent = `${t().tutorial} · ${GAMES[game].badge}`;
     $('tut-title').textContent = copy.name;
     $('tut-steps').innerHTML = '';
@@ -527,7 +587,7 @@
     });
     $('tut-go').textContent = t().go;
     $('tut-go').onclick = () => {
-      store.set('tw-tutorials', [...new Set([...store.get('tw-tutorials', []), game])]);
+      store.set(key('tw-tutorials'), [...new Set([...store.get(key('tw-tutorials'), []), game])]);
       startGame(game);
     };
     // The example uses a training photo, so no game landscape is revealed in advance.
@@ -600,7 +660,7 @@
   // ---------- round planning ----------
   function pickScenes(count) {
     // Prefer landscapes this player has not seen, spread across environments.
-    const seen = new Set(store.get('tw-seen', []));
+    const seen = new Set(store.get(key('tw-seen'), []));
     const fresh = shuffle(manifest.scenes.filter((s) => !seen.has(s.id)));
     const old = shuffle(manifest.scenes.filter((s) => seen.has(s.id)));
     const byEnv = {};
@@ -612,7 +672,7 @@
     }
     // A short corpus can be smaller than the game: repeat with other variants.
     while (picked.length < count) picked.push(manifest.scenes[picked.length % manifest.scenes.length]);
-    store.set('tw-seen', [...new Set([...seen, ...picked.map((s) => s.id)])].slice(-manifest.scenes.length + 4));
+    store.set(key('tw-seen'), [...new Set([...seen, ...picked.map((s) => s.id)])].slice(-manifest.scenes.length + 4));
     return shuffle(picked);
   }
   function balanced(options, count) {
@@ -627,16 +687,6 @@
     if (game === 'find') {
       const order = balanced(variants, scenes.length);
       return scenes.map((scene, i) => ({ scene, variant: scene.variants.includes(order[i]) ? order[i] : scene.variants[0] }));
-    }
-    if (game === 'duel') {
-      const pairs = [];
-      for (let i = 0; i < variants.length; i++) for (let j = i + 1; j < variants.length; j++) pairs.push([variants[i], variants[j]]);
-      const order = balanced(pairs, scenes.length);
-      return scenes.map((scene, i) => {
-        let [a, b] = shuffle(order[i]);
-        if (!scene.variants.includes(a) || !scene.variants.includes(b)) [a, b] = shuffle(scene.variants).slice(0, 2);
-        return { scene, variant: a, variant_b: b, mirrorRight: Math.random() < 0.5 };
-      });
     }
     if (game === 'squad') {
       const layouts = balanced(Array.from({ length: squadSize() }, (_, i) => i), scenes.length);
@@ -663,7 +713,7 @@
     $('feedback').textContent = '';
     $('prompt').textContent = t().loading;
     hud();
-    const urls = rounds.flatMap((r) => [imageUrl(r.scene, r.variant), ...(r.variant_b ? [imageUrl(r.scene, r.variant_b)] : [])]);
+    const urls = rounds.map((r) => imageUrl(r.scene, r.variant));
     await preload(urls.slice(0, 4));
     preload(urls.slice(4));
     location.hash = game;
@@ -709,12 +759,10 @@
   function searchRound(round) {
     const board = $('board');
     board.innerHTML = '';
-    board.className = 'board' + (current.game === 'duel' ? ' duo' : '');
-    const frames = current.game === 'duel'
-      ? [makeFrame(round.scene, round.variant, !round.mirrorRight), makeFrame(round.scene, round.variant_b, round.mirrorRight)]
-      : [makeFrame(round.scene, round.variant, false)];
+    board.className = 'board';
+    const frames = [makeFrame(round.scene, round.variant, false)];
     frames.forEach((f) => board.append(f.el));
-    $('prompt').textContent = current.game === 'duel' ? t().promptDuel : t().promptFind;
+    $('prompt').textContent = t().promptFind;
     let misses = 0, done = false, shownAt = 0;
     const end = (frame, tap) => {
       if (done) return;
@@ -731,7 +779,7 @@
       $('feedback').textContent = found ? t().found((latency / 1000).toFixed(1)) : t().timeout;
       const entry = {
         round: current.index, scene_id: round.scene.id, environment: round.scene.environment,
-        variant: round.variant, variant_b: round.variant_b || null, outcome: found ? 'found' : 'timeout',
+        variant: round.variant, outcome: found ? 'found' : 'timeout',
         chosen: found ? frame.variant : null, latency_ms: found ? latency : ROUND_MS, misses,
         tap_x: tap ? Math.round(tap.x * 1000) / 1000 : null, tap_y: tap ? Math.round(tap.y * 1000) / 1000 : null,
         image_w: Math.round(frames[0].el.getBoundingClientRect().width),
@@ -934,11 +982,11 @@
     const max = game === 'squad' ? current.rounds.length * (150 * squadSize() + 100) : log.length * (game === 'flash' ? 100 : 300);
     const ratio = max ? score / max : 0;
     const rank = t().ranks[ratio < 0.35 ? 0 : ratio < 0.6 ? 1 : ratio < 0.8 ? 2 : 3];
-    const best = store.get('tw-best', {});
+    const best = store.get(key('tw-best'), {});
     best[game] = Math.max(best[game] || 0, score);
-    store.set('tw-best', best);
+    store.set(key('tw-best'), best);
     current.rank = rank;
-    $('res-game').textContent = t().games[game].name;
+    $('res-game').textContent = gameCopy(game).name;
     $('res-rank').textContent = rank;
     $('res-points').textContent = t().points(score);
     const stat = (value, label) => `<div class="stat"><b>${value}</b><span>${label}</span></div>`;
@@ -973,10 +1021,10 @@
       const avg = found.length ? (found.reduce((s, e) => s + e.latency_ms, 0) / found.length / 1000).toFixed(1) : '–';
       $('res-stats').innerHTML = stat(`${found.length}/${log.length}`, t().statFound)
         + stat(`${avg} s`, t().statTime) + stat(log.reduce((s, e) => s + e.misses, 0), t().statMiss);
-      // The hardest pattern is the slowest one to find; in a duel, the one not chosen.
+      // The hardest pattern is the slowest one to find.
       const cost = {};
       for (const e of log) {
-        const hidden = game === 'duel' ? (e.chosen === e.variant ? e.variant_b : e.variant) : e.variant;
+        const hidden = e.variant;
         (cost[hidden] ||= { total: 0, n: 0, e }); cost[hidden].total += e.latency_ms; cost[hidden].n++;
         if (e.latency_ms > cost[hidden].e.latency_ms) cost[hidden].e = e;
       }
@@ -998,7 +1046,7 @@
   }
   async function share() {
     const url = location.href.split('#')[0];
-    const text = t().shareText(current.rank, current.score, t().games[current.game].name);
+    const text = t().shareText(current.rank, current.score, gameCopy(current.game).name);
     if (navigator.share) {
       try { await navigator.share({ title: 'TerrainWeave', text, url }); return; } catch { /* cancelled */ }
     }

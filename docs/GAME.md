@@ -1,13 +1,22 @@
 # Web game
 
-The public game has four modes that share the same backgrounds:
+The public game has three modes that share the same backgrounds:
 
 | Mode | Task | What it measures |
 |---|---|---|
-| A · Hunt (`find`) | Tap the figure as fast as possible, 15 s limit | Time to find and found rate per pattern |
-| B · Duel (`duel`) | Two copies of a landscape with different patterns; tap the figure in either | Which of two patterns is found first |
-| C · Flash (`flash`) | 250 ms exposure and a noise mask, then yes/no; half the scenes are empty | Hit rate, false alarms and d′ |
-| D · Squad (`squad`) | Four figures in one photo, one per pattern; find them all in 25 s | Discovery order per pattern and environment |
+| A · Squad (`squad`) | Four figures in one photo, one per pattern; find them all in 25 s | Discovery order per pattern and environment |
+| B · Hunt (`find`) | Tap the figure as fast as possible, 15 s limit | Time to find and found rate per pattern |
+| C · Flash (`flash`) | 500 ms exposure and a noise mask, then yes/no; half the scenes are empty | Hit rate, false alarms and d′ |
+
+Flash used a 250 ms exposure until players reported seeing nothing; every row
+stores the measured `exposure_ms`, so analyze the two exposures separately.
+Duel (`duel`, two copies of a landscape with different patterns) was retired
+because it added little over Squad; `game analyze` still reads its old rows.
+
+A **Beta** section on the home page links `/beta/`, a separate build of the
+`references` study (below) where Squad hides five figures: universal, three
+reference families and the plain control. The beta page keeps its records and
+progress apart from the main game, and its rows carry their own `build_id`.
 
 Every scene uses a held-out background with one fixed figure position. The
 backgrounds come from `evaluation/splits/test.json` and from
@@ -43,6 +52,15 @@ terrainweave game calibrate --input game_events.csv --manifest output/game-site/
 ```
 
 The study plan is in [STUDY_universal_vs_references.md](STUDY_universal_vs_references.md).
+
+The deploy workflow builds both studies: `launch` at the site root and
+`references` at `/beta/`. Analyze each build on its own:
+
+```bash
+terrainweave game analyze --input game_events.csv --build-id <build_id>
+```
+
+Without `--build-id`, `game analyze` lists the builds found in the export.
 
 ## Test sessions
 

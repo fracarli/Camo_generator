@@ -48,7 +48,6 @@ class GameBuildTest(unittest.TestCase):
             "build_id",
             "session_id",
             "scene_id",
-            "variant_b",
             "latency_ms",
             "exposure_ms",
             "figure_present",
@@ -59,6 +58,17 @@ class GameBuildTest(unittest.TestCase):
         ):
             self.assertIn(column, schema)
             self.assertIn(column, page)
+        # Kept for the rows of the retired Duel game.
+        self.assertIn("variant_b", schema)
+
+    def test_page_offers_squad_first_and_no_duel(self):
+        page = (workspace_root() / "src/terrainweave/assets/game/index.html").read_text(
+            encoding="utf-8"
+        )
+        games = page[page.index("const GAMES") : page.index("const TEXT")]
+        self.assertNotIn("duel", games)
+        self.assertLess(games.index("squad"), games.index("find"))
+        self.assertIn("const FLASH_MS = 500;", page)
 
 
 class GameAnalysisTest(unittest.TestCase):

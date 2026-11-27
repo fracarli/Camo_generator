@@ -327,6 +327,7 @@ def build_site(
         "supabaseUrl": supabase_url.strip().rstrip("/").removesuffix("/rest/v1"),
         "supabaseKey": supabase_key,
         "table": GAME_TABLE,
+        "study": study,
     }
     (output / "config.js").write_text(
         "window.TW_CONFIG = " + json.dumps(config) + ";\n", encoding="utf-8"
@@ -588,9 +589,22 @@ def analyze_main() -> None:
     parser = argparse.ArgumentParser(description="Summarize game events exported from Supabase.")
     parser.add_argument("--input", type=Path, required=True, help="CSV export of game_events")
     parser.add_argument("--json", type=Path, help="Also write the summary as JSON")
+    parser.add_argument(
+        "--build-id", help="Only rows from this build (the launch game and the beta study differ)"
+    )
     args = parser.parse_args()
     with args.input.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
+    builds = defaultdict(int)
+    for row in rows:
+        builds[row.get("build_id") or "?"] += 1
+    if args.build_id:
+        rows = [row for row in rows if row.get("build_id") == args.build_id]
+    elif len(builds) > 1:
+        print("Rows from several builds; pass --build-id to analyze one of them:")
+        for build, count in sorted(builds.items(), key=lambda item: -item[1]):
+            print(f"  {build}  {count} events")
+        print()
     summary = analyze_rows(rows)
     print(format_summary(summary))
     if args.json:
